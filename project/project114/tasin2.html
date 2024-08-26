@@ -1,0 +1,1133 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
+    <title>Insurance Form</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <style>
+        #mx_cl *,
+        ::after,
+        ::before {
+            box-sizing: border-box;
+        }
+
+        #mx_cl {
+            line-height: 1.5;
+            font-family: inherit;
+        }
+
+        #mx_cl .container {
+            width: 100%;
+            padding-right: 0;
+            padding-left: 0;
+            margin-right: auto;
+            margin-left: auto;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #4a4a4a;
+            text-align: left;
+        }
+
+        #mx_cl .cl-wrapper {
+            background: #575755;
+        }
+
+        #mx_cl label {
+            display: inline-block;
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: #fff;
+        }
+
+        #mx_cl .row {
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            margin-right: -15px;
+            margin-left: -15px;
+        }
+
+        #mx_cl .col-md-1,
+        #mx_cl .col-md-10,
+        #mx_cl .col-md-11,
+        #mx_cl .col-md-12,
+        #mx_cl .col-md-2,
+        #mx_cl .col-md-3,
+        #mx_cl .col-md-4,
+        #mx_cl .col-md-5,
+        #mx_cl .col-md-6,
+        #mx_cl .col-md-7,
+        #mx_cl .col-md-8,
+        #mx_cl .col-md-9 {
+            position: relative;
+            width: 100%;
+            padding-right: 15px;
+            padding-left: 15px;
+        }
+
+        #mx_cl .form-group {
+            margin-bottom: 1rem;
+        }
+
+        #mx_cl .form-control {
+            display: block;
+            width: 100%;
+            height: 45px;
+            padding: 0.275rem 0.75rem;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #4a4a4a;
+            background-color: #fff;
+            background-clip: padding-box;
+            border: 1px solid #dddddd;
+            transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+            border-radius: 5px;
+        }
+
+        #mx_cl .form-control:focus {
+            outline: none;
+        }
+
+        #mx_cl .btn {
+            display: inline-block;
+            font-weight: 400;
+            color: #212529;
+            text-align: center;
+            vertical-align: middle;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            background-color: transparent;
+            border: 1px solid transparent;
+            padding: .275rem .75rem;
+            font-size: 1rem;
+            line-height: 1.5;
+            border-radius: .25rem;
+            transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+        }
+
+        #mx_cl .button-sec {
+            display: flex;
+            gap: 10px;
+        }
+
+
+        #mx_cl .option-btn {
+            color: #A7A7A7;
+            background-color: #ffffff;
+            border: 1px solid #D9D9D9;
+            width: 50%;
+        }
+
+        #mx_cl table {
+            border-collapse: collapse;
+        }
+
+        #mx_cl .table {
+            width: 100%;
+            margin-bottom: 1rem;
+            color: #212529;
+        }
+
+        #mx_cl .table td,
+        #mx_cl .table th {
+            padding: .75rem;
+            vertical-align: top;
+            border-top: 1px solid #dee2e6;
+        }
+
+        #mx_cl .text-center {
+            text-align: center;
+        }
+
+        @media (min-width: 576px) {
+            #mx_cl .container {
+                max-width: 100%;
+            }
+        }
+
+        @media (min-width: 768px) {
+            #mx_cl .container {
+                max-width: 100%;
+            }
+
+            #mx_cl .col-md-12 {
+                -ms-flex: 0 0 100%;
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+
+            #mx_cl .col-md-9 {
+                -ms-flex: 0 0 75%;
+                flex: 0 0 75%;
+                max-width: 75%;
+            }
+
+            #mx_cl .col-md-8 {
+                -ms-flex: 0 0 66.666667%;
+                flex: 0 0 66.666667%;
+                max-width: 66.666667%;
+            }
+
+            #mx_cl .col-md-7 {
+                -ms-flex: 0 0 58.33333%;
+                flex: 0 0 58.33333%;
+                max-width: 58.33333%;
+            }
+
+            #mx_cl .col-md-6 {
+                -ms-flex: 0 0 50%;
+                flex: 0 0 50%;
+                max-width: 50%;
+            }
+
+            #mx_cl .col-md-5 {
+                -ms-flex: 0 0 41.666667%;
+                flex: 0 0 41.666667%;
+                max-width: 41.666667%;
+            }
+
+            #mx_cl .col-md-4 {
+                -ms-flex: 0 0 33.333333%;
+                flex: 0 0 33.333333%;
+                max-width: 33.333333%;
+            }
+
+            #mx_cl .col-md-3 {
+                -ms-flex: 0 0 25%;
+                flex: 0 0 25%;
+                max-width: 25%;
+            }
+        }
+
+        @media (min-width: 992px) {
+            #mx_cl .container {
+                max-width: 900px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            #mx_cl .container {
+                max-width: 1100px;
+            }
+        }
+
+        #mx_cl .text-right {
+            text-align: right;
+        }
+
+        #mx_cl .form-group,
+        #mx_cl .input-group {
+            position: relative;
+            margin-bottom: 15px;
+        }
+
+
+
+        #mx_cl .sec-title {
+            font-size: 18px;
+            font-weight: 500;
+            border-bottom: 1px solid #FFC837;
+            color: #FFF;
+            margin: 0px;
+            margin-bottom: 15px;
+        }
+        #mx_cl .sec-middle-title {
+            font-size: 18px;
+            font-weight: 500;
+            border-bottom: 1px solid #FFC837;
+            color: #FFF;
+            margin: 0px;
+            margin-bottom: 15px;
+        }
+
+        #mx_cl .em-input-group-text {
+            margin-bottom: 0;
+            position: absolute;
+            padding-left: 9px;
+            padding-top: 3.5px;
+            font-size: 1rem;
+        }
+
+        #mx_cl .text-right {
+            text-align: left;
+            padding-left: 10px;
+        }
+
+        #mx_cl .footer-output {
+            font-size: 36px;
+            font-weight: 800;
+        }
+
+        #mx_cl .full-context {
+            box-shadow: 0 0 10px #dadada;
+            border-radius: 8px;
+        }
+
+        #mx_cl .head-p {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        #mx_cl .head-section {
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+
+        #mx_cl .prepend-text {
+            position: absolute;
+            left: 7px;
+            bottom: 3px;
+            font-size: 16px;
+        }
+        #mx_cl .append-text {
+            position: absolute;
+            right: 7px;
+            bottom: 3px;
+            font-size: 16px;
+        }
+
+        #mx_cl .text-rightt {
+            padding-left: 20px;
+        }
+
+        #mx_cl .mid-sectionn {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #mx_cl .option-btn {
+            color: #A7A7A7;
+            background-color: #ffffff;
+            border: 1px solid #D9D9D9;
+
+        }
+
+        #mx_cl .mid-section {
+            margin-top: 30px;
+        }
+
+        #mx_cl .mid_one {
+            padding-right: 20px;
+        }
+
+        #mx_cl .mid_two {
+            padding-left: 20px;
+        }
+
+        #mx_cl .footer-sec {
+            padding: 30px;
+            color: #fff;
+            background-color: #324354;
+            border-radius: 8px;
+            margin-top: 25px;
+
+        }
+
+        #mx_cl .left-footer-p {
+            font-size: 18px;
+            font-weight: 400;
+            color: #fff;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #FFF;
+        }
+
+        #mx_cl .result-sec {
+            font-size: 18px;
+            font-weight: 500;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #FFF;
+        }
+
+        #mx_cl .final-output {
+            font-size: 30px;
+            font-weight: 600;
+        }
+
+        #mx_cl .email_button {
+            background-color: #0D2131;
+            width: 100%;
+            color: #fff;
+        }
+
+        #mx_cl .footer-right {
+            text-align: right;
+        }
+
+        #mx_cl .common-p {
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+        #mx_cl .ds-none {
+            display: none;
+        }
+        #mx_cl .err-input {
+            border-color: red;
+        }
+
+        @media (max-width: 768px) {
+            #mx_cl .inner_context {
+                padding: 15px;
+            }
+
+            #mx_cl .footer-sec {
+                padding: 15px;
+                text-align: center;
+            }
+            #mx_cl .extra_margin{
+                margin-bottom: 20px;
+            }
+            #mx_cl .container{
+                padding: 0px;
+            }
+
+        }
+        #mx_cl .option-sec {
+            display: flex;
+            gap: 30px;
+            justify-content: start;
+        }
+        #mx_cl .check-box {
+            display: flex;
+            margin-bottom: 6px;
+            cursor: pointer;
+        }
+        #mx_cl .tck-mark {
+            display: inline-block;
+            margin-top: 1px;
+        }
+        #mx_cl .tick-mark {
+            background-color: #ffffff;
+            padding: 2px;
+            color: #fff;
+            width: 20px;
+            height: 20px;
+            font-size: 14px;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            border: 1px solid #080092;
+            border-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            margin-right: 10px;
+        }
+        #mx_cl .check-box.is-active .tick-mark {
+            background-color: #080092;
+            border: 1px solid #080092;
+        }
+        #mx_cl .option-title{
+            color: #fff;
+        }
+        #mx_cl .btn-primary {
+            color: #fff;
+            background-color: #080092;
+            border-color: #080092;
+            margin: 0;
+        }
+        #mx_cl .btn-primary:hover {
+            color: #fff;
+            background-color: #FFC837;
+            border-color: #FFC837;
+            margin: 0;
+        }
+        #mx_cl .btn {
+            display: inline-block;
+            font-weight: 400;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            cursor: pointer;
+            border: 1px solid transparent;
+            padding: 10px 10px;
+            font-size: 16px;
+            line-height: 1.5;
+            border-radius: 5px;
+            transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+        }
+        #mx_cl .sec-footer-para{
+            color: #fff;
+            text-align: center;
+            font-size: 18px;
+        }
+        #mx_cl .cl-in{
+           display: none;
+        }
+        #mx_cl .err-input{
+           border-color: red;
+        }
+        #mx_cl .gen-form-rq{
+           color: red;
+        }
+        #mx_cl .bus-form-rq{
+           color: red;
+        }
+        #mx_cl .err-msg{
+            display: none;
+            text-align: center;
+            color: red;
+        }
+        #mx_cl .is-towing-operation{
+            display: none;
+        }
+        #mx_cl .losses-over{
+            display: none;
+        }
+
+    </style>
+    <div class="ms-cl" id="mx_cl">
+        <div class="container">
+            <div class="cl-wrapper">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="inner_context">
+                            <div class="head-section">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <label for="in_fname" class="common-p">Select a Quote </label>
+                                        <div class="input-group">
+                                            <select class="form-control in-select" name="in_select" id="in_select">
+                                                <option value="">--select--</option>
+                                                <option value="1">Business Insurance (garage keepers/workers comp) for my company</option>
+                                                <option value="2">Personal Auto, Homeowners, Renters Insurance</option>
+                                                <option value="3">Medical coverage for myself and family</option>
+                                                <option value="4">Medical, Dental or Vision coverage for my company</option>
+                                                <option value="5">Captive Medical Program for my company of 50+ employees </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="napa-business-form-sec cl-in">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <label for="in_insname" class="common-p">Type</label>
+                                        <div class="input-group">
+                                            <select class="form-control in-para-business" name="in_napa_business" id="in_napa_business">
+                                                <option value="">--select--</option>
+                                                <option value="1">Store (Jobber)</option>
+                                                <option value="2">Auto Care Center</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="store-jobber-sec cl-in">
+                                <h3 class="sec-title store-jobber">Store (Jobber)</h3>
+                                <h3 class="sec-title auto-care">Auto Care Center</h3>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <label for="in_bus_name" class="common-p">Business Name<span class="bus-form-rq">*</span></label>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control cl-bus-rq" id="in_bus_name" value="" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 store-jobber">
+                                        <label for="in_job_num" class="common-p">Jobber Number</label>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" id="in_job_num" value="" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 auto-care">
+                                        <label for="in_auto_care_member" class="common-p">Auto Care Member ID</label>
+                                        <div class="input-group">
+                                            <input type="number" class="form-control" id="in_auto_care_member" value="" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <label for="in_con_name" class="common-p">Contact Name<span class="bus-form-rq">*</span></label>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control cl-bus-rq" id="in_con_name" value="" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="in_phone" class="common-p">Contact Phone<span class="bus-form-rq">*</span></label>
+                                        <div class="input-group">
+                                            <input type="tel" class="form-control cl-bus-rq" id="in_phone" value="" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="in_email" class="common-p">Contact Email<span class="bus-form-rq">*</span></label>
+                                        <div class="input-group">
+                                            <input type="email" class="form-control cl-bus-rq" id="in_email" value="" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="in_num_loc_owned" class="common-p">Number of Locations Owned<span class="bus-form-rq">*</span></label>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control cl-bus-rq" id="in_num_loc_owned" value="" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="in_num_years_bus" class="common-p">Number of Years in Business<span class="bus-form-rq">*</span></label>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control cl-bus-rq" id="in_num_years_bus" value="" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="in_num_ft_emp" class="common-p">Number of Full Time Employees<span class="bus-form-rq">*</span></label>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control cl-bus-rq" id="in_num_ft_emp" value="" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="in_num_pt_emp" class="common-p">Number of Part Time Employees<span class="bus-form-rq">*</span></label>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control cl-bus-rq" id="in_num_pt_emp" value="" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <h3 class="sec-middle-title">Location Address</h3>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="in_st_add" class="common-p">Street Address<span class="bus-form-rq">*</span></label>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control cl-bus-rq" id="in_st_add" value="" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="in_city" class="common-p">City<span class="bus-form-rq">*</span></label>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control cl-bus-rq" id="in_city" value="" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="in_state" class="common-p">State<span class="bus-form-rq">*</span></label>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control cl-bus-rq" id="in_state" value="" />
+                                        </div>
+                                    </div>
+                                   <div class="renewal-date-sec" style="display: block;">
+                                        <div class="col-md-12">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <h3 class="sec-middle-title">Renewal Date</h3>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label for="" class="common-p">Type of NAPA Membership</label>
+                                                    <div class="input-group">
+                                                        <div class="option-sec">
+                                                            <div class="check-box in-member" data-value="Auto Care">
+                                                                <div class="tck-mark"><span class="tick-mark">✓</span></div>
+                                                                <span class="option-title" style="cursor: pointer;">Auto Care</span>
+                                                            </div>
+                                                            <div class="check-box in-member" data-value="Heavy Truck">
+                                                                <div class="tck-mark"><span class="tick-mark">✓</span></div>
+                                                                <span class="option-title" style="cursor: pointer;">Heavy Truck</span>
+                                                            </div>
+                                                            <div class="check-box in-member" data-value="Collision Center">
+                                                                <div class="tck-mark"><span class="tick-mark">✓</span></div>
+                                                                <span class="option-title" style="cursor: pointer;">Collision Center</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label for="" class="common-p">Is Shop currently NAPA Gold Certified?</label>
+                                                    <div class="input-group">
+                                                        <div class="option-sec">
+                                                            <div class="check-box in-certified" data-value="Yes">
+                                                                <div class="tck-mark"><span class="tick-mark">✓</span></div>
+                                                                <span class="option-title" style="cursor: pointer;">Yes</span>
+                                                            </div>
+                                                            <div class="check-box in-certified" data-value="No">
+                                                                <div class="tck-mark"><span class="tick-mark">✓</span></div>
+                                                                <span class="option-title" style="cursor: pointer;">No</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label for="in_num_cer_tech" class="common-p">Number of ASE Certified Technicians<span class="bus-form-rq">*</span></label>
+                                                    <div class="input-group">
+                                                        <input type="text" class="form-control cl-bus-rq" id="in_num_cer_tech" value="" />
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label for="" class="common-p">Subscription to OnDemand OEM repair guidelines</label>
+                                                    <div class="input-group">
+                                                        <div class="option-sec">
+                                                            <div class="check-box in-guidelines" data-value="Yes">
+                                                                <div class="tck-mark"><span class="tick-mark">✓</span></div>
+                                                                <span class="option-title" style="cursor: pointer;">Yes</span>
+                                                            </div>
+                                                            <div class="check-box in-guidelines" data-value="No">
+                                                                <div class="tck-mark"><span class="tick-mark">✓</span></div>
+                                                                <span class="option-title" style="cursor: pointer;">No</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class ="towing-opration">
+                                                        <label for="" class="common-p">Any Towing Operations</label>
+                                                        <div class="input-group">
+                                                            <div class="option-sec">
+                                                                <div class="check-box in-operations" data-value="Yes">
+                                                                    <div class="tck-mark"><span class="tick-mark">✓</span></div>
+                                                                    <span class="option-title" style="cursor: pointer;">Yes</span>
+                                                                </div>
+                                                                <div class="check-box in-operations" data-value="No">
+                                                                    <div class="tck-mark"><span class="tick-mark">✓</span></div>
+                                                                    <span class="option-title" style="cursor: pointer;">No</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class ="is-towing-operation">
+                                                        <label for="" class="common-p">Is towing operation</label>
+                                                        <div class="input-group">
+                                                            <div class="option-sec">
+                                                                <div class="check-box in-tow-opreration" data-value="Fore Hire">
+                                                                    <div class="tck-mark"><span class="tick-mark">✓</span></div>
+                                                                    <span class="option-title" style="cursor: pointer;">Fore Hire</span>
+                                                                </div>
+                                                                <div class="check-box in-tow-opreration" data-value="Customer Only">
+                                                                    <div class="tck-mark"><span class="tick-mark">✓</span></div>
+                                                                    <span class="option-title" style="cursor: pointer;">Customer Only</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label for="" class="common-p">Any Loaner Vehicles</label>
+                                                    <div class="input-group">
+                                                        <div class="option-sec">
+                                                            <div class="check-box in-vehicles" data-value="Yes">
+                                                                <div class="tck-mark"><span class="tick-mark">✓</span></div>
+                                                                <span class="option-title" style="cursor: pointer;">Yes</span>
+                                                            </div>
+                                                            <div class="check-box in-vehicles" data-value="No">
+                                                                <div class="tck-mark"><span class="tick-mark">✓</span></div>
+                                                                <span class="option-title" style="cursor: pointer;">No</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label for="" class="common-p">Agreement in place for loaner vehicles</label>
+                                                    <div class="input-group">
+                                                        <div class="option-sec">
+                                                            <div class="check-box in-loan-vehicles" data-value="Yes">
+                                                                <div class="tck-mark"><span class="tick-mark">✓</span></div>
+                                                                <span class="option-title" style="cursor: pointer;">Yes</span>
+                                                            </div>
+                                                            <div class="check-box in-loan-vehicles" data-value="No">
+                                                                <div class="tck-mark"><span class="tick-mark">✓</span></div>
+                                                                <span class="option-title" style="cursor: pointer;">No</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                   </div>
+                                    <div class="col-md-12">
+                                        <h3 class="sec-middle-title">Loss History</h3>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="ins-losses">
+                                            <label for="" class="common-p">Any Insurance losses in the last 3 years?</label>
+                                            <div class="input-group">
+                                                <div class="option-sec">
+                                                    <div class="check-box in-ins-loss" data-value="Yes">
+                                                        <div class="tck-mark"><span class="tick-mark">✓</span></div>
+                                                        <span class="option-title" style="cursor: pointer;">Yes</span>
+                                                    </div>
+                                                    <div class="check-box in-ins-loss" data-value="No">
+                                                        <div class="tck-mark"><span class="tick-mark">✓</span></div>
+                                                        <span class="option-title" style="cursor: pointer;">No</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class ="losses-over">
+                                            <label for="" class="common-p">Any losses over $10,000?</label>
+                                            <div class="input-group">
+                                                <div class="option-sec">
+                                                    <div class="check-box in-losses" data-value="Yes">
+                                                        <div class="tck-mark"><span class="tick-mark">✓</span></div>
+                                                        <span class="option-title" style="cursor: pointer;">Yes</span>
+                                                    </div>
+                                                    <div class="check-box in-losses" data-value="No">
+                                                        <div class="tck-mark"><span class="tick-mark">✓</span></div>
+                                                        <span class="option-title" style="cursor: pointer;">No</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="napa-insurance-form-sec cl-in">
+                                <h3 class="sec-title">NAPA INSURANCE GENERAL Form</h3>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label for="in_com_name" class="common-p">Company Name<span class="gen-form-rq">*</span></label>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control cl-gen-rq" id="in_com_name" value="" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="in_con_name" class="common-p">Contact Name<span class="gen-form-rq">*</span></label>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control cl-gen-rq" id="in_con_name" value="" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="in_ins_state" class="common-p">State<span class="gen-form-rq">*</span></label>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control cl-gen-rq" id="in_ins_state" value="" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="in_ins_email" class="common-p">Email<span class="gen-form-rq">*</span></label>
+                                        <div class="input-group">
+                                            <input type="email" class="form-control cl-gen-rq" id="in_ins_email" value="" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="in_ins_phn" class="common-p">Phone<span class="gen-form-rq">*</span></label>
+                                        <div class="input-group">
+                                            <input type="tel" class="form-control cl-gen-rq" id="in_ins_phn" value="" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="in_ins_ren_date" class="common-p">Renewal Date<span class="gen-form-rq">*</span></label>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control cl-gen-rq" id="in_ins_ren_date" value="" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 store-jobber-sec napa-insurance-form-sec" style="display: none;">
+                                    [contact-form-7 id="bb1017f" title="Insurance Form"]
+                                </div>
+                                <div class="col-md-12 store-jobber-sec" style="display: none;">
+                                    <button type="button" class="btn btn-primary" style="width: 100%;" id="napa_bus_btn">Submit</button>
+                                    <p class="err-msg" id="bus_err_msg">Please input all required fields.</p>
+                                    <p class="sec-footer-para">Additional Information (copy of policy) upload or questions Email: <a href="mailto:info@napainsctr.com" style="color: #ffc837;">info@napainsctr.com</a></p>
+                                </div>
+                                <div class="col-md-12 napa-insurance-form-sec" style="display: none;">
+                                    <button type="button" class="btn btn-primary" style="width: 100%;" id="napa_ins_gen_btn">Submit</button>
+                                    <p class="err-msg" id="gen_err_msg">Please input all required fields.</p>
+                                    <p class="sec-footer-para">Additional Information (copy of policy) upload or questions Email: <a href="mailto:info@napainsctr.com" style="color: #ffc837;">info@napainsctr.com</a></p>
+                                </div>
+                            </div>                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/autonumeric@4.5.4"></script>
+    <script>
+        jQuery(document).ready(function ($){
+            let txt_msg = "";
+
+            function removeComma(num){
+                return Number(num.replace(/,/g,""));
+            }
+
+            $(".in-select").on("input", function(){
+
+                let vl = removeComma($("#in_select").val());
+                
+                if (vl == 1) {
+                    $(".napa-business-form-sec").show();
+                    $(".napa-insurance-form-sec").hide();
+                    $(".store-jobber-sec").hide();
+                    $(".store-jobber").hide();
+                    $(".auto-care").hide();
+                } else if(vl == 0) {
+                    $(".napa-business-form-sec").hide();
+                    $(".napa-insurance-form-sec").hide();
+                    $(".store-jobber-sec").hide();
+                    $(".store-jobber").hide();
+                    $(".auto-care").hide();
+                } else {
+                    $(".napa-business-form-sec").hide();
+                    $(".store-jobber-sec").hide();
+                    $(".store-jobber").hide();
+                    $(".auto-care").hide();
+                    $(".napa-insurance-form-sec").show();
+                }
+                $("#in_napa_business").val("");
+            })
+
+            
+            $(".in-para-business").on("input", function(){
+                let val = removeComma($("#in_napa_business").val());
+
+                if (val == 1) {
+                    $(".renewal-date-sec").hide();
+                    $("#in_num_cer_tech").removeClass("cl-bus-rq");
+                    $(".store-jobber-sec").show();
+                    $(".store-jobber").show();
+                    $(".auto-care").hide();
+                    
+                } else if(val == 0){
+                    $(".renewal-date-sec").hide();
+                    $("#in_num_cer_tech").removeClass("cl-bus-rq");
+                    $(".store-jobber-sec").hide();
+                    $(".store-jobber").hide();
+                    $(".auto-care").hide();
+                } else {
+                    $(".renewal-date-sec").show();
+                    $("#in_num_cer_tech").addClass("cl-bus-rq");
+                    $(".store-jobber-sec").show();
+                    $(".store-jobber").hide();
+                    $(".auto-care").show();
+                   
+                }
+
+            })
+
+            $("#napa_bus_btn").on("click", function(){
+
+                let total_input = $(".cl-bus-rq").length;
+                let x = 0;
+                $(".cl-bus-rq").each(function(i, elm){
+                    let data = $(elm).val().trim();
+
+                    if(data){
+                        $(elm).removeClass("err-input");
+                        x++;
+                    } else{
+                        $(elm).addClass("err-input");
+                    }
+                })
+                if(total_input == x ){
+                    $("#bus_err_msg").hide();
+                    napa_bus_info();
+                } else {
+                    $("#bus_err_msg").show();
+                }
+                
+            });
+
+            $("#napa_ins_gen_btn").on("click", function(){
+
+                let total_input = $(".cl-gen-rq").length;
+                let x = 0;
+                $(".cl-gen-rq").each(function(i, elm){
+                    let data = $(elm).val().trim();
+
+                    if(data){
+                        $(elm).removeClass("err-input");
+                        x++;
+                    } else{
+                        $(elm).addClass("err-input");
+                    }
+                })
+                if(total_input == x ){
+                    $("#gen_err_msg").hide();
+                    napa_ins_gen_info();
+                } else {
+                    $("#gen_err_msg").show();
+                }
+            });
+
+            $(".cl-bus-rq").on("input", function(){
+                $(this).removeClass("err-input");
+                $("#bus_err_msg").hide();
+            });
+
+            $(".cl-gen-rq").on("input", function(){
+                $(this).removeClass("err-input");
+                $("#gen_err_msg").hide();
+            });
+            
+
+            $(".in-member").on("click", function(){
+                $(".in-member").removeClass("is-active");
+                $(this).addClass("is-active");
+            });
+            $(".in-certified").on("click", function(){
+                $(".in-certified").removeClass("is-active");
+                $(this).addClass("is-active");
+            });
+            $(".in-guidelines").on("click", function(){
+                $(".in-guidelines").removeClass("is-active");
+                $(this).addClass("is-active");
+            });
+            $(".in-operations").on("click", function(){
+                $(".in-operations").removeClass("is-active");
+                $(this).addClass("is-active");
+                 
+                var value = $(this).data("value");
+                if (value === "Yes") {
+                    $(".is-towing-operation").show();
+                } else {
+                    $(".is-towing-operation").hide();
+                }
+            });
+            $(".in-tow-opreration").on("click", function(){
+                $(".in-tow-opreration").removeClass("is-active");
+                $(this).addClass("is-active");
+            });
+            $(".in-vehicles").on("click", function(){
+                $(".in-vehicles").removeClass("is-active");
+                $(this).addClass("is-active");
+            });
+            $(".in-loan-vehicles").on("click", function(){
+                $(".in-loan-vehicles").removeClass("is-active");
+                $(this).addClass("is-active");
+            });
+            $(".in-ins-loss").on("click", function(){
+                $(".in-ins-loss").removeClass("is-active");
+                $(this).addClass("is-active");
+
+                  
+                var value = $(this).data("value");
+                if (value === "Yes") {
+                    $(".losses-over").show();
+                } else {
+                    $(".losses-over").hide();
+                }
+            });
+            $(".in-losses").on("click", function(){
+                $(".in-losses").removeClass("is-active");
+                $(this).addClass("is-active");
+            });
+
+
+            function napa_bus_info(){
+                let quote_type = $("#in_select option:selected").text();
+                let napa_bus_type = $("#in_napa_business option:selected").text();
+                let napa_bus_type_id = $("#in_napa_business").val();
+                in_bus_name = $("#in_bus_name").val();
+                in_job_num = $("#in_job_num").val();
+                in_con_name = $("#in_con_name").val();
+                in_auto_care_member = $("#in_auto_care_member").val();
+                in_phone = $("#in_phone").val();
+                in_email = $("#in_email").val();
+                in_num_loc_owned = $("#in_num_loc_owned").val();
+                in_num_years_bus = $("#in_num_years_bus").val();
+                in_num_ft_emp = $("#in_num_ft_emp").val();
+                in_num_pt_emp = $("#in_num_pt_emp").val();
+                in_st_add = $("#in_st_add").val();
+                in_city = $("#in_city").val();
+                in_state = $("#in_state").val();
+                let in_member = $('.in-member.is-active').data("value");
+                let in_certified = $('.in-certified.is-active').data("value");
+                in_num_cer_tech = $("#in_num_cer_tech").val();
+                let in_guidelines = $('.in-guidelines.is-active').data("value");
+                let in_operations = $('.in-operations.is-active').data("value");
+                let in_tow_operations = $('.in-tow-operations.is-active').data("value");
+                let in_vehicles = $('.in-vehicles.is-active').data("value");
+                let in_loan_vehicles = $('.in-loan-vehicles.is-active').data("value");
+                let in_ins_lose = $('.in-ins-lose.is-active').data("value");
+                let in_losses = $('.in-losses.is-active').data("value");
+
+                let business_form = "";
+                if (napa_bus_type_id == 2) {
+                    business_form = `Auto Care Member ID: ${in_auto_care_member}
+`;
+                } else {
+                    business_form = `Jobber Number: ${in_job_num}
+`;
+                }
+
+                let renewal_date = "";
+                if(quote_type == 1 && in_napa_business == 2){
+                    renewal_date = `Type of NAPA Membership:${in_member}
+Is Shop currently NAPA Gold Certified?:${in_certified}
+Number of ASE Certified Technicians:${in_num_cer_tech}
+Subscription to OnDemand OEM repair guidelines:${in_guidelines}
+Any Towing Operations:${in_operations}
+Is towing operation:${in_tow_operations}
+Any Loaner Vehicles:${in_vehicles}
+Agreement in place for loaner vehicles:${in_loan_vehicles}
+`;
+                }
+
+                txt_msg = `${quote_type}
+
+${napa_bus_type}
+Business Name: ${in_bus_name}
+${business_form}Contact Name: ${in_con_name}
+Contact Phone:${in_phone}
+Contact Email:${in_email}
+
+Number of Locations Owned:${in_num_loc_owned}
+Number of Years in Business:${in_num_years_bus}
+Number of Full Time Employees:${in_num_ft_emp}
+Number of Part Time Employees:${in_num_pt_emp}
+
+Street Address:${in_st_add}
+City:${in_city}
+State:${in_state}
+${renewal_date}Any Insurance losses in the last 3 years?:${in_ins_lose}
+Any losses over $10,000?:${in_losses}`;
+
+                $("#your_email").val(in_email);
+                $("#your_msg").val(txt_msg);
+                $("#sub_btn").click();
+            }
+
+            function napa_ins_gen_info(){
+                let quote_type = $("#in_select option:selected").text();
+                in_com_name = $("#in_com_name").val();
+                in_con_name = $("#in_con_name").val();
+                in_ins_state = $("#in_ins_state").val();
+                in_ins_email = $("#in_ins_email").val();
+                in_ins_phn = $("#in_ins_phn").val();
+                in_ins_ren_date = $("#in_ins_ren_date").val();
+
+
+                txt_msg = `${quote_type}
+
+Company Name:${in_com_name}
+Contact Name:${in_con_name}
+State:${in_ins_state}
+Email:${in_ins_email}
+Phone:${in_ins_phn}
+Renewal Date:${in_ins_ren_date}`;
+
+                $("#your_email").val(in_ins_email);
+                $("#your_msg").val(txt_msg);
+                $("#sub_btn").click();
+            }
+        });
+
+    </script>
+</body>
+
+</html>

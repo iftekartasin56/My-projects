@@ -1,0 +1,295 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+div#bmi__calculator, 
+div#bmi__calculator *,
+div#bmi__calculator :after,
+div#bmi__calculator :before {
+    box-sizing: border-box;
+}
+
+div#bmi__calculator {
+    max-width: 700px;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 32px;
+    position: relative;
+    background: #fff;
+    color: #0c0c0c;
+    border-radius: 3px;
+    -webkit-box-shadow: 0 0 10px 0 rgb(0 0 0 / 15%);
+    box-shadow: 0 0 10px 0 rgb(0 0 0 / 15%);
+    border-radius: 10px;
+}
+
+div#bmi__calculator .bmi__title {
+    text-align: center;
+    font-weight: 400;
+    color: #1d1f45;
+    text-transform: capitalize;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    line-height: 1.2
+}
+
+div#bmi__calculator input[type=text] {
+    background: #fff;
+    border: 1px solid #dbdbdb;
+    border-radius: 3px;
+    box-shadow: none;
+    color: #000;
+    font-weight: 600;
+    height: auto;
+    margin-bottom: 0;
+    padding: 10px 15px;
+    width: 100%;
+}
+div#bmi__calculator input[type=text]:focus {
+    outline: none;
+    border-color: #0E9B49;
+}
+
+div#bmi__calculator .bmi__box {
+    margin-bottom: 20px;
+    flex: 1
+}
+
+div#bmi__calculator .bmi__box>div {
+    margin: 10px 5px
+}
+
+div#bmi__calculator .bmi__imperial .bmi__group.bmi__group_double:nth-child(1) {
+    margin-right: 5px
+}
+
+div#bmi__calculator .bmi__group {
+    text-align: left;
+    position: relative
+}
+
+div#bmi__calculator span.bmi__addon {
+    font-size: 15px;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: #747474;
+}
+
+div#bmi__calculator .bmi__name {
+    font-weight: 400;
+    color: #000;
+    font-size: 17px;
+    text-align: left;
+    text-transform: capitalize;
+    margin-bottom: 10px
+}
+
+div#bmi__calculator #bmi__value {
+    font-size: 30px;
+    font-weight: 700;
+    text-align: center;
+    padding: 15px;
+}
+
+div#bmi__calculator .bmi__result_title {
+    text-align: center;
+    font-weight: 400;
+    font-size: 30px;
+    margin-bottom: 16px;
+    color: #0E9B49;
+}
+
+div#bmi__calculator .bmi__inner_row {
+    display: flex
+}
+
+div#bmi__calculator .bmi__group.bmi__group_double {
+    display: inline-block;
+    width: calc(50% - 3px)
+}
+
+div#bmi__calculator .bmi__details_result_text div {
+    margin-bottom: 15px;
+    font-size: 17px;
+    line-height: 19px;
+    color: #0c0c0c;
+    text-align: center
+}
+
+div#bmi__calculator span.bmi__directive {
+    font-weight: 400;
+    text-align: center;
+    font-size: 18px;
+    display: block;
+    margin-bottom: 10px
+}
+
+div#bmi__calculator span#bmi__weight_range {
+    font-weight: 700;
+    font-size: 33px;
+    text-align: center
+}
+
+div#bmi__calculator .bmi__weight_range {
+    text-align: center
+}
+
+div#bmi__calculator .bmi__btn_row {
+    text-align: center
+}
+
+div#bmi__calculator .bmi__btn {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #fff;
+    background: #000;
+    padding: 10px 30px;
+    font-weight: 400;
+    font-size: 17px;
+    border-radius: 2px;
+    display: inline-block;
+    margin: 0 auto;
+    cursor: pointer
+}
+
+div#bmi__calculator .bmi__btn.bmi__btn_back {
+    background: #fff;
+    color: #505050;
+    text-decoration: underline;
+    font-weight: 100;
+    font-size: 14px;
+    margin-top: 10px
+}
+div#bmi__calculator .bmi__graphic {
+    clear: both;
+    margin: 1rem auto 2rem auto;
+    width: 300px
+}
+
+div#bmi__calculator .bmi__graphic_scale {
+    border: 1px solid #fff;
+    border-radius: 1px;
+    box-shadow: 0 2px 4px 0 #9b9b9b;
+    height: 260px;
+    left: 50px;
+    position: relative;
+    width: 50px
+}
+
+div#bmi__calculator .bmi__graphic_scale {
+    background: linear-gradient(to top, #d1d1d1, #d1d1d1 9%, #0E9B49 14%, #0E9B49 24%, #d1d1d1 29%, #d1d1d1)
+}
+
+div#bmi__calculator .bmi__graphic_scale #bmi__marker {
+    background-repeat: no-repeat;
+    background-size: 100%;
+    color: #fff;
+    font-size: .75rem;
+    font-weight: 700;
+    left: -50px;
+    height: 48px;
+    padding: 18px 18px;
+    position: absolute;
+    text-align: left;
+    text-transform: uppercase;
+    width: 70px;
+    z-index: 10;
+}
+
+div#bmi__calculator .bmi__graphic_scale #bmi__marker {
+    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+Cjxzdmcgdmlld0JveD0iMCAwIDcyIDU0IiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPgogICAKICAgIDx0aXRsZT5waW4gZm9yIHNjYWxlPC90aXRsZT4KICAgIDxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPgogICAgPGRlZnM+CiAgICAgICAgPGZpbHRlciB4PSItNTAlIiB5PSItNTAlIiB3aWR0aD0iMjAwJSIgaGVpZ2h0PSIyMDAlIiBmaWx0ZXJVbml0cz0ib2JqZWN0Qm91bmRpbmdCb3giIGlkPSJmaWx0ZXItMSI+CiAgICAgICAgICAgIDxmZU9mZnNldCBkeD0iMCIgZHk9IjIiIGluPSJTb3VyY2VBbHBoYSIgcmVzdWx0PSJzaGFkb3dPZmZzZXRPdXRlcjEiPjwvZmVPZmZzZXQ+CiAgICAgICAgICAgIDxmZUdhdXNzaWFuQmx1ciBzdGREZXZpYXRpb249IjIiIGluPSJzaGFkb3dPZmZzZXRPdXRlcjEiIHJlc3VsdD0ic2hhZG93Qmx1ck91dGVyMSI+PC9mZUdhdXNzaWFuQmx1cj4KICAgICAgICAgICAgPGZlQ29sb3JNYXRyaXggdmFsdWVzPSIwIDAgMCAwIDAuMjE1Njg2Mjc1ICAgMCAwIDAgMCAwLjI3ODQzMTM3MyAgIDAgMCAwIDAgMC4zMDk4MDM5MjIgIDAgMCAwIDAuMTc4NDcwMzM1IDAiIHR5cGU9Im1hdHJpeCIgaW49InNoYWRvd0JsdXJPdXRlcjEiIHJlc3VsdD0ic2hhZG93TWF0cml4T3V0ZXIxIj48L2ZlQ29sb3JNYXRyaXg+CiAgICAgICAgICAgIDxmZU1lcmdlPgogICAgICAgICAgICAgICAgPGZlTWVyZ2VOb2RlIGluPSJzaGFkb3dNYXRyaXhPdXRlcjEiPjwvZmVNZXJnZU5vZGU+CiAgICAgICAgICAgICAgICA8ZmVNZXJnZU5vZGUgaW49IlNvdXJjZUdyYXBoaWMiPjwvZmVNZXJnZU5vZGU+CiAgICAgICAgICAgIDwvZmVNZXJnZT4KICAgICAgICA8L2ZpbHRlcj4KICAgICAgICA8cGF0aCBkPSJNMjAuNDMwNjY3NCwwIEM5LjMyMzQxNzY0LDAgMC4zMjA4NzU4MzUsOC4zODUzMTcyMSAwLjMyMDg3NTgzNSwxOC43Mjk1NTQ1IEMwLjMyMDg3NTgzNSwxOS4xMTY2NDY0IDAuMzM1OTU3MzQxLDE5LjUwMTUwNDEgMC4zNjEwOTMxODQsMTkuODgyNDUxOCBDMS4yMjg1NTkwNSwzNi42MzAxODQ3IDIwLjQzMDY2NzQsNTkuMzQ1MTY2NyAyMC40MzA2Njc0LDU5LjM0NTE2NjcgQzIwLjQzMDY2NzQsNTkuMzQ1MTY2NyAzOS42MzA1NDE0LDM2LjYzMDE4NDcgNDAuNDk4MDA3MiwxOS44ODI0NTE4IEM0MC41MjMxNDMxLDE5LjUwMTUwNDEgNDAuNTM5MzQxNywxOS4xMTY2NDY0IDQwLjUzOTM0MTcsMTguNzI5NTU0NSBDNDAuNTM5MzQxNyw4LjM4NTMxNzIxIDMxLjUzNjc5OTksMCAyMC40MzA2Njc0LDAiIGlkPSJwYXRoLTIiPjwvcGF0aD4KICAgICAgICA8ZmlsdGVyIHg9Ii01MCUiIHk9Ii01MCUiIHdpZHRoPSIyMDAlIiBoZWlnaHQ9IjIwMCUiIGZpbHRlclVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgaWQ9ImZpbHRlci0zIj4KICAgICAgICAgICAgPGZlT2Zmc2V0IGR4PSIwIiBkeT0iMiIgaW49IlNvdXJjZUFscGhhIiByZXN1bHQ9InNoYWRvd09mZnNldE91dGVyMSI+PC9mZU9mZnNldD4KICAgICAgICAgICAgPGZlR2F1c3NpYW5CbHVyIHN0ZERldmlhdGlvbj0iMiIgaW49InNoYWRvd09mZnNldE91dGVyMSIgcmVzdWx0PSJzaGFkb3dCbHVyT3V0ZXIxIj48L2ZlR2F1c3NpYW5CbHVyPgogICAgICAgICAgICA8ZmVDb2xvck1hdHJpeCB2YWx1ZXM9IjAgMCAwIDAgMC44ICAgMCAwIDAgMCAwLjggICAwIDAgMCAwIDAuOCAgMCAwIDAgMSAwIiB0eXBlPSJtYXRyaXgiIGluPSJzaGFkb3dCbHVyT3V0ZXIxIj48L2ZlQ29sb3JNYXRyaXg+CiAgICAgICAgPC9maWx0ZXI+CiAgICA8L2RlZnM+CiAgICA8ZyBpZD0iU3ltYm9scyI+CiAgICAgICAgPGcgaWQ9Im06LWJtaS1oZWFkZXItdy1SZXN1bHRzMSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTI2LjAwMDAwMCwgLTQ3MC4wMDAwMDApIj4KICAgICAgICAgICAgPGcgaWQ9InZlcnRpY2FsLWJtaS1zY2FsZSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMzAuMDAwMDAwLCAzNDIuMDAwMDAwKSI+CiAgICAgICAgICAgICAgICA8ZyBpZD0icGluLWZvci1zY2FsZSIgZmlsdGVyPSJ1cmwoI2ZpbHRlci0xKSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMS4wMDAwMDAsIDEzMi4wMDAwMDApIj4KICAgICAgICAgICAgICAgICAgICA8ZyBpZD0iR3JvdXAtMyIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMzAuMDAwMDAwLCAyMS4xNTMwMDcpIHJvdGF0ZSgtOTAuMDAwMDAwKSB0cmFuc2xhdGUoLTMwLjAwMDAwMCwgLTIxLjE1MzAwNykgdHJhbnNsYXRlKDkuNTAwMDAwLCAtOC44NDY5OTMpIj4KICAgICAgICAgICAgICAgICAgICAgICAgPGcgaWQ9IkZpbGwtMS1Db3B5Ij4KICAgICAgICAgICAgICAgICAgICAgICAgICAgIDx1c2UgZmlsbD0iYmxhY2siIGZpbGwtb3BhY2l0eT0iMSIgZmlsdGVyPSJ1cmwoI2ZpbHRlci0zKSIgeGxpbms6aHJlZj0iI3BhdGgtMiI+PC91c2U+CiAgICAgICAgICAgICAgICAgICAgICAgICAgICA8dXNlIGZpbGw9IiNGRkZGRkYiIGZpbGwtcnVsZT0iZXZlbm9kZCIgeGxpbms6aHJlZj0iI3BhdGgtMiI+PC91c2U+CiAgICAgICAgICAgICAgICAgICAgICAgIDwvZz4KICAgICAgICAgICAgICAgICAgICAgICAgPHBhdGggZD0iTTUuMTgxNzM2NDQsMTkuMjkwMzYyIEM1LjE0NDExNTM3LDE5LjY5ODA0MTkgNS4xMjQ5MTU0NywyMC4xMTA2MjUxIDUuMTI0OTE1NDcsMjAuNTI3Mzg2MSBDNS4xMjQ5MTU0NywyMC44MjIwMDI5IDUuMTM2Mzk0MDQsMjEuMTE0OTE5MSA1LjE1NTUyNSwyMS40MDQ4NTk0IEM1LjgxNTc1NTcsMzQuMTUxNjA1NyAyMC40MzA1MzM5LDUxLjQ0MDA0MTkgMjAuNDMwNTMzOSw1MS40NDAwNDE5IEMyMC40MzA1MzM5LDUxLjQ0MDA0MTkgMzUuMDQzNjExNiwzNC4xNTE2MDU3IDM1LjcwMzg0MjMsMjEuNDA0ODU5NCBDMzUuNzIyOTczMywyMS4xMTQ5MTkxIDM1LjczNTMwMjEsMjAuODIyMDAyOSAzNS43MzUzMDIxLDIwLjUyNzM4NjEgQzM1LjczNTMwMjEsMjAuMTEwNjIxNiAzNS43MTYxMDE5LDE5LjY5ODAzNTEgMzUuNjc4NDgwMywxOS4yOTAzNTIgQzM1LjQ4ODU0MDEsMTEuNjA5Mzc2MSAyOC43MjExMjk2LDUuNDE2MDQwOTMgMjAuNDMwNTgwMSw1LjQxNjA0MDkzIEMxMi4xMzgxNjgzLDUuNDE2MDQwOTMgNS4zNzE2NDU0MywxMS42MDkzODE1IDUuMTgxNzM2NDQsMTkuMjkwMzYyIFoiIGlkPSJDb21iaW5lZC1TaGFwZSIgZmlsbD0iIzAwMDAwMCI+PC9wYXRoPgogICAgICAgICAgICAgICAgICAgIDwvZz4KICAgICAgICAgICAgICAgIDwvZz4KICAgICAgICAgICAgPC9nPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+)
+}
+
+div#bmi__calculator .bmi__graphic_scale .bmi__range_section {
+    border-bottom: 1px dashed #b0bec5;
+    display: -ms-flexbox;
+    display: flex;
+    left: -50px;
+    position: relative;
+    width: 300px
+}
+
+div#bmi__calculator .bmi__graphic_scale .bmi__range_section_obese {
+    height: 58%
+}
+
+div#bmi__calculator .bmi__graphic_scale .bmi__range_section_overweight {
+    height: 14%
+}
+
+div#bmi__calculator .bmi__graphic_scale .bmi__range_section_healthy {
+    height: 18%
+}
+
+div#bmi__calculator .bmi__graphic_scale .bmi__range_section_underweight {
+    height: 10%
+}
+
+div#bmi__calculator .bmi__graphic_scale .bmi__range_sectionrange:last-child {
+    border-bottom: none
+}
+
+div#bmi__calculator .bmi__graphic_scale .bmi__range_decriptionn {
+    color: #000;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    font-size: .938rem;
+    -ms-flex-pack: center;
+    justify-content: center;
+    left: 120px;
+    line-height: 1;
+    position: relative;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+div#bmi__calculator .bmi__graphic_scale .bmi__range_decriptionn b {
+    display: block
+}
+div#bmi__calculator .hd-in-sec {
+    display: flex;
+}
+
+@media all and (max-width:780px) {
+    div#bmi__calculator .bmi__box {
+        display: block
+    }
+
+    div#bmi__calculator .bmi__box>div.bmi__group {
+        margin-bottom: 5px
+    }
+
+    div#bmi__calculator .bmi__inner_row {
+        display: block
+    }
+}    
+div#bmi__calculator .option-sec {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 15px !important;
+}    
+div#bmi__calculator .option-item {
+    flex: 1;
+    border-bottom: 3px solid #ccc;
+    padding: 10px;
+    background: #f6f6f6;
+    cursor: pointer;
+}
+div#bmi__calculator .option-item.is-active {
+    border-color: #0E9B49;
+}
+div#bmi__calculator .option-item:nth-child(1) {
+    margin-right: 5px;
+}
+div#bmi__calculator .calc-btn {
+    display: block;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 26px !important;
+    background-color: #0E9B49;
+}

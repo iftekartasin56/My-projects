@@ -1,0 +1,508 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap CSS -->
+    <title>Web Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+
+<!-----------Please copy and paste following code into any HTML element ---------------->
+
+<!----------- copy starts ---------------->
+<style>
+#hm2_cl *, ::after, ::before {
+    box-sizing: border-box;
+}
+#hm2_cl {
+    line-height: 1.5;
+    font-family: 'Roboto', sans-serif;
+}
+#hm2_cl .container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #080337;
+    text-align: left;
+}
+#hm2_cl label {
+    display: block;
+    margin-bottom: .5rem;
+    font-size: 16px;
+    font-weight: 400;
+}
+#hm2_cl .table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 0rem;
+    background-color: transparent;
+    border-collapse: collapse;
+}
+#hm2_cl .table td {
+    padding: 2px 2px;
+    vertical-align: middle;
+    font-size: 16px;
+    background: transparent;
+    box-shadow: none;
+    color:#000000;
+}
+#hm2_cl .table th {
+    padding: 5px 0;
+    font-weight: 600;
+    color: #000;
+    font-size: 16px;
+    border-bottom: 1px solid #DDD;
+}
+#hm2_cl h3, h4, p {
+    margin: 10px 0;
+}
+#hm2_cl .row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+#hm2_cl .col-md-1, #hm2_cl .col-md-10, #hm2_cl .col-md-11, #hm2_cl .col-md-12, #hm2_cl .col-md-2, #hm2_cl .col-md-3, #hm2_cl .col-md-4, #hm2_cl .col-md-5, #hm2_cl .col-md-6, #hm2_cl .col-md-7, #hm2_cl .col-md-8, #hm2_cl .col-md-9 {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+#hm2_cl .form-group {
+    position: relative;
+    margin-bottom: 22px;
+}
+#hm2_cl .form-control {
+    display: block;
+    width: 100%;
+    height: 40px;
+    padding: .375rem .75rem;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #080337;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+#hm2_cl .form-control:focus {
+    outline: none;
+}
+#hm2_cl .text-center {
+    text-align: center!important;
+}
+/* Custom css */
+#hm2_cl .cl-wrapper {
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.02);
+    background: #FFF;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.08);
+    padding: 30px 22px;
+}
+#hm2_cl .btn {
+    display: inline-block;
+    font-weight: 400;
+    color: #212529;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: transparent;
+    border: 2px solid transparent;
+    padding: 5px 60px;
+    font-size: 18px;
+    line-height: 32px;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+#hm2_cl .btn-primary {
+    color: #fff;
+    background-color: #000;
+    border-color: #000;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-decoration: none;
+}
+#hm2_cl .btn-primary:hover {
+    color: #fff;
+    background-color: #000;
+    border-color: #000;
+}
+/* responsive */
+@media (min-width: 576px){
+    #hm2_cl .container {
+        max-width: 540px;
+    }
+}
+@media (min-width: 768px){
+    #hm2_cl .container {
+        max-width: 100%;
+    }
+    #hm2_cl .col-md-12 {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    #hm2_cl .col-md-9 {
+        -ms-flex: 0 0 75%;
+        flex: 0 0 75%;
+        max-width: 75%;
+    }
+    #hm2_cl .col-md-8 {
+        -ms-flex: 0 0 66.666667%;
+        flex: 0 0 66.666667%;
+        max-width: 66.666667%;
+    }
+    #hm2_cl .col-md-6 {
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    #hm2_cl .col-md-4 {
+        -ms-flex: 0 0 33.333333%;
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+    }
+    #hm2_cl .col-md-3 {
+        -ms-flex: 0 0 25%;
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+}
+@media (min-width: 992px){
+    #hm2_cl .container {
+        max-width: 700px;
+    }
+}
+@media (min-width: 1200px) {
+    #hm2_cl .container {
+        max-width: 700px;
+    }
+}
+#hm2_cl .ds-none {
+    display: none;
+}
+
+#hm2_cl .sp-pd-left {
+    padding-left: 20px;
+}
+#hm2_cl .prepend-text {
+    font-size: 16px;
+    position: absolute;
+    bottom: 6px;
+    left: 4px;
+    padding: 1px 5px;
+    border-radius: 5px;
+    color: #000000;
+}
+#hm2_cl .append-text {
+    font-size: 16px;
+    position: absolute;
+    bottom: 6px;
+    right: 4px;
+    padding: 1px 5px;
+    border-radius: 5px;
+    color: #000000;
+}
+#hm2_cl .left-rs-box {
+    padding: 6px 18px;
+    border-radius: 8px;
+    border: 1px solid #125856;
+    background: #FFF;
+}
+#hm2_cl .circle-box {
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    font-size: 11px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    cursor: pointer;
+}
+#hm2_cl .color-1 {
+    background-color: #125856;
+    color: #125856;
+    border: 1px solid #125856;
+}
+#hm2_cl .color-2 {
+    background-color: #FE7469;
+    color: #FE7469;
+    border: 1px solid #FE7469;
+}
+#hm2_cl .color-3 {
+    background-color: #FFD376;
+    color: #FFD376;
+    border: 1px solid #FFD376;
+}
+#hm2_cl .color-4 {
+    background-color: #2DD4A9;
+    color: #2DD4A9;
+    border: 1px solid #2DD4A9;
+}
+#hm2_cl .color-5 {
+    background-color: #34AAF0;
+    color: #34AAF0;
+    border: 1px solid #34AAF0;
+}
+#hm2_cl .rs-color-1 {
+    color: #125856 !important;
+    font-weight: 600;
+    text-align: right;
+}
+#hm2_cl .rs-color-2 {
+    color: #E67702 !important;
+    font-weight: 600;
+}
+    
+@media (max-width: 768px){
+    #hm2_cl .cl-wrapper{
+        padding: 10px !important;
+    }
+    #hm2_cl .table td {
+        font-size: 12px !important;
+    }
+    #hm2_cl .table th {
+        font-size: 12px !important;
+    }
+}
+</style>
+<div id="hm2_cl">
+    <div class="container">
+        <div class="cl-wrapper">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="in_assess_vl" style="margin-top: 8px;">Enter Base Assessment Freeze</label>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text" class="form-control cl-input sp-pd-left" id="in_assess_vl">
+                            <span class="prepend-text">$</span>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="in_total_vl" style="margin-top: 8px;">Enter Total Appraisal</label>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text" class="form-control cl-input sp-pd-left" id="in_total_vl">
+                            <span class="prepend-text">$</span>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="left-rs-box" style="overflow-x: auto;">
+                            <table class="table" style="min-width: 300px">
+                                <thead>
+                                    <tr>
+                                        <th>&nbsp;</th>
+                                        <th>&nbsp;</th>
+                                        <th style="text-align: right;">Chamblee</th>
+                                        <th style="text-align: right;">Doraville</th>
+                                        <th style="text-align: right;">Dekalb</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="text-center">
+                                            <div class="circle-box color-1"></div>
+                                        </td>
+                                        <td>Homestead Property</td>
+                                        <td class="rs-color-1" id="rs_11">$0.00</td>
+                                        <td class="rs-color-1" id="rs_12">$0.00</td>
+                                        <td class="rs-color-1" id="rs_13">$0.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">
+                                            <div class="circle-box color-2"></div>
+                                        </td>
+                                        <td>Non-Homestead Property</td>
+                                        <td class="rs-color-1" id="rs_21">$0.00</td>
+                                        <td class="rs-color-1" id="rs_22">$0.00</td>
+                                        <td class="rs-color-1" id="rs_23">$0.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">
+                                            <div class="circle-box color-3"></div>
+                                        </td>
+                                        <td>Senior 70+</td>
+                                        <td class="rs-color-1" id="rs_31">$0.00</td>
+                                        <td class="rs-color-1" id="rs_32">$0.00</td>
+                                        <td class="rs-color-1" id="rs_33">$0.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">
+                                            <div class="circle-box color-2"></div>
+                                        </td>
+                                        <td>Unincorporated Bond</td>
+                                        <td class="rs-color-1" id="rs_41">$0.00</td>
+                                        <td class="rs-color-1" id="rs_42">$0.00</td>
+                                        <td class="rs-color-1" id="rs_43">$0.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">
+                                            <div class="circle-box color-4"></div>
+                                        </td>
+                                        <td>Sanitation Fee</td>
+                                        <td class="rs-color-1" id="rs_51">$0.00</td>
+                                        <td class="rs-color-1" id="rs_52">$0.00</td>
+                                        <td class="rs-color-1" id="rs_53">$0.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">
+                                            <div class="circle-box color-5"></div>
+                                        </td>
+                                        <td>Stormwater Fee</td>
+                                        <td class="rs-color-1" id="rs_61">$0.00</td>
+                                        <td class="rs-color-1" id="rs_62">$0.00</td>
+                                        <td class="rs-color-1" id="rs_63">$0.00</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/autonumeric@4.5.4"></script>
+<script>
+jQuery(($) => {
+    const numOptionCurrency = {
+        digitGroupSeparator        : ',',
+        decimalCharacter           : '.',
+        decimalCharacterAlternative: '.',
+        currencySymbol             : '',
+        currencySymbolPlacement    : AutoNumeric.options.currencySymbolPlacement.prefix,
+        modifyValueOnWheel         : false,
+        decimalPlaces              : 0,
+        minimumValue: 0
+    };
+
+    new AutoNumeric('#in_assess_vl', numOptionCurrency);
+    new AutoNumeric('#in_total_vl', numOptionCurrency);
+
+    const nft = Intl.NumberFormat("en-US", {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+    });
+
+
+    $(".cl-input").on("input", function() {
+        calc();
+    });
+
+    function calc() {
+        let assess_vl = removeSign($("#in_assess_vl").val());
+        let total_vl = removeSign($("#in_total_vl").val());
+
+        if(assess_vl && total_vl){
+            let assessment = assess_vl * 0.000479;
+            let total_appraisal = 0.4 * total_vl;
+
+            rs_11 = (total_appraisal - 50000) * 0.006281;
+            rs_12 = (total_appraisal - 10000) * 0.0065;
+            rs_13 = (assess_vl - 10000) * 0.007906;
+
+            rs_21 = total_appraisal * 0.006281;
+            rs_22 = total_appraisal * 0.009;
+            rs_23 = total_appraisal * 0.007906;
+
+            rs_31 = (total_appraisal - 50000) * 0.006281;;
+            rs_32 = 0;
+            rs_33 = (assess_vl - 10000) * 0.007906;
+
+            rs_41 = assessment;
+            rs_42 = assessment;
+            rs_43 = assessment;
+
+            rs_51 = 285;
+            rs_52 = 285;
+            rs_53 = 265;
+
+            rs_61 = 120;
+            rs_62 = 79.16;
+            rs_63 = 108;
+
+            $("#rs_11").text("$"+nft.format(onlyNum(rs_11)));
+            $("#rs_12").text("$"+nft.format(onlyNum(rs_12)));
+            $("#rs_13").text("$"+nft.format(onlyNum(rs_13)));
+            $("#rs_21").text("$"+nft.format(onlyNum(rs_21)));
+            $("#rs_22").text("$"+nft.format(onlyNum(rs_22)));
+            $("#rs_23").text("$"+nft.format(onlyNum(rs_23)));
+            $("#rs_31").text("$"+nft.format(onlyNum(rs_31)));
+            $("#rs_32").text("$"+nft.format(onlyNum(rs_32)));
+            $("#rs_33").text("$"+nft.format(onlyNum(rs_33)));
+            $("#rs_41").text("$"+nft.format(onlyNum(rs_41)));
+            $("#rs_42").text("$"+nft.format(onlyNum(rs_42)));
+            $("#rs_43").text("$"+nft.format(onlyNum(rs_43)));
+            $("#rs_51").text("$"+nft.format(onlyNum(rs_51)));
+            $("#rs_52").text("$"+nft.format(onlyNum(rs_52)));
+            $("#rs_53").text("$"+nft.format(onlyNum(rs_53)));
+            $("#rs_61").text("$"+nft.format(onlyNum(rs_61)));
+            $("#rs_62").text("$"+nft.format(onlyNum(rs_62)));
+            $("#rs_63").text("$"+nft.format(onlyNum(rs_63)));
+        } else {
+            $("#rs_11").text("$0.00");
+            $("#rs_12").text("$0.00");
+            $("#rs_13").text("$0.00");
+            $("#rs_21").text("$0.00");
+            $("#rs_22").text("$0.00");
+            $("#rs_23").text("$0.00");
+            $("#rs_31").text("$0.00");
+            $("#rs_32").text("$0.00");
+            $("#rs_33").text("$0.00");
+            $("#rs_41").text("$0.00");
+            $("#rs_42").text("$0.00");
+            $("#rs_43").text("$0.00");
+            $("#rs_51").text("$0.00");
+            $("#rs_52").text("$0.00");
+            $("#rs_53").text("$0.00");
+            $("#rs_61").text("$0.00");
+            $("#rs_62").text("$0.00");
+            $("#rs_63").text("$0.00");
+        }
+    }
+
+    function onlyNum(num){
+        return isFinite(num) ? num : 0;
+    }
+
+    function removeSign(vl){
+        return Number(vl.replace(/\$|\%|,/g, ''));
+    }
+});
+</script>
+<!----------- copy ends ---------------->
+</body>
+</html>

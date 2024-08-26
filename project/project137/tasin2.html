@@ -1,0 +1,1496 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <script
+        src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+        crossorigin="anonymous"
+    ></script>
+
+<title>Blood Pressure Calculator</title>
+</head>
+
+<body>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+#hm_cl1 *,
+::after,
+::before {
+    box-sizing: border-box;
+}
+
+#hm_cl1 {
+    line-height: 1.5;
+    font-family: "Nunito Sans", sans-serif;
+}
+
+#hm_cl1 .footer-section,
+#hm_cl1 .border-th {
+    color: #373A3B;
+}
+
+#hm_cl1 .container {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #373A3B;
+    text-align: left;
+}
+#hm_cl1 .row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+#hm_cl1 label {
+    display: block;
+    text-align: left;
+    font-size: 16px;
+    font-weight: 400;
+    color: #000;
+}
+#hm_cl1 .form-group {
+    margin-bottom: 1.3rem;
+    position: relative;
+}
+#hm_cl1 .form-control {
+    display: block;
+    width: 100%;
+    height: 45px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #000;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ccc; 
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+#hm_cl1 .form-control:focus {
+    outline: none;
+}
+#hm_cl1 .col-md-1, #hm_cl1 .col-md-10, #hm_cl1 .col-md-11, #hm_cl1 .col-md-12, #hm_cl1 .col-md-2, #hm_cl1 .col-md-3, #hm_cl1 .col-md-4, #hm_cl1 .col-md-5, #hm_cl1 .col-md-6, #hm_cl1 .col-md-7, #hm_cl1 .col-md-8, #hm_cl1 .col-md-9 {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+#hm_cl1 table {
+    border-collapse: collapse;
+}
+
+#hm_cl1 .text-center {
+    text-align: center;
+}
+#hm_cl1 .prepend-text {
+    font-size: 16px;
+    position: absolute;
+    left: 2px;
+    bottom: 3px;
+    padding: 1px 5px;
+    border-radius: 5px;
+    color: #000;
+}
+#hm_cl1 .append-text {
+    font-size: 14px;
+    position: absolute;
+    bottom: 11px;
+    right: 0px;
+    padding: 1px 5px;
+    border-radius: 5px;
+    color: #000;
+}
+
+
+#hm_cl1 .text-rotate {
+    writing-mode: vertical-rl;
+}
+
+@media (min-width: 576px) {
+    #hm_cl1 .container {
+        max-width: 100%;
+    }
+}
+
+@media (min-width: 768px) {
+    #hm_cl1 .container {
+        max-width: 100%;
+    }
+    #hm_cl1 .col-md-12 {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    #hm_cl1 .col-md-9 {
+        -ms-flex: 0 0 75%;
+        flex: 0 0 75%;
+        max-width: 75%;
+    }
+    #hm_cl1 .col-md-8 {
+        -ms-flex: 0 0 66.666667%;
+        flex: 0 0 66.666667%;
+        max-width: 66.666667%;
+    }
+    #hm_cl1 .col-md-7 {
+        -ms-flex: 0 0 58.33333%;
+        flex: 0 0 58.33333%;
+        max-width: 58.33333%;
+    }
+    #hm_cl1 .col-md-6 {
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    #hm_cl1 .col-md-5 {
+        -ms-flex: 0 0 41.666667%;
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+    }
+    #hm_cl1 .col-md-4 {
+        -ms-flex: 0 0 33.333333%;
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+    }
+    #hm_cl1 .col-md-3 {
+        -ms-flex: 0 0 25%;
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+}
+
+@media (min-width: 992px) {
+    #hm_cl1 .container {
+        max-width: 100%;
+    }
+}
+
+@media (min-width: 1200px) {
+    #hm_cl1 .container {
+        max-width: 100%;
+    }
+}
+
+#hm_cl1 .text-right {
+    text-align: right;
+}
+
+#hm_cl1 .main-sec {
+    width: 100%;
+    padding-right: 35px;
+    padding-left: 35px;
+    border: 1px solid #D9D9D9;
+    border-radius: 8px;
+    background: #FFF;
+    border: 1px solid #eee;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+#hm_cl1 table th,
+#hm_cl1 table td {
+    text-align: center;
+    padding: 6px 3px;
+    font-size: 16px;
+    border: 1px solid #fff;
+}
+#hm_cl1 .sp-fnt-size {
+    font-size: 16px;
+    font-weight: 700 !important;
+    text-align: right;
+}
+#hm_cl1 .sp-txt-align {
+    text-align: center;
+}
+#hm_cl1 table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+#hm_cl1 .btn {
+    display: inline-block;
+    font-weight: 500;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    border: 1px solid transparent;
+    padding: 4px 0;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 5px;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+#hm_cl1 .btn-primary {
+    width: 100%;
+    background-color: #cf2e2e;
+    color: #ffffff;
+    margin-bottom: 30px;
+    font-size: 16px;
+    padding: 8px 0;
+
+}
+
+#hm_cl1 .color1 {
+    background-color: #F6F6F6;
+}
+
+#hm_cl1 .color2 {
+    background-color: #D0CFCB;
+}
+
+#hm_cl1 .color3 {
+    background-color: #D3C8BF;
+}
+
+#hm_cl1 .footer-section {
+    background-color: #D3C8BF;
+    padding: 10px;
+    text-align: center;
+    padding-bottom: 20px !important;
+}
+
+#hm_cl1 .footer-heading {
+    padding-top: 5px;
+    margin: 0;
+    margin-bottom: 15px;
+    font-weight: 400;
+}
+
+#hm_cl1 .footer-p {
+    font-size: 40px;
+    font-weight: 600;
+    margin: 0px;
+}
+
+#hm_cl1 .input-class:focus {
+    outline: none;
+}
+
+#hm_cl1 .input-class {
+    text-align: center;
+    font-size: 16px;
+    background: transparent;
+    border: none;
+    width: 100%;
+}
+
+#hm_cl1 .border-tb {
+    border-top: 1px solid #373A3B;
+    border-bottom: 1px solid #373A3B;
+}
+#hm_cl1 .top-header {
+    width: 100%;
+    border-bottom: 1px solid #cf2e2e;
+    color: #cf2e2e;
+    font-size: 24px;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+}
+#hm_cl1 .main-sec-title {
+    color: #838383;
+    font-size: 16px;
+    font-weight: 400;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+#hm_cl1 .pressure-in {
+    display: flex;
+    gap: 10px;
+}
+#hm_cl1 .slash-sign {
+    font-size: 26px;
+}
+#hm_cl1 .rs-sec-title {
+    font-size: 26px;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #cf2e2e;
+}
+#hm_cl1 .rs-title {
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+}
+#hm_cl1 .rs-vl {
+    color: #cf2e2e;
+}
+#hm_cl1 .rs-para-sec {
+    font-size: 16px;
+    line-height: 35px;
+    text-align: center;
+    margin-top: 15px;
+    border: 1px solid #cf2e2e;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+#hm_cl1 .rs-para {
+    padding-bottom: 10px;
+    font-size: 16px;
+    line-height: 28px;
+}
+#hm_cl1 .tips-sec {
+    border: 1px solid #eee;
+    padding: 20px;
+    margin-top: 15px;
+}
+#hm_cl1 .tips-aec-title {
+    font-size: 16px;
+    font-weight: 700;
+    margin-top: 20px;
+}
+#hm_cl1 .tips-sec-para {
+    font-size: 16px;
+    line-height: 35px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+#hm_cl1 .tips-sec-para ul li {
+    line-height: 28px;
+}
+#hm_cl1 .chart-sec {
+    padding: 20px;
+    margin-top: 15px;
+    background-color: #E6EEEF;
+    overflow-x: auto;
+}
+#hm_cl1 .chart-sec-title {
+    font-size: 16px;
+    font-weight: 700;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+#hm_cl1 .color-1 {
+    background-color: #faebd7;
+}
+#hm_cl1 .color-2 {
+    background-color: #EF3838;
+}
+#hm_cl1 .color-3 {
+    background-color: #6FAE8E;
+}
+#hm_cl1 .color-4 {
+    background-color: #F5A9A9;
+}
+#hm_cl1 .color-5 {
+    background-color: #F86464;
+}
+#hm_cl1 .tb-bottom-para {
+    color: #cf2e2e;
+    margin-top: 10px;
+}
+#hm_cl1 .sp-pd-left {
+    padding-left: 10px;
+}
+#hm_cl1 .ds-none {
+    display: none;
+}
+@media (max-width: 768px) {
+
+    #hm_cl1 label{
+        font-size: 16px;
+        margin-bottom: 8px;
+    }
+
+    #hm_cl1 .table {
+        min-width: 800px;
+    }
+    #hm_cl1 .logo-sec{
+        display: block;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+    #hm_cl1 .main-sec-title{
+        text-align: center;
+    }
+    #hm_cl1 .bottom-para{
+        text-align: center;
+    }
+    #hm_cl1 .mb-table {
+        display: table;
+    }
+
+    #hm_cl1 th,
+    #hm_cl1 td {
+        padding: 5px 3px;
+        font-size: 14px;
+    }
+
+    #hm_cl1 .input-class {
+        font-size: 14px;
+    }
+
+    #hm_cl1 .footer-section,
+    #hm_cl1 .border-th {
+        font-family: 'EB Garamond', serif;
+        color: #fff;
+        padding-top: 20px !important;
+    }
+    #hm_cl1 .mb-db-border {
+        border-bottom: 5px solid #fff;
+        text-align: left;
+    }
+    #hm_cl1 .mb-border-bt {
+        border-bottom: 5px solid #fff;
+        text-align: left;
+
+    }
+    #hm_cl1 .sp-txt-right {
+        text-align: right;
+
+    }
+    #hm_cl1 .container {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    #hm_cl1 .table-padding {
+        margin-right: 0px;
+        margin-left: 0px;
+    }
+    #hm_cl1 table th, #hm_cl1 table td {
+        padding: 5px 6px;
+    }
+    #hm_cl1 .top-header {
+        font-size: 22px;
+    }
+    #hm_cl1 .main-sec {
+        width: 100%;
+        padding-right: 25px;
+        padding-left: 24px;
+    }
+    #hm_cl1 .rs-title {
+        font-size: 16px;
+    }
+    #hm_cl1 .tips-sec-para ul {
+        padding: 0;
+        padding-left: 18px;
+    }
+}
+</style>
+<div class="ms-cl" id="hm_cl1">
+    <div class="container">
+        <div class="main-sec">
+            <div class="top-header">
+                Calculați-vă cifrele tensiunii arteriale
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="">Vârstă</label>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input type="text" class="form-control sp-pd-left cl-in" placeholder="Introduceți vârsta (15 - 80 ani)?" id="in_1" autocomplete="off" />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label for="">
+                        Presiunea sistolică (numărul de sus) &#x2f; <br />
+                        Presiunea diastolică (numărul de jos)
+                    </label>
+                </div>
+                <div class="col-md-6">
+                    <div class="pressure-in">
+                        <div class="form-group">
+                            <input type="text" class="form-control sp-pd-left cl-in" id="in_2" autocomplete="off" />
+                            <span class="append-text">(mm Hg)</span>
+                        </div>
+                        <span class="slash-sign">&#x2f;</span>
+                        <div class="form-group">
+                            <input type="text" class="form-control sp-pd-left cl-in" id="in_3" autocomplete="off" />
+                            <span class="append-text">(mm Hg)</span>
+                        </div>
+                    </div>
+                    <div class="form-group"></div>
+                </div>
+                <div class="col-md-6"></div>
+                <div class="col-md-6">
+                    <button class="btn btn-primary" id="calc_btn">calculati</button>
+                </div>
+            </div>
+        </div>
+        <div class="rs-sec ds-none" id="rs_sec">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="rs-sec-title">Rezultat</div>
+                    <div class="rs-title">You have indicated that the Blood Pressure Reading is <span class="rs-vl" id="reading_vl">0/0 mmHg</span>.</div>
+                    <div class="rs-para-sec">
+                        <div class="rs-para" id="rs_contents"></div>
+                    </div>
+                    <div class="chart-sec ds-none" id="data_type_15_19">
+                        <div class="chart-sec-title">Diagrama tensiunii arteriale pentru grupa de vârstă 15-19 ani</div>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th class="color-1">sistolică</th>
+                                    <th class="color-2">Scăzut</th>
+                                    <th class="color-3">Normal</th>
+                                    <th class="color-4">HT ușoară</th>
+                                    <th class="color-5">HT moderată</th>
+                                    <th class="color-2">HT severă</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>valorile</td>
+                                    <td>de mai jos 90</td>
+                                    <td>90-120</td>
+                                    <td>121-159</td>
+                                    <td>160-180</td>
+                                    <td>de mai sus 180</td>
+                                </tr>
+                            </tbody>
+                            <thead>
+                                <tr>
+                                    <th class="color-1">Diastolic</th>
+                                    <th class="color-2">Scăzut</th>
+                                    <th class="color-3">Normal</th>
+                                    <th class="color-4">HT ușoară</th>
+                                    <th class="color-5">HT moderată</th>
+                                    <th class="color-2">HT severă</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>valorile</td>
+                                    <td>de mai jos 60</td>
+                                    <td>60-81</td>
+                                    <td>82-99</td>
+                                    <td>100-120</td>
+                                    <td>de mai sus 120</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="tb-bottom-para">
+                            (* HT = Hypertension)
+                        </div>
+                    </div>
+                    <div class="chart-sec ds-none" id="data_type_20_24">
+                        <div class="chart-sec-title">Diagrama tensiunii arteriale pentru grupa de vârstă 20-24 ani</div>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th class="color-1">sistolică</th>
+                                    <th class="color-2">Scăzut</th>
+                                    <th class="color-3">Normal</th>
+                                    <th class="color-4">HT ușoară</th>
+                                    <th class="color-5">HT moderată</th>
+                                    <th class="color-2">HT severă</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>valorile</td>
+                                    <td>de mai jos 90</td>
+                                    <td>90-132</td>
+                                    <td>133-159</td>
+                                    <td>160-180</td>
+                                    <td>de mai sus 180</td>
+                                </tr>
+                            </tbody>
+                            <thead>
+                                <tr>
+                                    <th class="color-1">Diastolic</th>
+                                    <th class="color-2">Scăzut</th>
+                                    <th class="color-3">Normal</th>
+                                    <th class="color-4">HT ușoară</th>
+                                    <th class="color-5">HT moderată</th>
+                                    <th class="color-2">HT severă</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>valorile</td>
+                                    <td>de mai jos 60</td>
+                                    <td>60-83</td>
+                                    <td>84-99</td>
+                                    <td>100-120</td>
+                                    <td>de mai sus 120</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="tb-bottom-para">
+                            (* HT = Hypertension)
+                        </div>
+                    </div>
+                    <div class="chart-sec ds-none" id="data_type_25_29">
+                        <div class="chart-sec-title">Diagrama tensiunii arteriale pentru grupa de vârstă 25-29 ani</div>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th class="color-1">sistolică</th>
+                                    <th class="color-2">Scăzut</th>
+                                    <th class="color-3">Normal</th>
+                                    <th class="color-4">HT ușoară</th>
+                                    <th class="color-5">HT moderată</th>
+                                    <th class="color-2">HT severă</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>valorile</td>
+                                    <td>de mai jos 90</td>
+                                    <td>90-133</td>
+                                    <td>134-159</td>
+                                    <td>160-180</td>
+                                    <td>de mai sus 180</td>
+                                </tr>
+                            </tbody>
+                            <thead>
+                                <tr>
+                                    <th class="color-1">Diastolic</th>
+                                    <th class="color-2">Scăzut</th>
+                                    <th class="color-3">Normal</th>
+                                    <th class="color-4">HT ușoară</th>
+                                    <th class="color-5">HT moderată</th>
+                                    <th class="color-2">HT severă</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>valorile</td>
+                                    <td>de mai jos 60</td>
+                                    <td>60-84</td>
+                                    <td>85-99</td>
+                                    <td>100-120</td>
+                                    <td>de mai sus 120</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="tb-bottom-para">
+                            (* HT = Hypertension)
+                        </div>
+                    </div>
+                    <div class="chart-sec ds-none" id="data_type_30_34">
+                        <div class="chart-sec-title">Diagrama tensiunii arteriale pentru grupa de vârstă 30-34 ani</div>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th class="color-1">sistolică</th>
+                                    <th class="color-2">Scăzut</th>
+                                    <th class="color-3">Normal</th>
+                                    <th class="color-4">HT ușoară</th>
+                                    <th class="color-5">HT moderată</th>
+                                    <th class="color-2">HT severă</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>valorile</td>
+                                    <td>de mai jos 90</td>
+                                    <td>90-134</td>
+                                    <td>135-159</td>
+                                    <td>160-180</td>
+                                    <td>de mai sus 180</td>
+                                </tr>
+                            </tbody>
+                            <thead>
+                                <tr>
+                                    <th class="color-1">Diastolic</th>
+                                    <th class="color-2">Scăzut</th>
+                                    <th class="color-3">Normal</th>
+                                    <th class="color-4">HT ușoară</th>
+                                    <th class="color-5">HT moderată</th>
+                                    <th class="color-2">HT severă</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>valorile</td>
+                                    <td>de mai jos 60</td>
+                                    <td>60-85</td>
+                                    <td>86-99</td>
+                                    <td>100-120</td>
+                                    <td>de mai sus 120</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="tb-bottom-para">
+                            (* HT = Hypertension)
+                        </div>
+                    </div>
+                    <div class="chart-sec ds-none" id="data_type_35_39">
+                        <div class="chart-sec-title">Diagrama tensiunii arteriale pentru grupa de vârstă 35-39 ani</div>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th class="color-1">sistolică</th>
+                                    <th class="color-2">Scăzut</th>
+                                    <th class="color-3">Normal</th>
+                                    <th class="color-4">HT ușoară</th>
+                                    <th class="color-5">HT moderată</th>
+                                    <th class="color-2">HT severă</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>valorile</td>
+                                    <td>de mai jos 90</td>
+                                    <td>90-134</td>
+                                    <td>135-159</td>
+                                    <td>160-180</td>
+                                    <td>de mai sus 180</td>
+                                </tr>
+                            </tbody>
+                            <thead>
+                                <tr>
+                                    <th class="color-1">Diastolic</th>
+                                    <th class="color-2">Scăzut</th>
+                                    <th class="color-3">Normal</th>
+                                    <th class="color-4">HT ușoară</th>
+                                    <th class="color-5">HT moderată</th>
+                                    <th class="color-2">HT severă</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>valorile</td>
+                                    <td>de mai jos 60</td>
+                                    <td>60-85</td>
+                                    <td>86-99</td>
+                                    <td>100-120</td>
+                                    <td>de mai sus 120</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="tb-bottom-para">
+                            (* HT = Hypertension)
+                        </div>
+                    </div>
+                    <div class="chart-sec ds-none" id="data_type_35_39">
+                        <div class="chart-sec-title">Diagrama tensiunii arteriale pentru grupa de vârstă 35-39 ani</div>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th class="color-1">sistolică</th>
+                                    <th class="color-2">Scăzut</th>
+                                    <th class="color-3">Normal</th>
+                                    <th class="color-4">HT ușoară</th>
+                                    <th class="color-5">HT moderată</th>
+                                    <th class="color-2">HT severă</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>valorile</td>
+                                    <td>de mai jos 90</td>
+                                    <td>90-134</td>
+                                    <td>135-159</td>
+                                    <td>160-180</td>
+                                    <td>de mai sus 180</td>
+                                </tr>
+                            </tbody>
+                            <thead>
+                                <tr>
+                                    <th class="color-1">Diastolic</th>
+                                    <th class="color-2">Scăzut</th>
+                                    <th class="color-3">Normal</th>
+                                    <th class="color-4">HT ușoară</th>
+                                    <th class="color-5">HT moderată</th>
+                                    <th class="color-2">HT severă</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>valorile</td>
+                                    <td>de mai jos 60</td>
+                                    <td>60-86</td>
+                                    <td>87-99</td>
+                                    <td>100-120</td>
+                                    <td>de mai sus 120</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="tb-bottom-para">
+                            (* HT = Hypertension)
+                        </div>
+                    </div>
+                    <div class="chart-sec ds-none" id="data_type_40_44">
+                        <div class="chart-sec-title">Diagrama tensiunii arteriale pentru grupa de vârstă 40-44 ani</div>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th class="color-1">sistolică</th>
+                                    <th class="color-2">Scăzut</th>
+                                    <th class="color-3">Normal</th>
+                                    <th class="color-4">HT ușoară</th>
+                                    <th class="color-5">HT moderată</th>
+                                    <th class="color-2">HT severă</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>valorile</td>
+                                    <td>de mai jos 90</td>
+                                    <td>90-137</td>
+                                    <td>137-159</td>
+                                    <td>160-180</td>
+                                    <td>de mai sus 180</td>
+                                </tr>
+                            </tbody>
+                            <thead>
+                                <tr>
+                                    <th class="color-1">Diastolic</th>
+                                    <th class="color-2">Scăzut</th>
+                                    <th class="color-3">Normal</th>
+                                    <th class="color-4">HT ușoară</th>
+                                    <th class="color-5">HT moderată</th>
+                                    <th class="color-2">HT severă</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>valorile</td>
+                                    <td>de mai jos 60</td>
+                                    <td>60-87</td>
+                                    <td>87-99</td>
+                                    <td>100-120</td>
+                                    <td>de mai sus 120</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="tb-bottom-para">
+                            (* HT = Hypertension)
+                        </div>
+                    </div>
+                    <div class="chart-sec ds-none" id="data_type_45_49">
+                        <div class="chart-sec-title">Diagrama tensiunii arteriale pentru grupa de vârstă 45-49 ani</div>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th class="color-1">sistolică</th>
+                                    <th class="color-2">Scăzut</th>
+                                    <th class="color-3">Normal</th>
+                                    <th class="color-4">HT ușoară</th>
+                                    <th class="color-5">HT moderată</th>
+                                    <th class="color-2">HT severă</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>valorile</td>
+                                    <td>de mai jos 90</td>
+                                    <td>90-139</td>
+                                    <td>139-159</td>
+                                    <td>160-180</td>
+                                    <td>de mai sus 180</td>
+                                </tr>
+                            </tbody>
+                            <thead>
+                                <tr>
+                                    <th class="color-1">Diastolic</th>
+                                    <th class="color-2">Scăzut</th>
+                                    <th class="color-3">Normal</th>
+                                    <th class="color-4">HT ușoară</th>
+                                    <th class="color-5">HT moderată</th>
+                                    <th class="color-2">HT severă</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>valorile</td>
+                                    <td>de mai jos 60</td>
+                                    <td>60-88</td>
+                                    <td>88-99</td>
+                                    <td>100-120</td>
+                                    <td>de mai sus 120</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="tb-bottom-para">
+                            (* HT = Hypertension)
+                        </div>
+                    </div>
+                    <div class="chart-sec ds-none" id="data_type_50_54">
+                        <div class="chart-sec-title">Diagrama tensiunii arteriale pentru grupa de vârstă 50-54 ani</div>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th class="color-1">sistolică</th>
+                                    <th class="color-2">Scăzut</th>
+                                    <th class="color-3">Normal</th>
+                                    <th class="color-4">HT ușoară</th>
+                                    <th class="color-5">HT moderată</th>
+                                    <th class="color-2">HT severă</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>valorile</td>
+                                    <td>de mai jos 90</td>
+                                    <td>90-142</td>
+                                    <td>142-159</td>
+                                    <td>160-180</td>
+                                    <td>de mai sus 180</td>
+                                </tr>
+                            </tbody>
+                            <thead>
+                                <tr>
+                                    <th class="color-1">Diastolic</th>
+                                    <th class="color-2">Scăzut</th>
+                                    <th class="color-3">Normal</th>
+                                    <th class="color-4">HT ușoară</th>
+                                    <th class="color-5">HT moderată</th>
+                                    <th class="color-2">HT severă</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>valorile</td>
+                                    <td>de mai jos 60</td>
+                                    <td>60-89</td>
+                                    <td>90-99</td>
+                                    <td>100-120</td>
+                                    <td>de mai sus 120</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="tb-bottom-para">
+                            (* HT = Hypertension)
+                        </div>
+                    </div>
+                    <div class="chart-sec ds-none" id="data_type_55_59">
+                        <div class="chart-sec-title">Diagrama tensiunii arteriale pentru grupa de vârstă 55-59 ani</div>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th class="color-1">sistolică</th>
+                                    <th class="color-2">Scăzut</th>
+                                    <th class="color-3">Normal</th>
+                                    <th class="color-4">HT ușoară</th>
+                                    <th class="color-5">HT moderată</th>
+                                    <th class="color-2">HT severă</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>valorile</td>
+                                    <td>de mai jos 90</td>
+                                    <td>90-144</td>
+                                    <td>145-159</td>
+                                    <td>160-180</td>
+                                    <td>de mai sus 180</td>
+                                </tr>
+                            </tbody>
+                            <thead>
+                                <tr>
+                                    <th class="color-1">Diastolic</th>
+                                    <th class="color-2">Scăzut</th>
+                                    <th class="color-3">Normal</th>
+                                    <th class="color-4">HT ușoară</th>
+                                    <th class="color-5">HT moderată</th>
+                                    <th class="color-2">HT severă</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>valorile</td>
+                                    <td>de mai jos 60</td>
+                                    <td>60-90</td>
+                                    <td>91-99</td>
+                                    <td>100-120</td>
+                                    <td>de mai sus 120</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="tb-bottom-para">
+                            (* HT = Hypertension)
+                        </div>
+                    </div>
+                    <div class="chart-sec ds-none" id="data_type_60_64">
+                        <div class="chart-sec-title">Diagrama tensiunii arteriale pentru grupa de vârstă 60-64 ani</div>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th class="color-1">sistolică</th>
+                                    <th class="color-2">Scăzut</th>
+                                    <th class="color-3">Normal</th>
+                                    <th class="color-4">HT ușoară</th>
+                                    <th class="color-5">HT moderată</th>
+                                    <th class="color-2">HT severă</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>valorile</td>
+                                    <td>de mai jos 90</td>
+                                    <td>90-147</td>
+                                    <td>148-159</td>
+                                    <td>160-189</td>
+                                    <td>de mai sus 180</td>
+                                </tr>
+                            </tbody>
+                            <thead>
+                                <tr>
+                                    <th class="color-1">Diastolic</th>
+                                    <th class="color-2">Scăzut</th>
+                                    <th class="color-3">Normal</th>
+                                    <th class="color-4">HT ușoară</th>
+                                    <th class="color-5">HT moderată</th>
+                                    <th class="color-2">HT severă</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>valorile</td>
+                                    <td>de mai jos 60</td>
+                                    <td>60-90</td>
+                                    <td>91-99</td>
+                                    <td>100-120</td>
+                                    <td>de mai sus 120</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="tb-bottom-para">
+                            (* HT = Hypertension)
+                        </div>
+                    </div>
+                    <div class="tips-sec">
+                        <div class="tips-aec-title">Here are some tips to reduce your blood pressure.</div>
+                        <div class="tips-sec-para">
+                            <ul>
+                                <li>Quit smoking. Besides damaging your lungs smoking constricts blood vessels and increases your blood pressure making it hard for your heart to beat.</li>
+                                <li>Avoid alcohol consumption or have it only in moderation. Alcohol increases your blood pressure to unhealthy levels.</li>
+                                <li>Follow a healthy diet. Avoid too much salt in food.</li>
+                                <li>Lose weight. Obese people are more likely to suffer from high blood pressure.</li>
+                                <li>Exercise regularly. It helps prevent High blood pressure and Diabetes. Besides it keeps you young both in your mind and body and is a great de-stressor.</li>
+                                <li>Drink enough water daily.</li>
+                                <li>Avoid stress.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/autonumeric@4.5.4"></script>
+<script>
+    jQuery(document).ready(function($){
+        const numOptionNumber = {
+            digitGroupSeparator        : '',
+            decimalCharacter           : '.',
+            decimalCharacterAlternative: '.',
+            currencySymbol             : '',
+            currencySymbolPlacement    : AutoNumeric.options.currencySymbolPlacement.prefix,
+            modifyValueOnWheel         : false,
+            decimalPlaces              : 0,
+            minimumValue: 0
+        };
+        
+        const anElement1 = AutoNumeric.multiple('.cl-in', numOptionNumber);
+
+        //110/85 mmHg
+        //Low Blood Pressure: 120/55 mmHg.
+        //110/70 mmHg
+        //slightly lower: 104/75 mmHg
+        //quite low: 104/57 mmHg.
+        //150/55 mmHg.
+        //high_normal: 150/70 mmHg / 180/70 mmHg.
+        //higher blood pressure: 122/85 mmHg / 150/85 mmHg
+        //Quite high: 130/110 mmHg.
+        //too high:140/120 mmHg
+
+        let status = {
+            "normal_high" : "Dacă măsurarea dvs. este corectă, interpretarea noastră este că aveți o <b>tensiune arterială sistolică normală (numărul de sus) și presiune diastolică ridicată (numărul de jos)</b>. Această afecțiune se numește <b>Hipertensiune diastolică izolată</b>.<br><br>Repetați măsurarea de câteva ori, astfel încât să se obțină în mod constant valori similare. Verificați, de asemenea, instrumentul/aparatul de măsură pentru calibrarea corectă. Citirea nu trebuie luată după o masă sau exerciții fizice sau după orice eveniment stresant. La măsurarea tensiunii arteriale, manșeta trebuie plasată și fixată corect pe braț. <br><br>Dacă aveți o presiune diastolică mare, veți avea tendința de a dezvolta o presiune sistolica mare în timp. Acest lucru, la rândul său, crește riscul lor de atac de cord și accident vascular cerebral. <br><br>Dacă nu aveți alte probleme de sănătate, cum ar fi diabetul, obezitatea, fumatul, bolile de rinichi, întărirea arterelor sau antecedentele de atac de cord, care vă cresc riscul de probleme cardiovasculare, hipertensiunea diastolică izolată nu este periculoasă. Dar nici nu este normal. Tot ce ați putea avea nevoie acum este monitorizarea regulată a tensiunii arteriale și modificarea stilului de viață pentru a vă reduce tensiunea diastolică. Dar dacă sunteți expus unui risc pentru oricare dintre acești factori, vă recomandăm să vă consultați medicul. <br><br><b>Scăderea tensiunii arteriale</b> poate oferi o <b>protecție semnificativă împotriva problemelor cardiovasculare majore</b> pentru pacienții cu <b>hipertensiune diastolică izolată</b>.< br>",
+            "normal_low" : "Dacă măsurarea dvs. este corectă, interpretarea noastră este că aveți <b>tensiune arterială scăzută</b>. Acest tip de tensiune arterială scăzută este frecvent întâlnit la femeile tinere, în special de origine indiană. Cu toate acestea, acest tip de citiri nu sunt ușor de interpretat folosind acest calculator online.<br><br>Diagnosticul nostru de mai jos poate să nu fie precis, dar vă avertizează împotriva unei posibile anomalii. Vă rugăm să citiți-l cu atenție și nu ezitați să vizitați medicul dumneavoastră dacă aveți îndoieli.<br><br> Înainte de a citi mai departe, vă îndemnăm să vă asigurați că citirea este corectă. Repetați măsurarea de câteva ori, astfel încât să se obțină în mod constant valori similare. Verificați, de asemenea, instrumentul/aparatul de măsură pentru calibrarea corectă. Citirea nu trebuie luată după o masă sau exerciții fizice sau după orice eveniment stresant. La măsurarea tensiunii arteriale, manșeta trebuie plasată și fixată corect pe braț. <br><br> <b>Interpretarea noastră</b><br><br> Presiunea sistolica (numărul de sus) este normală, dar presiunea diastolică (numărul de jos) este destul de scăzută. Această afecțiune se mai numește <b>Hipotensiune arterială diastolică izolată</b>.<br><br> <b>Hipotensiunea arterială diastolică izolată nu este o clasificare standard</b>. Ar trebui să vă adresați medicului dumneavoastră pentru diagnosticul final și tratamentul acestuia.<br><br>Scăderea tensiunii arteriale se găsește și în stare de șoc unde există o rănire sau pierderi de sânge și acest lucru necesită intervenție imediată într-un spital.",
+            "normal_normal" : "<b>Felicitări! Tensiunea arterială este în limitele normale pentru grupa dvs. de vârstă</b>.<br><br> Se pare că aveți o tensiune arterială normală și NU sunteți expus riscului de hipertensiune arterială (tensiune arterială ridicată).<br><br > Repetați măsurarea de câteva ori, astfel încât să se obțină în mod constant valori similare. Verificați, de asemenea, instrumentul/aparatul de măsură pentru calibrarea corectă. Citirea nu trebuie luată după o masă sau exerciții fizice sau după orice eveniment stresant. Când măsurați tensiunea arterială, manșeta trebuie plasată și fixată corect pe braț.<br><br> Un stil de viață sănătos vă va menține în stare bună de sănătate.",
+            "low_normal" : "Dacă măsurarea dvs. este corectă, interpretarea noastră este că aveți <b>puțin mai mică decât valoarea dorită</b>, dar este în limite acceptabile.<br><br>Pentru a vă asigura că această interpretare este corectă, asigurați-vă că citirea este corect. Repetați măsurarea de câteva ori, astfel încât să se obțină în mod constant valori similare. Verificați, de asemenea, instrumentul/aparatul de măsură pentru calibrarea corectă. Citirea nu trebuie luată după o masă sau exerciții fizice sau după orice eveniment stresant. La măsurarea tensiunii arteriale, manșeta trebuie plasată și fixată corespunzător pe braț.<br><br>Ar trebui să consultați medicul pentru diagnosticul final și tratamentul acestuia.",
+            "low_low" : "Citirea tensiunii arteriale este <b>destul de scăzută</b>.<br><br>Repetați măsurarea de câteva ori, astfel încât să se obțină în mod constant valori similare. Verificați, de asemenea, instrumentul/aparatul de măsură pentru calibrarea corectă. Citirea nu trebuie luată după o masă sau exerciții fizice sau după orice eveniment stresant. Când se măsoară tensiunea arterială, manșeta trebuie plasată și fixată corect pe braț.<br><br>Dacă testele repetate arată că valorile sunt similare și persoana în cauză se simte normală, atunci acest calculator online nu este destinat cazului respectiv. .<br><br>Dacă totuși, la testele repetate, valorile sunt similare și persoana în cauză prezintă simptome precum amețeli, amețeli, vedere încețoșată și leșin, vă rugăm să solicitați imediat ajutor medical.<br><br>Tensiune arterială scăzută poate apărea după un accident sau o rănire sau sângerare internă și se datorează de obicei unei pierderi bruște de sânge și aceasta poate pune viața în pericol.<br><br>Unele medicamente pot provoca și hipotensiune arterială, în special hipotensiunea posturală. Aici tensiunea arterială scade brusc la ridicarea în picioare din poziția așezată sau întinsă, iar persoana are capul ușor sau poate chiar leșina.<br><br>Ritmopul cardiac extrem de scăzut (bradicardie), tiroida inactivă și sarcina pot provoca, de asemenea, hipotensiune arterială.",
+            "low_high" : "Dacă măsurarea dvs. este corectă, interpretarea noastră este că aveți o <b>tensiune arterială sistolica scăzută (numărul de sus) și presiune diastolică ridicată (numărul de jos)</b>.",
+            "high_normal" : "Dacă măsurarea tensiunii arteriale este corectă, interpretarea noastră este că aveți o <b>tensiune arterială sistolică crescută (numărul de sus) și o presiune diastolică normală (numărul de jos)</b>. Această afecțiune se numește <b>Hipertensiune arterială sistolică izolata ISH</b>.<br><br>Repetați măsurarea de câteva ori, astfel încât să se obțină în mod constant valori similare. Verificați, de asemenea, instrumentul/aparatul de măsură pentru calibrarea corectă. Citirea nu trebuie luată după o masă sau exerciții fizice sau după orice eveniment stresant. La măsurarea tensiunii arteriale, manșeta trebuie plasată și fixată corect pe braț. <br><br>Acest tip de tensiune arterială <b>nu este neobișnuit în rândul persoanelor în vârstă</b> (peste 60 de ani) și nu este considerat nesănătos. De asemenea, poate apărea pentru o perioadă scurtă de timp după exerciții fizice și, de asemenea, în timpul sarcinii.<br><br>Dacă se găsește <b>Hipertensiune arterială sistolică izolată</b> prelungită la persoanele mai tinere, trebuie consultat imediat un medic. ISH se poate datora și valvelor neetanșe și hipertiroidismului.<br>",
+            "high_low" : "Aveți o <b>Presiune Sistolica Mare</b> (numărul de sus) și o <b>Presiune diastolică foarte scăzută</b> (numărul de jos). Această afecțiune este de obicei numită <b>Hipotensiune arterială diastolică izolată</b>.<br><br>Înainte de a citi mai departe, vă îndemnăm să vă asigurați că citirea este corectă. Repetați măsurarea de câteva ori, astfel încât să se obțină în mod constant valori similare. Verificați, de asemenea, instrumentul/aparatul de măsură pentru calibrarea corectă. Citirea nu trebuie luată după o masă sau exerciții fizice sau după orice eveniment stresant. Când măsurați tensiunea arterială, manșeta trebuie plasată și fixată corect pe braț.<br><br>Diagnosticul nostru poate să nu fie precis, dar vă avertizează împotriva unei posibile anomalii. Vă rugăm să citiți-l cu atenție și să nu ezitați să solicitați o programare urgentă la un medic.<br><br>Acest tip de tensiune arterială poate fi observat la pacienții cu presiune sistolică (superioară) mare care sunt sub medicamente pentru a controla tensiunea arterială ridicată. sau Hipertensiune arterială sistolică izolată (presiune sistolică mare și presiune diastolică normală). Dar dacă nu sunteți deja sub medicamente, vă recomandăm să vă consultați imediat medicul, deoarece acest lucru se poate datora valvelor neetanșe sau hipertiroidismului. La persoanele în vârstă acest lucru se poate datora și arterelor rigide. Persoanele cu hipotensiune arterială diastolică izolată prezintă un risc mai mare de accident vascular cerebral decât cei care au o creștere a presiunii sistolice sau diastolice numai. Din păcate, opțiunile de tratament sunt foarte limitate și poate fi dificil pentru medicul dumneavoastră să găsească un medicament adecvat care să crească tensiunea diastolică fără a crește în continuare tensiunea arterială sistolica.<br><br>Asigurați-vă că valoarea tensiunii arteriale este corectă sau repetați testul de mai multe ori. pe un interval.",
+            "high_high" : "Citirea tensiunii arteriale este <b>mai mare decât limitele acceptabile</b> și este considerată pe termen lung nesănătoasă. Puteți lua măsuri simple pentru a vă reduce tensiunea arterială, cum ar fi reducerea consumului de sare și începerea plimbărilor zilnice rapide timp de 15 minute.<br><br> Repetați măsurarea de câteva ori, astfel încât să se obțină în mod constant valori similare. Verificați, de asemenea, instrumentul/aparatul de măsură pentru calibrarea corectă. Citirea nu trebuie luată după o masă sau exerciții fizice sau după orice eveniment stresant. La măsurarea tensiunii arteriale, manșeta trebuie plasată și fixată corespunzător pe braț.<br><br>Dacă la teste repetate valoarea este similară cu cea care a fost indicată anterior vă recomandăm să confirmați acest diagnostic cu medicul dumneavoastră. <br><br>Unele persoane cu hipertensiune arterială (hipertensiune arterială) pot prezenta dureri în piept, dificultăți de respirație, greață și vedere încețoșată. <b>Cu toate acestea, în majoritatea cazurilor, hipertensiunea nu prezintă simptome până când apar complicații</b>, cum ar fi atac de cord, insuficiență cardiacă, insuficiență renală și accident vascular cerebral.<br><br>Dacă sunteți diagnosticat cu hipertensiune arterială, este posibil să aveți nevoie de un <b >puține analize de sânge și ECG</b>.",
+            "q_high_q_high" : "Citirea tensiunii arteriale este <b>destul de mare</b> și trebuie controlată cu medicamente.<br><br>Repetați măsurarea de câteva ori, astfel încât să se obțină în mod constant valori similare. Verificați, de asemenea, instrumentul/aparatul de măsură pentru calibrarea corectă. Citirea nu trebuie luată după o masă sau exerciții fizice sau după orice eveniment stresant. La măsurarea tensiunii arteriale, manșeta trebuie plasată și fixată corespunzător pe braț.<br><br>Dacă la teste repetate valoarea este similară cu cea care a fost indicată anterior vă recomandăm să confirmați acest diagnostic cu medicul dumneavoastră. <br><br>Unele persoane cu hipertensiune arterială (hipertensiune arterială) pot prezenta dureri în piept, dificultăți de respirație, greață și vedere încețoșată. <b>Cu toate acestea, în majoritatea cazurilor, hipertensiunea nu prezintă simptome până când apar complicații</b>, cum ar fi atac de cord, insuficiență cardiacă, insuficiență renală și accident vascular cerebral.<br><br>Dacă sunteți diagnosticat cu hipertensiune arterială, este posibil să aveți nevoie de un <b >puține analize de sânge și ECG</b>.<br>Diferența dintre presiunea sistolica și presiunea diastolică este destul de scăzută și este posibil să aveți <b>Presiune scăzută a pulsului</b>. Presiunea pulsului este diferența dintre valorile presiunii sistolice și diastolice.<br><br>O presiune scăzută a pulsului poate indica uneori o <b>funcție cardiacă sub-optimă, un volum scăzut al inimii și acest lucru poate duce la insuficiență cardiacă</b> .",
+            "t_high_t_high" : "Citirea tensiunii arteriale este <b>prea mare</b> și acest lucru poate fi periculos pentru sănătatea dvs. și ar trebui să solicitați o programare imediată la medicul dumneavoastră.<br><br>Repetați măsurarea de câteva ori, astfel încât valori similare sunt obținute în mod constant. Verificați, de asemenea, instrumentul/aparatul de măsură pentru calibrarea corectă. Citirea nu trebuie luată după o masă sau exerciții fizice sau după orice eveniment stresant. La măsurarea tensiunii arteriale, manșeta trebuie plasată și fixată corespunzător pe braț.<br><br>Dacă la teste repetate valoarea este similară cu cea care a fost indicată anterior vă recomandăm să confirmați acest diagnostic cu medicul dumneavoastră. <br><br>Unii oameni cu hipertensiune arterială (hipertensiune arterială) pot prezenta dureri în piept, dificultăți de respirație, greață și vedere încețoșată. <b>Cu toate acestea, în majoritatea cazurilor, hipertensiunea nu prezintă simptome până când apar complicații</b>, cum ar fi atac de cord, insuficiență cardiacă, insuficiență renală și accident vascular cerebral.<br><br>Dacă sunteți diagnosticat cu hipertensiune arterială, este posibil să aveți nevoie de un <b >puține analize de sânge și ECG</b>.<br>Diferența dintre presiunea sistolica și presiunea diastolică este destul de scăzută și este posibil să aveți <b>Presiune scăzută a pulsului</b>. Presiunea pulsului este diferența dintre valorile presiunii sistolice și diastolice.<br><br>O presiune scăzută a pulsului poate indica uneori o <b>funcție cardiacă sub-optimă, un volum scăzut al inimii și acest lucru poate duce la insuficiență cardiacă</b> .",
+        };
+
+        $('.cl-in').on("keyup", function(e){
+            if(e.which == 13){
+                $("#calc_btn").click();
+            }
+        });
+
+        $("#calc_btn").on("click", function(){
+            Calc();
+        });
+
+        function Calc(){
+            in_1 = Number($("#in_1").val());
+            in_2 = Number($("#in_2").val());
+            in_3 = Number($("#in_3").val());
+
+
+            if(in_1 && in_2 && in_3){
+                if(in_1 < 15 || in_1 > 85){
+                    alert("Vârsta trebuie să fie între 15 și 85 de ani.");
+                    return true;
+                }
+
+                if(in_2 < 85){
+                    alert("Valoarea dumneavoastră sistolice (numărul de sus) este prea scăzută pentru ca calculatorul nostru să ofere un diagnostic precis.");
+                    return true;
+                }
+                if(in_3 < 51){
+                    alert("Valoarea dvs. diastolică (numărul de jos) este prea scăzută pentru ca calculatorul nostru să ofere un diagnostic precis.");
+                    return true;
+                }
+
+                let arr = getTable(in_1);
+
+                if(arr.length){
+                    let t_id = arr[0];
+                    let con_id = arr[1];
+                    
+                    $("#rs_contents").html(status[con_id]);
+
+                    $("#reading_vl").text(in_2+"/"+in_3+" mmHg");
+                    $(".chart-sec").addClass("ds-none");
+                    $("#"+t_id).removeClass("ds-none");
+                    $("#rs_sec").removeClass("ds-none");
+                } else {
+                    $("#rs_sec").addBack("ds-none");    
+
+                    alert("Vă rugăm să introduceți date valide!");
+                    return true;              
+                }
+            } else {
+                $("#rs_sec").addBack("ds-none");
+                alert("Vă rugăm să introduceți toate valorile!");
+                return true;
+            }
+        };
+
+        function getTable(age){
+            let table_id = "";
+            let content_index = "";
+
+            if(age >= 15 && age <= 19) {
+                table_id = "data_type_15_19";
+                if(in_2 < 90 && in_3 < 60){
+                    content_index = "low_low";
+                } else if(in_2 < 90 && in_3 >= 60 && in_3 <= 81){
+                    content_index = "low_normal";
+                } else if(in_2 < 90 && in_3 > 81){
+                    content_index = "low_high";
+                } else if(in_2 >= 90 && in_2 <= 120 && in_3 >= 82 && in_3 <= 150) {
+                    content_index = "normal_high";
+                } else if(in_2 >= 90 && in_2 <= 120 && in_3 < 60) {
+                    content_index = "normal_low";
+                } else if(in_2 >= 90 && in_2 <= 120 && in_3 >= 60 && in_3 <= 81) {
+                    content_index = "normal_normal";
+                } else if(in_2 >= 121 && in_2 <= 159 && in_3 < 60) {
+                    content_index = "high_low";
+                } else if(in_2 >= 121 && in_2 <= 159 && in_3 >= 60 && in_3 <= 81) {
+                    content_index = "high_normal";
+                } else if(in_2 >= 121 && in_2 <= 159 && in_3 >= 82 && in_3 <= 150) {
+                    content_index = "high_high";
+                } else if(in_2 >= 160 && in_2 <= 180 && in_3 >= 100 && in_3 <= 120) {
+                    content_index = "q_high_q_high";
+                } else if(in_2 >= 180 && in_3 > 120) {
+                    content_index = "t_high_t_high";
+                } else if(in_2 > 120 && in_3 > 81) {
+                    content_index = "high_high";
+                }
+            } else if(age >= 20 && age <= 24) {
+                table_id = "data_type_20_24";
+                if(in_2 < 90 && in_3 < 60){
+                    content_index = "low_low";
+                } else if(in_2 < 90 && in_3 >= 60 && in_3 <= 83){
+                    content_index = "low_normal";
+                } else if(in_2 < 90 && in_3 > 83){
+                    content_index = "low_high";
+                } else if(in_2 >= 90 && in_2 <= 132 && in_3 >= 84 && in_3 <= 150) {
+                    content_index = "normal_high";
+                } else if(in_2 >= 90 && in_2 <= 132 && in_3 < 60) {
+                    content_index = "normal_low";
+                } else if(in_2 >= 90 && in_2 <= 132 && in_3 >= 60 && in_3 <= 83) {
+                    content_index = "normal_normal";
+                } else if(in_2 >= 133 && in_2 <= 159 && in_3 < 60) {
+                    content_index = "high_low";
+                } else if(in_2 >= 133 && in_2 <= 159 && in_3 >= 60 && in_3 <= 83) {
+                    content_index = "high_normal";
+                } else if(in_2 >= 133 && in_2 <= 159 && in_3 >= 84 && in_3 <= 150) {
+                    content_index = "high_high";
+                } else if(in_2 >= 160 && in_2 <= 180 && in_3 >= 100 && in_3 <= 120) {
+                    content_index = "q_high_q_high";
+                } else if(in_2 >= 180 && in_3 > 120) {
+                    content_index = "t_high_t_high";
+                } else if(in_2 > 120 && in_3 > 83) {
+                    content_index = "high_high";
+                }
+            } else if(age >= 25 && age <= 29) {
+                table_id = "data_type_25_29";
+                if(in_2 < 90 && in_3 < 60){
+                    content_index = "low_low";
+                } else if(in_2 < 90 && in_3 >= 60 && in_3 <= 84){
+                    content_index = "low_normal";
+                } else if(in_2 < 90 && in_3 > 84){
+                    content_index = "low_high";
+                } else if(in_2 >= 90 && in_2 <= 133 && in_3 >= 85 && in_3 <= 150) {
+                    content_index = "normal_high";
+                } else if(in_2 >= 90 && in_2 <= 133 && in_3 < 60) {
+                    content_index = "normal_low";
+                } else if(in_2 >= 90 && in_2 <= 133 && in_3 >= 60 && in_3 <= 84) {
+                    content_index = "normal_normal";
+                } else if(in_2 >= 134 && in_2 <= 159 && in_3 < 60) {
+                    content_index = "high_low";
+                } else if(in_2 >= 134 && in_2 <= 159 && in_3 >= 60 && in_3 <= 84) {
+                    content_index = "high_normal";
+                } else if(in_2 >= 134 && in_2 <= 159 && in_3 >= 85 && in_3 <= 150) {
+                    content_index = "high_high";
+                } else if(in_2 >= 160 && in_2 <= 180 && in_3 >= 100 && in_3 <= 120) {
+                    content_index = "q_high_q_high";
+                } else if(in_2 >= 180 && in_3 > 120) {
+                    content_index = "t_high_t_high";
+                } else if(in_2 > 120 && in_3 > 84) {
+                    content_index = "high_high";
+                }
+            } else if(age >= 30 && age <= 34) {
+                table_id = "data_type_30_34";
+                if(in_2 < 90 && in_3 < 60){
+                    content_index = "low_low";
+                } else if(in_2 < 90 && in_3 >= 60 && in_3 <= 85){
+                    content_index = "low_normal";
+                } else if(in_2 < 90 && in_3 > 85){
+                    content_index = "low_high";
+                } else if(in_2 >= 90 && in_2 <= 134 && in_3 >= 86 && in_3 <= 150) {
+                    content_index = "normal_high";
+                } else if(in_2 >= 90 && in_2 <= 134 && in_3 < 60) {
+                    content_index = "normal_low";
+                } else if(in_2 >= 90 && in_2 <= 134 && in_3 >= 60 && in_3 <= 85) {
+                    content_index = "normal_normal";
+                } else if(in_2 >= 135 && in_2 <= 159 && in_3 < 60) {
+                    content_index = "high_low";
+                } else if(in_2 >= 135 && in_2 <= 159 && in_3 >= 60 && in_3 <= 85) {
+                    content_index = "high_normal";
+                } else if(in_2 >= 135 && in_2 <= 159 && in_3 >= 86 && in_3 <= 150) {
+                    content_index = "high_high";
+                } else if(in_2 >= 160 && in_2 <= 180 && in_3 >= 100 && in_3 <= 120) {
+                    content_index = "q_high_q_high";
+                } else if(in_2 >= 180 && in_3 > 120) {
+                    content_index = "t_high_t_high";
+                } else if(in_2 > 120 && in_3 > 85) {
+                    content_index = "high_high";
+                }
+            } else if(age >= 35 && age <= 39) {
+                table_id = "data_type_35_39";
+                if(in_2 < 90 && in_3 < 60){
+                    content_index = "low_low";
+                } else if(in_2 < 90 && in_3 >= 60 && in_3 <= 85){
+                    content_index = "low_normal";
+                } else if(in_2 < 90 && in_3 > 85){
+                    content_index = "low_high";
+                } else if(in_2 >= 90 && in_2 <= 134 && in_3 >= 86 && in_3 <= 150) {
+                    content_index = "normal_high";
+                } else if(in_2 >= 90 && in_2 <= 134 && in_3 < 60) {
+                    content_index = "normal_low";
+                } else if(in_2 >= 90 && in_2 <= 134 && in_3 >= 60 && in_3 <= 85) {
+                    content_index = "normal_normal";
+                } else if(in_2 >= 135 && in_2 <= 159 && in_3 < 60) {
+                    content_index = "high_low";
+                } else if(in_2 >= 135 && in_2 <= 159 && in_3 >= 60 && in_3 <= 85) {
+                    content_index = "high_normal";
+                } else if(in_2 >= 135 && in_2 <= 159 && in_3 >= 86 && in_3 <= 150) {
+                    content_index = "high_high";
+                } else if(in_2 >= 160 && in_2 <= 180 && in_3 >= 100 && in_3 <= 120) {
+                    content_index = "q_high_q_high";
+                } else if(in_2 >= 180 && in_3 > 120) {
+                    content_index = "t_high_t_high";
+                } else if(in_2 > 120 && in_3 > 85) {
+                    content_index = "high_high";
+                }
+            } else if(age >= 35 && age <= 39) {
+                table_id = "data_type_35_39";
+                if(in_2 < 90 && in_3 < 60){
+                    content_index = "low_low";
+                } else if(in_2 < 90 && in_3 >= 60 && in_3 <= 86){
+                    content_index = "low_normal";
+                } else if(in_2 < 90 && in_3 > 86){
+                    content_index = "low_high";
+                } else if(in_2 >= 90 && in_2 <= 135 && in_3 >= 87 && in_3 <= 150) {
+                    content_index = "normal_high";
+                } else if(in_2 >= 90 && in_2 <= 135 && in_3 < 60) {
+                    content_index = "normal_low";
+                } else if(in_2 >= 90 && in_2 <= 135 && in_3 >= 60 && in_3 <= 86) {
+                    content_index = "normal_normal";
+                } else if(in_2 >= 135 && in_2 <= 159 && in_3 < 60) {
+                    content_index = "high_low";
+                } else if(in_2 >= 135 && in_2 <= 159 && in_3 >= 60 && in_3 <= 86) {
+                    content_index = "high_normal";
+                } else if(in_2 >= 135 && in_2 <= 159 && in_3 >= 87 && in_3 <= 150) {
+                    content_index = "high_high";
+                } else if(in_2 >= 160 && in_2 <= 180 && in_3 >= 100 && in_3 <= 120) {
+                    content_index = "q_high_q_high";
+                } else if(in_2 >= 180 && in_3 > 120) {
+                    content_index = "t_high_t_high";
+                } else if(in_2 > 120 && in_3 > 86) {
+                    content_index = "high_high";
+                }
+            } else if(age >= 40 && age <= 44) {
+                table_id = "data_type_40_44";
+                if(in_2 < 90 && in_3 < 60){
+                    content_index = "low_low";
+                } else if(in_2 < 90 && in_3 >= 60 && in_3 <= 87){
+                    content_index = "low_normal";
+                } else if(in_2 < 90 && in_3 > 87){
+                    content_index = "low_high";
+                } else if(in_2 >= 90 && in_2 <= 137 && in_3 >= 87 && in_3 <= 150) {
+                    content_index = "normal_high";
+                } else if(in_2 >= 90 && in_2 <= 137 && in_3 < 60) {
+                    content_index = "normal_low";
+                } else if(in_2 >= 90 && in_2 <= 137 && in_3 >= 60 && in_3 <= 87) {
+                    content_index = "normal_normal";
+                } else if(in_2 >= 137 && in_2 <= 159 && in_3 < 60) {
+                    content_index = "high_low";
+                } else if(in_2 >= 137 && in_2 <= 159 && in_3 >= 60 && in_3 <= 87) {
+                    content_index = "high_normal";
+                } else if(in_2 >= 137 && in_2 <= 159 && in_3 >= 87 && in_3 <= 150) {
+                    content_index = "high_high";
+                } else if(in_2 >= 160 && in_2 <= 180 && in_3 >= 100 && in_3 <= 120) {
+                    content_index = "q_high_q_high";
+                } else if(in_2 >= 180 && in_3 > 120) {
+                    content_index = "t_high_t_high";
+                } else if(in_2 > 120 && in_3 > 87) {
+                    content_index = "high_high";
+                }
+            } else if(age >= 45 && age <= 49) {
+                table_id = "data_type_45_49";
+                if(in_2 < 90 && in_3 < 60){
+                    content_index = "low_low";
+                } else if(in_2 < 90 && in_3 >= 60 && in_3 <= 88){
+                    content_index = "low_normal";
+                } else if(in_2 < 90 && in_3 > 87){
+                    content_index = "low_high";
+                } else if(in_2 >= 90 && in_2 <= 139 && in_3 >= 88 && in_3 <= 150) {
+                    content_index = "normal_high";
+                } else if(in_2 >= 90 && in_2 <= 139 && in_3 < 60) {
+                    content_index = "normal_low";
+                } else if(in_2 >= 90 && in_2 <= 139 && in_3 >= 60 && in_3 <= 88) {
+                    content_index = "normal_normal";
+                } else if(in_2 >= 139 && in_2 <= 159 && in_3 < 60) {
+                    content_index = "high_low";
+                } else if(in_2 >= 139 && in_2 <= 159 && in_3 >= 60 && in_3 <= 88) {
+                    content_index = "high_normal";
+                } else if(in_2 >= 139 && in_2 <= 159 && in_3 >= 88 && in_3 <= 150) {
+                    content_index = "high_high";
+                } else if(in_2 >= 160 && in_2 <= 180 && in_3 >= 100 && in_3 <= 120) {
+                    content_index = "q_high_q_high";
+                } else if(in_2 >= 180 && in_3 > 120) {
+                    content_index = "t_high_t_high";
+                } else if(in_2 > 120 && in_3 > 87) {
+                    content_index = "high_high";
+                }
+            } else if(age >= 50 && age <= 54) {
+                table_id = "data_type_50_54";
+                if(in_2 < 90 && in_3 < 60){
+                    content_index = "low_low";
+                } else if(in_2 < 90 && in_3 >= 60 && in_3 <= 89){
+                    content_index = "low_normal";
+                } else if(in_2 < 90 && in_3 > 89){
+                    content_index = "low_high";
+                } else if(in_2 >= 90 && in_2 <= 142 && in_3 >= 90 && in_3 <= 150) {
+                    content_index = "normal_high";
+                } else if(in_2 >= 90 && in_2 <= 142 && in_3 < 60) {
+                    content_index = "normal_low";
+                } else if(in_2 >= 90 && in_2 <= 142 && in_3 >= 60 && in_3 <= 89) {
+                    content_index = "normal_normal";
+                } else if(in_2 >= 142 && in_2 <= 159 && in_3 < 60) {
+                    content_index = "high_low";
+                } else if(in_2 >= 142 && in_2 <= 159 && in_3 >= 60 && in_3 <= 89) {
+                    content_index = "high_normal";
+                } else if(in_2 >= 142 && in_2 <= 159 && in_3 >= 90 && in_3 <= 150) {
+                    content_index = "high_high";
+                } else if(in_2 >= 160 && in_2 <= 180 && in_3 >= 100 && in_3 <= 120) {
+                    content_index = "q_high_q_high";
+                } else if(in_2 >= 180 && in_3 > 120) {
+                    content_index = "t_high_t_high";
+                } else if(in_2 > 120 && in_3 > 89) {
+                    content_index = "high_high";
+                }
+            } else if(age >= 55 && age <= 59) {
+                table_id = "data_type_55_59";
+                if(in_2 < 90 && in_3 < 60){
+                    content_index = "low_low";
+                } else if(in_2 < 90 && in_3 >= 60 && in_3 <= 90){
+                    content_index = "low_normal";
+                } else if(in_2 < 90 && in_3 > 90){
+                    content_index = "low_high";
+                } else if(in_2 >= 90 && in_2 <= 144 && in_3 >= 91 && in_3 <= 150) {
+                    content_index = "normal_high";
+                } else if(in_2 >= 90 && in_2 <= 144 && in_3 < 60) {
+                    content_index = "normal_low";
+                } else if(in_2 >= 90 && in_2 <= 144 && in_3 >= 60 && in_3 <= 90) {
+                    content_index = "normal_normal";
+                } else if(in_2 >= 145 && in_2 <= 159 && in_3 < 60) {
+                    content_index = "high_low";
+                } else if(in_2 >= 145 && in_2 <= 159 && in_3 >= 60 && in_3 <= 90) {
+                    content_index = "high_normal";
+                } else if(in_2 >= 145 && in_2 <= 159 && in_3 >= 91 && in_3 <= 150) {
+                    content_index = "high_high";
+                } else if(in_2 >= 160 && in_2 <= 180 && in_3 >= 100 && in_3 <= 120) {
+                    content_index = "q_high_q_high";
+                } else if(in_2 >= 180 && in_3 > 120) {
+                    content_index = "t_high_t_high";
+                } else if(in_2 > 120 && in_3 > 90) {
+                    content_index = "high_high";
+                }
+            } else if(age >= 60) {
+                table_id = "data_type_60_64";
+                if(in_2 < 90 && in_3 < 60){
+                    content_index = "low_low";
+                } else if(in_2 < 90 && in_3 >= 60 && in_3 <= 90){
+                    content_index = "low_normal";
+                } else if(in_2 < 90 && in_3 > 90){
+                    content_index = "low_high";
+                } else if(in_2 >= 90 && in_2 <= 147 && in_3 >= 91 && in_3 <= 150) {
+                    content_index = "normal_high";
+                } else if(in_2 >= 90 && in_2 <= 147 && in_3 < 60) {
+                    content_index = "normal_low";
+                } else if(in_2 >= 90 && in_2 <= 147 && in_3 >= 60 && in_3 <= 90) {
+                    content_index = "normal_normal";
+                } else if(in_2 >= 148 && in_2 <= 159 && in_3 < 60) {
+                    content_index = "high_low";
+                } else if(in_2 >= 148 && in_2 <= 159 && in_3 >= 60 && in_3 <= 90) {
+                    content_index = "high_normal";
+                } else if(in_2 >= 148 && in_2 <= 159 && in_3 >= 91 && in_3 <= 150) {
+                    content_index = "high_high";
+                } else if(in_2 >= 160 && in_2 <= 180 && in_3 >= 100 && in_3 <= 120) {
+                    content_index = "q_high_q_high";
+                } else if(in_2 >= 180 && in_3 > 120) {
+                    content_index = "t_high_t_high";
+                } else if(in_2 > 120 && in_3 > 90) {
+                    content_index = "high_high";
+                }
+            }
+
+            return [table_id, content_index];
+        }
+    });
+</script>
+</body>
+</html>

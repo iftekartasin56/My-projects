@@ -1,0 +1,34 @@
+Financial Planning Calculator - Web Calculator for your Website
+
+Welcome to our <b>Financial Planning Calculator</b>.The Financial Planning Calculator is a comprehensive digital tool designed to assist individuals and couples in assessing their financial situation and planning for a secure future. By inputting personal details such as marital status, presence of children, income sources, equity-based compensation, and real estate investments, users can gain insights into their financial health.
+<br>
+<br>
+<u><b>User inputs:</b></u>
+<ul>
+    <li>Financial Planning</li>
+    <li>Do you have any children?</li>
+    <li>Do have Self-employed income? 1099, freelance, etc.</li>
+    <li>Do you get any equity based compensation?</li>
+    <li>Do you have real estate investments?</li>
+    <li>Retirement Timeline</li>
+</ul>
+<br>
+<u><b>Outputs:</b></u>
+<ul>
+    <li>Total Annual Fee</li>
+    <li>Monthly Fee</li>
+</ul>
+<br>
+<u><b>Features of the Financial Planning Calculator:</b></u>
+<ul>
+    <li>- Helps you in calculating your returns on the investments made</li>
+    <li>- Assists you in determining your scope of investment in the future.</li>
+    <li>- Instant result without page reload</li>
+    <li>- JS and CSS loads when shortcode called on page</li>
+    <li>- 100% Responsive design</li>
+    <li>- Unique Design</li>
+    <li>- Well Documented (proper help instructions for setup)</li>
+    <li>- Dedicated Support</li>
+</ul>
+<br>
+The calculator is built using HTML, CSS, and JavaScript, and it also utilizes the popular JavaScript library jQuery. A premium quality <b>Financial Planning Calculator</b> which you can easily embed into any website (well documented).

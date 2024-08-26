@@ -1,0 +1,33 @@
+Time Currency Calculator - Web Calculator for your Website
+
+Welcome to our <b>Time Currency Calculator</b>. The Time Currency Calculator is a tool designed to convert the cost of an item into the equivalent amount of time it would take to earn that money, based on your hourly wage or annual salary. It provides a unique perspective on spending, translating monetary value into “hours of your life” spent working.
+<br>
+<br>
+<u><b>User inputs:</b></u>
+<ul>
+	<li>Cost of Item</li>
+    <li>Your Hourly Wage</li>
+    <li>Withholdings</li>
+</ul>
+<br>
+<u><b>Outputs:</b></u>
+<ul>
+    <li>Your Annual Salary</li>
+    <li>This item will cost you</li>
+    <li>Assuming an 8 hour work day, that's your first</li>
+    <li>Show Calender </li>
+</ul>
+<br>
+<u><b>Features of the MACRO Calculator:</b></u>
+<ul>
+    <li>- It allows you to input the cost of an item and either your hourly wage or your annual salary, and it will calculate how many hours or days of your life you need to work to afford the item.</li>
+    <li>- It can also motivate you to increase your income, reduce your expenses, or find more fulfilling work.</li>
+    <li>- Instant result without page reload</li>
+    <li>- JS and CSS loads when shortcode called on page</li>
+    <li>- 100% Responsive design</li>
+    <li>- Unique Design</li>
+    <li>- Well Documented (proper help instructions for setup)</li>
+    <li>- Dedicated Support</li>
+</ul>
+<br>
+The calculator is built using HTML, CSS, and JavaScript, and it also utilizes the popular JavaScript library jQuery. A premium quality <b>Time Currency calculator</b> which you can easily embed into any website (well documented).

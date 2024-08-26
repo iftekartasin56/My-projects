@@ -1,0 +1,14 @@
+Exmaple calcuations:
+
+Height: 10 ft
+Width: 10 ft
+
+Sqaure feet: 10 x 10 = 100 
+
+Estimated cost: 100 x 180.00 = $1800.00
+
+
+Note:
+1. Every square foot should cost them $180.00
+2. Outdoor or indoor and Shape option won't effect calculations
+

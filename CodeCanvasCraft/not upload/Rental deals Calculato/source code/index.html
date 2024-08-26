@@ -1,0 +1,727 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <title>Rental deals Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
+    </style>
+
+    <!-- CSS Stylesheet link -->
+    <link rel="stylesheet" href="css/Calc-style.css">
+</head>
+<body>
+
+<!-----------Please copy and paste following code into any HTML element ---------------->
+
+<!----------- copy starts ---------------->
+<style>
+.ms-cl *, ::after, ::before {
+    box-sizing: border-box;
+}
+.ms-cl {
+    line-height: 1.5;
+    font-family: inherit;
+    margin-top: 20px;
+}
+.ms-cl .container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #000000;
+    text-align: left;
+}
+.ms-cl label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #000000;
+}
+.ms-cl .h1, .ms-cl h1 {
+    font-size: 2.5rem;
+}
+.ms-cl .h1, .ms-cl .h2, .ms-cl .h3, .ms-cl h1, .ms-cl h2, .ms-cl h3 {
+    margin-bottom: .5rem;
+    font-weight: 500;
+    line-height: 1.2;
+    margin-top: 0;
+    margin-bottom: .5rem;
+}
+.ms-cl .h3, .ms-cl h3 {
+    font-size: 1.75rem;
+}
+.ms-cl .row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+.ms-cl .col-md-1, .ms-cl .col-md-10, .ms-cl .col-md-11, .ms-cl .col-md-12, .ms-cl .col-md-2, .ms-cl .col-md-3, .ms-cl .col-md-4, .ms-cl .col-md-5, .ms-cl .col-md-6, .ms-cl .col-md-7, .ms-cl .col-md-8, .ms-cl .col-md-9, .ms-cl .col-md-auto, .ms-cl .col-sm, .ms-cl .col-sm-1, .ms-cl .col-sm-10, .ms-cl .col-sm-11, .ms-cl .col-sm-12, .ms-cl .col-sm-2, .ms-cl .col-sm-3, .ms-cl .col-sm-4, .ms-cl .col-sm-5, .ms-cl .col-sm-6, .ms-cl .col-sm-7, .ms-cl .col-sm-8, .ms-cl .col-sm-9, .ms-cl .col-sm-auto, .ms-cl .col-xl, .ms-cl .col-xl-1, .ms-cl .col-xl-10, .ms-cl .col-xl-11, .ms-cl .col-xl-12, .ms-cl .col-xl-2, .ms-cl .col-xl-3, .ms-cl .col-xl-4, .ms-cl .col-xl-5, .ms-cl .col-xl-6, .ms-cl .col-xl-7, .ms-cl .col-xl-8, .ms-cl .col-xl-9, .ms-cl .col-xl-auto {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.ms-cl .form-group {
+    margin-bottom: 8px;
+    position: relative;
+}
+.ms-cl .form-control {
+    display: block;
+    width: 100%;
+    height: auto;
+    padding: 4px 0.55rem;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+    color: #000000 !important;
+    background-color: #fff !important;
+    background-clip: padding-box;
+    border: 1px solid #dddddd !important;
+    border-radius: 5px;
+    font-family: inherit;
+    transition: background .3s,border .3s,border-radius .3s,box-shadow .3s,-webkit-border-radius .3s,-webkit-box-shadow .3s;
+}
+.ms-cl .form-control:hover, .ms-cl .form-control:focus {
+    border-color: #07acac !important;
+}
+.ms-cl .form-control:focus {
+    outline: none;
+}
+/* responsive */
+@media (min-width: 768px){
+    .ms-cl .container {
+        max-width: 100%;
+    }
+    .ms-cl .col-md-12 {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .ms-cl .col-md-8 {
+        -ms-flex: 0 0 66.666667%;
+        flex: 0 0 66.666667%;
+        max-width: 66.666667%;
+    }
+    .ms-cl .col-md-7 {
+        -ms-flex: 0 0 58.33333%;
+        flex: 0 0 58.33333%;
+        max-width: 58.33333%;
+    }
+    .ms-cl .col-md-6 {
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    .ms-cl .col-md-5 {
+        -ms-flex: 0 0 41.66666%;
+        flex: 0 0 41.66666%;
+        max-width: 41.66666%;
+    }
+    .ms-cl .col-md-4 {
+        -ms-flex: 0 0 33.333333%;
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+    }
+    .ms-cl .col-md-3 {
+        -ms-flex: 0 0 25%;
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+}
+@media (min-width: 820px){
+    .ms-cl .container {
+        max-width: 800px;
+    }
+}
+@media (min-width: 1200px) {
+    .ms-cl .container {
+        max-width: 1150px;
+    }
+}
+.ms-cl .prepend-text {
+    position: absolute;
+    bottom: 4.5px;
+    left: 11px;
+    color: #000000;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: normal;
+}
+.ms-cl .append-text {
+    font-size: 16px;
+    position: absolute;
+    bottom: 4px;
+    right: 9px;
+    color: #000000;
+}
+.ms-cl .sp-pd-left {
+    padding-left: 28px !important;
+}
+.ms-cl .sp-pd-right {
+    padding-right: 28px !important;
+}
+.ms-cl .ms-mr {
+    margin-bottom: 1rem;
+}
+.ms-cl table {
+    border-collapse: collapse;
+}
+.ms-cl .table {
+    width: 100%;
+    margin-bottom: 0;
+    color: #212529;
+    border: none;
+}
+.ms-cl .table td, .ms-cl .table th {
+    padding: 0.25rem 0;
+    vertical-align: middle;
+    border-bottom: 1px solid #00aab5;
+    color: #fff;
+}
+.ms-cl .text-center {
+    text-align: center;
+}
+.ms-cl .text-left {
+    text-align: left !important;
+}
+.ms-cl .text-right {
+    text-align: right !important;
+}
+.ms-cl .top-title {
+    text-align: center;
+    border: 1px solid #00BCC8;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 30px;
+    font-weight: 600;
+    color: #009AA4;
+    margin-bottom: 26px;
+}
+.ms-cl .rs-sec {
+    background: #00BCC8;
+    padding: 22px 22px 6px 22px;
+    border-radius: 5px 5px 0 0;
+    margin-top: 0;
+}
+.ms-cl .rs-sec-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #009AA4;
+    padding: 5px 22px;
+    border-radius: 0 0 5px 5px;
+    color: #fff;
+}
+.ms-cl .rs-sec-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #009AA4;
+    padding: 5px 22px;
+    border-radius: 5px;
+    color: #fff;
+    margin-bottom: 15px;
+}
+.ms-cl .rs-title {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+}
+.ms-cl .rs-value {
+    color: #fff;
+    font-size: 30px;
+    font-weight: 600;
+}
+.ms-cl .rs-title-2 {
+    font-size: 18px;
+    font-weight: 600;
+}
+.ms-cl .rs-value-2 {
+    font-size: 26px;
+    font-weight: 600;
+}
+.ms-cl .rs-sec-last {
+    border: 1px solid #00BCC8;
+    border-radius: 8px;
+    padding: 25px;
+    margin-top: 20px;
+}
+.ms-cl .rs-title-3 {
+    font-size: 16px;
+    font-weight: 500;
+    color: #000;
+}
+.ms-cl .rs-value-3 {
+    font-size: 32px;
+    font-weight: 600;
+    color: #00BCC8;
+}
+.ms-cl input[type=range] {
+    margin: 0 0 0 0;
+    outline: none;
+    padding: 0;
+    width: 100%;
+    height: 7px;
+    background-color: #DDDDDD;
+    background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #00CDDA), color-stop(100%, #00CDDA));
+    background-size: 0% 100%;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    cursor: pointer;
+    -webkit-appearance: none;
+}
+.ms-cl input[type=range]::-webkit-slider-runnable-track {
+    box-shadow: none;
+    border: none;
+    background: transparent;
+    -webkit-appearance: none;
+}
+.ms-cl input[type=range]::-webkit-slider-thumb {
+    height: 20px;
+    width: 20px;
+    margin-top: -4px;
+    background: #009AA4;
+    border: 5px solid #009AA4;
+    border-radius: 25px;
+    box-shadow: 0 2px 2px 0px #000000;
+    -webkit-appearance: none;
+}
+.ms-cl input[type=range]::-moz-range-track {
+    box-shadow: none;
+    border: none;
+    background: transparent;
+    -webkit-appearance: none;
+}
+.ms-cl input[type=range]::-moz-range-thumb {
+    height: 20px;
+    width: 20px;
+    margin-top: -4px;
+    background: #00838B;
+    border: 5px solid #00838B;
+    border-radius: 25px;
+    box-shadow: 0 2px 2px 0px #000000;
+    -webkit-appearance: none;
+}
+@media (max-width: 768px){
+    .ms-cl label {
+        margin-bottom: 12px;
+    }
+    .ms-cl .rs-sec-top {
+        margin-top: 15px;
+    }
+}
+.ms-cl .f600 {
+    font-weight: 600 !important;
+}
+.ms-cl .cus-label {
+    margin-bottom: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.ms-cl .exp-section {
+    box-shadow: 0 0 3px #ccc;
+    padding: 20px 35px;
+    border-radius: 8px;
+    background: #fafafa;
+}
+.ms-cl .exp-section h3 {
+    font-size: 20px;
+    border-bottom: 1px solid #e8e8e8;
+    text-align: center;
+    padding-bottom: 6px;
+    margin-bottom: 20px;
+}
+.ms-cl .cashflow-sec {
+    box-shadow: 0 0 3px #ccc;
+    border-radius: 6px;
+    text-align: center;
+    padding: 14px;
+    margin-top: 35px;
+    margin-bottom: 25px;
+    background: #fafafa;
+}
+.ms-cl .cashflow-sec h3 {
+    font-size: 20px;
+    border-bottom: 1px solid #e8e8e8;
+    text-align: center;
+    padding-bottom: 6px;
+    margin-bottom: 20px;
+}
+.ms-cl .sum-sec {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.ms-cl .sum-value {
+    font-size: 20px;
+    font-weight: 600;
+    color: #009aa4;
+}
+.ms-cl .cus-col-6 {
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+@media (max-width: 768px) {
+    .ms-cl .rs-sec-bottom {
+        flex-direction: column;
+        padding: 11px 10px;
+    }
+    .ms-cl .rs-value {
+        font-size: 26px;
+    }
+    .ms-cl .sum-sec {
+        flex-direction: column;
+    }
+    .ms-cl .exp-section {
+        padding: 12px 17px;
+    }
+    .ms-cl .mr-top-mb {
+        margin-top: 15px;
+    }
+}
+.ms-cl .option-checkbox {
+    width: 16px;
+    height: 16px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 8px;
+    color: #fff;
+    background-color: #fff;
+    cursor: pointer;
+    margin-left: 8px;
+}
+.ms-cl .option-checkbox.is-active {
+    background-color: #fff;
+    color: #000;
+}
+</style>
+<div class="ms-cl" id="ms_cl">
+    <div class="container cl-wrapper">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <div class="slidecontainer">
+                        <label class="cus-label" style="margin-bottom: 4px;">
+                            <span>Occupancy</span> 
+                            <div class="form-group" style="margin-bottom: 0;">
+                                <input type="text" name="in_1_vl" style="width: 108px;" class="form-control sp-pd-right cl-required" id="in_1_vl" autocomplete="off" value="">
+                                <span class="append-text">%</span>
+                            </div>
+                        </label>
+                        <input type="range" min="0" max="100" value="95" step="1" class="slider cl-in" id="in_1">
+                    </div>
+                </div>
+                <div class="form-group" style="margin-top: 20px;">
+                    <div class="slidecontainer">
+                        <label class="cus-label" style="margin-bottom: 4px;">
+                            <span>Average Nightly Price</span>
+                            <div class="form-group" style="margin-bottom: 0;">
+                                <input type="text" name="in_2_vl" style="width: 108px;" class="form-control sp-pd-left cl-required" id="in_2_vl" autocomplete="off" value="">
+                                <span class="prepend-text">$</span>
+                            </div>
+                        </label>
+                        <input type="range" min="1" max="10000" value="1000" step="1" class="slider cl-in" id="in_2">
+                    </div>
+                </div>
+                <div class="cashflow-sec">
+                    <h3>Net Cash Flow</h3>
+                    <div class="sum-sec">
+                        <div class="sum-item ">
+                            <div class="sum-value" id="rs_1">$0.00</div>
+                            <div class="sum-title">Daily</div>
+                        </div>
+                        <div class="sum-item mr-top-mb">
+                            <div class="sum-value" id="rs_2">$0.00</div>
+                            <div class="sum-title">Monthly</div>
+                        </div>
+                        <div class="sum-item mr-top-mb">
+                            <div class="sum-value" id="rs_3">$0.00</div>
+                            <div class="sum-title">Yearly</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="rs-sec">
+                    <table class="table">
+                        <tr>
+                            <td>Total Bookings</td>
+                            <td class="text-right f600" id="rs_4">$100.00</td>
+                        </tr>
+                        <tr>
+                            <td>Fees (3%)</td>
+                            <td class="text-right f600" id="rs_5">$100.00</td>
+                        </tr>
+                        <tr>
+                            <td style="border-bottom: none; border-bottom: none;display: flex;align-items: center;">Other Fees (13%) <div id="isOtherFee" class="option-checkbox is-active">✓</div></td>
+                            <td style="border-bottom: none;" class="text-right f600" id="rs_6">$100.00</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="rs-sec-bottom">
+                    <span class="rs-title">Est net Monthly Income</span>
+                    <span class="rs-value" id="rs_7">$100</span>
+                </div>
+            </div>
+            <div class="col-md-6 mr-top-mb">
+                <div class="exp-section">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h3>Expenses</h3>
+                        </div>
+                        <div class="cus-col-6">
+                            <label>Rent</label>
+                        </div>
+                        <div class="cus-col-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control sp-pd-left in-num cl-required in-exp" value="500" autocomplete="off" />
+                                <span class="prepend-text">$</span>
+                            </div>
+                        </div>
+                        <div class="cus-col-6">
+                            <label>Water</label>
+                        </div>
+                        <div class="cus-col-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control sp-pd-left in-num cl-required in-exp" value="100" autocomplete="off" />
+                                <span class="prepend-text">$</span>
+                            </div>
+                        </div>
+                        <div class="cus-col-6">
+                            <label>Power</label>
+                        </div>
+                        <div class="cus-col-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control sp-pd-left in-num cl-required in-exp" value="150" autocomplete="off" />
+                                <span class="prepend-text">$</span>
+                            </div>
+                        </div>
+                        <div class="cus-col-6">
+                            <label>Internet</label>      
+                        </div>
+                        <div class="cus-col-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control sp-pd-left in-num cl-required in-exp" value="" autocomplete="off" />
+                                <span class="prepend-text">$</span>
+                            </div>
+                        </div>
+                        <div class="cus-col-6">
+                            <label>Parking</label>
+                        </div>
+                        <div class="cus-col-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control sp-pd-left in-num cl-required in-exp" value="" autocomplete="off" />
+                                <span class="prepend-text">$</span>
+                            </div>
+                        </div>
+                        <div class="cus-col-6">
+                            <label>Cable</label>
+                        </div>
+                        <div class="cus-col-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control sp-pd-left in-num cl-required in-exp" value="" autocomplete="off" />
+                                <span class="prepend-text">$</span>
+                            </div>
+                        </div>
+                        <div class="cus-col-6">
+                            <label>Streaming</label>  
+                        </div>
+                        <div class="cus-col-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control sp-pd-left in-num cl-required in-exp" value="" autocomplete="off" />
+                                <span class="prepend-text">$</span>
+                            </div>
+                        </div>
+                        <div class="cus-col-6">
+                            <label>Insurance</label>      
+                        </div>
+                        <div class="cus-col-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control sp-pd-left in-num cl-required in-exp" value="" autocomplete="off" />
+                                <span class="prepend-text">$</span>
+                            </div>
+                        </div>
+                        <div class="cus-col-6">
+                            <label>Gas</label>      
+                        </div>
+                        <div class="cus-col-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control sp-pd-left in-num cl-required in-exp" value="" autocomplete="off" />
+                                <span class="prepend-text">$</span>
+                            </div>
+                        </div>
+                        <div class="cus-col-6">
+                            <label>Other</label>      
+                        </div>
+                        <div class="cus-col-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control sp-pd-left in-num cl-required in-exp" value="" autocomplete="off" />
+                                <span class="prepend-text">$</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/autonumeric@4.5.4"></script>
+<script>
+    jQuery(document).ready(function($){
+        let ins = {}, other_fees_rate = 13/100;
+
+        const numOptionCurrency = {
+            digitGroupSeparator        : ',',
+            decimalCharacter           : '.',
+            decimalCharacterAlternative: '.',
+            currencySymbol             : '',
+            currencySymbolPlacement    : AutoNumeric.options.currencySymbolPlacement.prefix,
+            decimalPlaces              : 0,
+            minimumValue               : 0
+        };
+
+        const numOptionCurrency1 = {
+            digitGroupSeparator        : ',',
+            decimalCharacter           : '.',
+            decimalCharacterAlternative: '.',
+            currencySymbol             : '',
+            currencySymbolPlacement    : AutoNumeric.options.currencySymbolPlacement.prefix,
+            decimalPlaces              : 0,
+            minimumValue               : 0,
+            maximumValue               : 10000
+        };
+
+        const numOptionPercent = {
+            digitGroupSeparator        : ',',
+            decimalCharacter           : '.',
+            decimalCharacterAlternative: '.',
+            currencySymbol             : '',
+            currencySymbolPlacement    : AutoNumeric.options.currencySymbolPlacement.prefix,
+            decimalPlaces              : 0,
+            minimumValue               : 0,
+            maximumValue               : 100
+        };
+
+        const anElement1 = new AutoNumeric('#in_1_vl', numOptionPercent);
+        const anElement2 = new AutoNumeric('#in_2_vl', numOptionCurrency1);
+        const anElement3 = AutoNumeric.multiple('.in-num', numOptionCurrency);
+
+        const nftd = Intl.NumberFormat("en-US", {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        });
+
+        $('#in_1, #in_2').on('input', function(e){
+            var min = Number(e.target.min),
+                max = Number(e.target.max),
+                vl = Number(e.target.value),
+                val = Number(e.target.value);
+            
+            let in_id = $(this).attr("id");
+
+            if(min == 0){
+                min = min + 1;
+                max = max + 1;
+                val = val + 1;
+            }
+                
+            let bg_size = (val - min) * 100 / (max - min);
+
+            $(e.target).css({
+                'backgroundSize': bg_size + '% 100%'
+            });
+
+            if(in_id == "in_1"){
+                anElement1.set(vl);
+            } else {
+                anElement2.set(vl);
+            }
+
+            calcFunc();
+
+        }).trigger('input');
+
+        $("#in_1_vl, #in_2_vl").on("input", function(){
+            let vl = removeSign($(this).val());
+            let in_id = $(this).attr("id").replace("_vl", "");
+            $("#"+in_id).val(vl).trigger('input');
+        });
+        
+        $(".cl-required").on("input", function(){
+            calcFunc();
+        });
+
+        $("#isOtherFee").on("click", function(){
+            if($(this).hasClass("is-active")) {
+                $(this).removeClass("is-active");
+                other_fees_rate = 0;
+            } else {
+                $(this).addClass("is-active");
+                other_fees_rate = 13/100;
+            }
+            calcFunc();
+        });
+
+        function calcFunc(){
+            let total_expenses = 0;
+            let in_1 = removeSign($("#in_1").val())/100;
+            let in_2 = removeSign($("#in_2").val());
+
+            $(".in-exp").each(function() {
+                let vl = removeSign($(this).val());
+
+                total_expenses = total_expenses + vl;
+            });
+
+            let days = 30 * in_1;
+            let total_bookings = days * in_2;
+            let fees = total_bookings * (3/100);
+            let other_fees = total_bookings * other_fees_rate;
+            
+            let net_income = total_bookings - fees - other_fees - total_expenses;
+
+            let daily_cash = net_income/30;
+            let yearly_cash = net_income*12;
+
+            $("#rs_1").text("$"+nftd.format(daily_cash));
+            $("#rs_2").text("$"+nftd.format(net_income));
+            $("#rs_3").text("$"+nftd.format(yearly_cash));
+            $("#rs_4").text("$"+nftd.format(total_bookings));
+            $("#rs_5").text("$"+nftd.format(fees));
+            $("#rs_6").text("$"+nftd.format(other_fees));
+            $("#rs_7").text("$"+nftd.format(net_income));
+        }
+
+        function removeSign(vl){
+            return Number(vl.replace(/\$|,/g, ""));
+        }
+    });
+</script>
+<!----------- copy ends ---------------->
+</body>
+</html>

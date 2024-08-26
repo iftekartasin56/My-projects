@@ -1,0 +1,995 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
+    <title>MCAT Score Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <style>
+        #mx_cl *,
+        ::after,
+        ::before {
+            box-sizing: border-box;
+        }
+
+        #mx_cl {
+            line-height: 1.5;
+            font-family: inherit;
+        }
+
+        #mx_cl .container {
+            width: 100%;
+            padding-right: 15px;
+            padding-left: 15px;
+            margin-right: auto;
+            margin-left: auto;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #4a4a4a;
+            text-align: left;
+        }
+
+        #mx_cl label {
+            display: inline-block;
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: #000;
+        }
+
+        #mx_cl .row {
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            margin-right: -15px;
+            margin-left: -15px;
+        }
+
+        #mx_cl .col-md-1,
+        #mx_cl .col-md-10,
+        #mx_cl .col-md-11,
+        #mx_cl .col-md-12,
+        #mx_cl .col-md-2,
+        #mx_cl .col-md-3,
+        #mx_cl .col-md-4,
+        #mx_cl .col-md-5,
+        #mx_cl .col-md-6,
+        #mx_cl .col-md-7,
+        #mx_cl .col-md-8,
+        #mx_cl .col-md-9 {
+            position: relative;
+            width: 100%;
+            padding-right: 15px;
+            padding-left: 15px;
+        }
+
+        #mx_cl .form-group {
+            position: relative;
+            margin-bottom: 15px;
+        }
+
+        #mx_cl .form-control {
+            display: block;
+            width: 100%;
+            height: 33px;
+            padding: 0.275rem 0.75rem;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #fff;
+            background-color: #B9C9D1;
+            background-clip: padding-box;
+            border: 1px solid #8291A3;
+            border-radius: 8px !important;
+            transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+            text-align: center;
+        }
+
+        #mx_cl .form-control:focus {
+            outline: none;
+        }
+
+        #mx_cl .sp-form-control {
+            display: block;
+            width: 100%;
+            height: 39px;
+            padding: 0.275rem 0.75rem;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #000;
+            background-color: #fff;
+            background-clip: padding-box;
+            border: 1px solid #DADADA;
+            transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+        }
+
+        #mx_cl .sp-form-control:focus {
+            outline: none;
+        }
+
+        #mx_cl .bot-sign-up {
+            color: #fff;
+            background-color: #9506E6;
+            display: inline-block;
+            font-weight: 600; 
+            cursor: pointer;
+            padding: 10px 15px;
+            font-size: 18px;
+            margin-top: 20px;
+            text-decoration: none;
+        }
+
+        #mx_cl table {
+            border-collapse: collapse;
+        }
+
+        #mx_cl .table {
+            width: 100%;
+            margin-bottom: 1rem;
+            color: #000000;
+            border: none !important;
+        }
+
+        #mx_cl .table th {
+            padding: 5px;
+            vertical-align: top;
+            text-align: right;
+            border: none;
+            color: #8291A3;
+            border-bottom: 1px solid #8291A3;
+        }
+        #mx_cl .table td{
+            padding: 5px;
+            vertical-align: top;
+            border: none;
+            border-bottom: 1px solid #E1E1E1;
+        }
+        #mx_cl .width-180{
+            width: 180px;
+        }
+        #mx_cl .width-100{
+            width: 100px;
+        }
+        #mx_cl .width-120{
+            width: 120px;
+        }
+
+        #mx_cl .text-center {
+            text-align: center;
+        }
+
+        @media (min-width: 576px) {
+            #mx_cl .container {
+                max-width: 100%;
+            }
+        }
+
+        @media (min-width: 768px) {
+            #mx_cl .container {
+                max-width: 100%;
+            }
+
+            #mx_cl .col-md-12 {
+                -ms-flex: 0 0 100%;
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+
+            #mx_cl .col-md-9 {
+                -ms-flex: 0 0 75%;
+                flex: 0 0 75%;
+                max-width: 75%;
+            }
+
+            #mx_cl .col-md-8 {
+                -ms-flex: 0 0 66.666667%;
+                flex: 0 0 66.666667%;
+                max-width: 66.666667%;
+            }
+
+            #mx_cl .col-md-7 {
+                -ms-flex: 0 0 58.33333%;
+                flex: 0 0 58.33333%;
+                max-width: 58.33333%;
+            }
+
+            #mx_cl .col-md-6 {
+                -ms-flex: 0 0 50%;
+                flex: 0 0 50%;
+                max-width: 50%;
+            }
+
+            #mx_cl .col-md-5 {
+                -ms-flex: 0 0 41.666667%;
+                flex: 0 0 33.333333%;
+                max-width: 33.333333%;
+            }
+
+            #mx_cl .col-md-4 {
+                -ms-flex: 0 0 33.333333%;
+                flex: 0 0 33.333333%;
+                max-width: 33.333333%;
+            }
+
+            #mx_cl .col-md-3 {
+                -ms-flex: 0 0 25%;
+                flex: 0 0 25%;
+                max-width: 25%;
+            }
+        }
+
+        @media (min-width: 992px) {
+            #mx_cl .container {
+                max-width: 700px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            #mx_cl .container {
+                max-width: 1150px;
+            }
+        }
+
+        #mx_cl .text-right {
+            text-align: right;
+        }
+
+        #mx_cl .form-group,
+        #mx_cl .input-group {
+            position: relative;
+            margin-bottom: 15px;
+        }
+
+        #mx_cl .top-title {
+            font-size: 34px;
+            color: #8291A3;
+            text-align: center;
+            margin-bottom: 0px;
+        }
+
+        #mx_cl .em-context {
+            box-shadow: 0 0 10px #c3c3c3;
+            border-radius: 8px;
+        }
+
+        #mx_cl .em-sub-heading {
+            font-weight: 600;
+            font-size: 20px;
+            color: #9506E6;
+            margin: 0px;
+            border-bottom: 1px solid #D9D9D9;
+            border-top: none;
+        }
+
+        #mx_cl .em-tab-section {
+            display: flex;
+            justify-content: space-around;
+            gap: 8px;
+        }
+
+        #mx_cl .em-tab-design {
+            background: #fff;
+            margin-top: 20px;
+            color: #000000;
+            border: 1px solid #D9D9D9;
+            border-radius: 8px;
+            width: 100%;
+            text-align: center;
+            padding: 7px;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        #mx_cl .em-tab-design:hover {
+            background: #9506E6;
+            color: #ffffff;
+        }
+        
+        #mx_cl .em-tab-design.active {
+            background-color: #9506E6;
+            color: #ffffff;
+        }
+        
+
+        #mx_cl .em-mid-section {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        #mx_cl .em-mid-sub-heading {
+            font-weight: 600;
+            font-size: 20px;
+            color: #9506E6;
+            margin: 0px;
+        }
+
+        #mx_cl .em-mid-span {
+            font-size: 16px;
+            font-weight: 400;
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        #mx_cl input[type=range] {
+            margin: 0 0 0 0;
+            outline: none;
+            padding: 0;
+            width: 100%;
+            height: 7px;
+            background-color: #fff;
+            background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #8291A3), color-stop(100%, #8291A3));
+            background-size: 0% 100%;
+            background-repeat: no-repeat;
+            border-radius: 10px;
+            cursor: pointer;
+            -webkit-appearance: none;
+        }
+
+        #mx_cl input[type=range]::-webkit-slider-runnable-track {
+            box-shadow: none;
+            border: none;
+            background: transparent;
+            -webkit-appearance: none;
+        }
+
+        #mx_cl input[type=range]::-webkit-slider-thumb {
+            height: 23px;
+            width: 23px;
+            margin-top: -1px;
+            background: #8291A3;
+            border: 5px solid #8291A3;
+            border-radius: 25px;
+            -webkit-appearance: none;
+        }
+
+        #mx_cl input[type=range]::-moz-range-track {
+            box-shadow: none;
+            border: none;
+            background: transparent;
+            -webkit-appearance: none;
+        }
+
+        #mx_cl input[type=range]::-moz-range-thumb {
+            height: 20px;
+            width: 20px;
+            margin-top: -4px;
+            background: #0D2131;
+            border: 5px solid #0D2131;
+            border-radius: 25px;
+            box-shadow: 0 2px 2px 0px #0D2131;
+            -webkit-appearance: none;
+        }
+
+        #mx_cl .em-mid-slide-sec {
+            display: flex;
+            margin-top: 30px;
+        }
+
+        #mx_cl .em-add-border-radius {
+            border-radius: 0;
+            text-align: center;
+            height: 35px;
+        }
+
+        #mx_cl .rs-sec {
+            padding: 28px 12px;
+            background-color: #B9C9D1;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            text-align: center;
+            border: 1px solid #000;
+        }
+        #mx_cl .rs-title {
+            font-size: 18px;
+            font-weight: 600;
+            border-bottom: 1px solid #B1B1B1;
+            margin-bottom: 5px;
+            padding-bottom: 5px;
+            color: #FFFFFF;
+        }
+        #mx_cl .rs-vl {
+            font-size: 28px;
+            font-weight: 600;
+            color: #FFFFFF;
+        }
+
+        #mx_cl .cl-wrapper {
+            border: 1px solid #000;
+            border-radius: 8px;
+            padding: 45px;
+            background: #F6F4E9;
+        }
+        #mx_cl .ms-sm-left {
+            display: inline-block;
+            font-size: 14px;
+            float: left;
+            color: #939393;
+        }
+        #mx_cl .ms-sm-right {
+            display: inline-block;
+            font-size: 14px;
+            float: right;
+            color: #939393;
+        }
+        #mx_cl .range-wrap {
+            display: block;
+            position: relative;
+            padding: 0;
+            margin: 0 0 35px 0;
+        }
+        #mx_cl .right-div-sec {
+            background-color: #F6F4E9;
+            padding: 0 15px 0 15px;
+        }
+        
+        #mx_cl .btn {
+            display: block;
+            font-weight: 500;
+            color: #212529;
+            text-align: center;
+            vertical-align: middle;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            background-color: transparent;
+            border: 1px solid transparent;
+            padding: 0.275rem 2.2rem;
+            line-height: 1.3;
+            transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+            text-align: center;
+        }
+        #mx_cl .btn-primary {
+            display: block;
+            width: 100%;
+            background-color: #8291A3;
+            border: 1px solid #fff;
+            color: #fff;
+            border-radius: 4px;
+            padding: 8px;
+            font-size: 16px;
+            font-weight: 400;
+        }
+        @media (max-width: 768px) {
+            
+            #mx_cl .top-title {
+                font-size: 30px;
+            }
+            #mx_cl .cl-wrapper{
+                padding: 20px !important;
+            }
+
+            #mx_cl .rs-section {
+                padding: 5px;
+                border: 1px solid #9506E6;
+                border-radius: 8px;
+                margin-top: 30px;
+            }
+            #mx_cl .right-div-sec{
+                padding: 0 !important;
+            }
+            #mx_cl .col-md-8 {
+                -ms-flex: 0 0 66.666667%;
+                flex: 0 0 66.666667%;
+                max-width: 66.666667%;
+            }
+            #mx_cl .col-md-4 {
+                -ms-flex: 0 0 33.333333%;
+                flex: 0 0 33.333333%;
+                max-width: 33.333333%;
+            }
+        }
+    </style>
+    <div class="ms-cl" id="mx_cl">
+        <div class="container">
+            <h3 class="top-title">MCAT Score Calculator</h3>
+                <div class="cl-wrapper">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="left-div-sec">
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        <label for="in_1">Chem/Phys</label>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" id="in_1_vl">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="range-wrap">
+                                            <input id="in_1" class="range-bg-1 cl-in" type="range" min="1" max="59" value="0" step="1">
+                                            <div class="ms-sm-left">1</div>
+                                            <div class="ms-sm-right">59</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <label for="in_1">CARS</label>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" id="in_2_vl">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="range-wrap">
+                                            <input id="in_2" class="range-bg-1 cl-in" type="range" min="1" max="53" value="0" step="1">
+                                            <div class="ms-sm-left">1</div>
+                                            <div class="ms-sm-right">53</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <label for="in_3">Bio/Biochem</label>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" id="in_3_vl">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="range-wrap">
+                                            <input id="in_3" class="range-bg-1 cl-in" type="range" min="1" max="59" value="0" step="1">
+                                            <div class="ms-sm-left">1</div>
+                                            <div class="ms-sm-right">59</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <label for="in_4">Psych/Soc</label>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" id="in_4_vl">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="range-wrap">
+                                            <input id="in_4" class="range-bg-1 cl-in" type="range" min="1" max="59" value="0" step="1">
+                                            <div class="ms-sm-left">1</div>
+                                            <div class="ms-sm-right">59</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="right-div-sec">
+                                <div style="overflow-x: auto;">
+                                    <table class="table">
+                                        <tbody>
+                                            <tr>
+                                                <td>Chem/Phys</td>
+                                                <td class="text-right" id="chem_rs">516</td>
+                                            </tr>
+                                            <tr>
+                                                <td>CARS</td>
+                                                <td class="text-right" id="cars_rs">516</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Bio/Biochem</td>
+                                                <td class="text-right" id="bio_rs">516</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Pysch/Soc</td>
+                                                <td class="text-right" id="pysch_rs">516</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="rs-sec">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="rs-title">MCAT Score</div>
+                                            <div class="rs-vl" id="score_rs">118</div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="rs-title">Percentile Rank</div>
+                                            <div class="rs-vl" id="rank_rs">1%</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Do you want to get personalized tips to improve your score?</label>
+                                    <input type="text" class="sp-form-control" placeholder="Enter your email address"> 
+                                </div>
+                                <button class="btn btn-primary">Send</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+    </div>
+    <script>
+        jQuery(document).ready(function($){
+            let x = 0;
+            let chem_arr = [
+                            [0, 118, 1],
+                            [1, 118, 1],
+                            [2, 118, 1],
+                            [3, 118, 1],
+                            [4, 118, 1],
+                            [5, 118, 1],
+                            [6, 118, 1],
+                            [7, 118, 1],
+                            [8, 118, 1],
+                            [9, 118, 1],
+                            [10, 118, 1],
+                            [11, 118, 1],
+                            [12, 118, 1],
+                            [13, 118, 1],
+                            [14, 118, 1],
+                            [15, 118, 1],
+                            [16, 119, 3],
+                            [17, 119, 3],
+                            [18, 120, 6],
+                            [19, 120, 6],
+                            [20, 120, 6],
+                            [21, 121, 12],
+                            [22, 121, 12],
+                            [23, 121, 12],
+                            [24, 122, 20],
+                            [25, 122, 20],
+                            [26, 122, 20],
+                            [27, 122, 20],
+                            [28, 123, 30],
+                            [29, 123, 30],
+                            [30, 123, 30],
+                            [31, 124, 42],
+                            [32, 124, 42],
+                            [33, 124, 42],
+                            [34, 124, 42],
+                            [35, 124, 42],
+                            [36, 125, 52],
+                            [37, 125, 52],
+                            [38, 125, 52],
+                            [39, 126, 64],
+                            [40, 126, 64],
+                            [41, 126, 64],
+                            [42, 126, 64],
+                            [43, 127, 75],
+                            [44, 127, 75],
+                            [45, 127, 75],
+                            [46, 127, 75],
+                            [47, 128, 84],
+                            [48, 128, 84],
+                            [49, 128, 84],
+                            [50, 129, 91],
+                            [51, 129, 91],
+                            [52, 129, 91],
+                            [53, 130, 96],
+                            [54, 130, 96],
+                            [55, 130, 96],
+                            [56, 131, 99],
+                            [57, 131, 99],
+                            [58, 132, 100],
+                            [59, 132, 100]
+                        ];
+            let cars_arr = [
+                            [0, 118, 1],
+                            [1, 118, 1],
+                            [2, 118, 1],
+                            [3, 118, 1],
+                            [4, 118, 1],
+                            [5, 118, 1],
+                            [6, 118, 1],
+                            [7, 118, 1],
+                            [8, 118, 1],
+                            [9, 118, 1],
+                            [10, 118, 1],
+                            [11, 118, 1],
+                            [12, 118, 1],
+                            [13, 119, 3],
+                            [14, 119, 3],
+                            [15, 119, 3],
+                            [16, 119, 3],
+                            [17, 119, 3],
+                            [18, 119, 3],
+                            [19, 119, 3],
+                            [20, 120, 7],
+                            [21, 120, 7],
+                            [22, 120, 7],
+                            [23, 120, 7],
+                            [24, 121, 13],
+                            [25, 121, 13],
+                            [26, 121, 13],
+                            [27, 122, 23],
+                            [28, 122, 23],
+                            [29, 122, 23],
+                            [30, 123, 35],
+                            [31, 123, 35],
+                            [32, 123, 35],
+                            [33, 124, 48],
+                            [34, 124, 48],
+                            [35, 124, 48],
+                            [36, 125, 60],
+                            [37, 125, 60],
+                            [38, 125, 60],
+                            [39, 126, 71],
+                            [40, 126, 71],
+                            [41, 127, 82],
+                            [42, 127, 82],
+                            [43, 128, 90],
+                            [44, 128, 90],
+                            [45, 128, 90],
+                            [46, 129, 95],
+                            [47, 130, 98],
+                            [48, 130, 98],
+                            [49, 131, 99],
+                            [50, 131, 99],
+                            [51, 132, 100],
+                            [52, 132, 100],
+                            [53, 132, 100]
+                        ];
+            let bio_arr = [
+                            [0, 118, 1],
+                            [1, 118, 1],
+                            [2, 118, 1],
+                            [3, 118, 1],
+                            [4, 118, 1],
+                            [5, 118, 1],
+                            [6, 118, 1],
+                            [7, 118, 1],
+                            [8, 118, 1],
+                            [9, 118, 1],
+                            [10, 118, 1],
+                            [11, 118, 1],
+                            [12, 118, 1],
+                            [13, 118, 1],
+                            [14, 118, 1],
+                            [15, 118, 1],
+                            [16, 118, 1],
+                            [17, 118, 1],
+                            [18, 119, 2],
+                            [19, 119, 2],
+                            [20, 120, 6],
+                            [21, 120, 6],
+                            [22, 120, 6],
+                            [23, 120, 6],
+                            [24, 121, 11],
+                            [25, 121, 11],
+                            [26, 122, 18],
+                            [27, 122, 18],
+                            [28, 122, 18],
+                            [29, 123, 27],
+                            [30, 123, 27],
+                            [31, 123, 27],
+                            [32, 123, 27],
+                            [33, 124, 37],
+                            [34, 124, 37],
+                            [35, 124, 37],
+                            [36, 124, 37],
+                            [37, 125, 48],
+                            [38, 125, 48],
+                            [39, 125, 48],
+                            [40, 126, 60],
+                            [41, 126, 60],
+                            [42, 126, 60],
+                            [43, 127, 72],
+                            [44, 127, 72],
+                            [45, 127, 72],
+                            [46, 127, 72],
+                            [47, 128, 82],
+                            [48, 128, 82],
+                            [49, 128, 82],
+                            [50, 129, 90],
+                            [51, 129, 90],
+                            [52, 130, 96],
+                            [53, 130, 96],
+                            [54, 130, 96],
+                            [55, 131, 98],
+                            [56, 131, 98],
+                            [57, 132, 100],
+                            [58, 132, 100],
+                            [59, 132, 100]
+
+                        ];
+            let psych_arr = [
+                            [0, 118, 1],
+                            [1, 118, 1],
+                            [2, 118, 1],
+                            [3, 118, 1],
+                            [4, 118, 1],
+                            [5, 118, 1],
+                            [6, 118, 1],
+                            [7, 118, 1],
+                            [8, 118, 1],
+                            [9, 118, 1],
+                            [10, 118, 1],
+                            [11, 118, 1],
+                            [12, 118, 1],
+                            [13, 118, 1],
+                            [14, 118, 1],
+                            [15, 118, 1],
+                            [16, 118, 1],
+                            [17, 118, 1],
+                            [18, 119, 2],
+                            [19, 119, 2],
+                            [20, 119, 2],
+                            [21, 120, 5],
+                            [22, 120, 5],
+                            [23, 120, 5],
+                            [24, 121, 9],
+                            [25, 121, 9],
+                            [26, 121, 9],
+                            [27, 121, 9],
+                            [28, 122, 15],
+                            [29, 122, 15],
+                            [30, 122, 15],
+                            [31, 122, 15],
+                            [32, 123, 23],
+                            [33, 123, 23],
+                            [34, 123, 23],
+                            [35, 124, 32],
+                            [36, 124, 32],
+                            [37, 124, 32],
+                            [38, 124, 32],
+                            [39, 124, 32],
+                            [40, 125, 42],
+                            [41, 125, 42],
+                            [42, 125, 42],
+                            [43, 125, 42],
+                            [44, 126, 53],
+                            [45, 126, 53],
+                            [46, 126, 53],
+                            [47, 126, 53],
+                            [48, 127, 65],
+                            [49, 127, 65],
+                            [50, 127, 65],
+                            [51, 128, 77],
+                            [52, 128, 77],
+                            [53, 129, 85],
+                            [54, 129, 85],
+                            [55, 130, 93],
+                            [56, 130, 93],
+                            [57, 131, 97],
+                            [58, 132, 100],
+                            [59, 132, 100]
+
+                        ];
+
+            let rank_arr = [
+                [472, 1],
+                [473, 1],
+                [474, 1],
+                [475, 1],
+                [476, 1],
+                [477, 1],
+                [478, 2],
+                [479, 3],
+                [480, 3],
+                [481, 4],
+                [482, 5],
+                [483, 6],
+                [484, 8],
+                [485, 9],
+                [486, 11],
+                [487, 12],
+                [488, 14],
+                [489, 16],
+                [490, 18],
+                [491, 20],
+                [492, 23],
+                [493, 25],
+                [494, 28],
+                [495, 31],
+                [496, 33],
+                [497, 36],
+                [498, 39],
+                [499, 43],
+                [500, 46],
+                [501, 49],
+                [502, 52],
+                [503, 56],
+                [504, 59],
+                [505, 62],
+                [506, 66],
+                [507, 69],
+                [508, 72],
+                [509, 75],
+                [510, 78],
+                [511, 81],
+                [512, 83],
+                [513, 86],
+                [514, 88],
+                [515, 90],
+                [516, 92],
+                [517, 94],
+                [518, 95],
+                [519, 96],
+                [520, 97],
+                [521, 98],
+                [522, 99],
+                [523, 99],
+                [524, 100],
+                [525, 100],
+                [526, 100],
+                [527, 100],
+                [528, 100]
+            ];
+
+            const nft = Intl.NumberFormat("en-US",{
+                minimumFractionDigits: 0,
+                maximumFractionDigits: 0
+            });
+
+            $("#in_1, #in_2, #in_3, #in_4").on('input', function(e){
+                var min = e.target.min,
+                    max = e.target.max,
+                    val = e.target.value; 
+                
+                let in_id = $(this).attr("id");
+                    
+                let bg_size = (val - min) * 100 / (max - min);
+
+                $(e.target).css({
+                    'backgroundSize': bg_size + '% 100%'
+                });
+
+                if(in_id != "in_4"){
+                    $("#"+in_id+"_vl").val(nft.format(val));
+                } else {
+                    $("#"+in_id+"_vl").val(nft.format(val));
+                }
+                Calc();
+            }).trigger('input');
+
+            function Calc(){
+                in_1 = Number($("#in_1").val());
+                in_2 = Number($("#in_2").val());
+                in_3 = Number($("#in_3").val());
+                in_4 = Number($("#in_4").val());
+
+                
+                let score_find = chem_arr.filter((arr) => arr[0] == in_1);
+                let chem_scaled_score = score_find[0][1];
+
+                score_find = cars_arr.filter((arr) => arr[0] == in_2);
+                let cars_scaled_score = score_find[0][1];
+
+                score_find = bio_arr.filter((arr) => arr[0] == in_3);
+                let bio_scaled_score = score_find[0][1];
+
+                score_find = psych_arr.filter((arr) => arr[0] == in_4);
+
+                let psych_scaled_score = score_find[0][1];
+                
+                let total_score = (chem_scaled_score + cars_scaled_score + bio_scaled_score + psych_scaled_score);
+
+                let rank_find = rank_arr.filter((arr) => arr[0] == total_score);
+
+                let percentile_rank = rank_find[0][1];
+
+                $("#chem_rs").text(nft.format(chem_scaled_score));
+                $("#cars_rs").text(nft.format(cars_scaled_score));
+                $("#bio_rs").text(nft.format(bio_scaled_score));
+                $("#pysch_rs").text(nft.format(psych_scaled_score));
+                $("#score_rs").text(nft.format(total_score));
+                $("#rank_rs").text(nft.format(percentile_rank));                
+            }
+        })
+    </script>
+</body>
+
+
+</html>

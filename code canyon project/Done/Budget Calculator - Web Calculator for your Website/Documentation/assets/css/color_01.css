@@ -1,0 +1,85 @@
+/*
+
+Template: Ocean It Park - The complete documentation template
+Version: 1.0
+Author: Ocean It Park
+
+/*============================
+  sidemenu
+  ============================*/
+  .org-theme .sidebar-wrapper,
+  #show-sidebar {
+    background: #00b1d5;
+  }
+  
+  .sidebar-wrapper .sidebar-brand{
+      background: #2b3862;
+  }
+  .sidebar-wrapper .sidebar-menu .sidebar-dropdown .sidebar-submenu ul li.active a
+  {
+    color: #2b3862;
+  }
+  .sidebar-wrapper .sidebar-menu ul li.side-list.active > a
+  {
+    color: #2b3862;
+  }
+  /*end of sidemenu*/
+  
+  /*============================
+    Header
+    ============================*/
+  .doc-head-section {
+      background: #dde5ff;
+  }
+  
+  .header-full {
+    border-bottom: 1px solid #cad3f0;
+  }
+  /*end of header*/
+
+  /*============================
+    footer
+    ============================*/
+  footer
+  {
+    background: #dde5ff;
+  }
+  footer ul li a
+  {
+    color: #173164;
+    border-right: 1px solid #6f7fab;
+  }
+  /*end of footer*/
+  
+  /*============================
+    404
+    ============================*/
+  .error-sec a
+  {background: rgba(9,46,168,1);
+    background: -moz-linear-gradient(top, rgba(9,46,168,1) 0%, rgba(15,37,110,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(9,46,168,1)), color-stop(100%, rgba(15,37,110,1)));
+    background: -webkit-linear-gradient(top, rgba(9,46,168,1) 0%, rgba(15,37,110,1) 100%);
+    background: -o-linear-gradient(top, rgba(9,46,168,1) 0%, rgba(15,37,110,1) 100%);
+    background: -ms-linear-gradient(top, rgba(9,46,168,1) 0%, rgba(15,37,110,1) 100%);
+    background: linear-gradient(to bottom, rgba(9,46,168,1) 0%, rgba(15,37,110,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#092ea8', endColorstr='#0f256e', GradientType=0 );
+  }
+  /*end of 404*/
+  /*============================
+    badge
+    ============================*/
+  .badge-secondary
+  {
+      background-color: #728ff2;
+  }
+  /*end of badge*/
+  
+  /*============================
+    contact
+    ============================*/
+  .contact-form input[type=submit] {
+    background: #2b3862;
+    border: 1px solid #2b3862;
+    color: #fff;
+  }
+  /*end of contact*/ 

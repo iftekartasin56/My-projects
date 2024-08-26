@@ -1,0 +1,30 @@
+SaaS Lifetime Value calculator - Web Calculator for your Website
+
+Welcome to our <b>SaaS Lifetime Value calculator</b>, The SaaS Lifetime Value Calculator helps SaaS businesses estimate the lifetime value (LTV) of their customers. By calculating LTV, you can gain valuable insights into customer profitability and make informed decisions about customer acquisition, retention strategies and overall business growth.
+<br>
+<br>
+<u><b>User inputs:</b></u>
+<ul>
+    <li>ARPA</li>
+    <li>Gross margin</li>
+    <li>Churn</li>
+</ul>
+<br>
+<u><b>Outputs:</b></u>
+<ul>
+    <li>LTV</li>
+</ul>
+<br>
+<u><b>Features of the SaaS Lifetime Value Calculator:</b></u>
+<ul>
+    <li>- Users can enter average monthly revenue per customer, which is crucial for calculating LTV.</li>
+    <li>- Users can input a churn rate percentage, indicating the rate at which customers cancel their subscriptions.</li>
+    <li>- Instant result without page reload</li>
+    <li>- JS and CSS loads when shortcode called on page</li>
+    <li>- 100% Responsive design</li>
+    <li>- Unique Design</li>
+    <li>- Well Documented (proper help instructions for setup)</li>
+    <li>- Dedicated Support</li>
+</ul>
+<br>
+The calculator is built using HTML, CSS, and JavaScript, and it also utilizes the popular JavaScript library jQuery. A premium quality <b>SaaS Lifetime Value calculator</b> which you can easily embed into any website (well documented).

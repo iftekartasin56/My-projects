@@ -1,0 +1,34 @@
+Self assessment date calculator - Web Calculator for your Website
+
+Welcome to our <b>Self-assessment date calculator - Web Calculator for your Website</b>, The Self Assessment Date Calculator is a help for sole traders and self-employed people who work with a 12 month accounting period. By simply entering your business year end date, the calculator provides essential information regarding your tax obligations and deadlines.
+<br>
+<br>
+<u><b>User inputs:</b></u>
+<ul>
+    <li>Please enter the year end date for your business</li>
+</ul>
+<br>
+<u><b>Outputs:</b></u>
+<ul>
+    <li>Your accounting period runs in the tax year</li>
+    <li>If you have not already registered for self-assessment, you may do this by</li>
+    <li>Any income made during this period will be assessed in your self-assessment</li>
+    <li>Your self assessment for this tax year is due by</li>
+    <li>Your 1st Payment on Account (POA) for this tax year is due.</li>
+    <li>Your 2nd POA for this tax year is due</li>
+    <li>Balancing charge: If your have under/overpaid tax for this tax year, you should claim this by</li>
+</ul>
+<br>
+<u><b>Features of the Self-assessment date Calculator:</b></u>
+<ul>
+    <li>- Users can create and save a PDF report of their calculated date and time frame for easy reference and record keeping by clicking the "Save as PDF" button.</li>
+    <li>- By displaying self-assessment submission deadlines for specific tax years, users confirm when they are due to file their tax returns.</li>
+    <li>- Instant result without page reload</li>
+    <li>- JS and CSS loads when shortcode called on page</li>
+    <li>- 100% Responsive design</li>
+    <li>- Unique Design</li>
+    <li>- Well Documented (proper help instructions for setup)</li>
+    <li>- Dedicated Support</li>
+</ul>
+<br>
+The calculator is built using HTML, CSS, and JavaScript, and it also utilizes the popular JavaScript library jQuery. A premium quality <b>Self-assessment date calculator</b> which you can easily embed into any website (well documented).

@@ -1,0 +1,600 @@
+.ms-cl {
+    font-family: "Geometria", sans-serif;
+}
+.ms-cl *, ::after, ::before {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+.ms-cl .h1, .ms-cl .h2,
+.ms-cl .h3, .ms-cl .h4,
+.ms-cl .h5, .ms-cl .h6,
+.ms-cl h1, .ms-cl h2,
+.ms-cl h3, .ms-cl h4,
+.ms-cl h5, .ms-cl h6 {
+    margin-bottom: .5rem;
+    font-weight: 500;
+    line-height: 1.2;
+}
+.ms-cl .h5, .ms-cl h5 {
+    font-size: 1.25rem;
+}
+.ms-cl p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+.ms-cl p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: #232323;
+}
+.ms-cl table {
+    border-collapse: collapse;
+}
+.ms-cl tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+.ms-cl tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+.ms-cl .ms-table td, .ms-cl .ms-table th {
+    padding: .75rem;
+    vertical-align: middle;
+    border-top: 1px solid #dee2e6;
+}
+.ms-cl .ms-table-sm td, .ms-cl .ms-table-sm th {
+    padding: 0.6rem 0.3rem;
+}
+.ms-container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.ms-cl .col-md-1, .ms-cl .col-md-10, .ms-cl .col-md-11,
+.ms-cl .col-md-12, .ms-cl .col-md-2, .ms-cl .col-md-3,
+.ms-cl .col-md-4, .ms-cl .col-md-5, .ms-cl .col-md-6,
+.ms-cl .col-md-7, .ms-cl .col-md-8, .ms-cl .col-md-9 {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.ms-cl .row {
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+.ms-cl .ms-input-sec {
+    border-radius: 10px 0 0 10px;
+    padding: 10px;
+    background: #fff;
+}
+.ms-cl .ms-total-sec {
+    width: 100%;
+    padding: 12px;
+    background: #F7F7F7;
+    text-align: center;
+    color: #000;
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+}
+.ms-cl .ms-total-title {
+    font-size: 1.7rem;
+    font-weight: 700;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #000;
+    display: inline-block;
+}
+.ms-cl .ms-total-value {
+    font-size: 2.5rem;
+    font-weight: 700;
+    display: block;
+}
+.ms-cl .ms-total-p {
+    display: block;
+    color: #e9e9e9;
+    font-size: 1.2rem;
+}
+.ms-cl .ms-total-p a {
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-decoration: none;
+}
+.ms-cl .ms-total-btn {
+    padding: 10px 20px;
+    background: #A1C582;
+    margin: 0 auto;
+}
+.ms-cl .ms-total-btn a {
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-decoration: none;
+    border-bottom: 1px solid #fff;
+}
+.ms-cl .ms-table {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+.ms-cl .ms-text-center {
+    text-align: center;
+}
+.ms-cl .ms-text-right {
+    text-align: right;
+}
+.ms-cl .ms-mt-3 {
+    margin-top: 1rem;
+}
+.ms-cl .ms-mb-3 {
+    margin-bottom: 1rem;
+}
+.ms-cl .ms-mt-2 {
+    margin-top: .5rem;
+}
+.ms-cl .ms-mb-2 {
+    margin-bottom: .5rem;
+}
+.ms-cl .ms-mt-5 {
+    margin-top: 2rem;
+}
+.ms-cl .ms-mb-5 {
+    margin-bottom: 2rem;
+}
+.ms-cl .ms-cs-mb {
+    margin-bottom: 35px;
+}
+
+.ms-cl .ms-top-title {
+    font-size: 28px;
+    margin: 10px 0;
+    color: #000;
+    font-weight: 500;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #dfdfdf;
+}
+.ms-cl .ms-top-label {
+    display: block;
+    font-size: 18px;
+    text-align: left;
+    color: #000;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+.ms-cl .ms-top-label-left {
+    display: inline-block;
+    font-size: 16px;
+    text-align: left;
+    color: #000;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+.ms-cl .ms-results {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    width:100%;
+    padding: 46px;
+}
+.ms-cl .ms-rs-title {
+    font-size: 28px;
+    margin: 10px;
+    color: #000000;
+    font-weight: 500;
+}
+.ms-cl .ms-rs-label {
+    width: 50%;
+    color: #000000;
+    font-size: 16px;
+    vertical-align: middle;
+    font-weight: 700;
+}
+.ms-cl .ms-sub-note {
+    font-size: 14px;
+}
+.ms-cl .ms-rs-value {
+    font-size: 1.1rem;
+    color: #000;
+    font-weight: 700;
+}
+.ms-cl .ms-rs-t-title {
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 500;
+}
+.ms-cl .ms-rs-total {
+    color: #fff;
+}
+.ms-cl .ms-rs-sm {
+    font-size: 16px;
+    display: block;
+}
+.ms-cl .ms-form-group {
+    margin-bottom: 1rem;
+    position: relative;
+}
+.ms-cl .ms-form-control {
+    display: inline-block;
+    max-width: 100px;
+    height: 35px;
+    padding: 0.175rem 0.75rem;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.5;
+    color: #000;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.ms-cl .ms-form-control-sl {
+    background-color: #fff;
+}
+.ms-cl .ms-form-control:focus {
+    outline: none;
+}
+.ms-cl .ms-append-input {
+    position: absolute;
+    bottom: 8px;
+    right: 14px;
+    color: #7d7d7d;
+    font-weight: 700;
+}
+.ms-cl .ms-slider-small-left {
+    display: inline-block;
+    float: left;
+    font-size: 12px;
+    padding-top: 10px;
+    color:#000;
+}
+.ms-cl .ms-slider-small-right {
+    display: inline-block;
+    float: right;
+    font-size: 12px;
+    padding-top: 10px;
+    color:#000;
+}
+.ms-cl .ms-t-sm-left {
+    display: block;
+    font-size: 14px;
+    padding-top: 2px;
+    color: #000;
+}
+.ms-cl .ms-total_right {
+    display: inline-block;
+    float: right;
+    font-size: 20px;
+    border-bottom: 1px solid #fff;
+}
+.ms-cl .ms-bg-rs {
+    background: #eff4f4;
+    border-radius: 10px;
+}
+.ms-cl .ms-rs-divider {
+    display: block;
+    background: #efefef;
+    width: 200px;
+    height: 1px;
+    margin: 0 auto 10px auto;
+}
+.ms-cl .ms-s-m {
+    margin-top: 15px;
+}
+.ms-cl .ms-slidecontainer {
+    width: 100%;
+    display: flex;
+}
+
+.ms-cl .ms-slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 4px;
+    background: #cccccc;
+    outline: none;
+    opacity: 0.8;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    box-shadow: inset 0 0 3px #787878;
+    border-radius: 5px;
+}
+
+.ms-cl .ms-slider:hover {
+    opacity: 1;
+}
+
+.ms-cl .ms-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    background: #00b163;
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: 0 0 2px #ccc;
+}
+
+.ms-cl .ms-slider::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    background: #00b163;
+    cursor: pointer;
+}
+#cal_view_details {
+    cursor: pointer;
+}
+.ms-cl input[type=range] {
+    margin: 0 0 0 0;
+    outline: none;
+    padding: 0;
+    width: 100%;
+    height: 7px;
+    background-color: #dbdbdb;
+    background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #000), color-stop(100%, #000));
+    background-size: 0% 100%;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    cursor: pointer;
+    -webkit-appearance: none;
+}
+
+.ms-cl input[type=range]::-webkit-slider-runnable-track {
+    box-shadow: none;
+    border: none;
+    background: transparent;
+    -webkit-appearance: none;
+}
+
+.ms-cl input[type=range]::-webkit-slider-thumb {
+    height: 23px;
+    width: 23px;
+    margin-top: -1px;
+    background: #000;
+    border: 5px solid #000;
+    border-radius: 25px;
+    -webkit-appearance: none;
+}
+
+.ms-cl input[type=range]::-moz-range-track {
+    box-shadow: none;
+    border: none;
+    background: transparent;
+    -webkit-appearance: none;
+}
+
+.ms-cl input[type=range]::-moz-range-thumb {
+    height: 20px;
+    width: 20px;
+    margin-top: -4px;
+    background: #0D2131;
+    border: 5px solid #0D2131;
+    border-radius: 25px;
+    box-shadow: 0 2px 2px 0px #0D2131;
+    -webkit-appearance: none;
+}
+/* popup form*/
+/* The Modal (background) */
+.ms-cl .ms-md-title {
+    display: block;
+    font-size: 18px;
+    text-align: center;
+    color: #000;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+.ms-cl .ms-md-label {
+    display: block;
+    font-size: 16px;
+    text-align: left;
+    color: #000;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+.ms-cl .ms-md-form {
+    width: 100%;
+    padding: 25px;
+    box-sizing: border-box;
+}
+.ms-cl #cal_msg_err {
+    display: none;
+    color: red;
+}
+.ms-cl #cal_msg {
+    display: none;
+    color: #000;
+}
+.ms-cl #cal_msg_s {
+    display: none;
+    color: #000;
+    border: 1px solid #a1c582;
+    padding: 5px;
+}
+.ms-cl .ms-md-btn-sec {
+    display: none;
+    text-align: center;
+}
+.ms-cl #dwn_sts{
+    display: none;
+    color:#A1C582;
+}
+.ms-cl .ms-md-btn-sec p {
+    color:#000;
+}
+.ms-cl .ms-md-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    background: #A1C582;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+.ms-cl .ms-modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 200px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    box-sizing: border-box;
+}
+
+/* Modal Content */
+.ms-cl .ms-modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 100%;
+    max-width: 750px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+/* The Close Button */
+.ms-cl .ms-close {
+    color: #aaaaaa;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    right: 6px;
+    top: -3px;
+}
+
+.ms-cl .ms-close:hover,
+.ms-cl .ms-close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+@media (min-width: 576px){
+    .ms-cl .ms-container {
+        max-width: 540px;
+    }
+    .ms-cl .col-md-12 {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .ms-cl .col-md-8 {
+        -ms-flex: 0 0 66.666667%;
+        flex: 0 0 66.666667%;
+        max-width: 66.666667%;
+    }
+    .ms-cl .col-md-6 {
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    .ms-cl .col-md-4 {
+        -ms-flex: 0 0 33.333333%;
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+    }
+    .ms-cl .ms-cs-mb {
+        margin-bottom: 20px;
+    }
+    .ms-cl .ms-input-sec {
+        border-radius: 10px 0 0 10px;
+        padding: 26px;
+        background: #fff;
+    }
+}
+@media (max-width: 768px){
+    .ms-cl .ms-modal {
+        padding-top: 100px;
+    }
+    .ms-cl .ms-modal-content {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+@media (min-width: 768px){
+    .ms-cl .ms-container {
+        max-width: 720px;
+    }
+    .ms-cl .ms-ms-cs-mb {
+        margin-bottom: 10px;
+    }
+    .ms-cl .ms-input-sec {
+        border-radius: 10px 0 0 10px;
+        padding: 26px;
+        background: #fff;
+    }
+}
+@media (min-width: 992px){
+    .ms-cl .ms-container {
+        max-width: 960px;
+    }
+}
+@media (min-width: 1200px){
+    .ms-cl .ms-container {
+        max-width: 1140px;
+    }
+}
+.ms-cl .submit-wrap {
+    text-align: center;
+}
+.ms-cl .in-vl {
+    display: inline-block;
+    float: right;
+    color: #000;
+    font-weight: 700;
+    font-size: 14px;
+}
+.ms-cl .in-main {
+    padding: 0px 25px 0px 0px;
+}
+.ms-cl .rs-main {
+    padding: 0px 15px 0px 25px;
+}
+@media (max-width: 768px){
+    .ms-modal {
+        padding-top: 100px;
+    }
+    .ms-modal-content {
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .ms-cl .in-main {
+    padding: 0px 0px 0px 0px;
+    }
+    .ms-cl .rs-main {
+        padding: 0px 0px 0px 0px;
+    }
+}
+.ms-cl .options-sec {
+    display: flex;
+    flex-direction: row;
+}
+.ms-cl .option {
+    border: 1px solid #ccc;
+    color: #000;
+    padding: 5px 20px;
+    cursor: pointer;
+    background: transparent;
+}
+.ms-cl .option:hover {
+    background: #ccc;
+}
+.ms-cl .option.active {
+    background: #00B163;
+    color: #ffffff;
+}

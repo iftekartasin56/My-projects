@@ -1,0 +1,2540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    /* step1 */
+    .section h2, .step6 h2,  .sectionContact h3 {
+        font-size: 32px;
+    }
+    h3 {
+        font-size: 26px;
+        line-height: 35px;
+    }
+    .section h2 {
+        margin-bottom: 24px;
+        line-height: 44px;
+    }
+    .section-cost-calculator {
+        position: relative;
+    }
+    .step1 h2 {
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+    .step1 h4 {
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    h1 {
+        margin-bottom: 28px;
+    }
+    .loader-img {
+        font-size: 20px;
+        text-align: center;
+        font-weight: 700;
+        margin-bottom:150px;
+    }
+    .loader-img img{
+        max-width: 100px;
+        margin: 150px auto 50px;
+        display: block;
+    }
+    .step1 h4{
+        margin-bottom:0;
+    }
+    .step1 .form-control{
+        font-size:14px;
+    }
+    .form-control, .custom-card {
+        border: 1px solid #DBDBDB;
+        border-radius: 5px;
+        background-color: #fff;
+    }
+    .alert {
+        padding: 5px;
+        position: absolute;
+        z-index: 1;
+        bottom: 74%;
+        font-size: 12px;
+        width: 98%;
+    }
+    .date-zip-row .form-control, .date-zip-row .custom-card {
+        height: 58px;
+    }
+    .moveDateText {
+        position: absolute;
+        font-size: 12px;
+        left: 5px;
+        top: 8px;
+        background-color: #fff;
+    }
+    .table p,.table {
+        margin-bottom: 0;
+    }
+
+
+    .dropdownMenuDate {
+        border: 1px solid #EBEBEB;
+        border-radius: 12px;
+    }
+
+    .step1 label {
+        padding: 5px;
+    }
+    .form-control {
+        box-shadow: none;
+        text-align: left;
+        font-size:16px;
+    }
+    .step1 {
+        max-width: 782px;
+    }
+
+    .step1 .custom-row {
+        margin: 0 -10px 14px;
+        align-items: center;
+    }
+    .step4 .icon-check {
+        display: flex;
+        align-items: center;
+    }
+
+    .col-date >a {
+        justify-content: space-between;
+        padding: 0px 15px;
+    }
+    .col-date i {
+        font-size: 24px;
+    }
+
+
+    input[type="checkbox"], input[type="radio"], .preview.post-review-img {
+        display: none;
+    }
+    .step1 label {
+        display: block;
+        cursor: pointer;
+        height:106px;
+        
+    }
+        .custom-card .icon-circle, .custom-card .icon-check{
+            width: 16px;
+            height: 16px;
+            border: 1px solid #ADB5BD;
+            padding: 3px 1px;
+            font-size: 7px;
+            display: block;
+        }
+        .custom-card .icon-circle {
+            border-radius: 50%;
+        }
+            .custom-card .icon-check::before {
+                color: transparent;
+            }
+
+    input:checked + label > .icon-check {
+        background-color: #00B4F6;
+        border-color: #00B4F6;
+    }
+
+        input:checked + label > .icon-check:before {
+            color: #fff;
+        }
+
+    input:checked + label > .icon-circle {
+        border-color: #202948;
+        background-color: #fff;
+    }
+
+        input:checked + label > .icon-circle:before {
+            width: 8px;
+            height: 8px;
+            content: '';
+            background-color: #202948;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+    input:checked + .custom-card {
+        border-color: #00B4F6;
+        background-color: #E5F8FF;
+    }
+    .img-flex img {
+        max-height: 38px;
+        max-width: 45px;
+    }
+
+    .img-flex {
+        height: 38px;
+    }
+    .services-row .custom-card .icon-check, .step4 .icon-check {
+        border-radius: 5px;
+    }
+    .services-row img {
+        max-height: 46px;
+        max-width: 53px;
+    }
+    .mt-n10 {
+        margin-top: -10px;
+    }
+    .moversResultBlock img {
+        max-width: 160px;
+        max-height: 85px;
+    }
+    .mover-img{
+        height:85px;
+        margin-bottom:12px;
+    }
+    .mover-price {
+        color: #202948;
+        font-weight: 600;
+        font-size: 16px;
+        padding: 0;
+        margin: 0;
+        line-height: 1.4;
+    }
+
+    .mb-5 {
+        margin-bottom: 5px;
+    }
+
+    .mb-10 {
+        margin-bottom: 10px;
+    }
+
+    .mb-15 {
+        margin-bottom: 15px;
+    }
+    .mb-20 {
+        margin-bottom: 20px;
+    }
+    .img-flex, .btn-back, .mover-name, .modal-content, .section-yt .icon-caret-right, .modal-dialog {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .btn-calc-block button {
+        width: 20px;
+        height: 20px;
+        background-color: #FFFFFF;
+        box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
+        border-radius: 50%;
+        border: none;
+        padding: 0;
+        line-height: 1;
+    }
+
+    .btn-calc-block input {
+        max-width: 15px;
+        padding: 0;
+        border: none;
+        text-align: center;
+        margin: 3px 15px 0;
+        background-color: unset;
+        font-size: 16px;
+    }
+    /* Chrome, Safari, Edge, Opera */
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    /* Firefox */
+    input[type=number] {
+        -moz-appearance: textfield;
+    }
+    .section-cost-calculator .btn-blue {
+        width: 267px;
+        height: 50px;
+        line-height: 1;
+    }
+    .step1 .btn-blue {
+        margin-top: 5px;
+    }
+
+
+    /* step2 */
+    .btn-back:hover {
+        text-decoration:none;
+    }
+    .btn-back {
+        width: 38px;
+        height: 38px;
+        border-radius: 50px;
+        background: #00B4F6;
+        top: 0;
+    }
+    .btn-back:after{
+        font-size: 12px;
+        display: block;
+        /*margin-right: 5px;*/
+    }
+    .step2 h2 {
+        margin-bottom: 65px;
+    }
+
+    .step2 .form-control {
+        background: #FFFFFF;
+        border: 3px solid #4BABE1;
+        box-shadow: 0px 4px 14px rgba(0, 180, 246, 0.43);
+        border-radius: 25px;
+        max-width: 407px;
+        height: 98px;
+        margin-top: -15px;
+        font-size: 36px;
+        font-weight: 700;
+        text-align: center;
+        color: #000;
+        margin-bottom: 30px;
+    }
+    .step2 p.mx-auto {
+        font-size: 24px;
+        line-height: 33px;
+        margin-bottom: 30px;
+    }
+
+    .step2 .btn-blue {
+        margin-bottom: 95px;
+    }
+    .text-link {
+        font-weight: 600;
+        font-size: 20px;
+    }
+
+    .step2 i, .step3 .icon-chevron-down {
+        font-size: 10px;
+        transform: rotate(-90deg);
+        display: inline-block;
+        margin-left: 5px;
+    }
+
+    .text-link a {
+        display: inline-flex;
+        align-items: center;
+        color: #00B4F6;
+    }
+    .text-link .icon-chevron-down:before {
+        color: #00B4F6;
+    }
+    /* step3 */
+    .step3 h2, .step4 h2 {
+        font-size: 34px;
+    }
+
+    .step3 .custom-card {
+        border-color: #00B4F6;
+        padding: 10px 10px 25px;
+        border-radius: 10px;
+        display:block;
+    }
+
+        .step3 .custom-card .icon-circle {
+            width: 28px;
+            height: 28px;
+            padding: 4px;
+            margin-bottom: 3px;
+        }
+
+    .step3 input:checked + label > .icon-circle::before {
+        width: 17px;
+        height: 17px;
+    }
+
+    .step3 .row {
+        margin: 57px auto 50px;
+        max-width: 940px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .step3 [class^="col-"] {
+        padding: 0 20px;
+    }
+    .mover-name {
+        font-size: 23px;
+        margin-bottom: 12px;
+        padding: 5px 0 0;
+        line-height: 25px;
+    }
+    .moversResultBlock .custom-card {
+        height: 100%;
+    }
+
+    .mover-price {
+        font-size: 24px;
+    }
+
+    .rating {
+        margin-bottom: 10px;
+    }
+    .step3 .btn-blue {
+        margin-bottom: 49px;
+    }
+
+    .section-yt iframe,
+    .youtube-video-place img {
+        border-radius: 25px;
+        max-width: 785px;
+        height: 500px;
+        width: 100%;
+    }
+    .youtube-video-place img {
+        object-fit: cover;
+        cursor:pointer;
+    }
+    .section-dates-bar.active {
+        display:block;
+    }
+    .section-dates-bar {
+        display:none;
+        position: fixed;
+        background: #fff;
+        z-index: 1040;
+        top: 0;
+        width: 100%;
+        box-shadow: 0px 6px 10px -10px rgb(0 0 0 / 50%);
+    }
+    .section-dates-bar,.sectionMovingDatesBar{
+        text-align:center;
+    }
+    .section-dates-bar a.active:before ,
+    .sectionMovingDatesBar a.active:before {
+        content: '';
+        background: #00B4F6;
+        position: absolute;
+        bottom: 0;
+        width: calc(100% - 80px);
+        height: 3px;
+        left: 40px;
+    }
+
+    .sectionMovingDatesBar h4 {
+        font-weight: 600;
+        font-size: 24px ;
+        padding: 0 45px;
+        margin-bottom: 25px;
+    }
+    .section-dates-bar h4{
+        font-weight: 500;
+        font-size: 16px;
+        margin: 21px 45px;
+    }
+
+    .section-yt .close {
+        position: absolute;
+        top: -37px;
+        right: 15%;
+    }
+    .section-yt h2 {
+        line-height: 1.5;
+        margin-bottom: 25px;
+    }
+    .section-yt a .text-blue {
+        font-weight: 700;
+        font-size: 24px;
+    }
+
+    .section-yt .icon-caret-right{
+        width: 60px;
+        height: 60px;
+        background: #00B4F6;
+        border-radius:50px;
+        margin: 0 auto 17px;
+    }
+    .section-yt .icon-caret-right:before{
+        color:#fff;
+        font-size: 26px;
+        margin-left: 5px;
+    }
+    .youtube-video-place {
+        height: 100%;
+        max-height: 275px;
+        border-radius: 27px;
+        max-width: 83%;
+        margin-left: auto;
+        display: block;
+        padding: 60px;
+    }
+    .youtube-video-place h4{
+        line-height: 1.4;
+        margin-bottom: 25px;
+    }
+    section p {
+        margin-bottom: 20px;
+        line-height: 27px;
+    }
+    .section p + h3 {
+        margin: 50px 0 24px;
+        
+    }
+
+    .youtube-video-place {
+        text-align: center;
+        background-image: url('/img/yt-bg.png');
+        background-size: cover;
+        background-position: right;
+    }
+
+    .pt-50 {
+        padding-top: 50px;
+    }
+    .pt-100 {
+        padding-top: 100px;
+    }
+    .btn.dropdown-toggle.btn-default {
+        border: none;
+        background: #fff;
+    }
+
+
+    .google-address .trans-blue ,
+    .google-address2 .trans-blue {
+        padding: 6px 12px;
+    }
+    .google-address,
+    .google-address2{
+        width:100%;
+    }
+    .google-address:after ,
+    .google-address2:after {
+        display:none;
+    }
+    .step4 h2 {
+        margin-bottom: 30px;
+    }
+    .step4 {
+        max-width: 1080px;
+    }
+
+    .section-cost-calculator .container {
+        position: relative;
+    }
+    .step4 p {
+        font-weight: 700;
+    }
+    .full-packing-card > img {
+        max-width: 74px;
+    }
+    .move-details-text {
+        line-height: 27px;
+    }
+    .move-details-title {
+        color: #9F9F9F;
+        margin-bottom: 10px;
+    }
+
+    .move-details-card {
+        box-shadow: 2px 4px 7px 5px rgba(0, 0, 0, 0.07);
+        border-radius: 8px;
+        padding: 14px 7px 14px 30px;
+        background-color: #fff;
+        position:relative;
+    }
+    .move-details-card .icon-edit{
+        position: absolute;
+        right: 12px;
+        top: 12px;
+        font-size: 24px;
+    }
+    .step4 .icon-check {
+        border: 2px solid #202948;
+        width: 20px;
+        height: 20px;
+        font-size: 10px;
+        justify-content: center;
+        right: 10px;
+    
+    }
+    .full-packing-block .icon-check {
+        position: absolute;
+    }
+    .row.text-left>div, .row-add-services>div {
+        margin-bottom: 15px;
+    }
+    .row-add-services .move-details-card{
+        padding: 10px 30px;
+    }
+    .total-card {
+        padding: 17px 30px;
+    }
+    .total-card {
+        margin: 0;
+    }
+    .add-services-row .col-lg-3 {
+        width: unset;
+    }
+    .add-services-row {
+        flex-wrap:wrap;
+        display:flex;
+        justify-content: space-between;
+        margin:30px 0 0 -10px;
+    }
+    .add-services-row p {
+        font-size: 16px;
+        padding-top: 10px;
+    }
+    .packing-price img, .total-price img {
+        max-width: 30px;
+    }
+    .step4 .packing-price {
+        font-size: 24px;
+        color: #F6B100;
+        margin-top: 8px;
+    }
+    .step4 .total-price {
+        font-size: 30px;
+    }
+    .total-card .move-details-title {
+        margin-bottom: 5px;
+    }
+    .total-price {
+        margin:0;
+        color: #00B4F6;
+    }
+
+    .step4 label {
+        position: relative;
+        display: block;
+        cursor:pointer;
+    }
+    .terms-text {
+        color: #9F9F9F;
+        font-weight: 400;
+        font-size: 16px;
+        max-width:unset;
+    }
+    .terms-col label {
+        display: flex;
+    }
+    .terms-col .icon-check{
+        flex:0 0 24px;
+        height:24px;
+        margin-right: 20px;
+    }
+
+    .amount-flight-of-stairs {
+        border-radius: 50px;
+        width: 27px;
+        height: 27px;
+        background: #202948;
+        color: #fff;
+        font-weight: 700;
+        font-size: 14px;
+        padding-top: 3px;
+        position: absolute;
+        left: 0;
+        top: -8px;
+    }
+
+    .not-checked{
+        opacity:0.3;
+    }
+    .step5 img{
+        position:absolute;
+    }
+    .personal-left-img {
+        left: -4%;
+        top: calc(50% - 18%);
+    }
+    .personal-right-img {
+        right: 0;
+        top: calc(50% - 11%);
+    }
+    .mr-50 {
+        margin-right: 50px
+    }
+    .ml-50 {
+        margin-left: 50px
+    }
+
+    .step5 label {
+        font-size: 27px;
+        font-weight: 700;
+        display: block;
+        text-align: left;
+        margin-bottom: 29px;
+    }
+    .step5 {
+        max-width: 875px;
+        margin: auto;
+    }
+    .step5 h2 {
+        margin-bottom: 105px;
+    }
+    .step5 input {
+        height: 65px;
+        margin: 10px 0 6px;
+        color: #A9A9A9;
+        font-weight: 400;
+        padding-left: 15px;
+    }
+    .step5 .btn-blue {
+        margin: 70px 0 45px;
+    }
+    .step6 p {
+        font-weight: 900;
+        font-size: 50px;
+        color: #00B4F6;
+        margin-bottom: 27px;
+        line-height: 1;
+    }
+
+    .step6 img {
+        margin: 100px 0 55px;
+    }
+    /* modal */
+    #calculatorModal .modal-dialog {
+        margin: 130px auto;
+    }
+    .modal .container{
+        position:relative;
+    }
+    .modal-content {
+        border-radius: 20px;
+    }
+    .pac-container {
+        z-index:1050;
+    }
+    .close {
+        opacity: 1;
+        position: absolute;
+        right: 30px;
+        top: 30px;
+        z-index: 1;
+    }
+    #calculatorModal .close {
+        top: -55px;
+        right: 0;
+    }
+    #section3 ul {
+        list-style-type: '- ';
+        padding-left: 10px;
+        margin: -23px 0 20px;
+    }
+    #section3 li::marker,#section11 li::marker{
+        color:#000;
+    }
+    .table thead {
+        font-weight: 700;
+        font-size: 20px;
+    }
+    .table tbody {
+        font-weight: 500;
+        font-size: 18px;
+    }
+    .table th {
+        background: #E8F9FF;
+    }
+    .table th:first-child {
+        border-top-left-radius: 10px;
+    }
+    .table th:last-child {
+        border-top-right-radius: 10px;
+    }
+    .table-with-4-blocks {
+        max-width:967px;
+    }
+    .table-with-5-blocks td:first-child {
+        font-weight: 700;
+    }
+    .table {
+        margin: 0 auto;
+    }
+    .table > thead > tr > th {
+        border-bottom: none;
+    }
+    .table > tbody > tr > td {
+        border-color: #E4E4E4;
+    }
+    .table td:not(:last-child),
+    .table th:not(:last-child) {
+        border-right: 1px solid #E4E4E4;
+    }
+    .table {
+        border: 1px solid #E4E4E4;
+        border-radius: 10px;
+        background-color:#fff;
+    }
+    .table > thead > tr > th {
+        padding: 13px 24px;
+    }
+    .table > tbody > tr > td {
+        padding: 12.6px 24px;
+    }
+    .table th:not(:first-child), .table td:not(:first-child){
+        text-align:center;
+    }
+
+    .newQuickQuoteWidget h2 {
+        font-size: 30px;
+    }
+
+    .Digits span {
+        background: #DAF5FF;
+        border-radius: 7px;
+        width: 36px;
+        height: 36px;
+        text-align: center;
+        color: #00B4F6;
+        padding: 9px;
+        font-size: 20px;
+        margin-right: 15px;
+        line-height: 1;
+    }
+    .section .Digits {
+        margin: 52px 0 16px;
+        line-height:33px;
+    }
+    .service-col h3 {
+        line-height: 33px;
+    }
+    .Digits, .service-col h3 {
+        font-size: 24px;
+        text-transform: capitalize;
+    }
+    ul {
+        padding-left: 23px;
+    }
+
+    li::marker {
+        color: #00B4F6;
+        font-size: 24px;
+    }
+    h3 img {
+        max-width: 42px;
+        margin-right: 20px;
+    }
+    .columns-services p {
+        padding-left: 62px;
+        font-size: 16px;
+    }
+    .services-block{
+        padding-top:30px;
+    }
+    .service-col {
+        margin-bottom: 30px;
+    }
+
+    .service-col p {
+        padding-left: 60px;
+        line-height: 21.82px;
+    }
+    .light-blue-bg {
+        border-radius: 16px;
+        margin-bottom: 100px;
+        position: relative;
+    }
+    .light-blue-bg, .light-blue-bg .container {
+        background: #F2FAFF;
+            overflow: hidden;
+    }
+    .light-blue-bg .container{
+        padding: 60px 120px 45px;
+    }
+    .light-blue-bg  p{
+        font-size: 20px;
+    }
+    .light-blue-bg .col-lg-3:not(:first-child) p{
+        font-weight: 700;
+    }
+    .security-icon {
+        max-width: 23px;
+        margin-right: 12px;
+    }
+    .light-blue-bg .col-lg-3:first-child{
+        margin-bottom: 65px;
+    }
+
+    .RedFlags img{
+        max-width:27px;
+    }
+    #section11 ul {
+        padding-left: 55px;
+    }
+    .moverId {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        left: 0;
+        display: block !important;
+        cursor: pointer;
+    }
+    .errorMsg {
+        color: red;
+        font-size: 14px;
+        font-weight: 400;
+        position: absolute;
+    }
+    .invalidElem{
+        border-color:red;
+    }
+    .step .btn-blue:hover, .step .btn-blue:focus {
+        background-color: #00B4F6;
+        color: #fff;
+    }
+    .section-yt .modal-dialog {
+        margin: 220px auto;
+    }
+    .section-purple-bg {
+        background-color: #F8FBFF;
+        
+    }
+    .step1 {
+        padding-top: 49px;
+    }
+    .placeholder-text {
+        color: #8D8D8D;
+        font-size: 14px;
+    }
+    .custom-card .p-relative {
+        line-height: 1;
+    }
+    .desc span:last-child{
+        font-size:26px;
+    }
+    .section.section-purple-bg{
+        margin-top:100px;
+        padding:50px 0;
+    }
+    .section-yt p:last-child{
+        margin-bottom:0;
+    }
+    p + p:last-child{
+        margin-bottom:0;
+    }
+    p + h2 {
+        margin-top: 50px;
+    }
+    .moversResultBlock .text-center {
+        margin: 115px auto;
+    }
+    .conclusion {
+        background-color: #F9F9F9;
+    }
+    .btn-restriction {
+        text-align: left;
+        display: block;
+    }
+    @media (min-width:744px) {
+    .step4 .row.text-left {
+        display: flex;
+    }
+   
+    .step .selectBlock {
+        display: none;
+    }
+    #collapseMoveSize {
+        display: block;
+    }
+    .step1 .row {
+        margin: 0 -6px 25px;
+    }
+    .step1 [class*="col-"] {
+        padding: 0 6px;
+    }
+    
+    .col-card {
+        width: 20%;
+    }
+    .col-zip {
+        width: 40%;
+    }
+    .col-date {
+        width: 20%;
+    }
+    .text-link a:first-child {
+        margin-right: 40px;
+    }
+   
+    .row-add-services .move-details-card {
+        height: 175px;
+    }
+    .step5 input{
+        font-size:20px;
+    }
+    .btn-back {
+        position: absolute;
+        left: 15px;
+    }
+    
+    .close {
+        font-size: 40px;
+    }
+  
+    .dropdownMenuDate {
+        padding: 23px;
+        left: auto;
+        right: 5px;
+    }
+    
+    .text-left .move-details-card {
+        min-height: 100%;
+    }
+    
+    
+    .col-zip {
+        width: 39%;
+    }
+
+    .col-date {
+        width: 22%;
+    }
+    
+    .mr-30 {
+        margin-right: 10px;
+    }
+
+    
+    
+    .custom-row .col-lg-6 {
+        width: 58%;
+    }
+    
+    
+   
+    
+}
+@media (min-width:1200px) {
+    .ml-30 {
+        margin-left: 10px;
+    }
+    .step4>.row {
+        margin: 0 -8px;
+    }
+    .step4 > .row >.col-xs-12{
+        padding:0 8px;
+    }
+    .step4 > .row > .col-lg-9 {
+        width: 68%
+    }
+
+    .step4 > .row > .col-lg-3 {
+        width: 32%
+    }
+    .pl-50 {
+        padding-left: 50px;
+    }
+    .tipContainer .col-lg-2 {
+        width: 13%;
+    }
+    .modal-content {
+        height: 700px;
+    }
+    .step {
+        height: 550px;
+    }
+
+    .col-zip {
+        width: 39%;
+    }
+
+    .col-date {
+        width: 22%;
+    }
+}
+@media (min-width:1400px) {
+    .step4 .btn-blue {
+        margin: -15px 0 35px;
+    }
+    .step4>.row {
+        margin: 0 -10px;
+    }
+    .step4 > .row >.col-xs-12{
+        padding:0 10px;
+    }
+    .columns-services p {
+        max-width: 530px;
+    }
+    .columns-services .service-col:nth-child(even) {
+        padding-left: 37px;
+    }
+    h1, .step2 h2, .step5 h2, .section-yt h2 {
+        font-size: 30px;
+    }
+    .modal-dialog {
+        width: 100%;
+        max-width: 1280px; 
+    }
+    
+    .col-zip {
+        width: 37%;
+    }
+
+    .col-date {
+        width: 26%;
+    }
+    
+    .step {
+        height: 650px;
+       /* height: 600px;*/
+    }
+
+    .mr-30 {
+        margin-right: 30px
+    }
+
+    .ml-30 {
+        margin-left: 30px
+    }
+    .img-flex {
+        margin: 8px 0;
+    }
+    .step4 > .row > .col-lg-9 {
+        width: 75.5%
+    }
+    .step4 > .row > .col-lg-3 {
+        width: 24.5%
+    }
+    .full-packing-card .move-details-text {
+        margin: 10px 0;
+    }
+    .terms-col label {
+        padding-top: 20px;
+    }
+    .section-yt .col-lg-8 {
+        width: 59%;
+    }
+    .section-yt .col-lg-4 {
+        width: 41%;
+    }
+}
+/* laptop style 1366*657px */
+@media (max-width: 1399px) {
+    #calculatorModal .modal-dialog {
+        margin: 85px auto;
+    }
+    .mt-n10 {
+        margin-bottom: 10px;
+    }
+    .step1 h2 {
+        font-size: 16px;
+        margin-bottom: 12px;
+    }
+    .table thead {
+        font-size: 15px;
+    }
+    .table tbody {
+        font-size: 14px;
+    }
+    .table > thead > tr > th{
+        padding: 13px 20px;
+    }
+    .table > tbody > tr > td {
+        padding: 9px 20px;
+    }
+    .table-with-5-blocks > thead > tr > th, .table-with-5-blocks > tbody > tr > td {
+        padding: 6.5px 14px;
+    }
+    .desc span:last-child {
+        font-size: 24px;
+    }
+
+    .section-yt .modal-dialog {
+        margin: 75px auto;
+    }
+    .section-yt .close {
+        right: -7%;
+    }
+    .step1 {
+        padding-top: 8px;
+    }
+    .step1 {
+        max-width: 736px;
+    }
+    h1 {
+        margin-bottom: 35px;
+    }
+    h1,  .section h2 {
+        font-size: 28px;
+    }
+    h3 {
+        font-size: 22px;
+        line-height: 30px;
+    }
+    .Digits,.service-col h3, .sectionMovingDatesBar h4, .move-details-card .icon-edit {
+        font-size: 20px;
+    }
+    .service-col h3, .section .Digits {
+        line-height: 27px;
+    }
+    .service-col h3 {
+        margin-bottom:4px;
+    }
+    h3 img {
+        margin-right: 14px;
+    }
+    .service-col {
+        width: 100%;
+        margin-bottom: 16px;
+    }
+    .step1 h4 {
+        font-size: 14px;
+    }
+    .section h2 {
+        margin-bottom: 20px;
+        line-height: 38px;
+    }
+    section p {
+        line-height: 25px;
+    }
+    .section-yt h2 {
+        line-height: 1.4;
+    }
+    .step1 label{
+        height:100px;
+    }
+
+    .services-row  h4 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .mover-price {
+        font-size: 14px;
+    }
+
+    .step1 .row {
+        margin-bottom: 23px;
+    }
+    .step1 .move-size-row {
+        margin-bottom: 15px;
+    }
+   
+
+    .btn-calc-block input,.step4 p {
+        font-size: 16px;
+    }
+    .img-flex {
+        margin-bottom: 8px;
+        height: 43px;
+    }
+    .img-flex img {
+        max-height: 43px;
+        max-width: 57px;
+    }
+    .services-row .img-flex img {
+        max-height: 30px;
+        margin: 0;
+    }
+    .services-row .img-flex{
+        height:30px;
+    }
+    .step1 .btn-blue {
+        margin-bottom: 50px;
+    }
+    .step2 h2, .step5 h2 {
+        font-size: 28px;
+    }
+    .step2 p.mx-auto {
+        font-size: 18px;
+        line-height: 25px;
+        margin-bottom: 20px;
+    }
+    
+    /* step3 */
+    .step3 [class^="col-"] {
+        padding: 0 10px;
+    }
+    .step3 h2,.step4 h2 {
+        font-size: 30px ;
+    }
+    .step3 .row {
+        margin: 43px auto 22px;
+        max-width: 585px;
+    }
+    .step3 input:checked + label > .icon-circle::before {
+        width: 12px;
+        height: 12px;
+    }
+    .step3 .custom-card .icon-circle {
+        width: 20px;
+        height: 20px;
+        padding: 3px;
+        margin-bottom: 10px;
+    }
+    .mover-name {
+        font-size: 14px ;
+        margin-bottom: 3px;
+    }
+    .rating {
+        margin-bottom: 3px;
+    }
+    .mover-price {
+        font-size: 18px;
+    }
+    .section{
+        font-size: 18px;
+    }
+
+    .sectionMovingDatesBar h4 {
+        padding: 0 20px;
+    }
+    .section-dates-bar h4{
+        margin:20px;
+    }
+   
+
+    .step4 {
+        max-width: 896px;
+    }
+     .step4 h2 {
+        margin-bottom: 23px;
+    }
+    .move-details-text {
+        line-height: 23px;
+    }
+    .amount-flight-of-stairs {
+        width: 24px;
+        height: 24px;
+        font-size: 10px;
+        padding-top: 5px;
+    }
+    .row-add-services > div {
+        margin-bottom: 6px;
+    }
+    .move-details-title {
+        margin-bottom: 7px;
+    }
+    .row-add-services .move-details-card{
+        padding: 10px 25px;
+    }
+    .add-services-row {
+        margin: 35px 0 0 0;
+    }
+    .row-add-services .full-packing-card, .total-card {
+        height: 84px;
+    }
+    .full-packing-card p{
+        text-align: left;
+        margin:0 0 0 70px;
+    }
+    
+    .full-packing-card img {
+        left: 15px;
+        top: 20px;
+    }
+    
+    .total-card {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .step6 h2, 
+    .step4 .total-price {
+        font-size: 24px;
+    }
+    .total-card .move-details-title {
+        margin-bottom: 0;
+    }
+    .section-cost-calculator .btn-blue {
+        width: 260px;
+        height: 50px;
+        margin-top: 24px;
+    }
+    
+    .full-packing-card>img {
+        position: absolute;
+        right: 0;
+    }
+    .step5 h2 {
+        margin-bottom: 58px;
+    }
+    .step5 {
+        max-width: 610px;
+    }
+   
+    .step5 input {
+        padding-left: 17px;
+        margin-bottom: 17px;
+    }
+    .section-cost-calculator .step5 .btn-blue {
+        margin-top: 12px;
+    }
+    .personal-left-img {
+        left: -1%;
+        top: calc(50% - 15%);
+        max-width: 127px;
+    }
+    .personal-right-img {
+        right: 5%;
+        top: calc(50% - -6%);
+        max-width: 87px;
+    }
+    .step6 p {
+        font-size: 36px;
+        margin-bottom: 8px;
+        line-height: 1.6;
+    }
+     
+    .step6 img {
+        margin-top: 115px;
+        max-width: 515px;
+    }
+   
+
+    
+    .move-details-card {
+        padding: 17px 7px 14px 23px;
+    }
+    .row.p-relative {
+        margin-top: 10px;
+    }
+    .youtube-video-place {
+        max-width: 93%;
+        padding: 67px 30px;
+    }
+    .section .Digits {
+        margin: 40px 0 12px;
+    }
+    .table {
+        max-width: 684px;
+    }
+    
+    .table-with-5-blocks thead, .table-with-5-blocks tbody {
+        font-size: 12px;
+    }
+    
+    .section-dates-bar {
+       /* top: 50px;*/
+    }
+    .section-yt .icon-caret-right {
+        width: 60px;
+        height: 60px;
+    }
+    .section-yt .icon-caret-right:before {
+        font-size: 25px;
+    }
+   
+}
+@media (max-width: 1399px) and (min-width:744px) {
+    .p-relative .col-lg-3 {
+        position: absolute;
+        right: 0;
+    }
+    .section-cost-calculator .step5 .btn-blue {
+        width: 265px;
+    }
+    .services-row .img-flex + h4 {
+        height: 30px;
+    }
+    
+    
+}
+@media (max-width: 1399px) and (min-width:1200px) {
+    .step4 .btn-blue {
+        margin-top: -12px;
+    }
+    .section-cost-calculator .step1 .btn-blue {
+        width: 245px;
+        font-size: 18px;
+    }
+    .date-zip-row .form-control, .date-zip-row .custom-card {
+        height: 50px;
+    }
+    .conclusion .col-md-5 {
+        width: 38%;
+    }
+    .conclusion h2{
+        margin-top:5px;
+    }
+    .conclusion img {
+        height: 294px;
+    }
+    .section-yt .col-lg-8 {
+        width: 60%;
+    }
+    .section-yt .col-lg-4 {
+        width: 40%;
+    }
+    .desc span:last-child {
+        max-width:450px;
+    }
+    .services-row h2 {
+        margin-bottom: 8px;
+    }
+    .youtube-video-place iframe,
+    .youtube-video-place img {
+        border-radius: 20px;
+        height: 364px;
+    }
+    /* step2 */
+
+    .step2 .form-control {
+        max-width: 315px;
+        height: 76px;
+        border-radius: 19px;
+        font-size: 27px;
+        margin: -10px auto 26px;
+    }
+    .step2 h2 {
+        margin-bottom: 35px;
+    }
+
+    .step2 img {
+        max-width: 93px;
+    }
+
+    .step2 .btn-blue {
+        margin-bottom: 100px;
+    }
+    /*step3*/
+    .step3 img {
+        max-width: 140px;
+        margin-bottom: 15px;
+    }
+
+    .rating {
+        font-size: 16px;
+    }
+
+    .step3 .custom-card {
+        padding-bottom: 15px;
+    }
+
+    .text-left .move-details-card {
+        height: 100px;
+    }
+
+    .row-add-services img {
+        max-height: 42px;
+        max-width: 66px;
+    }
+
+    .row-add-services .col-lg-9 .move-details-card {
+        height: 184px;
+    }
+    .add-services-row p {
+        font-size: 13px;
+    }
+    .terms-col .icon-check {
+        flex: 0 0 18px;
+        height: 18px;
+        margin: 0 12px 0 3px;
+        border-radius: 3px;
+    }
+    .step4 .terms-text {
+        font-size: 12px;
+    }
+    .p-relative .col-lg-3 {
+        top: -102px;
+    }
+    .step5 input {
+        height: 50px;
+        font-size: 16px;
+    }
+    .step5 label {
+        font-size: 18px;
+        margin-bottom: 35px;
+    }
+    
+}
+
+@media (max-width: 1199px) {
+    .contact-widget-form .field-validation-error {
+        left: 0;
+        bottom: -13px;
+    }
+    #calculatorModal .modal-content {
+        padding-top: 30px;
+    }
+    .full-packing-block .icon-check {
+        top: 12px;
+    }
+    .section .Digits{
+        margin-bottom:18px;
+    }
+    p + h2 {
+        margin-top: 40px;
+    }
+    .section-yt .col-lg-8 {
+        margin-bottom: 40px;
+    }
+    .youtube-video-place {
+        max-width: 400px;
+        padding: 60px;
+        margin: auto;
+        max-height: 260px;
+    }
+    .section-yt .modal-dialog {
+        margin: 100px auto;
+    }
+    .section-yt .close {
+        top: -60px;
+        right: -5%;
+    }
+    .mt-n10 {
+        margin: 0px 0 15px;
+    }
+    .btn-calc-block {
+        margin-top: 6px;
+    }
+    .step .services-row label {
+        height: 130px;
+        padding: 8px;
+    }
+    .services-row .img-flex {
+        height: 34px;
+        margin-bottom: 29px;
+    }
+    .services-row .img-flex img {
+        max-height: 48px;
+        max-width: 60px;
+    }
+    .step1 .row {
+        margin-bottom: 26px;
+    }
+    .step1 .services-row {
+        margin-bottom: 24px;
+    }
+    .step1 h2 {
+        margin-bottom: 23px;
+        font-size: 24px;
+    }
+    .step1 {
+        max-width: 661px;
+    }
+    .step1 .btn-blue {
+        margin-bottom: 32px;
+    }
+    
+    .section-yt h2 {
+        font-size: 28px;
+    }
+    .section.section-purple-bg {
+        margin-top: 60px;
+    }
+    .section{
+        padding-top:60px;
+    }
+    .errorMsg {
+        bottom: -20px;
+    }
+    .section-cost-calculator .btn-blue {
+        height: 60px;
+    }
+
+    .btn-back {
+        width: 32px;
+        height: 32px;
+        margin-right: 4px;
+    }
+
+    h1 {
+        font-size: 28px;
+        margin-bottom: 28px;
+    }
+    .section h2,h1{
+        line-height:38px;
+    }
+    .mover-price {
+        font-size: 16px;
+    }
+
+
+
+    .services-row .mover-price {
+        font-size: 14px;
+    }
+
+    .section-cost-calculator .btn-blue {
+        margin-top: 0;
+    }
+
+    .step2 h2 {
+        margin-bottom: 55px;
+    }
+
+    .step2 p.mx-auto {
+        font-size: 20px;
+        line-height: 27px;
+        margin-bottom: 30px;
+    }
+
+    .step2 .form-control {
+        margin-bottom: 35px;
+    }
+
+    .step2 .btn-blue {
+        margin-bottom: 235px;
+    }
+
+    .text-link {
+        font-size: 16px;
+    }
+
+    .step3 h2 {
+        font-size: 28px;
+    }
+
+
+    .step3 .row {
+        margin: 107px -10px 96px;
+        max-width: 750px;
+    }
+
+    .step3 img {
+        max-width: 160px;
+    }
+
+    .mover-name {
+        font-size: 18px;
+        padding: 18px 0 0;
+        
+        /*margin-bottom:18px;*/
+    }
+
+    .step3 .custom-card {
+        padding: 10px;
+        display:block;
+    }
+
+    .rating {
+        margin-bottom: 17px;
+    }
+
+    .mover-price {
+        font-size: 29px;
+    }
+
+
+    .section h2, h3 {
+        margin-bottom: 20px;
+    }
+
+    .sectionMovingDatesBar h4 {
+        font-size: 22px;
+    }
+
+
+    .section p + h3 {
+        margin: 40px 0 20px;
+    }
+
+     
+    .light-blue-bg p {
+        font-size: 18px;
+    }
+
+    .step4 {
+        max-width: 708px;
+    }
+
+        .step4 h2 {
+            font-size: 28px;
+        }
+
+        .step4 h2 {
+            margin-bottom: 31px;
+        }
+
+    .row.text-left > div, .row-add-services > div {
+        margin-bottom: 15px;
+    }
+
+    .move-details-card {
+        padding: 19px 20px 5px;
+    }
+
+    .row-add-services .move-details-card {
+        padding: 17px 20px;
+    }
+
+    .add-services-row {
+        margin-top: 23px;
+    }
+
+    .row-add-services .full-packing-card, .total-card {
+        height: 115px;
+    }
+
+    .full-packing-card p {
+        margin-left: 97px;
+    }
+
+    .step4 .text-left {
+        font-size: 20px;
+    }
+
+    .step4 .packing-price {
+        font-size: 36px;
+        margin-top: 20px;
+    }
+    
+    .total-price {
+        font-size: 26px;
+    }
+
+    .terms-col {
+        margin-top: 10px;
+    }
+
+    .section-cost-calculator .step4 .btn-blue {
+        margin: 20px 0 40px;
+    }
+
+    .step5 {
+        max-width: 465px;
+    }
+
+        .step5 h2 {
+            margin-bottom: 42px;
+        }
+
+        .step5 input {
+            margin-bottom: 26px;
+        }
+
+    .personal-left-img {
+        top: unset;
+        bottom: 0;
+    }
+
+    .personal-right-img {
+        right: 2%;
+        top: 6%;
+    }
+
+    .step6 p {
+        font-size: 40px;
+    }
+
+    .step6 p {
+        margin: 82px auto 20px;
+    }
+
+    .step6 h2, .section h2{
+        font-size: 28px;
+    }
+    h3 {
+        font-size: 22px;
+    }
+    .step6 img {
+        margin-top: 185px;
+        max-width: 628px;
+    }
+    
+    .light-blue-bg .container {
+        padding: 80px 40px 45px;
+    }
+    .light-blue-bg .col-lg-3:first-child {
+        margin-bottom: 30px;
+    }
+    .light-blue-bg {
+        margin-bottom: 65px;
+    }
+    
+    .service-col h3 {
+        margin-bottom: 2px;
+    }
+    .sectionContact {
+        margin-top: 40px;
+    }
+    .table-with-4-blocks > thead > tr > th, .table-with-4-blocks > tbody > tr > td {
+        padding: 10px 17px;
+    }
+    .service-col {
+        width: 100%;
+        margin-bottom: -3px;
+    }
+    .bigTipBlock img {
+        top: -170px;
+    }
+    .newQuickQuoteWidget h2 {
+        font-size: 30px;
+        margin-bottom: 35px;
+    }
+    .section-cost-calculator .btn-blue {
+        /*width: 260px;*/
+    }
+   
+}
+@media (max-width: 1199px) and (min-width:744px) {
+    .step3 .col-sm-4 {
+        width: 33.33333333%;
+    }
+    .step1 {
+        padding-top: 0;
+    }
+
+    .section-cost-calculator {
+        margin-top: 25px;
+    }
+    .step4 .row.text-left {
+        margin: 0 -6px;
+    }
+    .step1 .btn {
+        width: 300px;
+    }
+    .move-details-card .icon-edit {
+        right: 10px;
+    }
+    .total-card {
+        padding: 4px 20px 5px;
+    }
+
+    .step4 .move-details-title {
+        font-size: 18px;
+    }
+
+    .full-packing-card > img {
+        max-width: 90px;
+    }
+
+    .full-packing-block {
+        padding-right: 6px;
+        width:50%;
+    }
+   
+    .step4 {
+        padding-top: 10px;
+    }
+
+    .text-left > .col-sm-9 {
+        width: 75%;
+    }
+
+    .text-left .col-sm-3 {
+        width: 25%;
+    }
+
+    
+
+    .text-left > .col-xs-12 {
+        padding: 0 6px
+    }
+
+    .p-relative .col-lg-3 {
+        top: -145px;
+        padding-left: 6px;
+        width: 50%;
+    }
+
+    .terms-col .icon-check {
+        border-width: 3px;
+        margin-right: 15px;
+    }
+
+    .move-details-title {
+        font-size: 18px;
+    }
+
+    .section-cost-calculator .step2 .btn-blue {
+        width: 290px;
+    }
+
+    .sectionMovingDatesBar h4 {
+        padding: 0 40px;
+    }
+
+    .section-dates-bar h4 {
+        margin: 20px 40px;
+    }
+}
+@media (max-width: 767px) {
+    .table-responsive{
+        margin:0;
+        border:0;
+    }
+}
+@media (max-width: 743px) {
+    #calculatorModal .modal-dialog {
+        max-width: calc(100% - 30px);
+    }
+    .datepicker-inline {
+        margin:10px auto;
+    }
+    .dropdownMenuDate {
+        max-width: calc(100% - 30px);
+        width: 100%
+    }
+    .section {
+        padding-top: 50px;
+    }
+    .section-yt .modal-dialog {
+        margin: 100px 15px;
+    }
+    .section-yt .close {
+        top: -50px;
+        right: -10px;
+    }
+    .table{
+        overflow:auto;
+        table-layout:unset;
+    }
+    .table-responsive{
+        border:0;
+    }
+    .bigTipBlock img {
+        top: -125px;
+    }
+    .section-cost-calculator {
+        padding-top: 3px;
+    }
+
+    .dropdownMenuDate {
+        right: 15px;
+        left: unset;
+    }
+    .step .selectBlock {
+        display: flex;
+        align-items: center;
+        margin-bottom:30px;
+    }
+    h1 {
+        line-height: 1.3;
+        font-size: 24px;
+        margin: 12px auto 23px;
+    }
+    h2 {
+        line-height: 1.4;
+    }
+    
+    .dropdownMenuSize {
+        width: 100%;
+        padding: 10px;
+    }
+    .move-size-row .custom-card {
+        height: 50px;
+        display: flex;
+        align-items: center;
+    }
+    .custom-card .icon-circle{
+        padding:3px;
+        margin-right:20px;
+    }
+    .move-size-row .img-flex {
+        display: none;
+    }
+    .step3 h2, .step4 h2, .step5 h2 {
+        margin-top: 18px;
+    }
+    .col-zip {
+        margin-bottom: 10px;
+    }
+    .col-card{
+        margin-bottom:9px;
+    }
+    .step5 input,
+    .rating .icon-star-filled,
+    .section, .step2 p.mx-auto {
+        font-size: 16px;
+    }
+    .step1 .form-control,
+    .date-zip-row .custom-card {
+        height: 55px;
+    }
+   
+    
+    .move-size-row {
+        margin-bottom: 28px
+    }
+    .date-zip-row {
+        margin-bottom: 40px;
+    }
+    .services-row .custom-card {
+        padding: 15px;
+    }
+    
+    .step1 .services-row {
+        margin-bottom: 14px;
+    }
+    .step1 .btn-blue {
+        margin-bottom: 38px;
+    }
+
+    .step1 h2 {
+        margin-bottom: 16px;
+        font-size: 20px;
+    }
+    .col-miles i, .col-date i {
+        vertical-align:middle;
+    }
+    .col-miles i {
+        font-size: 20px;
+    }
+    .col-date i {
+        font-size: 24px;
+    }
+    .step1 .selectBlock::before {
+        right: 15px;
+        z-index: 1;
+    }
+    .dropdownSizeToggle {
+        padding-top: 10px;
+        width: 100%;
+    }
+    .step1 .custom-row{
+        margin-bottom:40px;
+    }
+    .services-row .col-h2 {
+        margin-bottom: 0;
+    }
+    
+    .services-row .custom-card {
+        border-color: #00B4F6;
+        border-radius: 10px;
+    }
+    .step1 input:not(:checked) + label img, .step1 input:not(:checked) + label .btn-calc-block {
+        display: none;
+    }
+    .services-row .custom-card {
+        height: unset;
+        display: flex;
+        align-items: center;
+    }
+    .services-row  input:not(:checked) + label {
+        height: 52px;
+    }
+    .step .services-row label {
+        padding: 8px 20px;
+        height: 100px;
+    }
+    .step .date-zip-row {
+        margin-bottom: 30px;
+    }
+    .custom-card .icon-check {
+        width: 20px;
+        height: 20px;
+        margin-right: 11px;
+        padding: 5px 1px;
+    }
+    
+     .mover-name,
+    .services-row .mover-price {
+        font-size: 16px ;
+    }
+    .services-row {
+        margin-bottom: 15px;
+    }
+    .services-row .custom-card img,.services-row .custom-card .img-flex{
+        order:1;
+        margin: auto 0 auto auto;
+    }
+    .section-cost-calculator .btn-blue {
+        width: 320px;
+        height: 55px;
+        font-size: 18px;
+    }
+    .step2 h2 {
+        font-size: 24px;
+        margin-bottom: 40px;
+    }
+    
+    .step2 img {
+        max-width: 100px;
+    }
+    .step2 .form-control {
+        font-size: 28px;
+        max-width: 312px;
+        height: 88px;
+        margin-top: -12px;
+    }
+    
+    .step2 p.mx-auto {
+        line-height: 22px;
+        margin-bottom: 55px;
+    }
+    .step2 .btn-blue {
+        margin-bottom: 112px;
+    }
+    .text-link a:first-child {
+        margin-bottom: 25px;
+    }
+    
+    .text-link {
+        margin-bottom: 30px;
+    }
+    /* step3 */
+    .mover-name {
+        padding: 0;
+    }
+
+    
+    .step4 h2{
+        font-size: 20px;
+    }
+    
+    .step4 p{
+        margin-bottom:6px;
+    }
+    .section.section-purple-bg {
+        margin-top: 50px;
+        padding: 40px 0;
+    }
+    .section-yt .col-lg-8 {
+        margin-bottom: 30px;
+    }
+    .section h2 {
+        line-height: 27px;
+    }
+     .section h2, h3 {
+        margin-bottom: 15px;
+    }
+    .section h2 {
+        font-size: 20px;
+    }
+
+    .newQuickQuoteWidget h2 {
+        font-size: 18px;
+        margin-bottom: 25px;
+    }
+    section p {
+        line-height: 22px;
+    }
+    .youtube-video-place {
+        max-width: 300px;
+        padding: 24px 13px;
+        max-height: 157px;
+    }
+    .section-yt .icon-caret-right {
+        width: 45px;
+        height: 45px;
+    }
+    .youtube-video-place h4 {
+        margin-bottom: 13px;
+    }
+    .section-yt .icon-caret-right:before {
+        font-size: 20px;
+    }
+    .desc span:last-child {
+        font-size: 20px;
+    }
+   
+    .section {
+        line-height: 22px;
+    }
+    .services-block {
+        padding-top: 20px;
+    }
+   
+
+    .step5 h2 {
+        padding: 0 20px;
+    }
+    .step5 h2,
+    .section-dates-bar h4 {
+        font-size: 18px;
+        
+    }
+    .section-dates-bar h4 {
+        margin:20px;
+    }
+    .step3 h2 {
+        font-size: 18px;
+        line-height: 25px;
+    }
+    .step6 h2 {
+        font-size: 18px ;
+    }
+    .step5 label,.step4 .terms-text{
+        font-size: 14px;
+    }
+    .step5 label {
+        margin-bottom: 20px;
+    }
+  
+    .step3 .custom-card {
+        max-width: 290px;
+        margin: auto;
+        display: flex;
+        align-items: flex-start;
+        padding-bottom: 13px;
+        width:100%;
+    }
+    .step3 .row {
+        margin: 40px auto 27px;
+    }
+    .step3 img {
+        max-width: 82px;
+        margin-right: 10px;
+    }
+    .step3 .custom-card .icon-circle {
+        margin-right: 10px;
+    }
+    .mover-price {
+        font-size: 20px;
+        text-align:left;
+    }
+    .mover-img{
+        flex:0 0 82px;
+    }
+    .moversResultBlock .custom-card>div:last-child{
+        text-align:left;
+    }
+    .rating {
+        margin-bottom: 0;
+    }
+    .step3 [class^="col-"] {
+        margin-bottom: 22px;
+    }
+    .section-cost-calculator .btn-blue {
+        width: 100%;
+        max-width: 320px;
+    }
+    .section-cost-calculator .step3 .btn-blue {
+        margin-top: 10px;
+    }
+    .step4 h2 {
+        margin-bottom: 23px;
+    }
+    .move-details-card {
+        padding: 24px 8px 14px 20px;
+    }
+    .move-details-card>.row .col-lg-3,.text-left .move-details-card{
+        display:flex;
+       
+    }
+    .text-left .move-details-card .col-lg-3:not(:last-child){
+         margin-bottom: 15px;
+    }
+     .move-details-text {
+        max-width: 150px;
+    }
+    .move-details-title {
+        flex: 0 0 123px;
+    }
+    .text-left .move-details-card, .total-card {
+        height: unset;
+    }
+    .row-add-services .full-packing-card{
+        height:88px;
+    }
+
+    .step4 .move-details-title.text-left {
+        text-decoration: underline;
+    }
+    .step4 .move-details-title {
+        font-size: 15px;
+    }
+    .row-add-services .move-details-card {
+        padding: 13px 15px 10px;
+    }
+    .row.p-relative {
+        margin-top: 0;
+    }
+    .amount-flight-of-stairs {
+        width: 20px;
+        height: 20px;
+        font-size: 12px;
+        padding-top: 1px;
+    }
+    .add-services-row img{
+        max-width:63px;
+        max-height:45px;
+    }
+    .add-services-row {
+        justify-content: center;
+    }
+    .step4 .add-services-row p {
+        font-size: 12px;
+    }
+    .add-services-row .col-lg-3:not(:nth-child(2)) {
+        min-width: 115px;
+    }
+    .add-services-row .col-lg-3{
+        margin-bottom:32px;
+    }
+    .add-services-row .col-lg-3:nth-child(4),.add-services-row .col-lg-3:last-child {
+        margin-bottom:10px;
+    }
+    .add-services-row {
+        margin: 27px -15px 0;
+    }
+    .amount-flight-of-stairs {
+        margin: auto;
+        right: 0;
+        top: -15px;
+    }
+    .add-services-row .mb-5 {
+        margin-top: 5px;
+    }
+    .full-packing-card img {
+        max-width: 75px;
+        left: 9px;
+        top: 10px;
+    }
+
+    .full-packing-card p {
+        margin-left: 85px;
+        white-space: nowrap;
+    }
+    .step4 .packing-price, .step4 .total-price {
+        font-size: 20px;
+    }
+    .row.p-relative {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .total-card .move-details-title{
+        text-align:left;
+    }
+    .total-card {
+        padding: 17px 8px 14px 16px;
+    }
+    .terms-col .icon-check {
+        border-width: 3px;
+        margin-right: 8px;
+    }
+    .terms-col {
+        margin-top: 30px;
+    }
+
+    .section-cost-calculator .step4 .btn-blue {
+        margin: 55px 0 40px;
+    }
+    .personal-right-img {
+        max-width: 52px;
+        top: 10px;
+    }
+    .step5 h2 {
+        margin-bottom: 42px;
+    }
+
+    .step5 input {
+        height: 50px;
+        margin-bottom: 18px;
+    }
+
+    .personal-left-img {
+        max-width: 100px;
+    }
+
+    .section-cost-calculator .step5 .btn-blue {
+        margin: 30px 0;
+        position: relative;
+        z-index: 1;
+    }
+    .step6 img {
+        margin-top: 165px;
+        max-width: 100%;
+    }
+    .step6 p {
+        font-size: 36px;
+    }
+    .step6 p {
+        margin: 100px auto 13px;
+    }
+    .step6 h2 {
+        line-height: 1.3;
+        max-width: 282px;
+        margin: auto;
+    }
+    .sectionMovingDatesBar h4,  .newFullServiceMoveWidget h3, .section .Digits, .sectionContact h3 {
+        font-size: 18px;
+    }
+    h3 {
+        line-height: 22px;
+        font-size: 16px;
+    }
+    .section p + h3 {
+        margin: 40px 12px 15px;
+    }
+    .section thead {
+        font-size: 10px;
+    }
+    .section tbody {
+        font-size: 9px;
+    }
+    .section .table > thead > tr > th {
+        padding: 9px 5px;
+    }
+    .section .table > tbody > tr > td {
+        padding: 8px 5px;
+    }
+    .section .Digits {
+        margin: 30px 0 15px;    
+        max-width: 320px;
+        line-height: 25px;
+    }
+    .Digits span, .RedFlags img {
+        display: block;
+        margin-bottom: 15px;
+    }
+    .light-blue-bg {
+        margin: 54px -15px;
+        border-radius:0;
+    }
+    .light-blue-bg .container {
+    padding: 25px 25px 15px;
+    }
+    .light-blue-bg .col-lg-3:not(:first-child) p{
+        font-size: 13px;
+    }
+    .light-blue-bg .col-lg-3:first-child p{
+        font-size: 16px;
+        text-align:center;
+        font-weight: 600;
+    }
+    .light-blue-bg .security-icon{
+        max-width:18px;
+        display: inline;
+        margin-right:7px;
+    }
+    .light-blue-bg .row:first-child{
+        display:flex;
+        justify-content:space-between;
+    }
+    .light-blue-bg .col-xs-4{
+        width:unset;
+    }
+    .light-blue-bg .col-lg-3:first-child {
+        margin-bottom: 5px;
+    }
+    h3 img {
+        max-width: 32px;
+        margin-right:12px;
+    }
+    .service-col h3 {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+    .service-col p {
+        padding-left: 45px;
+    }
+    .service-col {
+        margin-bottom: 10px;
+    }
+    .sectionContact {
+        margin-top: 15px;
+    }
+}
+@media (max-width:450px) {
+    .youtube-video-place iframe,
+    .youtube-video-place img {
+        height: 190px;
+    }
+    .section-yt iframe, .youtube-video-place img {
+        border-radius: 10px;
+        height: 240px;
+    }
+}
+@media (max-width:350px){
+    .move-details-text {
+        max-width: 119px;
+    }
+    .add-services-row .col-lg-3:nth-child(2){
+        min-width: 127px;
+    }
+}
+</style>
+<body>
+    <div class="col-lg-2 col-xs-12 col-card">
+        <label for="calcDesktop-FewItems(10’&nbsp;truck)" class="custom-card">
+            <i class="icon-circle"></i>
+            <div class="img-flex">
+                <img class="" src="images/few-items.png" alt="Few Items (10’&nbsp;truck)">
+            </div>
+            <h4 class="moving-house-title">Few Items (10’&nbsp;truck)</h4>
+        </label>
+    </div>
+</body>
+</html>

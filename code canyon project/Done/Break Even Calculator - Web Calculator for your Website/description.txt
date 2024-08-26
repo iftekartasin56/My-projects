@@ -1,0 +1,30 @@
+Break Even Calculator - Web Calculator for your Website
+
+Welcome to our <b>Break Even Calculator</b>, This Break Even Calculator helps you determine how many hours you need to work each month to cover your expenses based on either your hourly wage or your annual salary, taking into account any withholdings.
+<br>
+<br>
+<u><b>User inputs:</b></u>
+<ul>
+    <li>Monthly Expenses</li>
+    <li>Your Hourly Wage</li>
+    <li>Your Annual Salary</li>
+    <li>Withholdings</li>
+</ul>
+<br>
+<u><b>Outputs:</b></u>
+<ul>
+    <li>You need to work</li>
+</ul>
+<br>
+<u><b>Features of the Emergency Fund Calculator:</b></u>
+<ul>
+    <li>- The calculator computes the number of hours you need to work each month to cover your expenses, based on your inputs.</li>
+    <li>- Instant result without page reload</li>
+    <li>- JS and CSS loads when shortcode called on page</li>
+    <li>- 100% Responsive design</li>
+    <li>- Unique Design</li>
+    <li>- Well Documented (proper help instructions for setup)</li>
+    <li>- Dedicated Support</li>
+</ul>
+<br>
+The calculator is built using HTML, CSS, and JavaScript, and it also utilizes the popular JavaScript library jQuery. A premium quality <b>Break Even calculator</b> which you can easily embed into any website (well documented).

@@ -1,0 +1,510 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <title>Price Comparison Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Playfair Display', serif;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-----------Please copy and paste following code into any HTML element ---------------->
+
+    <!----------- copy starts ---------------->
+    <style>
+        .ms-cl *,
+        ::after,
+        ::before {
+            box-sizing: border-box;
+        }
+
+        .ms-cl {
+            line-height: 1.5;
+            font-family: inherit;
+        }
+
+        .ms-cl .container {
+            width: 100%;
+            margin-right: auto;
+            margin-left: auto;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #000;
+            text-align: left;
+        }
+
+        .ms-cl label {
+            display: inline-block;
+            margin-bottom: .5rem;
+            font-size: 16px;
+            font-weight: 400;
+            color: #000;
+        }
+
+        .ms-cl .h1,
+        .ms-cl h1 {
+            font-size: 2.5rem;
+        }
+
+        .ms-cl .h1,
+        .ms-cl .h2,
+        .ms-cl .h3,
+        .ms-cl .h4,
+        .ms-cl .h5,
+        .ms-cl .h6,
+        .ms-cl h1,
+        .ms-cl h2,
+        .ms-cl h3,
+        .ms-cl h4,
+        .ms-cl h5,
+        .ms-cl h6 {
+            margin-bottom: .5rem;
+            font-weight: 500;
+            line-height: 1.2;
+        }
+
+        .ms-cl h1,
+        .ms-cl h2,
+        .ms-cl h3,
+        .ms-cl h4,
+        .ms-cl h5,
+        .ms-cl h6 {
+            margin-top: 0;
+            margin-bottom: .5rem;
+        }
+
+        .ms-cl .h3,
+        .ms-cl h3 {
+            font-size: 1.75rem;
+        }
+
+        .ms-cl .h5,
+        .ms-cl h5 {
+            font-size: 1.25rem;
+        }
+
+        .ms-cl .h6,
+        .ms-cl h6 {
+            font-size: 1rem;
+        }
+
+        .ms-cl .row {
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            margin-right: -15px;
+            margin-left: -15px;
+        }
+
+        .ms-cl .col-md-1,
+        .ms-cl .col-md-10,
+        .ms-cl .col-md-11,
+        .ms-cl .col-md-12,
+        .ms-cl .col-md-2,
+        .ms-cl .col-md-3,
+        .ms-cl .col-md-4,
+        .ms-cl .col-md-5,
+        .ms-cl .col-md-6,
+        .ms-cl .col-md-7,
+        .ms-cl .col-md-8,
+        .ms-cl .col-md-9 {
+            position: relative;
+            width: 100%;
+            padding-right: 15px;
+            padding-left: 15px;
+        }
+
+        .ms-cl .form-group {
+            position: relative;
+            margin-bottom: 20px;
+            width: 255px;
+        }
+
+        .ms-cl .form-control {
+            display: block;
+            width: 100%;
+            height: 35px;
+            padding: 0.275rem 0.75rem;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #000;
+            background-color: #fff;
+            background-clip: padding-box;
+            border: none;
+            border-bottom: 2px solid #0D76BB;
+            transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+        }
+        .ms-cl .form-control:focus {
+            outline: none;
+        }
+
+        .ms-cl .text-center {
+            text-align: center !important;
+        }
+
+        /* Custom css */
+        .ms-cl .cl-wrapper {
+            border-radius: 8px;
+            background: #ffffff;
+            transition: all 1s ease-in-out;
+        }
+
+        .ms-cl .check-item {
+            display: inline-block;
+            border: 1px solid #F56B09;
+            border-radius: 5px;
+            padding: 7px 15px 5px 15px;
+            cursor: pointer;
+            background-color: transparent;
+            font-size: 16px;
+            font-weight: 400;
+            width: 100%;
+            text-align: center;
+        }
+
+        .ms-cl .check-item:hover {
+            background-color: #F56B09;
+            color: #fff;
+        }
+
+        .ms-cl .check-item.is-active {
+            background-color: #F56B09;
+            border-color: #F56B09;
+            color: #fff;
+        }
+
+        .ms-cl .top-title {
+            padding: 10px;
+            color: #033537;
+            font-size: 40px;
+            margin-top: 12px;
+            border-bottom: 2px solid #d5d9dd;
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .ms-cl #imperial_inp {
+            display: none;
+        }
+
+        .ms-cl .rs-sec {
+            color: #fff;
+            padding: 0px 10px;
+            border-left: 1px solid #033537; 
+            margin-bottom: 20px;
+        }
+
+        .ms-cl .rs-top-para {
+            color: #033537;
+            font-size: 20px;
+            font-weight: 400; 
+        }
+
+        .ms-cl .rs-title {
+            color: #033537;
+            border-bottom: 1px solid #033537;
+            font-size: 38px;
+            font-weight: 400; 
+        }
+
+        .ms-cl .rs-value {
+            color: #0D76BB;
+            font-family: Lato;
+            font-size: 50px;
+            font-weight: 600;
+        }
+
+        .ms-cl .bottom-para {
+            color: #F56A08;
+            font-size: 16px;
+            font-weight: 400;
+            text-align: center;
+        }
+        .ms-cl .bottom-para a{
+            color: #F56A08;
+            text-decoration: none;
+        }
+        
+        .ms-cl .img-sec {
+            text-align: center;
+        }
+        .ms-cl .img-sec img {
+            width: 132px;
+        }
+        .ms-cl .append-text {
+            position: absolute;
+            right: 5px;
+            bottom: 7px;
+            font-size: 16px;
+        }
+        .ms-cl  .unit-text {
+            font-size: 22px !important;
+        }
+
+        /* responsive */
+
+        @media (max-width: 768px) {
+            .ms-cl .cl-left-div {
+                padding: 15px 30px !important;
+            }
+            .ms-cl .top-title{
+                font-size: 24px;
+                margin-bottom: 10px;
+            }
+            .ms-cl .rs-top-para{
+                padding-bottom: 10px;
+                font-size: 16px;
+            }
+            .ms-cl .rs-title{
+                font-size: 24px;
+                margin-bottom: 10px;
+            }
+            .ms-cl .rs-sec{
+                border-left: none;
+            }
+            .ms-cl .rs-value{
+                font-size: 40px;
+            }
+            .ms-cl .form-group{
+                width: 100%;
+            }
+        }
+
+        @media (min-width: 576px) {
+            
+            .ms-cl .container {
+                max-width: 540px;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .ms-cl .col-md-12 {
+                -ms-flex: 0 0 100%;
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+
+            .ms-cl .col-md-8 {
+                -ms-flex: 0 0 66.666667%;
+                flex: 0 0 66.666667%;
+                max-width: 66.666667%;
+            }
+
+            .ms-cl .col-md-7 {
+                -ms-flex: 0 0 58.33333%;
+                flex: 0 0 58.33333%;
+                max-width: 58.33333%;
+            }
+
+            .ms-cl .col-md-6 {
+                -ms-flex: 0 0 50%;
+                flex: 0 0 50%;
+                max-width: 50%;
+            }
+
+            .ms-cl .col-md-5 {
+                -ms-flex: 0 0 41.666667%;
+                flex: 0 0 41.666667%;
+                max-width: 41.666667%;
+            }
+
+            .ms-cl .col-md-4 {
+                -ms-flex: 0 0 33.333333%;
+                flex: 0 0 33.333333%;
+                max-width: 33.333333%;
+            }
+
+            .ms-cl .col-md-3 {
+                -ms-flex: 0 0 25%;
+                flex: 0 0 25%;
+                max-width: 25%;
+            }
+            .ms-cl .container {
+                max-width: 600px;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .ms-cl .container {
+                max-width: 600px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .ms-cl .container {
+                max-width: 1200px;
+            }
+        }
+
+        .ms-cl .option-sec {
+            display: flex;
+            gap: 10px;
+        }
+        .ms-cl .prepend-text {
+            font-size: 16px;
+            position: absolute;
+            bottom: 7px;
+            padding: 1px 5px;
+            border-radius: 5px;
+            color: #000;
+        }
+        .ms-cl .sp-pad-left {
+            padding-left: 15px;
+        }
+        .ms-cl .sp-no-pad {
+            padding-left: 0px;
+        }
+        
+    </style>
+    <div class="ms-cl" id="ms_cl">
+        <div class="container main-calc">
+            <div class="cl-wrapper">
+                <h3 class="top-title text-center">Price Comparison Calculator</h3>
+            <div class="row">
+                <div class="col-md-7 cl-left-div">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label for="">Average Price of your transaction (price of the house)</label>
+                            <div class="form-group">
+                                <input type="text" class="form-control in-rq cl-input cl-in sp-pad-left" id="in_1" value="1000000" required>
+                                <span class="prepend-text">$</span>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <label for="">The commission to the REALTOR®</label>
+                            <div class="form-group">
+                                <input type="text" class="form-control text-right cl-input cl-prcnt sp-no-pad" id="in_2" value="2.5" required>
+                                <span class="append-text">%</span>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <label for="">The commission split with the agents brokerage</label>
+                             <div class="form-group">
+                                <input type="text" class="form-control text-right cl-input cl-prcnt sp-no-pad" id="in_3" value="10" required>
+                                <span class="append-text">%</span>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-12">
+                            <label for="">The number of transactions projected or completed in the last 12 months</label>
+                            <div class="form-group">
+                                <input type="text" class="form-control text-right cl-input cl-in sp-no-pad" id="in_4" value="10" required>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <label for="">The Monthly fees your brokerage or a third party may be charging you
+                                <small style="display: block; font-size: 12px;">(A personally branded intelligent agent website with IDX and integrated CRM with marketing A.I. automations build in.)</small>
+                            </label>
+                            <div class="form-group">
+                                <input type="text" class="form-control text-right cl-input cl-in sp-pad-left"  id="in_5" value="0">
+                                <span class="prepend-text">$</span>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <label for="">Transaction Fee</label>
+                            <div class="form-group">
+                                <input type="text" class="form-control text-right cl-input cl-in sp-pad-left"  id="in_6" value="0">
+                                <span class="prepend-text">$</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5 cl-right-div">
+                    <div class="rs-sec">
+                        <div class="rs-top-para">If you switch over to our brokerage <span style="font-weight: 700;">(SMART)</span> </div>
+                        <div class="rs-title">You would increase your net annual income by</div>
+                        <div class="rs-value" id="rs_1">$0</div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/autonumeric@4.5.4"></script>
+    <script>
+        jQuery(document).ready(function ($) {
+            const numOptionCurrency = {
+                digitGroupSeparator        : ',',
+                decimalCharacter           : '.',
+                decimalCharacterAlternative: '.',
+                currencySymbol             : ' ',
+                currencySymbolPlacement    : AutoNumeric.options.currencySymbolPlacement.prefix,
+                decimalPlaces              : 0
+            };  
+            const numOptionPercent = {
+                digitGroupSeparator        : ',',
+                decimalCharacter           : '.',
+                decimalCharacterAlternative: '.',
+                currencySymbol             : '',
+                currencySymbolPlacement    : AutoNumeric.options.currencySymbolPlacement.suffix,
+                decimalPlaces              : 2,
+                minimumValue               : 0,
+                maximumValue               : 100
+            };
+
+            AutoNumeric.multiple('.cl-in', numOptionCurrency);
+            AutoNumeric.multiple('.cl-prcnt', numOptionPercent);
+
+            function removeComma(num){
+                return Number(num.replace(/,/g,""));
+            }
+
+            const nftd = Intl.NumberFormat("en-US",{
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2
+            });
+
+            Calc();
+            
+            $(".cl-input").on("input", function(){
+                Calc();
+            });
+
+
+            function Calc(){
+                in_1 = removeComma($("#in_1").val());
+                in_2 = removeComma($("#in_2").val())/100;
+                in_3 = removeComma($("#in_3").val())/100;
+                in_4 = removeComma($("#in_4").val());
+                in_5 = removeComma($("#in_5").val());
+                in_6 = removeComma($("#in_6").val());
+
+                if(in_1 && in_2 && in_3 && in_4){
+                    let gross_comission = in_1 * in_2 ;
+                    let brokerage_fee = gross_comission * in_3;
+                    let total_fees = brokerage_fee * in_4 - in_5 - in_6;
+                    let smart_fees_monthly = 350 * 12;
+
+                    let annual_income = total_fees - smart_fees_monthly;
+
+
+                    $("#rs_1").text("$" + nftd.format(annual_income));
+                }else{
+                    $("#rs_1").text("$"+ "0");
+                }
+
+            }
+        });
+    </script>
+</body>
+
+</html>

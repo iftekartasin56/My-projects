@@ -1,0 +1,29 @@
+Average Collection Period Calculator - Web Calculator for your Website
+
+Welcome to our <b>Average Collection Period Calculator</b>, The Average Collection Period Calculator helps businesses determine how many days it takes to collect payments from their credit sales. This metric is crucial to understanding the efficiency of a company's credit and collection processes.
+<br>
+<br>
+<u><b>User inputs:</b></u>
+<ul>
+    <li>Average accounts receivable</li>
+    <li>Total credit sales</li>
+    <li>Duration</li>
+</ul>
+<br>
+<u><b>Outputs:</b></u>
+<ul>
+    <li>Average collection period</li>
+</ul>
+<br>
+<u><b>Features of the Average Collection Period Calculator:</b></u>
+<ul>
+    <li>- The result is displayed in clearly labeled sections, showing the average collection period per day.</li>
+    <li>- Instant result without page reload</li>
+    <li>- JS and CSS loads when shortcode called on page</li>
+    <li>- 100% Responsive design</li>
+    <li>- Unique Design</li>
+    <li>- Well Documented (proper help instructions for setup)</li>
+    <li>- Dedicated Support</li>
+</ul>
+<br>
+The calculator is built using HTML, CSS, and JavaScript, and it also utilizes the popular JavaScript library jQuery. A premium quality <b>Average Collection Period Calculator</b> which you can easily embed into any website (well documented).

@@ -1,0 +1,33 @@
+Life Energy calculator - Web Calculator for your Website
+
+Welcome to our <b>Life Energy calculator</b>, The Life Energy Calculator to help you understand the true cost of your expenses while investing in making money.By entering a few simple details about your expenses and income, you can see how many days, weeks, months or years of your working life are dedicated to financing certain purchases.
+<br>
+<br>
+<u><b>User inputs:</b></u>
+<ul>
+    <li>Item Cost</li>
+    <li>Frequency (Times Per Year)</li>
+    <li>Yearly Income</li>
+</ul>
+<br>
+<u><b>Outputs:</b></u>
+<ul>
+    <li>Years</li>
+    <li>Months</li>
+    <li>Weeks</li>
+    <li>Days</li
+</ul>
+<br>
+<u><b>Features of the Retirement Planning Calculator:</b></u>
+<ul>
+    <li>- Users can input their annual income to calculate how their earnings translate to time worked.</li>
+    <li>- Users enter the cost of the item or service they are interested in.</li>
+    <li>- Instant result without page reload</li>
+    <li>- JS and CSS loads when shortcode called on page</li>
+    <li>- 100% Responsive design</li>
+    <li>- Unique Design</li>
+    <li>- Well Documented (proper help instructions for setup)</li>
+    <li>- Dedicated Support</li>
+</ul>
+<br>
+The calculator is built using HTML, CSS, and JavaScript, and it also utilizes the popular JavaScript library jQuery. A premium quality <b>Life Energy calculator</b> which you can easily embed into any website (well documented).

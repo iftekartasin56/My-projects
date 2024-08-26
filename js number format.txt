@@ -1,0 +1,109 @@
+<script src="https://cdn.jsdelivr.net/npm/autonumeric@4.5.4"></script>
+
+const numOptionCurrency = {
+            digitGroupSeparator        : ',',
+            decimalCharacter           : '.',
+            decimalCharacterAlternative: '.',
+            currencySymbol             : '$',
+            currencySymbolPlacement    : AutoNumeric.options.currencySymbolPlacement.prefix,
+            decimalPlaces              : 0
+        };
+        const numOptionPercent = {
+                digitGroupSeparator        : ',',
+                decimalCharacter           : '.',
+                decimalCharacterAlternative: '.',
+                currencySymbol             : '%',
+                currencySymbolPlacement    : AutoNumeric.options.currencySymbolPlacement.suffix,
+                decimalPlaces              : 2,
+                minimumValue	           : 0,
+                maximumValue	           : 100
+            };
+        new AutoNumeric('#in_1', numOptionCurrency);
+	new AutoNumeric('#in_4', numOptionPercent);
+
+const anElement1 = AutoNumeric.multiple('.cl-in', numOptionCurrency);
+
+ function removeComma(num){
+        return Number(num.replace(/,/g,""));
+    }
+
+ function removeSign(vl){
+            return Number(vl.replace(/\./g,'').replace(/\,/g,'.'));
+        }
+
+ const nft = Intl.NumberFormat("en-US",{
+        minimumFractionDigits: 0,
+        maximumFractionDigits: 0
+    });
+
+ const nftd = Intl.NumberFormat("en-US",{
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2
+            });
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+ $('#in_3').flatpickr({
+            dateFormat: "d/m/y",
+            minDate: "31/12/21",
+            maxDate: "31/12/24"
+        });
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/datepicker/1.0.9/datepicker.min.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/datepicker/1.0.9/datepicker.min.js"></script>
+
+$("#cl_date").datepicker({
+            autoClose: true,
+            viewStart: 2,
+            format: 'dd/mm/yyyy'
+        });
+
+        $('#cl_date').datepicker('setDate', new Date());
+
+
+//PMT function
+
+function PMT(rate, nperiod, pv, fv, type) {
+        if (!fv) fv = 0;
+        if (!type) type = 0;
+
+        if (rate == 0) return -(pv + fv)/nperiod;
+
+        var pvif = Math.pow(1 + rate, nperiod);
+        var pmt = rate / (pvif - 1) * -(pv * pvif + fv);
+
+        if (type == 1) {
+            pmt /= (1 + rate);
+        };
+
+        return pmt;
+    }
+
+//only number
+function onlyNum(num){
+        return isFinite(num) ? num : 0;
+    }
+
+function removeSign(vl){
+            return Number(vl.replace(/\./g,'').replace(/\,/g,'.'));
+        }
+
+//NPER Function 
+function NPER(rate, payment, present, future, type) {
+            // Initialize type
+            var type = (typeof type === 'undefined') ? 0 : type;
+
+            // Initialize future value
+            var future = (typeof future === 'undefined') ? 0 : future;
+
+            // Evaluate rate and periods (TODO: replace with secure expression evaluator)
+            rate = eval(rate);
+
+            // Return number of periods
+            var num = payment * (1 + rate * type) - future * rate;
+            var den = (present * rate + payment * (1 + rate * type));
+            return Math.log(num / den) / Math.log(1 + rate);
+        }

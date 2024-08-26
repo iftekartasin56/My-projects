@@ -1,0 +1,313 @@
+:root{
+	--calc-primary-color: #3F3D56;
+	--calc-secondary-color: #FFEDED;
+}
+
+#mx_cl *,
+::after,
+::before {
+    box-sizing: border-box;
+}
+
+#mx_cl {
+    line-height: 1.5;
+    font-family: inherit;
+}
+
+#mx_cl .container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #4a4a4a;
+    text-align: left;
+}
+
+#mx_cl label {
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+#mx_cl .row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+#mx_cl .col-md-1,
+#mx_cl .col-md-10,
+#mx_cl .col-md-11,
+#mx_cl .col-md-12,
+#mx_cl .col-md-2,
+#mx_cl .col-md-3,
+#mx_cl .col-md-4,
+#mx_cl .col-md-5,
+#mx_cl .col-md-6,
+#mx_cl .col-md-7,
+#mx_cl .col-md-8,
+#mx_cl .col-md-9 {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+#mx_cl .form-group {
+    margin-bottom: 1rem;
+}
+
+#mx_cl .text-center {
+    text-align: center;
+}
+
+@media (min-width: 576px) {
+    #mx_cl .container {
+        max-width: 100%;
+    }
+}
+
+@media (min-width: 768px) {
+    #mx_cl .container {
+        max-width: 100%;
+    }
+
+    #mx_cl .col-md-12 {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    #mx_cl .col-md-9 {
+        -ms-flex: 0 0 75%;
+        flex: 0 0 75%;
+        max-width: 75%;
+    }
+
+    #mx_cl .col-md-8 {
+        -ms-flex: 0 0 66.666667%;
+        flex: 0 0 66.666667%;
+        max-width: 66.666667%;
+    }
+
+    #mx_cl .col-md-7 {
+        -ms-flex: 0 0 58.33333%;
+        flex: 0 0 58.33333%;
+        max-width: 58.33333%;
+    }
+
+    #mx_cl .col-md-6 {
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+    #mx_cl .col-md-5 {
+        -ms-flex: 0 0 41.666667%;
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+    }
+
+    #mx_cl .col-md-4 {
+        -ms-flex: 0 0 33.333333%;
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+    }
+
+    #mx_cl .col-md-3 {
+        -ms-flex: 0 0 25%;
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+}
+
+@media (min-width: 992px) {
+    #mx_cl .container {
+        max-width: 960px;
+    }
+}
+
+@media (min-width: 1200px) {
+    #mx_cl .container {
+        max-width: 950px;
+    }
+}
+
+#mx_cl .text-right {
+    text-align: right;
+}
+
+#mx_cl .form-group,
+#mx_cl .input-group {
+    position: relative;
+    margin-bottom: 28px;
+}
+
+#mx_cl .input-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--calc-primary-color);
+    display: block;
+    padding-bottom: 5px;
+}
+#mx_cl .option-sec {
+    display: flex;
+    gap: 30px;
+    justify-content: start;
+}
+#mx_cl .check-box {
+    display: flex;
+    margin-bottom: 6px;
+    cursor: pointer;
+}
+
+#mx_cl .tck-mark {
+    display: inline-block;
+    margin-top: 1px;
+}
+
+#mx_cl .tick-mark {
+    background-color: #ffffff;
+    padding: 2px;
+    color: #fff;
+    width: 20px;
+    height: 20px;
+    font-size: 14px;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    border: 1px solid var(--calc-primary-color);
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    margin-right: 10px;
+}
+
+#mx_cl .check-box.is-active .tick-mark {
+    background-color: var(--calc-primary-color);
+    border: 1px solid var(--calc-primary-color);
+}
+#mx_cl .check-box:hover:not(.is-active) .tick-mark {
+    background-color: #dddddd;
+}
+
+#mx_cl .rs-sec {
+    background-color: var(--calc-primary-color);
+    border-radius: 8px;
+    padding: 30px 40px 15px 40px;
+    color: var(--calc-secondary-color);
+    margin-left: -85px;
+    margin-top: 55px;
+}
+#mx_cl .rs-title {
+    font-size: 22px;
+    font-weight: 600;
+    border-bottom: 1px solid #B8AD9D;
+    margin: 0;
+    margin-bottom: 10px;
+    color: var(--calc-secondary-color);
+    font-family: 'Lato',Helvetica,Arial,Lucida,sans-serif;
+}
+#mx_cl .rs-vl {
+    font-size: 36px;
+    font-weight: 600;
+    margin: 0;
+    margin-bottom: 10px;
+    color: var(--calc-secondary-color);
+    font-family: 'Lato',Helvetica,Arial,Lucida,sans-serif;
+}
+#mx_cl .small-check {
+    font-size: 12px;
+    color: #7c7c7c;
+}
+#mx_cl .left-div-sec {
+    width: 100%;
+    background-color: var(--calc-secondary-color);
+    border: 1px solid var(--calc-primary-color);
+    border-radius: 8px;
+    padding: 25px 50px;
+}
+#mx_cl .range-vl {
+    font-size: 14px;
+    font-weight: 400;
+    color: #000;
+    display: inline-block;
+    border: 1px solid #0d2131;
+    padding: 2px 15px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+#mx_cl .range-wrap {
+    display: block;
+    position: relative;
+    padding: 0;
+    margin: 0 0 35px 0;
+}
+
+#mx_cl input[type=range] {
+    margin: 0 0 0 0;
+    outline: none;
+    padding: 0;
+    width: 100%;
+    height: 7px;
+    background-color: #ccc;
+    background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, var(--calc-primary-color)), color-stop(100%, var(--calc-primary-color)));
+    border: 1px solid #ccc;
+    background-size: 0% 100%;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    cursor: pointer;
+    -webkit-appearance: none;
+}
+
+#mx_cl input[type=range]::-webkit-slider-runnable-track {
+    box-shadow: none;
+    border: none;
+    background: transparent;
+    -webkit-appearance: none;
+}
+#mx_cl input[type=range]::-webkit-slider-thumb {
+    height: 20px;
+    width: 20px;
+    margin-top: -3px;
+    background: var(--calc-primary-color);
+    border: 5px solid var(--calc-primary-color);
+    border-radius: 25px;
+    box-shadow: 0 2px 2px 0px #646464;
+    -webkit-appearance: none;
+}
+@media (max-width: 786px){
+    #mx_cl .right-heading {
+        margin-top: 25px;
+    }
+    #mx_cl .top-title {
+        font-size: 30px;
+    }
+    #mx_cl .output-section {
+        margin-top: 10px;
+    }
+    #mx_cl .final-output {
+        margin-top: 16px;
+    }
+    #mx_cl .option-sec{
+        flex-direction: column;
+        gap: 0;
+    }
+    #mx_cl .rs-sec {
+       margin: 0;
+        padding: 25px 20px 10px 20px;
+        border-radius: 0 0 8px 8px;
+    }
+    #mx_cl .left-div-sec {
+        border-radius: 8px 8px 0 0;
+        padding: 20px;
+    }
+}

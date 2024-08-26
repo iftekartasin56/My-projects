@@ -1,0 +1,30 @@
+Accounts Receivable Turnover Calculator - Web Calculator for your Website
+
+Welcome to our <b>Accounts Receivable Turnover Calculator</b>, The Accounts Receivable Turnover Calculator helps businesses assess how efficiently they collect their receivables.
+<br>
+<br>
+<u><b>User inputs:</b></u>
+<ul>
+    <li>Net credit sales</li>
+    <li>Average receivables</li>
+</ul>
+<br>
+<u><b>Outputs:</b></u>
+<ul>
+    <li>Accounts Receivable Turnover</li>
+</ul>
+<br>
+<u><b>Features of the Accounts Receivable Turnover Calculator:</b></u>
+<ul>
+    <li>Allows users to input their net credit sales.</li>
+    <li>Allows users to input their average receivables.</li>
+    <li>- Displays the calculated turnover value.</li>
+    <li>- Instant result without page reload</li>
+    <li>- JS and CSS loads when shortcode called on page</li>
+    <li>- 100% Responsive design</li>
+    <li>- Unique Design</li>
+    <li>- Well Documented (proper help instructions for setup)</li>
+    <li>- Dedicated Support</li>
+</ul>
+<br>
+The calculator is built using HTML, CSS, and JavaScript, and it also utilizes the popular JavaScript library jQuery. A premium quality <b>Accounts Receivable Turnover Calculator</b> which you can easily embed into any website (well documented).

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <title>Calorie Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+
+    <!-- CSS Stylesheet Link -->
+    <link rel="stylesheet" href="css/Calc-style.css">
+</head>
+
+<body>
+
+<!-----------Please copy and paste following code into any HTML element ---------------->
+
+<!----------- copy starts ---------------->
+
+<div class="ms-cl" id="ms_cl">
+    <div class="container cl-wrapper main-calc">
+        <h3 class="top-title text-center">Calculate calorie needs</h3>
+        <div class="row">
+            <div class="col-md-6 cl-left-div">
+                <div class="form-group">
+                    <label style="display: block;">Gender</label>
+                    <div class="check-box">
+                        <div class="check-item gen_check" data-value="Male">
+                            Male
+                        </div>
+                        <div class="check-item gen_check" data-value="Female">
+                            Female
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-group">
+                        <label for="cl_age">Age</label>
+                        <input type="number" class="form-control cl-required" id="cl_age" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="check-box">
+                        <div class="check-item unit_check active" data-value="1">
+                            Metric unit (kg)
+                        </div>
+                        <div class="check-item unit_check" data-value="2">
+                            US unit (lbs)
+                        </div>
+                    </div>
+                </div>
+                <div class="row" id="metric_inp">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="cl_height">Length <small>(cm)</small></label>
+                            <input type="number" class="form-control cl-required" id="cl_height_1" />
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="cl_weight">Weight <small>(kg)</small></label>
+                            <input type="number" class="form-control cl-required" id="cl_weight_1" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row" id="imperial_inp">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="cl_height">Length <small>(feet)</small></label>
+                            <input type="number" class="form-control cl-required" id="cl_height_2" />
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="cl_weight">Length <small>(inches)</small></label>
+                            <input type="number" class="form-control cl-required" id="cl_height_22" />
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="cl_weight">Weight <small>(lbs)</small></label>
+                            <input type="number" class="form-control cl-required" id="cl_weight_2" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="cl_activity">Activity level</label>
+                            <select class="form-control cl-required" id="cl_activity">
+                                <option disabled selected value="">-Select-</option>
+                                <option value="1.2,1.4">Little/to no training</option>
+                                <option value="1.4,1.6">1-2 times training per week</option>
+                                <option value="1.6,1.8">2-3 times training per week</option>
+                                <option value="1.75,1.8">3-5 times training per week</option>
+                                <option value="2.0,2">5-6 times training per week</option>
+                                <option value="2.3,2.2">Professional athlete</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="cl_goal">Goal</label>
+                            <select class="form-control cl-required" id="cl_goal">
+                                <option disabled selected value="">-Select-</option>
+                                <option value="1">Maintain weight</option>
+                                <option value="2">To fall off</option>
+                                <option value="3">Gain muscle mass</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-output-section left-sl-ou-sec" style="margin-bottom: 5px;">
+                    <div class="mid-sec">
+                        <label for="cl_percent" style="flex: 3;">Percentage:</label>
+                        <input type="text" class="form-control text-center" readonly id="cl_percent_vl" style="width: 27%;" />
+                    </div>
+                    <div class="form-group">
+                        <div class="slidecontainer">
+                            <input type="range" min="0" max="100" value="0" step="5" class="slider cl-slider-in" id="cl_percent" />
+                        </div>
+                    </div>
+                    <div class="slider-output-sec">
+                        <div class="left-output-section">
+                            <span class="final-output" id="rs_1">0</span><br />
+                            <span class="output-sec-sub-heading">Calories/day</span>
+                        </div>
+                        <div class="left-output-section">
+                            <span class="final-output"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 cl-right-div">
+                <div class="slider-output-section">
+                    <label class="sp-label">
+                        <span>Protein:</span>
+                        <span class="rs-prcnt" id="prcnt_1">0%</span>
+                    </label>
+                    <div class="slider-output-sec">
+                        <div class="left-output-section">
+                            <span class="final-output" id="rs_2">0</span><br />
+                            <span class="output-sec-sub-heading">Calories/day</span>
+                        </div>
+                        <div class="left-output-section">
+                            <span class="final-output" id="rs_3">0</span><br />
+                            <span class="output-sec-sub-heading">Grams </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-output-section">
+                    <label class="sp-label">
+                        <span>Fats:</span>
+                        <span class="rs-prcnt" id="prcnt_2">0%</span>
+                    </label>
+                    <div class="slider-output-sec">
+                        <div class="left-output-section">
+                            <span class="final-output" id="rs_4">0</span><br />
+                            <span class="output-sec-sub-heading">Calories/day</span>
+                        </div>
+                        <div class="left-output-section">
+                            <span class="final-output" id="rs_5">0</span><br />
+                            <span class="output-sec-sub-heading">Grams </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-output-section">
+                    <label class="sp-label">
+                        <span>Carbohydrates:</span>
+                        <span class="rs-prcnt" id="prcnt_3">0%</span>
+                    </label>
+                    <div class="slider-output-sec">
+                        <div class="left-output-section">
+                            <span class="final-output" id="rs_6">0</span><br />
+                            <span class="output-sec-sub-heading">Calories/day</span>
+                        </div>
+                        <div class="left-output-section">
+                            <span class="final-output" id="rs_7">0</span><br />
+                            <span class="output-sec-sub-heading">Grams </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="js/jquery.js"></script>
+<script src="js/Calc-script.js"></script>
+<!----------- copy ends ---------------->
+</body>
+
+</html>

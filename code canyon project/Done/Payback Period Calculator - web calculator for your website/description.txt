@@ -1,0 +1,36 @@
+Payback Period calculator - Web Calculator for your Website
+
+Welcome to our <b>Payback Period calculator</b>, The Payback period calculator to help determine the time required to recover your initial investment from your cash flow.
+<br>
+<br>
+<u><b>User inputs:</b></u>
+<ul>
+    <li>Discount rate</li>
+    <li>Initial investment</li>
+    <li>Annual cash flow</li>
+    <li>Year 1</li>
+    <li>Year 2/li>
+    <li>Year 3/li>
+    <li>Year 4/li>
+    <li>Year 5/li>
+</ul>
+<br>
+<u><b>Outputs:</b></u>
+<ul>
+    <li>Payback period</li>
+    <li>Discounted payback period</li>
+    <li>Payback period</li>
+</ul>
+<br>
+<u><b>Features of the Payback Period Calculator:</b></u>
+<ul>
+    <li>- Users can input the total initial cost of the investment, which is used to calculate both the traditional and discounted payback periods.</li>
+    <li>- Instant result without page reload</li>
+    <li>- JS and CSS loads when shortcode called on page</li>
+    <li>- 100% Responsive design</li>
+    <li>- Unique Design</li>
+    <li>- Well Documented (proper help instructions for setup)</li>
+    <li>- Dedicated Support</li>
+</ul>
+<br>
+The calculator is built using HTML, CSS, and JavaScript, and it also utilizes the popular JavaScript library jQuery. A premium quality <b>Payback Period calculator</b> which you can easily embed into any website (well documented).

@@ -1,0 +1,31 @@
+Sinking Fund Calculator - Web Calculator for your Website
+
+Welcome to our <b>Sinking Fund Calculator</b>, The Sinking Fund Calculator is a versatile tool designed to help you allocate and manage your savings for specific goals efficiently. Whether you're planning for a vacation, car maintenance, or any other targeted expense, this calculator allows you to create and track up to ten distinct sinking funds.
+
+
+<br>
+<br>
+<u><b>User inputs:</b></u>
+<ul>
+<u><b>Example of input-</b></u>
+    <li>Vacation</li>
+    <li>Car Maintenance</li>
+</ul>
+<br>
+<u><b>Outputs:</b></u>
+<ul>
+    <li>Total Amount</li>
+</ul>
+<br>
+<u><b>Features of the Retirement Planning Calculator:</b></u>
+<ul>
+    <li>- The Calculator includes several input fields where users can specify different sinking fund purposes (e.g., Vacation, Car Maintenance) and their respective amounts.</li>
+    <li>- Instant result without page reload</li>
+    <li>- JS and CSS loads when shortcode called on page</li>
+    <li>- 100% Responsive design</li>
+    <li>- Unique Design</li>
+    <li>- Well Documented (proper help instructions for setup)</li>
+    <li>- Dedicated Support</li>
+</ul>
+<br>
+The calculator is built using HTML, CSS, and JavaScript, and it also utilizes the popular JavaScript library jQuery. A premium quality <b>Sinking Fund calculator</b> which you can easily embed into any website (well documented).

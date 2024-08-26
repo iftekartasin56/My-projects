@@ -1,0 +1,491 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <title>Fish Weight Calculator</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-----------Please copy and paste following code into any HTML element ---------------->
+
+<!----------- copy starts ---------------->
+<style>
+.ms-cl *, ::after, ::before {
+    box-sizing: border-box;
+}
+.ms-cl {
+    line-height: 1.5;
+    font-family: 'Poppins', sans-serif;
+}
+.ms-cl .container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #4f4f4f;
+    text-align: left;
+}
+.ms-cl label {
+    display: inline-block;
+    margin-bottom: .5rem;
+    font-size: 18px;
+    font-weight: 500;
+    color: #fff;
+}
+.ms-cl .h1, .ms-cl h1 {
+    font-size: 2.5rem;
+}
+.ms-cl .h1, .ms-cl .h2, .ms-cl .h3, .ms-cl .h4, .ms-cl .h5, .ms-cl .h6, .ms-cl h1, .ms-cl h2, .ms-cl h3, .ms-cl h4, .ms-cl h5, .ms-cl h6 {
+    margin-bottom: .5rem;
+    font-weight: 500;
+    line-height: 1.2;
+}
+.ms-cl h1, .ms-cl h2, .ms-cl h3, .ms-cl h4, .ms-cl h5, .ms-cl h6 {
+    margin-top: 0;
+    margin-bottom: .5rem;
+}
+.ms-cl .h3, .ms-cl h3 {
+    font-size: 1.75rem;
+}
+.ms-cl .h5, .ms-cl h5 {
+    font-size: 1.25rem;
+}
+.ms-cl .h6, .ms-cl h6 {
+    font-size: 1rem;
+}
+.ms-cl .row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+.ms-cl .col, .ms-cl .col-1, .ms-cl .col-10, .ms-cl .col-11, .ms-cl .col-12, .ms-cl .col-2, .ms-cl .col-3, .ms-cl .col-4, .ms-cl .col-5, .ms-cl .col-6, .ms-cl .col-7, .ms-cl .col-8, .ms-cl .col-9, .ms-cl .col-auto, .ms-cl .col-lg, .ms-cl .col-lg-1, .ms-cl .col-lg-10, .ms-cl .col-lg-11, .ms-cl .col-lg-12, .ms-cl .col-lg-2, .ms-cl .col-lg-3, .ms-cl .col-lg-4, .ms-cl .col-lg-5, .ms-cl .col-lg-6, .ms-cl .col-lg-7, .ms-cl .col-lg-8, .ms-cl .col-lg-9, .ms-cl .col-lg-auto, .ms-cl .col-md, .ms-cl .col-md-1, .ms-cl .col-md-10, .ms-cl .col-md-11, .ms-cl .col-md-12, .ms-cl .col-md-2, .ms-cl .col-md-3, .ms-cl .col-md-4, .ms-cl .col-md-5, .ms-cl .col-md-6, .ms-cl .col-md-7, .ms-cl .col-md-8, .ms-cl .col-md-9, .ms-cl .col-md-auto, .ms-cl .col-sm, .ms-cl .col-sm-1, .ms-cl .col-sm-10, .ms-cl .col-sm-11, .ms-cl .col-sm-12, .ms-cl .col-sm-2, .ms-cl .col-sm-3, .ms-cl .col-sm-4, .ms-cl .col-sm-5, .ms-cl .col-sm-6, .ms-cl .col-sm-7, .ms-cl .col-sm-8, .ms-cl .col-sm-9, .ms-cl .col-sm-auto, .ms-cl .col-xl, .ms-cl .col-xl-1, .ms-cl .col-xl-10, .ms-cl .col-xl-11, .ms-cl .col-xl-12, .ms-cl .col-xl-2, .ms-cl .col-xl-3, .ms-cl .col-xl-4, .ms-cl .col-xl-5, .ms-cl .col-xl-6, .ms-cl .col-xl-7, .ms-cl .col-xl-8, .ms-cl .col-xl-9, .ms-cl .col-xl-auto {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.ms-cl .form-group {
+    margin-bottom: 1rem;
+}
+.ms-cl .form-control {
+    display: block;
+    width: 100%;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: #000000;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    font-family: 'Poppins', sans-serif;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.ms-cl select {
+    display: block;
+    width: 100%;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff !important;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.ms-cl .form-control:focus {
+    outline: none;
+}
+.ms-cl .form-check {
+    position: relative;
+    display: block;
+    padding-left: 1.25rem;
+}
+.ms-cl .form-check-input {
+    position: absolute;
+    margin-top: 0.5rem;
+    margin-left: -1.25rem;
+}
+.ms-cl input[type=checkbox], .ms-cl input[type=radio] {
+    box-sizing: border-box;
+    padding: 0;
+}
+.ms-cl .form-check-label {
+    margin-bottom: 0;
+}
+.ms-cl [type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled) {
+    cursor: pointer;
+}
+.ms-cl .small, .ms-cl small {
+    font-size: 80%;
+    font-weight: 400;
+}
+.ms-cl .text-center {
+    text-align: center!important;
+}
+.ms-cl .mt-5, .ms-cl .my-5 {
+    margin-top: 3rem!important;
+}
+.ms-cl .mr-2, .ms-cl .mx-2 {
+    margin-right: .5rem!important;
+}
+.ms-cl .mt-3, .ms-cl .my-3 {
+    margin-top: 1rem!important;
+}
+.ms-cl .mt-4, .ms-cl .my-4 {
+    margin-top: 1.5rem!important;
+}
+.ms-cl .mb-4, .ms-cl .my-4 {
+    margin-bottom: 1.5rem!important;
+}
+.ms-cl .p-4 {
+    padding: 1.5rem!important;
+}
+.ms-cl .pt-2, .ms-cl .py-2 {
+    padding-top: .5rem!important;
+}
+.ms-cl .pl-5, .ms-cl .px-5 {
+    padding-left: 3rem!important;
+}
+.ms-cl .pr-5, .ms-cl .px-5 {
+    padding-right: 3rem!important;
+}
+.ms-cl .bg-white {
+    background-color: #fff!important;
+}
+.ms-cl .btn {
+    display: inline-block;
+    font-weight: 400;
+    color: #212529;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 18px;
+    line-height: 1.5;
+    border-radius: 5px;
+    font-family: 'Poppins', sans-serif;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.ms-cl .btn-primary {
+    color: #fff;
+    background: #ec6d1a;
+    border-color: #ec6d1a;
+    padding: .575rem 4rem;
+    display: inline-block;
+}
+.ms-cl .btn-primary:hover, .ms-cl .btn-primary:focus {
+    color: #fff;
+    background: #bc5817;
+    border-color: #bc5817;
+}
+.ms-cl .btn-clear {
+    color: #000;
+    background: #dcdcdc;
+    border-color: #dcdcdc;
+    padding: .575rem 1.2rem;
+    display: block;
+    width: 100%;
+}
+.ms-cl .btn-clear:hover, .ms-cl .btn-clear:focus {
+    color: #dcdcdc;
+    background: #000;
+    border-color: #000;
+}
+.ms-cl .btn:focus {
+    outline: none !important;
+}
+/* Custom css */
+.ms-cl .cl-wrapper {
+    position: relative;
+    border: 1px solid #e1e1e1;
+    border-radius: 10px;
+    color: #ffffff;
+    background: #3d5641;
+}
+.ms-cl .cl-left-div {
+    padding: 3rem 3rem 3rem 3rem !important;
+}
+.ms-cl .cl-right-div {
+    display: flex;
+    padding: 3rem 3rem 3rem 3rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    color:#fff;
+}
+.ms-cl table {
+    border-collapse: collapse;
+}
+.ms-cl .table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 1rem;
+    background-color: transparent;
+}
+.ms-cl .table td, .ms-cl .table th {
+    padding: .75rem;
+    vertical-align: top;
+    border-bottom: 1px solid #ccc;
+}
+.ms-cl .rs-div {
+    min-width: 445px;
+    background-color: #fff;
+    display: inline-block;
+    font-size: 20px;
+    color: #000;
+    padding: 1rem 4rem;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+    border-radius: 8px;
+    box-shadow: inset 0 0 2px #000;
+}
+.ms-cl .f600 {
+    font-weight: 600;
+}
+.ms-cl .rs-sub-title-sp {
+    color: #fff;
+    font-size: 28px;
+    font-weight: bolder;
+}
+.ms-cl .rs-sp-vl-sec {
+    position: relative;
+    display: inline-block;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 15px;
+    min-width: 240px;
+}
+.ms-cl .rs-sp-value {
+    color: #fff;
+    font-size: 2.5rem;
+    font-weight: 600 !important;
+    margin: 0;
+}
+.ms-cl .note {
+    font-size: 13px;
+}
+.ms-cl input::-webkit-input-placeholder { /* Edge */
+  color: #c0c0c0;
+  font-weight: normal;
+}
+
+.ms-cl input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #c0c0c0;
+  font-weight: normal;
+}
+
+.ms-cl input::placeholder {
+  color: #c0c0c0;
+  font-weight: normal;
+}
+
+/* responsive */
+
+@media (max-width: 768px){
+    .ms-cl .cl-divider {
+        display: none;
+    }
+    .ms-cl .cl-left-div {
+        padding: 2rem 2.5rem !important;
+    }
+    .ms-cl .btn-primary {
+        padding: .575rem 2rem;
+        width: 100%;
+    }
+    .ms-cl .cl-right-div {
+        padding: 1rem 3rem 3rem 3rem;
+    }
+}
+@media (min-width: 576px){
+    .ms-cl .container, .ms-cl .container-sm {
+        max-width: 540px;
+    }
+}
+@media (min-width: 768px){
+    .ms-cl .container, .ms-cl .container-md, .ms-cl .container-sm {
+        max-width: 720px;
+    }
+    .ms-cl .col-md-12 {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .ms-cl .col-md-8 {
+        -ms-flex: 0 0 66.666667%;
+        flex: 0 0 66.666667%;
+        max-width: 66.666667%;
+    }
+    .ms-cl .col-md-6 {
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    .ms-cl .col-md-4 {
+        -ms-flex: 0 0 33.333333%;
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+    }
+    .ms-cl .col-md-3 {
+        -ms-flex: 0 0 25%;
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+}
+@media (min-width: 992px){
+    .ms-cl .container, .ms-cl .container-lg, .ms-cl .container-md, .ms-cl .container-sm {
+        max-width: 960px;
+    }
+}
+@media (min-width: 1200px) {
+    .ms-cl .container, .ms-cl .container-lg, .ms-cl .container-md, .ms-cl .container-sm, .ms-cl .container-xl {
+        max-width: 1140px;
+    }
+}
+</style>
+<div class="ms-cl" id="ms_cl">
+    <div class="container cl-wrapper">
+        <div class="row">
+            <div class="col-md-6 cl-left-div" id="cl-input-one">
+                <div class="form-group">
+                    <label for="cl_in_1">Fish length <span class="note">(inches)</span></label>
+                    <input type="text" name="cl_in_1" class="form-control cl-required" id="cl_in_1" placeholder="length in inches" />
+                </div>
+                <div class="form-group">
+                    <label for="cl_in_2">Fish girth <span class="note">(inches)</span></label>
+                    <input type="text" name="cl_in_2" class="form-control cl-required" id="cl_in_2" placeholder="girth in inches (optional)" />
+                </div>
+            </div>
+            <div class="col-md-6 cl-right-div" id="cl-rs-one">
+                <label for="cl_in_1">Fish shape</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="f_shape" id="radio_1" value="900">
+                    <label class="form-check-label" for="radio_1">
+                        Trout, steelhead, snook, redfish, bonefish
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="f_shape" id="radio_2" value="800">
+                    <label class="form-check-label" for="radio_2">
+                        Salmon, bass
+                    </label>
+                </div>
+                <div class="form-check disabled">
+                    <input class="form-check-input" type="radio" name="f_shape" id="radio_3" value="3500">
+                    <label class="form-check-label" for="radio_3">
+                        Walleye
+                    </label>
+                </div>
+                <div class="form-check disabled">
+                    <input class="form-check-input" type="radio" name="f_shape" id="radio_4" value="2700">
+                    <label class="form-check-label" for="radio_4">
+                        Pike, gar, muskie
+                    </label>
+                </div>
+                <div class="form-check disabled">
+                    <input class="form-check-input" type="radio" name="f_shape" id="radio_5" value="1200">
+                    <label class="form-check-label" for="radio_5">
+                        Sunfish, bluegill
+                    </label>
+                </div>
+            </div>
+            <div class="col-md-12 text-center">
+                <button type="button" class="btn btn-primary" id="calculate_btn">Calculate weight</button>                
+            </div>
+            <div class="col-md-12 text-center mt-4" style="margin-bottom: 3rem;">
+                <h4 class="rs-sub-title-sp">Calculated weight</h4>
+                <div class="rs-sp-vl-sec">
+                    <h2 class="rs-sp-value" id="rs_vl">-</h2>
+                </div>        
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    jQuery(document).ready(function($){
+        let rs_vl, cl_in_1, cl_in_2, cl_in_3 = 900;
+        const nftd = Intl.NumberFormat("en-US", {
+            minimumFractionDigits:2,
+            maximumFractionDigits:2
+        });
+
+        $("#calculate_btn").on("click", function(){
+            cl_in_1 = Number($("#cl_in_1").val());
+            cl_in_2 = Number($("#cl_in_2").val());
+            cl_in_3 = Number($("input[name='f_shape']:checked").val());
+            
+            if(cl_in_1){
+                cl_in_2 = (cl_in_2) ? cl_in_2 : cl_in_1*0.58;
+                cl_in_3 = (cl_in_3) ? cl_in_3 : 900;
+                if(cl_in_3 == 3500 || cl_in_3 == 2700){
+                    rs_vl = (cl_in_1 * cl_in_1 * cl_in_1)/cl_in_3;
+                } else {
+                    rs_vl = (cl_in_1 * cl_in_2 * cl_in_2)/cl_in_3;
+                }
+                $("#rs_vl").html(`${nftd.format(rs_vl)} <span style="font-size: 16px;">pounds</span>`);
+            } else {
+                $("#rs_vl").html("-");
+                alert("The Fish length field is required");
+            }
+        });
+
+    });
+</script>
+<!----------- copy ends ---------------->
+</body>
+</html>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    

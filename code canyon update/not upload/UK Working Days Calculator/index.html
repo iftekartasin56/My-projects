@@ -1,0 +1,470 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap CSS -->
+    <title>Working Days Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>   
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+</head>
+<body>
+
+<!-----------Please copy and paste following code into any HTML element ---------------->
+
+<!----------- copy starts ---------------->
+<style>
+#hm_cl *, ::after, ::before {
+    box-sizing: border-box;
+}
+#hm_cl {
+    line-height: 1.5;
+    font-family: inherit;
+}
+#hm_cl .container {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #000000;
+    text-align: left;
+    padding-right: 0;
+    padding-left: 0;
+}
+#hm_cl label {
+    display: block;
+    text-align: left;
+    margin-bottom: .5rem;
+    font-size: 16px;
+    font-weight: 500;
+}
+#hm_cl .table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 0rem;
+    background-color: transparent;
+    border-collapse: collapse;
+}
+#hm_cl .table td, #hm_cl .table th {
+    padding: 0.25rem 0.75rem;
+    vertical-align: middle;
+    border: 1px solid #cecabe;
+    font-size: 16px;
+    background: transparent;
+    box-shadow: none;
+    color: #000000;
+}
+#hm_cl .table th {
+    border: none;
+}
+#hm_cl .row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin: 0;
+}
+#hm_cl .col-md, #hm_cl .col-md-1, #hm_cl .col-md-10, #hm_cl .col-md-11, #hm_cl .col-md-12, #hm_cl .col-md-2, #hm_cl .col-md-3, #hm_cl .col-md-4, #hm_cl .col-md-5, #hm_cl .col-md-6, #hm_cl .col-md-7, #hm_cl .col-md-8, #hm_cl .col-md-9, #hm_cl .col-md-auto {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+#hm_cl .form-group {
+    margin-bottom: 1rem;
+}
+#hm_cl .form-control {
+    display: block;
+    width: 100%;
+    height: calc(1.5em + 0.75rem + 2px);
+    padding: 0.375rem 0.75rem;
+    text-align: left;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5;
+    color: #ffffff;
+    background-color: transparent;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+#hm_cl .form-control:focus {
+    outline: none;
+}
+#hm_cl .input-group {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+    width: 100%;
+}
+#hm_cl .text-center {
+    text-align: center!important;
+}
+/* Custom css */
+#hm_cl .cl-wrapper {
+    position: relative;
+    border-radius: 10px;
+    background: #ffffff;
+    margin-top:30px;
+    box-shadow: 0 0 10px #ccc;
+}
+#hm_cl .cl-left-div {
+    padding: 10px 30px !important;
+    background: #ffffff;
+    border-radius: 10px;
+}
+/* responsive */
+
+@media (max-width: 768px){
+    #hm_cl .cl-left-div {
+        padding: 1rem 2rem !important;
+    }
+    #hm_cl .form-control {
+        height: auto;
+        padding: .175rem .75rem;
+    }
+    #hm_cl label {
+        font-size: 16px;
+        margin-top: 10px;
+    }
+}
+@media (min-width: 576px){
+    #hm_cl .container {
+        max-width: 540px;
+    }
+}
+@media (min-width: 768px){
+    #hm_cl .container {
+        max-width: 100%;
+    }
+    #hm_cl .col-md-12 {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    #hm_cl .col-md-9 {
+        -ms-flex: 0 0 75%;
+        flex: 0 0 75%;
+        max-width: 75%;
+    }
+    #hm_cl .col-md-8 {
+        -ms-flex: 0 0 66.666667%;
+        flex: 0 0 66.666667%;
+        max-width: 66.666667%;
+    }
+    #hm_cl .col-md-6 {
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    #hm_cl .col-md-4 {
+        -ms-flex: 0 0 33.333333%;
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+    }
+    #hm_cl .col-md-3 {
+        -ms-flex: 0 0 25%;
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+    #hm_cl .col-md-2 {
+        -ms-flex: 0 0 16.66667%;
+        flex: 0 0 16.66667%;
+        max-width: 16.66667%;
+    }
+}
+@media (min-width: 992px){
+    #hm_cl .container {
+        max-width: 800px;
+    }
+}
+@media (min-width: 1200px) {
+    #hm_cl .container {
+        max-width: 800px;
+    }
+}
+#hm_cl .optios-sec {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+#hm_cl .radio-option {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+    padding: 6px 10px;
+    margin: 0 5px;
+    width: 50%;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    color: #000000;
+    transition: all 0.2s;
+    font-size: 16px;
+    user-select: none;
+    border: 1px solid #cccccc;
+}
+#hm_cl .radio-option:hover {
+    background: #dddddd;
+    border: 1px solid #dddddd;
+}
+#hm_cl .radio-option.active {
+    background: #CA0032;
+    border: 1px solid #CA0032;
+    color:#ffffff;
+}
+#hm_cl .mr-right {
+    margin-right: 5px;
+}
+#hm_cl .sp-input-sec {
+    background: #CA0032;
+    color: #ffffff;
+    padding: 30px;
+}
+#hm_cl .rs-text {
+    font-size: 22px;
+    text-align: center;
+}
+@media (max-width: 768px){
+    #hm_cl .optios-sec {
+        flex-direction: column;
+    }
+    #hm_cl .radio-option {
+        margin: 5px 0;
+        width: 100%;
+    }
+    #hm_cl .rs-text {
+        font-size: 20px;
+        text-align: center;
+    }
+}
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/datepicker/1.0.10/datepicker.min.css" integrity="sha512-YdYyWQf8AS4WSB0WWdc3FbQ3Ypdm0QCWD2k4hgfqbQbRCJBEgX0iAegkl2S1Evma5ImaVXLBeUkIlP6hQ1eYKQ==" crossorigin="anonymous" />
+<div class="ms-cl" id="hm_cl">
+    <h1 class="text-center">Working Days Calculator</h1>
+    <div class="container cl-wrapper">
+        <br>
+        <div class="row">
+            <div class="col-md-12 cl-left-div">
+                <div class="row">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-8">
+                        <label for="hm_in_1" class="text-center">I live in</label>
+                        <div class="form-group optios-sec">
+                            <div class="radio-option in_1 mr-right active" data-value="england-and-wales">
+                                England & Wales
+                            </div>
+                            <div class="radio-option in_1" data-value="scotland">
+                                Scotland
+                            </div>
+                            <div class="radio-option in_1" data-value="northern-ireland">
+                                Northern Ireland
+                            </div>
+                        </div>                    
+                    </div>
+                    <div class="col-md-2"></div>
+                </div>  
+            </div>
+        </div>
+        <div class="sp-input-sec">
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="in_2">Start Date</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control cl-input" id="in_2">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label for="in_3">End Date</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control cl-input" id="in_3">
+                    </div>
+                </div>
+                <div class="col-md-12 text-center">
+                    <br>
+                    <small>This tool supports dates from 2015 to 2025</small>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+               <p class="rs-text" id="rs_text">Between these two dates (<span id="total_days">-</span>), there are:
+                <br>
+                <span id="total_working_days">-</span>
+                <br>                
+                <span id="total_weekends">-</span>
+                <br>                
+                <span id="pub_h_days">-</span></p>
+                <table class="table" id="event_table">
+                    <thead>
+                        <tr>
+                            <th>Event</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody id="event_list"></tbody>
+                </table>
+                <br>
+            </div>
+        </div>
+    </div>
+</div> 
+<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/datepicker/1.0.10/datepicker.min.js"></script>
+<script>
+jQuery(function($){
+    let holidaysArr, in_1 = "england-and-wales", live_country = "England & Wales", in_2, in_3;
+
+    const nft = Intl.NumberFormat("en-US", {
+        minimumFractionDigits: 0,
+        maximumFractionDigits: 0
+    });
+    
+    let url = 'https://www.gov.uk/bank-holidays.json';
+        
+    $.getJSON(url, function(json)
+    {
+        holidaysArr = json;
+
+
+        calc();
+    });
+
+    $(".in_1").on("click", function(){
+        $(".in_1").removeClass("active");
+        $(this).addClass("active");
+        in_1 = $(this).data("value");
+
+        live_country = $(this).text();
+
+        calc();
+    });
+
+    $("#in_2, #in_3").datepicker({
+        autoClose: true,
+        viewStart: 2,
+        format: 'dd/mm/yyyy'
+    });
+
+    let today_date = new Date();
+
+    $('#in_2').datepicker("setDate", new Date());
+    $('#in_3').datepicker("setDate", new Date(today_date.getFullYear(), (today_date.getMonth()+1), today_date.getDate()));
+
+    $("#in_2, #in_3").on("input", function() {
+        calc();
+    });
+
+    function calc(){
+        if(holidaysArr){
+            let h_arr = holidaysArr[in_1];
+
+            in_2 = $("#in_2").val();
+            in_3 = $("#in_3").val();
+
+            let end_date_arr = in_3.split("/");
+            let end_date = new Date(end_date_arr[2], Number(end_date_arr[1])-1, end_date_arr[0]);
+
+            let start_date_arr = in_2.split("/");
+            let start_date = new Date(start_date_arr[2], Number(start_date_arr[1])-1, start_date_arr[0]);
+           
+            if(start_date <= end_date){
+                let total_days = ((end_date - start_date) / (1000 * 60 * 60 * 24)) + 1;
+                let pub_h_days = 0;
+                let pub_rows = "";
+
+                if(Object.keys(h_arr["events"]).length > 0){
+                    Object.keys(h_arr["events"]).forEach((k) => {
+                        let hd = new Date(h_arr["events"][k]["date"]);
+                        let hd_arr = h_arr["events"][k]["date"].split("-");
+                        
+                        if(hd >= start_date && hd <= end_date){
+                            pub_rows = pub_rows + `
+                                <tr>
+                                    <td>${h_arr["events"][k]["title"]}</td>
+                                    <td>${h_arr["events"][k]["date"]}</td>
+                                </tr>
+                            `;
+                            pub_h_days++;
+                        }
+                    });
+                }
+                if(pub_h_days > 0) {
+                    $("#event_list").html(pub_rows);
+                    $("#event_table").show();
+                } else {
+                    $("#event_table").hide();
+                }
+
+                let total_weekends = calculateWeekendDays(start_date, end_date);   
+                
+                let total_working_days = total_days - total_weekends - pub_h_days;
+
+                if(total_days > 1) {
+                    $("#total_days").text(total_days+" days");
+                } else {
+                    $("#total_days").text(total_days+" day");
+                }
+
+                if(total_working_days > 1) {
+                    $("#total_working_days").text(total_working_days+" working days");
+                } else {
+                    $("#total_working_days").text(total_working_days+" working day");
+                }
+
+                if(total_weekends > 1) {
+                    $("#total_weekends").text(total_weekends+" weekend days");
+                } else {
+                    $("#total_weekends").text(total_weekends+" weekend day");
+                }
+
+                if(pub_h_days > 1) {
+                    $("#pub_h_days").text(`${pub_h_days} public holidays in ${live_country}`);
+                } else {
+                    $("#pub_h_days").text(`${pub_h_days} public holiday in ${live_country}`);
+                }
+                
+            } else {
+                $("#rs_text, #event_table").hide();
+            }
+        } else {
+
+        }
+    }
+    
+    function calculateWeekendDays(fromDate, toDate){
+        var weekendDayCount = 0;
+
+        while(fromDate <= toDate){
+            if(fromDate.getDay() === 0 || fromDate.getDay() == 6){
+                ++weekendDayCount;
+            }
+            fromDate.setDate(fromDate.getDate() + 1);
+        }
+        return weekendDayCount;
+    }
+});
+</script>
+<!----------- copy ends ---------------->
+</body>
+</html>

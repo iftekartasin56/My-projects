@@ -1,0 +1,36 @@
+Accounts Receivable Aging Calculator - Web Calculator for your Website
+
+Welcome to our <b>Accounts Receivable Aging Calculator</b>,This accounts receivable aging calculator helps businesses efficiently manage and analyze their outstanding receivables by categorizing them based on the length of time they are due.
+<br>
+<br>
+<u><b>User inputs:</b></u>
+<ul>
+    <li>Under 30 Days</li>
+    <li>30-60 Days</li>
+    <li>60-90 Days</li>
+    <li>90-120 Days</li>
+    <li>Over 120 Days</li>
+</ul>
+<br>
+<u><b>Outputs:</b></u>
+<ul>
+    <li>Total Accounts Receivable</li>
+    <li>Under 30 Days</li>
+    <li>30-60 Days</li>
+    <li>60-90 Days</li>
+    <li>90-120 Days</li>
+    <li>Over 120 Days</li>
+</ul>
+<br>
+<u><b>Features of the Accounts Receivable Aging Calculator:</b></u>
+<ul>
+	<li> - A "Calculate" button that processes the data entered and calculates the total accounts receivable and categorizes them by age period.</li>
+    <li>- Instant result without page reload</li>
+    <li>- JS and CSS loads when shortcode called on page</li>
+    <li>- 100% Responsive design</li>
+    <li>- Unique Design</li>
+    <li>- Well Documented (proper help instructions for setup)</li>
+    <li>- Dedicated Support</li>
+</ul>
+<br>
+The calculator is built using HTML, CSS, and JavaScript, and it also utilizes the popular JavaScript library jQuery. A premium quality <b>Accounts Receivable Aging Calculator</b> which you can easily embed into any website (well documented).

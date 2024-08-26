@@ -1,0 +1,34 @@
+HTML Description--
+
+<b>FLAMES Name Game Calculator</b>, a lighthearted and entertaining tool to predict the nature of relationships!.
+<br>
+<br>
+<u><b>User inputs:</b></u>
+<ul>
+  <li>Your Name</li>
+  <li>Your Partner Name</li>
+</ul>
+<br>
+<u><b>Outputs:</b></u>
+<ul>
+  <li>Friends</li>
+  <li>Lovers</li>
+  <li>Affectionate</li>
+  <li>Marriage</li>
+  <li>Enemies</li>
+  <li>Siblings</li>
+</ul>
+<br>
+<u><b>Features of the FLAMES calculator:</b></u>
+<dl>
+  <dd>- Allow users to input the names of the two individuals.Implement validation to ensure that only alphabetical characters are entered.</dd>
+  <dd>- Clearly display the result category (Friends, Lovers, Affectionate, Marriage, Enemies, Siblings).</dd>
+  <dd>- Allow users to customize the appearance of the calculator, such as themes or color schemes.</dd>
+  <dd>- Implement a Clear button to allow users to input new names and perform additional calculations without refreshing the page.</dd>
+  <dd>- 100% Responsive design.</dd>
+  <dd>- Unique Design.</dd>
+  <dd>- Well Documented ( proper help instructions for setup).</dd>
+  <dd>- Dedicated Support.</dd>
+</dl>
+<br>
+<i>The calculator is built using HTML, CSS, and JavaScript library jQuery. A premium quality FLAMES web calculator which you can easily embed into any website (well documented).</i>

@@ -1,0 +1,380 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- Bootstrap CSS -->
+    <title>Days Inventory Outstanding (DIO)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+</head>
+<body>
+
+<!-----------Please copy and paste following code into any HTML element ---------------->
+
+<!----------- copy starts ---------------->
+<style>
+#dio *, ::after, ::before {
+    box-sizing: border-box;
+}
+#dio {
+    line-height: 1.5;
+    font-family: inherit;
+}
+#dio .container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #000000;
+    text-align: left;
+}
+#dio label {
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 400;
+    color: #000000;
+    margin-bottom: 0.5rem;
+}
+#dio .row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+#dio .col-md-12, #dio .col-md-6 {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+#dio .form-group {
+    margin-bottom: 1rem;
+}
+#dio .form-control {
+    display: block;
+    width: 100%;
+    height: 30px;
+    padding: 0.275rem 0.75rem;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #000000;
+    border: 1px solid #D2D2D2;
+    background: #F4F4F4;
+    border-radius: 6px;
+    background-clip: padding-box;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+#dio .form-control:focus {
+    outline: none;
+}
+#dio .text-center {
+    text-align: center!important;
+}
+#dio .btn {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    border: 1px solid transparent;
+    padding: 0.275rem 0.75rem;
+    font-size: 16px;
+    line-height: 1.5;
+    border-radius: 25px;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+#dio .cl-wrapper {
+    background-color: #ffffff;
+    padding: 2rem 2rem;
+    border-radius: 15px;
+    box-shadow: 0 0 20px #ccc;
+    margin-bottom: 3rem;
+}
+#dio .btn-primary {
+    font-size: 18px;
+    color: #fff;
+    background-color: #1D5CAB;
+    border-color: #1D5CAB;
+    margin: 0;
+}
+#dio .btn-primary:hover {
+    color: #1D5CAB;
+    background-color: #ffffff;
+    border-color: #1D5CAB;
+}
+#dio .btn:focus {
+    outline: none;
+}
+@media (min-width: 576px){
+    #dio .container {
+        max-width: 540px;
+    }
+}
+@media (min-width: 768px){
+    #dio .container {
+        max-width: 100%;
+    }
+    #dio .col-md-12 {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    #dio .col-md-6 {
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+@media (min-width: 992px){
+    #dio .container {
+        max-width: 600px;
+    }
+}
+@media (min-width: 1200px) {
+    #dio .container {
+        max-width: 600px;
+    }
+}
+#dio .form-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+#dio .sec-title {
+    font-size: 18px;
+    margin: 0;
+    margin-bottom: 20px;
+    color: #000000;
+}
+#dio .rs-title {
+    font-weight: 600;
+    font-size: 18px;
+    margin: 0;
+    color: #000000;
+}
+#dio .rs-value {
+    font-weight: 600;
+    font-size: 26px;
+    margin: 0;
+    margin-bottom: 8px;
+    color: #e38b1e;
+}
+#dio .top-title-sec {
+    text-align: center;
+    margin-bottom: 1rem;
+    border: 1px solid #1D5CAB;
+    border-radius: 15px;
+    padding: 8px 10px;
+}
+#dio .top-title {
+    margin: 0;
+    font-size: 18px;
+    color: #000000;
+}
+#dio .top-title-sec p {
+    margin: 0;
+    color: #ececec;
+}
+#dio .top-title-sec p a {
+    margin: 0;
+    text-decoration: none;
+    color: #ececec;
+}
+#dio .sp-rs-sec {
+    background: #1D5CAB;
+    border-radius: 15px;
+    padding: 26px;
+    box-shadow: 0px 0px 20px rgb(0 0 0 / 30%);
+}
+#dio .rs-sec {
+    padding: 12px 26px;
+}
+#dio .sp-rs-sec .rs-value {
+    margin-bottom: 5px;
+    color: #fff;
+    font-size: 2.5rem;
+    line-height: 38px;
+}
+#dio .sp-rs-sec .rs-title {
+    color: #fff;
+}
+#dio .form-group {
+    position: relative;
+}
+#dio .prepend-text {
+    font-size: 16px;
+    position: absolute;
+    bottom: 2px;
+    left: 5px;
+    padding: 1px 5px;
+    border-radius: 5px;
+    color: #545454;
+}
+#dio .append-text {
+    font-size: 16px;
+    position: absolute;
+    bottom: 2px;
+    right: 5px;
+    padding: 1px 5px;
+    border-radius: 5px;
+    color: #545454;
+}
+#dio .sp-pd-left {
+    padding-left: 22px;
+}
+#dio .sp-pd-right {
+    padding-right: 22px;
+}
+#dio .sp-pd-top {
+    padding-top: 20px;
+}
+@media (max-width: 768px){
+    #dio .child-img {
+        min-width: 100%;
+        width: 100%;
+        margin-bottom: -6rem;
+        margin-right: -2rem;
+        margin-top: -2rem;
+    }
+    #dio .cl-wrapper {
+        padding: 1.5rem 1.5rem;
+    }
+    #dio .top-title {
+        font-size: 22px;
+    }
+    #dio .sp-rs-sec {
+        margin-top: 2rem;
+    }
+}
+#dio .sp-left {
+    padding-left: 2rem;
+}
+</style>
+<div class="ms-cl" id="dio">
+    <div class="container cl-wrapper">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="top-title-sec">
+                    <h3 class="top-title">Days inventory outstanding (DIO)</h3>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="beginning_inventory">Starting inventory</label>
+                            <input type="text" class="form-control sp-left cl-in cl-curr" autocomplete="off" id="beginning_inventory" />
+                            <span class="prepend-text">$</span>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="ending_inventory">Final inventory</label>
+                            <input type="text" class="form-control sp-left cl-in cl-curr" autocomplete="off" id="ending_inventory" />
+                            <span class="prepend-text">$</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="cost_of_goods_sold">Cost of goods sold</label>
+                    <input type="text" class="form-control sp-left cl-in cl-curr" autocomplete="off" id="cost_of_goods_sold" />
+                    <span class="prepend-text">$</span>
+                </div>
+                <div class="form-group">
+                    <label for="days_accounting_period">Days in accounting period</label>
+                    <input type="text" class="form-control cl-in" value="365" autocomplete="off" id="days_accounting_period" />
+                </div>
+                <br>
+                <button type="button" class="btn btn-primary" style="width: 100%;" id="calc_btn_dio">Calculate</button>    
+            </div>
+            <div class="col-md-12 sp-pd-top">
+                <div class="rs-sec">
+                    <div class="rs-title">Average Inventory</div>
+                    <div class="rs-value" id="average_inventory">$0</div>
+                    <div class="rs-title">DIO</div>
+                    <div class="rs-value" id="DIO">0</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/autonumeric@4.5.4"></script>
+<script>
+    jQuery(document).ready(function($){
+        const dio_nft = Intl.NumberFormat("en-US");
+        const dio_nftd = Intl.NumberFormat("en-US", {
+            minimumFractionDigits: 0,
+            maximumFractionDigits: 4
+        });
+
+        const dio_numOptionCurrency = {
+            digitGroupSeparator        : ',',
+            decimalCharacter           : '.',
+            decimalCharacterAlternative: '.',
+            currencySymbol             : '',
+            currencySymbolPlacement    : AutoNumeric.options.currencySymbolPlacement.prefix,
+            decimalPlaces              : 0,
+            minimumValue               : 0
+        };
+
+        const dio_anElement1 = AutoNumeric.multiple('#dio .cl-in', dio_numOptionCurrency);
+
+        $("#dio .cl-in").on("click", function(){
+            $("#dio .cl-in").removeClass("active");
+            $(this).addClass("active");
+        });
+
+        $("#dio .cl-in").on("keyup", function(e){
+            if(e.which == 13) {
+                $("#dio #calc_btn_dio").click();
+            }
+        });
+
+
+        $("#dio #calc_btn_dio").on("click", function(){
+            dio_calc();
+
+        });
+
+        function dio_calc(){
+            beginning_inventory = dio_removeSign($("#beginning_inventory").val());
+            ending_inventory = dio_removeSign($("#ending_inventory").val());
+            cost_of_goods_sold = dio_removeSign($("#cost_of_goods_sold").val());
+            days_accounting_period = dio_removeSign($("#days_accounting_period").val());
+
+            let average_inventory = (beginning_inventory + ending_inventory) / 2;
+            let DIO = (average_inventory / cost_of_goods_sold) * days_accounting_period;
+
+            $("#average_inventory").text("$"+dio_nft.format(average_inventory));
+            $("#DIO").text(dio_nft.format(DIO)+" days");
+        }
+
+        function dio_removeSign(vl){
+            return Number(vl.replace(/\$|,|[^\d.-]/g, ''));
+        }
+    });
+</script>
+<!----------- copy ends ---------------->
+</body>
+</html>

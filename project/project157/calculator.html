@@ -1,0 +1,754 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap CSS -->
+    <title>Solar Only Full Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+</head>
+<body>
+
+<!-----------Please copy and paste following code into any HTML element ---------------->
+
+<!----------- copy starts ---------------->
+<style>
+#hm_cl *, ::after, ::before {
+    box-sizing: border-box;
+}
+#hm_cl {
+    line-height: 1.5;
+    font-family: inherit;
+}
+#hm_cl h3 {
+    margin: 0;
+}
+#hm_cl .container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #000000;
+    text-align: left;
+}
+#hm_cl label {
+    display: inline-block;
+    margin-bottom: .5rem;
+    font-size: 15px;
+    font-weight: 500;
+}
+#hm_cl .table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 0rem;
+    background-color: transparent;
+    border-collapse: collapse;
+}
+#hm_cl .table td, #hm_cl .table th {
+    padding: .65rem .75rem;
+    vertical-align: middle;
+    border-right: none !important;
+    border-left: none !important;
+    border-top: none !important;
+    border-bottom: 1px solid #36353b;
+    font-size: 16px;
+    background: transparent;
+    box-shadow: none;
+    color:#ffffff;
+}
+#hm_cl .table th {
+    text-align: left;
+    font-weight: 500;
+}
+#hm_cl .w25 {
+    width: 25%;
+}
+#hm_cl .row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+#hm_cl .col, #hm_cl .col-1, #hm_cl .col-10, #hm_cl .col-11, #hm_cl .col-12, #hm_cl .col-2, #hm_cl .col-3, #hm_cl .col-4, #hm_cl .col-5, #hm_cl .col-6, #hm_cl .col-7, #hm_cl .col-8, #hm_cl .col-9, #hm_cl .col-auto, #hm_cl .col-lg, #hm_cl .col-lg-1, #hm_cl .col-lg-10, #hm_cl .col-lg-11, #hm_cl .col-lg-12, #hm_cl .col-lg-2, #hm_cl .col-lg-3, #hm_cl .col-lg-4, #hm_cl .col-lg-5, #hm_cl .col-lg-6, #hm_cl .col-lg-7, #hm_cl .col-lg-8, #hm_cl .col-lg-9, #hm_cl .col-lg-auto, #hm_cl .col-md, #hm_cl .col-md-1, #hm_cl .col-md-10, #hm_cl .col-md-11, #hm_cl .col-md-12, #hm_cl .col-md-2, #hm_cl .col-md-3, #hm_cl .col-md-4, #hm_cl .col-md-5, #hm_cl .col-md-6, #hm_cl .col-md-7, #hm_cl .col-md-8, #hm_cl .col-md-9, #hm_cl .col-md-auto, #hm_cl .col-sm, #hm_cl .col-sm-1, #hm_cl .col-sm-10, #hm_cl .col-sm-11, #hm_cl .col-sm-12, #hm_cl .col-sm-2, #hm_cl .col-sm-3, #hm_cl .col-sm-4, #hm_cl .col-sm-5, #hm_cl .col-sm-6, #hm_cl .col-sm-7, #hm_cl .col-sm-8, #hm_cl .col-sm-9, #hm_cl .col-sm-auto, #hm_cl .col-xl, #hm_cl .col-xl-1, #hm_cl .col-xl-10, #hm_cl .col-xl-11, #hm_cl .col-xl-12, #hm_cl .col-xl-2, #hm_cl .col-xl-3, #hm_cl .col-xl-4, #hm_cl .col-xl-5, #hm_cl .col-xl-6, #hm_cl .col-xl-7, #hm_cl .col-xl-8, #hm_cl .col-xl-9, #hm_cl .col-xl-auto {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+#hm_cl .form-group {
+    margin-bottom: 1rem;
+}
+#hm_cl .form-control {
+    display: block;
+    width: 100%;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #000000;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+#hm_cl .form-control:focus {
+    outline: none;
+}
+#hm_cl .input-group {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+    max-width: 120px;
+    width: 100%;
+}
+#hm_cl .input-group>.custom-select:not(:last-child), #hm_cl .input-group>.form-control:not(:last-child) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+#hm_cl .input-group>.custom-file, #hm_cl .input-group>.custom-select, #hm_cl .input-group>.form-control, #hm_cl .input-group>.form-control-plaintext {
+    position: relative;
+    -ms-flex: 1 1 0%;
+    flex: 1 1 0%;
+    min-width: 0;
+    margin-bottom: 0;
+}#hm_cl .input-group>.custom-select:not(:first-child), #hm_cl .input-group>.form-control:not(:first-child) {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+#hm_cl .input-group>.custom-select:not(:last-child), #hm_cl .input-group>.form-control:not(:last-child) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+#hm_cl .input-group>.custom-file+.custom-file, #hm_cl .input-group>.custom-file+.custom-select, #hm_cl .input-group>.custom-file+.form-control, #hm_cl .input-group>.custom-select+.custom-file, #hm_cl .input-group>.custom-select+.custom-select, #hm_cl .input-group>.custom-select+.form-control, #hm_cl .input-group>.form-control+.custom-file, #hm_cl .input-group>.form-control+.custom-select, #hm_cl .input-group>.form-control+.form-control, #hm_cl .input-group>.form-control-plaintext+.custom-file, #hm_cl .input-group>.form-control-plaintext+.custom-select, #hm_cl .input-group>.form-control-plaintext+.form-control {
+    margin-left: -1px;
+}
+#hm_cl .input-group>.custom-file, #hm_cl .input-group>.custom-select, #hm_cl .input-group>.form-control, #hm_cl .input-group>.form-control-plaintext {
+    position: relative;
+    -ms-flex: 1 1 0%;
+    flex: 1 1 0%;
+    min-width: 0;
+    margin-bottom: 0;
+}
+#hm_cl .custom-control-label::before, #hm_cl .custom-file-label, #hm_cl .custom-select {
+    transition: background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+#hm_cl .input-group-append {
+    margin-left: -1px;
+}
+#hm_cl .input-group-append, #hm_cl .input-group-prepend {
+    display: -ms-flexbox;
+    display: flex;
+}
+#hm_cl .input-group>.input-group-append:last-child>.btn:not(:last-child):not(.dropdown-toggle), #hm_cl .input-group>.input-group-append:last-child>.input-group-text:not(:last-child), #hm_cl .input-group>.input-group-append:not(:last-child)>.btn, #hm_cl .input-group>.input-group-append:not(:last-child)>.input-group-text, #hm_cl .input-group>.input-group-prepend>.btn, #hm_cl .input-group>.input-group-prepend>.input-group-text {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+#hm_cl .input-group>.input-group-append>.btn, #hm_cl .input-group>.input-group-append>.input-group-text, #hm_cl .input-group>.input-group-prepend:first-child>.btn:not(:first-child), #hm_cl .input-group>.input-group-prepend:first-child>.input-group-text:not(:first-child), #hm_cl .input-group>.input-group-prepend:not(:first-child)>.btn, #hm_cl .input-group>.input-group-prepend:not(:first-child)>.input-group-text {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+#hm_cl .input-group-append .btn, #hm_cl .input-group-prepend .btn {
+    position: relative;
+    z-index: 2;
+}
+#hm_cl .input-group-text {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 0.375rem 0.75rem;
+    margin-bottom: 0;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #000000;
+    text-align: center;
+    white-space: nowrap;
+    background-color: #ffffff;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+}
+#hm_cl .input-group-append .btn+.btn, #hm_cl .input-group-append .btn+.input-group-text, #hm_cl .input-group-append .input-group-text+.btn, #hm_cl .input-group-append .input-group-text+.input-group-text, #hm_cl .input-group-prepend .btn+.btn, #hm_cl .input-group-prepend .btn+.input-group-text, #hm_cl .input-group-prepend .input-group-text+.btn, #hm_cl .input-group-prepend .input-group-text+.input-group-text {
+    margin-left: -1px;
+}
+#hm_cl .input-group-prepend .btn, #hm_cl .input-group-append .btn {
+    position: relative;
+    z-index: 2;
+}
+#hm_cl .text-center {
+    text-align: center!important;
+}
+#hm_cl .btn {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+#hm_cl .btn-primary {
+    color: #fff;
+    background-color: #C84869;
+    border-color: #C84869;
+    margin: 0;
+}
+#hm_cl .btn-primary:hover {
+    color: #fff;
+    background-color: #ffffff;
+    border-color: #C84869;
+}
+/* Custom css */
+#hm_cl .cl-wrapper {
+    position: relative;
+    border: 1px solid #e1e1e1;
+    border-radius: 10px;
+    background: #ffffff;
+}
+#hm_cl .cl-left-div {
+    padding: 4rem 4rem 3.5rem 4rem !important;
+    background: #ffffff;
+    border-radius: 10px 10px 0 0;
+}
+#hm_cl .cl-right-div {
+    padding: 2rem 4rem !important;
+    border-radius: 0 0 8px 8px;
+    background: #211551;
+    color: #ffffff;
+}
+#hm_cl .rs-sec {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+#hm_cl .rs-row {
+    background: #4eebff;
+    color: #fff;
+}
+#hm_cl .rs-td {
+    background: #4eebff !important;
+    color: #fff !important;
+    font-weight: 600 !important;
+}
+#hm_cl .rs-vl {
+    text-align: right;
+    font-weight: 500;
+}
+#hm_cl .p-2313 {
+    padding: 2rem 3rem 1rem 3rem !important;
+}
+#hm_cl .rs-sub-title-sp {
+    font-size: 18px;
+    margin: 2px;
+    border-bottom: 1px solid #ffffff;
+    color: #ffffff;
+    padding-bottom: 8px;
+}
+#hm_cl .rs-sp-value {
+    font-size: 24px;
+    margin: 8px 2px;
+    color: #FFB81C;
+    padding-top: 0px;
+}
+#hm_cl .sp-rs {
+    color: #4eebff;
+}
+/* responsive */
+
+@media (max-width: 768px){
+    #hm_cl .cl-left-div {
+        padding: 1rem 2rem !important;
+    }
+    #hm_cl .cl-right-div {
+        padding: 2rem 1rem !important;
+        border-radius: 0 0 8px 8px;
+    }
+    #hm_cl .form-control {
+        height: auto;
+        padding: .175rem .75rem;
+    }
+    #hm_cl label {
+        font-size: 14px;
+    }
+    #hm_cl .rs-sec {
+        flex-direction: column;
+    }
+}
+@media (min-width: 576px){
+    #hm_cl .container, #hm_cl .container-sm {
+        max-width: 540px;
+    }
+}
+@media (min-width: 768px){
+    #hm_cl .container, #hm_cl .container-md, #hm_cl .container-sm {
+        max-width: 100%;
+    }
+    #hm_cl .col-md-12 {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    #hm_cl .col-md-9 {
+        -ms-flex: 0 0 75%;
+        flex: 0 0 75%;
+        max-width: 75%;
+    }
+    #hm_cl .col-md-8 {
+        -ms-flex: 0 0 66.666667%;
+        flex: 0 0 66.666667%;
+        max-width: 66.666667%;
+    }
+    #hm_cl .col-md-6 {
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    #hm_cl .col-md-4 {
+        -ms-flex: 0 0 33.333333%;
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+    }
+    #hm_cl .col-md-3 {
+        -ms-flex: 0 0 25%;
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+}
+@media (min-width: 992px){
+    #hm_cl .container, #hm_cl .container-lg, #hm_cl .container-md, #hm_cl .container-sm {
+        max-width: 960px;
+    }
+}
+@media (min-width: 1200px) {
+    #hm_cl .container, #hm_cl .container-lg, #hm_cl .container-md, #hm_cl .container-sm, #hm_cl .container-xl {
+        max-width: 1140px;
+    }
+}
+#hm_cl .mb-8 {
+    margin-bottom: 8px;
+}
+#hm_cl .cl-white {
+    color: #ffffff;
+}
+#hm_cl .cl-yellow {
+    color: #FFB81C !important;
+}
+#hm_cl .cl-orange {
+    color: #DC4405 !important;
+}
+#hm_cl .cl-blue {
+    color: #211551 !important;
+}
+#hm_cl .cl-green {
+    color: #07d707 !important;
+}
+#hm_cl .cl-white {
+    color: #ffffff !important;
+}
+#hm_cl .sec-titles {
+    font-size: 26px;
+}
+#hm_cl .rs-sec-titles {
+    border-bottom: 1px solid #636363;
+    font-size: 26px;
+    color: #ffffff;
+    margin-top: 14px;
+    padding-bottom: 6px;
+}
+#hm_cl .rs-vls {
+    margin: 0;
+    margin-top: 6px;
+    font-size: 30px;
+}
+#hm_cl #exp_sec {
+    display: none;
+}
+#hm_cl #exp_tab {
+    cursor: pointer;
+}
+</style>
+<div class="ms-cl" id="hm_cl">
+    <div class="container cl-wrapper">
+        <div class="row">
+            <div class="col-md-12 cl-left-div">
+                <form name="theForm" id="radcalcform">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h3 class="sec-titles cl-blue">Your Current Bill</h3>
+                            <hr/>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="in_1">Total Bill</label>    
+                            <div class="input-group mb-8">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">$</span>
+                                </div>
+                                <input type="text" class="form-control  cl-in" id="in_1">
+                            </div>             
+                        </div>
+                        <div class="col-md-4">
+                            <label>Yearly Bill</label>
+                            <div class="mb-8">
+                                <h3 id="rs_1" class="cl-orange rs-vls">-</h3>
+                            </div>                     
+                        </div>
+                        <div class="col-md-4">
+                            <label>10 Year Bills</label>
+                            <div class="mb-8">
+                                <h3 id="rs_2" class="cl-orange rs-vls">-</h3>
+                            </div>                     
+                        </div>
+                        <div class="col-md-12">
+                            <br>
+                            <h3 class="sec-titles cl-blue">Your Recommended System</h3>
+                            <hr/>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="in_2">Solar kW</label>
+                            <div class="input-group mb-8">
+                                <input type="text" class="form-control cl-input cl-in" id="in_2">
+                                <div class="input-group-append">
+                                    <span class="input-group-text">kW</span>
+                                </div>
+                            </div>                     
+                        </div>
+                        <div class="col-md-4">
+                            <label for="in_3">Battery kW</label>
+                            <div class="input-group mb-8">
+                                <input type="text" class="form-control cl-input cl-in" id="in_3">
+                                <div class="input-group-append">
+                                    <span class="input-group-text">kW</span>
+                                </div>
+                            </div>                     
+                        </div>
+                        <div class="col-md-4">
+                            <label>Return On Investment</label>
+                            <div class="mb-8">
+                                <h3 id="rs_3" class="cl-green rs-vls">-</h3>
+                            </div>                     
+                        </div>
+                    </div> 
+                </form>       
+            </div>
+            <div class="col-md-12 cl-right-div">
+                <div class="rs-sec">
+                    <div class="rs-sp-vl-sec text-center">
+                        <h4 class="rs-sub-title-sp" id="text_2">10 Year Savings</h4>
+                        <h2 class="rs-sp-value cl-green" id="rs_4">-</h2>
+                    </div>
+                    <div class="rs-sp-vl-sec text-center">
+                        <h4 class="rs-sub-title-sp" id="text_1">Savings Per Bill</h4>
+                        <h2 class="rs-sp-value" id="rs_5">-</h2>
+                    </div>
+                    <div class="rs-sp-vl-sec text-center">
+                        <h4 class="rs-sub-title-sp">Savings Per Year</h4>
+                        <h2 class="rs-sp-value cl-green" id="rs_6">-</h2>
+                    </div>
+                    <div class="rs-sp-vl-sec text-center">
+                        <h4 class="rs-sub-title-sp" id="text_2">Cost of System Monthly</h4>
+                        <h2 class="rs-sp-value" id="rs_7">-</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3 class="text-center rs-sec-titles" id="exp_tab">SHOW SAVINGS SNAPSHOT <span id="exp_sign" style="float: right;">+</span></h3>
+                    </div>
+                    <div class="col-md-12" id="exp_sec">
+                        <br>
+                        <table class="table rs-table">
+                            <thead>
+                                <tr>
+                                    <th class="text-center" style="width: 33.333%;">Yearly Synergy Bill</th>
+                                    <th class="text-center" style="width: 33.333%;">Yearly Savings</th>
+                                    <th class="text-center" style="width: 33.333%;">Cost of System</th>
+                                </tr>
+                                <tr>
+                                    <th class="text-center cl-yellow" id="rs_8">-</th>
+                                    <th class="text-center cl-yellow" id="rs_9">-</th>
+                                    <th class="text-center cl-yellow" style="display: flex;justify-content: center;">
+                                        <div class="input-group mb-8">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text">$</span>
+                                            </div>
+                                            <input type="text" class="form-control cl-in" id="rs_10">
+                                        </div>      
+                                    </th>
+                                </tr>
+                            </thead>
+                        </table>
+                        <br>
+                        <br>
+                        
+                        <table class="table rs-table">
+                            <thead>
+                                <tr>
+                                    <th>Year</th>
+                                    <th>No Solar</th>
+                                    <th>With Solar</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td id="rs_11">-</td>
+                                    <td id="rs_12">-</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td id="rs_21">-</td>
+                                    <td id="rs_22">-</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td id="rs_31">-</td>
+                                    <td id="rs_32">-</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td id="rs_41">-</td>
+                                    <td id="rs_42">-</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td id="rs_51">-</td>
+                                    <td id="rs_52">-</td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td id="rs_61">-</td>
+                                    <td id="rs_62">-</td>
+                                </tr>
+                                <tr>
+                                    <td>7</td>
+                                    <td id="rs_71">-</td>
+                                    <td id="rs_72">-</td>
+                                </tr>
+                                <tr>
+                                    <td>8</td>
+                                    <td id="rs_81">-</td>
+                                    <td id="rs_82">-</td>
+                                </tr>
+                                <tr>
+                                    <td>9</td>
+                                    <td id="rs_91">-</td>
+                                    <td id="rs_92">-</td>
+                                </tr>
+                                <tr>
+                                    <td>10</td>
+                                    <td id="rs_101">-</td>
+                                    <td id="rs_102">-</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/autonumeric@4.5.4"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+<script>
+jQuery(function($){
+    // let in_2_sts = 0, in_3_sts = 0, rs_10_sts = false;
+    let supply_charge = 60;
+    let billing_cycle = 60;
+    let day_prcnt = 60;
+    let payback_term = 10;
+    let cs_rate = 5.49/100;
+    let mn_fee = 7.99;
+    let est_cost = 397;
+
+
+    const nft = Intl.NumberFormat("en-US", {
+        minimumFractionDigits: 0,
+        maximumFractionDigits: 0
+    });
+    const nftd = Intl.NumberFormat("en-US", {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+    });
+
+    const numOptionCurrency = {
+        digitGroupSeparator        : ',',
+        decimalCharacter           : '.',
+        decimalCharacterAlternative: '.',
+        currencySymbol             : '',
+        currencySymbolPlacement    : AutoNumeric.options.currencySymbolPlacement.prefix,
+        decimalPlaces              : 0
+    };
+    const numOptionCurrency_kw = {
+        digitGroupSeparator        : ',',
+        decimalCharacter           : '.',
+        decimalCharacterAlternative: '.',
+        currencySymbol             : '',
+        currencySymbolPlacement    : AutoNumeric.options.currencySymbolPlacement.prefix,
+        decimalPlaces              : 2
+    };
+    const anElement1 = AutoNumeric.multiple('.cl-input', numOptionCurrency_kw);
+    new AutoNumeric('#in_1', numOptionCurrency);
+    new AutoNumeric('#rs_10', numOptionCurrency);
+
+    function removeComma(num){
+        return Number(num.replace(/,/g,""));
+    }
+
+    $(".cl-in").on("change", function(){
+        calc();
+    })
+
+    $("#exp_tab").on("click", function(){
+        $("#exp_sec").slideToggle();
+        let exp_sign = $("#exp_sign").text();
+        if(exp_sign == "+") {
+            $("#exp_sign").text("-");
+            $("#exp_tab").html(`HIDE SAVINGS SNAPSHOT <span id="exp_sign" style="float: right;">-</span>`);
+        } else {
+            $("#exp_sign").text("+");
+            $("#exp_tab").html(`SHOW SAVINGS SNAPSHOT <span id="exp_sign" style="float: right;">+</span>`);
+        }
+    });
+
+    function calc(){
+        in_1 = removeComma($("#in_1").val());
+        in_2 = removeComma($("#in_2").val());
+        in_3 = removeComma($("#in_3").val());
+        let sys_price = removeComma($("#rs_10").val());;
+        if(in_1){
+            rs_1 = in_1 * 6;
+            rs_2 = rs_1 * 10;
+            rs_3 = 0;
+
+            
+            $("#rs_1").text("$"+nft.format(rs_1));
+            $("#rs_2").text("$"+nft.format(rs_2));
+            
+        }
+        if(in_2 && in_3){
+            
+
+
+            let units = in_2 * 4.4;
+            let power_cost = in_1 - supply_charge;
+            let total_units = power_cost / 0.288;
+            let daily_units = total_units / billing_cycle;
+            let daily_power_cost = power_cost / billing_cycle;
+            let energy_used = daily_units * (day_prcnt / 100);
+            let daily_power = units - energy_used;
+            let sold_back = daily_power - in_3;
+
+            let xy = - 0.26;
+            if(sold_back > 0) xy = 0.05;
+
+            let cost = sold_back*xy;
+            if(units > 55) cost = 0;
+
+            let n_energy_used = daily_units - energy_used;
+            let battery = in_3;
+            let from_grid = n_energy_used - battery;
+
+            let night = 0;
+            if(from_grid > 0) night = from_grid*0.26;
+
+            let new_daily_power = night + cost;
+            if(sold_back > 0) new_daily_power = night - cost;
+            
+            let new_bill = (new_daily_power * billing_cycle) + supply_charge;
+
+            let sv_per_bill = in_1-new_bill;
+            let sv_per_year = sv_per_bill*6;
+            let sv_10_years = (sv_per_year*10);
+
+
+            let sys_cost_mn = pmt(cs_rate / 12,(payback_term * 12),-(sys_price + est_cost), 0, 0) + mn_fee;
+
+            let yearly_bill = in_1 * 6;
+
+            let return_investment = sys_price / sv_per_year;
+
+            
+            let i;
+            let tb_rs = {};
+            let sp_id = [];
+            for(i=1; i<=10; i++){
+                if(i == 1){
+                    tb_rs["rs_"+i+"1"] = - yearly_bill;
+                    tb_rs["rs_"+i+"2"] = - sys_price;
+                } else {
+                    tb_rs["rs_"+i+"1"] = tb_rs["rs_11"] * i;
+                    tb_rs["rs_"+i+"2"] = tb_rs["rs_"+(i-1)+"2"] + sv_per_year;
+                }
+
+                if(tb_rs["rs_"+i+"2"] >= 0) {
+                    $("#rs_"+i+"2").css({"color":"#07d707"});
+                } else {
+                    $("#rs_"+i+"2").css({"color":"red"});
+                }
+            }
+
+            Object.keys(tb_rs).forEach(function(k){
+                $("#"+k).text("$"+nft.format(tb_rs[k]));
+            });
+            $("#rs_3").text(nftd.format(return_investment)+" years");
+            $("#rs_4").text("$"+nft.format(sv_10_years));
+            $("#rs_5").text("$"+nft.format(sv_per_bill));
+            $("#rs_6").text("$"+nft.format(sv_per_year));
+            $("#rs_7").text("$"+nft.format(sys_cost_mn));
+            $("#rs_8").text("$"+nft.format(yearly_bill));
+            $("#rs_9").text("$"+nft.format(sv_per_year));
+        }
+    }
+
+    function pmt(rate, nperiod, pv, fv, type) {
+        if (!fv) fv = 0;
+        if (!type) type = 0;
+
+        if (rate == 0) return -(pv + fv)/nperiod;
+
+        var pvif = Math.pow(1 + rate, nperiod);
+        var pmt = rate / (pvif - 1) * -(pv * pvif + fv);
+
+        if (type == 1) {
+            pmt /= (1 + rate);
+        };
+
+        return pmt;
+    }
+
+});
+</script>
+<!----------- copy ends ---------------->
+</body>
+</html>

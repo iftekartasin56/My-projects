@@ -1,0 +1,7 @@
+BMI cubdomain admin dashboard
+
+username: admin
+password: ocean360@
+
+Dashboard Link- 
+https://bmi.oceanitpark.com/wp-admin/

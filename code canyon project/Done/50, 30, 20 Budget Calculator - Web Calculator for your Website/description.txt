@@ -1,0 +1,30 @@
+50 30 20 Budget Calculator - Web Calculator for your Website
+
+Welcome to our <b>50 30 20 Budget Calculator</b>. TThe 50/30/20 budget calculator can help you apply this method to your own situation. All you need to do is enter your monthly after-tax income and the calculator will automatically divide it into 50% for necessities, 30% for wants, and 20% for savings & debt repayment. 
+<br>
+<br>
+<u><b>User inputs:</b></u>
+<ul>
+	<li>Monthly After-Tax Income</li>
+</ul>
+<br>
+<u><b>Outputs:</b></u>
+<ul>
+    <li>Necessities</li>
+    <li>Wants</li>
+    <li>Savings & Debt Repayment</li>
+</ul>
+<br>
+<u><b>Features of the MACRO Calculator:</b></u>
+<ul>
+    <li>- It helps you organize your monthly after-tax income into three categories: necessities, wants, and savings & debt repayment.</li>
+    <li>- It follows the 50/30/20 rule, a popular budgeting method that splits your income according to your needs, wants, and goals.</li>
+    <li>- Instant result without page reload</li>
+    <li>- JS and CSS loads when shortcode called on page</li>
+    <li>- 100% Responsive design</li>
+    <li>- Unique Design</li>
+    <li>- Well Documented (proper help instructions for setup)</li>
+    <li>- Dedicated Support</li>
+</ul>
+<br>
+The calculator is built using HTML, CSS, and JavaScript, and it also utilizes the popular JavaScript library jQuery. A premium quality <b>50 30 20 Budget calculator</b> which you can easily embed into any website (well documented).

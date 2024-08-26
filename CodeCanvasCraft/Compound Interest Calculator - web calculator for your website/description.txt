@@ -1,0 +1,36 @@
+Compound Interest Calculator - Finance Web Calculator for your website
+
+Welcome to our <b>Compound Interest Calculator</b>. Compound interest is the interest that is added to the principal amount of an investment, so that the interest also earns interest from then on. This results in exponential growth of the invested money over time.
+<br>
+<br>
+<u><b>User inputs:</b></u>
+<ul>
+	<li>Initial Deposit</li>
+    <li>Monthly Contribution</li>
+    <li>Annual Contribution</li>
+    <li>Investment Time in Years</li>
+    <li>Estimated Rate of Return</li>
+    <li>Compound Frequency</li>
+</ul>
+<br>
+<u><b>Outputs:</b></u>
+<ul>
+    <li>Total Accrued Principal + Interest</li>
+    <li>Total Interest</li>
+    <li>Annual Deposits</li>
+    <li>Initial Deposit</li>
+</ul>
+<br>
+<u><b>Features of the MACRO Calculator:</b></u>
+<ul>
+    <li>- It can calculate the future value of an investment, savings account with different compounding frequencies (daily, monthly, quarterly, yearly or continuous).</li>
+    <li>- It can help you compare different investment options, plan your savings goals, and understand the power of compound interest.</li>
+    <li>- Instant result without page reload</li>
+    <li>- JS and CSS loads when shortcode called on page</li>
+    <li>- 100% Responsive design</li>
+    <li>- Unique Design</li>
+    <li>- Well Documented (proper help instructions for setup)</li>
+    <li>- Dedicated Support</li>
+</ul>
+<br>
+The calculator is built using HTML, CSS, and JavaScript, and it also utilizes the popular JavaScript library jQuery. A premium quality <b>Compound Interest calculator</b> which you can easily embed into any website (well documented).

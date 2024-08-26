@@ -1,0 +1,2461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
+    <title>Web Form</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+<style>
+    #mx_cl *,
+    ::after,
+    ::before {
+        box-sizing: border-box;
+    }
+
+    #mx_cl {
+        line-height: 1.5;
+        font-family: inherit;
+    }
+
+    #mx_cl .container {
+        width: 100%;
+        padding: 25px;
+        margin-right: auto;
+        margin-left: auto;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #4a4a4a;
+        text-align: left;
+        background-color: #f2f2f2;
+
+    }
+
+    #mx_cl label {
+        display: inline-block;
+        font-size: 16px;
+        font-weight: 500;
+        margin-bottom: 0;
+    }
+
+    #mx_cl .row {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        margin-right: -15px;
+        margin-left: -15px;
+    }
+
+    #mx_cl .col-md-1,
+    #mx_cl .col-md-10,
+    #mx_cl .col-md-11,
+    #mx_cl .col-md-12,
+    #mx_cl .col-md-2,
+    #mx_cl .col-md-3,
+    #mx_cl .col-md-4,
+    #mx_cl .col-md-5,
+    #mx_cl .col-md-6,
+    #mx_cl .col-md-7,
+    #mx_cl .col-md-8,
+    #mx_cl .col-md-9 {
+        position: relative;
+        width: 100%;
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+
+    #mx_cl .form-group {
+        margin-bottom: 1rem;
+    }
+
+    #mx_cl .form-control {
+        display: block;
+        width: 100%;
+        height: calc(1em + 0.75rem + 2px);
+        padding: 0.275rem 0rem;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #4a4a4a;
+        background-color: #fff;
+        transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+        border: none;
+    }
+
+    #mx_cl .form-control:focus {
+        outline: none;
+    }
+
+    #mx_cl .btn {
+        display: inline-block;
+        font-weight: 400;
+        color: #212529;
+        text-align: center;
+        vertical-align: middle;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        background-color: transparent;
+        border: 1px solid transparent;
+        padding: .375rem .75rem;
+        font-size: 1rem;
+        line-height: 1.5;
+        border-radius: .25rem;
+        transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    }
+
+    #mx_cl .btn-primary {
+        color: #fff;
+        background-color: #28a745;
+        border-color: #28a745;
+    }
+
+    #mx_cl .btn-reset {
+        color: #fff;
+        background-color: #28a745;
+        border-color: #28a745;
+    }
+
+    #mx_cl table {
+        border-collapse: collapse;
+    }
+
+    #mx_cl .table {
+        width: 100%;
+        margin-bottom: 1rem;
+        color: #212529;
+    }
+
+    #mx_cl .table td,
+    #mx_cl .table th {
+        padding: .75rem;
+        vertical-align: top;
+        border-top: 1px solid #dee2e6;
+    }
+
+    #mx_cl .text-center {
+        text-align: center;
+    }
+
+    @media (min-width: 576px) {
+        #mx_cl .container {
+            max-width: 100%;
+        }
+    }
+
+    @media (min-width: 768px) {
+        #mx_cl .container {
+            max-width: 100%;
+        }
+
+        #mx_cl .col-md-12 {
+            -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+
+        #mx_cl .col-md-9 {
+            -ms-flex: 0 0 75%;
+            flex: 0 0 75%;
+            max-width: 75%;
+        }
+
+        #mx_cl .col-md-8 {
+            -ms-flex: 0 0 66.666667%;
+            flex: 0 0 66.666667%;
+            max-width: 66.666667%;
+        }
+
+        #mx_cl .col-md-7 {
+            -ms-flex: 0 0 58.33333%;
+            flex: 0 0 58.33333%;
+            max-width: 58.33333%;
+        }
+
+        #mx_cl .col-md-6 {
+            -ms-flex: 0 0 50%;
+            flex: 0 0 50%;
+            max-width: 50%;
+        }
+
+        #mx_cl .col-md-5 {
+            -ms-flex: 0 0 41.666667%;
+            flex: 0 0 41.666667%;
+            max-width: 41.666667%;
+        }
+
+        #mx_cl .col-md-4 {
+            -ms-flex: 0 0 33.333333%;
+            flex: 0 0 33.333333%;
+            max-width: 33.333333%;
+        }
+
+        #mx_cl .col-md-3 {
+            -ms-flex: 0 0 25%;
+            flex: 0 0 25%;
+            max-width: 25%;
+        }
+    }
+
+    @media (min-width: 992px) {
+        #mx_cl .container {
+            max-width: 960px;
+        }
+    }
+
+    @media (min-width: 1200px) {
+        #mx_cl .container {
+            max-width: 650px;
+        }
+
+        #mx_cl .step-progress {
+            max-width: 650px;
+            text-align: center;
+        }
+    }
+
+    #mx_cl .text-right {
+        text-align: right;
+    }
+
+    #mx_cl .form-group,
+    #mx_cl .input-group {
+        position: relative;
+        margin-bottom: 15px;
+    }
+
+    #mx_cl .top-title {
+        font-size: 25px;
+        text-align: center;
+        color: #000;
+        font-weight: 600;
+        margin-bottom: 20px;
+    }
+    #mx_cl .top-subtitle {
+        font-size: 16px;
+        text-align: center;
+        color: #000;
+        font-weight: 400;
+    }
+
+    #mx_cl .content-box {
+        background-color: #f2f2f2;
+        padding: 20px;
+    }
+
+    #mx_cl .box-top-text {
+        font-size: 14px;
+        color: #909090;
+    }
+
+    #mx_cl .box-mid-text {
+        font-size: 16px;
+        font-weight: 600;
+        color: #000;
+    }
+
+    #mx_cl .gender-option {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        margin-bottom: 10px;
+    }
+
+    #mx_cl .circle {
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        background-color: white;
+        margin-right: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #mx_cl .gender-option.selected .circle {
+        background-color: rgb(254, 41, 141);
+        border-color: rgb(254, 41, 141);
+    }
+
+    #mx_cl .tick {
+        color: white;
+        font-size: 20px;
+    }
+
+    #mx_cl .circle.selected .tick {
+        display: block;
+    }
+
+    #mx_cl .option-select {
+        display: flex;
+        gap: 20px;
+        margin-top: 12px;
+    }
+
+    #mx_cl .button {
+        display: inline-block;
+        min-width: 240px;
+        padding: 8px 30px;
+        background-color: rgb(254, 41, 141);
+        border: 2px solid #fff;
+        color: #fff;
+        font-size: 18px;
+        font-weight: 700;
+        cursor: pointer;
+        box-shadow: 6px 6px 10px #7f7f7f;
+        text-decoration: none;
+        transition: 0.3s all;
+    }
+    
+    #mx_cl .button:hover {
+        background-color: #000;
+    }
+
+    #mx_cl .button-sec {
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    #mx_cl .step-progress {
+        background-color: #000;
+        padding: 10px;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    #mx_cl .progress-container {
+        display: flex;
+        margin: 0 10px;
+        padding: 5px 30px;
+    }
+
+    #mx_cl .sstep {
+        text-align: center;
+        cursor: pointer;
+    }
+
+    #mx_cl .ccircle {
+        width: 40px;
+        height: 40px;
+        border: 2px solid white;
+        border-radius: 50%;
+        background-color: transparent;
+        margin: 0 10px !important;
+        line-height: 40px;
+        color: white;
+    }
+
+    #mx_cl .sstep-text {
+        font-size: 14px;
+        color: #ffffff;
+    }
+
+    #mx_cl .active .ccircle {
+        background-color: rgb(254, 41, 141);
+        border-color: rgb(254, 41, 141);
+        color: white;
+        border: 2px solid #fff;
+    }
+
+    #mx_cl .line {
+        width: 300px;
+        height: 2px;
+        background-color: white;
+        margin-top: 20px;
+    }
+
+    #mx_cl .s-mid-box {
+        padding: 20px;
+        border: 1px solid #000;
+        background-color: #fff;
+
+    }
+
+    #mx_cl .normal-p {
+        color: #000;
+        text-align: center;
+        margin: 0px;
+        font-weight: 600;
+    }
+
+    #mx_cl .statut {
+        color: #000;
+        text-align: center;
+        margin-top: 15px;
+    }
+
+    #mx_cl .s-mid-circle {
+        width: 100px;
+        height: 100px;
+        border-radius: 100px;
+        background-color: #000;
+        text-align: center;
+        color: #ffffff;
+        margin: 20px auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid #ffffff;
+        font-size: 24px;
+        flex-direction: column;
+    }
+
+    #mx_cl .s-normal-p {
+        text-align: center;
+        font-weight: 600;
+    }
+
+    #mx_cl .output {
+        margin-top: 10px;
+    }
+
+    #mx_cl .img-sec {
+        text-align: center;
+    }
+
+    #mx_cl .poids {
+        padding: 5px 15px;
+        background-color: #ffffff;
+        border: 1px solid #000;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    #mx_cl .poids-output {
+        color: rgb(254, 41, 141);
+        font-size: 30px;
+        font-weight: 600;
+    }
+
+    #mx_cl .poids-circle-p {
+        font-size: 14px;
+    }
+
+    #mx_cl .last-sec-p {
+        color: rgb(254, 41, 141);
+        text-align: center;
+    }
+
+    #mx_cl .toggle-container {
+        display: inline-block;
+        position: relative;
+        width: 60px;
+        height: 30px;
+        background-color: #ccc;
+        border-radius: 15px;
+        cursor: pointer;
+    }
+
+
+    #mx_cl .toggle-switch {
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        width: 26px;
+        height: 26px;
+        background-color: #fff;
+        border-radius: 50%;
+        transition: 0.3s;
+    }
+    #mx_cl .toggle-container.on {
+        background-color: #fe298d;
+    }
+
+    #mx_cl .toggle-container.on .toggle-switch {
+        left: 32px;
+    }
+
+
+    #mx_cl .toggle-container.off .toggle-switch {
+        left: 2px;
+    }
+
+
+    #mx_cl .toggle-checkbox {
+        display: none;
+    }
+
+    #mx_cl .on-off {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        justify-content: end;
+    }
+
+    #mx_cl .ccircle-mid {
+        margin-left: 16px !important;
+    }
+    #mx_cl .sport {
+        border: none;
+        outline: none;
+        font-size: 16px;
+        font-weight: 600;
+        margin-left: 0px;
+        padding-left: 0px;
+        padding: 0;
+        width: 100%;
+    }
+    #mx_cl .p-italic {
+        font-style: italic;
+        text-align: center;
+        display: block;
+        margin-bottom: 20px;
+    }
+    #mx_cl .morpho-link {
+        text-decoration: none;
+    }
+
+    @media (max-width: 768px) {
+        #mx_cl img {
+            width: 100%;
+        }
+
+        #mx_cl .ccircle {
+            width: 20px;
+            height: 20px;
+
+        }
+
+        #mx_cl .ccircle-mid {
+            margin-left: 20px !important;
+        }
+
+        #mx_cl .line {
+            margin-top: 10px;
+        }
+
+        #mx_cl .sstep-text {
+            font-size: 12px;
+        }
+        #mx_cl .comment-sec {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #mx_cl .gender-btn-group{
+            display: flex;
+            flex-direction: column !important;
+        }
+        #mx_cl .gender-btn{
+            font-size: 18px !important;
+        }
+        #mx_cl .morpho-image img{
+            width: 100px !important;
+        }
+        #mx_cl .btn-text {
+            font-size: 13px !important;
+        }
+        #mx_cl .more-btn{
+            height: 35px !important;
+        }
+        #mx_cl .wide-btn{
+            height: 35px !important;
+        }
+        #mx_cl .wide-btn-text{
+            font-size: 15px !important;
+        }
+    }
+    
+    #mx_cl .slide-2, #mx_cl .slide-3 {
+        display: none;
+    }
+    #mx_cl .ds-none {
+        display: none;
+    }
+    #mx_cl .divider-sec {
+        background-color: #000;
+    }
+    #mx_cl .divider-line {
+        width: 100%;
+        height: 2px;
+        background: #fff;
+        margin-top: -10px;
+    }
+    #mx_cl .divider-circle-sec, #mx_cl .divider-text-sec {
+        display: flex;
+        justify-content: space-between;
+    }
+    #mx_cl .dv-circle {
+        width: 20px;
+        height: 20px;
+        background: #fff;
+        border: 5px solid #fff;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+    #mx_cl .dv-circle.is-active {
+        background: #fe298d;
+    }
+    #mx_cl .divider-text-sec {
+        margin-top: 25px;
+    }
+    #mx_cl .divider-text-sec .sec-text {
+        flex: 1;
+        color: white;
+        font-size: 14px;
+        cursor: pointer;
+    }
+    #mx_cl .head-box {
+        background-color: #fff;
+        padding: 5px 20px;
+        margin: 10px 0px;
+        border-radius: 5px;
+        border: 1px solid transparent;
+    }
+    #mx_cl .sp-head-box {
+        background-color: #fff;
+        padding: 5px 20px;
+        margin: 10px 0px;
+        border-radius: 5px;
+        border: 1px solid transparent;
+    }
+    #mx_cl .head-box.is-active {
+        border-color: #fe298d;
+    }
+    #mx_cl .img-elm {
+        width: 100%;
+    }
+    #mx_cl .err-msg {
+        display: none;
+        color: red;
+        text-align: center;
+        margin: 0;
+        margin-top: 14px;
+    }
+    #mx_cl .err-input {
+        border-color: red;
+    }
+    #mx_cl .sp-margin-bt {
+        margin-bottom: 40px;
+    }
+    #mx_cl .gender-title {
+        margin-top: 12px;
+        font-size: 16px;
+        color: #909090;
+    }
+    #mx_cl .libsA1, #mx_cl .libsB1, #mx_cl .libsC1, #mx_cl .libsD1, #mx_cl .libsE1, #mx_cl .libsF1, #mx_cl .libsG1, #mx_cl .libsH1 {
+        color: red;
+    }
+    #mx_cl .libsA2, #mx_cl .libsB2, #mx_cl .libsC2, #mx_cl .libsD2, #mx_cl .libsE2, #mx_cl .libsF2, #mx_cl .libsG2, #mx_cl .libsH2 {
+        color: grey;
+    }
+    #mx_cl .benefit-msg {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 10px;
+    }
+    #mx_cl .morpho-top-title{
+        color: #000;
+        font-size: 20px;
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    #mx_cl .morpho-image{
+        text-align: center;
+        margin-top: 15px;
+    }
+    #mx_cl .morpho-image-title{
+        color: #fe298d;
+    }
+    #mx_cl .morpho-title{
+        color: #000;
+        font-size: 22px;
+        font-weight: 500;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    #mx_cl .morpho-sub-title{
+        color: #000;
+        font-size: 16px;
+        font-style: italic;
+        font-weight: 400;
+        text-align: center;
+    }
+    #mx_cl .ligne-outil{
+        display: block;
+        text-align: center;
+    }
+    #mx_cl .benefit-title{
+        color: #fff;
+        font-size: 16px;
+        font-weight: 400;
+        text-align: center;
+    }
+    #mx_cl .benefit-msg.is-R, 
+    #mx_cl .benefit-msg.is-R, 
+    #mx_cl .benefit-msg.is-R, 
+    #mx_cl .benefit-msg.is-R, 
+    #mx_cl .benefit-msg.is-R, 
+    #mx_cl .benefit-msg.is-R, 
+    #mx_cl .benefit-msg.is-R, 
+    #mx_cl .benefit-msg.is-R{
+        opacity: 1;
+    }
+    #mx_cl .benefit-msg.is-B, 
+    #mx_cl .benefit-msg.is-B, 
+    #mx_cl .benefit-msg.is-B, 
+    #mx_cl .benefit-msg.is-B, 
+    #mx_cl .benefit-msg.is-B, 
+    #mx_cl .benefit-msg.is-B, 
+    #mx_cl .benefit-msg.is-B, 
+    #mx_cl .benefit-msg.is-B{
+        opacity: 0.3;
+    }
+    #mx_cl .qsn-title{
+        text-align: center;
+        color: #3c3c3c;
+        font-size: 22px;
+    }
+    #mx_cl .qsn-para{
+        text-align: center;
+        color: #666;
+        font-size: 14px;
+        font-style: italic;
+    }
+    #mx_cl .qsn-msg{
+        text-align: center;
+        color: #000;
+        font-size: 20px;
+        font-weight: 600;
+    }
+    #mx_cl .more-btn {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        border-radius: 25px;
+        height: 25px;
+        margin-bottom: 10px;
+        cursor: pointer;
+        min-width: 130px;
+    }
+    #mx_cl .more-btn.is-active .more-box {
+        background-color: #fe298d;
+    }
+    #mx_cl .more-box {
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        font-size: 14px;
+        border: 6px solid #ffffff;
+        border-radius: 25px;
+        text-align: center;
+        position: relative;
+        background-color: #ffffff;
+        color: #fff;
+        box-shadow: 0 0 2px #fe298d;
+    }
+    #mx_cl .btn-text{
+        font-size: 14px;
+        color: #3c3c3c;
+    }
+    #mx_cl .wide-btn {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        border-radius: 25px;
+        height: 25px;
+        margin-bottom: 10px;
+        cursor: pointer;
+        min-width: 130px;
+    }
+    #mx_cl .wide-btn.is-active .wide-box {
+        background-color: #fe298d;
+    }
+    #mx_cl .wide-box {
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        font-size: 14px;
+        border: 6px solid #ffffff;
+        border-radius: 25px;
+        text-align: center;
+        position: relative;
+        background-color: #ffffff;
+        color: #fff;
+        box-shadow: 0 0 2px #fe298d;
+    }
+    #mx_cl .wide-text{
+        font-size: 14px;
+        color: #3c3c3c;
+    }
+    #mx_cl .comment-sec {
+        display: flex;
+        margin-top: 25px;
+        margin-bottom: 25px;
+    }
+    #mx_cl .comment {
+        width: 30%;
+        margin: 0 1.6%;
+        text-align: center;
+        text-decoration: none;
+    }
+    #mx_cl .comment a{
+        text-decoration: none;
+        color: #fe298d;
+        font-weight: 600;
+    }
+    #mx_cl .police-resultat-bilan {
+        font-size: 12px;
+    }
+    #mx_cl .gender-btn-group {
+        display: flex;
+    }
+    #mx_cl .gender-btn-group button {
+        flex-grow: 1;
+    }
+    #mx_cl .gender-mb {
+        margin-bottom: 10px !important;
+    }
+    #mx_cl .gender-btn {
+        display: inline-block;
+        font-weight: 400;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+        cursor: pointer;
+        border: 1px solid transparent;
+        padding: 0.375rem 0.75rem;
+        font-size: 1rem;
+        line-height: 1.5;
+        transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    }
+    #mx_cl .gender-btn-primary {
+        color: #666;
+    }
+    #mx_cl .gender-option-btn-active {
+        color: #ff0185 !important;
+    }
+</style>
+<div class="ms-cl" id="mx_cl">
+    <div style="display: none;">
+        <span id="isUnitSystem">%%units%%</span>
+        <span id="isglaces">%%glaces%%</span>
+    </div>
+    <div class="container slide-1" id="step1">
+        <div class="row">
+            <div class="col-md-12"> 
+                <div class="top-title">FAITES LE TEST RAPIDEMENT !</div>
+                <div class="top-subtitle">et trouvez les lunettes qui vous correspondent…</div>
+                <div class="gender-btn-group">
+                    <button class="gender-btn gender-btn-primary gender-mb gender-option-btn gender-option-btn-active" data-value="1">Femme vue</button>
+                    <button class="gender-btn gender-btn-primary gender-mb gender-option-btn" data-value="2">Femme soleil</button>
+                    <button class="gender-btn gender-btn-primary gender-mb gender-option-btn" data-value="3">Homme vue</button>
+                    <button class="gender-btn gender-btn-primary gender-mb gender-option-btn" data-value="4">Homme soleil</button>
+                </div>
+                <img src="https://www.regivia.com/wp-content/uploads/Test-morphologie-et-de-forme-de-visage-lunettes-de-vue-femme-avec-proportions.webp" alt="" id="gender_image">
+                <div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="head-box">
+                    <div class="qsn-title">QUESTION 1/2</div>
+                    <div>&nbsp;</div>
+                    <div class="qsn-para">Devant un miroir, les cheveux en arrière et à l’aide de l’image ci-dessus représentant des formes et les 3 lignes du visage "front (1), pommettes (2) et mâchoire (3)" ...</div>
+                    <div class="qsn-msg">Êtes-vous plutôt ?</div>
+                </div>
+                <div id="more_btn">
+                    <div class="more-btn" data-value="1">
+                        <div class="more-box"></div>
+                        <div class="btn-text">(ex 1) Front et mâchoire arrondis et de la même largeur</div>
+                    </div>
+                    <div class="more-btn" data-value="2">
+                        <div class="more-box"></div>
+                        <div class="btn-text">(ex 2) Front, pommettes et mâchoire de la même largeur</div>
+                    </div>
+                    <div class="more-btn" data-value="3">
+                        <div class="more-box"></div>
+                        <div class="btn-text">(ex 3) Front et pommettes plus étroits que la mâchoire</div>
+                    </div>
+                    <div class="more-btn" data-value="4">
+                        <div class="more-box"></div>
+                        <div class="btn-text">(ex 4) Front et pommettes plus larges que la mâchoire</div>
+                    </div>
+                    <div class="more-btn" data-value="5">
+                        <div class="more-box"></div>
+                        <div class="btn-text">(ex 5) Front et mâchoire arrondis avec pommettes rebondies</div>
+                    </div>
+                    <div class="more-btn" data-value="6">
+                        <div class="more-box"></div>
+                        <div class="btn-text">(ex 6) Front et mâchoire étroits avec pommettes hautes et larges</div>
+                    </div>
+                </div>
+                <div class="head-box">
+                    <div class="qsn-title">QUESTION 2/2</div>
+                    <div>&nbsp;</div>
+                    <div class="qsn-msg">Votre visage est-il plus long que large ?</div>
+                </div>
+                <div id="wide_btn">
+                    <div class="wide-btn" data-value="10">
+                        <div class="wide-box"></div>
+                        <div class="wide-btn-text">Pas du tout : Longueur = largeur</div>
+                    </div>
+                    <div class="wide-btn" data-value="11">
+                        <div class="wide-box"></div>
+                        <div class="wide-btn-text">Un peu allongé : Longueur = 1 fois ½ la largeur</div>
+                    </div>
+                    <div class="wide-btn" data-value="12">
+                        <div class="wide-box"></div>
+                        <div class="wide-btn-text">Très allongé : Longueur = plus d'1 fois ½ la largeur</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="button-sec">
+                    <a href="#step2" class="button" id="butt-1">VALIDER</a>
+                </div>
+                <p class="err-msg" id="err_msg_1">Saisissez toutes les valeurs requises.</p>
+            </div>
+        </div>
+    </div>
+    <div class="container divider-sec slide-2" id="slide_2">
+        <div class="divider-circle-sec">
+            <div data-value="step1" class="step-btn dv-circle is-active"></div>
+            <div data-value="step2" class="step-btn dv-circle"></div>
+            <div data-value="step3" class="step-btn dv-circle"></div>
+        </div>
+        <div class="divider-line"></div>
+        <div class="divider-text-sec">
+            <div data-value="step1" class="step-btn sec-text">1.MORPHO</div>
+            <div data-value="step2" class="step-btn sec-text" style="text-align: center;">2.ANALYSE</div>
+            <div data-value="step3" class="step-btn sec-text" style="text-align: right;">3.SOLUTIONS</div>
+        </div>
+    </div>
+    
+    <div class="container slide-2" id="step2">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="sp-head-box">
+                    <div class="morpho-top-title" id="morpho_out_1">VOUS AVEZ UN VISAGE ROND !</div>
+                    <div class="morpho-sub-title" id="morpho_out_2">
+                        
+                    </div>
+                    <div class="morpho-title"  id="morpho_out_3">
+                        NOS CONSEILS POUR LE VISAGE ROND !
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="morpho-image">
+                                <a href="" id="morpho_img_link_1" class="morpho-link">
+                                    <div class="morpho-image-title" id="morpho_img_title_1">Lunettes de vue</div>
+                                    <img  id="morpho_img_1" src="" height="100" width="100" alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="morpho-image">
+                                <a href="" id="morpho_img_link_2" class="morpho-link">
+                                    <div class="morpho-image-title" id="morpho_img_title_2">Lunettes de soleil</div>
+                                    <img  id="morpho_img_2" src="" height="100" width="100" alt="">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12"> 
+                <div class="top-title">Vous souhaitez maigrir ? Poursuivez l'analyse !</div>
+            </div>
+            <div class="col-md-4 isUnitSystem"></div>
+            <div class="col-md-8 isUnitSystem">
+                <div class="on-off">
+                    <div class="on">Unités métriques</div>
+                    <label class="toggle-container">
+                        <input type="checkbox" class="toggle-checkbox">
+                        <div class="toggle-switch"></div>
+                    </label>
+                    <div class="off">Unités impériales</div>
+                </div>
+
+            </div>
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="gender-title">Vous êtes:</div>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="option-select">
+                            <div class="gender-option selected" data-value="2">
+                                <div class="circle hommey-femmy" id="femme-circle">
+                                    <div class="tick">&#10003;</div>
+                                </div>
+                                <label for="homme-circle">Une femme </label>
+                            </div>
+                            <div class="gender-option" data-value="1">
+                                <div class="circle hommey-femmy" id="homme-circle">
+                                    <div class="tick">&#10003;</div>
+                                </div>
+                                <label for="femme-circle">Un homme</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="head-box">
+                    <label class="box-top-text" for="in_1">Votre âge</label>
+                    <input type="text" class="form-control box-mid-text cl-in in-req" id="in_1">
+                </div>
+            </div>
+            <div class="col-md-12 metric-cont">
+                <div class="head-box">
+                    <label class="box-top-text" for="in_cm">Votre taille (<span>cm</span>)</label>
+                    <input type="text" class="form-control box-mid-text cl-in in-req" id="in_cm">
+                </div>
+            </div>
+            <div class="col-md-12 metric-cont">
+                <div class="head-box">
+                    <label class="box-top-text" for="in_kg">Votre poids (<span>kg</span>)</label>
+                    <input type="text" class="form-control box-mid-text cl-in in-req" id="in_kg">
+                </div>
+            </div>
+            <div class="col-md-6 imp-cont ds-none">
+                <div class="head-box">
+                    <label class="box-top-text" for="in_ft">Votre taille (<span>ft</span>)</label>
+                    <input type="text" class="form-control box-mid-text cl-in" id="in_ft">
+                </div>
+            </div>
+            <div class="col-md-6 imp-cont ds-none">
+                <div class="head-box">
+                    <label class="box-top-text" for="in_inch">Votre taille (<span>inch</span>)</label>
+                    <input type="text" class="form-control box-mid-text cl-in" id="in_inch">
+                </div>
+            </div>
+            <div class="col-md-6 imp-cont ds-none">
+                <div class="head-box">
+                    <label class="box-top-text" for="in_st">Votre poids (<span>st</span>)</label>
+                    <input type="text" class="form-control box-mid-text cl-in" id="in_st">
+                </div>
+            </div>
+            <div class="col-md-6 imp-cont ds-none">
+                <div class="head-box">
+                    <label class="box-top-text" for="in_lbs">Votre poids (<span>lbs</span>)</label>
+                    <input type="text" class="form-control box-mid-text cl-in" id="in_lbs">
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="head-box">
+                    <label class="box-top-text">Quel est votre objectif de poids? (en  <span class="w_unit">KG</span> ) ?</label>
+                    <input type="text" class="form-control box-mid-text cl-in in-req" id="in_4">
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="button-sec">
+                    <a href="#step2" class="button" id="butt-2">CALCULER</a>
+                </div>
+                <p class="err-msg" id="err_msg_2">Saisissez toutes les valeurs requises.</p>
+            </div>
+        </div>
+    </div>
+    <div class="container divider-sec slide-3" id="slide_3">
+        <div class="divider-circle-sec">
+            <div data-value="step1" class="step-btn dv-circle"></div>
+            <div data-value="step2" class="step-btn dv-circle is-active"></div>
+            <div data-value="step3" class="step-btn dv-circle"></div>
+        </div>
+        <div class="divider-line"></div>
+        <div class="divider-text-sec">
+            <div data-value="step1" class="step-btn sec-text">1.MORPHO</div>
+            <div data-value="step2" class="step-btn sec-text" style="text-align: center;">2.ANALYSE</div>
+            <div data-value="step3" class="step-btn sec-text" style="text-align: right;">3.SOLUTIONS</div>
+        </div>
+    </div>
+    <div class="container slide-3" id="step3">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="normal-p">Votre Indice de Masse Corporelle</div>
+                <div class="output text-center">IMC = <span id="out-3">00</span></div>
+                <div class="statut">Statut= <span id="out-4">00</span></div>
+                <div class="img-sec">
+                    <img src=" " alt="" srcset="" id="img_sec">
+                </div>
+                <div class="normal-p">Vos indicateurs de poids</div>
+                <div class="output text-center">Votre poids actuel =<span id="out-5">00</span></div>
+                <div class="output text-center">Poids idéal (formule de Lorentz) =<span id="out-6">00</span>
+                </div>
+                <div class="output text-center">Objectif personnel = <span id="out-7">00</span></div>
+            </div>
+            <div class="col-md-6">
+                <div class="poids">Poids moyen à atteindre</div>
+
+                <div class="s-mid-circle">
+                    <span class="poids-output" id="out-8">00</span>
+                    <div class="poids-circle-p w_unit">Kg</div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="poids" id="poids_txt">Poids moyen à perdre</div>
+                <div class="s-mid-circle">
+                    <span class="poids-output" id="out-9">00</span>
+                    <div class="poids-circle-p w_unit">Kg</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container divider-sec slide-3" id="slide_4">
+        <div class="divider-circle-sec">
+            <div data-value="step1" class="step-btn dv-circle"></div>
+            <div data-value="step2" class="step-btn dv-circle"></div>
+            <div data-value="step3" class="step-btn dv-circle is-active"></div>
+        </div>
+        <div class="divider-line"></div>
+        <div class="divider-text-sec">
+            <div data-value="step1" class="step-btn sec-text">1.MORPHO</div>
+            <div data-value="step2" class="step-btn sec-text" style="text-align: center;">2.ANALYSE</div>
+            <div data-value="step3" class="step-btn sec-text" style="text-align: right;">3.SOLUTIONS</div>
+        </div>
+    </div>
+    <div class="container slide-3">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="normal-p">Quel objectif et comment le concrétiser?</div>
+                <div id="footer_txt"></div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="button-sec sp-margin-bt">
+                <a href="" class="button" id="butt-3">VOIR TOUS NOS PROGRAMMES</a>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <img class="img-elm" src="https://www.regivia.com/wp-content/uploads/ebook-regivia-landing-form-2.webp" alt="" srcset="">
+        </div>
+    </div>
+
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/autonumeric@4.5.4"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js"></script>
+<script>
+    $(document).ready(function () {
+        let unit = 1;
+        let w_unit = "kg";
+        let l_unit = "cm";
+        let hommeyFemmyValue = "2";
+        let moreValue = "";
+        let wideValue = "";
+        let step1 = null;
+        let menWomanValue = "1";
+        let genderImage;
+        let is_glaces = "0";
+
+        let current_url = window.location.href;
+
+        const numOptionNum = {
+            digitGroupSeparator: ',',
+            decimalCharacter: '.',
+            decimalCharacterAlternative: '.',
+            currencySymbol: '',
+            currencySymbolPlacement: AutoNumeric.options.currencySymbolPlacement.prefix,
+            decimalPlaces: 0,
+            minimumValue: 0
+        };
+        const numOptionCurrency = {
+            digitGroupSeparator: ',',
+            decimalCharacter: '.',
+            decimalCharacterAlternative: '.',
+            currencySymbol: '',
+            currencySymbolPlacement: AutoNumeric.options.currencySymbolPlacement.prefix,
+            decimalPlaces: 1,
+            minimumValue: 0
+        };
+        const numOptionPercent = {
+            digitGroupSeparator: ',',
+            decimalCharacter: '.',
+            decimalCharacterAlternative: '.',
+            currencySymbol: '%',
+            currencySymbolPlacement: AutoNumeric.options.currencySymbolPlacement.suffix,
+            decimalPlaces: 0,
+            minimumValue: 0,
+            maximumValue: 100
+        };
+
+        const elm1 = new AutoNumeric('#in_1', numOptionNum);
+        const elm2 = new AutoNumeric('#in_cm', numOptionNum);
+        const elm3 = new AutoNumeric('#in_kg', numOptionCurrency);
+        const elm4 = new AutoNumeric('#in_ft', numOptionNum);
+        const elm5 = new AutoNumeric('#in_inch', numOptionNum);
+        const elm6 = new AutoNumeric('#in_st', numOptionNum);
+        const elm7 = new AutoNumeric('#in_lbs', numOptionCurrency);
+        const elm8 = new AutoNumeric('#in_4', numOptionCurrency);
+
+        function removeComma(num) {
+            return Number(num.replace(/,/g, ""));
+        }
+
+        if($("#isUnitSystem").text().trim() == "off"){
+            $(".isUnitSystem").hide();
+        }
+
+        if($("#isglaces").text().trim()){
+            let is_glaces = $("#isglaces").text().trim();
+
+            $(".gender-option-btn").removeClass("gender-option-btn-active");
+
+            genderImage;
+
+            if(is_glaces == "1"){
+                $('.gender-option-btn:eq(0)').addClass("gender-option-btn-active");
+                genderImage = "https://www.regivia.com/wp-content/uploads/Test-morphologie-et-de-forme-de-visage-lunettes-de-vue-femme-avec-proportions.webp"
+            } else if(is_glaces == "2"){
+                $('.gender-option-btn:eq(1)').addClass("gender-option-btn-active");
+                genderImage = "https://www.regivia.com/wp-content/uploads/Test-morphologie-et-de-forme-de-visage-lunettes-de-soleil-femme-avec-proportions.webp"
+            } else if(is_glaces == "3"){
+                $('.gender-option-btn:eq(2)').addClass("gender-option-btn-active");
+                genderImage = "https://www.regivia.com/wp-content/uploads/Test-morphologie-et-de-forme-de-visage-lunettes-de-vue-homme-avec-proportions.webp"
+            } else if(is_glaces == "4"){
+                $('.gender-option-btn:eq(3)').addClass("gender-option-btn-active");
+                genderImage = "https://www.regivia.com/wp-content/uploads/Test-morphologie-et-de-forme-de-visage-lunettes-de-soleil-homme-avec-proportions.webp"
+            }
+
+            $("#gender_image").attr("src", genderImage);
+
+        };
+
+        const nftd = Intl.NumberFormat("en-US", {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        });
+
+        $(document).on('click', function (e) {
+            if (!$(e.target).hasClass('form-control')) {
+                $(".head-box").removeClass("is-active");
+            }
+        });
+
+        $(".form-control").on("click", function(){
+            $(".head-box").removeClass("is-active");
+            $(this).closest(".head-box").addClass("is-active");
+        });
+
+        cookieStepOne();
+
+        function cookieStepOne(){
+            if($.cookie("cl19_units") !== undefined){
+            unit = $.cookie("cl19_units");
+                if(unit == 2){
+                    w_unit = "lbs";
+                    l_unit = "inch";
+                    $('.toggle-container').addClass("on");
+                    $('.toggle-container').find(".toggle-checkbox").prop('checked', true);
+                    $(".w_unit").html(w_unit);
+
+                    $(".metric-cont").addClass("ds-none");
+                    $(".imp-cont").removeClass("ds-none");
+                }
+            }
+
+            if($.cookie("cl19_gender_option") !== undefined){
+                $(".gender-option-btn").removeClass("gender-option-btn-active");
+                    menWomanValue = $.cookie("cl19_gender_option");
+                if(menWomanValue == "4"){
+                    $('.gender-option-btn:eq(3)').addClass("gender-option-btn-active");
+                } else if(menWomanValue == "3"){
+                    $('.gender-option-btn:eq(2)').addClass("gender-option-btn-active");
+                } else if(menWomanValue == "2"){
+                    $('.gender-option-btn:eq(1)').addClass("gender-option-btn-active");
+                } else {
+                    $('.gender-option-btn:eq(0)').addClass("gender-option-btn-active");
+                }
+
+                genderImage;
+
+                if(menWomanValue == "1"){
+                    genderImage = "https://www.regivia.com/wp-content/uploads/Test-morphologie-et-de-forme-de-visage-lunettes-de-vue-femme-avec-proportions.webp"
+                } else if(menWomanValue == "2"){
+                    genderImage = "https://www.regivia.com/wp-content/uploads/Test-morphologie-et-de-forme-de-visage-lunettes-de-soleil-femme-avec-proportions.webp"
+                } else if(menWomanValue == "3"){
+                    genderImage = "https://www.regivia.com/wp-content/uploads/Test-morphologie-et-de-forme-de-visage-lunettes-de-vue-homme-avec-proportions.webp"
+                } else if(menWomanValue == "4"){
+                    genderImage = "https://www.regivia.com/wp-content/uploads/Test-morphologie-et-de-forme-de-visage-lunettes-de-soleil-homme-avec-proportions.webp"
+                }
+
+                $("#gender_image").attr("src", genderImage);
+            }
+
+            if($.cookie("cl19_gender") !== undefined){
+                $(".gender-option").removeClass("selected");
+                
+                hommeyFemmyValue = $.cookie("cl19_gender");
+                if(hommeyFemmyValue == 1){
+                    $('.gender-option:eq(1)').addClass("selected");
+                } else {
+                    $('.gender-option:eq(0)').addClass("selected");
+                }
+            }
+
+            if($.cookie("cl19_step1") !== undefined){
+                step1 = $.cookie("cl19_step1");
+            }
+
+            if($.cookie("cl19_more") !== undefined){
+                moreValue = $.cookie("cl19_more");
+
+                if(moreValue){
+                    $(".more-btn").each(function(i, elm) {
+                        let vl = $(elm).data("value");
+                        if(vl == moreValue){
+                            $(elm).addClass("is-active");
+                        }
+                    });
+                }
+            }
+            if($.cookie("cl19_wide") !== undefined){
+                wideValue = $.cookie("cl19_wide");
+
+                if(wideValue){
+                    $(".wide-btn").each(function(i, elm) {
+                        let vl = $(elm).data("value");
+                        if(vl == wideValue){
+                            $(elm).addClass("is-active");
+                        }
+                    });
+                }
+            }
+
+            if($.cookie("cl19_in_1") !== undefined){
+                if($.cookie("cl19_in_1")){
+                    elm1.set($.cookie("cl19_in_1"));
+                }
+            }
+
+            if($.cookie("cl19_in_cm") !== undefined){
+                if($.cookie("cl19_in_cm")){
+                    elm2.set($.cookie("cl19_in_cm"));
+                }
+            }
+
+            if($.cookie("cl19_in_kg") !== undefined){
+                if($.cookie("cl19_in_kg")){
+                    elm3.set($.cookie("cl19_in_kg"));
+                }
+            }
+
+            if($.cookie("cl19_in_ft") !== undefined){
+                if($.cookie("cl19_in_ft")){
+                    elm4.set($.cookie("cl19_in_ft"));
+                }
+            }
+
+            if($.cookie("cl19_in_inch") !== undefined){
+                if($.cookie("cl19_in_inch")){
+                    elm5.set($.cookie("cl19_in_inch"));
+                }
+            }
+
+            if($.cookie("cl19_in_st") !== undefined){
+                if($.cookie("cl19_in_st")){
+                    elm6.set($.cookie("cl19_in_st"));
+                }
+            }
+
+            if($.cookie("cl19_in_lbs") !== undefined){
+                if($.cookie("cl19_in_lbs")){
+                    elm7.set($.cookie("cl19_in_lbs"));
+                }
+            }
+
+            if($.cookie("cl19_in_4") !== undefined){
+                if($.cookie("cl19_in_4")){
+                    elm8.set($.cookie("cl19_in_4"));
+                }
+            }
+
+            if($.cookie("cl19_step1")){
+                calcFunc();
+                $('.slide-2').show();
+
+                if (history.pushState) {
+                    var newurl = window.location.protocol + "//" + window.location.host + window.location.pathname + '#step2';
+                    window.history.pushState({path:newurl},'',newurl);
+
+                    $('html, body').animate({
+                        scrollTop: $("#step2").offset().top - 150
+                    }, 500);
+                }
+            }
+
+            if($.cookie("cl19_in_1") && ($.cookie("cl19_in_cm") && $.cookie("cl19_in_kg") || ($.cookie("cl19_in_ft") || $.cookie("cl19_in_inch")) && ($.cookie("cl19_in_st") || $.cookie("cl19_in_lbs"))) && $.cookie("cl19_in_4")){
+                calcFunc();
+                $('.slide-3').show();
+
+                if (history.pushState) {
+                    var newurl = window.location.protocol + "//" + window.location.host + window.location.pathname + '#step3';
+                    window.history.pushState({path:newurl},'',newurl);
+
+                    $('html, body').animate({
+                        scrollTop: $("#step3").offset().top - 150
+                    }, 500);
+                }
+            }
+        }
+
+        $(".slide-1 .in-req").on("input", function(){
+            $("#err_msg_1").hide();
+            $(this).closest(".head-box").removeClass("err-input");
+        });
+
+        $(".more-btn .wide-btn").on("click", function(){
+            $.removeCookie("cl19_units");
+            $.removeCookie("cl19_gender");
+            $.removeCookie("cl19_gender_option");
+            $.removeCookie("cl19_in_1");
+            $.removeCookie("cl19_in_cm");
+            $.removeCookie("cl19_in_kg");
+            $.removeCookie("cl19_in_ft");
+            $.removeCookie("cl19_in_inch");
+            $.removeCookie("cl19_in_st");
+            $.removeCookie("cl19_in_lbs");
+            $.removeCookie("cl19_in_4");
+
+            $(".slide-2, slide-3").hide();
+        });
+
+        $(".slide-2 .in-req").on("input", function(){
+            $("#err_msg_2").hide();
+            $(this).closest(".head-box").removeClass("err-input");
+        });
+
+        $(".gender-option-btn").click(function () {
+            $(".gender-option-btn").removeClass("gender-option-btn-active");
+            $(this).addClass("gender-option-btn-active");
+            
+            menWomanValue = $(".gender-option-btn.gender-option-btn-active").data("value");
+
+            let genderImage;
+            if(menWomanValue == "1"){
+                genderImage = "https://www.regivia.com/wp-content/uploads/Test-morphologie-et-de-forme-de-visage-lunettes-de-vue-femme-avec-proportions.webp"
+            } else if(menWomanValue == "2"){
+                genderImage = "https://www.regivia.com/wp-content/uploads/Test-morphologie-et-de-forme-de-visage-lunettes-de-soleil-femme-avec-proportions.webp"
+            } else if(menWomanValue == "3"){
+                genderImage = "https://www.regivia.com/wp-content/uploads/Test-morphologie-et-de-forme-de-visage-lunettes-de-vue-homme-avec-proportions.webp"
+            } else if(menWomanValue == "4"){
+                genderImage = "https://www.regivia.com/wp-content/uploads/Test-morphologie-et-de-forme-de-visage-lunettes-de-soleil-homme-avec-proportions.webp"
+            }
+
+            $("#gender_image").attr("src", genderImage);
+            
+            $('.slide-3').hide();
+
+            $.removeCookie('cl19_in_4');
+        });
+
+        $(".gender-option").click(function () {
+            $(".gender-option").removeClass("selected");
+            $(this).addClass("selected");
+            
+            hommeyFemmyValue = $(".gender-option.selected").data("value");
+            
+            $('.slide-3').hide();
+
+            $.removeCookie('cl19_in_4');
+        });
+
+        $('.more-btn').on('click', function () {
+            $('.more-btn').removeClass('is-active');
+            $(this).addClass('is-active');
+
+            moreValue = $(".more-btn.is-active").data("value");
+        });
+        $('.wide-btn').on('click', function () {
+            $('.wide-btn').removeClass('is-active');
+            $(this).addClass('is-active');
+
+            wideValue = $(".wide-btn.is-active").data("value");
+        });
+
+        $('.toggle-container').click(function () {
+            $("#err_msg_1, #err_msg_2").hide();
+            $(".head-box.err-input").removeClass("err-input");
+
+            var checkbox = $(this).find('.toggle-checkbox');
+            var isOn = checkbox.prop('checked');
+
+            let taille = 0;
+            let poids = 0;
+
+            if (isOn) {
+                unit = 1;
+                w_unit = "kg";
+                l_unit = "cm";
+                checkbox.prop('checked', false);
+                $(this).removeClass('on').addClass('off');
+                
+                $(".metric-cont").removeClass("ds-none");
+                $(".imp-cont").addClass("ds-none");
+                $(".metric-cont").find(".cl-in").addClass("in-req");
+                $(".imp-cont").find(".cl-in").removeClass("in-req");
+            } else {
+                unit = 2;
+                w_unit = "lbs";
+                l_unit = "inch";
+                checkbox.prop('checked', true);
+                $(this).removeClass('off').addClass('on');
+
+                $(".metric-cont").addClass("ds-none");
+                $(".imp-cont").removeClass("ds-none");
+                $(".metric-cont").find(".cl-in").removeClass("in-req");
+                $(".imp-cont").find(".cl-in").addClass("in-req");
+            }
+            $(".w_unit").html(w_unit);
+            $('.slide-3').hide();
+        });
+
+        function saveCookieInfo(step){
+            in_1 = removeComma($("#in_1").val());
+            in_4 = removeComma($("#in_4").val());
+            in_cm = removeComma($("#in_cm").val());
+            in_kg = removeComma($("#in_kg").val());
+            in_ft = removeComma($("#in_ft").val());
+            in_inch = removeComma($("#in_inch").val());
+            in_st = removeComma($("#in_st").val());
+            in_lbs = removeComma($("#in_lbs").val());
+
+            $.cookie("cl19_step1", step1, { expires: 1 / 1440 });
+            $.cookie("cl19_gender_option", menWomanValue, { expires: 1 / 1440 });
+            $.cookie("cl19_more", moreValue, { expires: 1 / 1440 });
+            $.cookie("cl19_wide", wideValue, { expires: 1 / 1440 });
+            $.cookie("cl19_units", unit, { expires: 1 / 1440 });
+            $.cookie("cl19_gender", hommeyFemmyValue, { expires: 1 / 1440 });
+            $.cookie("cl19_in_1", in_1, { expires: 1 / 1440 });
+            $.cookie("cl19_in_cm", in_cm, { expires: 1 / 1440 });
+            $.cookie("cl19_in_kg", in_kg, { expires: 1 / 1440 });
+            $.cookie("cl19_in_ft", in_ft, { expires: 1 / 1440 });
+            $.cookie("cl19_in_inch", in_inch, { expires: 1 / 1440 });
+            $.cookie("cl19_in_st", in_st, { expires: 1 / 1440 });
+            $.cookie("cl19_in_lbs", in_lbs, { expires: 1 / 1440 });
+            $.cookie("cl19_in_4", in_4, { expires: 1 / 1440 });
+        }
+
+        $('#butt-1').click(function (e){
+            e.preventDefault();
+            step1 = true;
+
+            $.cookie("cl19_step1", step1, { expires: 1 / 1440 });
+            $.cookie("cl19_more", moreValue, { expires: 1 / 1440 });
+            $.cookie("cl19_wide", wideValue, { expires: 1 / 1440 });
+            $.cookie("cl19_gender_option", menWomanValue, { expires: 1 / 1440 });
+            
+            location.reload();
+        });
+
+        $('#butt-2').click(function (e){
+            e.preventDefault();
+            let age = removeComma($("#in_1").val());
+            let obj = removeComma($("#in_4").val());
+            let taille = 0;
+            let poids = 0;
+
+            if(unit == 1){
+                taille = removeComma($("#in_cm").val());
+                poids = removeComma($("#in_kg").val());
+            } else {
+                taille = (removeComma($("#in_ft").val()) * 12) + removeComma($("#in_inch").val());
+                poids = (removeComma($("#in_st").val()) * 14) + removeComma($("#in_lbs").val());
+            }
+
+            let total_inputs = $(".slide-2 .in-req").length;
+            let x = 0;
+
+            $(".slide-2 .in-req").each(function(i, elm){
+                let vl = $(elm).val();
+                if(vl){
+                    $(elm).closest(".head-box").removeClass("err-input");
+                    x++;
+                } else {
+                    $(elm).closest(".head-box").addClass("err-input");
+                }
+            });
+
+
+            if(total_inputs == x){
+                if(age && taille && poids && obj){
+                    $("#err_msg_2").hide();
+
+                    saveCookieInfo();
+
+                    location.reload();
+                }
+            } else {
+                $("#err_msg_2").slideDown();
+            }
+        });
+
+
+        function calcFunc(){
+            let MET = 0;
+            let lien = "";
+            
+            let age = removeComma($("#in_1").val());
+
+            let taille = 0;
+            let poids = 0;
+
+            if(unit == 1){
+                taille = removeComma($("#in_cm").val());
+                poids = removeComma($("#in_kg").val());
+            } else {
+                taille = (removeComma($("#in_ft").val()) * 12) + removeComma($("#in_inch").val());
+                poids = (removeComma($("#in_st").val()) * 14) + removeComma($("#in_lbs").val());
+            }
+
+            
+            let morpho_txt;
+            let morpho_para;
+            let morpho_txt_2;
+            let morpho_img_1;
+            let morpho_img_2;
+            let morpho_img_title_1;
+            let morpho_img_title_2;
+            let link_1;
+            let link_2;
+           
+
+            if(menWomanValue == "1" &&  moreValue == "1" && wideValue == "10"){
+              morpho_txt = "VOUS AVEZ UN VISAGE ROND !";
+              morpho_para = "Le visage rond est aussi long que large. L'absence de creux vous permet d'avoir un joli visage poupon, doux et digne de confiance !";
+              morpho_txt_2 = "NOS CONSEILS LUNETTES POUR LE VISAGE ROND !";
+              morpho_img_title_1 = "Lunettes de vue";
+              morpho_img_title_2 = "Lunettes de soleil";
+              morpho_img_1 = "visage-rond-femme-lunettes-de-vue.webp";
+              morpho_img_2 = "visage-rond-femme-lunettes-de-soleil.webp";
+              link_1 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-vue/quand-on-a-un-visage-rond/';
+              link_2 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-soleil/quand-on-a-un-visage-rond/';
+            } else if(menWomanValue == "1" && moreValue == "1" && wideValue == "11"){
+              morpho_txt = "VOUS AVEZ UN VISAGE EN OVALE !";
+              morpho_para = "Vous possédez un visage harmonieux ! Le visage ovale est d’ailleurs considéré comme le visage parfait !";
+              morpho_txt_2 = "NOS CONSEILS LUNETTES POUR LE VISAGE OVALE !";
+              morpho_img_title_1 = "Lunettes de vue";
+              morpho_img_title_2 = "Lunettes de soleil";
+              morpho_img_1 = "visage-ovale-femme-lunettes-de-vue.webp";
+              morpho_img_2 = "visage-ovale-femme-lunettes-de-soleil.webp";
+              link_1 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-vue/quand-on-a-un-visage-ovale/';
+              link_2 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-soleil/quand-on-a-un-visage-ovale/';
+            } else if(menWomanValue == "1" && moreValue == "1" && wideValue == "12"){
+              morpho_txt = "VOUS AVEZ UN VISAGE EN OBLONG !";
+              morpho_para = "La forme de votre visage s’apparente au visage ovale mais en moins large et en plus allongé. L’ovale étant la forme de visage parfaite, votre visage allongé est donc proche de la perfection !";
+              morpho_txt_2 = "NOS CONSEILS LUNETTES POUR LE VISAGE OBLONG !";
+              morpho_img_title_1 = "Lunettes de vue";
+              morpho_img_title_2 = "Lunettes de soleil";
+              morpho_img_1 = "visage-oblong-femme-lunettes-de-vue.webp";
+              morpho_img_2 = "visage-oblong-femme-lunettes-de-soleil.webp";
+              link_1 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-vue/quand-on-a-un-visage-oblong-ou-allonge/';
+              link_2 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-soleil/quand-on-a-un-visage-oblong-ou-allonge/';
+            } else if(menWomanValue == "1" && moreValue == "2" && wideValue == "10"){
+              morpho_txt = "VOUS AVEZ UN VISAGE EN CARRÉ !";
+              morpho_para = "Vous l’aurez compris, votre visage est plutôt anguleux. Vous êtes une femme au caractère affirmé bien dans vos baskets ! Votre défi sera d’adoucir vos traits en choisissant une coiffure adaptée à votre visage carré !";
+              morpho_txt_2 = "NOS CONSEILS LUNETTES POUR LE VISAGE CARRE !";
+              morpho_img_title_1 = "Lunettes de vue";
+              morpho_img_title_2 = "Lunettes de soleil";
+              morpho_img_1 = "visage-carre-femme-lunettes-de-vue.webp";
+              morpho_img_2 = "visage-carre-femme-lunettes-de-soleil.webp";
+              link_1 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-vue/quand-on-a-un-visage-carre/';
+              link_2 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-soleil/quand-on-a-un-visage-carre/';
+            } else if(menWomanValue == "1" && moreValue == "2" && wideValue == "11"){
+              morpho_txt = "VOUS AVEZ UN VISAGE EN RECTANGLE !";
+              morpho_para = "Le visage rectangle ressemble au visage carré mais en plus long. Les contours de votre visage sont plutôt bien définis. Votre visage est anguleux. Votre objectif sera alors d’apporter de la douceur à votre visage !";
+              morpho_txt_2 = "NOS CONSEILS LUNETTES POUR LE VISAGE RECTANGLE !";
+              morpho_img_title_1 = "Lunettes de vue";
+              morpho_img_title_2 = "Lunettes de soleil";
+              morpho_img_1 = "visage-rectangle-femme-lunettes-de-vue.webp";
+              morpho_img_2 = "visage-rectangle-femme-lunettes-de-soleil.webp";
+              link_1 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-vue/quand-on-a-un-visage-rectangulaire/';
+              link_2 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-soleil/quand-on-a-un-visage-rectangulaire/';
+            } else if(menWomanValue == "1" && moreValue == "2" && wideValue == "12"){
+              morpho_txt = "VOUS AVEZ UN VISAGE EN RECTANGLE !";
+              morpho_para = "Le visage rectangle ressemble au visage carré mais en plus long. Les contours de votre visage sont plutôt bien définis. Votre visage est anguleux. Votre objectif sera alors d’apporter de la douceur à votre visage !";
+              morpho_txt_2 = "NOS CONSEILS LUNETTES POUR LE VISAGE RECTANGLE !";
+              morpho_img_title_1 = "Lunettes de vue";
+              morpho_img_title_2 = "Lunettes de soleil";
+              morpho_img_1 = "visage-rectangle-femme-lunettes-de-vue.webp";
+              morpho_img_2 = "visage-rectangle-femme-lunettes-de-soleil.webp";
+              link_1 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-vue/quand-on-a-un-visage-rectangulaire/';
+              link_2 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-soleil/quand-on-a-un-visage-rectangulaire/';
+            } else if(menWomanValue == "1" && moreValue == "3" && wideValue == "10"){
+              morpho_txt = "VOUS AVEZ UN VISAGE EN TRIANGLE !";
+              morpho_para = "Avec une mâchoire large et un front étroit, vous avez un visage plutôt rare ! C’est une chance de ne pas ressembler à toutes les femmes !";
+              morpho_txt_2 = "NOS CONSEILS LUNETTES POUR LE VISAGE TRIANGLE !";
+              morpho_img_title_1 = "Lunettes de vue";
+              morpho_img_title_2 = "Lunettes de soleil";
+              morpho_img_1 = "visage-triangle-femme-lunettes-de-vue.webp";
+              morpho_img_2 = "visage-triangle-femme-lunettes-de-soleil.webp";
+              link_1 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-vue/quand-on-a-un-visage-en-triangle-haut-poire-ou-trapeze/';
+              link_2 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-soleil/quand-on-a-un-visage-en-triangle-haut-poire-ou-trapeze/';
+            } else if(menWomanValue == "1" && moreValue == "3" &&  wideValue == "11"){
+              morpho_txt = "VOUS AVEZ UN VISAGE EN TRIANGLE !";
+              morpho_para = "Avec une mâchoire large et un front étroit, vous avez un visage plutôt rare ! C’est une chance de ne pas ressembler à toutes les femmes !";
+              morpho_txt_2 = "NOS CONSEILS LUNETTES POUR LE VISAGE TRIANGLE !";
+              morpho_img_title_1 = "Lunettes de vue";
+              morpho_img_title_2 = "Lunettes de soleil";
+              morpho_img_1 = "visage-triangle-femme-lunettes-de-vue.webp";
+              morpho_img_2 = "visage-triangle-femme-lunettes-de-soleil.webp";
+              link_1 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-vue/quand-on-a-un-visage-en-triangle-haut-poire-ou-trapeze/';
+              link_2 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-soleil/quand-on-a-un-visage-en-triangle-haut-poire-ou-trapeze/';
+            } else if(menWomanValue == "1" && moreValue == "3" &&  wideValue == "12"){
+              morpho_txt = "VOUS AVEZ UN VISAGE EN TRIANGLE !";
+              morpho_para = "Avec une mâchoire large et un front étroit, vous avez un visage plutôt rare ! C’est une chance de ne pas ressembler à toutes les femmes !";
+              morpho_txt_2 = "NOS CONSEILS LUNETTES POUR LE VISAGE TRIANGLE !";
+              morpho_img_title_1 = "Lunettes de vue";
+              morpho_img_title_2 = "Lunettes de soleil";
+              morpho_img_1 = "visage-triangle-femme-lunettes-de-vue.webp";
+              morpho_img_2 = "visage-triangle-femme-lunettes-de-soleil.webp";
+              link_1 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-vue/quand-on-a-un-visage-en-triangle-haut-poire-ou-trapeze/';
+              link_2 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-soleil/quand-on-a-un-visage-en-triangle-haut-poire-ou-trapeze/';
+            } else if(menWomanValue == "1" && moreValue == "4" && wideValue == "10"){
+              morpho_txt = "VOUS AVEZ UN VISAGE EN TRIANGLE INVERSÉ !";
+              morpho_para = "Avec une mâchoire large et un front étroit, vous avez un visage plutôt rare ! C’est une chance de ne pas ressembler à toutes les femmes !";
+              morpho_txt_2 = "NOS CONSEILS LUNETTES POUR LE VISAGE TRIANGLE INVERSÉ !";
+              morpho_img_title_1 = "Lunettes de vue";
+              morpho_img_title_2 = "Lunettes de soleil";
+              morpho_img_1 = "visage-triangle-inverse-femme-lunettes-de-vue.webp";
+              morpho_img_2 = "visage-triangle-inverse-femme-lunettes-de-soleil.webp";
+              link_1 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-vue/quand-on-a-un-visage-en-triangle-bas-inverse-v-ou-coeur/';
+              link_2 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-soleil/quand-on-a-un-visage-en-triangle-bas-inverse-v-ou-coeur/';
+            } else if(menWomanValue == "1" && moreValue == "4" && wideValue == "11"){
+              morpho_txt = "VOUS AVEZ UN VISAGE EN TRIANGLE INVERSÉ !";
+              morpho_para = "Avec une mâchoire large et un front étroit, vous avez un visage plutôt rare ! C’est une chance de ne pas ressembler à toutes les femmes !";
+              morpho_txt_2 = "NOS CONSEILS LUNETTES POUR LE VISAGE TRIANGLE INVERSÉ !";
+              morpho_img_title_1 = "Lunettes de vue";
+              morpho_img_title_2 = "Lunettes de soleil";
+              morpho_img_1 = "visage-triangle-inverse-femme-lunettes-de-vue.webp";
+              morpho_img_2 = "visage-triangle-inverse-femme-lunettes-de-soleil.webp";
+              link_1 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-vue/quand-on-a-un-visage-en-triangle-bas-inverse-v-ou-coeur/';
+              link_2 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-soleil/quand-on-a-un-visage-en-triangle-bas-inverse-v-ou-coeur/';
+            } else if(menWomanValue == "1" && moreValue == "4" && wideValue == "12"){
+              morpho_txt = "VOUS AVEZ UN VISAGE EN TRIANGLE INVERSÉ !";
+              morpho_para = "Avec une mâchoire large et un front étroit, vous avez un visage plutôt rare ! C’est une chance de ne pas ressembler à toutes les femmes !";
+              morpho_txt_2 = "NOS CONSEILS LUNETTES POUR LE VISAGE TRIANGLE INVERSÉ !";
+              morpho_img_title_1 = "Lunettes de vue";
+              morpho_img_title_2 = "Lunettes de soleil";
+              morpho_img_1 = "visage-triangle-inverse-femme-lunettes-de-vue.webp";
+              morpho_img_2 = "visage-triangle-inverse-femme-lunettes-de-soleil.webp";
+              link_1 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-vue/quand-on-a-un-visage-en-triangle-bas-inverse-v-ou-coeur/';
+              link_2 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-soleil/quand-on-a-un-visage-en-triangle-bas-inverse-v-ou-coeur/';
+            } else if(menWomanValue == "1" && moreValue == "5" && wideValue == "10"){
+              morpho_txt = "VOUS AVEZ UN VISAGE ROND !";
+              morpho_para = "Le visage rond est aussi long que large. L'absence de creux vous permet d'avoir un joli visage poupon, doux et digne de confiance !";
+              morpho_txt_2 = "NOS CONSEILS LUNETTES POUR LE VISAGE ROND !";
+              morpho_img_title_1 = "Lunettes de vue";
+              morpho_img_title_2 = "Lunettes de soleil";
+              morpho_img_1 = "visage-rond-femme-lunettes-de-vue.webp";
+              morpho_img_2 = "visage-rond-femme-lunettes-de-soleil.webp";
+              link_1 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-vue/quand-on-a-un-visage-rond/';
+              link_2 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-soleil/quand-on-a-un-visage-rond/';
+            } else if(menWomanValue == "1" && moreValue == "5" && wideValue == "11"){
+              morpho_txt = "VOUS AVEZ UN VISAGE EN OVALE !";
+              morpho_para = "Vous possédez un visage harmonieux ! Le visage ovale est d’ailleurs considéré comme le visage parfait !";
+              morpho_txt_2 = "NOS CONSEILS LUNETTES POUR LE VISAGE OVALE !";
+              morpho_img_title_1 = "Lunettes de vue";
+              morpho_img_title_2 = "Lunettes de soleil";
+              morpho_img_1 = "visage-ovale-femme-lunettes-de-vue.webp";
+              morpho_img_2 = "visage-ovale-femme-lunettes-de-soleil.webp";
+              link_1 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-vue/quand-on-a-un-visage-ovale/';
+              link_2 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-soleil/quand-on-a-un-visage-ovale/';
+            } else if(menWomanValue == "1" && moreValue == "5" && wideValue == "12"){
+              morpho_txt = "VOUS AVEZ UN VISAGE EN OBLONG !";
+              morpho_para = "La forme de votre visage s’apparente au visage ovale mais en moins large et en plus allongé. L’ovale étant la forme de visage parfaite, votre visage allongé est donc proche de la perfection !";
+              morpho_txt_2 = "NOS CONSEILS LUNETTES POUR LE VISAGE OBLONG !";
+              morpho_img_title_1 = "Lunettes de vue";
+              morpho_img_title_2 = "Lunettes de soleil";
+              morpho_img_1 = "visage-oblong-femme-lunettes-de-vue.webp";
+              morpho_img_2 = "visage-oblong-femme-lunettes-de-soleil.webp";
+              link_1 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-vue/quand-on-a-un-visage-oblong-ou-allonge/';
+              link_2 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-soleil/quand-on-a-un-visage-oblong-ou-allonge/';
+            } else if(menWomanValue == "1" && moreValue == "6" && wideValue == "10"){
+              morpho_txt = "VOUS AVEZ UN VISAGE EN LOSANGE !";
+              morpho_para = "Vous avez un visage très féminin. Avec vos pommettes hautes et larges, vous êtes tout en beauté !";
+              morpho_txt_2 = "NOS CONSEILS LUNETTES POUR LE VISAGE LOSANGE !";
+              morpho_img_title_1 = "Lunettes de vue";
+              morpho_img_title_2 = "Lunettes de soleil";
+              morpho_img_1 = "visage-losange-femme-lunettes-de-vue.webp";
+              morpho_img_2 = "visage-losange-femme-lunettes-de-soleil.webp";
+              link_1 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-vue/quand-on-a-un-visage-en-losange-hexagonal-ou-diamant/';
+              link_2 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-soleil/quand-on-a-un-visage-losange-hexagonal-ou-diamant/';
+            } else if(menWomanValue == "1" && moreValue == "6" && wideValue == "11"){
+              morpho_txt = "VOUS AVEZ UN VISAGE EN LOSANGE !";
+              morpho_para = "Vous avez un visage très féminin. Avec vos pommettes hautes et larges, vous êtes tout en beauté !";
+              morpho_txt_2 = "NOS CONSEILS LUNETTES POUR LE VISAGE LOSANGE !";
+              morpho_img_title_1 = "Lunettes de vue";
+              morpho_img_title_2 = "Lunettes de soleil";
+              morpho_img_1 = "visage-losange-femme-lunettes-de-vue.webp";
+              morpho_img_2 = "visage-losange-femme-lunettes-de-soleil.webp";
+              link_1 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-vue/quand-on-a-un-visage-en-losange-hexagonal-ou-diamant/';
+              link_2 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-soleil/quand-on-a-un-visage-losange-hexagonal-ou-diamant/';
+            } else if(menWomanValue == "1" && moreValue == "6" && wideValue == "12"){
+              morpho_txt = "VOUS AVEZ UN VISAGE EN LOSANGE !";
+              morpho_para = "Vous avez un visage très féminin. Avec vos pommettes hautes et larges, vous êtes tout en beauté !";
+              morpho_txt_2 = "NOS CONSEILS LUNETTES POUR LE VISAGE LOSANGE !";
+              morpho_img_title_1 = "Lunettes de vue";
+              morpho_img_title_2 = "Lunettes de soleil";
+              morpho_img_1 = "visage-losange-femme-lunettes-de-vue.webp";
+              morpho_img_2 = "visage-losange-femme-lunettes-de-soleil.webp";
+              link_1 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-vue/quand-on-a-un-visage-en-losange-hexagonal-ou-diamant/';
+              link_2 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-soleil/quand-on-a-un-visage-losange-hexagonal-ou-diamant/';
+            } else if(menWomanValue == "2" &&  moreValue == "1" && wideValue == "10"){
+              morpho_txt = "VOUS AVEZ UN VISAGE ROND !";
+              morpho_para = "Le visage rond est aussi long que large. L'absence de creux vous permet d'avoir un joli visage poupon, doux et digne de confiance !";
+              morpho_txt_2 = "NOS CONSEILS LUNETTES POUR LE VISAGE ROND !";
+              morpho_img_title_1 = "Lunettes de soleil";
+              morpho_img_title_2 = "Lunettes de vue";
+              morpho_img_1 = "visage-rond-femme-lunettes-de-soleil.webp";
+              morpho_img_2 = "visage-rond-femme-lunettes-de-vue.webp";
+              link_1 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-vue/quand-on-a-un-visage-rond/';
+              link_2 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-soleil/quand-on-a-un-visage-rond/';
+            } else if(menWomanValue == "2" && moreValue == "1" && wideValue == "11"){
+              morpho_txt = "VOUS AVEZ UN VISAGE EN OVALE !";
+              morpho_para = "Vous possédez un visage harmonieux ! Le visage ovale est d’ailleurs considéré comme le visage parfait !";
+              morpho_txt_2 = "NOS CONSEILS LUNETTES POUR LE VISAGE OVALE !";
+              morpho_img_title_1 = "Lunettes de soleil";
+              morpho_img_title_2 = "Lunettes de vue";
+              morpho_img_1 = "visage-ovale-femme-lunettes-de-soleil.webp";
+              morpho_img_2 = "visage-ovale-femme-lunettes-de-vue.webp";
+              link_1 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-vue/quand-on-a-un-visage-ovale/';
+              link_2 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-soleil/quand-on-a-un-visage-ovale/';
+            } else if(menWomanValue == "2" && moreValue == "1" && wideValue == "12"){
+              morpho_txt = "VOUS AVEZ UN VISAGE EN OBLONG !";
+              morpho_para = "La forme de votre visage s’apparente au visage ovale mais en moins large et en plus allongé. L’ovale étant la forme de visage parfaite, votre visage allongé est donc proche de la perfection !";
+              morpho_txt_2 = "NOS CONSEILS LUNETTES POUR LE VISAGE OBLONG !";
+              morpho_img_title_1 = "Lunettes de soleil";
+              morpho_img_title_2 = "Lunettes de vue";
+              morpho_img_1 = "visage-oblong-femme-lunettes-de-soleil.webp";
+              morpho_img_2 = "visage-oblong-femme-lunettes-de-vue.webp";
+              link_1 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-vue/quand-on-a-un-visage-oblong-ou-allonge/';
+              link_2 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-soleil/quand-on-a-un-visage-oblong-ou-allonge/';
+            } else if(menWomanValue == "2" && moreValue == "2" && wideValue == "10"){
+              morpho_txt = "VOUS AVEZ UN VISAGE EN CARRÉ !";
+              morpho_para = "Vous l’aurez compris, votre visage est plutôt anguleux. Vous êtes une femme au caractère affirmé bien dans vos baskets ! Votre défi sera d’adoucir vos traits en choisissant une coiffure adaptée à votre visage carré !";
+              morpho_txt_2 = "NOS CONSEILS LUNETTES POUR LE VISAGE CARRE !";
+              morpho_img_title_1 = "Lunettes de soleil";
+              morpho_img_title_2 = "Lunettes de vue";
+              morpho_img_1 = "visage-carre-femme-lunettes-de-soleil.webp";
+              morpho_img_2 = "visage-carre-femme-lunettes-de-vue.webp";
+              link_1 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-vue/quand-on-a-un-visage-carre/';
+              link_2 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-soleil/quand-on-a-un-visage-carre/';
+            } else if(menWomanValue == "2" && moreValue == "2" && wideValue == "11"){
+              morpho_txt = "VOUS AVEZ UN VISAGE EN RECTANGLE !";
+              morpho_para = "Le visage rectangle ressemble au visage carré mais en plus long. Les contours de votre visage sont plutôt bien définis. Votre visage est anguleux. Votre objectif sera alors d’apporter de la douceur à votre visage !";
+              morpho_txt_2 = "NOS CONSEILS LUNETTES POUR LE VISAGE RECTANGLE !";
+              morpho_img_title_1 = "Lunettes de soleil";
+              morpho_img_title_2 = "Lunettes de vue";
+              morpho_img_2 = "visage-rectangle-femme-lunettes-de-vue.webp";
+              morpho_img_1 = "visage-rectangle-femme-lunettes-de-soleil.webp";
+              link_2 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-soleil/quand-on-a-un-visage-rectangulaire/';
+              link_1 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-vue/quand-on-a-un-visage-rectangulaire/';
+            } else if(menWomanValue == "2" && moreValue == "2" && wideValue == "12"){
+              morpho_txt = "VOUS AVEZ UN VISAGE EN RECTANGLE !";
+              morpho_para = "Le visage rectangle ressemble au visage carré mais en plus long. Les contours de votre visage sont plutôt bien définis. Votre visage est anguleux. Votre objectif sera alors d’apporter de la douceur à votre visage !";
+              morpho_txt_2 = "NOS CONSEILS LUNETTES POUR LE VISAGE RECTANGLE !";
+              morpho_img_title_1 = "Lunettes de soleil";
+              morpho_img_title_2 = "Lunettes de vue";
+              morpho_img_2 = "visage-rectangle-femme-lunettes-de-vue.webp";
+              morpho_img_1 = "visage-rectangle-femme-lunettes-de-soleil.webp";
+              link_1 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-vue/quand-on-a-un-visage-rectangulaire/';
+              link_2 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-soleil/quand-on-a-un-visage-rectangulaire/';
+            } else if(menWomanValue == "2" && moreValue == "3" && wideValue == "10"){
+              morpho_txt = "VOUS AVEZ UN VISAGE EN TRIANGLE !";
+              morpho_para = "Avec une mâchoire large et un front étroit, vous avez un visage plutôt rare ! C’est une chance de ne pas ressembler à toutes les femmes !";
+              morpho_txt_2 = "NOS CONSEILS LUNETTES POUR LE VISAGE TRIANGLE !";
+              morpho_img_title_1 = "Lunettes de soleil";
+              morpho_img_title_2 = "Lunettes de vue";
+              morpho_img_2 = "visage-triangle-femme-lunettes-de-vue.webp";
+              morpho_img_1 = "visage-triangle-femme-lunettes-de-soleil.webp";
+              link_2 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-soleil/quand-on-a-un-visage-en-triangle-haut-poire-ou-trapeze/';
+              link_1 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-vue/quand-on-a-un-visage-en-triangle-haut-poire-ou-trapeze/';
+            } else if(menWomanValue == "2" && moreValue == "3" &&  wideValue == "11"){
+              morpho_txt = "VOUS AVEZ UN VISAGE EN TRIANGLE !";
+              morpho_para = "Avec une mâchoire large et un front étroit, vous avez un visage plutôt rare ! C’est une chance de ne pas ressembler à toutes les femmes !";
+              morpho_txt_2 = "NOS CONSEILS LUNETTES POUR LE VISAGE TRIANGLE !";
+              morpho_img_title_1 = "Lunettes de soleil";
+              morpho_img_title_2 = "Lunettes de vue";
+              morpho_img_2 = "visage-triangle-femme-lunettes-de-vue.webp";
+              morpho_img_1 = "visage-triangle-femme-lunettes-de-soleil.webp";
+              link_2 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-soleil/quand-on-a-un-visage-en-triangle-haut-poire-ou-trapeze/';
+              link_1 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-vue/quand-on-a-un-visage-en-triangle-haut-poire-ou-trapeze/';
+            } else if(menWomanValue == "2" && moreValue == "3" &&  wideValue == "12"){
+              morpho_txt = "VOUS AVEZ UN VISAGE EN TRIANGLE !";
+              morpho_para = "Avec une mâchoire large et un front étroit, vous avez un visage plutôt rare ! C’est une chance de ne pas ressembler à toutes les femmes !";
+              morpho_txt_2 = "NOS CONSEILS LUNETTES POUR LE VISAGE TRIANGLE !";
+              morpho_img_title_1 = "Lunettes de soleil";
+              morpho_img_title_2 = "Lunettes de vue";
+              morpho_img_2 = "visage-triangle-femme-lunettes-de-vue.webp";
+              morpho_img_1 = "visage-triangle-femme-lunettes-de-soleil.webp";
+              link_2 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-soleil/quand-on-a-un-visage-en-triangle-haut-poire-ou-trapeze/';
+              link_1 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-vue/quand-on-a-un-visage-en-triangle-haut-poire-ou-trapeze/';
+            } else if(menWomanValue == "2" && moreValue == "4" && wideValue == "10"){
+              morpho_txt = "VOUS AVEZ UN VISAGE EN TRIANGLE INVERSÉ !";
+              morpho_para = "Avec une mâchoire large et un front étroit, vous avez un visage plutôt rare ! C’est une chance de ne pas ressembler à toutes les femmes !";
+              morpho_txt_2 = "NOS CONSEILS LUNETTES POUR LE VISAGE TRIANGLE INVERSÉ !";
+              morpho_img_title_1 = "Lunettes de soleil";
+              morpho_img_title_2 = "Lunettes de vue";
+              morpho_img_2 = "visage-triangle-inverse-femme-lunettes-de-vue.webp";
+              morpho_img_1 = "visage-triangle-inverse-femme-lunettes-de-soleil.webp";
+              link_2 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-soleil/quand-on-a-un-visage-en-triangle-bas-inverse-v-ou-coeur/';
+              link_1 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-vue/quand-on-a-un-visage-en-triangle-bas-inverse-v-ou-coeur/';
+            } else if(menWomanValue == "2" && moreValue == "4" && wideValue == "11"){
+              morpho_txt = "VOUS AVEZ UN VISAGE EN TRIANGLE INVERSÉ !";
+              morpho_para = "Avec une mâchoire large et un front étroit, vous avez un visage plutôt rare ! C’est une chance de ne pas ressembler à toutes les femmes !";
+              morpho_txt_2 = "NOS CONSEILS LUNETTES POUR LE VISAGE TRIANGLE INVERSÉ !";
+              morpho_img_title_1 = "Lunettes de soleil";
+              morpho_img_title_2 = "Lunettes de vue";
+              morpho_img_2 = "visage-triangle-inverse-femme-lunettes-de-vue.webp";
+              morpho_img_1 = "visage-triangle-inverse-femme-lunettes-de-soleil.webp";
+              link_2 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-soleil/quand-on-a-un-visage-en-triangle-bas-inverse-v-ou-coeur/';
+              link_1 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-vue/quand-on-a-un-visage-en-triangle-bas-inverse-v-ou-coeur/';
+            } else if(menWomanValue == "2" && moreValue == "4" && wideValue == "12"){
+              morpho_txt = "VOUS AVEZ UN VISAGE EN TRIANGLE INVERSÉ !";
+              morpho_para = "Avec une mâchoire large et un front étroit, vous avez un visage plutôt rare ! C’est une chance de ne pas ressembler à toutes les femmes !";
+              morpho_txt_2 = "NOS CONSEILS LUNETTES POUR LE VISAGE TRIANGLE INVERSÉ !";
+              morpho_img_title_1 = "Lunettes de soleil";
+              morpho_img_title_2 = "Lunettes de vue";
+              morpho_img_2 = "visage-triangle-inverse-femme-lunettes-de-vue.webp";
+              morpho_img_1 = "visage-triangle-inverse-femme-lunettes-de-soleil.webp";
+              link_2 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-soleil/quand-on-a-un-visage-en-triangle-bas-inverse-v-ou-coeur/';
+              link_1 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-vue/quand-on-a-un-visage-en-triangle-bas-inverse-v-ou-coeur/';
+            } else if(menWomanValue == "2" && moreValue == "5" && wideValue == "10"){
+              morpho_txt = "VOUS AVEZ UN VISAGE ROND !";
+              morpho_para = "Le visage rond est aussi long que large. L'absence de creux vous permet d'avoir un joli visage poupon, doux et digne de confiance !";
+              morpho_txt_2 = "NOS CONSEILS LUNETTES POUR LE VISAGE ROND !";
+              morpho_img_title_1 = "Lunettes de soleil";
+              morpho_img_title_2 = "Lunettes de vue";
+              morpho_img_2 = "visage-rond-femme-lunettes-de-vue.webp";
+              morpho_img_1 = "visage-rond-femme-lunettes-de-soleil.webp";
+              link_2 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-soleil/quand-on-a-un-visage-rond/';
+              link_1 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-vue/quand-on-a-un-visage-rond/';
+            } else if(menWomanValue == "2" && moreValue == "5" && wideValue == "11"){
+              morpho_txt = "VOUS AVEZ UN VISAGE EN OVALE !";
+              morpho_para = "Vous possédez un visage harmonieux ! Le visage ovale est d’ailleurs considéré comme le visage parfait !";
+              morpho_txt_2 = "NOS CONSEILS LUNETTES POUR LE VISAGE OVALE !";
+              morpho_img_title_1 = "Lunettes de soleil";
+              morpho_img_title_2 = "Lunettes de vue";
+              morpho_img_2 = "visage-ovale-femme-lunettes-de-vue.webp";
+              morpho_img_1 = "visage-ovale-femme-lunettes-de-soleil.webp";
+              link_2 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-soleil/quand-on-a-un-visage-ovale/';
+              link_1 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-vue/quand-on-a-un-visage-ovale/';
+            } else if(menWomanValue == "2" && moreValue == "5" && wideValue == "12"){
+              morpho_txt = "VOUS AVEZ UN VISAGE EN OBLONG !";
+              morpho_para = "La forme de votre visage s’apparente au visage ovale mais en moins large et en plus allongé. L’ovale étant la forme de visage parfaite, votre visage allongé est donc proche de la perfection !";
+              morpho_txt_2 = "NOS CONSEILS LUNETTES POUR LE VISAGE OBLONG !";
+              morpho_img_title_1 = "Lunettes de soleil";
+              morpho_img_title_2 = "Lunettes de vue";
+              morpho_img_2 = "visage-oblong-femme-lunettes-de-vue.webp";
+              morpho_img_1 = "visage-oblong-femme-lunettes-de-soleil.webp";
+              link_2 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-soleil/quand-on-a-un-visage-oblong-ou-allonge/';
+              link_1 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-vue/quand-on-a-un-visage-oblong-ou-allonge/';
+            } else if(menWomanValue == "2" && moreValue == "6" && wideValue == "10"){
+              morpho_txt = "VOUS AVEZ UN VISAGE EN LOSANGE !";
+              morpho_para = "Vous avez un visage très féminin. Avec vos pommettes hautes et larges, vous êtes tout en beauté !";
+              morpho_txt_2 = "NOS CONSEILS LUNETTES POUR LE VISAGE LOSANGE !";
+              morpho_img_title_1 = "Lunettes de soleil";
+              morpho_img_title_2 = "Lunettes de vue";
+              morpho_img_2 = "visage-losange-femme-lunettes-de-vue.webp";
+              morpho_img_1 = "visage-losange-femme-lunettes-de-soleil.webp";
+              link_2 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-soleil/quand-on-a-un-visage-losange-hexagonal-ou-diamant/';
+              link_1 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-vue/quand-on-a-un-visage-en-losange-hexagonal-ou-diamant/';
+            } else if(menWomanValue == "2" && moreValue == "6" && wideValue == "11"){
+              morpho_txt = "VOUS AVEZ UN VISAGE EN LOSANGE !";
+              morpho_para = "Vous avez un visage très féminin. Avec vos pommettes hautes et larges, vous êtes tout en beauté !";
+              morpho_txt_2 = "NOS CONSEILS LUNETTES POUR LE VISAGE LOSANGE !";
+              morpho_img_title_1 = "Lunettes de soleil";
+              morpho_img_title_2 = "Lunettes de vue";
+              morpho_img_2 = "visage-losange-femme-lunettes-de-vue.webp";
+              morpho_img_1 = "visage-losange-femme-lunettes-de-soleil.webp";
+              link_2 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-soleil/quand-on-a-un-visage-losange-hexagonal-ou-diamant/';
+              link_1 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-vue/quand-on-a-un-visage-en-losange-hexagonal-ou-diamant/';
+            } else if(menWomanValue == "2" && moreValue == "6" && wideValue == "12"){
+              morpho_txt = "VOUS AVEZ UN VISAGE EN LOSANGE !";
+              morpho_para = "Vous avez un visage très féminin. Avec vos pommettes hautes et larges, vous êtes tout en beauté !";
+              morpho_txt_2 = "NOS CONSEILS LUNETTES POUR LE VISAGE LOSANGE !";
+              morpho_img_title_1 = "Lunettes de soleil";
+              morpho_img_title_2 = "Lunettes de vue";
+              morpho_img_2 = "visage-losange-femme-lunettes-de-vue.webp";
+              morpho_img_1 = "visage-losange-femme-lunettes-de-soleil.webp";
+              link_2 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-soleil/quand-on-a-un-visage-losange-hexagonal-ou-diamant/';
+              link_1 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-vue/quand-on-a-un-visage-en-losange-hexagonal-ou-diamant/';
+            } else if(menWomanValue == "3" &&  moreValue == "1" && wideValue == "10"){
+              morpho_txt = "VOUS AVEZ UN VISAGE ROND !";
+              morpho_txt_2 = "NOS CONSEILS LUNETTES POUR LE VISAGE ROND !";
+              morpho_img_title_1 = "Lunettes de vue";
+              morpho_img_title_2 = "Lunettes de soleil";
+              morpho_img_1 = "visage-rond-homme-lunettes-de-vue.webp";
+              morpho_img_2 = "visage-rond-homme-lunettes-de-soleil.webp";
+              link_1 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-vue/quand-on-a-un-visage-rond/';
+              link_2 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-soleil/quand-on-a-un-visage-rond/';
+            } else if(menWomanValue == "3" && moreValue == "1" && wideValue == "11"){
+              morpho_txt = "VOUS AVEZ UN VISAGE EN OVALE !";
+              morpho_txt_2 = "NOS CONSEILS LUNETTES POUR LE VISAGE OVALE !";
+              morpho_img_title_1 = "Lunettes de vue";
+              morpho_img_title_2 = "Lunettes de soleil";
+              morpho_img_1 = "visage-ovale-homme-lunettes-de-vue.webp";
+              morpho_img_2 = "visage-ovale-homme-lunettes-de-soleil.webp";
+              link_1 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-vue/quand-on-a-un-visage-ovale/';
+              link_2 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-soleil/quand-on-a-un-visage-ovale/';
+            } else if(menWomanValue == "3" && moreValue == "1" && wideValue == "12"){
+              morpho_txt = "VOUS AVEZ UN VISAGE EN OBLONG !";
+              morpho_txt_2 = "NOS CONSEILS LUNETTES POUR LE VISAGE OBLONG !";
+              morpho_img_title_1 = "Lunettes de vue";
+              morpho_img_title_2 = "Lunettes de soleil";
+              morpho_img_1 = "visage-oblong-homme-lunettes-de-vue.webp";
+              morpho_img_2 = "visage-oblong-homme-lunettes-de-soleil.webp";
+              link_1 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-vue/quand-on-a-un-visage-oblong-ou-allonge/';
+              link_2 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-soleil/quand-on-a-un-visage-oblong-ou-allonge/';
+            } else if(menWomanValue == "3" && moreValue == "2" && wideValue == "10"){
+              morpho_txt = "VOUS AVEZ UN VISAGE EN CARRÉ !";
+              morpho_txt_2 = "NOS CONSEILS LUNETTES POUR LE VISAGE CARRE !";
+              morpho_img_title_1 = "Lunettes de vue";
+              morpho_img_title_2 = "Lunettes de soleil";
+              morpho_img_1 = "visage-carre-homme-lunettes-de-vue.webp";
+              morpho_img_2 = "visage-carre-homme-lunettes-de-soleil.webp";
+              link_1 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-vue/quand-on-a-un-visage-carre/';
+              link_2 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-soleil/quand-on-a-un-visage-carre/';
+            } else if(menWomanValue == "3" && moreValue == "2" && wideValue == "11"){
+              morpho_txt = "VOUS AVEZ UN VISAGE EN RECTANGLE !";
+              morpho_txt_2 = "NOS CONSEILS LUNETTES POUR LE VISAGE RECTANGLE !";
+              morpho_img_title_1 = "Lunettes de vue";
+              morpho_img_title_2 = "Lunettes de soleil";
+              morpho_img_1 = "visage-rectangle-homme-lunettes-de-vue.webp";
+              morpho_img_2 = "visage-rectangle-homme-lunettes-de-soleil.webp";
+              link_1 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-vue/quand-on-a-un-visage-rectangulaire/';
+              link_2 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-soleil/quand-on-a-un-visage-rectangulaire/';
+            } else if(menWomanValue == "3" && moreValue == "2" && wideValue == "12"){
+              morpho_txt = "VOUS AVEZ UN VISAGE EN RECTANGLE !";
+              morpho_txt_2 = "NOS CONSEILS LUNETTES POUR LE VISAGE RECTANGLE !";
+              morpho_img_title_1 = "Lunettes de vue";
+              morpho_img_title_2 = "Lunettes de soleil";
+              morpho_img_1 = "visage-rectangle-homme-lunettes-de-vue.webp";
+              morpho_img_2 = "visage-rectangle-homme-lunettes-de-soleil.webp";
+              link_1 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-vue/quand-on-a-un-visage-rectangulaire/';
+              link_2 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-soleil/quand-on-a-un-visage-rectangulaire/';
+            } else if(menWomanValue == "3" && moreValue == "3" && wideValue == "10"){
+              morpho_txt = "VOUS AVEZ UN VISAGE EN TRIANGLE !";
+              morpho_txt_2 = "NOS CONSEILS LUNETTES POUR LE VISAGE TRIANGLE !";
+              morpho_img_title_1 = "Lunettes de vue";
+              morpho_img_title_2 = "Lunettes de soleil";
+              morpho_img_1 = "visage-triangle-homme-lunettes-de-vue.webp";
+              morpho_img_2 = "visage-triangle-homme-lunettes-de-soleil.webp";
+              link_1 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-vue/quand-on-a-un-visage-en-triangle-haut-poire-ou-trapeze/';
+              link_2 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-soleil/quand-on-a-un-visage-en-triangle-haut-poire-ou-trapeze/';
+            } else if(menWomanValue == "3" && moreValue == "3" &&  wideValue == "11"){
+              morpho_txt = "VOUS AVEZ UN VISAGE EN TRIANGLE !";
+              morpho_txt_2 = "NOS CONSEILS LUNETTES POUR LE VISAGE TRIANGLE !";
+              morpho_img_title_1 = "Lunettes de vue";
+              morpho_img_title_2 = "Lunettes de soleil";
+              morpho_img_1 = "visage-triangle-homme-lunettes-de-vue.webp";
+              morpho_img_2 = "visage-triangle-homme-lunettes-de-soleil.webp";
+              link_1 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-vue/quand-on-a-un-visage-en-triangle-haut-poire-ou-trapeze/';
+              link_2 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-soleil/quand-on-a-un-visage-en-triangle-haut-poire-ou-trapeze/';
+            } else if(menWomanValue == "3" && moreValue == "3" &&  wideValue == "12"){
+              morpho_txt = "VOUS AVEZ UN VISAGE EN TRIANGLE !";
+              morpho_txt_2 = "NOS CONSEILS LUNETTES POUR LE VISAGE TRIANGLE !";
+              morpho_img_title_1 = "Lunettes de vue";
+              morpho_img_title_2 = "Lunettes de soleil";
+              morpho_img_1 = "visage-triangle-homme-lunettes-de-vue.webp";
+              morpho_img_2 = "visage-triangle-homme-lunettes-de-soleil.webp";
+              link_1 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-vue/quand-on-a-un-visage-en-triangle-haut-poire-ou-trapeze/';
+              link_2 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-soleil/quand-on-a-un-visage-en-triangle-haut-poire-ou-trapeze/';
+            } else if(menWomanValue == "3" && moreValue == "4" && wideValue == "10"){
+              morpho_txt = "VOUS AVEZ UN VISAGE EN TRIANGLE INVERSÉ !";
+              morpho_txt_2 = "NOS CONSEILS LUNETTES POUR LE VISAGE TRIANGLE INVERSÉ !";
+              morpho_img_title_1 = "Lunettes de vue";
+              morpho_img_title_2 = "Lunettes de soleil";
+              morpho_img_1 = "visage-traingle-inverse-homme-lunettes-de-vue.webp";
+              morpho_img_2 = "visage-triangle-inverse-homme-lunettes-de-soleil.webp";
+              link_1 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-vue/quand-on-a-un-visage-en-triangle-bas-inverse-v-ou-coeur/';
+              link_2 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-soleil/quand-on-a-un-visage-en-triangle-bas-inverse-v-ou-coeur/';
+            } else if(menWomanValue == "3" && moreValue == "4" && wideValue == "11"){
+              morpho_txt = "VOUS AVEZ UN VISAGE EN TRIANGLE INVERSÉ !";
+              morpho_txt_2 = "NOS CONSEILS LUNETTES POUR LE VISAGE TRIANGLE INVERSÉ !";
+              morpho_img_title_1 = "Lunettes de vue";
+              morpho_img_title_2 = "Lunettes de soleil";
+              morpho_img_1 = "visage-traingle-inverse-homme-lunettes-de-vue.webp";
+              morpho_img_2 = "visage-triangle-inverse-homme-lunettes-de-soleil.webp";
+              link_1 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-vue/quand-on-a-un-visage-en-triangle-bas-inverse-v-ou-coeur/';
+              link_2 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-soleil/quand-on-a-un-visage-en-triangle-bas-inverse-v-ou-coeur/';
+            } else if(menWomanValue == "3" && moreValue == "4" && wideValue == "12"){
+              morpho_txt = "VOUS AVEZ UN VISAGE EN TRIANGLE INVERSÉ !";
+              morpho_txt_2 = "NOS CONSEILS LUNETTES POUR LE VISAGE TRIANGLE INVERSÉ !";
+              morpho_img_title_1 = "Lunettes de vue";
+              morpho_img_title_2 = "Lunettes de soleil";
+              morpho_img_1 = "visage-traingle-inverse-homme-lunettes-de-vue.webp";
+              morpho_img_2 = "visage-triangle-inverse-homme-lunettes-de-soleil.webp";
+              link_1 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-vue/quand-on-a-un-visage-en-triangle-bas-inverse-v-ou-coeur/';
+              link_2 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-soleil/quand-on-a-un-visage-en-triangle-bas-inverse-v-ou-coeur/';
+            } else if(menWomanValue == "3" && moreValue == "5" && wideValue == "10"){
+              morpho_txt = "VOUS AVEZ UN VISAGE ROND !";
+              morpho_txt_2 = "NOS CONSEILS LUNETTES POUR LE VISAGE ROND !";
+              morpho_img_title_1 = "Lunettes de vue";
+              morpho_img_title_2 = "Lunettes de soleil";
+              morpho_img_1 = "visage-rond-homme-lunettes-de-vue.webp";
+              morpho_img_2 = "visage-rond-homme-lunettes-de-soleil.webp";
+              link_1 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-vue/quand-on-a-un-visage-rond/';
+              link_2 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-soleil/quand-on-a-un-visage-rond/';
+            } else if(menWomanValue == "3" && moreValue == "5" && wideValue == "11"){
+              morpho_txt = "VOUS AVEZ UN VISAGE EN OVALE !";
+              morpho_txt_2 = "NOS CONSEILS LUNETTES POUR LE VISAGE OVALE !";
+              morpho_img_title_1 = "Lunettes de vue";
+              morpho_img_title_2 = "Lunettes de soleil";
+              morpho_img_1 = "visage-ovale-homme-lunettes-de-vue.webp";
+              morpho_img_2 = "visage-ovale-homme-lunettes-de-soleil.webp";
+              link_1 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-vue/quand-on-a-un-visage-ovale/';
+              link_2 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-soleil/quand-on-a-un-visage-ovale/';
+            } else if(menWomanValue == "3" && moreValue == "5" && wideValue == "12"){
+              morpho_txt = "VOUS AVEZ UN VISAGE EN OBLONG !";
+              morpho_txt_2 = "NOS CONSEILS LUNETTES POUR LE VISAGE OBLONG !";
+              morpho_img_title_1 = "Lunettes de vue";
+              morpho_img_title_2 = "Lunettes de soleil";
+              morpho_img_1 = "visage-oblong-homme-lunettes-de-vue.webp";
+              morpho_img_2 = "visage-oblong-homme-lunettes-de-soleil.webp";
+              link_1 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-vue/quand-on-a-un-visage-oblong-ou-allonge/';
+              link_2 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-soleil/quand-on-a-un-visage-oblong-ou-allonge/';
+            } else if(menWomanValue == "3" && moreValue == "6" && wideValue == "10"){
+              morpho_txt = "VOUS AVEZ UN VISAGE EN LOSANGE !";
+              morpho_txt_2 = "NOS CONSEILS LUNETTES POUR LE VISAGE LOSANGE !";
+              morpho_img_title_1 = "Lunettes de vue";
+              morpho_img_title_2 = "Lunettes de soleil";
+              morpho_img_1 = "visage-losange-homme-lunettes-de-vue.webp";
+              morpho_img_2 = "visage-losange-homme-lunettes-de-soleil.webp";
+              link_1 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-vue/quand-on-a-un-visage-en-losange-hexagonal-ou-diamant/';
+              link_2 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-soleil/quand-on-a-un-visage-losange-hexagonal-ou-diamant/';
+            } else if(menWomanValue == "3" && moreValue == "6" && wideValue == "11"){
+              morpho_txt = "VOUS AVEZ UN VISAGE EN LOSANGE !";
+              morpho_txt_2 = "NOS CONSEILS LUNETTES POUR LE VISAGE LOSANGE !";
+              morpho_img_title_1 = "Lunettes de vue";
+              morpho_img_title_2 = "Lunettes de soleil";
+              morpho_img_1 = "visage-losange-homme-lunettes-de-vue.webp";
+              morpho_img_2 = "visage-losange-homme-lunettes-de-soleil.webp";
+              link_1 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-vue/quand-on-a-un-visage-en-losange-hexagonal-ou-diamant/';
+              link_2 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-soleil/quand-on-a-un-visage-losange-hexagonal-ou-diamant/';
+            } else if(menWomanValue == "3" && moreValue == "6" && wideValue == "12"){
+              morpho_txt = "VOUS AVEZ UN VISAGE EN LOSANGE !";
+              morpho_txt_2 = "NOS CONSEILS LUNETTES POUR LE VISAGE LOSANGE !";
+              morpho_img_title_1 = "Lunettes de vue";
+              morpho_img_title_2 = "Lunettes de soleil";
+              morpho_img_1 = "visage-losange-homme-lunettes-de-vue.webp";
+              morpho_img_2 = "visage-losange-homme-lunettes-de-soleil.webp";
+              link_1 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-vue/quand-on-a-un-visage-en-losange-hexagonal-ou-diamant/';
+              link_2 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-soleil/quand-on-a-un-visage-losange-hexagonal-ou-diamant/';
+            } else if(menWomanValue == "4" &&  moreValue == "1" && wideValue == "10"){
+              morpho_txt = "VOUS AVEZ UN VISAGE ROND !";
+              morpho_txt_2 = "NOS CONSEILS LUNETTES POUR LE VISAGE ROND !";
+              morpho_img_title_1 = "Lunettes de soleil";
+              morpho_img_title_2 = "Lunettes de vue";
+              morpho_img_1 = "visage-rond-homme-lunettes-de-soleil.webp";
+              morpho_img_2 = "visage-rond-homme-lunettes-de-vue.webp";
+              link_1 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-vue/quand-on-a-un-visage-rond/';
+              link_2 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-soleil/quand-on-a-un-visage-rond/';
+            } else if(menWomanValue == "4" && moreValue == "1" && wideValue == "11"){
+              morpho_txt = "VOUS AVEZ UN VISAGE EN OVALE !";
+              morpho_txt_2 = "NOS CONSEILS LUNETTES POUR LE VISAGE OVALE !";
+              morpho_img_title_1 = "Lunettes de soleil";
+              morpho_img_title_2 = "Lunettes de vue";
+              morpho_img_1 = "visage-ovale-homme-lunettes-de-soleil.webp";
+              morpho_img_2 = "visage-ovale-homme-lunettes-de-vue.webp";
+              link_1 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-vue/quand-on-a-un-visage-ovale/';
+              link_2 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-soleil/quand-on-a-un-visage-ovale/';
+            } else if(menWomanValue == "4" && moreValue == "1" && wideValue == "12"){
+              morpho_txt = "VOUS AVEZ UN VISAGE EN OBLONG !";
+              morpho_txt_2 = "NOS CONSEILS LUNETTES POUR LE VISAGE OBLONG !";
+              morpho_img_title_1 = "Lunettes de soleil";
+              morpho_img_title_2 = "Lunettes de vue";
+              morpho_img_1 = "visage-oblong-homme-lunettes-de-soleil.webp";
+              morpho_img_2 = "visage-oblong-homme-lunettes-de-vue.webp";
+              link_1 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-vue/quand-on-a-un-visage-oblong-ou-allonge/';
+              link_2 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-soleil/quand-on-a-un-visage-oblong-ou-allonge/';
+            } else if(menWomanValue == "4" && moreValue == "2" && wideValue == "10"){
+              morpho_txt = "VOUS AVEZ UN VISAGE EN CARRÉ !";
+              morpho_txt_2 = "NOS CONSEILS LUNETTES POUR LE VISAGE CARRE !";
+              morpho_img_title_1 = "Lunettes de soleil";
+              morpho_img_title_2 = "Lunettes de vue";
+              morpho_img_1 = "visage-carre-homme-lunettes-de-soleil.webp";
+              morpho_img_2 = "visage-carre-homme-lunettes-de-vue.webp";
+              link_1 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-vue/quand-on-a-un-visage-carre/';
+              link_2 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-soleil/quand-on-a-un-visage-carre/';
+            } else if(menWomanValue == "4" && moreValue == "2" && wideValue == "11"){
+              morpho_txt = "VOUS AVEZ UN VISAGE EN RECTANGLE !";
+              morpho_txt_2 = "NOS CONSEILS LUNETTES POUR LE VISAGE RECTANGLE !";
+              morpho_img_title_1 = "Lunettes de soleil";
+              morpho_img_title_2 = "Lunettes de vue";
+              morpho_img_2 = "visage-rectangle-homme-lunettes-de-vue.webp";
+              morpho_img_1 = "visage-rectangle-homme-lunettes-de-soleil.webp";
+              link_2 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-soleil/quand-on-a-un-visage-rectangulaire/';
+              link_1 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-vue/quand-on-a-un-visage-rectangulaire/';
+            } else if(menWomanValue == "4" && moreValue == "2" && wideValue == "12"){
+              morpho_txt = "VOUS AVEZ UN VISAGE EN RECTANGLE !";
+              morpho_txt_2 = "NOS CONSEILS LUNETTES POUR LE VISAGE RECTANGLE !";
+              morpho_img_title_1 = "Lunettes de soleil";
+              morpho_img_title_2 = "Lunettes de vue";
+              morpho_img_2 = "visage-rectangle-homme-lunettes-de-vue.webp";
+              morpho_img_1 = "visage-rectangle-homme-lunettes-de-soleil.webp";
+              link_2 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-soleil/quand-on-a-un-visage-rectangulaire/';
+              link_1 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-vue/quand-on-a-un-visage-rectangulaire/';
+            } else if(menWomanValue == "4" && moreValue == "3" && wideValue == "10"){
+              morpho_txt = "VOUS AVEZ UN VISAGE EN TRIANGLE !";
+              morpho_txt_2 = "NOS CONSEILS LUNETTES POUR LE VISAGE TRIANGLE !";
+              morpho_img_title_1 = "Lunettes de soleil";
+              morpho_img_title_2 = "Lunettes de vue";
+              morpho_img_2 = "visage-triangle-homme-lunettes-de-vue.webp";
+              morpho_img_1 = "visage-triangle-homme-lunettes-de-soleil.webp";
+              link_2 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-soleil/quand-on-a-un-visage-en-triangle-haut-poire-ou-trapeze/';
+              link_1 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-vue/quand-on-a-un-visage-en-triangle-haut-poire-ou-trapeze/';
+            } else if(menWomanValue == "4" && moreValue == "3" &&  wideValue == "11"){
+              morpho_txt = "VOUS AVEZ UN VISAGE EN TRIANGLE !";
+              morpho_txt_2 = "NOS CONSEILS LUNETTES POUR LE VISAGE TRIANGLE !";
+              morpho_img_title_1 = "Lunettes de soleil";
+              morpho_img_title_2 = "Lunettes de vue";
+              morpho_img_2 = "visage-triangle-homme-lunettes-de-vue.webp";
+              morpho_img_1 = "visage-triangle-homme-lunettes-de-soleil.webp";
+              link_2 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-soleil/quand-on-a-un-visage-en-triangle-haut-poire-ou-trapeze/';
+              link_1 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-vue/quand-on-a-un-visage-en-triangle-haut-poire-ou-trapeze/';
+            } else if(menWomanValue == "4" && moreValue == "3" &&  wideValue == "12"){
+              morpho_txt = "VOUS AVEZ UN VISAGE EN TRIANGLE !";
+              morpho_txt_2 = "NOS CONSEILS LUNETTES POUR LE VISAGE TRIANGLE !";
+              morpho_img_title_1 = "Lunettes de soleil";
+              morpho_img_title_2 = "Lunettes de vue";
+              morpho_img_2 = "visage-triangle-homme-lunettes-de-vue.webp";
+              morpho_img_1 = "visage-triangle-homme-lunettes-de-soleil.webp";
+              link_2 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-soleil/quand-on-a-un-visage-en-triangle-haut-poire-ou-trapeze/';
+              link_1 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-vue/quand-on-a-un-visage-en-triangle-haut-poire-ou-trapeze/';
+            } else if(menWomanValue == "4" && moreValue == "4" && wideValue == "10"){
+              morpho_txt = "VOUS AVEZ UN VISAGE EN TRIANGLE INVERSÉ !";
+              morpho_txt_2 = "NOS CONSEILS LUNETTES POUR LE VISAGE TRIANGLE INVERSÉ !";
+              morpho_img_title_1 = "Lunettes de soleil";
+              morpho_img_title_2 = "Lunettes de vue";
+              morpho_img_2 = "visage-traingle-inverse-homme-lunettes-de-vue.webp";
+              morpho_img_1 = "visage-triangle-inverse-homme-lunettes-de-soleil.webp";
+              link_2 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-soleil/quand-on-a-un-visage-en-triangle-bas-inverse-v-ou-coeur/';
+              link_1 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-vue/quand-on-a-un-visage-en-triangle-bas-inverse-v-ou-coeur/';
+            } else if(menWomanValue == "4" && moreValue == "4" && wideValue == "11"){
+              morpho_txt = "VOUS AVEZ UN VISAGE EN TRIANGLE INVERSÉ !";
+              morpho_txt_2 = "NOS CONSEILS LUNETTES POUR LE VISAGE TRIANGLE INVERSÉ !";
+              morpho_img_title_1 = "Lunettes de soleil";
+              morpho_img_title_2 = "Lunettes de vue";
+              morpho_img_2 = "visage-traingle-inverse-homme-lunettes-de-vue.webp";
+              morpho_img_1 = "visage-triangle-inverse-homme-lunettes-de-soleil.webp";
+              link_2 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-soleil/quand-on-a-un-visage-en-triangle-bas-inverse-v-ou-coeur/';
+              link_1 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-vue/quand-on-a-un-visage-en-triangle-bas-inverse-v-ou-coeur/';
+            } else if(menWomanValue == "4" && moreValue == "4" && wideValue == "12"){
+              morpho_txt = "VOUS AVEZ UN VISAGE EN TRIANGLE INVERSÉ !";
+              morpho_txt_2 = "NOS CONSEILS LUNETTES POUR LE VISAGE TRIANGLE INVERSÉ !";
+              morpho_img_title_1 = "Lunettes de soleil";
+              morpho_img_title_2 = "Lunettes de vue";
+              morpho_img_2 = "visage-traingle-inverse-homme-lunettes-de-vue.webp";
+              morpho_img_1 = "visage-triangle-inverse-homme-lunettes-de-soleil.webp";
+              link_2 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-soleil/quand-on-a-un-visage-en-triangle-bas-inverse-v-ou-coeur/';
+              link_1 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-vue/quand-on-a-un-visage-en-triangle-bas-inverse-v-ou-coeur/';
+            } else if(menWomanValue == "4" && moreValue == "5" && wideValue == "10"){
+              morpho_txt = "VOUS AVEZ UN VISAGE ROND !";
+              morpho_txt_2 = "NOS CONSEILS LUNETTES POUR LE VISAGE ROND !";
+              morpho_img_title_1 = "Lunettes de soleil";
+              morpho_img_title_2 = "Lunettes de vue";
+              morpho_img_2 = "visage-rond-homme-lunettes-de-vue.webp";
+              morpho_img_1 = "visage-rond-homme-lunettes-de-soleil.webp";
+              link_2 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-soleil/quand-on-a-un-visage-rond/';
+              link_1 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-vue/quand-on-a-un-visage-rond/';
+            } else if(menWomanValue == "4" && moreValue == "5" && wideValue == "11"){
+              morpho_txt = "VOUS AVEZ UN VISAGE EN OVALE !";
+              morpho_txt_2 = "NOS CONSEILS LUNETTES POUR LE VISAGE OVALE !";
+              morpho_img_title_1 = "Lunettes de soleil";
+              morpho_img_title_2 = "Lunettes de vue";
+              morpho_img_2 = "visage-ovale-homme-lunettes-de-vue.webp";
+              morpho_img_1 = "visage-ovale-homme-lunettes-de-soleil.webp";
+              link_2 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-soleil/quand-on-a-un-visage-ovale/';
+              link_1 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-vue/quand-on-a-un-visage-ovale/';
+            } else if(menWomanValue == "4" && moreValue == "5" && wideValue == "12"){
+              morpho_txt = "VOUS AVEZ UN VISAGE EN OBLONG !";
+              morpho_txt_2 = "NOS CONSEILS LUNETTES POUR LE VISAGE OBLONG !";
+              morpho_img_title_1 = "Lunettes de soleil";
+              morpho_img_title_2 = "Lunettes de vue";
+              morpho_img_2 = "visage-oblong-homme-lunettes-de-vue.webp";
+              morpho_img_1 = "visage-oblong-homme-lunettes-de-soleil.webp";
+              link_2 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-soleil/quand-on-a-un-visage-oblong-ou-allonge/';
+              link_1 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-vue/quand-on-a-un-visage-oblong-ou-allonge/';
+            } else if(menWomanValue == "4" && moreValue == "6" && wideValue == "10"){
+              morpho_txt = "VOUS AVEZ UN VISAGE EN LOSANGE !";
+              morpho_txt_2 = "NOS CONSEILS LUNETTES POUR LE VISAGE LOSANGE !";
+              morpho_img_title_1 = "Lunettes de soleil";
+              morpho_img_title_2 = "Lunettes de vue";
+              morpho_img_2 = "visage-losange-homme-lunettes-de-vue.webp";
+              morpho_img_1 = "visage-losange-homme-lunettes-de-soleil.webp";
+              link_2 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-soleil/quand-on-a-un-visage-losange-hexagonal-ou-diamant/';
+              link_1 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-vue/quand-on-a-un-visage-en-losange-hexagonal-ou-diamant/';
+            } else if(menWomanValue == "4" && moreValue == "6" && wideValue == "11"){
+              morpho_txt = "VOUS AVEZ UN VISAGE EN LOSANGE !";
+              morpho_txt_2 = "NOS CONSEILS LUNETTES POUR LE VISAGE LOSANGE !";
+              morpho_img_title_1 = "Lunettes de soleil";
+              morpho_img_title_2 = "Lunettes de vue";
+              morpho_img_2 = "visage-losange-homme-lunettes-de-vue.webp";
+              morpho_img_1 = "visage-losange-homme-lunettes-de-soleil.webp";
+              link_2 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-soleil/quand-on-a-un-visage-losange-hexagonal-ou-diamant/';
+              link_1 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-vue/quand-on-a-un-visage-en-losange-hexagonal-ou-diamant/';
+            } else if(menWomanValue == "4" && moreValue == "6" && wideValue == "12"){
+              morpho_txt = "VOUS AVEZ UN VISAGE EN LOSANGE !";
+              morpho_txt_2 = "NOS CONSEILS LUNETTES POUR LE VISAGE LOSANGE !";
+              morpho_img_title_1 = "Lunettes de soleil";
+              morpho_img_title_2 = "Lunettes de vue";
+              morpho_img_2 = "visage-losange-homme-lunettes-de-vue.webp";
+              morpho_img_1 = "visage-losange-homme-lunettes-de-soleil.webp";
+              link_2 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-soleil/quand-on-a-un-visage-losange-hexagonal-ou-diamant/';
+              link_1 = '/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-vue/quand-on-a-un-visage-en-losange-hexagonal-ou-diamant/';
+            }
+                
+            $("#morpho_out_1").html(morpho_txt);
+            $("#morpho_out_2").html(morpho_para);
+            $("#morpho_out_3").html(morpho_txt_2);
+            $("#morpho_img_title_1").html(morpho_img_title_1);
+            $("#morpho_img_title_2").html(morpho_img_title_2);
+            $("#morpho_img_1").attr("src","https://www.regivia.com/wp-content/uploads/" + morpho_img_1);
+            $("#morpho_img_2").attr("src","https://www.regivia.com/wp-content/uploads/" + morpho_img_2);
+            $("#morpho_img_link_1").attr("href" , link_1);
+            $("#morpho_img_link_2").attr("href" , link_2);
+            
+
+            let temps = 0;
+
+            if(age && taille && poids){
+                let obj = removeComma($("#in_4").val());
+
+                if(w_unit == "lbs"){
+                    poids = poids / 2.205;
+                    obj = obj / 2.205;
+                }
+
+                if(l_unit == "inch"){
+                    taille = taille * 2.54;
+                }
+
+                let CE =(temps*MET*3.5*poids/200);
+                lien = "/comment-maigrir-conseils-solutions-trucs-et-astuces/calcul-des-depenses-energetiques-en-calories-par-sports-et-activites/"+ lien;
+
+                let out_1 = `<span>Une séance de ${temps} mn d'une personne de ${poids} kg pour l'activité "<a style="color: #fe298d;" href="${lien}">xvfds</a>" brûle:<span>`;
+                
+                    let PIDF=0;
+                if (hommeyFemmyValue == "2") {
+                    PIDF=(taille-100-((taille-150)/2.5));
+                } else if (hommeyFemmyValue == "1") {
+                    PIDF=(taille-100-((taille-150)/4));
+                }
+            
+
+                
+                let IMC = (poids / ((taille / 100) * (taille / 100)));
+
+                let STATUT;
+                let message;
+                let IMAGE;
+
+                if (IMC < 18.5) {
+                    message = "maigreur";
+                    IMAGE="imc-statut-maigreur.webp";
+                } else if (IMC < 25) {
+                    message = "corpulence normale";
+                    IMAGE="imc-statut-normal.webp";
+                } else if (IMC < 30) {
+                    message = "surpoids";
+                    IMAGE="imc-statut-suroids.webp";
+                } else {
+                    message = "obésité";
+                    IMAGE="imc-statut-obesite.webp";
+                }
+
+                let PIL = 0;
+                if (hommeyFemmyValue == "2") {
+                    PIL = taille - 100 - ((taille - 150) / 2.5);
+                } else {
+                    PIL = taille - 100 - ((taille - 150) / 4);
+                }
+
+
+                let pmaa = ((obj+PIL)/2);
+                let kap = (poids - pmaa );
+                let vakap = Math.abs(kap);
+
+                let textp = "";
+                if (kap>0) {textp="Poids moyen à perdre";}
+                else if (kap<0) {textp="Poids moyen à gagner";}
+                else {textp="Vous êtes à l'équilibre";} 
+
+                let text = "";
+                let link = "";
+                let butt_text = "";
+                
+
+                if (kap < 0.1) {
+                    text = "Vous n'avez pas de poids à perdre. Félicitations.";
+                    link = '/categorie-produit/coffret-minceur-box-de-regime/';
+                    butt_text = "VOIR TOUS NOS PROGRAMMES";
+                } else if (kap < 1) {
+                    text = "Vous êtes presque à votre poids d'équilibre. Vous souhaitez rééquilibrer votre alimentation ?  Pour vous aider, nous avons réuni ci-dessous dans un guide gratuit, tous les conseils pour atteindre une vie saine ! ";
+                    link = '/regivia-regime-proteine/programme-de-regime-proteine-regivia/programme-de-regime-s-a-3-kg-14-jours/';
+                    butt_text = "VOIR MON PROGRAMME";
+                } else if (kap < 3) {
+                    text = `En étant raisonnable vous pouvez vous fixer un objectif de <strong>${kap.toFixed(1)} kg</strong> et l\'atteindre au bout d\'environ <strong>2  semaines!</strong>`;
+                    link = '/regivia-regime-proteine/programme-de-regime-proteine-regivia/programme-de-regime-s-a-3-kg-14-jours/';
+                    butt_text = "VOIR MON PROGRAMME";
+                } else if (kap < 6) {
+                    text = `En étant raisonnable vous pouvez vous fixer un objectif de <strong>${kap.toFixed(1)} kg</strong> et l\'atteindre au bout d\'environ <strong>4  semaines!</strong>`;
+                    link = '/regivia-regime-proteine/programme-de-regime-proteine-regivia/programme-de-regime-m-3-a-6-kg-28-jours/';
+                    butt_text = "VOIR MON PROGRAMME";
+                } else if (kap < 9) {
+                    text = `En étant raisonnable vous pouvez vous fixer un objectif de <strong>${kap.toFixed(1)} kg</strong> et l\'atteindre au bout d\'environ <strong>6  semaines!</strong>`;
+                    link = '/regivia-regime-proteine/programme-de-regime-proteine-regivia/programme-de-regime-l-6-a-9-kg-42-jours/';
+                    butt_text = "VOIR MON PROGRAMME";
+                } else if (kap < 12) {
+                    text = `En étant raisonnable vous pouvez vous fixer un objectif de <strong>${kap.toFixed(1)} kg</strong> et l\'atteindre au bout d\'environ <strong>10  semaines!</strong>`;
+                    link = '/regivia-regime-proteine/programme-de-regime-proteine-regivia/programme-de-regime-xl-9-a-12-kg-56-jours/';
+                    butt_text = "VOIR MON PROGRAMME";
+                } else if (kap < 15) {
+                    text = `En étant raisonnable vous pouvez vous fixer un objectif de <strong>${kap.toFixed(1)} kg</strong> et l\'atteindre au bout d\'environ <strong>10  semaines !</strong>`;
+                    link = '/regivia-regime-proteine/programme-de-regime-proteine-regivia/programme-de-regime-xxl-12-a-15-kg-70-jours/';
+                    butt_text = "VOIR MON PROGRAMME";
+                } else {
+                    text = 'En étant raisonnable vous pouvez vous fixer un objectif d\'environ <strong>15 kg</strong> et l\'atteindre au bout d\'environ <strong>10  semaines !</strong>';
+                    link = '/regivia-regime-proteine/programme-de-regime-proteine-regivia/programme-de-regime-xxl-12-a-15-kg-70-jours/';
+                    butt_text = "VOIR MON PROGRAMME";
+                }
+
+                $("#out-1").html(out_1);
+                $("#out-2").text(CE.toFixed(1));
+                $("#out-3").text(Number(IMC).toFixed(1));
+                $("#out-4").text(message);
+                $("#out-5").text(poids.toFixed(1) + " "+w_unit);
+                $("#out-6").text(PIL.toFixed(1) + " "+w_unit);
+                $("#out-7").text(obj.toFixed(1) + " "+w_unit);
+                $("#out-8").text(Number(pmaa).toFixed(1));
+                $("#out-9").text(Number(vakap).toFixed(1));
+                $("#poids_txt").html(textp);
+                $("#footer_txt").html(text);
+                $("#butt-3").attr("href" , link);
+                $("#butt-3").text(butt_text);
+                $("#img_sec").attr("src" ,"https://www.regivia.com/wp-content/uploads/" + IMAGE);
+            }
+        };
+
+        $(".step-btn").on("click", function() {
+            let step_vl = $(this).data("value");
+
+            $('html, body').animate({
+                scrollTop: $("#"+step_vl).offset().top - 150
+            }, 500);
+        });
+
+    });
+</script>
+</body>
+
+</html>

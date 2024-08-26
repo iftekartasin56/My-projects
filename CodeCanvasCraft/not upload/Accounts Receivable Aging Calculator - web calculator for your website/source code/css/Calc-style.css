@@ -1,0 +1,261 @@
+:root{
+    --Calc-primary-color:#fe7d81;
+    --Calc-secondary-color: #963BA4;
+}
+#ara *, ::after, ::before {
+    box-sizing: border-box;
+}
+#ara {
+    line-height: 1.5;
+    font-family: inherit;
+}
+#ara .container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #000000;
+    text-align: left;
+    margin-top: 4rem;
+}
+#ara label {
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 400;
+    color: #000000;
+    margin-bottom: 0.5rem;
+}
+#ara .row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+#ara .col-md-12, #ara .col-md-6 {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+#ara .form-group {
+    margin-bottom: 1rem;
+}
+#ara .form-control {
+    display: block;
+    width: 100%;
+    height: 35px;
+    padding: 0.275rem 0.75rem;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #000000;
+    border: 1px solid #f3ecf4;
+    background: #f3ecf4;
+    border-radius: 6px;
+    background-clip: padding-box;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+#ara .form-control:focus {
+    outline: none;
+}
+#ara .text-center {
+    text-align: center!important;
+}
+#ara .btn {
+    width: 100%;
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    border: 1px solid transparent;
+    padding: 0.275rem 0.75rem;
+    font-size: 16px;
+    line-height: 1.5;
+    border-radius: 25px;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+#ara .cl-wrapper {
+    background-color: #ffffff;
+    padding: 2rem 2rem;
+    border-radius: 15px;
+    box-shadow: 0 0 20px #ccc;
+    margin-bottom: 3rem;
+}
+#ara .btn-primary {
+    font-size: 18px;
+    color: #fff;
+    background-color: var(--Calc-primary-color);
+    border-color: var(--Calc-primary-color);
+    margin: 0;
+}
+#ara .btn-primary:hover {
+    color: var(--Calc-primary-color);
+    background-color: #ffffff;
+    border-color: var(--Calc-primary-color);
+}
+#ara .btn:focus {
+    outline: none;
+}
+@media (min-width: 576px){
+    #ara .container {
+        max-width: 540px;
+    }
+}
+@media (min-width: 768px){
+    #ara .container {
+        max-width: 100%;
+    }
+    #ara .col-md-12 {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    #ara .col-md-6 {
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    #ara .col-md-3 {
+        -ms-flex: 0 0 25%;
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+}
+@media (min-width: 992px){
+    #ara .container {
+        max-width: 600px;
+    }
+}
+@media (min-width: 1200px) {
+    #ara .container {
+        max-width: 900px;
+    }
+}
+#ara .form-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+#ara .sec-title {
+    font-size: 18px;
+    margin: 0;
+    margin-bottom: 20px;
+    color: #000000;
+}
+#ara .rs-title {
+    font-weight: 600;
+    font-size: 24px;
+    margin: 0;
+    color: #000000;
+    text-align: center;
+}
+#ara .rs-value {
+    font-weight: 600;
+    font-size: 34px;
+    margin: 0;
+    margin-bottom: 8px;
+    color: var(--Calc-secondary-color);
+    text-align: center;
+}
+#ara .top-title-sec {
+    text-align: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--Calc-primary-color);
+    padding: 8px 10px;
+}
+#ara .top-title {
+    margin: 0;
+    font-size: 24px;
+    color: #000000;
+}
+#ara .top-title-sec p {
+    margin: 0;
+    color: #ececec;
+}
+#ara .top-title-sec p a {
+    margin: 0;
+    text-decoration: none;
+    color: #ececec;
+}
+#ara .sp-rs-sec {
+    background: var(--Calc-primary-color);
+    border-radius: 15px;
+    padding: 26px;
+    box-shadow: 0px 0px 20px rgb(0 0 0 / 30%);
+}
+#ara .rs-sec {
+    padding: 5px 16px;
+    background-color: #F3ECF4;
+    border-radius: 5px;
+}
+#ara .sp-rs-sec .rs-value {
+    margin-bottom: 5px;
+    color: #fff;
+    font-size: 2.5rem;
+    line-height: 38px;
+}
+#ara .sp-rs-sec .rs-title {
+    color: #fff;
+}
+#ara .form-group {
+    position: relative;
+}
+#ara .prepend-text {
+    font-size: 16px;
+    position: absolute;
+    bottom: 4px;
+    left: 5px;
+    padding: 1px 5px;
+    border-radius: 5px;
+    color: #545454;
+}
+#ara .append-text {
+    font-size: 16px;
+    position: absolute;
+    bottom: 2px;
+    right: 5px;
+    padding: 1px 5px;
+    border-radius: 5px;
+    color: #545454;
+}
+#ara .sp-pd-left {
+    padding-left: 22px;
+}
+#ara .sp-pd-right {
+    padding-right: 22px;
+}
+#ara .sp-pd-top {
+    padding-top: 20px;
+}
+@media (max-width: 768px){
+    #ara .child-img {
+        min-width: 100%;
+        width: 100%;
+        margin-bottom: -6rem;
+        margin-right: -2rem;
+        margin-top: -2rem;
+    }
+    #ara .cl-wrapper {
+        padding: 1.5rem 1.5rem;
+    }
+    #ara .top-title {
+        font-size: 22px;
+    }
+    #ara .sp-rs-sec {
+        margin-top: 2rem;
+    }
+}
+#ara .sp-left {
+    padding-left: 20px;
+}

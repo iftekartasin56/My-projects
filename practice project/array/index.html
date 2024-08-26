@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+</head>
+<body>
+    <div>
+        <p id="arr_values"></p>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+
+        let array = [21, 54, 63, 85, 98, 200, 100, 250, 47, 54, 31, 78, 21, 41, 37, 25, 69, 70, 80, 99, 78, 56,250,500];
+        let sum = 0;
+
+        function calculateSum() {
+            sum = array.reduce((total, currentValue) => total + currentValue, 0);
+            console.log("Sum of the array elements =", sum);
+        }
+
+        function displayArrayValues() {
+            let output = "";
+            for (let i = 0; i < array.length; i++) {
+                output += array[i] + " ";
+            }
+            document.getElementById("arr_values").textContent = output;
+        }
+
+        calculateSum();
+        displayArrayValues();
+
+    </script>
+</body>
+</html>

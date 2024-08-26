@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/Calc-style.css">
+</head>
+<body>
+<div id="bmi__calculator">
+   <div class="bmi__inner">
+      <div class="bmi__inner_row">
+         <div class="bmi__box">
+            <div class="option-sec">
+                <div class="option-item is-active" onclick="bmi__calculator.changeUnit(1);">US Units</div>
+                <div class="option-item" onclick="bmi__calculator.changeUnit(2);">Metric Units</div>
+            </div>
+            <div class="bmi__name">Height:</div>
+            <div class="bmi__imperial con-1">
+               <div class="hd-in-sec">
+                    <div class="bmi__group bmi__group_double"> <input type="text" id="bmi__height_ft" class="bmi__inputs" value="5" placeholder=""><span class="bmi__addon">ft</span> </div>
+                    <div class="bmi__group bmi__group_double"> <input type="text" id="bmi__height_in" class="bmi__inputs" value="10" placeholder=""><span class="bmi__addon">in</span> </div>
+               </div>
+            </div>
+            <div class="bmi__imperial con-2">
+               <div class="bmi__group"> <input type="text" id="bmi__height_cm" class="bmi__inputs" value="180" placeholder=""><span class="bmi__addon">cm</span> </div>
+            </div>
+            <div class="bmi__name">Weight:</div>
+            <div class="bmi__imperial">
+               <div class="bmi__group con-1"> <input type="text" id="bmi__weight_lbs" class="bmi__inputs" value="170" placeholder=""><span class="bmi__addon">lbs</span> </div>
+               <div class="bmi__group con-2"> <input type="text" id="bmi__weight_kg" class="bmi__inputs" value="65" placeholder=""><span class="bmi__addon">kg</span> </div>
+            </div>
+            <div class="bmi__btn calc-btn" onclick="bmi__calculator.calculate();">calculate</div>
+         </div>
+         <div class="bmi__box">
+            <div class="bmi__result">
+                <div class="bmi__graphic">
+                    <div class="bmi__graphic_scale">
+                        <span id="bmi__marker">You</span> 
+                        <span class="bmi__range_section bmi__range_section_obese">
+                            <span class="bmi__range_decriptionn"> <b>Obese</b>30.0 and above </span>
+                        </span>
+                        <span class="bmi__range_section bmi__range_section_overweight">
+                            <span class="bmi__range_decriptionn"> <b>Overweight</b>25.0 - 29.9 </span>
+                        </span>
+                        <span class="bmi__range_section bmi__range_section_healthy">
+                            <span class="bmi__range_decriptionn selected"> <b>Healthy</b>18.5 - 24.9 </span>
+                        </span>
+                        <span class="bmi__range_section bmi__range_section_underweight">
+                            <span class="bmi__range_decriptionn"> <b>Underweight</b>Below 18.5 </span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+         </div>
+      </div>
+      <div class="bmi__result_title">Your BMI = <span id="bmi__value">0</span></div>
+      <div class="bmi__details">
+         <div class="bmi__details_result_text" id="bmi__details_result_text_obese">
+            <div>Since your weight puts you in the obese range, you're much more likely to have serious health problems.</div>
+            <div><strong>The healthy range for BMI is between 18.5 and 24.9</strong>.</div>
+         </div>
+         <div class="bmi__details_result_text" id="bmi__details_result_text_over">
+            <div>Since your weight puts you in the overweight range, losing some extra pounds is a good first step toward lowering your chances of health problems.&nbsp;</div>
+            <div><strong>The healthy range for BMI is between 18.5 and 24.9.&nbsp;</strong></div>
+            <div>If you have a very muscular build, though, you could have an overweight BMI and still be OK.</div>
+         </div>
+         <div class="bmi__details_result_text" id="bmi__details_result_text_under">
+            <div>A few more pounds can lessen your chances of thinning bones and a weakened immune system, as well as feeling tired. Women who are underweight may have irregular periods or stop having them altogether. Underweight men may have lower sperm counts.</div>
+            <div><strong>The healthy range for BMI is between 18.5 and 24.9</strong>.</div>
+         </div>
+         <div class="bmi__details_result_text" id="bmi__details_result_text_normal">
+            <div>You're in a good place now. <strong>The healthy range for BMI is between 18.5 and 24.9</strong>. Keep up your healthy habits to maintain your weight.</div>
+         </div>
+         <span class="bmi__directive">A healthy weight for someone your height would be</span> 
+         <div class="bmi__weight_range"> <span class="" id="bmi__weight_range">0 - 0</span> <span id="bmi__weight_unit">LBS</span></div>
+      </div>
+   </div>
+</div>
+<script src="js/Calc-script.js"></script>
+</body>
+</html>

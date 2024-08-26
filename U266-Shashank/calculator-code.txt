@@ -1,0 +1,929 @@
+<script>
+    let mortgage_interest_rate = 7.4;
+</script>
+<style>
+#mx_cl *, ::after, ::before {
+    box-sizing: border-box;
+}
+#mx_cl {
+    line-height: 1.5;
+    font-family: inherit;
+}
+#mx_cl .container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #000000;
+    text-align: left;
+}
+#mx_cl label {
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 400;
+    color: #000000;
+    margin-bottom: 0.5rem;
+}
+#mx_cl .row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+#mx_cl .col-md-1, #mx_cl .col-md-10, #mx_cl .col-md-11, #mx_cl .col-md-12, #mx_cl .col-md-2, #mx_cl .col-md-3, #mx_cl .col-md-4, #mx_cl .col-md-5, #mx_cl .col-md-6, #mx_cl .col-md-7, #mx_cl .col-md-8, #mx_cl .col-md-9 {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+#mx_cl .form-group {
+    margin-bottom: 1rem;
+}
+#mx_cl .form-control {
+    display: block;
+    width: 100%;
+    height: 35px !important;
+    padding: 0.275rem 0.75rem;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #4a4a4a !important;
+    background-color: #F2F8FC;
+    background-clip: padding-box;
+    border: 1px solid #BDBDBD !important;
+    border-radius: 10px;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+#mx_cl .form-control:focus {
+    outline: none;
+}
+#mx_cl .btn {
+    display: inline-block;
+    font-weight: 400;
+    color: #212529;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: 5px;
+    font-size: 16px;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+#mx_cl .btn-primary {
+    width: 100%;
+    height: 38px;
+    color: #ffffff;
+    background: #1469A3;
+    border-color: #1469A3;
+    padding: 2px 38px;
+    text-decoration: none;
+    line-height: 33px;
+    border-radius: 0 !important;
+    margin: 0 !important;
+}
+#mx_cl .btn-primary:hover {
+    color: #fff;
+    background: #0073b9;
+    border-color: #0073b9;
+}
+#mx_cl .btn-reset {
+    color: #fff;
+    background-color: #28a745;
+    border-color: #28a745;
+}
+#mx_cl .prepend-text {
+    font-size: 16px;
+    position: absolute;
+    bottom: 4px;
+    left: 2px;
+    padding: 1px 5px;
+    border-radius: 5px;
+    color: #000000;
+}
+#mx_cl .append-text {
+    font-size: 16px;
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    padding: 1px 5px;
+    border-radius: 5px;
+    color: #000000;
+}
+#mx_cl .sp-pd-left {
+    padding-left: 20px;
+}
+
+#mx_cl .range-vl {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 400;
+    color: #000;
+    border: 1px solid #0d2131;
+    padding: 2px 15px;
+    border-radius: 5px;
+}
+#mx_cl .range-wrap {
+    display: block;
+    position: relative;
+    padding: 0;
+    margin: 0 0 5px 0;
+}
+
+#mx_cl input[type=range] {
+    margin: 0 0 0 0;
+    outline: none;
+    padding: 0;
+    width: 100%;
+    height: 7px;
+    background-color: #F3F3F3;
+    background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #0073b9), color-stop(100%, #0073b9));
+    border: 1px solid #ccc;
+    background-size: 0% 100%;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    cursor: pointer;
+    -webkit-appearance: none;
+}
+
+#mx_cl input[type=range]::-webkit-slider-runnable-track {
+    box-shadow: none;
+    border: none;
+    background: transparent;
+    -webkit-appearance: none;
+}
+#mx_cl input[type=range]::-webkit-slider-thumb {
+    height: 20px;
+    width: 20px;
+    margin-top: -3px;
+    background: #0073b9;
+    border: 5px solid #0073b9;
+    border-radius: 25px;
+    box-shadow: 0 2px 2px 0px #646464;
+    -webkit-appearance: none;
+}
+#mx_cl table {
+    border-collapse: collapse;
+}
+#mx_cl .table {
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #212529;
+}
+#mx_cl .table td, #mx_cl .table th {
+    padding: 0;
+    padding-top: 8px;
+    vertical-align: top;
+}
+#mx_cl .text-center {
+    text-align: center;
+}
+@media (min-width: 576px){
+    #mx_cl .container {
+        max-width: 100%;
+    }
+}
+@media (min-width: 768px){
+    #mx_cl .container {
+        max-width: 100%;
+    }
+    #mx_cl .col-md-12 {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    #mx_cl .col-md-9 {
+        -ms-flex: 0 0 75%;
+        flex: 0 0 75%;
+        max-width: 75%;
+    }
+    #mx_cl .col-md-8 {
+        -ms-flex: 0 0 66.666667%;
+        flex: 0 0 66.666667%;
+        max-width: 66.666667%;
+    }
+    #mx_cl .col-md-7 {
+        -ms-flex: 0 0 58.33333%;
+        flex: 0 0 58.33333%;
+        max-width: 58.33333%;
+    }
+    #mx_cl .col-md-6 {
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    #mx_cl .col-md-5 {
+        -ms-flex: 0 0 41.666667%;
+        flex: 0 0 41.666667%;
+        max-width: 41.666667%;
+    }
+    #mx_cl .col-md-4 {
+        -ms-flex: 0 0 33.333333%;
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+    }
+    #mx_cl .col-md-3 {
+        -ms-flex: 0 0 25%;
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+}
+@media (min-width: 992px){
+    #mx_cl .container {
+        max-width: 960px;
+    }
+}
+@media (min-width: 1200px) {
+    #mx_cl .container {
+        max-width: 1150px;
+    }
+}
+#mx_cl .text-right {
+    text-align: right ;
+}
+#mx_cl .form-group, #mx_cl .input-group {
+    position: relative;
+    margin-bottom: 22px;
+    padding: 0 !important;
+}
+
+#mx_cl .top-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1F3E53;
+    border-bottom: 1px solid #DADADA;
+    margin-bottom: 22px;
+}
+#mx_cl .sub-title {
+    font-size: 16px;
+    font-weight: 400;
+    color: #000000;
+    margin-bottom: 15px;
+}
+#mx_cl .in-sec-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #0073b9;
+    border-bottom: 1px solid #0073b9;
+    padding: 4px 0px;
+    margin: 4px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#mx_cl .in-sec-title .cross-btn {
+    width: 25px;
+    height: 25px;
+    display: flex;
+    background: #fff;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #ccc;
+    color: #ccc;
+    cursor: pointer;  
+    border: 1px solid #ccc;
+}
+#mx_cl .in-sec-title .cross-btn.is-active {
+    color: red;
+    border-color: red; 
+}
+#mx_cl .sec label {
+    font-size: 14px;
+}
+#mx_cl .sec .form-control {
+    font-size: 14px;
+}
+#mx_cl .width-12 {
+    width: 12.6530%;
+}
+#mx_cl .width-16 {
+    width: 16.7346%;
+}
+#mx_cl .width-21 {
+    width: 26%;
+}
+#mx_cl .middle-in-title {
+    color: #000;
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+#mx_cl .middle-in-subtitle {
+    color: #000;
+    font-size: 12px;
+    font-weight: 400;
+    margin-bottom: 6px;
+}
+#mx_cl .get-btn {
+    width: 100%;
+    margin-top: 16px;
+    color: #fff;
+    background-color: #0073b9;
+    border-color: #0073b9;
+}
+#mx_cl .brekdown-title {
+    color: #000;
+    font-size: 25px;
+    font-weight: 600;
+    margin: 0;
+    margin-bottom: 10px;
+}
+#mx_cl .tb-head-title {
+    color: #0073b9;
+    font-size: 16px !important;
+    font-weight: 600;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #0073b9;
+}
+#mx_cl .tb-head-vl {
+    color: #0073b9;
+    font-size: 16px !important;
+    font-weight: 600;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #0073b9;
+    text-align: right;
+}
+#mx_cl .tb-credit-title {
+    color: #000;
+    font-size: 14px !important;
+    font-weight: 400;
+    padding-left: 10px !important;
+}
+#mx_cl .tb-credit-vl {
+    color: #000;
+    font-size: 14px !important;
+    font-weight: 400;
+    text-align: right;
+}
+#mx_cl .right-rs-sec{
+    margin-top: 30px;
+}
+#mx_cl .right-rs-img{
+    display: block;
+    text-align: center;
+    margin-bottom: 26px;
+}
+#mx_cl .right-rs-title{
+    font-size: 20px;
+    font-weight: 600;
+    color: #0073b9;
+    text-align: center;
+}
+#mx_cl .right-rs-vl{
+    font-size: 35px;
+    font-weight: 600;
+    color: #000;
+    text-align: center;
+    margin-bottom: 10px;
+}
+#mx_cl .right-rs-para{
+    font-size: 18px;
+    font-weight: 400;
+    color: #000;
+    text-align: center;
+}
+#mx_cl .free-title{
+    color: #000;
+    font-size: 25px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 10px;
+}
+#mx_cl .free-para{
+    color: #000000;
+    font-size: 14px;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 10px;
+}
+#mx_cl .free-month{
+    color: #0073b9;
+    font-size: 25px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    padding: 5px;
+}
+#mx_cl .free-boost{
+    color: #0073b9;
+    font-size: 14px;
+    font-weight: 400;
+    text-align: center;
+}
+#mx_cl .right-bt-link a{
+    color: #0073b9;
+    vertical-align: middle;
+}
+#mx_cl .right-bt-link{
+    text-align: right;
+}
+#mx_cl .left-border{
+    border-left: 1px solid #0073b9;
+}
+#mx_cl .btn-sec{
+    
+}
+#mx_cl .hidden-sec{
+    display: none;
+}
+#mx_cl .err-input{
+    border-color: red;
+}
+#mx_cl .f-600{
+    font-weight: 600;
+}
+#mx_cl .input-sec {
+    box-shadow: 0 0 10px #e7e7e7;
+    border-radius: 15px;
+    padding: 28px 34px 19px 34px;
+    height: 100%;
+    background: #ffffff;
+}
+#mx_cl .help-tip{
+    position: absolute;
+    top: 1px;
+    right: 0px;
+    text-align: center;
+    background-color: #ffffff;
+    border: 1px solid #000;
+    color: #000;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    font-size: 12px;
+    line-height: 26px;
+    cursor: default;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+}
+
+#mx_cl .help-tip:before{
+    content: '?';
+    font-weight: bold;
+    color: #000;
+}
+
+#mx_cl .help-tip:hover p{
+    display:block;
+    transform-origin: 100% 0%;
+
+    -webkit-animation: fadeIn 0.3s ease-in-out;
+    animation: fadeIn 0.3s ease-in-out;
+
+}
+
+#mx_cl .help-tip p{    /* The tooltip */
+    display: none;
+    text-align: left;
+    background-color: #1E2021;
+    padding: 20px;
+    width: 300px;
+    position: absolute;
+    border-radius: 3px;
+    box-shadow: 1px 1px 1px rgb(0 0 0 / 20%);
+    right: -9px;
+    color: #FFF;
+    font-size: 12px;
+    line-height: 1.4;
+    top: 13px;
+    z-index: 10;
+}
+
+#mx_cl .help-tip p:before{ /* The pointer of the tooltip */
+    position: absolute;
+    content: '';
+    width:0;
+    height: 0;
+    border:6px solid transparent;
+    border-bottom-color:#1E2021;
+    right:10px;
+    top:-12px;
+}
+
+#mx_cl .help-tip p:after{ /* Prevents the tooltip from being hidden */
+    width:100%;
+    height:40px;
+    content:'';
+    position: absolute;
+    top:-40px;
+    left:0;
+}
+#mx_cl .sub-title {
+    font-size: 16px;
+    margin: 0;
+    margin-bottom: 45px;
+    text-align: center;
+}
+#mx_cl .disclaimer-text {
+    font-size: 14px;
+    color: #585858;
+    margin: 0;
+    margin-top: 25px;
+}
+#mx_cl .output-sec {
+    background: #204055;
+    border-radius: 10px;
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-top: 25px;
+}
+#mx_cl .output-sec img:nth-child(1) {
+    flex: 1;
+}
+#mx_cl .output-sec div:nth-child(2) {
+    flex: 10;
+}
+#mx_cl .output-sec div:nth-child(3) {
+    flex: 6;
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+#mx_cl .rs-value {
+    font-size: 30px;
+    color: #fff;
+    font-weight: 600;
+}
+#mx_cl .rs-title {
+    font-size: 18px;
+    color: #fff;
+    font-weight: 400;
+}
+#mx_cl .input-btn-sec, #mx_cl .input-box-sec {
+    display: flex;
+}
+#mx_cl .prepend-btn {
+    border: 1px solid #BDBDBD;
+    width: 38px;
+    text-align: center;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000000;
+    background-color: #ffffff;
+    cursor: pointer;
+}
+#mx_cl .prepend-btn.is-active {
+    color: #ffffff;
+    background-color: #1469A3;
+    border-color: #1469A3;
+}
+#mx_cl .input-box-sec input  {
+    display: flex;
+    border-radius: 0 10px 10px 0;
+    border-left: none !important;
+}
+#mx_cl .input-btn-sec .prepend-btn:nth-child(1){
+    border-radius: 10px 0 0 10px;
+    border-right: none;
+}
+@media (max-width: 768px){
+    #mx_cl .sec{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 15px;
+    }
+    #mx_cl .width-12 {
+        width: 100% !important;
+    }
+    #mx_cl .width-16 {
+        width: 100% !important;
+    }
+    #mx_cl .width-21 {
+        width: 100% !important;
+    }
+    #mx_cl .left-border{
+        border-left: none !important;
+    }
+    #mx_cl .brekdown-title{
+        margin-top: 0;
+        font-size: 20px;
+    }
+    #mx_cl .tb-head-title {
+        font-size: 14px !important;
+    }
+    #mx_cl .tb-credit-title {
+        font-size: 12px !important;
+        padding-left: 8px !important;
+    }
+    #mx_cl .tb-credit-vl {
+        font-size: 12px !important;
+    }
+    #mx_cl .sec {
+        gap: 0px;
+    }
+    #mx_cl .btn-primary {
+        width: 100%;
+        padding: 4px 10px;
+    }
+    #mx_cl .middle-in-title {
+        font-size: 20px;
+        margin-bottom: 8px;
+    }
+    #mx_cl .cl-wrapper {
+        padding: 20px 20px;
+    }
+    #mx_cl .free-title {
+        font-size: 20px;
+    }
+    #mx_cl .free-month {
+        margin-top: 14px;
+        margin-bottom: 18px;
+    }
+    #mx_cl .range-wrap {
+        margin-bottom: 50px;
+    }
+    #mx_cl .free-boost {
+        margin-top: 14px;
+    }
+    #mx_cl .right-rs-sec {
+        padding-left: 0;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    #mx_cl .free-sec {
+        margin-top: 20px;
+    }
+    #mx_cl .btn-sec {
+        margin-top: 0;
+    }
+    #mx_cl .input-sec {
+        padding: 20px;
+    }
+    #mx_cl .input-sec {
+        padding: 24px;
+    }
+    #mx_cl .free-sec {
+        padding: 24px;
+    }
+    #mx_cl .brekdown-sec {
+        padding: 24px;
+    }
+    #mx_cl .top-title {
+        font-size: 18px;
+    }
+    #mx_cl .form-group, #mx_cl .input-group {
+        margin-bottom: 13px;
+    }
+    #mx_cl .output-sec {
+        flex-direction: column;
+        text-align: center;
+    }
+    #mx_cl .output-sec div:nth-child(3) {
+        gap: 6px;
+        justify-content: space-between;
+        width: 100%;
+    }
+}
+</style>
+<div class="ms-cl" id="mx_cl">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="input-sec">
+                    <div class="top-title">For a monthly Payment of $X, how much house can I afford?</div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="">Desired Monthly Payment</label>
+                                <input type="text" class="form-control in-rq in-curr sp-pd-left" id="monthly_payment">
+                                <span class="prepend-text">$</span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="">Down Payment</label>
+                                <div class="input-box-sec">
+                                    <div class="input-btn-sec">
+                                        <span class="prepend-btn downpayment-type is-active" data-value="dollar">$</span>
+                                        <span class="prepend-btn downpayment-type" data-value="prcnt">%</span>
+                                    </div>
+                                    <input type="text" class="form-control in-rq" id="downpayment">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="">Property Location</label>
+                                <select class="form-control in-rq" id="pro_location">
+                                    <option value="" disabled selected>Select a state</option>
+                                    <option value="AL">Alabama</option>
+                                    <option value="AK">Alaska</option>
+                                    <option value="AZ">Arizona</option>
+                                    <option value="AR">Arkansas</option>
+                                    <option value="CA">California</option>
+                                    <option value="CO">Colorado</option>
+                                    <option value="CT">Connecticut</option>
+                                    <option value="DE">Delaware</option>
+                                    <option value="DC">District Of Columbia</option>
+                                    <option value="FL">Florida</option>
+                                    <option value="GA">Georgia</option>
+                                    <option value="HI">Hawaii</option>
+                                    <option value="ID">Idaho</option>
+                                    <option value="IL">Illinois</option>
+                                    <option value="IN">Indiana</option>
+                                    <option value="IA">Iowa</option>
+                                    <option value="KS">Kansas</option>
+                                    <option value="KY">Kentucky</option>
+                                    <option value="LA">Louisiana</option>
+                                    <option value="ME">Maine</option>
+                                    <option value="MD">Maryland</option>
+                                    <option value="MA">Massachusetts</option>
+                                    <option value="MI">Michigan</option>
+                                    <option value="MN">Minnesota</option>
+                                    <option value="MS">Mississippi</option>
+                                    <option value="MO">Missouri</option>
+                                    <option value="MT">Montana</option>
+                                    <option value="NE">Nebraska</option>
+                                    <option value="NV">Nevada</option>
+                                    <option value="NH">New Hampshire</option>
+                                    <option value="NJ">New Jersey</option>
+                                    <option value="NM">New Mexico</option>
+                                    <option value="NY">New York</option>
+                                    <option value="NC">North Carolina</option>
+                                    <option value="ND">North Dakota</option>
+                                    <option value="OH">Ohio</option>
+                                    <option value="OK">Oklahoma</option>
+                                    <option value="OR">Oregon</option>
+                                    <option value="PA">Pennsylvania</option>
+                                    <option value="RI">Rhode Island</option>
+                                    <option value="SC">South Carolina</option>
+                                    <option value="SD">South Dakota</option>
+                                    <option value="TN">Tennessee</option>
+                                    <option value="TX">Texas</option>
+                                    <option value="UT">Utah</option>
+                                    <option value="VT">Vermont</option>
+                                    <option value="VA">Virginia</option>
+                                    <option value="WA">Washington</option>
+                                    <option value="WV">West Virginia</option>
+                                    <option value="WI">Wisconsin</option>
+                                    <option value="WY">Wyoming</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="">Property taxes</label>
+                                <input type="text" class="form-control in-rq in-curr sp-pd-left" id="pro_tax">
+                                <span class="prepend-text">$</span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="">Home owners insurance</label>
+                                <input type="text" class="form-control in-rq in-curr sp-pd-left" id="pro_insur">
+                                <span class="prepend-text">$</span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="">HOA dues</label>
+                                <input type="text" class="form-control in-rq in-curr sp-pd-left" id="pro_hoa_dues">
+                                <span class="prepend-text">$</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>    
+            </div>
+        </div>
+        <div class="output-sec">
+            <img class="icon-img" src="https://i.postimg.cc/CLdY5Tyf/home-dollar-icon.png" alt="">
+            <div class="rs-sec">
+                <div class="rs-value" id="pro_price">$0.00</div>
+                <div class="rs-title">Property Price you can qualify for</div>
+            </div>
+            <div class="btn-sec">
+                <a href="https://instamortgage.com/contact-us/" target="_blank" class="btn btn-primary">Contact us</a>
+                <a href="https://app.instamortgage.com/" target="_blank" class="btn btn-primary">Apply Now</a>
+            </div>
+        </div>
+        <p class="disclaimer-text">Disclaimer: This is not a commitment to lend. Depending on the property you're buying, your housing payment may also include HOA dues. Interest rate, property tax, and home owner's insurance premium are estimated. Your actual numbers may be different. To go through a formal pre-approval process, apply here, or contact us if you have any questions.</p>
+    </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/autonumeric@4.5.4"></script>
+<script>
+jQuery(($) => {
+    let downpayment_type = "dollar";
+
+    const numOptionCurrency = {
+        digitGroupSeparator        : ',',
+        decimalCharacter           : '.',
+        decimalCharacterAlternative: '.',
+        currencySymbol             : '',
+        currencySymbolPlacement    : AutoNumeric.options.currencySymbolPlacement.prefix,
+        modifyValueOnWheel         : false,
+        decimalPlaces              : 0,
+        minimumValue: 0
+    };
+    const numOptionPercent = {
+        digitGroupSeparator        : ',',
+        decimalCharacter           : '.',
+        decimalCharacterAlternative: '.',
+        currencySymbol             : '',
+        currencySymbolPlacement    : AutoNumeric.options.currencySymbolPlacement.suffix,
+        modifyValueOnWheel         : false,
+        decimalPlaces              : 2,
+        minimumValue: 0,
+        maximumValue: 100
+    };
+
+    const anElement1 = AutoNumeric.multiple('.in-curr', numOptionCurrency);
+
+    const elm1 = new AutoNumeric('#downpayment', numOptionCurrency);
+
+    const nft = Intl.NumberFormat("en-US", {
+        minimumFractionDigits: 0,
+        maximumFractionDigits: 0
+    });
+
+    $(".downpayment-type").on("click", function(){
+        $(".downpayment-type").removeClass("is-active");
+        $(this).addClass("is-active");
+
+        elm1.set("");
+
+        downpayment_type = $(this).data("value");
+
+        if(downpayment_type == "dollar"){
+            elm1.update(numOptionCurrency);
+        } else {
+            elm1.update(numOptionPercent);
+        }
+
+    });
+
+    $(".in-rq").on("input", function(){
+        calc_price();
+    })
+    
+    function calc_price() {
+        let monthly_payment = removeSign($("#monthly_payment").val());
+        let downpayment = removeSign($("#downpayment").val());
+        let pro_location = $("#pro_location").val();
+        let pro_tax = removeSign($("#pro_tax").val());
+        let pro_insur = removeSign($("#pro_insur").val());
+        let pro_hoa_dues = removeSign($("#pro_hoa_dues").val());
+
+        if(monthly_payment){
+            let monthlyPayment = monthly_payment; // Monthly payment
+            let interestRate = mortgage_interest_rate; // Annual interest rate
+            let loanTerm = 30; // Loan term in years
+
+            let result = calculatePropertyPrice(monthlyPayment, interestRate, loanTerm);
+            result = result + pro_tax + pro_insur + pro_hoa_dues;
+
+            let downpayment_amount = 0;
+
+            if(downpayment_type == "dollar"){
+                downpayment_amount = downpayment;
+            } else {
+                downpayment_amount = result * (downpayment/100);
+            }
+
+            let pro_price = result + downpayment_amount;
+
+            $("#pro_price").text("$"+nft.format(pro_price));
+        } else {
+            $("#pro_price").text("$0.00");
+        }
+    }
+
+    // Function to calculate property price based on monthly payment, interest rate, and loan term
+    function calculatePropertyPrice(monthlyPayment, interestRate, loanTerm) {
+        // Convert annual interest rate to monthly and decimal
+        let monthlyInterestRate = interestRate / (12 * 100);
+
+        // Calculate the number of monthly payments
+        let numberOfPayments = 12 * loanTerm;
+
+        // Calculate property price using the mortgage formula
+        let propertyPrice = (monthlyPayment * (1 - Math.pow(1 + monthlyInterestRate, -numberOfPayments))) / monthlyInterestRate;
+
+        return propertyPrice; // Round to 2 decimal places
+    }
+
+    function removeSign(vl){
+        return Number(vl.replace(/\$|\%|,/g, ''));
+    }
+});
+</script>

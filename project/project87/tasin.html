@@ -1,0 +1,442 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <title>Welding Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-----------Please copy and paste following code into any HTML element ---------------->
+
+    <!----------- copy starts ---------------->
+    <style>
+        .ms-cl *,
+        ::after,
+        ::before {
+            box-sizing: border-box;
+        }
+
+        .ms-cl {
+            line-height: 1.5;
+            font-family: inherit;
+        }
+
+        .ms-cl .container {
+            width: 100%;
+            margin-right: auto;
+            margin-left: auto;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #4f4f4f;
+            text-align: left;
+        }
+
+        .ms-cl label {
+            display: inline-block;
+            margin-bottom: .5rem;
+            font-size: 16px;
+            font-weight: 500;
+            color: #0B0B27;
+        }
+
+        .ms-cl .h1,
+        .ms-cl h1 {
+            font-size: 2.5rem;
+        }
+
+        .ms-cl .h1,
+        .ms-cl .h2,
+        .ms-cl .h3,
+        .ms-cl .h4,
+        .ms-cl .h5,
+        .ms-cl .h6,
+        .ms-cl h1,
+        .ms-cl h2,
+        .ms-cl h3,
+        .ms-cl h4,
+        .ms-cl h5,
+        .ms-cl h6 {
+            margin-bottom: .5rem;
+            font-weight: 500;
+            line-height: 1.2;
+        }
+
+        .ms-cl h1,
+        .ms-cl h2,
+        .ms-cl h3,
+        .ms-cl h4,
+        .ms-cl h5,
+        .ms-cl h6 {
+            margin-top: 0;
+            margin-bottom: .5rem;
+        }
+
+        .ms-cl .h3,
+        .ms-cl h3 {
+            font-size: 1.75rem;
+        }
+
+        .ms-cl .h5,
+        .ms-cl h5 {
+            font-size: 1.25rem;
+        }
+
+        .ms-cl .h6,
+        .ms-cl h6 {
+            font-size: 1rem;
+        }
+
+        .ms-cl .row {
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            margin-right: -15px;
+            margin-left: -15px;
+        }
+
+        .ms-cl .col-md-1,
+        .ms-cl .col-md-10,
+        .ms-cl .col-md-11,
+        .ms-cl .col-md-12,
+        .ms-cl .col-md-2,
+        .ms-cl .col-md-3,
+        .ms-cl .col-md-4,
+        .ms-cl .col-md-5,
+        .ms-cl .col-md-6,
+        .ms-cl .col-md-7,
+        .ms-cl .col-md-8,
+        .ms-cl .col-md-9 {
+            position: relative;
+            width: 100%;
+            padding-right: 15px;
+            padding-left: 15px;
+        }
+
+        .ms-cl .form-group {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .ms-cl .form-control {
+            display: block;
+            width: 100%;
+            height: 35px;
+            padding: 0.275rem 0.75rem;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #495057;
+            background-color: #fff;
+            background-clip: padding-box;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+        }
+        .ms-cl .form-control:focus {
+            outline: none;
+            border: 1px solid #0B0B27;
+        }
+
+        .ms-cl .text-center {
+            text-align: center !important;
+        }
+
+        /* Custom css */
+        .ms-cl .cl-wrapper {
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.20); 
+            border-radius: 8px;
+            background: #ffffff;
+            transition: all 1s ease-in-out;
+        }
+
+        .ms-cl .cl-left-div {
+            padding: 15px 50px !important;
+        }
+
+        .ms-cl .check-item {
+            display: inline-block;
+            border: 1px solid #F56B09;
+            border-radius: 5px;
+            padding: 7px 15px 5px 15px;
+            cursor: pointer;
+            background-color: transparent;
+            font-size: 16px;
+            font-weight: 400;
+            width: 100%;
+            text-align: center;
+        }
+
+        .ms-cl .check-item:hover {
+            background-color: #F56B09;
+            color: #fff;
+        }
+
+        .ms-cl .check-item.is-active {
+            background-color: #F56B09;
+            border-color: #F56B09;
+            color: #fff;
+        }
+
+        .ms-cl .top-title {
+            padding: 10px;
+            color: #000;
+            font-size: 24px;
+            margin-top: 12px;
+            border-bottom: 2px solid #F56B09;
+            position: relative;
+        }
+
+        .ms-cl #imperial_inp {
+            display: none;
+        }
+
+        .ms-cl .rs-sec {
+            background-color: #F56B09;
+            color: #fff;
+            padding: 25px 35px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .ms-cl .rs-title {
+            font-size: 16px;
+            font-weight: 600;
+            border-bottom: 1px solid #fff;
+            padding-bottom: 10px;
+        }
+
+        .ms-cl .rs-value {
+            font-size: 36px;
+            font-weight: 600;
+            padding-top: 10px;
+        }
+
+        .ms-cl .bottom-para {
+            color: #F56A08;
+            font-size: 16px;
+            font-weight: 400;
+            text-align: center;
+        }
+        .ms-cl .bottom-para a{
+            color: #F56A08;
+            text-decoration: none;
+        }
+        
+        .ms-cl .img-sec {
+            text-align: center;
+        }
+        .ms-cl .img-sec img {
+            width: 132px;
+        }
+        .ms-cl .append-text {
+            position: absolute;
+            right: 7px;
+            bottom: 5px;
+            font-size: 16px;
+        }
+        .ms-cl  .unit-text {
+            font-size: 22px !important;
+        }
+
+        /* responsive */
+
+        @media (max-width: 768px) {
+            .ms-cl .cl-left-div {
+                padding: 15px 50px !important;
+            }
+        }
+
+        @media (min-width: 576px) {
+            .ms-cl .container {
+                max-width: 540px;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .ms-cl .container {
+                max-width: 600px;
+            }
+
+            .ms-cl .col-md-12 {
+                -ms-flex: 0 0 100%;
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+
+            .ms-cl .col-md-8 {
+                -ms-flex: 0 0 66.666667%;
+                flex: 0 0 66.666667%;
+                max-width: 66.666667%;
+            }
+
+            .ms-cl .col-md-6 {
+                -ms-flex: 0 0 50%;
+                flex: 0 0 50%;
+                max-width: 50%;
+            }
+
+            .ms-cl .col-md-4 {
+                -ms-flex: 0 0 33.333333%;
+                flex: 0 0 33.333333%;
+                max-width: 33.333333%;
+            }
+
+            .ms-cl .col-md-3 {
+                -ms-flex: 0 0 25%;
+                flex: 0 0 25%;
+                max-width: 25%;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .ms-cl .container {
+                max-width: 600px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .ms-cl .container {
+                max-width: 600px;
+            }
+        }
+
+        .ms-cl .option-sec {
+            display: flex;
+            gap: 10px;
+        }
+    </style>
+    <div class="ms-cl" id="ms_cl">
+        <div class="container main-calc">
+            <div class="img-sec">
+                <img src="https://i.postimg.cc/Gm0rKsCS/image-33-1.png" alt="">
+            </div>
+            <div class="cl-wrapper">
+                <h3 class="top-title text-center">Fillet Weld Throat Calculator</h3>
+            <div class="row">
+                <div class="col-md-12 cl-left-div">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label style="display: block;">Unit</label>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <div class="option-sec">
+                                    <div class="check-item unit-check is-active" data-value="Metric" id="metric">
+                                        Metric
+                                    </div>
+                                    <div class="check-item unit-check" data-value="Imperial" id="imperial">
+                                        Imperial
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="">Thickness of Plate</label>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control text-right cl-input cl-curr " id="in_1" value="">
+                                <span class="append-text" id="in_txt">in</span>
+                                <span class="append-text" id="cm_txt">mm</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rs-sec">
+                        <div class="rs-title">Fillet Weld Throat Size</div>
+                        <div class="rs-value" id="rs_1">0 <span class="unit-text">in</span></div>
+                    </div>
+                    <div class="bottom-para">
+                        <a href="https://weldingempire.com/">www.weldingempire.com</a>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/autonumeric@4.5.4"></script>
+    <script>
+        jQuery(document).ready(function ($) {
+            const numOptionCurrency = {
+                digitGroupSeparator        : ',',
+                decimalCharacter           : '.',
+                decimalCharacterAlternative: '.',
+                currencySymbol             : '',
+                currencySymbolPlacement    : AutoNumeric.options.currencySymbolPlacement.prefix,
+                decimalPlaces              : 2,
+                minimumValue: 0
+            };
+            
+            new AutoNumeric('#in_1', numOptionCurrency);
+
+            function removeComma(num){
+                return Number(num.replace(/,/g,""));
+            }
+
+            const nftd = Intl.NumberFormat("en-US", {
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2
+            });
+
+            $("#metric").addClass("is-active");
+            $("#in_txt").hide();
+
+            CalcMetric();
+
+            $("#in_1").on("input", function () {
+                if ($("#metric").hasClass("is-active")) {
+                    CalcMetric();
+                } else {
+                    CalcImperial();
+                }
+            });
+
+            $(".unit-check").on("click", function () {
+                $(".unit-check").removeClass("is-active");
+                $(this).addClass("is-active");
+
+                if ($(this).attr("id") === "metric") {
+                    $("#cm_txt").show();
+                    $("#in_txt").hide();
+
+                    CalcMetric();
+                } else {
+                    $("#cm_txt").hide();
+                    $("#in_txt").show();
+
+                    CalcImperial();
+                }
+            });
+
+            function CalcMetric() {
+                in_1 = removeComma($("#in_1").val());
+                let cnvrt_cm = (in_1 / 25.4) * 0.707;
+                $("#rs_1").html(nftd.format(cnvrt_cm) + '<span class="unit-text"> in</span>');
+            }
+
+            function CalcImperial() {
+                in_1 = removeComma($("#in_1").val());
+                let inc_output = in_1 * 0.707;
+                $("#rs_1").html(nftd.format(inc_output) + '<span class="unit-text"> in</span>');
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+Retirement Calculator - Web Calculator for your Website
+
+Welcome to our <b>Retirement Calculator Calculator</b>. A Retirement Calculator is a tool that helps you plan for your retirement by estimating how much money you will have saved by the time you retire.
+<br>
+<br>
+<u><b>User inputs:</b></u>
+<ul>
+    <li>Current Age</li>
+    <li>Age you plan to retire</li>
+    <li>How much money do you currently have in retirement investments?</li>
+    <li>How much will you contribute monthly?</li>
+    <li>What do you think you annual return will be?</li>
+</ul>
+<br>
+<u><b>Outputs:</b></u>
+<ul>
+    <li>Initial Balance</li>
+    <li>Contributions</li>
+    <li>Growth</li>
+</ul>
+<br>
+<u><b>Features of the Retirement Calculator</b></u>
+<ul>
+    <li>- It allows you to enter your current age, retirement age, existing investments, monthly contributions, and expected annual return.</li>
+    <li>- It estimates your retirement savings based on your inputs and inflation rate.</li>
+    <li>- Instant result without page reload</li>
+    <li>- JS and CSS loads when shortcode called on page</li>
+    <li>- 100% Responsive design</li>
+    <li>- Unique Design</li>
+    <li>- Well Documented (proper help instructions for setup)</li>
+    <li>- Dedicated Support</li>
+</ul>
+<br>
+The calculator is built using HTML, CSS, and JavaScript, and it also utilizes the popular JavaScript library jQuery. A premium quality <b>Retirement Calculator</b> which you can easily embed into any website (well documented).

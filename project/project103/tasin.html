@@ -1,0 +1,1387 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
+    <title>RBP Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <style>
+        #mx_cl *,
+        ::after,
+        ::before {
+            box-sizing: border-box;
+        }
+
+        #mx_cl {
+            line-height: 1.5;
+            font-family: inherit;
+        }
+
+        #mx_cl .container {
+            width: 100%;
+            padding-right: 15px;
+            padding-left: 15px;
+            margin-right: auto;
+            margin-left: auto;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #081C3D;
+            text-align: left;
+        }
+
+        #mx_cl label {
+            display: inline-block;
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        #mx_cl .row {
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            margin-right: -15px;
+            margin-left: -15px;
+        }
+
+        #mx_cl .col-md-1,
+        #mx_cl .col-md-10,
+        #mx_cl .col-md-11,
+        #mx_cl .col-md-12,
+        #mx_cl .col-md-2,
+        #mx_cl .col-md-3,
+        #mx_cl .col-md-4,
+        #mx_cl .col-md-5,
+        #mx_cl .col-md-6,
+        #mx_cl .col-md-7,
+        #mx_cl .col-md-8,
+        #mx_cl .col-md-9 {
+            position: relative;
+            width: 100%;
+            padding-right: 15px;
+            padding-left: 15px;
+        }
+
+        #mx_cl .form-group {
+            margin-bottom: 1rem;
+        }
+
+        #mx_cl .form-control {
+            display: block;
+            width: 100%;
+            height: calc(1em + 0.75rem + 2px);
+            padding: 0.275rem 0.75rem;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #4a4a4a;
+            background-color: #fff;
+            background-clip: padding-box;
+            border: 1px solid #dddddd;
+            transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+
+        }
+
+        #mx_cl .form-control-two {
+            display: block;
+            width: 100%;
+            height: calc(1em + 0.75rem + 2px);
+            padding-left: 5px;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #4a4a4a;
+            background-color: #fff;
+            background-clip: padding-box;
+            border: none;
+            transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+        }
+
+        #mx_cl .form-control:focus, #mx_cl .form-control-two {
+            outline: none;
+        }
+
+        #mx_cl .btn {
+            display: inline-block;
+            font-weight: 400;
+            color: #081C3D;
+            text-align: center;
+            vertical-align: middle;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            background-color: transparent;
+            border: 1px solid transparent;
+            padding: .375rem .75rem;
+            font-size: 1rem;
+            line-height: 1.5;
+            border-radius: .25rem;
+            transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+        }
+
+        #mx_cl .btn-primary {
+            color: #fff;
+            background-color: #28a745;
+            border-color: #28a745;
+        }
+
+        #mx_cl .btn-reset {
+            color: #fff;
+            background-color: #28a745;
+            border-color: #28a745;
+        }
+
+        #mx_cl table {
+            border-collapse: collapse;
+        }
+
+        #mx_cl .table {
+            width: 100%;
+            margin-bottom: 1rem;
+            color: #081C3D;
+        }
+
+        #mx_cl .table td,
+        #mx_cl .table th {
+            padding: .25rem;
+            vertical-align: top;
+            border-bottom: 1px solid #c8c8c8;
+        }
+
+        #mx_cl .table td {
+            font-size: 13.1px;
+        }
+
+        #mx_cl .text-center {
+            text-align: center;
+        }
+
+        @media (min-width: 576px) {
+            #mx_cl .container {
+                max-width: 100%;
+            }
+        }
+
+        @media (min-width: 768px) {
+            #mx_cl .container {
+                max-width: 100%;
+            }
+
+            #mx_cl .col-md-12 {
+                -ms-flex: 0 0 100%;
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+
+            #mx_cl .col-md-9 {
+                -ms-flex: 0 0 75%;
+                flex: 0 0 75%;
+                max-width: 75%;
+            }
+
+            #mx_cl .col-md-8 {
+                -ms-flex: 0 0 66.666667%;
+                flex: 0 0 66.666667%;
+                max-width: 66.666667%;
+            }
+
+            #mx_cl .col-md-7 {
+                -ms-flex: 0 0 58.33333%;
+                flex: 0 0 58.33333%;
+                max-width: 58.33333%;
+            }
+
+            #mx_cl .col-md-6 {
+                -ms-flex: 0 0 50%;
+                flex: 0 0 50%;
+                max-width: 50%;
+            }
+
+            #mx_cl .col-md-5 {
+                -ms-flex: 0 0 41.666667%;
+                flex: 0 0 41.666667%;
+                max-width: 41.666667%;
+            }
+
+            #mx_cl .col-md-4 {
+                -ms-flex: 0 0 33.333333%;
+                flex: 0 0 33.333333%;
+                max-width: 33.333333%;
+            }
+
+            #mx_cl .col-md-3 {
+                -ms-flex: 0 0 25%;
+                flex: 0 0 25%;
+                max-width: 25%;
+            }
+        }
+
+        @media (min-width: 992px) {
+            #mx_cl .container {
+                max-width: 960px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            #mx_cl .container {
+                max-width: 1250px;
+            }
+        }
+
+        #mx_cl .text-right {
+            text-align: right;
+        }
+
+        #mx_cl .form-group,
+        #mx_cl .input-group {
+            position: relative;
+            margin-bottom: 15px;
+        }
+
+        @media (max-width: 768px) {}
+
+        #mx_cl .top-title {
+            font-size: 25px;
+        }
+
+        #mx_cl .input-group {
+            position: relative;
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            -ms-flex-align: stretch;
+            align-items: stretch;
+            width: 100%;
+        }
+
+        #mx_cl .input-group-text {
+            margin-bottom: 0;
+            position: absolute;
+            padding-left: 9px;
+            top: 3px;
+            font-size: 1rem;
+
+        }
+
+        #mx_cl .input-group-text-right {
+            margin-bottom: 0;
+            position: absolute;
+            right: 10px;
+            font-size: 1rem;
+            top: 3.5px;
+        }
+
+        #mx_cl .text-right {
+            text-align: left;
+            padding-left: 20px;
+        }
+
+        #mx_cl .mid-heading {
+            font-weight: 600;
+            border-bottom: 1px solid #DBDBDB;
+            margin: 20px 0px 15px 0px;
+        }
+
+        #mx_cl .button {
+            width: 100%;
+            padding: 0.275rem 0.75rem;
+            font-size: 16px;
+            font-weight: 400;
+            border-radius: 5px;
+            border: 1px solid #FF4E24;
+            background: #fff;
+            color: #FF4E24;
+            cursor: pointer;
+        }
+
+        #mx_cl .sp-button {
+            margin-top: 10px;
+            padding: 10px;
+        }
+
+        #mx_cl .common-p,
+        #mx_cl .mid-heading {
+            color: #081C3D;
+        }
+
+        #mx_cl .right-content-box {
+            padding: 20px 20px;
+            border: 1px solid #FF4E24;
+            border-radius: 8px;
+            background-color: #FFFBFB;
+            height: 100%;
+        }
+
+        #mx_cl .td-left {
+            font-size: 16px;
+            font-weight: 400;
+        }
+
+        #mx_cl .td-right {
+            font-weight: 400;
+            color: #FF4E24;
+            text-align: right;
+        }
+
+        #mx_cl .output-section {
+            text-align: center;
+        }
+
+        #mx_cl .output-section h3 {
+            color: #081C3D;
+            font-size: 22px;
+            margin-bottom: 0px;
+        }
+
+        #mx_cl .final-output {
+            font-size: 35px;
+            font-weight: 600;
+            color: #FF4E24;
+        }
+
+        #mx_cl .flex_ele {
+            display: flex;
+            width: 100%;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.7;
+            color: #4a4a4a;
+            background-color: #fff;
+            background-clip: padding-box;
+            border: 1px solid #dddddd;
+            transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+            align-items: center;
+        }
+
+        #mx_cl .leasing-fee-first {
+            padding: 2px 7px;
+            border-right: 1px solid #D9D9D9;
+
+            cursor: pointer;
+        }
+
+        #mx_cl .leasing-fee-last {
+            padding: 2px 7px;
+            border-right: 1px solid #D9D9D9;
+            cursor: pointer;
+        }
+
+        #mx_cl .sp-left {
+            padding-right: 22px;
+        }
+
+        #mx_cl .inner_form {
+            border-top-left-radius: 0px;
+            border-bottom-left-radius: 0px;
+            border-left: none;
+            border-right: none;
+            outline: none;
+        }
+
+        #mx_cl .is-active {
+            background-color: #FF4E24;
+            color: #fff;
+        }
+
+        #mx_cl .common-p {
+            margin-top: 5px;
+        }
+
+        #mx_cl .mid-sec {
+            display: flex;
+            margin-top: 20px;
+        }
+
+        #mx_cl .text-center {
+            text-align: center;
+        }
+
+        #mx_cl input[type=range] {
+            margin: 0 0 0 0;
+            outline: none;
+            padding: 0;
+            width: 100%;
+            height: 7px;
+            background-color: #dbdbdb;
+            background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #0D2131), color-stop(100%, #0D2131));
+            background-size: 0% 100%;
+            background-repeat: no-repeat;
+            border-radius: 10px;
+            cursor: pointer;
+            -webkit-appearance: none;
+        }
+
+        #mx_cl input[type=range]::-webkit-slider-runnable-track {
+            box-shadow: none;
+            border: none;
+            background: transparent;
+            -webkit-appearance: none;
+        }
+
+        #mx_cl input[type=range]::-webkit-slider-thumb {
+            height: 23px;
+            width: 23px;
+            margin-top: -1px;
+            background: #FF4E24;
+            border: 2px solid #FF4E24;
+            border-radius: 25px;
+            -webkit-appearance: none;
+        }
+
+        #mx_cl input[type=range]::-moz-range-track {
+            box-shadow: none;
+            border: none;
+            background: transparent;
+            -webkit-appearance: none;
+        }
+
+        #mx_cl input[type=range]::-moz-range-thumb {
+            height: 20px;
+            width: 20px;
+            margin-top: -4px;
+            background: #011718;
+            border: 5px solid #132020;
+            border-radius: 25px;
+            box-shadow: 0 2px 2px 0px #000000;
+            -webkit-appearance: none;
+        }
+
+        #mx_cl .value-sec {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            margin: 0px 0px 20px 0px;
+        }
+
+        #mx_cl .t-head {
+            font-weight: 600;
+            padding-top: 13px !important;
+            border-bottom: 1px solid #000000 !important;
+        }
+
+        #mx_cl .sp-t-head {
+            margin-bottom: 20px;
+            padding-top: 0px !important;
+        }
+
+        #mx_cl .sp-redfin {
+            font-size: 15px !important;
+            font-weight: 700;
+            padding-bottom: 20px;
+        }
+
+        #mx_cl .out-head {
+            margin-top: 10px;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        #mx_cl .out {
+            color: #FF4E24;
+            font-size: 28px;
+            font-weight: 600;
+        }
+
+        #mx_cl .add-doller {
+            padding-left: 5px;
+        }
+        #mx_cl .extra-margin{
+            margin-top: 20px;
+        }
+        #mx_cl .append-text {
+            position: absolute;
+            right: 6px;
+            bottom: 3px;
+            font-size: 16px;
+        }
+        #mx_cl .com-logo-sec {
+            border-bottom: 1px solid #ccc;
+            margin-bottom: 30px;
+        }
+        #mx_cl .com-logo {
+            width: 300px;
+        }
+        #mx_cl .sp-row {
+            background: #ececec;
+        }
+        @media(max-width: 786px) {
+            #mx_cl .right-content-box {
+                margin-top: 20px;
+            }
+        }
+    </style>
+    <div class="ms-cl" id="mx_cl">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <p class="com-logo-sec text-center">
+                        <img class="com-logo" src="https://i.postimg.cc/T1VG2qNC/rt-logo.jpg" alt="" srcset="">
+                    </p>
+                </div>
+                <div class="col-md-3">
+                    <label for="">Address</label>
+                    <div class="form-group">
+                        <input type="text" class="form-control ck-in" id="in_address">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <label for="">City</label>
+                    <div class="form-group">
+                        <input type="text" class="form-control ck-in" id="in_city">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <label for="">State</label>
+                    <div class="form-group">
+                        <input type="text" class="form-control ck-in"  id="in_state">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <label for="">Zip</label>
+                    <div class="form-group">
+                        <input type="text" class="form-control ck-in" id="in_zip">
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="mid-heading" style="margin-top: 0;">
+                                <span>RETAIL VALUE ANALYSIS</span>
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <label for="" class="common-p">Zillow</label>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="">
+                                <div class="flex_ele">
+                                    <span class="add-doller">$</span>
+                                    <input type="text" class="form-control-two sp-left cl-input in-curr ins-one ck-in" id="in_1" value="" autocomplete="off">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <label for="" class="common-p">REIAutomator (Propstream)</label>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="">
+                                <div class="flex_ele">
+                                    <span class="add-doller">$</span>
+                                    <input type="text" class="form-control-two sp-left cl-input in-curr ins-one  ck-in" id="in_2" value="" autocomplete="off">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <label for="" class="common-p">Redfin or Realtor .com</label>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="">
+                                <div class="flex_ele">
+                                    <span class="add-doller">$</span>
+                                    <input type="text" class="form-control-two sp-left cl-input in-curr ins-one ck-in" id="in_3" value="" autocomplete="off">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <div class="mid-heading">
+                                <span>RBP REPAIRS, CREDITS, FEES</span>
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <label for="" class="common-p">Real Estate Agent Fee</label>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="">
+                                <div class="flex_ele" data-value="elm1">
+                                    <span class="leasing-fee-first option-btn is-active" data-value="dollar">$</span>
+                                    <span class="leasing-fee-last option-btn" data-value="prcnt">%</span>
+                                    <input type="text" class="form-control-two sp-left cl-input inner_form ins-two"
+                                        id="in_4" value="" autocomplete="off">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <label for="" class="common-p">Loan Concessions/Credits</label>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="">
+                                <div class="flex_ele" data-value="elm2">
+                                    <span class="leasing-fee-first option-btn is-active" data-value="dollar">$</span>
+                                    <span class="leasing-fee-last option-btn" data-value="prcnt">%</span>
+                                    <input type="text" class="form-control-two sp-left cl-input inner_form ins-two"
+                                        id="in_5" value="" autocomplete="off">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <label for="" class="common-p">Inspection Fee</label>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="">
+                                <div class="flex_ele" data-value="elm3">
+                                    <span class="leasing-fee-first option-btn is-active" data-value="dollar">$</span>
+                                    <span class="leasing-fee-last option-btn" data-value="prcnt">%</span>
+                                    <input type="text" class="form-control-two sp-left cl-input inner_form ins-two"
+                                        id="in_6" value="" autocomplete="off">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <label for="" class="common-p">Appraisal Fee</label>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="">
+                                <div class="flex_ele" data-value="elm4">
+                                    <span class="leasing-fee-first option-btn is-active" data-value="dollar">$</span>
+                                    <span class="leasing-fee-last option-btn" data-value="prcnt">%</span>
+                                    <input type="text" class="form-control-two sp-left cl-input inner_form ins-two" id="in_7" value="" autocomplete="off" ins-two>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <label for="" class="common-p">Title Fee</label>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="">
+                                <div class="flex_ele" data-value="elm5">
+                                    <span class="leasing-fee-first option-btn is-active" data-value="dollar">$</span>
+                                    <span class="leasing-fee-last option-btn" data-value="prcnt">%</span>
+                                    <input type="text" class="form-control-two sp-left cl-input inner_form ins-two"
+                                        id="in_8" value="" autocomplete="off">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <label for="" class="common-p">All Repairs</label>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="">
+                                <div class="flex_ele" data-value="elm6">
+                                    <span class="leasing-fee-first option-btn is-active" data-value="dollar">$</span>
+                                    <span class="leasing-fee-last option-btn" data-value="prcnt">%</span>
+                                    <input type="text" class="form-control-two sp-left cl-input inner_form ins-two"
+                                        id="in_9" value="" autocomplete="off">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <label for="" class="common-p">Taxes</label>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="">
+                                <div class="flex_ele" data-value="elm7">
+                                    <span class="leasing-fee-first option-btn is-active" data-value="dollar">$</span>
+                                    <span class="leasing-fee-last option-btn" data-value="prcnt">%</span>
+                                    <input type="text" class="form-control-two sp-left cl-input inner_form ins-two"
+                                        id="in_10" value="" autocomplete="off">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <label for="" class="common-p">Other Fee 1</label>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="">
+                                <div class="flex_ele" data-value="elm8">
+                                    <span class="leasing-fee-first option-btn is-active" data-value="dollar">$</span>
+                                    <span class="leasing-fee-last option-btn" data-value="prcnt">%</span>
+                                    <input type="text" class="form-control-two sp-left cl-input inner_form ins-two"
+                                        id="in_11" value="" autocomplete="off">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <label for="" class="common-p">Other Fee 2</label>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="">
+                                <div class="flex_ele" data-value="elm9">
+                                    <span class="leasing-fee-first option-btn is-active" data-value="dollar">$</span>
+                                    <span class="leasing-fee-last option-btn" data-value="prcnt">%</span>
+                                    <input type="text" class="form-control-two sp-left cl-input inner_form ins-two"
+                                        id="in_12" value="" autocomplete="off">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <div class="mid-heading">
+                                <span>RPB PROFIT ANALSIS</span>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="row extra-margin">
+                                <div class="col-md-7">
+                                    <label for="in_prof_margin" style="flex:3">RBP Target List Price on MLS</label>
+                                </div>
+                                <div class="col-md-5">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control text-center extra-width" id="in_rdb_price_vl" value="85" style="width: 100%;text-align: right;padding-right: 23px;" readonly>
+                                        <span class="append-text">%</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="">
+                                <div class="slidecontainer">
+                                    <input type="range" min="0" max="100" value="85" step="1" class="slider ck-in cl-input" id="in_rdb_price">
+                                    
+                                </div>
+                            </div>
+                            <div class="value-sec">
+                                <span class="value">0%</span>
+                                <span class="value">100%</span>
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <label for="" class="common-p">RBP Target List Price on MLS</label>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="">
+                                <div class="flex_ele">
+                                    <span class="add-doller">$</span>
+                                    <input type="text" class="form-control-two sp-left cl-input in-custom inner_form ck-in" id="in_144" value="" autocomplete="off">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <label for="" class="common-p">RBP Sold Price</label>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="">
+                                <div class="flex_ele">
+                                    <span class="add-doller">$</span>
+                                    <input type="text" class="form-control-two sp-left cl-input in-curr inner_form ck-in" id="in_14" value="" autocomplete="off">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <label for="" class="common-p">RBP Target Fee</label>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="">
+                                <div class="flex_ele">
+                                    <span class="add-doller">$</span>
+                                    <input type="text" class="form-control-two sp-left cl-input in-curr inner_form ck-in" id="in_15" value="" autocomplete="off">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="mid-heading">
+                                <span>WHOLESALE PROFIT ANALYSIS</span>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="row extra-margin">
+                                <div class="col-md-7">
+                                    <label for="in_prof_margin" style="flex:3">Wholesale % of Retail Value</label>
+                                </div>
+                                <div class="col-md-5">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control text-center extra-width" id="in_retail_vl" style="width: 100%;text-align: right;padding-right: 23px;" readonly>
+                                        <span class="append-text">%</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="">
+                                <div class="slidecontainer">
+                                    <input type="range" min="0" max="100" value="70" step="1" class="slider cl-input ck-in" id="in_retail">
+                                </div>
+                            </div>
+                            <div class="value-sec">
+                                <span class="value">0%</span>
+                                <span class="value">100%</span>
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <label for="" class="common-p">Wholesale $ of Retail Value</label>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="">
+                                <div class="flex_ele">
+                                    <span class="add-doller">$</span>
+                                    <input type="text" class="form-control-two sp-left cl-input inner_form ck-in" id="in_166" value="" autocomplete="off">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <label for="" class="common-p">Wholesale Repairs</label>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="">
+                                <div class="flex_ele">
+                                    <span class="add-doller">$</span>
+                                    <input type="text" class="form-control-two sp-left cl-input in-curr inner_form ck-in" id="in_16" value="" autocomplete="off">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <label for="" class="common-p">Wholesale Fee</label>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="">
+                                <div class="flex_ele">
+                                    <span class="add-doller">$</span>
+                                    <input type="text" class="form-control-two sp-left cl-input in-curr inner_form ck-in" id="in_17" value="" autocomplete="off">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="mid-heading">
+                                <span>NEW PROJECTED RBP PROFIT</span>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="row extra-mergin">
+                                <div class="col-md-7">
+                                <label for="in_prof_margin" style="flex:3">Add Your Monthly Deals</label></div>
+                                <div class="col-md-5">
+                                <input type="text" class="form-control text-center extra-width" id="in_month_vl"
+                                    style="width: 100%;text-align: right;padding-right: 23px;" readonly></div>
+                            </div>
+                            <div class="">
+                                <div class="slidecontainer">
+                                    <input type="range" min="1" max="1000" value="1" step="1" class="slider cl-input ck-in" id="in_month">
+                                </div>
+                            </div>
+                            <div class="value-sec">
+                                <span class="value">1</span>
+                                <span class="value">1000</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <div class="right-content-box">
+                        <table class="table">
+                            <tr class="">
+                                <td class="t-head sp-t-head">RETAIL VALUE ANALYSIS</td>
+                                <td class="t-head sp-t-head"></td>
+                            </tr>
+                            <tr>
+                                <td class="td-left">Zillow</td>
+                                <td class="td-right" id="td-out-1">$0.00</td>
+                            </tr>
+                            <tr>
+                                <td class="td-left">REIAutomator (Propstream)</td>
+                                <td class="td-right" id="td-out-2">$0.00</td>
+                            </tr>
+                            <tr>
+                                <td class="td-left">Redfin or Realtor .com
+                                </td>
+                                <td class="td-right" id="td-out-3">$0.00</td>
+                            </tr>
+                            <tr class="sp-row">
+                                <td class="td-left sp-redfin">AVG RETAIL VALUE
+                                </td>
+                                <td class="td-right sp-redfin" id="td-out-redfin">$0.00</td>
+                            </tr>
+
+                            <tr class="sp-t-head">
+                                <td class="t-head">RBP REPAIRS, CREDITS, FEES
+                                </td>
+                                <td class="t-head"></td>
+                            </tr>
+                            <tr>
+                                <td class="td-left">Real Estate Agent Fee</td>
+                                <td class="td-right" id="rs_fee_1">$0.00</td>
+                            </tr>
+                            <tr>
+                                <td class="td-left">Loan Concessions/Credits
+                                </td>
+                                <td class="td-right" id="rs_fee_2">$0.00</td>
+                            </tr>
+                            <tr>
+                                <td class="td-left">Inspection Fee
+                                </td>
+                                <td class="td-right" id="rs_fee_3">$0.00</td>
+                            </tr>
+                            <tr>
+                                <td class="td-left">Appraisal Fee
+                                </td>
+                                <td class="td-right" id="rs_fee_4">$0.00</td>
+                            </tr>
+                            <tr>
+                                <td class="td-left">Title Fee
+                                </td>
+                                <td class="td-right" id="rs_fee_5">$0.00</td>
+                            </tr>
+                            <tr>
+                                <td class="td-left">All Repairs
+                                </td>
+                                <td class="td-right" id="rs_fee_6">$0.00</td>
+                            </tr>
+                            <tr>
+                                <td class="td-left">Taxes
+                                </td>
+                                <td class="td-right" id="rs_fee_7">$0.00</td>
+                            </tr>
+                            <tr>
+                                <td class="td-left">Other Fee 1
+                                </td>
+                                <td class="td-right" id="rs_fee_8">$0.00</td>
+                            </tr>
+                            <tr>
+                                <td class="td-left">Other Fee 2
+                                </td>
+                                <td class="td-right" id="rs_fee_9">$0.00</td>
+                            </tr>
+                            <tr class="sp-row">
+                                <td class="td-left sp-redfin">Total
+                                </td>
+                                <td class="td-right sp-redfin" id="rs_fee_total">$0.00</td>
+                            </tr>
+                            <tr class="sp-t-head">
+                                <td class="t-head">RPB PROFIT ANALSIS
+                                </td>
+                                <td class="t-head"></td>
+                            </tr>
+                            <tr>
+                                <td class="td-left">RBP Target List Price on MLS</td>
+                                <td class="td-right" id="td-out-15">$0.00</td>
+                            </tr>
+                            <tr>
+                                <td class="td-left">RBP Sold Price</td>
+                                <td class="td-right" id="td-out-16">$0.00</td>
+                            </tr>
+                            <tr>
+                                <td class="td-left">RBP Credit Reapirs Fees</td>
+                                <td class="td-right" id="td-out-166">$0.00</td>
+                            </tr>
+                            <tr>
+                                <td class="td-left">RBP Target Fee</td>
+                                <td class="td-right" id="td-out-17">$0.00</td>
+                            </tr>
+                            <tr class="sp-row">
+                                <td class="td-left sp-redfin">RBP Max Allowable Offer
+                                </td>
+                                <td class="td-right sp-redfin" id="td-out-rpb">$0.00</td>
+                            </tr>
+                            <tr class="sp-t-head">
+                                <td class="t-head">WHOLESALE PROFIT ANALYSIS</td>
+                                <td class="t-head"></td>
+                            </tr>
+                            <tr>
+                                <td class="td-left">Wholesale % of Retail Value</td>
+                                <td class="td-right" id="td-out-18">$0.00</td>
+                            </tr>
+                            <tr>
+                                <td class="td-left">Wholesale Repairs</td>
+                                <td class="td-right" id="td-out-19">$0.00</td>
+                            </tr>
+                            <tr>
+                                <td class="td-left">Wholesale Sold Price</td>
+                                <td class="td-right" id="td-out-199">$0.00</td>
+                            </tr>
+                            <tr>
+                                <td class="td-left">Wholesale Fee </td>
+                                <td class="td-right" id="td-out-20">$0.00</td>
+                            </tr>
+                            <tr  class="sp-row">
+                                <td class="td-left sp-redfin">Wholesale Max Allowable Offer</td>
+                                <td class="td-right sp-redfin" id="td-out-whol">$0.00</td>
+                            </tr>
+                            <tr class="sp-t-head">
+                                <td class="t-head">NEW PROJECTED RBP PROFIT</td>
+                                <td class="t-head"></td>
+                            </tr>
+                            <tr>
+                                <td class="td-left">Monthly Deals</td>
+                                <td class="td-right" id="td-out-21">$0.00</td>
+                            </tr>
+                            <tr>
+                                <td class="td-left">Annual Deals</td>
+                                <td class="td-right" id="td-out-22">$0.00</td>
+                            </tr>
+                        </table>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="out-head">RBP MAO OFFER VS CASH MAO OFFER <span style="display: block; font-size: 11px; font-weight: normal;">(This is how much more you can pay for property and still profit)</span> </div>
+                                <div class="out" id="out_1">$0.00</div>
+                                <div class="out-head">RBP OFFER INCREASE %</div>
+                                <div class="out" id="out_3">$0.00</div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="out-head">RBP PROFIT</div>
+                                <div class="out" id="out_2">$0.00</div>
+                                <div class="out-head">WHOLESALE PROFIT</div>
+                                <div class="out" id="out_4">$0.00</div>
+                            </div>
+                        </div>
+                        <div class="output-section">
+                            <h3 style="border-bottom: 1px solid #ccc;">RBP vs Wholesale Profit</h3>
+                            <div class="final-output" id="final_vl">$0.00</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/autonumeric@4.5.4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js"></script>
+    <script>
+        jQuery(document).ready(function($){
+            let average_vl = 0, is_prcnt = true, is_prcnt2 = true;
+
+            const numOptionCurrency = {
+                digitGroupSeparator        : ',',
+                decimalCharacter           : '.',
+                decimalCharacterAlternative: '.',
+                currencySymbol             : '',
+                currencySymbolPlacement    : AutoNumeric.options.currencySymbolPlacement.prefix,
+                decimalPlaces              : 2,
+                minimumValue               : 0,
+                maximumValue               : 9999999999
+            };
+
+            const numOptionPercent = {
+                digitGroupSeparator        : ',',
+                decimalCharacter           : '.',
+                decimalCharacterAlternative: '.',
+                currencySymbol             : '',
+                currencySymbolPlacement    : AutoNumeric.options.currencySymbolPlacement.suffix,
+                decimalPlaces              : 2,
+                minimumValue               : 0,
+                maximumValue               : 100
+            };
+
+            const nft = Intl.NumberFormat("en-US",{
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2
+            });
+            const nftd = Intl.NumberFormat("en-US",{
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2
+            });
+            const nft1 = Intl.NumberFormat("en-US",{
+                minimumFractionDigits: 0,
+                maximumFractionDigits: 0
+            });
+
+            const elm0 = new AutoNumeric('#in_144', numOptionCurrency);
+            const elm01 = new AutoNumeric('#in_166', numOptionCurrency);
+            const elm02 = new AutoNumeric('#in_1', numOptionCurrency);
+            const elm03 = new AutoNumeric('#in_2', numOptionCurrency);
+            const elm04 = new AutoNumeric('#in_3', numOptionCurrency);
+            const elm05 = new AutoNumeric('#in_14', numOptionCurrency);
+            const elm06 = new AutoNumeric('#in_15', numOptionCurrency);
+            const elm07 = new AutoNumeric('#in_16', numOptionCurrency);
+            const elm08 = new AutoNumeric('#in_17', numOptionCurrency);
+
+            checkCookieValues();
+
+            const format_obj = {
+                "elm1" : new AutoNumeric('#in_4', numOptionCurrency),
+                "elm2" : new AutoNumeric('#in_5', numOptionCurrency),
+                "elm3" : new AutoNumeric('#in_6', numOptionCurrency),
+                "elm4" : new AutoNumeric('#in_7', numOptionCurrency),
+                "elm5" : new AutoNumeric('#in_8', numOptionCurrency),
+                "elm6" : new AutoNumeric('#in_9', numOptionCurrency),
+                "elm7" : new AutoNumeric('#in_10', numOptionCurrency),
+                "elm8" : new AutoNumeric('#in_11', numOptionCurrency),
+                "elm9" : new AutoNumeric('#in_12', numOptionCurrency)
+            }
+
+            $(".option-btn").on("click", function () {
+                let pr =  $(this).parent();
+                pr.find(".option-btn").removeClass("is-active");
+                $(this).addClass("is-active");
+
+                let type = $(this).data("value");
+                let obj_index = pr.data("value");
+
+                if(type == "dollar"){
+                    format_obj[obj_index].set(0);
+                    format_obj[obj_index].update(numOptionCurrency);
+                } else {
+                    format_obj[obj_index].set(0);
+                    format_obj[obj_index].update(numOptionPercent);
+                }
+            });
+
+            $("#in_144").on("input", function(){
+                is_prcnt = false;
+                let vl = removeComma($("#in_144").val());
+                let prcnt = Math.round((vl/average_vl)*100);
+                $('#in_rdb_price').val(prcnt).trigger("input");
+            })
+
+            $("#in_166").on("input", function(){
+                is_prcnt = false;
+                let vl = removeComma($("#in_166").val());
+                let prcnt = Math.round((vl/average_vl)*100);
+                $('#in_retail').val(prcnt).trigger("input");
+            })
+
+            $(".ins-one").on("input", function(){
+                let x = 0, x_total = 0;
+                $(".ins-one").each(function(i, elm){
+                    let vl = removeComma($(elm).val());
+                    if(vl){
+                        x_total = x_total + vl;
+                        x++;
+                    }
+                });
+
+                average_vl = x_total/x;
+                
+                let vl = removeComma($("#in_rdb_price").val());
+                elm0.set(average_vl*(vl/100));
+                
+                let vl2 = removeComma($("#in_retail").val());
+                elm01.set(average_vl*(vl2/100));
+
+                Calc();
+            });
+
+            $("#in_rdb_price").hover(function(){
+                is_prcnt = true;
+            }, function(){
+                is_prcnt = false;
+            });
+
+            $("#in_retail").hover(function(){
+                is_prcnt2 = true;
+            }, function(){
+                is_prcnt2 = false;
+            });
+
+            $('#in_rdb_price, #in_retail, #in_month').on('input', function(e){
+                var min = e.target.min,
+                    max = e.target.max,
+                    val = e.target.value; 
+                
+                let in_id = $(this).attr("id");
+                    
+                let bg_size = (val - min) * 100 / (max - min);
+
+                $(e.target).css({
+                    'backgroundSize': bg_size + '% 100%'
+                });
+                if(in_id == "in_rdb_price"){
+                    $("#"+in_id+"_vl").val(nft.format(val));
+                    if(is_prcnt){
+                        elm0.set(average_vl*(val/100));
+                    }
+                } else if(in_id == "in_retail"){
+                    $("#"+in_id+"_vl").val(nft.format(val));
+                    if(is_prcnt2){
+                        elm01.set(average_vl*(val/100));
+                    }
+                 } else {
+                    $("#"+in_id+"_vl").val(nft1.format(val));
+                }
+                Calc();
+            }).trigger('input');
+
+            $(".inner_form, .in-custom").on("input", function(){
+                Calc();
+            });
+
+            $(".ck-in").on("change", function(){
+                let in_address = $('#in_address').val();
+                let in_city = $('#in_city').val();
+                let in_state = $('#in_state').val();
+                let in_zip = $('#in_zip').val();
+                let in_1 = $('#in_1').val();
+                let in_2 = $('#in_2').val();
+                let in_3 = $('#in_3').val();
+                let in_rdb_price = $('#in_rdb_price').val();
+                let in_144 = $('#in_144').val();
+                let in_14 = $('#in_14').val();
+                let in_15 = $('#in_15').val();
+                let in_retail = $('#in_retail').val();
+                let in_166 = $('#in_166').val();
+                let in_16 = $('#in_16').val();
+                let in_17 = $('#in_17').val();
+                let in_month = $('#in_month').val();
+
+                $.cookie('ck_in_address', in_address);
+                $.cookie('ck_in_city', in_city);
+                $.cookie('ck_in_state', in_state);
+                $.cookie('ck_in_zip', in_zip);
+                $.cookie('ck_in_1', in_1);
+                $.cookie('ck_in_2', in_2);
+                $.cookie('ck_in_3', in_3);
+                $.cookie('ck_in_rdb_price', in_rdb_price);
+                $.cookie('ck_in_144', in_144);
+                $.cookie('ck_in_14', in_14);
+                $.cookie('ck_in_15', in_15);
+                $.cookie('ck_in_retail', in_retail);
+                $.cookie('ck_in_166', in_166);
+                $.cookie('ck_in_16', in_16);
+                $.cookie('ck_in_17', in_17);
+                $.cookie('ck_in_month', in_month);
+            });
+
+
+            function checkCookieValues(){
+                if ($.cookie('ck_in_address')!=="undefined") {
+                    $('#in_address').val($.cookie('ck_in_address'));
+                }
+                if ($.cookie('ck_in_city')!=="undefined") {
+                    $('#in_city').val($.cookie('ck_in_city'));
+                }
+                if ($.cookie('ck_in_state')!=="undefined") {
+                    $('#in_state').val($.cookie('ck_in_state'));
+                }
+                if ($.cookie('ck_in_zip')!=="undefined") {
+                    $('#in_zip').val($.cookie('ck_in_zip'));
+                }
+                if ($.cookie('ck_in_1')!=="undefined") {
+                    elm02.set($.cookie('ck_in_1'));
+                }
+                if ($.cookie('ck_in_2')!=="undefined") {
+                    elm03.set($.cookie('ck_in_2'));
+                }
+                if ($.cookie('ck_in_3')!=="undefined") {
+                    elm04.set($.cookie('ck_in_3'));
+                }
+                if ($.cookie('ck_in_rdb_price')!=="undefined") {
+                    if($.cookie('ck_in_rdb_price')){
+                        $('#in_rdb_price').val($.cookie('ck_in_rdb_price')).trigger('input');
+                    }
+                }
+                if ($.cookie('ck_in_144')!=="undefined") {
+                    $('#in_144').val($.cookie('ck_in_144'));
+                }
+                if ($.cookie('ck_in_14')!=="undefined") {
+                    elm05.set($.cookie('ck_in_14'));
+                }
+                if ($.cookie('ck_in_15')!=="undefined") {
+                    elm06.set($.cookie('ck_in_15'));
+                }
+                if ($.cookie('ck_in_retail')!=="undefined") {
+                    if ($.cookie('ck_in_retail')){
+                        $('#in_retail').val($.cookie('ck_in_retail')).trigger('input');
+                    }
+                }
+                if ($.cookie('ck_in_166')!=="undefined") {
+                    $('#in_166').val($.cookie('ck_in_166'));
+                }
+                if ($.cookie('ck_in_16')!=="undefined") {
+                    elm07.set($.cookie('ck_in_16'));
+                }
+                if ($.cookie('ck_in_17')!=="undefined") {
+                    elm08.set($.cookie('ck_in_17'));
+                }
+                if ($.cookie('ck_in_month')!=="undefined") {
+                    if ($.cookie('ck_in_month')){
+                        $('#in_month').val($.cookie('ck_in_month')).trigger('input');
+                    }
+                }
+
+                Calc();
+            }
+
+            function Calc(){
+                in_1 = removeComma($("#in_1").val());
+                in_2 = removeComma($("#in_2").val());
+                in_3 = removeComma($("#in_3").val());
+
+                in_rdb_price = removeComma($("#in_rdb_price").val())/100;
+                in_retail = removeComma($("#in_retail").val())/100;
+                in_month = removeComma($("#in_month").val());
+
+                in_144 = removeComma($("#in_144").val());
+                in_14 = removeComma($("#in_14").val());
+                in_15 = removeComma($("#in_15").val());
+                in_166 = removeComma($("#in_166").val());
+                in_16 = removeComma($("#in_16").val());
+                in_17 = removeComma($("#in_17").val());
+
+                let average = average_vl;
+
+                let y_total = 0;
+                $(".ins-two").each(function(i, elm){
+                    let vl = removeComma($(elm).val());
+                    let pr = $(elm).parent();
+                    let type = pr.find(".option-btn.is-active").data("value");
+
+                    if(type == "dollar"){
+                        y_total = y_total + vl;
+                    } else {
+                        let prcnt = vl/100;
+                        vl = average * prcnt;
+                        y_total = y_total + vl;
+                    }
+
+                    $("#rs_fee_"+(i+1)).text("$" + nftd.format(onlyNum(vl)));
+                });
+
+                let rbp_tr_price = in_144;
+                let wholesale_price = in_166;
+                let rbp_max_offer = rbp_tr_price-y_total-in_15;
+                let wholesale_sold_price = wholesale_price - in_16;
+                let wholesale_max_offer = wholesale_sold_price-in_17;
+
+                out_1 = rbp_max_offer - wholesale_max_offer;
+                out_3 = out_1/rbp_max_offer;
+                out_2 = in_14 - rbp_max_offer;
+                out_4 = wholesale_sold_price - wholesale_max_offer;
+                final_vl = out_2 - out_4;
+
+                let monthly_project = in_month * final_vl;
+                let annually_project = monthly_project * 12;
+
+                $("#td-out-1").text("$" + nftd.format(in_1));
+                $("#td-out-2").text("$" + nftd.format(in_2));
+                $("#td-out-3").text("$" + nftd.format(in_3));
+
+                $("#td-out-redfin").text("$" + nftd.format(onlyNum(average)));
+                $("#rs_fee_total, #td-out-166").text("$" + nftd.format(onlyNum(y_total)));
+
+                $("#td-out-15").text("$" + nftd.format(onlyNum(rbp_tr_price)));
+                $("#td-out-rpb").text("$" + nftd.format(onlyNum(rbp_max_offer)));
+
+                $("#td-out-16").text("$" + nftd.format(in_14));
+                $("#td-out-17").text("$" + nftd.format(in_15));
+                $("#td-out-18").text("$" + nftd.format(onlyNum(wholesale_price)));
+                $("#td-out-19").text("$" + nftd.format(in_16));
+                $("#td-out-199").text("$" + nftd.format(onlyNum(wholesale_sold_price)));
+                $("#td-out-whol").text("$" + nftd.format(onlyNum(wholesale_max_offer)));
+                $("#td-out-20").text("$" + nftd.format(in_17));
+                $("#td-out-21").text("$" + nftd.format(onlyNum(monthly_project)));
+                $("#td-out-22").text("$" + nftd.format(onlyNum(annually_project)));
+                $("#out_1").text("$" + nftd.format(onlyNum(out_1)));
+                $("#out_2").text("$" + nftd.format(onlyNum(out_2)));
+                $("#out_3").text(nftd.format(onlyNum(out_3*100))+"%");
+                $("#out_4").text("$" + nftd.format(onlyNum(out_4)));
+                $("#final_vl").text("$" + nftd.format(onlyNum(final_vl)));
+            }
+            
+            function removeComma(num){
+                return Number(num.replace(/,/g,""));
+            }
+
+            function onlyNum(num){
+                return isFinite(num) ? num : 0;
+            }
+        });
+    </script>
+</body>
+
+</html>

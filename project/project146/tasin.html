@@ -1,0 +1,715 @@
+
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
+    <title>Web Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        // GRP's
+        //רייטנג ממוצע לרצועת שידור
+        //קשת ,רשת ,ערוץ 14
+        
+        let data_arr1 = [
+            [4.0, 2.5, 1.5],    //בוקר
+            [3.5, 2.0, 1.0],    //בוקר מאוחר  
+            [2.0, 1.5, 0.8],    //יום 
+            [6.5, 4.0, 3.0],    //אוף מוקדם
+            [8.5, 5.0, 3.5],    //סמי פריים
+            [13.0, 7.5, 4.5],   //חדשות
+            [14.0, 9.0, 4.0],   //פריים + סופר פריים 
+            [7.0, 5.0, 3.0],    //אוף מאוחר
+            [3.0, 2.0, 1.0]     //לייט
+        ];
+    
+        // Cost per point
+        //מחיר לנקודה
+        //קשת 12 ,רשת 13 ,ערוץ 14
+    
+        let data_arr2 = [
+            [700, 660, 500],    //בוקר
+            [650, 500, 450],    //בוקר מאוחר  
+            [500, 400, 450],    //יום 
+            [900, 600, 800],    //אוף מוקדם
+            [1100, 900, 1400],  //סמי פריים
+            [1900, 1350, 1400], //חדשות
+            [2000, 1500, 1400], //פריים + סופר פריים 
+            [1300, 1050, 750],  //אוף מאוחר
+            [900, 750, 750]     //לייט
+        ];
+    
+        // יחס ל 30״
+        let data_arr3 = [0.5, 0.6, 0.75, 0.9, 1];
+    
+    </script>
+    <style>
+        #mx_cl *,
+        ::after,
+        ::before {
+            box-sizing: border-box;
+        }
+    
+        #mx_cl {
+            line-height: 1.5;
+            font-family: inherit;
+        }
+    
+        #mx_cl .container {
+            width: 100%;
+            padding-right: 15px;
+            padding-left: 15px;
+            margin-right: auto;
+            margin-left: auto;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #4a4a4a;
+            text-align: left;
+        }
+    
+        #mx_cl label {
+            display: block;
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            text-align: right;
+            color: #4B6587;
+        }
+    
+        #mx_cl .row {
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            margin-right: -15px;
+            margin-left: -15px;
+        }
+    
+        #mx_cl .col-md-1,
+        #mx_cl .col-md-10,
+        #mx_cl .col-md-11,
+        #mx_cl .col-md-12,
+        #mx_cl .col-md-2,
+        #mx_cl .col-md-3,
+        #mx_cl .col-md-4,
+        #mx_cl .col-md-5,
+        #mx_cl .col-md-6,
+        #mx_cl .col-md-7,
+        #mx_cl .col-md-8,
+        #mx_cl .col-md-9 {
+            position: relative;
+            width: 100%;
+            padding-right: 15px;
+            padding-left: 15px;
+        }
+    
+        #mx_cl .form-group {
+            margin-bottom: 1rem;
+        }
+    
+        #mx_cl .form-control {
+            display: block;
+            width: 100%;
+            height: 47px;
+            padding: 0.275rem 0.75rem;
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #4a4a4a;
+            background-color: #fff;
+            background-clip: padding-box;
+            border: 1px solid #69727d;
+            transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+            text-align: right;
+            border-radius: 5px;
+        }
+    
+        #mx_cl .form-control:focus {
+            outline: none;
+        }
+    
+        #mx_cl .btn {
+            display: inline-block;
+            font-weight: 400;
+            color: #212529;
+            text-align: center;
+            vertical-align: middle;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            background-color: transparent;
+            border: 1px solid transparent;
+            padding: .375rem .75rem;
+            font-size: 1rem;
+            line-height: 1.5;
+            border-radius: .25rem;
+            transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+        }
+    
+        #mx_cl .btn-primary {
+            color: #fff;
+            background-color: #28a745;
+            border-color: #28a745;
+        }
+    
+        #mx_cl .btn-reset {
+            color: #fff;
+            background-color: #28a745;
+            border-color: #28a745;
+        }
+    
+        #mx_cl table {
+            border-collapse: collapse;
+        }
+    
+        #mx_cl .table {
+            width: 100%;
+            margin-bottom: 1rem;
+            color: #212529;
+        }
+    
+        #mx_cl .table td,
+        #mx_cl .table th {
+            padding: 0 10px;
+            vertical-align: middle;
+            border: 1px solid #ddd0b8;
+            text-align: center;
+            font-size: 20px;
+            background-color: #F0E5CF;
+        }
+        #mx_cl .sp-bg-cl {
+            background: #4B6587 !important;
+        color: #ffffff;
+        border-color: #5c7ca5 !important;
+        }
+    
+        #mx_cl .text-center {
+            text-align: center;
+        }
+    
+        @media (min-width: 576px) {
+            #mx_cl .container {
+                max-width: 100%;
+            }
+        }
+    
+        @media (min-width: 768px) {
+            #mx_cl .container {
+                max-width: 100%;
+            }
+    
+            #mx_cl .col-md-12 {
+                -ms-flex: 0 0 100%;
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+    
+            #mx_cl .col-md-9 {
+                -ms-flex: 0 0 75%;
+                flex: 0 0 75%;
+                max-width: 75%;
+            }
+    
+            #mx_cl .col-md-8 {
+                -ms-flex: 0 0 66.666667%;
+                flex: 0 0 66.666667%;
+                max-width: 66.666667%;
+            }
+    
+            #mx_cl .col-md-7 {
+                -ms-flex: 0 0 58.33333%;
+                flex: 0 0 58.33333%;
+                max-width: 58.33333%;
+            }
+    
+            #mx_cl .col-md-6 {
+                -ms-flex: 0 0 50%;
+                flex: 0 0 50%;
+                max-width: 50%;
+            }
+    
+            #mx_cl .col-md-5 {
+                -ms-flex: 0 0 41.666667%;
+                flex: 0 0 41.666667%;
+                max-width: 41.666667%;
+            }
+    
+            #mx_cl .col-md-4 {
+                -ms-flex: 0 0 33.333333%;
+                flex: 0 0 33.333333%;
+                max-width: 33.333333%;
+            }
+    
+            #mx_cl .col-md-3 {
+                -ms-flex: 0 0 25%;
+                flex: 0 0 25%;
+                max-width: 25%;
+            }
+        }
+    
+        @media (min-width: 992px) {
+            #mx_cl .container {
+                max-width: 960px;
+            }
+        }
+    
+        @media (min-width: 1200px) {
+            #mx_cl .container {
+                max-width: 1200px;
+            }
+        }
+    
+        #mx_cl .text-right {
+            text-align: right !important;
+        }
+    
+        #mx_cl .form-group,
+        #mx_cl .input-group {
+            position: relative;
+            margin-bottom: 15px;
+        }
+    
+    
+        #mx_cl .top-title {
+            font-size: 25px;
+        }
+    
+        #mx_cl .content_box {
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+    
+        #mx_cl .cus-input {
+            text-align: right;
+            display: block;
+            margin-bottom: 0px;
+        }
+    
+        #mx_cl .slide-head {
+            color: #4B6587;
+            font-weight: 600;
+            border-bottom: 2px solid #4B6587;
+            display: block;
+            text-align: right;
+            font-size: 2.5rem;
+        }
+    
+        #mx_cl .input-group-text {
+            margin-bottom: 0;
+            position: absolute;
+            left: 9px;
+            bottom: 6.5px;
+            font-size: 1.5rem;
+        }
+    
+        #mx_cl .input-background {
+            background-color: #ffffff;
+            border-radius: 5px;
+        }
+    
+        #mx_cl .common-margin-on-input {
+            margin-top: 15px;
+        }
+    
+        #mx_cl .mid-box {
+            display: grid;
+            grid-template-columns: 3fr 1fr 3fr;
+            align-items: center;
+            padding: 9px 25px;
+            color: #4b6587;
+            border: 1px solid #4b6587;
+            border-radius: 5px;
+            background: #f0e5cf;
+            margin-bottom: 14px;
+        }
+    
+        #mx_cl .output {
+            font-size: 30px;
+            font-weight: 600;
+        }
+    
+        #mx_cl .output_text {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+    
+        #mx_cl .border_r {
+            border-right: 1px solid #4b6587;
+            padding-right: 20px;
+        }
+    
+        #mx_cl .footer-box {
+            background-color: #4B6587;
+            color: #fff;
+            padding: 25px 20px 20px 20px;
+            display: block;
+            border-radius: 5px;
+            margin-top: 24px;
+        }
+    
+        #mx_cl .footer-p {
+            border-bottom: 1px solid #355580;
+            padding-bottom: 5px;
+            font-size: 1.5rem;
+            font-weight: 600;
+            display: block;
+        }
+    
+        #mx_cl .f-output {
+            font-size: 34px;
+            font-weight: 600;
+            padding-top: 10px;
+        }
+    
+        #mx_cl .t-input {
+            background-color: #ffffff;
+            text-align: center;
+        }
+    
+        #mx_cl .form-control-2 {
+            display: block;
+            width: 100%;
+            height: 47px;
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #000000;
+            background-color: #ffffff;
+            background-clip: padding-box;
+            border: 1px solid transparent;
+            transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+            text-align: center;
+            border-radius: 0;
+        }
+    
+        #mx_cl .form-control-2:focus {
+            outline: none;
+        }
+    
+        #mx_cl .left-sec,
+        #mx_cl .right-sec {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    
+        #mx_cl .mid-line {
+            width: 1px;
+            height: 100%;
+            background-color: #4b6587;
+            margin: 0 auto;
+        }
+    
+        #mx_cl .common-box {
+            display: flex;
+            justify-content: space-between;
+            border: 1px solid #4b6587;
+            color: #4b6587;
+            padding: 15px 20px;
+            align-items: center;
+            border-radius: 5px;
+            background: #f0e5cf;
+        }
+        #mx_cl .err-msg {
+            display: none;
+            color: red;
+            text-align: right;
+            margin-bottom: 20px;
+        }
+        #mx_cl .err-input {
+            border-color: red;
+        }
+        #mx_cl .sp-sec:nth-child(1) {
+            margin-top: 14px;
+            margin-bottom: 26px;
+        }
+        #mx_cl .sp-sec:nth-child(2) {
+            margin-bottom: 26px;
+        }
+        #mx_cl .sp-sec:nth-child(3) {
+            margin-bottom: 14px;
+        }
+        #mx_cl .text-left {
+            text-align: left !important;
+        }
+        #mx_cl .rs-vl {
+            font-weight: 600 !important;
+        }
+        #mx_cl .sp-width {
+            width: 160px !important;
+        }
+        @media (max-width: 768px) {
+            #mx_cl .mid-box {
+                grid-template-columns: 1fr;
+                gap: 10px;
+                padding: 10px;
+                text-align: right;
+            }
+    
+            #mx_cl .mid-line {
+                width: 100%;
+                height: 1px;
+                background-color: #4b6587;
+                margin: 0 auto;
+            }
+    
+            #mx_cl .left-sec,
+            #mx_cl .right-sec {
+                gap: 20px;
+    
+            }
+            #mx_cl .slide-head {
+                font-size: 1.5rem;
+                margin-top: 20px;
+            }
+            #mx_cl label {
+                font-size: 16px;
+            }
+            #mx_cl .table td, #mx_cl .table th {
+                padding: 0 5px;
+                font-size: 16px;
+            }
+            #mx_cl .sp-width {
+                width: 100px !important;
+            }
+        }
+        #mx_cl .rs-title {
+            font-size: 20px !important;
+            font-weight: 400 !important;
+        }
+        #mx_cl .rs-vl {
+            font-size: 34px !important;
+            font-weight: 400 !important;
+        }
+        #mx_cl .rs-sm-vl {
+            font-size: 24px !important;
+            font-weight: 400 !important;
+        }
+    </style>
+    <div class="ms-cl" id="mx_cl">
+        <div class="container">
+            <div class="content_box">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="mid-form">
+                            <div class="row">
+                                <div class="col-md-7">
+                                    <div class="row">
+                                        <div class="col-md-6 common-margin-on-input">
+                                            <label for="in_1">עלות הנכס</label>
+                                            <div class="input-group">
+                                                <span class="input-group-text">Kč</span>
+                                                <input type="text"
+                                                    class="form-control text-right cl-input cl-curr pr-in-1 input-background" id="in_1">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 common-margin-on-input">
+                                            <label for="in_2">שכירות חודשית</label>
+                                            <div class="input-group">
+                                                <span class="input-group-text">Kč</span>
+                                                <input type="text"
+                                                    class="form-control text-right cl-input cl-curr pr-in-1 input-background" id="in_2">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-5 common-margin-on-input">
+                                    <label for="in_3">כמה זמן הנכס בבעלותך לחישוב ערך הנכס</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text">שנים</span>
+                                        <input type="text"
+                                            class="form-control text-right cl-input  pr-in-1 input-background" id="in_3">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mid-form">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="footer-box">
+                                        <div class="row">
+                                            <div class="col-md-6 text-right sp-sec">
+                                                <span class="footer-p rs-title">שכירות שנתית </span>
+                                                <span class="f-output rs-vl" id="rs_6">0 Kč</span>
+                                            </div>
+                                            <div class="col-md-6 text-right sp-sec" style="margin-top: 14px;">
+                                                <span class="footer-p rs-title">תחזוקה-אחוז מתוך שכירות חודשית</span>
+                                                <span class="f-output rs-vl" id="rs_7">0%</span>
+                                            </div>
+                                            <div class="col-md-6 text-right sp-sec">
+                                                <span class="footer-p rs-title">עלות תחזוקה שנתית</span>
+                                                <span class="f-output rs-vl" id="rs_8">0 Kč</span>
+                                            </div>
+                                            <div class="col-md-6 text-right sp-sec">
+                                                <span class="footer-p rs-title">סה"כ הכנסה משכירות (בקיזוז תחזוקה)</span>
+                                                <span class="f-output rs-vl" id="rs_9">0 Kč</span>
+                                            </div>
+                                            <div class="col-md-6 text-right sp-sec">
+                                                <span class="footer-p rs-title">תשואה שנתית משכירות (בקיזוז תחזוקה) - באחוזים</span>
+                                                <span class="f-output rs-vl" id="rs_10">0%</span>
+                                            </div>
+                                            <div class="col-md-6 text-right sp-sec">
+                                                <span class="footer-p rs-title">הוצאות שיווק ותיווך PRAGUE INVEST</span>
+                                                <span class="rs-sm-vl" id="new_brokerage_vl">(0%)</span>
+                                                <span class="f-output rs-vl" id="rs_11">0 Kč</span>
+                                            </div>
+                                            <div class="col-md-6 text-right sp-sec">
+                                                <span class="footer-p rs-title">מס רכישה</span>
+                                                <span class="f-output rs-vl" id="rs_12">0%</span>
+                                            </div>
+                                            <div class="col-md-6 text-right sp-sec">
+                                                <span class="footer-p rs-title">מדד תשומות בניה</span>
+                                                <span class="f-output rs-vl" id="rs_13">0%</span>
+                                            </div>
+                                            <div class="col-md-6 text-right sp-sec">
+                                                <span class="footer-p rs-title">הערכה שנתית ממוצעת לעליית הנכס (ריבית דריבית)</span>
+                                                <span class="f-output rs-vl" id="rs_14">0%</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="footer-box">
+                                        <div class="row">
+                                            <div class="col-md-12 text-right sp-sec">
+                                                <span class="footer-p rs-title">ערך הנכס לאחר מספר השנים שהנכס ברשותך</span>
+                                                <span class="f-output rs-vl" id="rs_1">0 Kč</span>
+                                            </div>
+                                            <div class="col-md-12 text-right sp-sec">
+                                                <span class="footer-p">ערך הנכס כולל הכנסה משכירות</span>
+                                                <span class="f-output" id="rs_2">0 Kč</span>
+                                            </div>
+                                            <div class="col-md-12 text-right sp-sec">
+                                                <span class="footer-p rs-title">סה"כ רווח לאחר מספר השנים שהנכס ברשותך</span>
+                                                <span class="f-output rs-vl" id="rs_3">0 Kč</span>
+                                            </div>
+                                            <div class="col-md-12 text-right sp-sec">
+                                                <span class="footer-p rs-title">סה"כ רווח בכל שנה מתוך השנים שהנכס ברשותך</span>
+                                                <span class="f-output rs-vl" id="rs_4">0 Kč</span>
+                                            </div>
+                                            <div class="col-md-12 text-right sp-sec">
+                                                <span class="footer-p rs-title">אחוז הרווח בכל שנה</span>
+                                                <span class="f-output rs-vl" id="rs_5">0%</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/autonumeric@4.5.4"></script>
+    <script>
+        jQuery(($) => {
+            let new_maintenence_percentage = 8/100;
+            let brokerage_expenses = 4/100;
+            let purchase_tax = 0;
+            let Construction_index= 0;
+            let new_compound_interest = 4/100;
+
+            const numOptionCurrency = {
+                digitGroupSeparator        : ',',
+                decimalCharacter           : '.',
+                decimalCharacterAlternative: '.',
+                currencySymbol             : '',
+                currencySymbolPlacement    : AutoNumeric.options.currencySymbolPlacement.prefix,
+                decimalPlaces              : 0
+            };
+            const anElement1 = AutoNumeric.multiple('.cl-curr', numOptionCurrency);
+
+            const nft = Intl.NumberFormat("en-US",{
+                minimumFractionDigits: 0,
+                maximumFractionDigits: 0
+            });
+            const nftd = Intl.NumberFormat("en-US",{
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2
+            });
+
+
+            $(".cl-input").on("input", function(){
+                new_apartment_clac();
+            })
+
+            function new_apartment_clac(){
+                in_1 = removeSign($("#in_1").val());
+                in_2 = removeSign($("#in_2").val());
+                in_3 = Number($("#in_3").val());
+
+                if(in_1 && in_2 && in_3){
+                    let value_of_property = in_1 * Math.pow((1 + new_compound_interest), in_3);
+                    let annual_rent_yr = in_2 * 12;
+                    let maintenence_percentage_yr = -1 * annual_rent_yr * new_maintenence_percentage;
+                    let total_rental_income = annual_rent_yr + maintenence_percentage_yr;
+                    let maintenance_offset = (total_rental_income / in_1) * 100;
+                    let property_rental_income = total_rental_income + value_of_property;
+                    let total_property = property_rental_income - in_1;
+                    let total_property_yr = total_property / in_3;
+                    let per_profit_yr = (total_property_yr / in_1) * 100;
+                    let prague_brokerage_expenses = in_1 * brokerage_expenses;
+
+
+                    $("#rs_1").text(nft.format(value_of_property)+" Kč");
+                    $("#rs_2").text(nft.format(property_rental_income)+" Kč");
+                    $("#rs_3").text(nft.format(total_property)+" Kč");
+                    $("#rs_4").text(nft.format(total_property_yr)+" Kč");
+                    $("#rs_5").text(nftd.format(per_profit_yr)+"%");
+                    $("#rs_6").text(nft.format(annual_rent_yr)+" Kč");
+                    $("#rs_7").text(nftd.format(new_maintenence_percentage * 100)+" %");
+                    $("#rs_8").text(nft.format(maintenence_percentage_yr)+" Kč");
+                    $("#rs_9").text(nft.format(total_rental_income)+" Kč");
+                    $("#rs_10").text(nftd.format(maintenance_offset)+"%");
+                    $("#rs_11").text(nft.format(prague_brokerage_expenses)+" Kč");
+                    $("#new_brokerage_vl").text(nftd.format(brokerage_expenses * 100)+"%");
+                    $("#rs_12").text(nftd.format(purchase_tax)+"%");
+                    $("#rs_13").text(nftd.format(Construction_index)+"%");
+                    $("#rs_14").text(nftd.format(new_compound_interest * 100)+"%");
+                } else{
+                    $("#rs_1").text("0 Kč");
+                    $("#rs_2").text("0 Kč");
+                    $("#rs_3").text("0 Kč");
+                    $("#rs_4").text("0 Kč");
+                    $("#rs_5").text("0%");
+                    $("#rs_6").text("0 Kč");
+                    $("#rs_7").text("0%");
+                    $("#rs_8").text("0 Kč");
+                    $("#rs_9").text("0 Kč");
+                    $("#rs_10").text("0%");
+                    $("#rs_11").text("0 Kč");
+                    $("#new_brokerage_vl").text("0%");
+                    $("#rs_12").text("0%");
+                    $("#rs_13").text("0%");
+                    $("#rs_14").text("0%");
+                }
+            }
+
+            function removeSign(vl){
+                return Number(vl.replace(/,/g,''));
+            }
+
+        });
+    </script>
+</body>
+
+</html>

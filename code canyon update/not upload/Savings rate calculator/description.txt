@@ -1,0 +1,35 @@
+Retirement Planning Calculator - Web Calculator for your Website
+
+Welcome to our <b>Retirement Planning Calculator</b>, The Retirement Planning Calculator is a Web Calculator tool to help individuals plan for their financial future and ensure a comfortable retirement.
+<br>
+<br>
+<u><b>User inputs:</b></u>
+<ul>
+    <li>Current Age</li>
+    <li>Retirement Age</li>
+    <li>Current Retirement Savings</li>
+    <li>Annual Savings</li>
+    <li>Current Annual Spending</li>
+    <li>Most Recent Social Security Statement Estimate</li>
+    <li>Expected Rate of Return Before Retirement</li>
+    <li>Expected Rate of Return After Retirement</li>
+</ul>
+<br>
+<u><b>Outputs:</b></u>
+<ul>
+    <li>Amount Saved By Retirement Age</li>
+    <li>Years Your Retirement Will Last</li>
+</ul>
+<br>
+<u><b>Features of the Retirement Planning Calculator:</b></u>
+<ul>
+    <li>- Users can adjust the expected rate of return on investments before and after retirement, which is crucial for accurate projections.</li>
+    <li>- Instant result without page reload</li>
+    <li>- JS and CSS loads when shortcode called on page</li>
+    <li>- 100% Responsive design</li>
+    <li>- Unique Design</li>
+    <li>- Well Documented (proper help instructions for setup)</li>
+    <li>- Dedicated Support</li>
+</ul>
+<br>
+The calculator is built using HTML, CSS, and JavaScript, and it also utilizes the popular JavaScript library jQuery. A premium quality <b>Retirement Planning calculator</b> which you can easily embed into any website (well documented).

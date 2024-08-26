@@ -1,0 +1,261 @@
+:root{
+    --Calc-primary-color:#fe7d81;
+    --Calc-secondary-color: #963BA4;
+    --Calc-third-color: #F3ECF4;
+}
+#art *, ::after, ::before {
+    box-sizing: border-box;
+}
+#art {
+    line-height: 1.5;
+    font-family: inherit;
+}
+#art .container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #000000;
+    text-align: left;
+    margin-top: 10rem;
+}
+#art label {
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 400;
+    color: #000000;
+    margin-bottom: 0.5rem;
+}
+#art .row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+#art .col-md-12, #art .col-md-6 {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+#art .form-group {
+    margin-bottom: 1rem;
+}
+#art .form-control {
+    display: block;
+    width: 100%;
+    height: 35px;
+    padding: 0.275rem 0.75rem;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #000000;
+    border: 1px solid var(--Calc-third-color);
+    background: var(--Calc-third-color);
+    border-radius: 6px;
+    background-clip: padding-box;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+#art .form-control:focus {
+    outline: none;
+}
+#art .text-center {
+    text-align: center!important;
+}
+#art .btn {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    border: 1px solid transparent;
+    padding: 0.275rem 0.75rem;
+    font-size: 16px;
+    line-height: 1.5;
+    border-radius: 25px;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    width: 100%;
+}
+#art .cl-wrapper {
+    background-color: #ffffff;
+    padding: 2rem 2rem;
+    border-radius: 15px;
+    box-shadow: 0 0 20px #ccc;
+    margin-bottom: 3rem;
+}
+#art .btn-primary {
+    font-size: 18px;
+    color: #fff;
+    background-color: var(--Calc-primary-color);
+    border-color: var(--Calc-primary-color);
+    margin: 0;
+}
+#art .btn-primary:hover {
+    color: var(--Calc-primary-color);
+    background-color: #ffffff;
+    border-color: var(--Calc-primary-color);
+}
+#art .btn:focus {
+    outline: none;
+}
+@media (min-width: 576px){
+    #art .container {
+        max-width: 540px;
+    }
+}
+@media (min-width: 768px){
+    #art .container {
+        max-width: 100%;
+    }
+    #art .col-md-12 {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    #art .col-md-6 {
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    #art .col-md-3 {
+        -ms-flex: 0 0 25%;
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+}
+@media (min-width: 992px){
+    #art .container {
+        max-width: 600px;
+    }
+}
+@media (min-width: 1200px) {
+    #art .container {
+        max-width: 900px;
+    }
+}
+#art .form-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+#art .sec-title {
+    font-size: 18px;
+    margin: 0;
+    margin-bottom: 20px;
+    color: #000000;
+}
+#art .rs-title {
+    font-weight: 600;
+    font-size: 24px;
+    margin: 0;
+    color: #000000;
+    text-align: center;
+}
+#art .rs-value {
+    font-weight: 600;
+    font-size: 34px;
+    margin: 0;
+    margin-bottom: 8px;
+    color: var(--Calc-secondary-color);
+    text-align: center;
+}
+#art .top-title-sec {
+    text-align: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--Calc-primary-color);
+    padding: 8px 10px;
+}
+#art .top-title {
+    margin: 0;
+    font-size: 24px;
+    color: #000000;
+}
+#art .top-title-sec p {
+    margin: 0;
+    color: #ececec;
+}
+#art .top-title-sec p a {
+    margin: 0;
+    text-decoration: none;
+    color: #ececec;
+}
+#art .sp-rs-sec {
+    background: var(--Calc-primary-color);
+    border-radius: 15px;
+    padding: 26px;
+    box-shadow: 0px 0px 20px rgb(0 0 0 / 30%);
+}
+#art .rs-sec {
+    padding: 12px 26px;
+    background-color: var(--Calc-third-color);
+}
+#art .sp-rs-sec .rs-value {
+    margin-bottom: 5px;
+    color: #fff;
+    font-size: 2.5rem;
+    line-height: 38px;
+}
+#art .sp-rs-sec .rs-title {
+    color: #fff;
+}
+#art .form-group {
+    position: relative;
+}
+#art .prepend-text {
+    font-size: 16px;
+    position: absolute;
+    bottom: 4px;
+    left: 5px;
+    padding: 1px 5px;
+    border-radius: 5px;
+    color: #545454;
+}
+#art .append-text {
+    font-size: 16px;
+    position: absolute;
+    bottom: 2px;
+    right: 5px;
+    padding: 1px 5px;
+    border-radius: 5px;
+    color: #545454;
+}
+#art .sp-pd-left {
+    padding-left: 22px;
+}
+#art .sp-pd-right {
+    padding-right: 22px;
+}
+#art .sp-pd-top {
+    padding-top: 20px;
+}
+@media (max-width: 768px){
+    #art .child-img {
+        min-width: 100%;
+        width: 100%;
+        margin-bottom: -6rem;
+        margin-right: -2rem;
+        margin-top: -2rem;
+    }
+    #art .cl-wrapper {
+        padding: 1.5rem 1.5rem;
+    }
+    #art .top-title {
+        font-size: 22px;
+    }
+    #art .sp-rs-sec {
+        margin-top: 2rem;
+    }
+}
+#art .sp-left {
+    padding-left: 20px;
+}

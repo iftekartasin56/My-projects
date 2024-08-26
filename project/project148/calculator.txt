@@ -1,0 +1,775 @@
+<style>
+#hm_cl *, ::after, ::before {
+    box-sizing: border-box;
+}
+#hm_cl {
+    line-height: 1.5;
+    font-family: 'Poppins', sans-serif;
+}
+#hm_cl .container {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #000000;
+    text-align: left;
+    padding-right: 0;
+    padding-left: 0;
+}
+#hm_cl label {
+    display: block;
+    text-align: left;
+    margin-top: 0.3rem;
+    font-size: 16px;
+    font-weight: 500;
+}
+#hm_cl .table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 0rem;
+    background-color: transparent;
+    border-collapse: collapse;
+}
+#hm_cl .table td, #hm_cl .table th {
+    padding: .65rem .75rem;
+    vertical-align: middle;
+    border-right: none !important;
+    border-left: none !important;
+    border-top: none !important;
+    border-bottom: 1px solid #cecabe;
+    font-size: 16px;
+    background: transparent;
+    box-shadow: none;
+    color:#000000;
+}
+#hm_cl .table th {
+    text-align: left;
+    font-weight: 500;
+}
+#hm_cl .w25 {
+    width: 25%;
+}
+#hm_cl .row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin: 0;
+}
+#hm_cl .col, #hm_cl .col-1, #hm_cl .col-10, #hm_cl .col-11, #hm_cl .col-12, #hm_cl .col-2, #hm_cl .col-3, #hm_cl .col-4, #hm_cl .col-5, #hm_cl .col-6, #hm_cl .col-7, #hm_cl .col-8, #hm_cl .col-9, #hm_cl .col-auto, #hm_cl .col-lg, #hm_cl .col-lg-1, #hm_cl .col-lg-10, #hm_cl .col-lg-11, #hm_cl .col-lg-12, #hm_cl .col-lg-2, #hm_cl .col-lg-3, #hm_cl .col-lg-4, #hm_cl .col-lg-5, #hm_cl .col-lg-6, #hm_cl .col-lg-7, #hm_cl .col-lg-8, #hm_cl .col-lg-9, #hm_cl .col-lg-auto, #hm_cl .col-md, #hm_cl .col-md-1, #hm_cl .col-md-10, #hm_cl .col-md-11, #hm_cl .col-md-12, #hm_cl .col-md-2, #hm_cl .col-md-3, #hm_cl .col-md-4, #hm_cl .col-md-5, #hm_cl .col-md-6, #hm_cl .col-md-7, #hm_cl .col-md-8, #hm_cl .col-md-9, #hm_cl .col-md-auto, #hm_cl .col-sm, #hm_cl .col-sm-1, #hm_cl .col-sm-10, #hm_cl .col-sm-11, #hm_cl .col-sm-12, #hm_cl .col-sm-2, #hm_cl .col-sm-3, #hm_cl .col-sm-4, #hm_cl .col-sm-5, #hm_cl .col-sm-6, #hm_cl .col-sm-7, #hm_cl .col-sm-8, #hm_cl .col-sm-9, #hm_cl .col-sm-auto, #hm_cl .col-xl, #hm_cl .col-xl-1, #hm_cl .col-xl-10, #hm_cl .col-xl-11, #hm_cl .col-xl-12, #hm_cl .col-xl-2, #hm_cl .col-xl-3, #hm_cl .col-xl-4, #hm_cl .col-xl-5, #hm_cl .col-xl-6, #hm_cl .col-xl-7, #hm_cl .col-xl-8, #hm_cl .col-xl-9, #hm_cl .col-xl-auto {
+    position: relative;
+    width: 100%;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+#hm_cl .form-group {
+    margin-bottom: 2rem;
+}
+#hm_cl .form-control {
+    display: block;
+    width: 100%;
+    height: 40px;
+    padding: 0.375rem 3.5rem 0.375rem 0.75rem;
+    font-family: 'Poppins', sans-serif;
+    text-align: left;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #000000;
+    background-color: transparent;
+    background-clip: padding-box;
+    border:  1px solid #F17005;
+    border-radius: 5px;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+#hm_cl .form-control:focus {
+    outline: none;
+}
+#hm_cl .input-group {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+    width: 100%;
+}
+#hm_cl .text-center {
+    text-align: center!important;
+}
+#hm_cl .btn {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 25px;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+#hm_cl .btn-primary {
+    background-color: #fff;
+    border: 1PX solid #f7a70a;
+    margin: 15px;
+    color: #000;
+    width: 100%;
+}
+#hm_cl .btn-primary:hover {
+    background-color: #f7a70a;
+    color: #fff;
+}
+#hm_cl select option {
+    background-color: aliceblue;
+    color: #000000;
+}
+/* Custom css */
+#hm_cl .cl-wrapper {
+    position: relative;
+    border-radius: 10px;
+    margin-top:30px;
+}
+#hm_cl .rs-vl {
+    font-size: 40px;
+    text-align: right;
+    color: #fff;
+    font-weight: 700;
+}
+#hm_cl .help-tip {
+    position: absolute;
+    top: 5px;
+    right: 0px;
+    text-align: center;
+    background-color: #ffffff;
+    border: 1px solid #f7a70a;
+    color: #000;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    font-size: 13px;
+    line-height: 24px;
+    cursor: default;
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    font-style: italic;
+    font-family: auto;
+}
+#hm_cl .help-tip:before {
+    content: "i";
+    font-weight: bold;
+    color: #f7a70a;
+}
+#hm_cl .help-tip:hover p {
+    display: block;
+    font-style: normal;
+    transform-origin: 100% 0%;
+    -webkit-animation: fadeIn 0.3s ease-in-out;
+    animation: fadeIn 0.3s ease-in-out;
+}
+#hm_cl .help-tip p {
+    display: none;
+    text-align: left;
+    background-color: #f7f7f7;
+    padding: 20px;
+    width: 300px;
+    position: absolute;
+    border-radius: 3px;
+    box-shadow: 1px 1px 1px rgb(0 0 0 / 20%);
+    right: -50px;
+    color: #000;
+    font-size: 14px;
+    line-height: 1.4;
+    top: 13px;
+    z-index: 10;
+    font-family: Arial, sans-serif;
+}
+#hm_cl .p-2313 {
+    padding: 2rem 3rem 1rem 3rem !important;
+}
+#hm_cl .rs-sub-title-sp {
+    font-size: 20px;
+    margin: 2px;
+    border-bottom: 1px solid #cccccc;
+    font-weight: 600;
+    color: #862026;
+}
+#hm_cl .rs-sp-value {
+    font-size: 36px;
+    margin: 8px 2px 0px 2px;
+    color: #862026;
+    font-family: 'Poppins', sans-serif !important;
+}
+#hm_cl .top-title-sec {
+    margin: -75px 0 5px 0;
+}
+#hm_cl .top-title {
+    font-size: 25px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    text-align: center;
+}
+#hm_cl .top-title-color {
+    color: #F17005;
+}
+#hm_cl .sub-title {
+    display: inline-block;
+    font-size: 20px;
+    margin: 10px 0 20px 0;
+    padding: 0 0 4px 0;
+    border-bottom: 1px solid #ccc;
+}
+/* responsive */
+
+@media (max-width: 768px){
+    #hm_cl .cl-left-div {
+        padding: 1rem 2rem !important;
+    }
+    #hm_cl .cl-right-div {
+        padding: 2rem 1rem !important;
+        border-radius: 0 0 8px 8px;
+    }
+    #hm_cl .input-group {
+        margin-bottom: 10px;
+    }
+    #hm_cl .form-control {
+        height: auto;
+        padding: .175rem 3.5rem .175rem .75rem;
+    }
+    #hm_cl label {
+        font-size: 16px;
+        margin-top: 10px;
+    }
+    #hm_cl .rs-sec {
+        flex-direction: column;
+    }
+}
+@media (min-width: 576px){
+    #hm_cl .container, #hm_cl .container-sm {
+        max-width: 540px;
+    }
+}
+@media (min-width: 768px){
+    #hm_cl .container, #hm_cl .container-md, #hm_cl .container-sm {
+        max-width: 100%;
+    }
+    #hm_cl .col-md-12 {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    #hm_cl .col-md-9 {
+        -ms-flex: 0 0 75%;
+        flex: 0 0 75%;
+        max-width: 75%;
+    }
+    #hm_cl .col-md-8 {
+        -ms-flex: 0 0 66.666667%;
+        flex: 0 0 66.666667%;
+        max-width: 66.666667%;
+    }
+    #hm_cl .col-md-6 {
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    #hm_cl .col-md-4 {
+        -ms-flex: 0 0 33.333333%;
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+    }
+    #hm_cl .col-md-3 {
+        -ms-flex: 0 0 25%;
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+    #hm_cl .col-md-7 {
+        -ms-flex: 0 0 58.33333%;
+        flex: 0 0 58.33333%;
+        max-width: 58.33333%;
+    }
+    #hm_cl .col-md-5 {
+        -ms-flex: 0 0 41.666667%;
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+    }
+}
+@media (min-width: 992px){
+    #hm_cl .container, #hm_cl .container-lg, #hm_cl .container-md, #hm_cl .container-sm {
+        max-width: 800px;
+    }
+}
+@media (min-width: 1200px) {
+    #hm_cl .container, #hm_cl .container-lg, #hm_cl .container-md, #hm_cl .container-sm, #hm_cl .container-xl {
+        max-width: 900px;
+    }
+}
+#hm_cl .range-wrap {
+    display: block;
+    position: relative;
+    padding: 0;
+    margin: 0 0 35px 0;
+}
+#hm_cl input[type=range] {
+    margin: 0 0 0 0;
+    outline: none;
+    padding: 0;
+    width: 100%;
+    height: 7px;
+    background-color: #ccc;
+    background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f7a70a), color-stop(100%, #f7a70a));
+    border: 1px solid #ccc;
+    background-size: 0% 100%;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    cursor: pointer;
+    -webkit-appearance: none;
+}
+#hm_cl input[type=range]::-webkit-slider-runnable-track {
+    box-shadow: none;
+    border: none;
+    background: transparent;
+    -webkit-appearance: none;
+}
+
+
+#hm_cl input[type=range]::-webkit-slider-thumb {
+    height: 20px;
+    width: 20px;
+    margin-top: -4px;
+    background: #ffffff;
+    border: 5px solid #f7a70a;
+    border-radius: 25px;
+    box-shadow: 0 2px 2px 0px #646464;
+    -webkit-appearance: none;
+}
+#hm_cl .ms-sm-left {
+    display: inline-block;
+    font-size: 12px;
+    float: left;
+    color: #414141;
+}
+#hm_cl .ms-sm-right {
+    display: inline-block;
+    font-size: 12px;
+    float: right;
+    color: #414141;
+}
+#hm_cl hr {
+    border: none;
+    border-bottom: 1px solid #ddd;
+}
+#hm_cl .cl-rs-div-1 {
+    background: #e7e7e7;
+    padding: 20px;
+    border-right: 1px solid #e7e7e7;
+    border-radius: 0 0 0 10px;
+    color: #862026;
+}
+#hm_cl .cl-rs-div-2 {
+    background: #e7e7e7;
+    padding: 20px;
+    border-right: 1px solid #e7e7e7;
+    border-radius: 0;
+    color: #862026;
+}
+#hm_cl .cl-rs-div-3 {
+    background: #862026;
+    padding: 20px;
+    border-radius: 0 0 10px 0;
+    color: #ffffff;
+    cursor: pointer;
+}
+#hm_cl .rs-note {
+    font-weight: normal;
+}
+@media (max-width: 768px){
+    #hm_cl .range-wrap {
+        padding: 0;
+    }
+    #hm_cl .cl-rs-div-1 {
+        border-radius: 0;
+    }
+    #hm_cl .cl-rs-div-2 {
+        border-radius: 0;
+    }
+    #hm_cl .cl-rs-div-3 {
+        border-radius: 0 0 10px 10px;
+    }
+    #hm_cl .top-title-sec {
+        margin: -39px 0 5px 0;
+    }
+    #hm_cl .top-title {
+        font-size: 16px;
+    }
+    #hm_cl .sub-title {
+        font-size: 14px;
+    }
+}
+#hm_cl .optios-sec {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+#hm_cl .radio-option {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background: #ffffff;
+    padding: 6px 10px;
+    width: 50%;
+    border-radius: 0;
+    border: none;
+    text-align: center;
+    cursor: pointer;
+    color: #000000;
+    transition: all 0.2s;
+    font-size: 16px;
+    user-select: none;
+    border-bottom: 2px solid #cccccc;
+}
+#hm_cl .radio-option:hover {
+    background: #dddddd;
+    border-bottom: 2px solid #dddddd;
+}
+#hm_cl .radio-option.active {
+    background: #862026;
+    border-bottom: 2px solid #862026;
+    color:#ffffff;
+}
+#hm_cl .mr-right {
+    margin-right: 5px;
+}
+#hm_cl .sp-input-sec {
+    background: #862026;
+    color: #ffffff;
+    padding: 30px;
+}
+#hm_cl .err-msg {
+    color:red;
+    display: none;
+}
+#hm_cl .form-group, #hm_cl .input-group {
+    position: relative;
+    margin-bottom: 10px;
+}
+
+#hm_cl .prepend-text {
+    font-size: 16px;
+    position: absolute;
+    bottom: 5px;
+    left: 2px;
+    padding: 1px 5px;
+    border-radius: 5px;
+    color: #000000;
+}
+#hm_cl .append-text {
+    font-size: 16px;
+    position: absolute;
+    bottom: 8px;
+    right: 6px;
+    padding: 1px 5px;
+    border-radius: 5px;
+    color: #000000;
+}
+#hm_cl .sp-pd-left {
+    padding-left: 25px;
+}
+#hm_cl .cus-link{
+    text-decoration: none;
+    color: #862026;
+}
+#hm_cl .rs-title{
+    font-size: 22px;
+    font-weight: 600;
+    color: #fff;
+}
+#hm_cl .rs-title .rs-title-para{
+    font-size: 16px;
+}
+@media (max-width: 768px){
+    #hm_cl .append-text {
+        font-size: 16px;
+        position: absolute;
+        bottom: 1px;
+        right: 8px;
+        padding: 1px 5px;
+        border-radius: 5px;
+        color: #000000;
+    }
+}
+#hm_cl .top-business-sec{
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 36px;
+}
+#hm_cl .top-business-title{
+    color: #000;
+    font-size: 18px;
+    font-weight: 600;
+    border-bottom: 1px solid #DCDCDC;
+    padding-bottom: 10px;
+    margin-bottom: 16px;
+}
+#hm_cl .business-total-sec{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #F17005;
+    border-radius: 5px;
+}
+#hm_cl .total-sec{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    margin-bottom: 36px;
+}
+#hm_cl .business-rs-title{
+    color: #000;
+    font-size: 16px;
+    font-weight: 600;
+}
+#hm_cl .business-rs-vl{
+    color: #000;
+    font-size: 22px;
+    font-weight: 600;
+}
+#hm_cl .total-sec-title{
+    color: #000;
+    font-size: 16px;
+    font-weight: 600;
+}
+#hm_cl .total-sec-vl{
+    color: #000;
+    font-size: 22px;
+    font-weight: 600;
+}
+#hm_cl .rs-sec{
+    background: #28557B;
+    padding: 15px;
+    border-radius: 8px;
+}
+#hm_cl .rate-sec{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+</style>
+<div class="ms-cl" id="hm_cl">
+    <div class="container cl-wrapper">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="top-title">ZZP uurtarief <span class="top-title-color">berekenen</span></div>
+                <div class="top-business-sec">
+                    <div class="top-business-title">Winst uit onderneming</div>
+                    <div class="row">
+                        <div class="col-md-8">
+                            <label for="">Gewenste jaarinkomen (bruto)</label>
+                            <div class="help-tip"></div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <input type="text" class="form-control sp-pd-left">
+                                <span class="prepend-text">€</span>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <label for="">Opbouw buffer (bruto)</label>
+                            <div class="help-tip"></div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <input type="text" class="form-control sp-pd-left">
+                                <span class="prepend-text">€</span>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <label for="">Premie oudedagsvoorziening per jaar</label>
+                            <div class="help-tip"></div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <input type="text" class="form-control sp-pd-left">
+                                <span class="prepend-text">€</span>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <label for="">AOV premie per jaar</label>
+                            <div class="help-tip"></div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <input type="text" class="form-control sp-pd-left">
+                                <span class="prepend-text">€</span>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <label for="">Bedrijfskosten</label>
+                            <div class="help-tip"></div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <input type="text" class="form-control sp-pd-left">
+                                <span class="prepend-text">€</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="business-total-sec">
+                        <div class="business-rs-title">Totaal benodigde omzet</div>
+                        <div class="business-rs-vl">€0</div>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-8">
+                        <label for="">Totaal werkbare dagen per jaar</label>
+                        <div class="help-tip"></div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <label for="">Feestdagen</label>
+                        <div class="help-tip"></div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <div class="total-sec">
+                    <div class="total-sec-title">Werkbare dagen</div>
+                    <div class="total-sec-vl">0</div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-8">
+                        <label for="">Studiedagen per jaar</label>
+                        <div class="help-tip"></div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <label for="">Vakantiedagen per jaar</label>
+                        <div class="help-tip"></div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <label for="">Arbeidsongeschikt/ziektedagen per jaar</label>
+                        <div class="help-tip"></div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <label for="">Overige niet declarabele dagen per jaar</label>
+                        <div class="help-tip"></div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <div class="total-sec">
+                    <div class="total-sec-title">Subtotaal</div>
+                    <div class="total-sec-vl">0</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="col-md-9">
+                                <label for="">Aantal dagen acquisitie per maand</label>
+                                <div class="help-tip"></div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-9">
+                                <label for="">Aantal dagen administratie per <br> maand</label>
+                                <div class="help-tip"></div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="total-sec">
+                            <div class="total-sec-title">Totaal declarabele dagen</div>
+                            <div class="total-sec-vl">0</div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="col-md-9">
+                                <label for="">Parttime percentage</label>
+                                <div class="help-tip"></div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-9">
+                                <label for="">Uur per dag</label>
+                                <div class="help-tip"></div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="total-sec">
+                            <div class="total-sec-title">Declarabele uren</div>
+                            <div class="total-sec-vl">0</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="rs-sec">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="rate-sec">
+                                <img src="https://i.postimg.cc/SNGhjCDt/rate.jpg" alt="">
+                                <div class="rs-title">Benodigd uurtarief (Excl. BTW)</div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="rs-vl">€0</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

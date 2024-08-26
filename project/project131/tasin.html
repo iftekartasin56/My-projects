@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap CSS -->
+    <title>Moving Cost Calculator </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Nunito', sans-serif;        
+        }
+    </style>
+</head>
+<body>
+
+<!-----------Please copy and paste following code into any HTML element ---------------->
+
+<!----------- copy starts ---------------->
+<style>
+#mx_cl *, ::after, ::before {
+    box-sizing: border-box;
+}
+#mx_cl {
+    line-height: 1.5;
+    font-family: inherit;
+}
+#mx_cl .container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #3E3E3E;
+    text-align: left;
+    margin-top: 30px;
+}
+#mx_cl label {
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 400;
+    color: #000;
+    margin-bottom: 0.5rem;
+}
+#mx_cl .row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+#mx_cl .col-md-1, #mx_cl .col-md-10, #mx_cl .col-md-11, #mx_cl .col-md-12, #mx_cl .col-md-2, #mx_cl .col-md-3, #mx_cl .col-md-4, #mx_cl .col-md-5, #mx_cl .col-md-6, #mx_cl .col-md-7, #mx_cl .col-md-8, #mx_cl .col-md-9 {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+#mx_cl .form-group {
+    margin-bottom: 1rem;
+}
+#mx_cl .form-control {
+    display: block;
+    width: 100%;
+    height: 58px;
+    padding: 6px 12px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #555 ;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #DBDBDB;
+    border-radius: 5px;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+#mx_cl .form-control:focus {
+    outline: none;
+}
+#mx_cl .btn {
+    display: block;
+    font-weight: 500;
+    color: #212529;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: .275rem 2.2rem;
+    line-height: 1.3;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    text-align: center;
+}
+
+#mx_cl .btn-primary {
+    display: block;
+    width: 100%;
+    background-color: #00B4F6;
+    color: #fff;
+    border-radius: 5px;
+    margin-top: 15px;
+    padding: 15px;
+    font-size: 20px;
+    font-weight: 600;
+}
+#mx_cl .text-center {
+    text-align: center!important;
+}
+@media (min-width: 576px){
+    #mx_cl .container {
+        max-width: 540px;
+    }
+}
+@media (min-width: 768px){
+    #mx_cl .container {
+        max-width: 100%;
+    }
+    #mx_cl .col-md-12 {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    #mx_cl .col-md-10 {
+        -ms-flex: 0 0 83.333%;
+        flex: 0 0 83.333%;
+        max-width: 83.333%;
+    }
+    #mx_cl .col-md-9 {
+        -ms-flex: 0 0 75%;
+        flex: 0 0 75%;
+        max-width: 75%;
+    }
+    #mx_cl .col-md-8 {
+        -ms-flex: 0 0 66.666667%;
+        flex: 0 0 66.666667%;
+        max-width: 66.666667%;
+    }
+    #mx_cl .col-md-6 {
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    #mx_cl .col-md-4 {
+        -ms-flex: 0 0 33.333333%;
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+    }
+    #mx_cl .col-md-3 {
+        -ms-flex: 0 0 25%;
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+    #mx_cl .col-md-2 {
+        -ms-flex: 0 0 16.666%;
+        flex: 0 0 16.666%;
+        max-width: 16.666%;
+    }
+}
+@media (min-width: 992px){
+    #mx_cl .container {
+        max-width: 950px;
+    }
+}
+@media (min-width: 1200px) {
+    #mx_cl .container {
+        max-width: 1150px;
+    }
+}
+#mx_cl .rs-sec {
+    width: 100%;
+    display: block;
+    background: #EC3832;
+    padding: 45px;
+    border: 1px solid #EC3832;
+    border-radius: 0px 0px 8px 8px;
+    color: #ffffff;
+}
+#mx_cl .rs-title {
+    font-size: 18px;
+    color: #3E3E3E;
+    font-weight: 500;
+    text-align: center;
+    border-bottom: 1px solid #E4E4E4;
+    padding-bottom: 10px;
+}
+#mx_cl .rs-vl {
+    font-size: 45px;
+    font-weight: 700;
+    color: #FF7F00;
+    text-align: center;
+}
+#mx_cl .sp-rs-vl {
+    margin-bottom: 20px;
+}
+#mx_cl .pd-0 {
+    padding: 0;
+}
+#mx_cl .text-right {
+    text-align: right !important;
+}
+#mx_cl .prepend-text {
+    font-size: 16px;
+    position: absolute;
+    bottom: 10px;
+    left: 4px;
+    padding: 1px 5px;
+    border-radius: 5px;
+    color: #3E3E3E;
+}
+#mx_cl .append-text {
+    font-size: 16px;
+    position: absolute;
+    bottom: 10px;
+    right: 6px;
+    padding: 1px 5px;
+    border-radius: 5px;
+    color: #3E3E3E;
+}
+#mx_cl .form-group, #mx_cl .input-group {
+    position: relative;
+    margin-bottom: 8px;
+}
+#mx_cl .tb-form-group, #mx_cl .input-group {
+    position: relative;
+    margin-bottom: 5px;
+}
+#mx_cl .sp-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#mx_cl .sp-rs-div {
+    margin-bottom: 0;
+}
+#mx_cl  .cl-wrapper {
+    background: #FFFFFF;
+    padding: 30px 40px;
+}
+#mx_cl .ms-sm-left {
+    display: inline-block;
+    font-size: 12px;
+    float: left;
+    color: #414141;
+}
+#mx_cl .ms-sm-right {
+    display: inline-block;
+    font-size: 12px;
+    float: right;
+    color: #414141;
+}
+#mx_cl .sp-pd-left {
+    padding-left: 20px;
+}
+#mx_cl .sp-pd-right {
+    padding-left: 25px;
+}
+#mx_cl .sp-border {
+    border-right: 1px solid #E4E4E4;
+}
+
+#mx_cl .table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 0rem;
+    background-color: transparent;
+    border-collapse: collapse;
+}
+#mx_cl .table td, #mx_cl .table th {
+    padding: 8px 8px;
+    vertical-align: middle;
+    border: none;
+    font-size: 16px;
+    font-weight: 400;
+    background: transparent;
+    box-shadow: none;
+}
+#mx_cl .table th {
+    padding: 0 8px;
+    vertical-align: middle;
+    background-color: #1E0B66;
+    color: #fff;
+}
+
+@media (max-width: 768px){
+    #mx_cl .input-sec {
+        padding: 1rem;
+        border-radius: 8px;
+        margin-bottom: 10px;
+    }
+    #mx_cl .output-sec {
+        padding: 1rem;
+        margin-left: 0;
+    }
+    #mx_cl .form-control {
+        height: auto;
+        padding: .175rem .75rem;
+    }
+    #mx_cl label {
+        font-size: 16px;
+    }
+    #mx_cl .form-group, #mx_cl .input-group {
+        position: relative;
+        margin-bottom: 5px;
+    }
+    #mx_cl .prepend-text {
+        bottom: 3px;
+    }
+    #mx_cl .append-text {
+        bottom: 2px;
+    }
+    #mx_cl .sp-rs-div {
+        margin-bottom: 1rem;
+    }
+    #mx_cl .sp-border {
+        border-right: none;
+    }
+    #mx_cl .rs-title {
+        font-size: 15px;
+    }
+    #mx_cl .rs-vl {
+        font-size: 35px;
+    }
+    #mx_cl .rs-sec {
+        padding: 25px 10px;
+    }
+    #mx_cl .tb-rs-vl {
+        text-align: left;
+        color: #EC3832;
+    }
+    #mx_cl .top-heading {
+        font-size: 18px !important;
+        margin-bottom: 15px !important;
+    }
+    #mx_cl .btw-box {
+        width: 24px !important;
+        height: 18px !important;
+    }
+    #mx_cl .btw-btn-sec {
+        display: flex;
+        gap: 20px !important;
+        align-items: center;
+    }
+    #mx_cl .table {
+        min-width: 800px;
+    }
+    #mx_cl .cl-wrapper {
+        padding: 15px 15px;
+    }
+    #mx_cl .top-title {
+        font-size: 30px !important;
+    }
+    #mx_cl .top-sub-title {
+        font-size: 16px !important;
+        display: block;
+        margin-bottom: 5px !important;
+    }
+}
+#mx_cl .top-rs-title {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #DBDBDB;
+}
+#mx_cl .top-rs-vl {
+    font-size: 20px;
+    font-weight: 400;
+    color: #EC3832;
+}
+#mx_cl .div-sec-title {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #EC3832;
+    margin-bottom: 20px;
+}
+#mx_cl .tb-rs-title, .tb-sp-title {
+    margin-bottom: 16px;
+}
+#mx_cl .tb-rs-vl{
+    text-align: right;
+    color: #EC3832;
+}
+#mx_cl .total-sec{
+    border-top: 1px solid #DBDBDB;
+}
+#mx_cl .final-rs-title {
+    font-size: 26px;
+    font-weight: 400;
+    border-bottom: 1px solid #fff;
+}
+#mx_cl .top-title {
+    font-size: 30px;
+    font-weight: 700;
+    text-align: center;
+    color: #202948;
+    margin-bottom: 25px;
+}
+#mx_cl .top-sub-title {
+    font-size: 18px;
+    font-weight: 400;
+    color: #6A67CE;
+    display: block;
+    margin-bottom: 15px;
+}
+#mx_cl .btw-btn-sec {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+#mx_cl .btw-box {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    font-size: 14px;
+    border: 4px solid #ebf2ff;
+    border-radius: 25px;
+    text-align: center;
+    position: relative;
+    background-color: #ebf2ff;
+    color: #fff;
+  }
+#mx_cl .btw-btn {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    border-radius: 25px;
+    height: 25px;
+    margin-bottom: 30px;
+    cursor: pointer;
+  }
+#mx_cl .btw-btn.is-active .btw-box {
+    background-color: #FF6F00;
+}
+#mx_cl .item-sec-title {
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+#mx_cl .item-sec {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+#mx_cl .d-item {
+    position: relative;
+    display: flex;
+    width: 19%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px 6px;
+    background-color: #fff;
+    border: 1px solid #DBDBDB;
+    border-radius: 5px;
+    margin: 3px;
+}
+#mx_cl .d-item.active {
+    border-color: #00B4F6;
+    background-color: #E5F8FF;
+}
+#mx_cl .check-box {
+    width: 16px;
+    height: 16px;
+    border: 1px solid #ADB5BD;
+    border-radius: 50%;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    cursor: pointer;
+}
+#mx_cl .sl-itm {
+    cursor: pointer;
+}
+#mx_cl .win-img {
+    display: block;
+    width: 60px;
+}
+#mx_cl .itm-qty-sec span:nth-child(1) {
+    margin-right: 3px;
+}
+#mx_cl .qty-m, .qty-p {
+    width: 20px !important;
+    height: 20px !important;
+    background-color: #FFFFFF;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    border: none;
+    padding: 0;
+    line-height: 1;
+}
+#mx_cl .itm-qty {
+    max-width: 15px;
+    padding: 0;
+    border: none;
+    text-align: center;
+    margin: 3px 15px 0;
+    background-color: unset;
+    font-size: 16px;
+}
+
+</style>
+<div class="ms-cl" id="mx_cl">
+    <div class="container">
+        <div class="cl-wrapper">
+            <div class="top-title">Moving Cost Calculator - get your quote in 5 Clicks</div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <input type="text" class="form-control cl-in cl-curr" id="in_1" placeholder="Where are you moving from?">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <input type="text" class="form-control cl-in cl-curr" id="in_1" placeholder="Where are you moving to?">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <input type="text" class="form-control cl-in cl-curr" id="in_1" placeholder="When?">
+                    </div>
+                </div>
+                <div class="col-md-12">
+                   <div class="item-sec-title">Please choose your move size</div>
+                   <div class="item-sec">
+                        <div class="d-item" id="itm1" data-title="Regular Double Hung (per panel)" data-price="7">
+                            <div class="check-box"></div>
+                            <img class="win-img sl-itm" src="images/few-items.png">
+                            <p class="sl-itm">Few Items (10’ truck)</p>
+                        </div>
+                        <div class="d-item" id="itm1" data-title="Regular Double Hung (per panel)" data-price="7">
+                            <div class="check-box"></div>
+                            <img class="win-img sl-itm" src="images/studio.png">
+                            <p class="sl-itm">Studio (15' truck)</p>
+                        </div>
+                        <div class="d-item" id="itm1" data-title="Regular Double Hung (per panel)" data-price="7">
+                            <div class="check-box"></div>
+                            <img class="win-img sl-itm" src="images/1bedroom.png">
+                            <p class="sl-itm">1 Bedroom (17' truck)</p>
+                        </div>
+                        <div class="d-item" id="itm1" data-title="Regular Double Hung (per panel)" data-price="7">
+                            <div class="check-box"></div>
+                            <img class="win-img sl-itm" src="images/2bedroom.png">
+                            <p class="sl-itm">2 Bedroom (20' truck)</p>
+                        </div>
+                        <div class="d-item" id="itm1" data-title="Regular Double Hung (per panel)" data-price="7">
+                            <div class="check-box"></div>
+                            <img class="win-img sl-itm" src="images/3bedroom.png">
+                            <p class="sl-itm">3 Bedroom (26' truck)</p>
+                        </div>
+                        <div class="d-item" id="itm1" data-title="Regular Double Hung (per panel)" data-price="7">
+                            <div class="check-box"></div>
+                            <img class="win-img sl-itm" src="images/4bedroom.png">
+                            <p class="sl-itm">4 Bedroom (28' truck)</p>
+                        </div>
+                        <div class="d-item" id="itm1" data-title="Regular Double Hung (per panel)" data-price="7">
+                            <div class="check-box"></div>
+                            <img class="win-img sl-itm" src="images/5-bedroom.png">
+                            <p class="sl-itm">5 Bedroom (2 x 26' truck)</p>
+                        </div>
+                        <div class="d-item" id="itm1" data-title="Regular Double Hung (per panel)" data-price="7">
+                            <div class="check-box"></div>
+                            <img class="win-img sl-itm" src="images/5-bedroon.png">
+                            <p class="sl-itm">5+ Bedroom (53' semi truck)</p>
+                        </div>
+                   </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="item-sec-title">Need additional services?</div>
+                    <div class="item-sec">
+                        <div class="d-item" id="itm1" data-title="Regular Double Hung (per panel)" data-price="7">
+                            <div class="check-box"></div>
+                            <img class="win-img sl-itm" src="images/flightOfStairs.png">
+                            <p class="sl-itm">Flight of Stairs</p>
+                            <div class="qty-sec itm-qty-sec">
+                                <span class="qty-m" data-sec="left" data-itmid="itm1" data-pr="7">-</span>
+                                <span class="itm-qty" id="itm1_ql">1</span>
+                                <span class="qty-p" data-sec="left" data-itmid="itm1" data-pr="7">+</span>
+                            </div>
+                        </div>
+                        <div class="d-item" id="itm1" data-title="Regular Double Hung (per panel)" data-price="7">
+                            <div class="check-box"></div>
+                            <img class="win-img sl-itm" src="images/elevator.png">
+                            <p class="sl-itm">Elevator</p>
+                        </div>
+                        <div class="d-item" id="itm1" data-title="Regular Double Hung (per panel)" data-price="7">
+                            <div class="check-box"></div>
+                            <img class="win-img sl-itm" src="images/building.png">
+                            <p class="sl-itm">Building Insurance</p>
+                        </div>
+                        <div class="d-item" id="itm1" data-title="Regular Double Hung (per panel)" data-price="7">
+                            <div class="check-box"></div>
+                            <img class="win-img sl-itm" src="images/shuttle.png">
+                            <p class="sl-itm">Shuttle</p>
+                        </div>
+                        <div class="d-item" id="itm1" data-title="Regular Double Hung (per panel)" data-price="7">
+                            <div class="check-box"></div>
+                            <img class="win-img sl-itm" src="images/longCarry.png">
+                            <p class="sl-itm">Long Carry</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+                    <button class="btn btn-primary">Show Cost Estimate</button>
+                </div>
+                <div class="col-md-4"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/autonumeric@4.5.4"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<script>
+    jQuery(document).ready(function ($) {
+        let input_serial = '#in_1';
+
+        const numOptionCurrency = {
+            digitGroupSeparator: ".",
+            decimalCharacter: ",",
+            decimalCharacterAlternative: ".",
+            currencySymbol: "",
+            currencySymbolPlacement: AutoNumeric.options.currencySymbolPlacement.prefix,
+            decimalPlaces: 2,
+        };
+        const anElement1 = new AutoNumeric('#in_1', numOptionCurrency);
+        const anElement2 = new AutoNumeric('#in_2', numOptionCurrency);
+        const anElement3 = new AutoNumeric('#in_3', numOptionCurrency);
+
+        
+
+        $("#in_1").on("input", function () {
+            in_1 = removeSign($("#in_1").val());
+
+            input_serial = in_1;
+
+            Calc();
+        });
+        $("#in_2").on("input", function () {
+            in_2 = removeSign($("#in_2").val());
+
+            input_serial = in_2;
+
+            Calc();
+        });
+        $("#in_3").on("input", function () {
+            in_3 = removeSign($("#in_3").val());
+            input_serial = in_3;
+
+            Calc();
+        });
+
+        $('.btw-btn').on('click', function(){
+            $('.btw-btn').removeClass('is-active');
+            $(this).addClass('is-active');
+
+            Calc()
+        });
+
+        function Calc() {
+            in_1 = removeSign($("#in_1").val());
+            in_2 = removeSign($("#in_2").val());
+            in_3 = removeSign($("#in_3").val());
+
+            let btw = $('.btw-btn.is-active').data('value')/100;
+            
+
+            if(input_serial == in_1){
+
+                let btw_bedrag = in_1 * btw;
+                let btw_bedrag_inc = in_1 + btw_bedrag;
+
+                anElement2.set(btw_bedrag);
+                anElement3.set(btw_bedrag_inc);
+            } else if(input_serial == in_2){
+
+                let bedrag_exl = in_2 / btw;
+                let btw_bedrag_inc = bedrag_exl + in_2;
+
+                console.log(bedrag_exl, btw_bedrag_inc);
+
+                anElement1.set(bedrag_exl);
+                anElement3.set(btw_bedrag_inc);
+            } else if(input_serial == in_3){
+
+                let bedrag_exl = in_3 / (1 + btw);
+                let btw_bedrag = bedrag_exl * btw;
+
+                anElement1.set(bedrag_exl);
+                anElement2.set(btw_bedrag);
+            }
+        }
+
+        function removeComma(num) {
+            return Number(num.replace(/,/g, ""));
+        }
+        function removeSign(vl){
+            return Number(vl.replace(/\./g,'').replace(/\,/g,'.'));
+        }
+    });
+</script>
+<!----------- copy ends ---------------->
+</body>
+</html>

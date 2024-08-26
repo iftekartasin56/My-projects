@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Compound Interest Calculator</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  body,h1,h2,h3,h4,h5 {
+    font-family: "Poppins", sans-serif
+  }
+  .title-sub-title{
+    font-size: 24px;
+  }
+  div.gallery {
+    margin: 5px;
+    float: left;
+    width: 600px;
+  }
+
+
+  div.gallery img {
+    width: 100%;
+    height: auto;
+  }
+  .sec-title{
+    color: #2B3862;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  .w3-card-4, .w3-hover-shadow:hover{
+    box-shadow: none !important;
+  }
+  .w3-white, .w3-hover-white:hover{
+    background-color: #F1F1F1 !important;
+  }
+
+  .btn {
+    display: inline-block;
+    font-weight: 400;
+    color: #fff;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 20px;
+    line-height: 1.5;
+    border-radius: 10px;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.btn-primary {
+    width: 100%;
+    color: #fff;
+    background-color: #2B3862;
+    border-color: #2B3862;
+    padding: 15px 15px 15px 15px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.btn-primary:hover {
+    color: #fff !important;
+    background-color: #00B1D5 !important;
+    border-color: #00B1D5 !important;
+}
+a:hover {
+    color: #fff;
+    text-decoration: none;
+}
+button:focus:not(:focus-visible){
+  outline: none !important;
+}
+.footer-text{
+  text-align: center;
+}
+.btn-primary.focus, .btn-primary:focus {
+    color: #fff !important;
+    background-color: #28a745 !important;
+    border-color: #28a745 !important;
+    box-shadow: 0 0 0 0.2rem rgba(38,143,255,.5);
+}
+div, iframe{
+  margin: 0 auto;
+  display: block;
+}
+.top-title{
+  font-size: 50px;
+  color: #2B3862;
+}
+.header-sec{
+  padding: 20px;
+  font-size: 26px;
+  text-align: center;
+}
+.footer-sec{
+  background-color: #00B1D5;
+  padding: 30px;
+  color: #fff;
+  font-size: 20px;
+}
+
+
+</style>
+</head>
+<body class="w3-light-grey">
+  <!-- w3-content defines a container for fixed size centered content, 
+and is wrapped around the whole page content, except for the footer in this example -->
+  <div class="w3-content" style="max-width: 1400px;">
+      <!-- Header -->
+      <header class="header-sec">
+          <h1>
+              <b class="top-title">Compound Interest Calculator</b>
+          </h1>
+      </header>
+
+      <!-- Grid -->
+      <div class="w3-row">
+          <!-- Blog entries -->
+
+          <div class="col-md-12">
+            <div class="sec-title">Sample Video</div>
+            <div>
+              <iframe width="900" height="500" src="https://www.youtube.com/embed/8wOr_Pnjbp0?si=8EyYHoOYc48gBZv2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <!-- END BLOG ENTRIES -->
+        </div>
+          <div class="w3-col  s12">
+              <div class="sec-title">Some screenshots</div>
+              <div class="w3-card-4 w3-margin w3-white">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="gallery">
+                      <a target="_blank" href="img/preview-1.jpg">
+                          <img src="img/preview-1.jpg" alt="preview image" width="600" height="400" />
+                      </a>
+                  </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="gallery">
+                      <a target="_blank" href="img/preview-2.jpg">
+                          <img src="img/preview-2.jpg" alt="preview image" width="600" height="400" />
+                      </a>
+                  </div>
+                  </div>
+                </div>
+                  
+                  
+              </div>
+              <!-- END BLOG ENTRIES -->
+          </div>
+          <div class="w3-col">
+              <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+                  <a href="#" class="btn btn-primary">BUY NOW</a>
+                </div>
+                <div class="col-md-4"></div>
+              </div>
+          </div>
+         
+
+          <!-- END GRID -->
+      </div>
+      <br />
+
+      <!-- END w3-content -->
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer-sec">
+      <p class="footer-text">Powered by <a href="https://oceanitpark.com/" target="_blank">OCEAN IT PARK</a></p>
+  </footer>
+</body>
+
+</html>

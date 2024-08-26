@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <title>Used Bicycle Value Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+    <!-- CSS Stylesheet Link-->
+    <link rel="stylesheet" href="css/Calc-style.css">
+    </head>
+<body>
+    <!-----------Please copy and paste following code into any HTML element ---------------->
+
+    <!----------- copy starts ---------------->
+
+    <div class="ms-cl" id="ms123">
+        <div class="container cl-wrapper">
+            <div class="row">
+                <div class="col-md-12 main-title-sec">
+                    <h3 class="main-title text-center">Used Bicycle Value Calculator</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 cl-left-div" id="cl-input-one">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label for="cl1_in_1">Purchase Price</label>
+                            <div class="form-group">
+                                <input type="text" name="cl1_in_1" class="form-control cl-in sp-pd-left" id="cl1_in_1" />
+                                <span class="prepend-text curr-sign"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="cl1_in_2">Year Owned</label>
+                            <div class="form-group">
+                                <input type="text" name="cl1_in_2" class="form-control cl-in" id="cl1_in_2" />
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="cl1_in_3">Condition</label>
+                            <div class="form-group">
+                                <select name="cl1_in_3" class="form-control cl-in" id="cl1_in_3">
+                                    <option value="">-select-</option>
+                                    <option value="1">Excellent</option>
+                                    <option value="0.9">Very Good</option>
+                                    <option value="0.8">Good</option>
+                                    <option value="0.7">Fair</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-4"></div>
+                        <div class="col-md-4 text-center">
+                            <br>
+                            <button type="button" id="calcBtn" class="btn btn-calc">Calculate</button>
+                        </div>
+                        <div class="col-md-4"></div>
+                    </div>
+                </div>
+                <div class="col-md-12 cl-right-div">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h3 class="rs-title">Your Bicycle is Worth</h3>
+                            <h3 class="rs-vl" id="cl1_rs_1">-</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/jquery.js"></script>
+    <script src="js/autonumeric.js"></script>
+    <script src="js/Calc-script.js"></script>
+    <!----------- copy ends ---------------->
+</body>
+</html>

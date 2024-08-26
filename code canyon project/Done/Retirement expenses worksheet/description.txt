@@ -1,0 +1,77 @@
+Retirement expenses worksheet - Web Calculator for any Website
+
+Welcome to our <b>Retirement expenses worksheet</b>, Retirement Expense Worksheet to help you carefully plan and track your monthly and annual expenses in various categories.This tool enables you to choose the frequency of expense entries—either monthly or annually—and categorize your expenses accordingly.
+<br>
+<br>
+<u><b>User inputs:</b></u>
+<ul>
+    <li>Choose an expense category</li>
+    <u><b>Housing</b></u>
+    <li>Mortgage</li>
+    <li>Property taxes</li>
+    <li>Homeowners insurance</li>
+    <li>Rent</li>
+    <li>Utilities</li>
+    <li>Maintenance/fees</li>
+    <li>Home improvements</li>
+    <br>
+    <u><b>Food</b></u>
+    <li>Groceries</li>
+    <li>Dining out</li>
+    <br>
+    <u><b>Transportation</b></u>
+    <li>Vehicle maintenance</li>
+    <li>Fuel</li>
+    <li>Auto insurance</li>
+    <li>Public transportation</li>
+    <br>
+    <u><b>Health care</b></u>
+    <li>Medical services</li>
+    <li>Medications and supplies</li>
+    <li>Health insurance</li>
+    <br>
+    <u><b>Personal insurance</b></u>
+    <li>Life insurance</li>
+    <li>Disability insurance</li>
+    <li>Long-term care insurance</li>
+    <li>Other insurance</li>
+    <br>
+    <u><b>Personal care</b></u>
+    <li>Clothing</li>
+    <li>Products and services</li>
+    <br>
+    <u><b>Family care</b></u>
+    <li>Alimony</li>
+    <li>Child care</li>
+    <br>
+    <u><b>Miscellaneous</b></u>
+    <li>Loan/credit cards</li>
+    <li>Entertainment</li>
+    <li>Travel/vacation</li>
+    <li>Hobbies</li>
+    <li>Gifts</li>
+    <li>Education</li>
+    <li>Charitable contributions</li>
+    <li>Wedding</li>
+    <li>OtherOther</li>
+</ul>
+<br>
+<u><b>Outputs:</b></u>
+<ul>
+    <li>Total Expenses</li>
+</ul>
+<br>
+<u><b>Features of the Retirement expenses worksheet:</b></u>
+<ul>
+    <li>- Provides an updated summary of all entered costs, categorized and sub-totaled for clarity.</li>
+    <li>- Automatically calculates total expenses for the selected period (monthly or yearly), providing a consolidated overview of your expenses.</li>
+    <li>- Displays the calculated turnover value.</li>
+    <li>- Instant result without page reload</li>
+    <li>- JS and CSS loads when shortcode called on page</li>
+    <li>- 100% Responsive design</li>
+    <li>- Unique Design</li>
+    <li>- Well Documented (proper help instructions for setup)</li>
+    <li>- Dedicated Support</li>
+</ul>
+<br>
+The calculator is built using HTML, CSS, and JavaScript, and it also utilizes the popular JavaScript library jQuery. A premium quality <b>Retirement expenses worksheet</b> which you can easily embed into any website (well documented).

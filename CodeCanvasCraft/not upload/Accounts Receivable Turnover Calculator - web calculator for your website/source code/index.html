@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- Bootstrap CSS -->
+    <title>Accounts Receivable Turnover</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+
+    <!-- CSS Stylesheet Link -->
+    <link rel="stylesheet" href="css/Calc-style.css">
+</head>
+<body>
+
+<!-----------Please copy and paste following code into any HTML element ---------------->
+
+<!----------- copy starts ---------------->
+
+<div class="ms-cl" id="art">
+    <div class="container cl-wrapper">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="top-title-sec">
+                    <h3 class="top-title">Accounts Receivable Turnover</h3>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="net_credit_sales">Net credit sales</label>
+                            <input type="text" class="form-control sp-left cl-in cl-curr" autocomplete="off" id="net_credit_sales" />
+                            <span class="prepend-text curr-sign"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="average_receivables">Average receivables</label>
+                            <input type="text" class="form-control sp-left cl-in" autocomplete="off" id="average_receivables" />
+                            <span class="prepend-text curr-sign"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-3"></div>
+                    <div class="col-md-6">
+                        <button type="button" class="btn btn-primary" id="calc_btn_art">Calculate</button>
+                    </div>
+                    <div class="col-md-3"></div>
+                </div>
+            </div>
+            <div class="col-md-12 sp-pd-top">
+                <div class="rs-sec">
+                    <div class="rs-title">Accounts Receivable Turnover</div>
+                    <div class="rs-value" id="art_amount">0</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/jquery.js"></script>
+<script src="js/autonumeric.js"></script>
+<script src="js/Calc-script.js"></script>
+<!----------- copy ends ---------------->
+</body>
+</html>

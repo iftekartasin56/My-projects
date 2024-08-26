@@ -1,0 +1,1082 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <title>Mortgage Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-----------Please copy and paste following code into any HTML element ---------------->
+
+<!----------- copy starts ---------------->
+<style>
+.ms-cl *, ::after, ::before {
+    box-sizing: border-box;
+}
+.ms-cl {
+    line-height: 1.5;
+    font-family: 'Montserrat', sans-serif;
+}
+.ms-cl .container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #222831;
+    text-align: left;
+}
+.ms-cl label {
+    display: flex;
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #222831;
+}
+.ms-cl .h1, .ms-cl h1 {
+    font-size: 2.5rem;
+}
+.ms-cl .h1, .ms-cl .h2, .ms-cl .h3, .ms-cl .h4, .ms-cl .h5, .ms-cl .h6, .ms-cl h1, .ms-cl h2, .ms-cl h3, .ms-cl h4, .ms-cl h5, .ms-cl h6 {
+    margin-bottom: .5rem;
+    font-weight: 500;
+    line-height: 1.2;
+}
+.ms-cl h1, .ms-cl h2, .ms-cl h3, .ms-cl h4, .ms-cl h5, .ms-cl h6 {
+    margin-top: 0;
+    margin-bottom: .5rem;
+}
+.ms-cl .h3, .ms-cl h3 {
+    font-size: 1.75rem;
+}
+.ms-cl .h5, .ms-cl h5 {
+    font-size: 1.25rem;
+}
+.ms-cl .h6, .ms-cl h6 {
+    font-size: 1rem;
+}
+.ms-cl hr {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top: 1px solid rgba(0,0,0,.1);
+}
+
+.ms-cl hr {
+    box-sizing: content-box;
+    height: 0;
+    overflow: visible;
+}
+.ms-cl .row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+.ms-cl .md-50, .ms-cl .col-md-55, .ms-cl .col-md-45, .ms-cl .col, .ms-cl .col-1, .ms-cl .col-10, .ms-cl .col-11, .ms-cl .col-12, .ms-cl .col-2, .ms-cl .col-3, .ms-cl .col-4, .ms-cl .col-5, .ms-cl .col-6, .ms-cl .col-7, .ms-cl .col-8, .ms-cl .col-9, .ms-cl .col-auto, .ms-cl .col-lg, .ms-cl .col-lg-1, .ms-cl .col-lg-10, .ms-cl .col-lg-11, .ms-cl .col-lg-12, .ms-cl .col-lg-2, .ms-cl .col-lg-3, .ms-cl .col-lg-4, .ms-cl .col-lg-5, .ms-cl .col-lg-6, .ms-cl .col-lg-7, .ms-cl .col-lg-8, .ms-cl .col-lg-9, .ms-cl .col-lg-auto, .ms-cl .col-md, .ms-cl .col-md-1, .ms-cl .col-md-10, .ms-cl .col-md-11, .ms-cl .col-md-12, .ms-cl .col-md-2, .ms-cl .col-md-3, .ms-cl .col-md-4, .ms-cl .col-md-5, .ms-cl .col-md-6, .ms-cl .col-md-7, .ms-cl .col-md-8, .ms-cl .col-md-9, .ms-cl .col-md-auto, .ms-cl .col-sm, .ms-cl .col-sm-1, .ms-cl .col-sm-10, .ms-cl .col-sm-11, .ms-cl .col-sm-12, .ms-cl .col-sm-2, .ms-cl .col-sm-3, .ms-cl .col-sm-4, .ms-cl .col-sm-5, .ms-cl .col-sm-6, .ms-cl .col-sm-7, .ms-cl .col-sm-8, .ms-cl .col-sm-9, .ms-cl .col-sm-auto, .ms-cl .col-xl, .ms-cl .col-xl-1, .ms-cl .col-xl-10, .ms-cl .col-xl-11, .ms-cl .col-xl-12, .ms-cl .col-xl-2, .ms-cl .col-xl-3, .ms-cl .col-xl-4, .ms-cl .col-xl-5, .ms-cl .col-xl-6, .ms-cl .col-xl-7, .ms-cl .col-xl-8, .ms-cl .col-xl-9, .ms-cl .col-xl-auto {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.ms-cl .form-row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -5px;
+    margin-left: -5px;
+}
+.ms-cl .form-row>.col, .ms-cl .form-row>[class*=col-] {
+    padding-right: 5px;
+    padding-left: 5px;
+}
+.ms-cl .form-group {
+    margin-bottom: 2px;
+    position: relative;
+}
+.ms-cl .form-control {
+    display: block;
+    width: 100%;
+    height: 50px;
+    padding: 0.275rem 0.55rem !important;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 32px;
+    color: #222831 !important;
+    background-color: #fff !important;
+    background-clip: padding-box;
+    border: 1px solid #8e8e8e !important;
+    border-radius: 5px;
+    font-family: "Montserrat",sans-serif;
+    transition: background .3s,border .3s,border-radius .3s,box-shadow .3s,-webkit-border-radius .3s,-webkit-box-shadow .3s;
+}
+.ms-cl .form-control:hover, .ms-cl .form-control:focus {
+    box-shadow: 0px 0px 10px 0px rgb(50 60 141 / 49%) !important;
+}
+.ms-cl select {
+    display: block;
+    width: 100%;
+    height: auto;
+    padding: .675rem .75rem !important;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #222831;
+    background-color: #fff !important;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    font-family: 'Montserrat', sans-serif;
+    transition: background .3s,border .3s,border-radius .3s,box-shadow .3s,-webkit-border-radius .3s,-webkit-box-shadow .3s;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: '';
+}
+.ms-cl .form-control:focus {
+    outline: none;
+}
+.ms-cl .btn {
+    display: inline-block;
+    font-weight: 400;
+    color: #212529;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 14px;
+    line-height: 1.5;
+    border-radius: 5px;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out, margin 0.3s ease-in-out;
+}
+.ms-cl .btn-primary {
+    color: #fff;
+    background: #7991d9;
+    border-color: #7991d9;
+    padding: 10px 30px;
+    display: block;
+    width: auto;
+    border-radius: 0;
+    font-family: "Montserrat",Franklin Gothik,Libre Franklin,Montserrat,Sans-Serif;
+    font-size: 17px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.ms-cl .btn-primary:hover {
+    margin-top: -10px;
+}
+.ms-cl .btn-primary:focus {
+    color: #fff;
+    background: #7991d9;
+    border-color: #7991d9;
+}
+.ms-cl .btn-contact {
+    color: #fff !important;
+    background: #029D4D;
+    border-color: #029D4D;
+    padding: 10px 30px;
+    display: inline-block;
+    width: auto;
+    border-radius: 0;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none !important;
+}
+.ms-cl .btn-contact:hover {
+    margin-top: -10px;
+}
+.ms-cl .btn-contact:focus {
+    color: #fff;
+    background: #029D4D;
+    border-color: #029D4D;
+}
+.ms-cl .btn:focus {
+    outline: none !important;
+}
+.ms-cl .rs-title {
+    font-size: 28px;
+    margin-bottom: 30px;
+}
+.ms-cl .rs-sub-title{
+    font-size: 20px;
+    color: #4f4f4f;
+}
+.ms-cl .rs-sub-title-sp {
+    color: #fff;
+    background: #029D4D;
+    padding: 16px 28px;
+    margin-bottom: 0;
+    font-family: "Montserrat",Franklin Gothik,Libre Franklin,Montserrat,Sans-Serif;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 32px;
+}
+.ms-cl .err-msg {
+    display: none;
+    color: red;
+    margin: 2px 0;
+    font-size: 14px;
+}
+.ms-cl .check-item {
+    display: inline-block;
+    border: 2px solid transparent;
+    padding: 3px 8px;
+    cursor: pointer;
+    background-color: #f9f9f9;
+    text-align: center;
+    min-width: 70px;
+    font-family: "Montserrat",Franklin Gothik,Libre Franklin,Montserrat,Sans-Serif;
+    font-weight: bold;
+    line-height: 32px;
+    font-size: 20px;
+    transition: background .3s,border .3s,border-radius .3s,box-shadow .3s;
+}
+.ms-cl .check-item:hover {
+    box-shadow: 0px 0px 10px 0px rgb(50 60 141 / 49%);
+}
+.ms-cl .check-item.active {
+    border-color: #7991d9;
+}
+.ms-cl #err_msg {
+    color: red;
+    display: none;
+    margin: 8px 2px;
+    text-align: center;
+}
+.ms-cl .sp-program {
+    width: 100%;
+    margin-top: 0.5rem;
+}
+.ms-cl .sp-program a {
+    color: #fa6c47 !important;
+}
+.ms-cl .sp-program h3 {
+    font-size: 22px;
+}
+.ms-cl .cl-left-div {
+    padding: 2px !important;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+}
+.ms-cl .cl-right-div{
+    padding: 2px !important;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+}
+/* responsive */
+
+@media (max-width: 768px){
+    .ms-cl .cl-divider {
+        display: none;
+    }
+    .ms-cl .cl-left-div, .ms-cl .cl-right-div {
+        margin-top: 50px;
+        padding: 10px !important;
+    }
+    .ms-cl .btn-primary, .ms-cl .btn-contact {
+        padding: .575rem 0.5rem;
+        width: 100%;
+    }
+    .ms-cl .rs-item{
+        flex-direction: column;
+        align-items: self-start !important;
+    }
+}
+@media (min-width: 768px){
+    .ms-cl .container, .ms-cl .container-md, .ms-cl .container-sm {
+        max-width: 100%;
+    }
+    .ms-cl .col-md-12 {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .ms-cl .col-md-8 {
+        -ms-flex: 0 0 66.666667%;
+        flex: 0 0 66.666667%;
+        max-width: 66.666667%;
+    }
+    .ms-cl .col-md-55 {
+        -ms-flex: 0 0 55%;
+        flex: 0 0 55%;
+        max-width: 55%;
+    }
+    .ms-cl .col-md-45 {
+        -ms-flex: 0 0 45%;
+        flex: 0 0 45%;
+        max-width: 45%;
+    }
+    .ms-cl .col-md-6 {
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    .ms-cl .col-md-4 {
+        -ms-flex: 0 0 33.333333%;
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+    }
+    .ms-cl .col-md-3 {
+        -ms-flex: 0 0 25%;
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+    .ms-cl .md-50 {
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+@media (min-width: 820px){
+    .ms-cl .container, .ms-cl .container-lg, .ms-cl .container-md, .ms-cl .container-sm {
+        max-width: 800px;
+    }
+    .ms-cl .md-50 {
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    .ms-cl .col-md-45 {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .ms-cl .col-md-55 {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .ms-cl .cl-left-div, .ms-cl .cl-right-div {
+        padding: 10px !important;
+    }
+    .ms-cl .cl-right-div {
+        margin-top: 40px;
+    }
+}
+@media (min-width: 1200px) {
+    .ms-cl .container, .ms-cl .container-lg, .ms-cl .container-md, .ms-cl .container-sm, .ms-cl .container-xl {
+        max-width: 1150px;
+    }
+    .ms-cl .col-md-55 {
+        -ms-flex: 0 0 55%;
+        flex: 0 0 55%;
+        max-width: 55%;
+    }
+    .ms-cl .col-md-45 {
+        -ms-flex: 0 0 45%;
+        flex: 0 0 45%;
+        max-width: 45%;
+    }
+    .ms-cl .cl-left-div {
+        padding: 30px 20px !important;
+    }
+    .ms-cl .cl-right-div {
+        margin-top: 0;
+    }
+}
+.ms-cl .d-in-block {
+    display: inline-block;
+}
+.ms-cl .rs-sumary {
+    padding: 40px 40px 40px 40px;
+}
+.ms-cl .list-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.ms-cl .rs-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #d9d9d9;
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+}
+.ms-cl .list-icon {
+    width: 14px;
+    height: 14px;
+    display: block;
+    background: #029D4D;
+    border-radius: 50%;
+}
+.ms-cl .list-title {
+    font-size: 18px;
+    font-weight: 500;
+    padding-left: 15px;
+}
+.ms-cl .list-value {
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    padding-left: 28px;
+}
+.ms-cl .switch-sec {
+    display: flex;
+    justify-content: flex-start;
+    background-color: #222831;
+    padding: 5px;
+    width: 45px;
+    border-radius: 25px;
+    transition: all .3s;
+    cursor: pointer;
+}
+.ms-cl .switch-icon {
+    display: block;
+    width: 15px;
+    height: 15px;
+    border-radius: 25px;
+    background-color: #ffffff;
+}
+.ms-cl .switch-sec.active {
+    justify-content: flex-end;
+}
+.ms-cl .progress-sec {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 245px;
+    position: relative;
+    margin-bottom: 20px;
+}
+.ms-cl .p-title {
+    font-size: 18px;
+    font-weight: 500;
+    color: #222831;
+    position: absolute;
+    top: 86px;
+}
+.ms-cl .p-value {
+    color: #222831;
+    position: absolute;
+    top: 112px;
+    font-family: "Montserrat",Franklin Gothik,Libre Franklin,Montserrat,Sans-Serif;
+    font-size: 26px;
+    font-weight: bold;
+    line-height: 32px;
+}
+.ms-cl .prepend-text {
+    position: absolute;
+    bottom: 8px;
+    left: 13px;
+    color: #222831;
+    font-family: "Montserrat",Franklin Gothik,Libre Franklin,Montserrat,Sans-Serif;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 32px;
+}
+.ms-cl .append-text {
+    font-size: 18px;
+    position: absolute;
+    bottom: 8px;
+    right: 7px;
+    color: #222831;
+    font-weight: 500;
+}
+.ms-cl .sp-pd-left {
+    padding-left: 28px !important;
+}
+.ms-cl .sp-pd-right {
+    padding-right: 28px !important;
+}
+.ms-cl .err-div {
+    display: block;
+    margin-bottom: 20px;
+}
+.ms-cl .err-div-inner {
+    display: none;
+}
+.ms-cl .err-sec {
+    align-items: center;
+    display: flex;
+    margin: 8px 0 0 0;
+}
+.ms-cl .err-icon {
+    fill: #d47500;
+    stroke: none;
+    flex: 0 0 auto;
+    height: 1.25rem;
+    width: 1.25rem;
+}
+.ms-cl .ms-mr {
+    margin-bottom: 1rem;
+}
+.ms-cl .con_2 {
+    display: none;
+}
+.ms-cl .info-icon {
+    display: inline-block;
+    margin-left: 9px;
+    margin-top: 4.5px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: "Montserrat",Franklin Gothik,Libre Franklin,Montserrat,Sans-Serif;
+}
+.ms-cl .info-icon i {
+    pointer-events: none;
+}
+.ms-cl .info-icon:hover, .ms-cl .info-icon:focus {
+    color: #029D4D;
+}
+.ms-cl .info-icon.active {
+    color: #029D4D;
+}
+.ms-cl .info-box {
+    display: none;
+    position: absolute;
+    background: #1c1b1a;
+    color: #ffffff;
+    padding: 10px;
+    border-radius: 3px;
+    box-shadow: 0 0 8px 0 rgb(0 0 0 / 45%);
+    width: 500px;
+    top: 28px;
+    left: 0;
+    z-index: 10;
+    font-size: 16px;
+    line-height: 26px;
+    font-family: "Montserrat",Franklin Gothik,Libre Franklin,Montserrat,Sans-Serif;
+}
+.ms-cl .bottom-sec {
+    background-color: #ffffff;
+    padding: 20px;
+    margin-top: 0.5rem;
+}
+.ms-cl .bottom-sec h4 {
+    margin: 2px 0;
+    font-family: "Montserrat",Franklin Gothik,Libre Franklin,Montserrat,Sans-Serif;
+    font-size: 18px;
+    font-weight: 500;
+}
+.ms-cl .bottom-sec p {
+    font-family: "Montserrat",Franklin Gothik,Libre Franklin,Montserrat,Sans-Serif;
+    font-weight: 400;
+    margin: 2px 0 18px 0;
+}
+.ms-cl .btn-sec{
+    display: block;
+    height: 50px;
+    padding-top: 10px;
+}
+.ms-cl .ds-flex{
+    display: flex;
+}
+@media (max-width: 768px){
+    .ms-cl .info-box {
+        width: 100%;
+    }
+    .ms-cl .progress-sec {
+        margin: 0 auto;
+    }
+    .ms-cl label {
+        margin-bottom: 10px;
+        font-size: 18px;
+    }
+}
+.ms-cl .top-para {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #000 !important;
+    font-weight: 500;
+}
+.ms-cl .round-box {
+    border-radius: 10%;
+    width: 20px;
+    height: 20px;
+    font-size: 11px;
+    cursor: pointer;
+}
+.ms-cl .color-1 {
+    background-color: #7991d9;
+    color: #7991d9;
+    border: 1px solid #7991d9;
+}
+.ms-cl .color-2 {
+    background-color: #d95a2a;
+    color: #d95a2a;
+    border: 1px solid #d95a2a;
+}
+.ms-cl .color-3 {
+    background-color: #f3e94e;
+    color: #f3e94e;
+    border: 1px solid #f3e94e;
+}
+.ms-cl .color-4 {
+    background-color: #f2984a;
+    color: #f2984a;
+    border: 1px solid #f2984a;
+}
+</style>
+<div class="ms-cl" id="ms_cl">
+    <div class="container cl-wrapper">
+        <div class="top-para">Use this simple calculator to estimate your monthly mortgage payment for a new home loan. Enter a home price, your expected down payment, and desired loan term to get an estimated monthly breakdown of your principal, interest, taxes, and insurance - including a schedule of payments.</div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="cl-left-div">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Home Price</label>
+                            <input type="text" name="in_1" class="form-control sp-pd-left cl-required" value="350,000" id="in_1" />
+                            <span class="prepend-text">$</span>
+                        </div>
+                        <div class="err-div">
+                            <div class="err-div-inner" id="in_1_err">
+                                <div class="err-sec">
+                                    <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" class="err-icon" width="100%" height="100%"><title>error icon</title><path d="M8 15.5A7.5 7.5 0 1 0 .5 8 7.5 7.5 0 0 0 8 15.5zM7.21 2.91h1.58v6.56H7.21zM8 11a1 1 0 1 1-1 1 1 1 0 0 1 1-1z" fill="#ef7f1a"></path></svg>
+                                    <small>&nbsp;Please enter a home price.</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Loan Term
+                                <span class="info-icon"><i aria-hidden="true" class="fas fa-question-circle"></i></span>
+                                <span class="info-box">
+                                    This is how long you'll pay on the loan. A longer term gives you smaller payments, while a shorter term saves you money on interest.
+                                </span>
+                            </label>
+                            <select class="form-control selectdiv cl-required" id="in_4">
+                                <option value="5">5 Years</option>
+                                <option value="10">10 Years</option>
+                                <option value="15">15 Years</option>
+                                <option value="20">20 Years</option>
+                                <option value="25">25 Years</option>
+                                <option value="30" selected>30 Years</option>
+                            </select>
+                            <span class="append-text" style="bottom: 14.5px;background: #fff;pointer-events: none;">
+                                <div class="elementor-icon" style="font-size: 20px;color: #000;display: block;">
+                                    <i aria-hidden="true" class="fas fa-chevron-down"></i>			
+                                </div>
+                            </span>
+                        </div>
+                        <div class="err-div"></div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Interest Rate
+                                <span class="info-icon"><i aria-hidden="true" class="fas fa-question-circle"></i></span>
+                                <span class="info-box">
+                                    Mortgage interest rates change all the time, but they're typically in the 4% to 6% range.
+                                </span>
+                            </label>
+                            <input type="text" class="form-control sp-pd-right cl-required" value="7.5" id="in_5"/>
+                            <span class="append-text">%</span>
+                        </div>
+                        <div class="err-div">
+                            <div class="err-div-inner" id="in_5_err">
+                                <div class="err-sec">
+                                    <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" class="err-icon" width="100%" height="100%"><title>error icon</title><path d="M8 15.5A7.5 7.5 0 1 0 .5 8 7.5 7.5 0 0 0 8 15.5zM7.21 2.91h1.58v6.56H7.21zM8 11a1 1 0 1 1-1 1 1 1 0 0 1 1-1z" fill="#ef7f1a"></path></svg>
+                                    <small>&nbsp;Please enter an interest rate of 10% or less.</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Property Tax
+                                <span class="info-icon"><i aria-hidden="true" class="fas fa-question-circle"></i></span>
+                                <span class="info-box">
+                                    To estimate your property taxes, look at online home listings for the area you're interested in.
+                                </span>
+                            </label>
+                            <input type="text" name="in_6" class="form-control cl-required sp-pd-left" value="1,696" id="in_6" />
+                            <span class="prepend-text">$</span>
+                            <span class="append-text">Year</span>
+                        </div>
+                        <div class="err-div">
+                            <div class="err-div-inner" id="in_6_err">
+                                <div class="err-sec">
+                                    <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" class="err-icon" width="100%" height="100%"><title>error icon</title><path d="M8 15.5A7.5 7.5 0 1 0 .5 8 7.5 7.5 0 0 0 8 15.5zM7.21 2.91h1.58v6.56H7.21zM8 11a1 1 0 1 1-1 1 1 1 0 0 1 1-1z" fill="#ef7f1a"></path></svg>
+                                    <small>&nbsp;Please enter estimated yearly property taxes.</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label>Down Payment
+                                <span class="info-icon"><i aria-hidden="true" class="fas fa-question-circle"></i></span>
+                                <span class="info-box">
+                                    This is how long you'll pay on the loan. A longer term gives you smaller payments, while a shorter term saves you money on interest.
+                                </span>
+                            </label>
+                        </div>
+                        <div class="form-group ms-mr">
+                            <div class="check-item active" data-value="1">
+                                $
+                            </div>&nbsp;&nbsp;
+                            <div class="check-item" data-value="2">
+                                %
+                            </div>
+                        </div>
+                        <div class="form-group con_1">
+                            <input type="text" name="in_2" class="form-control sp-pd-left cl-required" value="17,500" id="in_2" />
+                            <span class="prepend-text">$</span>
+                        </div>
+                        <div class="err-div" id="err_con_1">
+                            <div class="err-div-inner" id="in_2_err">
+                                <div class="err-sec">
+                                    <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" class="err-icon" width="100%" height="100%"><title>error icon</title><path d="M8 15.5A7.5 7.5 0 1 0 .5 8 7.5 7.5 0 0 0 8 15.5zM7.21 2.91h1.58v6.56H7.21zM8 11a1 1 0 1 1-1 1 1 1 0 0 1 1-1z" fill="#ef7f1a"></path></svg>
+                                    <small>&nbsp;Please enter a down payment.</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group con_2">
+                            <input type="text" name="in_3" class="form-control sp-pd-right cl-required" value="20" id="in_3" />
+                            <span class="append-text">%</span>
+                        </div>
+                        <div class="err-div">
+                            <div class="err-div-inner" id="in_3_err">
+                                <div class="err-sec">
+                                    <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" class="err-icon" width="100%" height="100%"><title>error icon</title><path d="M8 15.5A7.5 7.5 0 1 0 .5 8 7.5 7.5 0 0 0 8 15.5zM7.21 2.91h1.58v6.56H7.21zM8 11a1 1 0 1 1-1 1 1 1 0 0 1 1-1z" fill="#ef7f1a"></path></svg>
+                                    <small>&nbsp;Please enter a down payment %.</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Home Insurance
+                                <span class="info-icon"><i aria-hidden="true" class="fas fa-question-circle"></i></span>
+                                <span class="info-box">
+                                    Most homeowners pay about $1,000 a year for homeowners insurance, but the cost varies based on your location, home and coverage.
+                                </span>
+                            </label>
+                            <input type="text" name="in_7" class="form-control cl-required sp-pd-left" value="1,400" id="in_7" />
+                            <span class="prepend-text">$</span>
+                            <span class="append-text">Year</span>
+                        </div>
+                        <div class="err-div">
+                            <div class="err-div-inner" id="in_7_err">
+                                <div class="err-sec">
+                                    <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" class="err-icon" width="100%" height="100%"><title>error icon</title><path d="M8 15.5A7.5 7.5 0 1 0 .5 8 7.5 7.5 0 0 0 8 15.5zM7.21 2.91h1.58v6.56H7.21zM8 11a1 1 0 1 1-1 1 1 1 0 0 1 1-1z" fill="#ef7f1a"></path></svg>
+                                    <small>&nbsp;Please enter estimated yearly home insurance.</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>HQA dues
+                                <span class="info-icon"><i aria-hidden="true" class="fas fa-question-circle"></i></span>
+                                <span class="info-box">
+                                    Mortgage rates change all the time, and depend based on your credit rating, the term of your loan and other factors.
+                                </span>
+                            </label>
+                            <input type="text" name="in_8" class="form-control cl-required sp-pd-left" value="85" id="in_8" />
+                            <span class="prepend-text">$</span>
+                            <span class="append-text">month</span>
+                        </div>
+                        <div class="err-div">
+                            <div class="err-div-inner" id="in_8_err">
+                                <div class="err-sec">
+                                    <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" class="err-icon" width="100%" height="100%"><title>error icon</title><path d="M8 15.5A7.5 7.5 0 1 0 .5 8 7.5 7.5 0 0 0 8 15.5zM7.21 2.91h1.58v6.56H7.21zM8 11a1 1 0 1 1-1 1 1 1 0 0 1 1-1z" fill="#ef7f1a"></path></svg>
+                                    <small>&nbsp;Please enter estimated monthly maintenance fee.</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="btn-sec">
+                    <button type="button" class="btn btn-primary" id="calc_btn">CALCULATE</button>
+                </div>
+                </div>
+            </div>
+            <div class="col-md-6" id="rs_sec">
+                <div class="cl-right-div">
+                    <div class="rs-sumary">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="progress-sec">
+                                    <canvas id="myChart" style="z-index: 10;"></canvas>
+                                    <div class="p-title" style="z-index: 1;">Monthly Payment</div>
+                                    <div class="p-value" style="z-index: 1;" id="rs_4">$ 0.00</div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="rs-item">
+                                    <div class="list-item">
+                                        <div class="round-box color-1"></div>
+                                        <div class="list-title">Principal & Interest</div>
+                                    </div>
+                                    <div class="list-value" id="rs_1">$ 0.00</div>
+                                </div>
+                                <div class="rs-item">
+                                    <div class="list-item">
+                                        <div class="round-box color-2"></div>
+                                        <div class="list-title">Taxes</div>
+                                    </div>
+                                    <div class="list-value" id="rs_2">$ 0</div>
+                                </div>
+                                <div class="rs-item">
+                                    <div class="list-item">
+                                        <div class="round-box color-3"></div>
+                                        <div class="list-title">Insurance</div>
+                                    </div>
+                                    <div class="list-value" id="rs_3">$ 0</div>
+                                </div>
+                                <div class="rs-item">
+                                    <div class="list-item">
+                                        <div class="round-box color-4"></div>
+                                        <div class="list-title">HQA</div>
+                                    </div>
+                                    <div class="list-value" id="rs_33">$ 0</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    jQuery(document).ready(function($){
+        let dn_py_sts = 1, isInclude = false;
+        let myChart;
+
+        const nft = Intl.NumberFormat("en-US");
+        const nftd = Intl.NumberFormat("en-US", {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        });
+
+        $(".info-icon, .info-box").on("click", function(){
+            $(".info-icon").removeClass("active");
+            $(this).addClass("active");
+            $(".info-box").hide();
+            let icon_box = $(this).closest("label").find(".info-box");
+            icon_box.show();
+        });
+        $('html').click(function(e) {                    
+            if(!$(e.target).hasClass('info-icon') && !$(e.target).hasClass('info-box') )
+            {
+                $(".info-box").hide();  
+                $(".info-icon").removeClass("active");            
+            }
+        });
+
+        $(".cl-required").on("click", function(){
+            $(".cl-required").removeClass("active");
+            $(this).addClass("active");
+        });
+        $(".check-item").on("click", function(){
+            $(".check-item").removeClass("active");
+            $(this).addClass("active");
+            dn_py_sts = Number($(this).data("value"));
+            if(dn_py_sts == 1){
+                $(".con_1, #err_con_1").show();
+                $(".con_2").hide();
+            } else {
+                $(".con_1, #err_con_1").hide();
+                $(".con_2").show();
+            }
+            $("#in_2_err, #in_3_err").hide();
+        });
+        // $(".switch-sec").on("click", function(){
+        //     if(isInclude == false){
+        //         isInclude = true;
+        //         $(this).addClass("active");
+        //         $(".con_3").show();
+        //     } else {
+        //         isInclude = false;
+        //         $(this).removeClass("active");
+        //         $(".con_3").hide();
+        //         $("#in_6_err, #in_7_err").hide();
+        //     }
+        //     $("#in_6, #in_7, #in_8").val("0");
+        // });
+
+        $("#in_1, #in_2, #in_3, #in_4, #in_5, #in_6, #in_7").on("input", function(e){
+            let vl = removeSign($(this).val());
+            let inID = $(this).attr("id");
+            if(vl > 0) {
+                $("#"+inID+"_err").hide();
+            } else {
+                $("#"+inID+"_err").show();
+            }
+        });
+        $("#in_1").on("change", function(e){
+            let vl = removeSign($(this).val());
+            $(this).val(nft.format(vl));
+        });
+        $("#in_2").on("change", function(){
+            let vl = removeSign($(this).val());
+            $(this).val(nft.format(vl));
+        });
+        $("#in_5").on("change", function(){
+            let vl = Number($(this).val());
+            if(vl > 0 && vl <= 100) {
+                $("#in_5_err").hide();
+            } else {
+                $("#in_5_err").show();
+            }
+        });
+        $("#in_6").on("change", function(){
+            let vl = removeSign($(this).val());
+            $(this).val(nft.format(vl));
+        });
+        $("#in_7").on("change", function(){
+            let vl = removeSign($(this).val());
+            $(this).val(nft.format(vl));
+        });
+        $("#in_8").on("change", function(){
+            let vl = removeSign($(this).val());
+            $(this).val(nft.format(vl));
+        });
+
+        calc(); 
+
+        $("#calc_btn").on("click", function(){
+            calc();
+
+        });
+
+        function calc(){
+            in_1 = removeSign($("#in_1").val());
+            in_2 = removeSign($("#in_2").val());
+            in_3 = removeSign($("#in_3").val());
+            in_4 = removeSign($("#in_4").val());
+            in_5 = removeSign($("#in_5").val());
+            in_6 = removeSign($("#in_6").val());
+            in_7 = removeSign($("#in_7").val());
+            in_8 = removeSign($("#in_8").val());
+
+            if(in_1 && in_5){
+                let downpayment = 0;
+
+                if(dn_py_sts == 1){
+                    downpayment = in_2;
+                } else if(dn_py_sts == 2) {
+                    downpayment = in_1 * (in_3/100);
+                }
+
+                rs_1 = -pmt((in_5/100)/12, in_4*12, (in_1-downpayment));
+                rs_2 = in_6/12;
+                rs_3 = in_7/12;
+                rs_33 = in_8;
+                rs_4 = rs_1 + rs_2 + rs_3 + rs_33;
+                
+                $("#rs_1").text("$ "+nftd.format(rs_1));
+                $("#rs_2").text("$ "+nftd.format(rs_2));
+                $("#rs_3").text("$ "+nftd.format(rs_3));
+                $("#rs_33").text("$ "+nftd.format(rs_33));
+                $("#rs_4").text("$ "+nftd.format(rs_4));
+
+                if(myChart){
+                    myChart.destroy();
+                }
+
+                const labels = [
+                    'Principal & Interest',
+                    'Taxes',
+                    'Insurance'
+                ];
+
+                var xValues = ["Principal & Interest", "Taxes", "Insurance", "HQA"];
+                var yValues = [rs_1, rs_2, rs_3, rs_33];
+                var barColors = [
+                    "#7991d9",
+                    "#d95a2a",
+                    "#f3e94e",
+                    "#f2984a"
+                ];
+
+                myChart = new Chart("myChart", {
+                    type: "doughnut",
+                    data: {
+                        labels: xValues,
+                        datasets: [{
+                            backgroundColor: barColors,
+                            data: yValues
+                        }]
+                    },
+                    options: {
+                        plugins: {
+                            legend: {
+                                display: false
+                            },
+                            tooltip: {
+                                callbacks: {
+                                    label: function(context) {
+                                        let label = ' '+context.label || '';
+
+                                        if (label) {
+                                            label += ': ';
+                                        }
+                                        if (context.y !== null) {
+                                            label += new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(context.parsed);
+                                        }
+                                        return label;
+                                    }
+                                }
+                            },
+                        },
+                        title: {
+                            display: false
+                        },
+                        cutout: 85
+                    }
+                });
+                
+                $('html, body').animate({
+                    scrollTop: $("#rs_sec").offset().top - 180
+                }, 1000);
+            }
+        }
+
+        function pmt(rate, nperiod, pv, fv, type) {
+            if (!fv) fv = 0;
+            if (!type) type = 0;
+
+            if (rate == 0) return -(pv + fv)/nperiod;
+
+            var pvif = Math.pow(1 + rate, nperiod);
+            var pmt = rate / (pvif - 1) * -(pv * pvif + fv);
+
+            if (type == 1) {
+                pmt /= (1 + rate);
+            };
+
+            return pmt;
+        }
+
+
+        function removeSign(vl){
+            return Number(vl.replace(/\$|,|[^\d.-]/g, ''));
+    }
+    });
+</script>
+<!----------- copy ends ---------------->
+</body>
+</html>

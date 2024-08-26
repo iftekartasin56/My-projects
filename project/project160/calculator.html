@@ -1,0 +1,699 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap CSS -->
+    <title>Cost cost_calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+</head>
+<body>
+
+<!-----------Please copy and paste following code into any HTML element ---------------->
+
+<!----------- copy starts ---------------->
+<style>
+#cst_cl *, ::after, ::before {
+    box-sizing: border-box;
+}
+#cst_cl {
+    line-height: 1.5;
+    font-family: inherit;
+}
+#cst_cl .container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #000000;
+    text-align: left;
+}
+#cst_cl label {
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #4a5078;
+}
+#cst_cl .row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+#cst_cl .col-md-1, #cst_cl .col-md-10, #cst_cl .col-md-11, #cst_cl .col-md-12, #cst_cl .col-md-2, #cst_cl .col-md-3, #cst_cl .col-md-4, #cst_cl .col-md-5, #cst_cl .col-md-6, #cst_cl .col-md-7, #cst_cl .col-md-8, #cst_cl .col-md-9 {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+#cst_cl .form-group {
+    margin-bottom: 1rem;
+}
+#cst_cl .form-control {
+    display: block;
+    width: 100%;
+    height: 35px;
+    padding: 0.275rem 0.75rem;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #000000;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #DBDBDB;
+    border-radius: 5px;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+#cst_cl .form-control:focus {
+    outline: none;
+}
+#cst_cl .text-center {
+    text-align: center!important;
+}
+@media (min-width: 576px){
+    #cst_cl .container {
+        max-width: 540px;
+    }
+}
+@media (min-width: 768px){
+    #cst_cl .container {
+        max-width: 100%;
+    }
+    #cst_cl .col-md-12 {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    #cst_cl .col-md-8 {
+        -ms-flex: 0 0 66.666667%;
+        flex: 0 0 66.666667%;
+        max-width: 66.666667%;
+    }
+    #cst_cl .col-md-7 {
+        -ms-flex: 0 0 58.33%;
+        flex: 0 0 58.33%;
+        max-width: 58.33%;
+    }
+    #cst_cl .col-md-6 {
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    #cst_cl .col-md-5 {
+        -ms-flex: 0 0 41.666667%;
+        flex: 0 0 41.666667%;
+        max-width: 41.666667%;
+    }
+    #cst_cl .col-md-4 {
+        -ms-flex: 0 0 33.333333%;
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+    }
+    #cst_cl .col-md-3 {
+        -ms-flex: 0 0 25%;
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+}
+@media (min-width: 992px){
+    #cst_cl .container {
+        max-width: 800px;
+    }
+}
+@media (min-width: 1200px) {
+    #cst_cl .container {
+        max-width: 1150px;
+    }
+}
+#cst_cl .input-sec {
+    width: 100%;
+    display: block;
+    background: #fff;
+    padding: 1rem 2rem 2rem 2rem;
+    border: 1px solid #1C951C;
+    border-bottom: none;
+    border-radius: 8px 8px 0px 0px;
+}
+#cst_cl .right-output-sec {
+    width: 100%;
+    display: block;
+    margin-top: 12px;
+    padding: 3px 15px;
+    border-left: 3px solid #111636;
+    color: #000000;
+}
+#cst_cl .rs-title {
+    font-size: 24px;
+    font-weight: 600;
+    border-bottom: 1px solid #111636;
+}
+#cst_cl .rs-vl {
+    font-size: 22px;
+    font-weight: 600;
+    color: #4f8ff2;
+}
+#cst_cl .sum-sec {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border: 1px solid #1C951C;
+    margin-bottom: 2rem;
+    padding: 2rem;
+    border-radius: 8px;
+}
+#cst_cl .sum-title {
+    border-bottom: 1px solid #1C951C;
+    color: #000;
+    padding: 5px 0;
+    font-size: 18px;
+}
+#cst_cl .sum-value {
+    color: #000;
+    font-size: 22px;
+    font-weight: 600;
+}
+#cst_cl .pd-0 {
+    padding: 0;
+}
+#cst_cl .text-right {
+    text-align: right !important;
+}
+#cst_cl .range-wrap {
+    display: block;
+    position: relative;
+    padding: 0;
+    margin: 0 0 35px 0;
+}
+#cst_cl input[type=range] {
+    margin: 0 0 0 0;
+    outline: none;
+    padding: 0;
+    width: 100%;
+    height: 10px;
+    background: #fff;
+    background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #4a5078), color-stop(100%, #4a5078));
+    border: 1px solid #ccc;
+    background-size: 0% 100%;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    cursor: pointer;
+    -webkit-appearance: none;
+}
+#cst_cl input[type=range]::-webkit-slider-runnable-track {
+    box-shadow: none;
+    border: none;
+    background: transparent;
+    -webkit-appearance: none;
+}
+#cst_cl input[type=range]::-moz-range-track {
+    box-shadow: none;
+    border: none;
+    background: transparent;
+    -webkit-appearance: none;
+}
+
+
+#cst_cl input[type=range]::-webkit-slider-thumb {
+    height: 20px;
+    width: 20px;
+    margin-top: -4px;
+    background: #4a5078;
+    border-radius: 25px;
+    box-shadow: 0 2px 2px 0px #646464;
+    -webkit-appearance: none;
+}
+
+#cst_cl input[type=range]::-moz-range-thumb {
+    height: 20px;
+    width: 20px;
+    margin-top: -4px;
+    background: #EF931E;
+    border-radius: 25px;
+    box-shadow: 0 2px 2px 0px #646464;
+    -webkit-appearance: none;
+}
+#cst_cl .prepend-text {
+    font-size: 16px;
+    position: absolute;
+    bottom: 4px;
+    left: 4px;
+    padding: 1px 5px;
+    border-radius: 5px;
+    color: #000000;
+}
+#cst_cl .append-text {
+    font-size: 16px;
+    position: absolute;
+    bottom: 1px;
+    right: 6px;
+    padding: 1px 5px;
+    border-radius: 5px;
+    color: #000000;
+}
+#cst_cl .form-group, #cst_cl .input-group {
+    position: relative;
+    margin-bottom: 22px;
+}
+#cst_cl .top-title {
+    font-size: 18px;
+    margin: 0;
+    color: #243A81;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #D9D9D9;
+}
+#cst_cl .sec-title {
+    border: 1px solid #0274ae;
+    color: #fff;
+    padding: 5px 0;
+    font-size: 18px;
+    border-radius: 8px;
+}
+.highcharts-credits {
+    display: none;
+}
+#cst_cl .sp-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#cst_cl .sp-rs-div {
+    margin-bottom: 0;
+}
+#cst_cl .check-box {
+    display: flex;
+    gap: 8px;
+}
+#cst_cl  .check-item {
+    display: inline-block;
+    border: 1px solid #D9D9D9;
+    border-radius: 5px;
+    padding: 7px 15px 7px 15px;
+    cursor: pointer;
+    background-color: transparent;
+    font-size: 16px;
+    font-weight: 400;
+    width: 100%;
+    text-align: center;
+}
+#cst_cl  .check-item:hover {
+    background-color: #243A81;
+    color: #fff;
+}
+#cst_cl  .check-item.active {
+    background-color: #BCA480;
+    border-color: #BCA480;
+    color: #fff;
+}
+#cst_cl  .cl-wrapper {
+    background: #FFFFFF;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    padding: 30px 40px;
+}
+#cst_cl .ms-sm-left {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 600;
+    float: left;
+    color: #4a5078;
+}
+#cst_cl .ms-sm-right {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 600;
+    float: right;
+    color: #4a5078;
+}
+#cst_cl .ms-sm{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    font-weight: 600;
+    color: #4a5078;
+}
+#cst_cl .sp-pd-left {
+    padding-left: 25px;
+}
+#cst_cl .sp-pd-right {
+    padding-left: 25px;
+}
+#cst_cl .pdf-btn {
+    border: 1px solid #BCA480;
+    color: #BCA480;
+    text-align: center;
+    margin-top: 20px;
+    padding: 7px 15px 7px 15px;
+}
+
+#cst_cl .profit-vl {
+    text-align: end;
+    font-weight: 600;
+    color: #4a5078;
+    font-size: 14px;
+}
+#cst_cl .rs-sm-title {
+    font-size: 12px;
+    font-weight: 400;
+}
+#cst_cl .option-sec {
+    display: flex;
+    gap: 40px;
+    justify-content: start;
+}
+#cst_cl .check-box {
+    display: flex;
+    margin-bottom: 6px;
+    cursor: pointer;
+}
+#cst_cl .tck-mark {
+    display: inline-block;
+    margin-top: 1px;
+}
+#cst_cl .tick-mark {
+    background-color: #ffffff;
+    padding: 2px;
+    color: #fff;
+    width: 20px;
+    height: 20px;
+    font-size: 14px;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    border: 1px solid #4a5078;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    margin-right: 10px;
+}
+#cst_cl .check-box.is-active .tick-mark {
+    background-color: #4a5078;
+    border: 1px solid #4a5078;
+}
+#cst_cl .btn-primary {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: 600;
+    font-style: italic;
+    background-color: #111636;
+    border: 1px solid #111636;
+    border-radius: 5px;
+    color: #fff;
+    padding: 20px 15px;
+    cursor: pointer;
+}
+@media (max-width: 768px){
+    #cst_cl .input-sec {
+        padding: 1rem;
+        border-radius: 8px;
+        margin-bottom: 10px;
+    }
+    #cst_cl .output-sec {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        margin-left: 0;
+    }
+    #cst_cl .form-control {
+        height: auto;
+        padding: .175rem .75rem;
+    }
+    #cst_cl label {
+        font-size: 16px;
+    }
+    #cst_cl .form-group, #cst_cl .input-group {
+        position: relative;
+        margin-bottom: 10px;
+    }
+    #cst_cl .prepend-text {
+        bottom: 3px;
+    }
+    #cst_cl .append-text {
+        bottom: 2px;
+    }
+    #cst_cl .sp-rs-div {
+        margin-bottom: 1rem;
+    }
+    #cst_cl .option-sec {
+        gap: 0px;
+    }
+    #cst_cl .ms-sm{
+        font-size: 12px;
+    }
+    #cst_cl .rs-title {
+        font-size: 20px;
+    }
+    #cst_cl .rs-vl {
+        font-size: 18px;
+    }
+}
+</style>
+<div class="ms-cl" id="cst_cl">
+    <div class="container cl-wrapper">
+        <div class="row">
+            <div class="col-md-7">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <label for="in_type">Type of Business</label>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="profit-vl" id="range_vl">Medium</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="range-wrap">
+                                <input id="in_type" class="range-bg-1 cl-in" type="range" min="1" max="5" value="1" step="1">
+                                <div class="ms-sm">
+                                    <span>Small</span>
+                                    <span>Local Service</span>
+                                    <span>Medium</span>
+                                    <span>Large</span>
+                                    <span>Ecommerce</span>
+                                </div>
+                            </div> 
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <label for="in_num_page">Number of Pages</label>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="profit-vl" id="in_num_page_vl">5 pages</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="range-wrap">
+                                <input id="in_num_page" class="range-bg-1 cl-in" type="range" min="0" max="15" value="1" step="5">
+                                <div class="ms-sm-left">1</div>
+                                <div class="ms-sm-right">15+ Pages</div>
+                            </div> 
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label class="input-title">Optional Add-ons</label>
+                            <div class="option-sec">
+                                <div class="check-box in-additional" id="logo_design" data-value="1">
+                                    <div class="tck-mark"><span class="tick-mark">✓</span></div>
+                                    <span class="option-title" style="cursor: pointer;">Logo Design</span>
+                                </div>
+                                <div class="check-box in-additional" id="web_hosting" data-value="2">
+                                    <div class="tck-mark"><span class="tick-mark">✓</span></div>
+                                    <span class="option-title" style="cursor: pointer;">Web Hosting</span>
+                                </div>
+                                <div class="check-box in-additional" id="email_setup" data-value="3">
+                                    <div class="tck-mark"><span class="tick-mark">✓</span></div>
+                                    <span class="option-title" style="cursor: pointer;">E-Mail setup</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="right-output-sec">
+                    <div class="output-sec">
+                        <div class="rs-title">
+                            Estimated First Year Cost
+                        </div>
+                        <div class="rs-vl" id="est_cost">
+                            ₤700.00 - ₤800.00
+                        </div>
+                    </div>
+                </div>
+                <div class="right-output-sec">
+                    <a href="#" style="text-decoration: none;" class="btn-primary">GET A QUOTE</a>
+                </div>
+                <div class="right-output-sec">
+                    <img src="https://i.postimg.cc/dth9tz0B/logo.jpg" alt="" height="70px">
+                </div>
+            </div>
+        </div>  
+    </div>            
+</div>
+<script>
+    jQuery(document).ready(function($){
+        const cst_nft = Intl.NumberFormat("en-US",{
+            minimumFractionDigits: 0,
+            maximumFractionDigits: 0
+        });
+
+        const cst_nftd = Intl.NumberFormat("en-US",{
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        });
+
+        let data_arr = [
+            ["Small", 1, 100, 150, 100, 300],
+            ["Local Service", 1, 100, 250, 100, 450],
+            ["Medium", 1, 200, 650, 100, 450],
+            ["Large", 1, 300, 1200, 100, 450],
+            ["Ecommerce", 1, 200, 600, 100, 500],
+            ["Small", 5, 100, 150, 100, 500],
+            ["Local Service", 5, 100, 250, 100, 500],
+            ["Medium", 5, 200, 650, 100, 600],
+            ["Large", 5, 300, 1200, 100, 700],
+            ["Ecommerce", 5, 200, 600, 100, 900],
+            ["Small", 10, 100, 150, 100, 1100],
+            ["Local Service", 10, 100, 250, 100, 900],
+            ["Medium", 10, 200, 650, 100, 1100],
+            ["Large", 10, 300, 1200, 100, 1300],
+            ["Ecommerce", 10, 200, 600, 100, 1500],
+            ["Small", 15, 100, 150, 100, 1600],
+            ["Local Service", 15, 100, 250, 100, 1500],
+            ["Medium", 15, 200, 650, 100, 2230],
+            ["Large", 15, 300, 1200, 100, 2730],
+            ["Ecommerce", 15, 200, 600, 100, 3330]
+        ];
+
+        let bus_type = "Small";
+        let num_p = 1;
+
+        
+        $('#in_type').on('input', function(e){
+            var min = e.target.min,
+                max = e.target.max,
+                vl = e.target.value,
+                val = e.target.value; 
+            
+            let in_id = $(this).attr("id");
+                
+            let bg_size = (val - min) * 100 / (max - min);
+    
+            $(e.target).css({
+                'backgroundSize': bg_size + '% 100%'
+            });
+
+            if(vl == 1){
+                bus_type = "Small";
+            } else if(vl == 2) {
+                bus_type = "Local Service";
+            } else if(vl == 3){
+                bus_type = "Medium";
+            } else if(vl == 4){
+                bus_type = "Large";
+            } else if(vl == 5){
+                bus_type = "Ecommerce";
+            }
+            
+            $("#range_vl").text(bus_type);
+
+            cost_calc();
+        }).trigger('input');
+
+        $('#in_num_page').on('input', function(e){
+            var min = e.target.min,
+                max = e.target.max,
+                vl = e.target.value,
+                val = e.target.value; 
+            
+            let in_id = $(this).attr("id");
+                
+            let bg_size = (val - min) * 100 / (max - min);
+    
+            $(e.target).css({
+                'backgroundSize': bg_size + '% 100%'
+            });
+
+            let in_num_page_vl;
+            if(vl == 0){
+                in_num_page_vl = "1 page";
+            } else if(vl == 5){
+                in_num_page_vl = "5 pages";
+            } else if(vl == 10){
+                in_num_page_vl = "10 pages";
+            } else if(vl == 15){
+                in_num_page_vl = "15 + pages";
+            }
+            $("#in_num_page_vl").text(in_num_page_vl);
+
+            cost_calc();
+        }).trigger('input');
+
+        $(".in-additional").on("click", function(){
+            if($(this).hasClass("is-active")){
+                $(this).removeClass("is-active");
+            } else{
+                $(this).addClass("is-active");
+            }
+
+            cost_calc();
+        });
+
+        cost_calc();
+
+        function cost_calc(){
+            in_type = Number($("#in_type").val());
+            in_num_page = Number($("#in_num_page").val());
+
+            let logoDesign = $("#logo_design").hasClass("is-active");
+            let webHosting = $("#web_hosting").hasClass("is-active");
+            let emailSetup = $("#email_setup").hasClass("is-active");
+
+            if(in_num_page == 0){
+                in_num_page = 1;
+            }
+
+            let estimate_cost = 0;
+
+            let result = data_arr.filter(item => item[0] === bus_type && item[1] === in_num_page);
+
+            
+            estimate_cost = result[0][5];
+            
+            
+            if(logoDesign) estimate_cost = estimate_cost + result[0][2];
+            if(webHosting) estimate_cost = estimate_cost + result[0][3];
+            if(emailSetup) estimate_cost = estimate_cost + result[0][4];
+
+            $("#est_cost").text("₤" + (cst_nftd.format(estimate_cost - 100)) + " - ₤" + (cst_nftd.format(estimate_cost)));
+        }
+
+        function removeComma(num){
+            return Number(num.replace(/,/g,""));
+        }
+    });
+</script>
+<!----------- copy ends ---------------->
+</body>
+</html>

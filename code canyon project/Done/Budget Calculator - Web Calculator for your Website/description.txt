@@ -1,0 +1,43 @@
+Budget Calculator - Web Calculator for your Website
+
+Welcome to our <b>Budget Calculator</b>.This budget calculator is a user-friendly tool designed to help you manage your finances by tracking your monthly income and expenses. You can input various sources of income, such as W2, 1099/Contract, Social Security, Pension, and Miscellaneous.. You can also categorize and input your expenses, such as Home, Miscellaneous Loans, Utilities, Donations, Children, Eating Out, Clothing, Entertainment, Hobbies, Credit Cards, Savings, Medical, Insurance (not payroll deducted), Miscellaneous (list)
+<br>
+<br>
+<u><b>User inputs:</b></u>
+<ul>
+    <div><u>Income by Paycheck</u></div>
+	<li>W2</li>
+    <li>1099/Contract</li>
+    <li>Social Security</li>
+    <li>Pension</li>
+    <li>Miscellaneous</li>
+    <div><u>Expenses - Choose an expense category:</u></div>
+    <li>Home</li>
+    <li>Automobile</li>
+    <li>Miscellaneous Loans</li>
+    <li>Utilities</li>
+    <li>Donations</li>
+    <li>Children</li>
+    <li>Eating Out</li>
+    <li>Clothing</li>
+    <li>Entertainment etc</li>
+</ul>
+<br>
+<u><b>Outputs:</b></u>
+<ul>
+    <li>TOTAL NET INCOME</li>
+    <li>TOTAL EXPENSE</li>
+    <li>DIFFERENCE</li>
+</ul>
+<br>
+<u><b>Features of the Budget Calculator:</b></u>
+<ul>
+    <li>- Instant result without page reload</li>
+    <li>- JS and CSS loads when shortcode called on page</li>
+    <li>- 100% Responsive design</li>
+    <li>- Unique Design</li>
+    <li>- Well Documented (proper help instructions for setup)</li>
+    <li>- Dedicated Support</li>
+</ul>
+<br>
+The calculator is built using HTML, CSS, and JavaScript, and it also utilizes the popular JavaScript library jQuery, Autonumeric Number Format  and PDF Generatetor. A premium quality <b>Budget calculator</b> which you can easily embed into any website (well documented).

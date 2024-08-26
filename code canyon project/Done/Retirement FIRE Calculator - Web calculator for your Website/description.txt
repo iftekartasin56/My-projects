@@ -1,0 +1,36 @@
+Retirement FIRE Calculator - Web Calculator for your Website
+
+Welcome to our <b>Retirement FIRE Calculator</b>, This FIRE Retirement Calculator is designed to help you determine your financial independence, retire early (FIRE) goals. It allows you to input various financial parameters such as your current portfolio balance, monthly investment, monthly expenses at retirement, portfolio growth rate, inflation rate, and safe withdrawal rate.
+<br>
+<br>
+<u><b>User inputs:</b></u>
+<ul>
+    <li>Portfolio Balance</li>
+    <li>Monthly Investment</li>
+    <li>Age</li>
+    <li>Monthly Expenses at Retirement</li>
+    <li>7.00% Portfolio Growth Rate</li>
+    <li>3.00% Inflation Rate</li>
+</ul>
+<br>
+<u><b>Outputs:</b></u>
+<ul>
+    <li>FIRE Number</li>
+    <li>Progress</li>
+    <li>FIRE Age</li>
+</ul>
+<br>
+<u><b>Features of the Savings Rate Calculator:</b></u>
+<ul>
+    <li>- Current Financial Status Input: Enter details like your age, after-tax income, current annual expenses, and existing investments to get started.</li>
+    <li>- Investment Contributions: Specify your annual investment contributions and the expected rate of return to forecast growth.</li>
+    <li>- Savings Details: Include non-invested cash and the percentage of income contributed to savings, along with the savings rate of return.</li>
+    <li>- Instant result without page reload</li>
+    <li>- JS and CSS loads when shortcode called on page</li>
+    <li>- 100% Responsive design</li>
+    <li>- Unique Design</li>
+    <li>- Well Documented (proper help instructions for setup)</li>
+    <li>- Dedicated Support</li>
+</ul>
+<br>
+The calculator is built using HTML, CSS, and JavaScript, and it also utilizes the popular JavaScript library jQuery. A premium quality <b>Retirement FIRE Calculator</b> which you can easily embed into any website (well documented).

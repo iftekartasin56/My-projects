@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+        <meta charset="utf-8"/>
+        <title>BC Calculator</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+        <style>
+            body {
+                font-family: 'Poppins', sans-serif;
+            }
+        </style>
+</head>
+    <body>
+        <!--------- Please copy and paste the following code into an HTML block of any webpage -------->
+        <!--------- copy starts -------->
+        <style>
+            #hm_cl *, ::after, ::before {
+                box-sizing: border-box;
+            }
+            #hm_cl {
+                line-height: 1.5;
+                font-family: inherit;
+            }
+            #hm_cl .container {
+                width: 100%;
+                margin-right: auto;
+                margin-left: auto;
+                font-size: 1rem;
+                font-weight: 400;
+                line-height: 1.5;
+                color: #000000;
+                text-align: left;
+                padding-right: 0;
+                padding-left: 0;
+            }
+            #hm_cl label {
+                display: block;
+                text-align: left;
+                margin-top: 0.3rem;
+                font-size: 16px;
+                font-weight: 400;
+                color: #000;
+            }
+            #hm_cl .table {
+                width: 100%;
+                max-width: 100%;
+                margin-bottom: 25px;
+                background-color: transparent;
+                border-collapse: collapse;
+            }
+            #hm_cl .table td, #hm_cl .table th {
+                padding: 6px 0;
+                vertical-align: middle;
+                border-right: none !important;
+                border-left: none !important;
+                border-top: none !important;
+                border-bottom: 1px solid #cecabe;
+                font-size: 16px;
+                background: transparent;
+                box-shadow: none;
+                color:#fff;
+            }
+            #hm_cl .table th {
+                text-align: left;
+                font-weight: 500;
+            }
+            #hm_cl .w25 {
+                width: 25%;
+            }
+            #hm_cl .row {
+                display: -ms-flexbox;
+                display: flex;
+                -ms-flex-wrap: wrap;
+                flex-wrap: wrap;
+                margin: 0;
+            }
+            #hm_cl .col, #hm_cl .col-1, #hm_cl .col-10, #hm_cl .col-11, #hm_cl .col-12, #hm_cl .col-2, #hm_cl .col-3, #hm_cl .col-4, #hm_cl .col-5, #hm_cl .col-6, #hm_cl .col-7, #hm_cl .col-8, #hm_cl .col-9, #hm_cl .col-auto, #hm_cl .col-lg, #hm_cl .col-lg-1, #hm_cl .col-lg-10, #hm_cl .col-lg-11, #hm_cl .col-lg-12, #hm_cl .col-lg-2, #hm_cl .col-lg-3, #hm_cl .col-lg-4, #hm_cl .col-lg-5, #hm_cl .col-lg-6, #hm_cl .col-lg-7, #hm_cl .col-lg-8, #hm_cl .col-lg-9, #hm_cl .col-lg-auto, #hm_cl .col-md, #hm_cl .col-md-1, #hm_cl .col-md-10, #hm_cl .col-md-11, #hm_cl .col-md-12, #hm_cl .col-md-2, #hm_cl .col-md-3, #hm_cl .col-md-4, #hm_cl .col-md-5, #hm_cl .col-md-6, #hm_cl .col-md-7, #hm_cl .col-md-8, #hm_cl .col-md-9, #hm_cl .col-md-auto, #hm_cl .col-sm, #hm_cl .col-sm-1, #hm_cl .col-sm-10, #hm_cl .col-sm-11, #hm_cl .col-sm-12, #hm_cl .col-sm-2, #hm_cl .col-sm-3, #hm_cl .col-sm-4, #hm_cl .col-sm-5, #hm_cl .col-sm-6, #hm_cl .col-sm-7, #hm_cl .col-sm-8, #hm_cl .col-sm-9, #hm_cl .col-sm-auto, #hm_cl .col-xl, #hm_cl .col-xl-1, #hm_cl .col-xl-10, #hm_cl .col-xl-11, #hm_cl .col-xl-12, #hm_cl .col-xl-2, #hm_cl .col-xl-3, #hm_cl .col-xl-4, #hm_cl .col-xl-5, #hm_cl .col-xl-6, #hm_cl .col-xl-7, #hm_cl .col-xl-8, #hm_cl .col-xl-9, #hm_cl .col-xl-auto {
+                position: relative;
+                width: 100%;
+                padding-right: 15px;
+                padding-left: 15px;
+            }
+            #hm_cl .form-group {
+                margin-bottom: 2rem;
+            }
+            #hm_cl .form-control {
+                display: block;
+                width: 100%;
+                height: 33px;
+                font-family: 'Poppins', sans-serif;
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 1.5;
+                color: #000;
+                background-color: transparent;
+                background-clip: padding-box;
+                border: 1px solid #EF931E; 
+                border-radius: 5px;
+                transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+            }
+            #hm_cl .form-control:focus {
+                outline: none;
+            }
+            #hm_cl .input-group {
+                position: relative;
+                display: -ms-flexbox;
+                display: flex;
+                -ms-flex-wrap: wrap;
+                flex-wrap: wrap;
+                -ms-flex-align: stretch;
+                align-items: stretch;
+                width: 100%;
+            }
+            #hm_cl .text-center {
+                text-align: center!important;
+            }
+            #hm_cl .btn {
+                display: inline-block;
+                font-weight: 400;
+                text-align: center;
+                white-space: nowrap;
+                vertical-align: middle;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+                cursor: pointer;
+                border: 1px solid transparent;
+                padding: 4px 0;
+                font-size: 1rem;
+                line-height: 1.5;
+                border-radius: 5px;
+                transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+            }
+            #hm_cl .btn-primary {
+                background-color: #00A4E6;
+                color: #ffffff;
+                width: 100%;
+            }
+            #hm_cl select option {
+                background-color: aliceblue;
+                color: #000000;
+            }
+            /* Custom css */
+            #hm_cl .cl-wrapper {
+                position: relative;
+                padding: 25px;
+                margin-top:15px;
+                background-color: #f9f9f9;
+                border: 1px solid rgba(255,253,232,.05);
+                box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+                transition: 0.8s;
+                border-radius: 6px;
+                margin-bottom: 15px;
+            }
+            #hm_cl .cl-left-div {
+                padding: 30px !important;
+                border-radius: 10px;
+            }
+            #hm_cl .rs-sec {
+                color: #000;
+            }
+            #hm_cl .rs-vl {
+                font-size: 36px;
+                font-weight: 500;
+            }
+            #hm_cl .p-2313 {
+                padding: 2rem 3rem 1rem 3rem !important;
+            }
+            #hm_cl .rs-sub-title-sp {
+                font-size: 20px;
+                margin: 2px;
+                border-bottom: 1px solid #cccccc;
+                font-weight: 600;
+                color: #862026;
+            }
+            #hm_cl .rs-sp-value {
+                font-size: 36px;
+                margin: 8px 2px 0px 2px;
+                color: #862026;
+                font-family: 'Poppins', sans-serif !important;
+            }
+            #hm_cl .top-title-sec {
+                margin: -75px 0 5px 0;
+            }
+            #hm_cl .top-title {
+                font-size: 25px;
+                display: inline-block;
+                border: 2px solid #38703b;
+                border-radius: 25px;
+                padding: 8px 22px;
+                background-color: #ffffff;
+            }
+            #hm_cl .sub-title {
+                display: inline-block;
+                font-size: 20px;
+                margin: 10px 0 20px 0;
+                padding: 0 0 4px 0;
+                border-bottom: 1px solid #ccc;
+            }
+            /* responsive */
+            
+            @media (max-width: 768px){
+                #hm_cl .cl-left-div {
+                    padding: 1rem 1rem !important;
+                }
+                #hm_cl .cl-right-div {
+                    padding: 2rem 1rem !important;
+                    border-radius: 0 0 8px 8px;
+                }
+                #hm_cl .input-group {
+                    margin-bottom: 10px;
+                }
+                #hm_cl .form-control {
+                    height: auto;
+                    padding: .175rem 3.5rem .175rem .75rem;
+                }
+                #hm_cl label {
+                    font-size: 16px;
+                    margin-top: 10px;
+                }
+                #hm_cl .rs-sec {
+                    flex-direction: column;
+                }
+            }
+            @media (min-width: 576px){
+                #hm_cl .container, #hm_cl .container-sm {
+                    max-width: 540px;
+                }
+            }
+            @media (min-width: 768px){
+                #hm_cl .container, #hm_cl .container-md, #hm_cl .container-sm {
+                    max-width: 100%;
+                }
+                #hm_cl .col-md-12 {
+                    -ms-flex: 0 0 100%;
+                    flex: 0 0 100%;
+                    max-width: 100%;
+                }
+                #hm_cl .col-md-10 {
+                    -ms-flex: 0 0 80%;
+                    flex: 0 0 80%;
+                    max-width: 80%;
+                }
+                #hm_cl .col-md-9 {
+                    -ms-flex: 0 0 75%;
+                    flex: 0 0 75%;
+                    max-width: 75%;
+                }
+                #hm_cl .col-md-8 {
+                    -ms-flex: 0 0 66.666667%;
+                    flex: 0 0 66.666667%;
+                    max-width: 66.666667%;
+                }
+                #hm_cl .col-md-6 {
+                    -ms-flex: 0 0 50%;
+                    flex: 0 0 50%;
+                    max-width: 50%;
+                }
+                #hm_cl .col-md-4 {
+                    -ms-flex: 0 0 33.333333%;
+                    flex: 0 0 33.333333%;
+                    max-width: 33.333333%;
+                }
+                #hm_cl .col-md-3 {
+                    -ms-flex: 0 0 25%;
+                    flex: 0 0 25%;
+                    max-width: 25%;
+                }
+                #hm_cl .col-md-2 {
+                    -ms-flex: 0 0 20%;
+                    flex: 0 0 20%;
+                    max-width: 20%;
+                }
+            }
+            @media (min-width: 992px){
+                #hm_cl .container, #hm_cl .container-lg, #hm_cl .container-md, #hm_cl .container-sm {
+                    max-width: 800px;
+                }
+            }
+            @media (min-width: 1200px) {
+                #hm_cl .container, #hm_cl .container-lg, #hm_cl .container-md, #hm_cl .container-sm, #hm_cl .container-xl {
+                    max-width: 950px;
+                }
+            }
+            #hm_cl .range-wrap {
+                display: block;
+                position: relative;
+                padding: 0;
+                margin: 0 0 35px 0;
+            }
+            #hm_cl input[type=range] {
+                margin: 0 0 0 0;
+                outline: none;
+                padding: 0;
+                width: 100%;
+                height: 7px;
+                background: #fff;
+                background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #EF931E), color-stop(100%, #EF931E));
+                border: 1px solid #ccc;
+                background-size: 0% 100%;
+                background-repeat: no-repeat;
+                border-radius: 10px;
+                cursor: pointer;
+                -webkit-appearance: none;
+            }
+            #hm_cl input[type=range]::-webkit-slider-runnable-track {
+                box-shadow: none;
+                border: none;
+                background: transparent;
+                -webkit-appearance: none;
+            }
+            #hm_cl input[type=range]::-moz-range-track {
+                box-shadow: none;
+                border: none;
+                background: transparent;
+                -webkit-appearance: none;
+            }
+            
+            
+            #hm_cl input[type=range]::-webkit-slider-thumb {
+                height: 20px;
+                width: 20px;
+                margin-top: -4px;
+                background: #EF931E;
+                border-radius: 25px;
+                box-shadow: 0 2px 2px 0px #646464;
+                -webkit-appearance: none;
+            }
+            
+            #hm_cl input[type=range]::-moz-range-thumb {
+                height: 20px;
+                width: 20px;
+                margin-top: -4px;
+                background: #EF931E;
+                border-radius: 25px;
+                box-shadow: 0 2px 2px 0px #646464;
+                -webkit-appearance: none;
+            }
+            #hm_cl .ms-sm-left {
+                display: inline-block;
+                font-size: 12px;
+                float: left;
+                color: #8E8D8D;
+            }
+            #hm_cl .ms-sm-right {
+                display: inline-block;
+                font-size: 12px;
+                float: right;
+                color: #8E8D8D;
+            }
+            #hm_cl hr {
+                border: none;
+                border-bottom: 1px solid #ddd;
+            }
+            #hm_cl .cl-rs-div-1 {
+                background: #e7e7e7;
+                padding: 20px;
+                border-right: 1px solid #e7e7e7;
+                border-radius: 0 0 0 10px;
+                color: #862026;
+            }
+            #hm_cl .cl-rs-div-2 {
+                background: #e7e7e7;
+                padding: 20px;
+                border-right: 1px solid #e7e7e7;
+                border-radius: 0;
+                color: #862026;
+            }
+            #hm_cl .cl-rs-div-3 {
+                background: #862026;
+                padding: 20px;
+                border-radius: 0 0 10px 0;
+                color: #ffffff;
+                cursor: pointer;
+            }
+            #hm_cl .rs-note {
+                font-weight: normal;
+            }
+            @media (max-width: 768px){
+                #hm_cl .range-wrap {
+                    padding: 0;
+                }
+                #hm_cl .cl-rs-div-1 {
+                    border-radius: 0;
+                }
+                #hm_cl .cl-rs-div-2 {
+                    border-radius: 0;
+                }
+                #hm_cl .cl-rs-div-3 {
+                    border-radius: 0 0 10px 10px;
+                }
+                #hm_cl .top-title-sec {
+                    margin: -39px 0 5px 0;
+                }
+                #hm_cl .top-title {
+                    font-size: 16px;
+                }
+                #hm_cl .sub-title {
+                    font-size: 14px;
+                }
+            }
+            #hm_cl .optios-sec {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }
+            #hm_cl .radio-option {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                background: #ffffff;
+                padding: 6px 10px;
+                width: 50%;
+                border-radius: 0;
+                border: none;
+                text-align: center;
+                cursor: pointer;
+                color: #000000;
+                transition: all 0.2s;
+                font-size: 16px;
+                user-select: none;
+                border-bottom: 2px solid #cccccc;
+            }
+            #hm_cl .radio-option:hover {
+                background: #dddddd;
+                border-bottom: 2px solid #dddddd;
+            }
+            #hm_cl .radio-option.active {
+                background: #862026;
+                border-bottom: 2px solid #862026;
+                color:#ffffff;
+            }
+            #hm_cl .mr-right {
+                margin-right: 5px;
+            }
+            #hm_cl .sp-input-sec {
+                background: #862026;
+                color: #ffffff;
+                padding: 30px;
+            }
+            #hm_cl .err-msg {
+                color:red;
+                display: none;
+            }
+            #hm_cl .form-group, #hm_cl .input-group {
+                position: relative;
+                margin-bottom: 10px;
+            }
+            
+            #hm_cl .prepend-text {
+                font-size: 16px;
+                position: absolute;
+                left: 2px;
+                bottom: 3px;
+                padding: 1px 5px;
+                border-radius: 5px;
+                color: #000;
+            }
+            #hm_cl .append-text {
+                font-size: 16px;
+                position: absolute;
+                bottom: 4px;
+                right: 8px;
+                padding: 1px 5px;
+                border-radius: 5px;
+                color: #000;
+            }
+            #hm_cl .cus-link{
+                text-decoration: none;
+                color: #862026;
+            }
+            #hm_cl .rs-sec-vl{
+                color: #000;
+                float: right;
+            }
+            #hm_cl .rs-sec-para{
+                color: #000;
+                font-size: 10px;
+                margin: 0;
+                margin-bottom: 15px;
+            }
+            #hm_cl .bottom-para{
+                color: #8E8D8D;
+                font-size: 12px;
+            }
+            @media (max-width: 768px){
+                #hm_cl .append-text {
+                    font-size: 16px;
+                    position: absolute;
+                    bottom: 1px;
+                    right: 8px;
+                    padding: 1px 5px;
+                    border-radius: 5px;
+                    color: #fff;
+                }
+            }
+            #hm_cl .btn-custom {
+                color: #fff;
+                background-color: #146c43;
+                border-color: #13653f;
+            }
+            #hm_cl .bc-top-sec {
+                display: flex;
+                gap: 15px;
+            }
+            #hm_cl .get-bc-btn {
+                background-color: #EF931E;
+                border: 1px solid #EF931E;
+                border-radius: 5px;
+                color: #fff;
+                width: 200px;
+                height: 33px;
+                
+            }
+            #hm_cl .reset-btn {
+                background-color: #FF0000;
+                border: 1px solid #FF0000;
+                border-radius: 5px;
+                color: #fff;
+                width: 200px;
+                height: 33px;
+            }
+            #hm_cl .left-div-sec {
+                border: 1px solid #dee2e6;
+                padding: 8px;
+            }
+            #hm_cl .right-div-sec {
+                border: 1px solid #dee2e6;
+                padding: 8px;
+            }
+            #hm_cl .personal-top-title {
+                color: #000;
+                font-size: 24px;
+                font-weight: 500;
+                border-bottom: 1px solid #E1E1E1;
+                margin-bottom: 15px;
+            }
+            #hm_cl .super-top-title {
+                color: #000;
+                font-size: 24px;
+                font-weight: 500;
+                border-bottom: 1px solid #E1E1E1;
+                margin-bottom: 15px;
+            }
+            #hm_cl .rs-sec {
+                padding-left: 10px;
+                border-left: 3px solid #EF931E;
+            }
+            #hm_cl .rs-title {
+                color: #00A4E6;
+                font-size: 20px;
+                font-weight: 600;
+                padding-bottom: 15px;
+                border-bottom: 1px solid #CFCFCF;
+            }
+            #hm_cl .rs-val {
+                color: #EF931E;
+                font-size: 36px;
+                font-weight: 600;
+                margin-bottom: 0.5rem;
+            }
+            #hm_cl .left-pd {
+                padding-left: 20px;
+            }
+            #hm_cl .left-pd-pr {
+                padding-left: 10px;
+            }
+            #hm_cl .person-bc-sec {
+                margin-bottom: 25px;
+            }
+            #hm_cl .super-bc-sec {
+                margin-bottom: 25px;
+            }
+            </style>
+            <div class="ms-cl" id="hm_cl">
+                <div class="container">
+                    <div class="cl-wrapper">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="bc-top-sec">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" style="padding-left: 10px;" placeholder="Enter Person ID:">
+                                    </div>
+                                    <button class="bc-btn bc-btn-primary get-bc-btn" data-value="">Get BC</button>
+                                    <button class="bc-btn bc-btn-primary  reset-btn" data-value="">Reset</button>
+                                </div>
+                            </div>
+
+                            <div class="person-bc-sec">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="personal-top-title">Personal BC</div>
+                                    </div>
+        
+                                    <div class="col-md-10">
+                                        <label for="in_1">Enter Target LVR:</label>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control cl-input cl-pr left-pd-pr" id="in_1_vl" readonly>
+                                            <span class="append-text">%</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="range-wrap">
+                                            <input id="in_1" class="range-bg-1" type="range" min="0" max="100" value="40" step="1">
+                                            <div class="ms-sm-left">0%</div>
+                                            <div class="ms-sm-right">100%</div>
+                                        </div>  
+                                    </div>
+        
+                                    <div class="col-md-10">
+                                        <label for="in_1">Assets Contribution:</label>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control cl-input cl-pr left-pd-pr" id="in_2_vl" readonly>
+                                            <span class="append-text">%</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="range-wrap">
+                                            <input id="in_2" class="range-bg-1" type="range" min="0" max="100" value="0" step="5">
+                                            <div class="ms-sm-left">0%</div>
+                                            <div class="ms-sm-right">100%</div>
+                                        </div>  
+                                    </div>
+        
+                                    <div class="col-md-10">
+                                        <label for="in_1">IP Purchase Price:</label>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control cl-input left-pd" id="in_3_vl" readonly>
+                                            <span class="prepend-text">$</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="range-wrap">
+                                            <input id="in_3" class="range-bg-1" type="range" min="100000" max="1000000" value="300000" step="10000">
+                                            <div class="ms-sm-left">$100,000</div>
+                                            <div class="ms-sm-right">$1,000,000</div>
+                                        </div>  
+                                    </div>
+        
+                                    <div class="col-md-4">
+                                        <div class="rs-sec">
+                                            <div class="rs-title">
+                                                Equity Calculations
+                                            </div>
+                                            <div class="rs-val" id="rs_1">
+                                                $0.00
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="rs-sec">
+                                            <div class="rs-title">
+                                                Servicing Calculations
+                                            </div>
+                                            <div class="rs-val" id="rs_2">
+                                                $0.00
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="rs-sec">
+                                            <div class="rs-title">
+                                                Assets Calculations
+                                            </div>
+                                            <div class="rs-val" id="rs_3">
+                                                $0.00
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="super-bc-sec">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="super-top-title">Super BC</div>
+                                    </div>
+        
+                                    <div class="col-md-10">
+                                        <label for="in_1">LVR:</label>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control cl-input cl-pr left-pd-pr" id="in_4_vl" readonly>
+                                            <span class="append-text">%</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="range-wrap">
+                                            <input id="in_4" class="range-bg-1" type="range" min="0" max="100" value="47" step="1">
+                                            <div class="ms-sm-left">0%</div>
+                                            <div class="ms-sm-right">100%</div>
+                                        </div>  
+                                    </div>
+        
+                                    <div class="col-md-10">
+                                        <label for="in_1">Purchase Price:</label>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control cl-input left-pd" id="in_5_vl" readonly>
+                                            <span class="prepend-text">$</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="range-wrap">
+                                            <input id="in_5" class="range-bg-1" type="range" min="400000" max="1000000" value="670000" step="10000">
+                                            <div class="ms-sm-left">$400,000</div>
+                                            <div class="ms-sm-right">$1,000,000</div>
+                                        </div>  
+                                    </div>
+        
+                                    <div class="col-md-4">
+                                        <div class="rs-sec">
+                                            <div class="rs-title">
+                                                Equity Calculations
+                                            </div>
+                                            <div class="rs-val" id="rs_4">
+                                                $0.00
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="rs-sec">
+                                            <div class="rs-title">
+                                                Servicing Calculations
+                                            </div>
+                                            <div class="rs-val" id="rs_5">
+                                                $0.00
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-10">
+                                <div class="form-group">
+                                    <input type="text" class="form-control left-pd" placeholder="Enter Phone number or Email address">
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <button class="btn btn-primary">Export Data</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+            <script>
+            jQuery(document).ready(function($){
+                let data_obj = {
+                    Date: '25/10/2023',
+                    Name: 'Testing Stephen',
+                    Email: 'info@vitalwebservices.com.au',
+                    Phone: '0490 952 214',
+                    HomeValueRPData: 0,
+                    HomeValue: 1070000,
+                    HomeMortgage: 150000,
+                    HomeRentWeekly: 0,
+                    AssetsRenovations: 60000,
+                    AssetsTotalSavings: 40000,
+                    AssetsSharesCrypto: 0,
+                    DebtsPersonalVehicleLoans: 18000,
+                    DebtsTotalCreditCardsLimit: 2000,
+                    MaritalStatus: 'Married/defacto',
+                    Income1: 65000,
+                    Income2: 45000,
+                    Super1: 65000,
+                    Super2: 65000,
+                    Age1: 48,
+                    Age2: 33,
+                    Dependents: 0,
+                    IP1Value: 0,
+                    IP1Loan: 0,
+                    IP1Rent: 0,
+                    IP2Value: 0,
+                    IP2Loan: 0,
+                    IP2Rent: 0,
+                    IP3Value: 0,
+                    IP3Loan: 0,
+                    IP3Rent: 0,
+                    IP4Value: 0,
+                    IP4Loan: 0,
+                    IP4Rent: 0,
+                    IP5Value: 0,
+                    IP5Loan: 0,
+                    IP5Rent: 0
+                };
+
+
+                const nft = Intl.NumberFormat("en-US",{
+                    minimumFractionDigits: 0,
+                    maximumFractionDigits: 0
+                });
+                const nftd = Intl.NumberFormat("en-US",{
+                    minimumFractionDigits: 2,
+                    maximumFractionDigits: 2
+                });
+            
+                $('#in_1, #in_2, #in_3, #in_4, #in_5').on('input', function(e){
+                    var min = e.target.min,
+                        max = e.target.max,
+                        val = e.target.value; 
+                    
+                    let in_id = $(this).attr("id");
+                        
+                    let bg_size = (val - min) * 100 / (max - min);
+            
+                    $(e.target).css({
+                        'backgroundSize': bg_size + '% 100%'
+                    });
+                    if(in_id != "in_5"){
+                        $("#"+in_id+"_vl").val(nft.format(val));
+                    } else {
+                        $("#"+in_id+"_vl").val(nft.format(val));
+                    }
+                    Calc();
+                }).trigger('input');
+
+                $("#in_1_vl").on("input", function(){
+                    let vl = removeComma($(this).val());
+                    if(vl < 50 ){
+                        vl = 50;
+                    } else if(vl > 88){
+                        vl = 88;
+                    }
+                    $(this).val(nft.format(vl));
+                    $("#in_1").val(vl).trigger('input');
+                    Calc();
+                });
+                $("#in_2_vl").on("input", function(){
+                    let vl = removeComma($(this).val());
+                    if(vl < 0 ){
+                        vl = 0;
+                    } else if(vl > 100){
+                        vl = 100;
+                    }
+                    $(this).val(nft.format(vl));
+                    $("#in_2").val(vl).trigger('input');
+                    Calc();
+                });
+                $("#in_3_vl").on("input", function(){
+                    let vl = removeComma($(this).val());
+                    if(vl < 400000 ){
+                        vl = 400000;
+                    } else if(vl > 1000000){
+                        vl = 1000000;
+                    }
+                    $(this).val(nft.format(vl));
+                    $("#in_3").val(vl).trigger('input');
+                    Calc();
+                });
+                $("#in_4_vl").on("input", function(){
+                    let vl = removeComma($(this).val());
+                    if(vl < 1 ){
+                        vl = 1;
+                    } else if(vl > 65){
+                        vl = 65;
+                    }
+                    $(this).val(nft.format(vl));
+                    $("#in_4").val(vl).trigger('input');
+                    Calc();
+                });
+                $("#in_5_vl").on("input", function(){
+                    let vl = removeComma($(this).val());
+                    if(vl < 400000 ){
+                        vl = 400000;
+                    } else if(vl > 1000000){
+                        vl = 1000000;
+                    }
+                    $(this).val(nft.format(vl));
+                    $("#in_5").val(vl).trigger('input');
+                    Calc();
+                });
+
+                
+                $(".cl-input").on("input", function(){
+                    Calc();
+                })
+
+                function Calc(){
+                    in_1 = removeComma($("#in_1").val())/100;
+                    in_2 = removeComma($("#in_2").val())/100;
+                    in_3 = removeComma($("#in_3").val());
+                    in_4 = removeComma($("#in_4").val())/100;
+                    in_5 = removeComma($("#in_5").val());
+
+                    //Personal BC Calculation
+
+                    let req_purchase_price = in_3 + (in_3 * 0.07);
+                    let loan_required = (in_3 * in_1) + (in_3 * in_1 * 0.07);
+                    let equity_required = req_purchase_price - loan_required;
+                    
+
+                    let combined_assets = (data_obj["AssetsRenovations"] + data_obj["AssetsTotalSavings"] + data_obj["AssetsSharesCrypto"] )* in_2;
+                    let combined_debts = data_obj["DebtsPersonalVehicleLoans"] + data_obj["DebtsTotalCreditCardsLimit"];
+                    let combined_assets_val = data_obj["HomeValue"] + data_obj["IP1Value"] + data_obj["IP2Value"] + data_obj["IP3Value"] + data_obj["IP4Value"] + data_obj["IP5Value"] +(in_3 * 0.9);
+                    let combined_mortgage_val = data_obj["HomeMortgage"] + data_obj["IP1Loan"] + data_obj["IP2Loan"] + data_obj["IP3Loan"] + data_obj["IP4Loan"] + data_obj["IP5Loan"] + loan_required;                   
+                    let loan_val_ratio = (combined_mortgage_val / combined_assets_val) * 100;
+                    let equity_available = ((combined_assets_val * (in_1-(loan_val_ratio/100) )) + combined_assets - combined_debts);
+                    let total_equity = equity_available - equity_required;
+
+
+                    let combined_income_tax = 11592 + 5092;
+                    let new_rental_inc = (in_3 * 0.0475) / 52 * 50;
+                    let combined_ip_rental_inc = (data_obj["IP1Rent"] + data_obj["IP2Rent"] + data_obj["IP3Rent"] + data_obj["IP4Rent"] + data_obj["IP5Rent"]) * 50;
+                    let combined_household_inc = data_obj["Income1"] + data_obj["Income2"];
+                    let combined_household_inc_rental_inc = combined_household_inc + (combined_ip_rental_inc + new_rental_inc) * 0.9;
+                    let home_repayment = (data_obj["HomeMortgage"]*(0.05/12)*(Math.pow((1+(0.05/12)),300))/((Math.pow((1+(0.05/12)),300))-1))*12;
+                    let combined_ip_loan = data_obj["IP1Loan"] +  data_obj["IP2Loan"] + data_obj["IP3Loan"] + data_obj["IP4Loan"] + data_obj["IP5Loan"];
+                    let combined_ip_loan_repayment = (combined_ip_loan*(0.085/12)*(Math.pow((1+(0.085/12)),300))/((Math.pow((1+(0.085/12)),300))-1))*12;
+                    let new_ip_loan_payment = (loan_required*(0.085/12)*(Math.pow((1+(0.085/12)),300))/((Math.pow((1+(0.085/12)),300))-1))*12;
+                    let home_rent = data_obj["HomeRentWeekly"] * 52;
+                    let combined_expenses = home_repayment + combined_ip_loan_repayment + new_ip_loan_payment + home_rent + 36732;
+                    let net_income = combined_household_inc_rental_inc - combined_expenses - combined_income_tax;
+                    let total_assets = (net_income/12)/(0.08/12)/(Math.pow((1+(0.08/12)),300))*((Math.pow((1+(0.08/12)),300))-1)
+                    let total_servicing = total_assets - loan_required;
+
+                    //Super BC Calculation
+                    let required_deposit = (in_5 - (in_5 * in_4)) + 4400 + (in_5 * 0.035);
+                    let usable_super = 430000 - (430000 * 0.1);
+                    let super_equity_total = usable_super - required_deposit;
+
+                    let servicing_loan_req = in_5 * in_4;
+                    let invest_loan_interest = servicing_loan_req * 0.065;
+                    let gross_annual_contribution = 250000 * 0.105;
+                    let gross_rental_income = in_5 * 0.0475;
+                    console.log(gross_rental_income);
+                    let taxable_income = (gross_annual_contribution + (gross_rental_income*0.8)) - invest_loan_interest;
+                    let total_tax = taxable_income * 0.15;
+                    let total_net_income = taxable_income - total_tax;
+                    let client_loan_srvc_ability = (total_net_income/12)/(0.08/12)/12/(Math.pow((1+(0.08/12)),300))*((Math.pow((1+(0.08/12)),300))-1);
+                    let super_servicing_total =  client_loan_srvc_ability - invest_loan_interest;
+                    
+                    if(total_equity < 0 ){
+                        $("#rs_1").css("color", "#FF0000");
+                    } else{
+                        $("#rs_1").css("color", "#EF931E");
+                    }
+                    if(total_servicing < 0 ){
+                        $("#rs_2").css("color", "#FF0000");
+                    } else{
+                        $("#rs_2").css("color", "#EF931E");
+                    }
+                    if(total_assets < 0 ){
+                        $("#rs_3").css("color", "#FF0000");
+                    } else{
+                        $("#rs_3").css("color", "#EF931E");
+                    }
+                    if(super_equity_total < 0 ){
+                        $("#rs_4").css("color", "#FF0000");
+                    } else{
+                        $("#rs_4").css("color", "#EF931E");
+                    }
+                    if(super_servicing_total < 0 ){
+                        $("#rs_5").css("color", "#FF0000");
+                    } else{
+                        $("#rs_5").css("color", "#EF931E");
+                    }
+
+                    
+
+                    $("#rs_1").text("$" + nftd.format(total_equity));
+                    $("#rs_2").text("$" + nftd.format(total_servicing));
+                    $("#rs_3").text("$" + nftd.format(total_assets));
+                    $("#rs_4").text("$" + nftd.format(super_equity_total));
+                    $("#rs_5").text("$" + nftd.format(super_servicing_total));
+                    
+
+                    
+
+                }
+                
+
+            
+            
+                function removeComma(num){
+                    return Number(num.replace(/,/g,""));
+                }
+            
+                function onlyNum(num){
+                    return isFinite(num) ? num : 0;
+                }
+            
+            });
+            </script>
+        
+    </body>
+</html>

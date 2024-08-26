@@ -1,0 +1,1255 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+
+    <!-- Bootstrap CSS -->
+    <title>Land Transfer Tax Calculator</title>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <style>
+        body {
+            line-height: 1.5;
+            font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+        }
+    </style>
+</head>
+<body>
+
+<!-----------Please copy and paste following code into any HTML element ---------------->
+
+<!----------- copy starts ---------------->
+<style>
+.ms-cl *, ::after, ::before {
+    box-sizing: border-box;
+}
+.ms-cl {
+    line-height: 1.5;
+    font-family: inherit;
+}
+.ms-cl .container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #36393B;
+    text-align: left;
+}
+.ms-cl label {
+    display: inline-block;
+    margin-bottom: .5rem;
+    font-size: 16px;
+    font-weight: 500;
+}
+.ms-cl .table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 0rem;
+    background-color: transparent;
+    border-collapse: collapse;
+    border: none;
+}
+.ms-cl table tr.even, table tr.alt, table tr:nth-of-type(even) {
+    background: #ffffff;
+}
+.ms-cl .table td, .ms-cl .table th {
+    padding: .35rem .35rem;
+    vertical-align: middle;
+    border: none !important;
+    font-size: 18px;
+    line-height: unset;
+}
+.ms-cl .w25 {
+    width: 25%;
+}
+.ms-cl .row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+    padding: 0;
+}
+.ms-cl .col-md-1, .ms-cl .col-md-10, .ms-cl .col-md-11, .ms-cl .col-md-12, .ms-cl .col-md-2, .ms-cl .col-md-3, .ms-cl .col-md-4, .ms-cl .col-md-5, .ms-cl .col-md-6, .ms-cl .col-md-7, .ms-cl .col-md-8, .ms-cl .col-md-9 {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.ms-cl .form-group {
+    margin-bottom: 1rem;
+}
+.ms-cl .form-control {
+    display: block;
+    width: 100%;
+    height: auto;
+    padding: 1rem 0.75rem;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #36393B;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.ms-cl .form-control:focus {
+    outline: none;
+}
+.ms-cl .text-center {
+    text-align: center!important;
+}
+.ms-cl .btn {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    border: 1px solid transparent;
+    padding: .375rem 3.5rem;
+    font-size: 16px;
+    line-height: 1.5;
+    border-radius: 25px;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.ms-cl .btn-primary {
+    color: #fff;
+    background-color: #005F5F;
+    border-color: #005F5F;
+    text-decoration: none;
+}
+.ms-cl .btn-primary:hover {
+    color: #fff;
+    background-color: #2b3136;
+    border-color: #2b3136;
+}
+/* Custom css */
+.ms-cl .cl-wrapper {
+    position: relative;
+    border: 1px solid #e1e1e1;
+    border-radius: 0;
+    background: #ffffff;
+    box-shadow: rgba(0,0,0,.25) 0 3px 11px 0!important;
+}
+.ms-cl .cl-left-div {
+    padding: 2rem 4rem !important;
+    background: #F7FAFD;
+    border: none;
+}
+.ms-cl .cl-right-div {
+    padding: 2rem 4rem !important;
+    color: #000;
+    background: #ffffff;
+    border-radius:0;
+    border-top: 3px solid #005F5F;
+}
+.ms-cl input[type=range] {
+    -webkit-appearance: none;
+    margin: 0;
+    width: 100%;
+    border: 1px solid #ccc;
+    padding: 15px 10px;
+    border-radius: 8px;
+}
+.ms-cl input[type=range]:focus {
+    outline: none;
+}
+.ms-cl input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 2px;
+    cursor: pointer;
+    animate: 0.2s;
+    background: #005F5F;
+    border-radius: 25px;
+    box-shadow: inset 0 0 3px #ccc;
+}
+.ms-cl input[type=range]::-moz-range-track {
+    width: 100%;
+    height: 2px;
+    cursor: pointer;
+    animate: 0.2s;
+    background: #005F5F;
+    border-radius: 25px;
+    box-shadow: inset 0 0 3px #ccc;
+}
+.ms-cl input[type=range]::-webkit-slider-thumb {
+    height: 15px;
+    width: 15px;
+    background-color: #ffffff;
+    background-repeat: none;
+    background-size:cover;
+    cursor: pointer;
+    border-radius: 25px;
+    border: 1px solid #005F5F;
+    box-shadow: 0 0 3px #555555;
+    -webkit-appearance: none;
+    margin-top: -6.5px;
+}
+.ms-cl input[type=range]::-moz-range-thumb {
+    height: 20px;
+    width: 20px;
+    background-color: #005F5F;
+    background-repeat: none;
+    background-size:cover;
+    cursor: pointer;
+    border-radius: 25px;
+    border: 5px solid #ffffff;
+    box-shadow: 0 0 3px #555555;
+    -webkit-appearance: none;
+    margin-top: -6.5px;
+}
+/* responsive */
+
+@media (max-width: 768px){
+    .ms-cl .cl-left-div {
+        padding: 1rem 2rem !important;
+    }
+    .ms-cl .cl-right-div {
+        padding: 1rem 1rem 2rem 1rem !important;
+        border-radius: 0 0 8px 8px;
+    }
+    .ms-cl .form-control {
+        height: auto;
+        padding: .175rem .75rem;
+    }
+    .ms-cl label {
+        font-size: 14px;
+    }
+    .ms-cl .table td, .ms-cl .table th {
+        font-size: 14px;
+    }
+}
+@media (min-width: 576px){
+    .ms-cl .container, .ms-cl .container-sm {
+        max-width: 540px;
+    }
+}
+@media (min-width: 768px){
+    .ms-cl .container, .ms-cl .container-md, .ms-cl .container-sm {
+        max-width: 100%;
+    }
+    .ms-cl .col-md-12 {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .ms-cl .col-md-8 {
+        -ms-flex: 0 0 66.666667%;
+        flex: 0 0 66.666667%;
+        max-width: 66.666667%;
+    }
+    .ms-cl .col-md-6 {
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    .ms-cl .col-md-4 {
+        -ms-flex: 0 0 33.333333%;
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+    }
+    .ms-cl .col-md-3 {
+        -ms-flex: 0 0 25%;
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+}
+@media (min-width: 992px){
+    .ms-cl .container, .ms-cl .container-lg, .ms-cl .container-md, .ms-cl .container-sm {
+        max-width: 768px;
+    }
+}
+@media (min-width: 1200px) {
+    .ms-cl .container, .ms-cl .container-lg, .ms-cl .container-md, .ms-cl .container-sm, .ms-cl .container-xl {
+        max-width: 768px;
+    }
+}
+.ms-cl .rslider-value{
+    color: #3164ae;
+    background: #fff;
+    padding: 2px 13px;
+    border-radius: 25px;
+    border: 1px solid #3164ae;
+}
+.ms-cl .none-text {
+    font-size: 22px;
+}
+.ms-cl #rs_sec_none, .ms-cl #rs_sec, .ms-cl #rs_section {
+    display: none;
+}
+.ms-cl .fw-600 {
+    font-weight: 600;
+}
+.ms-cl .check-box-sec {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.ms-cl .check-box-input {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-right: 10px;
+    text-align: center;
+}
+.ms-cl .tick-mark {
+    margin-top: -4px;
+    display: none;
+}
+.ms-cl .check-box-input.active .tick-mark {
+    display: block;
+} 
+.ms-cl .sp-bg {
+    background: #DBF9FF;;
+} 
+.ms-cl .sp-cl {
+    color: #00729e;
+} 
+.select2-container .select2-selection--single {
+    box-sizing: border-box;
+    cursor: pointer;
+    display: block;
+    height: auto;
+    padding: 14px;
+    user-select: none;
+    -webkit-user-select: none;
+}
+.select2-selection__arrow {
+    display: none;
+}
+.select2-search__field:focus {
+    outline: none;
+}
+.select2-search--dropdown .select2-search__field {
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+</style>
+<div class="ms-cl" id="ms_cl">
+    <div class="container cl-wrapper">
+        <div class="row">
+            <div class="col-md-12 cl-left-div">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="in_1">Asking price<span style="color:red;">*</span></label>
+                            <input type="text" name="in_1" class="form-control cl-required" placeholder="$ Enter amount" id="in_1" />
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="in_2">Location<span style="color:red;">*</span></label>
+                            <select name="in_2" class="form-control cl-required" id="in_2">
+                                <option value="Cache Bay, ON">Cache Bay, ON</option>
+                                <option value="Calabogie, ON">Calabogie, ON</option>
+                                <option value="Caledon, ON">Caledon, ON</option>
+                                <option value="Caledon East, ON">Caledon East, ON</option>
+                                <option value="Caledonia, ON">Caledonia, ON</option>
+                                <option value="Callander, ON">Callander, ON</option>
+                                <option value="Calstock, ON">Calstock, ON</option>
+                                <option value="Cambray, ON">Cambray, ON</option>
+                                <option value="Cambridge, ON">Cambridge, ON</option>
+                                <option value="Cameron, ON">Cameron, ON</option>
+                                <option value="Camlachie, ON">Camlachie, ON</option>
+                                <option value="Campbellford, ON">Campbellford, ON</option>
+                                <option value="Campbellville, ON">Campbellville, ON</option>
+                                <option value="Cannington, ON">Cannington, ON</option>
+                                <option value="Capreol, ON">Capreol, ON</option>
+                                <option value="Caradoc First Nation, ON">Caradoc First Nation, ON</option>
+                                <option value="Caramat, ON">Caramat, ON</option>
+                                <option value="Cardiff, ON">Cardiff, ON</option>
+                                <option value="Cardinal, ON">Cardinal, ON</option>
+                                <option value="Cargill, ON">Cargill, ON</option>
+                                <option value="Carleton Place, ON">Carleton Place, ON</option>
+                                <option value="Carnarvon, ON">Carnarvon, ON</option>
+                                <option value="Carp, ON">Carp, ON</option>
+                                <option value="Cartier, ON">Cartier, ON</option>
+                                <option value="Casselman, ON">Casselman, ON</option>
+                                <option value="Castlemore, ON">Castlemore, ON</option>
+                                <option value="Castleton, ON">Castleton, ON</option>
+                                <option value="Cat Lake, ON">Cat Lake, ON</option>
+                                <option value="Cavan, ON">Cavan, ON</option>
+                                <option value="Cayuga, ON">Cayuga, ON</option>
+                                <option value="Centralia, ON">Centralia, ON</option>
+                                <option value="Chalk River, ON">Chalk River, ON</option>
+                                <option value="Chapleau, ON">Chapleau, ON</option>
+                                <option value="Charlton, ON">Charlton, ON</option>
+                                <option value="Chatham, ON">Chatham, ON</option>
+                                <option value="Chatsworth, ON">Chatsworth, ON</option>
+                                <option value="Chelmsford, ON">Chelmsford, ON</option>
+                                <option value="Chesley, ON">Chesley, ON</option>
+                                <option value="Chesterville, ON">Chesterville, ON</option>
+                                <option value="Chiefs Point First Nation, ON">Chiefs Point First Nation, ON</option>
+                                <option value="Chippewas of Kettle/Stony Poin, ON">Chippewas of Kettle/Stony Poin, ON</option>
+                                <option value="Chippewas Of Sarnia First Nati, ON">Chippewas Of Sarnia First Nati, ON</option>
+                                <option value="Christian Island, ON">Christian Island, ON</option>
+                                <option value="Claremont, ON">Claremont, ON</option>
+                                <option value="Clarence Creek, ON">Clarence Creek, ON</option>
+                                <option value="Clarence-Rockland, ON">Clarence-Rockland, ON</option>
+                                <option value="Clarington, ON">Clarington, ON</option>
+                                <option value="Clarkson, ON">Clarkson, ON</option>
+                                <option value="Clearwater Bay, ON">Clearwater Bay, ON</option>
+                                <option value="Clifford, ON">Clifford, ON</option>
+                                <option value="Clinton, ON">Clinton, ON</option>
+                                <option value="Cloud Bay, ON">Cloud Bay, ON</option>
+                                <option value="Cobalt, ON">Cobalt, ON</option>
+                                <option value="Cobden, ON">Cobden, ON</option>
+                                <option value="Coboconk, ON">Coboconk, ON</option>
+                                <option value="Cobourg, ON">Cobourg, ON</option>
+                                <option value="Cochenour, ON">Cochenour, ON</option>
+                                <option value="Cochrane, ON">Cochrane, ON</option>
+                                <option value="Coe Hill, ON">Coe Hill, ON</option>
+                                <option value="Colborne, ON">Colborne, ON</option>
+                                <option value="Colchester, ON">Colchester, ON</option>
+                                <option value="Cold Springs, ON">Cold Springs, ON</option>
+                                <option value="Coldwater, ON">Coldwater, ON</option>
+                                <option value="Collingwood, ON">Collingwood, ON</option>
+                                <option value="Comber, ON">Comber, ON</option>
+                                <option value="Concord, ON">Concord, ON</option>
+                                <option value="Coniston, ON">Coniston, ON</option>
+                                <option value="Connaught, ON">Connaught, ON</option>
+                                <option value="Constance Bay, ON">Constance Bay, ON</option>
+                                <option value="Constance Lake First Nation, ON">Constance Lake First Nation, ON</option>
+                                <option value="Cookstown, ON">Cookstown, ON</option>
+                                <option value="Cooksville, ON">Cooksville, ON</option>
+                                <option value="Cornwall, ON">Cornwall, ON</option>
+                                <option value="Corunna, ON">Corunna, ON</option>
+                                <option value="Cottam, ON">Cottam, ON</option>
+                                <option value="Courtice, ON">Courtice, ON</option>
+                                <option value="Courtright, ON">Courtright, ON</option>
+                                <option value="Crediton, ON">Crediton, ON</option>
+                                <option value="Creemore, ON">Creemore, ON</option>
+                                <option value="Crysler, ON">Crysler, ON</option>
+                                <option value="Crystal Beach, ON">Crystal Beach, ON</option>
+                                <option value="Cumberland, ON">Cumberland, ON</option>
+                                <option value="Dashwood, ON">Dashwood, ON</option>
+                                <option value="Deep River, ON">Deep River, ON</option>
+                                <option value="Deerbrook, ON">Deerbrook, ON</option>
+                                <option value="Deer Lake, ON">Deer Lake, ON</option>
+                                <option value="Delaware of the Thames(Moravia, ON">Delaware of the Thames(Moravia, ON</option>
+                                <option value="Delhi, ON">Delhi, ON</option>
+                                <option value="Delta, ON">Delta, ON</option>
+                                <option value="Denbigh, ON">Denbigh, ON</option>
+                                <option value="Desbarats, ON">Desbarats, ON</option>
+                                <option value="Deseronto, ON">Deseronto, ON</option>
+                                <option value="Deux Rivières, ON">Deux Rivières, ON</option>
+                                <option value="Devlin, ON">Devlin, ON</option>
+                                <option value="Dokis, ON">Dokis, ON</option>
+                                <option value="Dokis First Nation, ON">Dokis First Nation, ON</option>
+                                <option value="Dorchester, ON">Dorchester, ON</option>
+                                <option value="Dorion, ON">Dorion, ON</option>
+                                <option value="Dorset, ON">Dorset, ON</option>
+                                <option value="Douglas, ON">Douglas, ON</option>
+                                <option value="Douglastown, ON">Douglastown, ON</option>
+                                <option value="Drayton, ON">Drayton, ON</option>
+                                <option value="Dresden, ON">Dresden, ON</option>
+                                <option value="Drumbo, ON">Drumbo, ON</option>
+                                <option value="Dryden, ON">Dryden, ON</option>
+                                <option value="Dublin, ON">Dublin, ON</option>
+                                <option value="Dubreuilville, ON">Dubreuilville, ON</option>
+                                <option value="Dunchurch, ON">Dunchurch, ON</option>
+                                <option value="Dundalk, ON">Dundalk, ON</option>
+                                <option value="Dundas, ON">Dundas, ON</option>
+                                <option value="Dungannon, ON">Dungannon, ON</option>
+                                <option value="Dunnville, ON">Dunnville, ON</option>
+                                <option value="Dunsford, ON">Dunsford, ON</option>
+                                <option value="Durham, ON">Durham, ON</option>
+                                <option value="Dutton, ON">Dutton, ON</option>
+                                <option value="Dwight, ON">Dwight, ON</option>
+                                <option value="Dyer's Bay, ON">Dyer's Bay, ON</option>
+                                <option value="Eagle Lake First Nation, ON">Eagle Lake First Nation, ON</option>
+                                <option value="Eagle River, ON">Eagle River, ON</option>
+                                <option value="Ear Falls, ON">Ear Falls, ON</option>
+                                <option value="Earlton, ON">Earlton, ON</option>
+                                <option value="East Gwillimbury, ON">East Gwillimbury, ON</option>
+                                <option value="Eastwood, ON">Eastwood, ON</option>
+                                <option value="East York, ON">East York, ON</option>
+                                <option value="Echo Bay, ON">Echo Bay, ON</option>
+                                <option value="Eganville, ON">Eganville, ON</option>
+                                <option value="Elgin, ON">Elgin, ON</option>
+                                <option value="Elizabethtown, ON">Elizabethtown, ON</option>
+                                <option value="Elk Lake, ON">Elk Lake, ON</option>
+                                <option value="Elliot Lake, ON">Elliot Lake, ON</option>
+                                <option value="Elmira, ON">Elmira, ON</option>
+                                <option value="Elmvale, ON">Elmvale, ON</option>
+                                <option value="Elora, ON">Elora, ON</option>
+                                <option value="Embro, ON">Embro, ON</option>
+                                <option value="Embrun, ON">Embrun, ON</option>
+                                <option value="Emeryville, ON">Emeryville, ON</option>
+                                <option value="Emo, ON">Emo, ON</option>
+                                <option value="Emsdale, ON">Emsdale, ON</option>
+                                <option value="Englehart, ON">Englehart, ON</option>
+                                <option value="Enterprise, ON">Enterprise, ON</option>
+                                <option value="Erin, ON">Erin, ON</option>
+                                <option value="Espanola, ON">Espanola, ON</option>
+                                <option value="Essex, ON">Essex, ON</option>
+                                <option value="Estaire, ON">Estaire, ON</option>
+                                <option value="Etobicoke, ON">Etobicoke, ON</option>
+                                <option value="Eugenia, ON">Eugenia, ON</option>
+                                <option value="Exeter, ON">Exeter, ON</option>
+                                <option value="Fauquier, ON">Fauquier, ON</option>
+                                <option value="Fenelon Falls, ON">Fenelon Falls, ON</option>
+                                <option value="Fenwick, ON">Fenwick, ON</option>
+                                <option value="Fergus, ON">Fergus, ON</option>
+                                <option value="Feversham, ON">Feversham, ON</option>
+                                <option value="Field, ON">Field, ON</option>
+                                <option value="Finch, ON">Finch, ON</option>
+                                <option value="Fingal, ON">Fingal, ON</option>
+                                <option value="Fisherville, ON">Fisherville, ON</option>
+                                <option value="Flamborough, ON">Flamborough, ON</option>
+                                <option value="Flanders, ON">Flanders, ON</option>
+                                <option value="Flesherton, ON">Flesherton, ON</option>
+                                <option value="Foley, ON">Foley, ON</option>
+                                <option value="Foleyet, ON">Foleyet, ON</option>
+                                <option value="Forest, ON">Forest, ON</option>
+                                <option value="Fort Albany, ON">Fort Albany, ON</option>
+                                <option value="Fort Erie, ON">Fort Erie, ON</option>
+                                <option value="Fort Frances, ON">Fort Frances, ON</option>
+                                <option value="Fort Hope, ON">Fort Hope, ON</option>
+                                <option value="Fort Severn, ON">Fort Severn, ON</option>
+                                <option value="Fort Severn First Nation, ON">Fort Severn First Nation, ON</option>
+                                <option value="Fort William First Nation, ON">Fort William First Nation, ON</option>
+                                <option value="Foxboro, ON">Foxboro, ON</option>
+                                <option value="Foymount, ON">Foymount, ON</option>
+                                <option value="Frankford, ON">Frankford, ON</option>
+                                <option value="Freelton, ON">Freelton, ON</option>
+                                <option value="French River First Nation, ON">French River First Nation, ON</option>
+                                <option value="Galt, ON">Galt, ON</option>
+                                <option value="Gananoque, ON">Gananoque, ON</option>
+                                <option value="Garden Hill, ON">Garden Hill, ON</option>
+                                <option value="Garden River First Nation, ON">Garden River First Nation, ON</option>
+                                <option value="Garson, ON">Garson, ON</option>
+                                <option value="Georgetown, ON">Georgetown, ON</option>
+                                <option value="Georgina, ON">Georgina, ON</option>
+                                <option value="Geraldton, ON">Geraldton, ON</option>
+                                <option value="Gilmour, ON">Gilmour, ON</option>
+                                <option value="Glencoe, ON">Glencoe, ON</option>
+                                <option value="Glen Robertson, ON">Glen Robertson, ON</option>
+                                <option value="Glen Water, ON">Glen Water, ON</option>
+                                <option value="Glen Williams, ON">Glen Williams, ON</option>
+                                <option value="Gloucester, ON">Gloucester, ON</option>
+                                <option value="Goderich, ON">Goderich, ON</option>
+                                <option value="Gogama, ON">Gogama, ON</option>
+                                <option value="Golden Lake, ON">Golden Lake, ON</option>
+                                <option value="Gooderham, ON">Gooderham, ON</option>
+                                <option value="Gore Bay, ON">Gore Bay, ON</option>
+                                <option value="Gormley, ON">Gormley, ON</option>
+                                <option value="Gorrie, ON">Gorrie, ON</option>
+                                <option value="Goulais River, ON">Goulais River, ON</option>
+                                <option value="Gowganda, ON">Gowganda, ON</option>
+                                <option value="Grafton, ON">Grafton, ON</option>
+                                <option value="Grand Bend, ON">Grand Bend, ON</option>
+                                <option value="Grand Valley, ON">Grand Valley, ON</option>
+                                <option value="Granton, ON">Granton, ON</option>
+                                <option value="Grassy Narrows, ON">Grassy Narrows, ON</option>
+                                <option value="Grassy Narrows First Nation, ON">Grassy Narrows First Nation, ON</option>
+                                <option value="Gravenhurst, ON">Gravenhurst, ON</option>
+                                <option value="Greensville, ON">Greensville, ON</option>
+                                <option value="Grimsby, ON">Grimsby, ON</option>
+                                <option value="Guelph, ON">Guelph, ON</option>
+                                <option value="Gull Bay, ON">Gull Bay, ON</option>
+                                <option value="Gull Bay First Nation, ON">Gull Bay First Nation, ON</option>
+                                <option value="Hagersville, ON">Hagersville, ON</option>
+                                <option value="Haileybury, ON">Haileybury, ON</option>
+                                <option value="Haldimand, ON">Haldimand, ON</option>
+                                <option value="Haliburton, ON">Haliburton, ON</option>
+                                <option value="Halton Hills, ON">Halton Hills, ON</option>
+                                <option value="Hamilton, ON">Hamilton, ON</option>
+                                <option value="Hampton, ON">Hampton, ON</option>
+                                <option value="Hanmer, ON">Hanmer, ON</option>
+                                <option value="Hanover, ON">Hanover, ON</option>
+                                <option value="Harrietsville, ON">Harrietsville, ON</option>
+                                <option value="Harriston, ON">Harriston, ON</option>
+                                <option value="Harrow, ON">Harrow, ON</option>
+                                <option value="Harrowsmith, ON">Harrowsmith, ON</option>
+                                <option value="Hastings, ON">Hastings, ON</option>
+                                <option value="Havelock, ON">Havelock, ON</option>
+                                <option value="Hawkesbury, ON">Hawkesbury, ON</option>
+                                <option value="Hawk Junction, ON">Hawk Junction, ON</option>
+                                <option value="Hearst, ON">Hearst, ON</option>
+                                <option value="Hemlo, ON">Hemlo, ON</option>
+                                <option value="Hensall, ON">Hensall, ON</option>
+                                <option value="Henvey Inlet First Nation, ON">Henvey Inlet First Nation, ON</option>
+                                <option value="Hepworth, ON">Hepworth, ON</option>
+                                <option value="Hespeler, ON">Hespeler, ON</option>
+                                <option value="Hickson, ON">Hickson, ON</option>
+                                <option value="Highgate, ON">Highgate, ON</option>
+                                <option value="Hillsburgh, ON">Hillsburgh, ON</option>
+                                <option value="Holland Landing, ON">Holland Landing, ON</option>
+                                <option value="Holstein, ON">Holstein, ON</option>
+                                <option value="Honey Harbour, ON">Honey Harbour, ON</option>
+                                <option value="Hornepayne, ON">Hornepayne, ON</option>
+                                <option value="Hudson, ON">Hudson, ON</option>
+                                <option value="Humphrey, ON">Humphrey, ON</option>
+                                <option value="Huntsville, ON">Huntsville, ON</option>
+                                <option value="Ignace, ON">Ignace, ON</option>
+                                <option value="Ilderton, ON">Ilderton, ON</option>
+                                <option value="Ingersoll, ON">Ingersoll, ON</option>
+                                <option value="Ingleside, ON">Ingleside, ON</option>
+                                <option value="Innerkip, ON">Innerkip, ON</option>
+                                <option value="Innisfil, ON">Innisfil, ON</option>
+                                <option value="Inverary, ON">Inverary, ON</option>
+                                <option value="Inwood, ON">Inwood, ON</option>
+                                <option value="Iron Bridge, ON">Iron Bridge, ON</option>
+                                <option value="Iroquois, ON">Iroquois, ON</option>
+                                <option value="Iroquois Falls, ON">Iroquois Falls, ON</option>
+                                <option value="Jaffray Melick, ON">Jaffray Melick, ON</option>
+                                <option value="Jarvis, ON">Jarvis, ON</option>
+                                <option value="Jasper, ON">Jasper, ON</option>
+                                <option value="Jellicoe, ON">Jellicoe, ON</option>
+                                <option value="Jockvale, ON">Jockvale, ON</option>
+                                <option value="Johnstown, ON">Johnstown, ON</option>
+                                <option value="Jordan, ON">Jordan, ON</option>
+                                <option value="Kaministiquia, ON">Kaministiquia, ON</option>
+                                <option value="Kamiskotia, ON">Kamiskotia, ON</option>
+                                <option value="Kanata, ON">Kanata, ON</option>
+                                <option value="Kapuskasing, ON">Kapuskasing, ON</option>
+                                <option value="Kasabonika First Nation, ON">Kasabonika First Nation, ON</option>
+                                <option value="Kashechewan First Nation, ON">Kashechewan First Nation, ON</option>
+                                <option value="Kearney, ON">Kearney, ON</option>
+                                <option value="Keene, ON">Keene, ON</option>
+                                <option value="Keewatin, ON">Keewatin, ON</option>
+                                <option value="Kemptville, ON">Kemptville, ON</option>
+                                <option value="Kenora, ON">Kenora, ON</option>
+                                <option value="Kent Centre, ON">Kent Centre, ON</option>
+                                <option value="Kerwood, ON">Kerwood, ON</option>
+                                <option value="Keswick, ON">Keswick, ON</option>
+                                <option value="Killaloe, ON">Killaloe, ON</option>
+                                <option value="Killarney, ON">Killarney, ON</option>
+                                <option value="Kincardine, ON">Kincardine, ON</option>
+                                <option value="King City, ON">King City, ON</option>
+                                <option value="Kingfisher Lake, ON">Kingfisher Lake, ON</option>
+                                <option value="Kingfisher Lake First Nation, ON">Kingfisher Lake First Nation, ON</option>
+                                <option value="Kingston, ON">Kingston, ON</option>
+                                <option value="Kingsville, ON">Kingsville, ON</option>
+                                <option value="Kinmount, ON">Kinmount, ON</option>
+                                <option value="Kintore, ON">Kintore, ON</option>
+                                <option value="Kirkfield, ON">Kirkfield, ON</option>
+                                <option value="Kirkland Lake, ON">Kirkland Lake, ON</option>
+                                <option value="Kirkton, ON">Kirkton, ON</option>
+                                <option value="Kitchener, ON">Kitchener, ON</option>
+                                <option value="Kleinburg, ON">Kleinburg, ON</option>
+                                <option value="Lac la Croix, ON">Lac la Croix, ON</option>
+                                <option value="Lac Seul First Nation, ON">Lac Seul First Nation, ON</option>
+                                <option value="Lafontaine, ON">Lafontaine, ON</option>
+                                <option value="Lagoon City, ON">Lagoon City, ON</option>
+                                <option value="Lakefield, ON">Lakefield, ON</option>
+                                <option value="Lambeth, ON">Lambeth, ON</option>
+                                <option value="Lanark, ON">Lanark, ON</option>
+                                <option value="Lancaster, ON">Lancaster, ON</option>
+                                <option value="Langton, ON">Langton, ON</option>
+                                <option value="Lansdowne, ON">Lansdowne, ON</option>
+                                <option value="Lansdowne House, ON">Lansdowne House, ON</option>
+                                <option value="Larder Lake, ON">Larder Lake, ON</option>
+                                <option value="LaSalle, ON">LaSalle, ON</option>
+                                <option value="Latchford, ON">Latchford, ON</option>
+                                <option value="Leamington, ON">Leamington, ON</option>
+                                <option value="Lefroy, ON">Lefroy, ON</option>
+                                <option value="Levack, ON">Levack, ON</option>
+                                <option value="Lincoln, ON">Lincoln, ON</option>
+                                <option value="Lindsay, ON">Lindsay, ON</option>
+                                <option value="Linwood, ON">Linwood, ON</option>
+                                <option value="Lion's Head, ON">Lion's Head, ON</option>
+                                <option value="Listowel, ON">Listowel, ON</option>
+                                <option value="Little Britain, ON">Little Britain, ON</option>
+                                <option value="Little Current, ON">Little Current, ON</option>
+                                <option value="Lively, ON">Lively, ON</option>
+                                <option value="Lombardy, ON">Lombardy, ON</option>
+                                <option value="London, ON">London, ON</option>
+                                <option value="Longlac, ON">Longlac, ON</option>
+                                <option value="Long Lac, ON">Long Lac, ON</option>
+                                <option value="Long Lake First Nation, ON">Long Lake First Nation, ON</option>
+                                <option value="Long Point, ON">Long Point, ON</option>
+                                <option value="Long Sault, ON">Long Sault, ON</option>
+                                <option value="L'Orignal, ON">L'Orignal, ON</option>
+                                <option value="Lorne, ON">Lorne, ON</option>
+                                <option value="Lucan, ON">Lucan, ON</option>
+                                <option value="Lucknow, ON">Lucknow, ON</option>
+                                <option value="Lyn, ON">Lyn, ON</option>
+                                <option value="Lynden, ON">Lynden, ON</option>
+                                <option value="Maberly, ON">Maberly, ON</option>
+                                <option value="Macdiarmid, ON">Macdiarmid, ON</option>
+                                <option value="MacTier, ON">MacTier, ON</option>
+                                <option value="Madoc, ON">Madoc, ON</option>
+                                <option value="Madsen, ON">Madsen, ON</option>
+                                <option value="Magnetawan, ON">Magnetawan, ON</option>
+                                <option value="Magnetawan First Nation, ON">Magnetawan First Nation, ON</option>
+                                <option value="Maidstone, ON">Maidstone, ON</option>
+                                <option value="Maitland, ON">Maitland, ON</option>
+                                <option value="Mallorytown, ON">Mallorytown, ON</option>
+                                <option value="Malton, ON">Malton, ON</option>
+                                <option value="Manitouwadge, ON">Manitouwadge, ON</option>
+                                <option value="Manitowaning, ON">Manitowaning, ON</option>
+                                <option value="Manotick, ON">Manotick, ON</option>
+                                <option value="Maple, ON">Maple, ON</option>
+                                <option value="Marathon, ON">Marathon, ON</option>
+                                <option value="Markdale, ON">Markdale, ON</option>
+                                <option value="Markham, ON">Markham, ON</option>
+                                <option value="Markstay, ON">Markstay, ON</option>
+                                <option value="Marmora, ON">Marmora, ON</option>
+                                <option value="Marten Falls First Nation, ON">Marten Falls First Nation, ON</option>
+                                <option value="Marten River, ON">Marten River, ON</option>
+                                <option value="Martintown, ON">Martintown, ON</option>
+                                <option value="Massey, ON">Massey, ON</option>
+                                <option value="Matachewan, ON">Matachewan, ON</option>
+                                <option value="Matheson, ON">Matheson, ON</option>
+                                <option value="Mattawa, ON">Mattawa, ON</option>
+                                <option value="Mattice, ON">Mattice, ON</option>
+                                <option value="Maxville, ON">Maxville, ON</option>
+                                <option value="Maynooth, ON">Maynooth, ON</option>
+                                <option value="McDonalds Corners, ON">McDonalds Corners, ON</option>
+                                <option value="McGregor, ON">McGregor, ON</option>
+                                <option value="M'Chigeeng, ON">M'Chigeeng, ON</option>
+                                <option value="McKellar, ON">McKellar, ON</option>
+                                <option value="Meaford, ON">Meaford, ON</option>
+                                <option value="Melbourne, ON">Melbourne, ON</option>
+                                <option value="Merlin, ON">Merlin, ON</option>
+                                <option value="Merrickville, ON">Merrickville, ON</option>
+                                <option value="Metcalfe, ON">Metcalfe, ON</option>
+                                <option value="Midland, ON">Midland, ON</option>
+                                <option value="Mildmay, ON">Mildmay, ON</option>
+                                <option value="Milford Bay, ON">Milford Bay, ON</option>
+                                <option value="Millbrook, ON">Millbrook, ON</option>
+                                <option value="Millhaven, ON">Millhaven, ON</option>
+                                <option value="Milton, ON">Milton, ON</option>
+                                <option value="Milverton, ON">Milverton, ON</option>
+                                <option value="Minaki, ON">Minaki, ON</option>
+                                <option value="Mindemoya, ON">Mindemoya, ON</option>
+                                <option value="Minden, ON">Minden, ON</option>
+                                <option value="Mine Centre, ON">Mine Centre, ON</option>
+                                <option value="Missanabie, ON">Missanabie, ON</option>
+                                <option value="Mississauga, ON">Mississauga, ON</option>
+                                <option value="Mitchell, ON">Mitchell, ON</option>
+                                <option value="Mohawks Of The Bay of Quinte F, ON">Mohawks Of The Bay of Quinte F, ON</option>
+                                <option value="Monkton, ON">Monkton, ON</option>
+                                <option value="Moonbeam, ON">Moonbeam, ON</option>
+                                <option value="Moonstone, ON">Moonstone, ON</option>
+                                <option value="Mooretown, ON">Mooretown, ON</option>
+                                <option value="Moose Creek, ON">Moose Creek, ON</option>
+                                <option value="Moose Factory, ON">Moose Factory, ON</option>
+                                <option value="Moosonee, ON">Moosonee, ON</option>
+                                <option value="Morrisburg, ON">Morrisburg, ON</option>
+                                <option value="Morson, ON">Morson, ON</option>
+                                <option value="Mount Albert, ON">Mount Albert, ON</option>
+                                <option value="Mount Brydges, ON">Mount Brydges, ON</option>
+                                <option value="Mount Forest, ON">Mount Forest, ON</option>
+                                <option value="Mount Hope, ON">Mount Hope, ON</option>
+                                <option value="Mount Pleasant, ON">Mount Pleasant, ON</option>
+                                <option value="Muskoka, ON">Muskoka, ON</option>
+                                <option value="Muskoka Falls, ON">Muskoka Falls, ON</option>
+                                <option value="Muskrat Dam, ON">Muskrat Dam, ON</option>
+                                <option value="Muskrat Dam First Nation, ON">Muskrat Dam First Nation, ON</option>
+                                <option value="Nairn, ON">Nairn, ON</option>
+                                <option value="Naiscoutaing First Nation, ON">Naiscoutaing First Nation, ON</option>
+                                <option value="Nakina, ON">Nakina, ON</option>
+                                <option value="Nanticoke, ON">Nanticoke, ON</option>
+                                <option value="Napanee, ON">Napanee, ON</option>
+                                <option value="Navan, ON">Navan, ON</option>
+                                <option value="Nepean, ON">Nepean, ON</option>
+                                <option value="Nephton, ON">Nephton, ON</option>
+                                <option value="Nestor Falls, ON">Nestor Falls, ON</option>
+                                <option value="Neustadt, ON">Neustadt, ON</option>
+                                <option value="Newburgh, ON">Newburgh, ON</option>
+                                <option value="Newcastle, ON">Newcastle, ON</option>
+                                <option value="New Dundee, ON">New Dundee, ON</option>
+                                <option value="New Hamburg, ON">New Hamburg, ON</option>
+                                <option value="New Liskeard, ON">New Liskeard, ON</option>
+                                <option value="Newmarket, ON">Newmarket, ON</option>
+                                <option value="New Tecumseth, ON">New Tecumseth, ON</option>
+                                <option value="Newtonville, ON">Newtonville, ON</option>
+                                <option value="Niagara Falls, ON">Niagara Falls, ON</option>
+                                <option value="Niagara-on-the-Lake, ON">Niagara-on-the-Lake, ON</option>
+                                <option value="Nickel Centre, ON">Nickel Centre, ON</option>
+                                <option value="Nipigon, ON">Nipigon, ON</option>
+                                <option value="Nipissing First Nation, ON">Nipissing First Nation, ON</option>
+                                <option value="Nobel, ON">Nobel, ON</option>
+                                <option value="Nobleton, ON">Nobleton, ON</option>
+                                <option value="Noelville, ON">Noelville, ON</option>
+                                <option value="North Augusta, ON">North Augusta, ON</option>
+                                <option value="North Bay, ON">North Bay, ON</option>
+                                <option value="Northbrook, ON">Northbrook, ON</option>
+                                <option value="North Gower, ON">North Gower, ON</option>
+                                <option value="North Spirit Lake, ON">North Spirit Lake, ON</option>
+                                <option value="North York, ON">North York, ON</option>
+                                <option value="Norval, ON">Norval, ON</option>
+                                <option value="Norwich, ON">Norwich, ON</option>
+                                <option value="Norwood, ON">Norwood, ON</option>
+                                <option value="Oak Ridges, ON">Oak Ridges, ON</option>
+                                <option value="Oakville, ON">Oakville, ON</option>
+                                <option value="Oakwood, ON">Oakwood, ON</option>
+                                <option value="Oba, ON">Oba, ON</option>
+                                <option value="Odessa, ON">Odessa, ON</option>
+                                <option value="Ogoki, ON">Ogoki, ON</option>
+                                <option value="Ohsweken, ON">Ohsweken, ON</option>
+                                <option value="Oil Springs, ON">Oil Springs, ON</option>
+                                <option value="Ojibways of Hiawatha First Nat, ON">Ojibways of Hiawatha First Nat, ON</option>
+                                <option value="Ojibways of Walpole Island Fir, ON">Ojibways of Walpole Island Fir, ON</option>
+                                <option value="Omemee, ON">Omemee, ON</option>
+                                <option value="Onaping Falls, ON">Onaping Falls, ON</option>
+                                <option value="Oneida First Nation, ON">Oneida First Nation, ON</option>
+                                <option value="Opasatika, ON">Opasatika, ON</option>
+                                <option value="Ophir, ON">Ophir, ON</option>
+                                <option value="Orangeville, ON">Orangeville, ON</option>
+                                <option value="Orillia, ON">Orillia, ON</option>
+                                <option value="Orleans, ON">Orleans, ON</option>
+                                <option value="Oro, ON">Oro, ON</option>
+                                <option value="Orono, ON">Orono, ON</option>
+                                <option value="Orrville, ON">Orrville, ON</option>
+                                <option value="Osgoode, ON">Osgoode, ON</option>
+                                <option value="Oshawa, ON">Oshawa, ON</option>
+                                <option value="Ottawa, ON">Ottawa, ON</option>
+                                <option value="Otterville, ON">Otterville, ON</option>
+                                <option value="Owen Sound, ON">Owen Sound, ON</option>
+                                <option value="Oxdrift, ON">Oxdrift, ON</option>
+                                <option value="Oxford Mills, ON">Oxford Mills, ON</option>
+                                <option value="Paisley, ON">Paisley, ON</option>
+                                <option value="Pakenham, ON">Pakenham, ON</option>
+                                <option value="Palgrave, ON">Palgrave, ON</option>
+                                <option value="Palmer Rapids, ON">Palmer Rapids, ON</option>
+                                <option value="Palmerston, ON">Palmerston, ON</option>
+                                <option value="Paquette Corner, ON">Paquette Corner, ON</option>
+                                <option value="Parham, ON">Parham, ON</option>
+                                <option value="Paris, ON">Paris, ON</option>
+                                <option value="Parkhill, ON">Parkhill, ON</option>
+                                <option value="Parry Sound, ON">Parry Sound, ON</option>
+                                <option value="Pass Lake, ON">Pass Lake, ON</option>
+                                <option value="Peawanuck, ON">Peawanuck, ON</option>
+                                <option value="Pefferlaw, ON">Pefferlaw, ON</option>
+                                <option value="Pelee Island, ON">Pelee Island, ON</option>
+                                <option value="Pelham, ON">Pelham, ON</option>
+                                <option value="Pembroke, ON">Pembroke, ON</option>
+                                <option value="Penetanguishene, ON">Penetanguishene, ON</option>
+                                <option value="Perrault Falls, ON">Perrault Falls, ON</option>
+                                <option value="Perth, ON">Perth, ON</option>
+                                <option value="Petawawa, ON">Petawawa, ON</option>
+                                <option value="Peterborough, ON">Peterborough, ON</option>
+                                <option value="Petrolia, ON">Petrolia, ON</option>
+                                <option value="Pickering, ON">Pickering, ON</option>
+                                <option value="Pickle Lake, ON">Pickle Lake, ON</option>
+                                <option value="Picton, ON">Picton, ON</option>
+                                <option value="Pikangikum First Nation, ON">Pikangikum First Nation, ON</option>
+                                <option value="Pineal Lake, ON">Pineal Lake, ON</option>
+                                <option value="Plantagenet, ON">Plantagenet, ON</option>
+                                <option value="Plattsville, ON">Plattsville, ON</option>
+                                <option value="Pleasant Park, ON">Pleasant Park, ON</option>
+                                <option value="Plevna, ON">Plevna, ON</option>
+                                <option value="Pointe au Baril, ON">Pointe au Baril, ON</option>
+                                <option value="Point Grondine First Nation, ON">Point Grondine First Nation, ON</option>
+                                <option value="Point Pelee, ON">Point Pelee, ON</option>
+                                <option value="Port Burwell, ON">Port Burwell, ON</option>
+                                <option value="Port Carling, ON">Port Carling, ON</option>
+                                <option value="Port Colborne, ON">Port Colborne, ON</option>
+                                <option value="Port Credit, ON">Port Credit, ON</option>
+                                <option value="Port Cunnington, ON">Port Cunnington, ON</option>
+                                <option value="Port Dover, ON">Port Dover, ON</option>
+                                <option value="Port Elgin, ON">Port Elgin, ON</option>
+                                <option value="Port Franks, ON">Port Franks, ON</option>
+                                <option value="Port Hope, ON">Port Hope, ON</option>
+                                <option value="Port Lambton, ON">Port Lambton, ON</option>
+                                <option value="Portland, ON">Portland, ON</option>
+                                <option value="Port Loring, ON">Port Loring, ON</option>
+                                <option value="Port McNicoll, ON">Port McNicoll, ON</option>
+                                <option value="Port Perry, ON">Port Perry, ON</option>
+                                <option value="Port Robinson, ON">Port Robinson, ON</option>
+                                <option value="Port Rowan, ON">Port Rowan, ON</option>
+                                <option value="Port Stanley, ON">Port Stanley, ON</option>
+                                <option value="Port Sydney, ON">Port Sydney, ON</option>
+                                <option value="Powassan, ON">Powassan, ON</option>
+                                <option value="Prescott, ON">Prescott, ON</option>
+                                <option value="Preston, ON">Preston, ON</option>
+                                <option value="Princeton, ON">Princeton, ON</option>
+                                <option value="Puce, ON">Puce, ON</option>
+                                <option value="Queenston, ON">Queenston, ON</option>
+                                <option value="Queensville, ON">Queensville, ON</option>
+                                <option value="Rainy Lake First Nation, ON">Rainy Lake First Nation, ON</option>
+                                <option value="Rainy River, ON">Rainy River, ON</option>
+                                <option value="Raith, ON">Raith, ON</option>
+                                <option value="Ramore, ON">Ramore, ON</option>
+                                <option value="Rayside-Balfour, ON">Rayside-Balfour, ON</option>
+                                <option value="Redbridge, ON">Redbridge, ON</option>
+                                <option value="Redditt, ON">Redditt, ON</option>
+                                <option value="Red Lake, ON">Red Lake, ON</option>
+                                <option value="Red Rock, ON">Red Rock, ON</option>
+                                <option value="Renfrew, ON">Renfrew, ON</option>
+                                <option value="Restoule, ON">Restoule, ON</option>
+                                <option value="Richmond, ON">Richmond, ON</option>
+                                <option value="Richmond Hill, ON">Richmond Hill, ON</option>
+                                <option value="Ridgetown, ON">Ridgetown, ON</option>
+                                <option value="Ridgeway, ON">Ridgeway, ON</option>
+                                <option value="Ripley, ON">Ripley, ON</option>
+                                <option value="Rockland, ON">Rockland, ON</option>
+                                <option value="Rockwood, ON">Rockwood, ON</option>
+                                <option value="Rodney, ON">Rodney, ON</option>
+                                <option value="Rolphton, ON">Rolphton, ON</option>
+                                <option value="Rondeau, ON">Rondeau, ON</option>
+                                <option value="Roseneath, ON">Roseneath, ON</option>
+                                <option value="Rosseau, ON">Rosseau, ON</option>
+                                <option value="Russell, ON">Russell, ON</option>
+                                <option value="Ruthven, ON">Ruthven, ON</option>
+                                <option value="Sachigo First Nation Reserve 1, ON">Sachigo First Nation Reserve 1, ON</option>
+                                <option value="Saint Clair Beach, ON">Saint Clair Beach, ON</option>
+                                <option value="Salem, ON">Salem, ON</option>
+                                <option value="Sandwich, ON">Sandwich, ON</option>
+                                <option value="Sandy Cove Acres, ON">Sandy Cove Acres, ON</option>
+                                <option value="Sandy Lake, ON">Sandy Lake, ON</option>
+                                <option value="Sandy Lake First Nation, ON">Sandy Lake First Nation, ON</option>
+                                <option value="Sapawe, ON">Sapawe, ON</option>
+                                <option value="Sarnia, ON">Sarnia, ON</option>
+                                <option value="Sauble Beach, ON">Sauble Beach, ON</option>
+                                <option value="Saugeen First Nation, ON">Saugeen First Nation, ON</option>
+                                <option value="Sault Ste. Marie, ON">Sault Ste. Marie, ON</option>
+                                <option value="Savant Lake, ON">Savant Lake, ON</option>
+                                <option value="Scarborough, ON">Scarborough, ON</option>
+                                <option value="Schomberg, ON">Schomberg, ON</option>
+                                <option value="Schreiber, ON">Schreiber, ON</option>
+                                <option value="Scotland, ON">Scotland, ON</option>
+                                <option value="Seaforth, ON">Seaforth, ON</option>
+                                <option value="Searchmont, ON">Searchmont, ON</option>
+                                <option value="Sebright, ON">Sebright, ON</option>
+                                <option value="Sebringville, ON">Sebringville, ON</option>
+                                <option value="Seeleys Bay, ON">Seeleys Bay, ON</option>
+                                <option value="Selby, ON">Selby, ON</option>
+                                <option value="Selkirk, ON">Selkirk, ON</option>
+                                <option value="Serpent River First Nation, ON">Serpent River First Nation, ON</option>
+                                <option value="Severn Bridge, ON">Severn Bridge, ON</option>
+                                <option value="Shakespeare, ON">Shakespeare, ON</option>
+                                <option value="Shannonville, ON">Shannonville, ON</option>
+                                <option value="Sharbot Lake, ON">Sharbot Lake, ON</option>
+                                <option value="Shawanaga First Nation, ON">Shawanaga First Nation, ON</option>
+                                <option value="Shebandowan, ON">Shebandowan, ON</option>
+                                <option value="Shedden, ON">Shedden, ON</option>
+                                <option value="Shelburne, ON">Shelburne, ON</option>
+                                <option value="Silver Water, ON">Silver Water, ON</option>
+                                <option value="Simcoe, ON">Simcoe, ON</option>
+                                <option value="Sioux Lookout, ON">Sioux Lookout, ON</option>
+                                <option value="Sioux Narrows, ON">Sioux Narrows, ON</option>
+                                <option value="Six Nations of the Grand River, ON">Six Nations of the Grand River, ON</option>
+                                <option value="Smiths Falls, ON">Smiths Falls, ON</option>
+                                <option value="Smithville, ON">Smithville, ON</option>
+                                <option value="Smooth Rock Falls, ON">Smooth Rock Falls, ON</option>
+                                <option value="Snelgrove, ON">Snelgrove, ON</option>
+                                <option value="Sombra, ON">Sombra, ON</option>
+                                <option value="Southampton, ON">Southampton, ON</option>
+                                <option value="South Mountain, ON">South Mountain, ON</option>
+                                <option value="South River, ON">South River, ON</option>
+                                <option value="Spanish, ON">Spanish, ON</option>
+                                <option value="Sparta, ON">Sparta, ON</option>
+                                <option value="Spencerville, ON">Spencerville, ON</option>
+                                <option value="Sprucedale, ON">Sprucedale, ON</option>
+                                <option value="Stayner, ON">Stayner, ON</option>
+                                <option value="St. Catharines, ON">St. Catharines, ON</option>
+                                <option value="St. Charles, ON">St. Charles, ON</option>
+                                <option value="St. Clements, ON">St. Clements, ON</option>
+                                <option value="St. Davids, ON">St. Davids, ON</option>
+                                <option value="St-Eugene, ON">St-Eugene, ON</option>
+                                <option value="Stevensville, ON">Stevensville, ON</option>
+                                <option value="Stewarttown, ON">Stewarttown, ON</option>
+                                <option value="St. George, ON">St. George, ON</option>
+                                <option value="Stirling, ON">Stirling, ON</option>
+                                <option value="St. Isidore de Prescott, ON">St. Isidore de Prescott, ON</option>
+                                <option value="St. Jacobs, ON">St. Jacobs, ON</option>
+                                <option value="St. Mary's, ON">St. Mary's, ON</option>
+                                <option value="Stoke's Bay, ON">Stoke's Bay, ON</option>
+                                <option value="Stoney Creek, ON">Stoney Creek, ON</option>
+                                <option value="Stoney Point, ON">Stoney Point, ON</option>
+                                <option value="Stouffville, ON">Stouffville, ON</option>
+                                <option value="Straffordville, ON">Straffordville, ON</option>
+                                <option value="Stratford, ON">Stratford, ON</option>
+                                <option value="Strathroy, ON">Strathroy, ON</option>
+                                <option value="Stratton, ON">Stratton, ON</option>
+                                <option value="Streetsville, ON">Streetsville, ON</option>
+                                <option value="St. Regis, ON">St. Regis, ON</option>
+                                <option value="Stroud, ON">Stroud, ON</option>
+                                <option value="St. Thomas, ON">St. Thomas, ON</option>
+                                <option value="Sturgeon Falls, ON">Sturgeon Falls, ON</option>
+                                <option value="Sudbury, ON">Sudbury, ON</option>
+                                <option value="Sultan, ON">Sultan, ON</option>
+                                <option value="Summer Beaver, ON">Summer Beaver, ON</option>
+                                <option value="Sunderland, ON">Sunderland, ON</option>
+                                <option value="Sundridge, ON">Sundridge, ON</option>
+                                <option value="Sutton, ON">Sutton, ON</option>
+                                <option value="Swastika, ON">Swastika, ON</option>
+                                <option value="Sydenham, ON">Sydenham, ON</option>
+                                <option value="Tamworth, ON">Tamworth, ON</option>
+                                <option value="Tara, ON">Tara, ON</option>
+                                <option value="Tavistock, ON">Tavistock, ON</option>
+                                <option value="Taylor Corners, ON">Taylor Corners, ON</option>
+                                <option value="Tecumseh, ON">Tecumseh, ON</option>
+                                <option value="Teeswater, ON">Teeswater, ON</option>
+                                <option value="Temagami, ON">Temagami, ON</option>
+                                <option value="Terrace Bay, ON">Terrace Bay, ON</option>
+                                <option value="Thamesford, ON">Thamesford, ON</option>
+                                <option value="Thamesville, ON">Thamesville, ON</option>
+                                <option value="Thedford, ON">Thedford, ON</option>
+                                <option value="The Eabametoong (Fort Hope) Fi, ON">The Eabametoong (Fort Hope) Fi, ON</option>
+                                <option value="Thessalon, ON">Thessalon, ON</option>
+                                <option value="Thessalon First Nation, ON">Thessalon First Nation, ON</option>
+                                <option value="Thornbury, ON">Thornbury, ON</option>
+                                <option value="Thorndale, ON">Thorndale, ON</option>
+                                <option value="Thorne, ON">Thorne, ON</option>
+                                <option value="Thornhill, ON">Thornhill, ON</option>
+                                <option value="Thorold, ON">Thorold, ON</option>
+                                <option value="Thunder Bay, ON">Thunder Bay, ON</option>
+                                <option value="Thurlow, ON">Thurlow, ON</option>
+                                <option value="Tilbury, ON">Tilbury, ON</option>
+                                <option value="Tillsonburg, ON">Tillsonburg, ON</option>
+                                <option value="Timmins, ON">Timmins, ON</option>
+                                <option value="Tiverton, ON">Tiverton, ON</option>
+                                <option value="Tobermory, ON">Tobermory, ON</option>
+                                <option value="Toledo, ON">Toledo, ON</option>
+                                <option value="Toronto, ON">Toronto, ON</option>
+                                <option value="Tottenham, ON">Tottenham, ON</option>
+                                <option value="Trenton, ON">Trenton, ON</option>
+                                <option value="Trout Creek, ON">Trout Creek, ON</option>
+                                <option value="Trowbridge, ON">Trowbridge, ON</option>
+                                <option value="Tweed, ON">Tweed, ON</option>
+                                <option value="Udora, ON">Udora, ON</option>
+                                <option value="Uniondale, ON">Uniondale, ON</option>
+                                <option value="Unionville, ON">Unionville, ON</option>
+                                <option value="Upsala, ON">Upsala, ON</option>
+                                <option value="Utterson, ON">Utterson, ON</option>
+                                <option value="Uxbridge, ON">Uxbridge, ON</option>
+                                <option value="Valley East, ON">Valley East, ON</option>
+                                <option value="Vanier, ON">Vanier, ON</option>
+                                <option value="Vankleek Hill, ON">Vankleek Hill, ON</option>
+                                <option value="Vaughan, ON">Vaughan, ON</option>
+                                <option value="Vermilion Bay, ON">Vermilion Bay, ON</option>
+                                <option value="Verner, ON">Verner, ON</option>
+                                <option value="Verona, ON">Verona, ON</option>
+                                <option value="Victoria, ON">Victoria, ON</option>
+                                <option value="Vineland, ON">Vineland, ON</option>
+                                <option value="Virginiatown, ON">Virginiatown, ON</option>
+                                <option value="Wabigoon, ON">Wabigoon, ON</option>
+                                <option value="Wainfleet, ON">Wainfleet, ON</option>
+                                <option value="Walden, ON">Walden, ON</option>
+                                <option value="Walkerton, ON">Walkerton, ON</option>
+                                <option value="Wallaceburg, ON">Wallaceburg, ON</option>
+                                <option value="Wapekeka First Nation, ON">Wapekeka First Nation, ON</option>
+                                <option value="Wardsville, ON">Wardsville, ON</option>
+                                <option value="Warkworth, ON">Warkworth, ON</option>
+                                <option value="Warren, ON">Warren, ON</option>
+                                <option value="Wasaga Beach, ON">Wasaga Beach, ON</option>
+                                <option value="Waterdown, ON">Waterdown, ON</option>
+                                <option value="Waterford, ON">Waterford, ON</option>
+                                <option value="Waterloo, ON">Waterloo, ON</option>
+                                <option value="Watford, ON">Watford, ON</option>
+                                <option value="Waubaushene, ON">Waubaushene, ON</option>
+                                <option value="Wawa, ON">Wawa, ON</option>
+                                <option value="Webbwood, ON">Webbwood, ON</option>
+                                <option value="Webequie, ON">Webequie, ON</option>
+                                <option value="Welcome, ON">Welcome, ON</option>
+                                <option value="Welland, ON">Welland, ON</option>
+                                <option value="Wellandport, ON">Wellandport, ON</option>
+                                <option value="Wellesley, ON">Wellesley, ON</option>
+                                <option value="Wellington, ON">Wellington, ON</option>
+                                <option value="West Guilford, ON">West Guilford, ON</option>
+                                <option value="West Lincoln, ON">West Lincoln, ON</option>
+                                <option value="West Lorne, ON">West Lorne, ON</option>
+                                <option value="Westmeath, ON">Westmeath, ON</option>
+                                <option value="Westport, ON">Westport, ON</option>
+                                <option value="Westree, ON">Westree, ON</option>
+                                <option value="Wheatley, ON">Wheatley, ON</option>
+                                <option value="Whitby, ON">Whitby, ON</option>
+                                <option value="Whitchurch-Stouffville, ON">Whitchurch-Stouffville, ON</option>
+                                <option value="Whitefish, ON">Whitefish, ON</option>
+                                <option value="Whitefish Falls, ON">Whitefish Falls, ON</option>
+                                <option value="Whitefish River First Nation, ON">Whitefish River First Nation, ON</option>
+                                <option value="White River, ON">White River, ON</option>
+                                <option value="Whitney, ON">Whitney, ON</option>
+                                <option value="Wiarton, ON">Wiarton, ON</option>
+                                <option value="Wikwemikong, ON">Wikwemikong, ON</option>
+                                <option value="Wilberforce, ON">Wilberforce, ON</option>
+                                <option value="Williamsburg, ON">Williamsburg, ON</option>
+                                <option value="Winchester, ON">Winchester, ON</option>
+                                <option value="Windermere, ON">Windermere, ON</option>
+                                <option value="Windsor, ON">Windsor, ON</option>
+                                <option value="Wingham, ON">Wingham, ON</option>
+                                <option value="Winona, ON">Winona, ON</option>
+                                <option value="Woodbridge, ON">Woodbridge, ON</option>
+                                <option value="Woodstock, ON">Woodstock, ON</option>
+                                <option value="Woodville, ON">Woodville, ON</option>
+                                <option value="Wooler, ON">Wooler, ON</option>
+                                <option value="Wunnummin Lake, ON">Wunnummin Lake, ON</option>
+                                <option value="Wyoming, ON">Wyoming, ON</option>
+                                <option value="Yarker, ON">Yarker, ON</option>
+                                <option value="York, ON" selected>York, ON</option>
+                                <option value="Zurich, ON">Zurich, ON</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="check-box-sec">
+                            <span class="check-box-input">
+                                <span class="tick-mark">&#10003;</span>
+                            </span>
+                            <span class="check-box-title">I’m a first time home buyer</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 cl-right-div">
+                <div class="row">
+                    <div class="col-md-12" style="overflow-x: auto;">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th colspan="5" class="text-center" style="border-bottom: 1px solid #ccc !important;background: #fff !important;">Determining your land transfer tax</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td nowrap></td>
+                                    <td nowrap>Provincial</td>
+                                    <td nowrap></td>
+                                    <td nowrap class="fw-600 rs-vl" id="rs_1" style="text-align: right;">$0.00</td>
+                                    <td nowrap>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td nowrap class="sp-cl" style="text-align: right;">+&nbsp;&nbsp;</td>
+                                    <td nowrap>Municipal</td>
+                                    <td nowrap></td>
+                                    <td nowrap class="fw-600 rs-vl" id="rs_2" style="text-align: right;">$0.00</td>
+                                    <td nowrap></td>
+                                </tr>
+                                <tr>
+                                    <td nowrap class="sp-cl" style="text-align: right;">-&nbsp;&nbsp;</td>
+                                    <td nowrap>Rebate</td>
+                                    <td nowrap></td>
+                                    <td nowrap class="fw-600 rs-vl" id="rs_3" style="text-align: right;">$0.00</td>
+                                    <td nowrap></td>
+                                </tr>
+                                <tr class="sp-bg">
+                                    <td nowrap class="sp-cl" style="text-align: right;">=&nbsp;&nbsp;</td>
+                                    <td nowrap class="sp-cl fw-600">Land transfer tax</td>
+                                    <td nowrap></td>
+                                    <td nowrap class="fw-600 rs-vl sp-cl" id="rs_4" style="text-align: right;">$0.00</td>
+                                    <td nowrap></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/autonumeric@4.5.4"></script>
+<script>
+    jQuery(document).ready(function($){
+        let isFirst =  false;
+        let cities_arr = ["York, ON", "East York, ON", "Toronto, ON", "North York", "Etobicoke, ON"];
+        
+        const nft = Intl.NumberFormat("en-US", {
+            minimumFractionDigits:0,
+            maximumFractionDigits:0
+        });
+
+        const nftd = Intl.NumberFormat("en-US", {
+            minimumFractionDigits:2,
+            maximumFractionDigits:2
+        });
+
+        const numOptionCurrency = {
+            digitGroupSeparator        : ',',
+            decimalCharacter           : '.',
+            decimalCharacterAlternative: '.',
+            currencySymbol             : '$',
+            currencySymbolPlacement    : AutoNumeric.options.currencySymbolPlacement.prefix,
+            decimalPlaces              : 0
+        };
+
+        new AutoNumeric('#in_1', numOptionCurrency);
+
+        $('#in_2').select2();
+
+        $(".check-box-sec").on("click", function(){
+            isFirst =  !isFirst;
+
+            if(isFirst) $(this).find(".check-box-input").addClass("active");
+            else $(this).find(".check-box-input").removeClass("active");
+
+            calc();
+        });
+
+        $("#in_1, #in_2").on("input", function(){
+            calc();            
+        });
+
+        function calc(){
+            in_1 = removeSign($("#in_1").val());
+            in_2 = $("#in_2").val();
+            
+            let x = 0, y = 0;
+
+            if($("#in_1").val() != ""){
+                if(in_1>55000 && in_1<251001) {
+                    rs_1 = ((in_1-55000)*((1.00/100)))+(55000*(0.50/100));
+                } else if(in_1>250000 && in_1<400001) {
+                    rs_1 = ((in_1-250000)*(1.50/100))+(55000*(0.50/100))+(195000*(1.00/100));
+                } else if(in_1>400000 && in_1<2000001) {
+                    rs_1 = ((in_1-400000)*(2.00/100))+(55000*(0.50/100))+(195000*(1.00/100))+(150000*(1.50/100));
+                } else if(in_1>2000000) {
+                    rs_1 = ((in_1-2000000)*(2.50/100))+(55000*(0.50/100))+(195000*(1.00/100))+(150000*(1.50/100))+(1600000*(2.00/100));
+                } else {
+                    rs_1 = in_1*(0.50/100);
+                }
+
+                if(cities_arr.includes($("#in_2").val())){
+                    rs_2 = rs_1;
+                } else {
+                    rs_2 = 0;
+                }
+
+
+                if(rs_1<4001) x = rs_1;
+                else x = 4000;
+
+                if(rs_2<4476) y = rs_2;
+                else y = 4475;
+
+                if(!isFirst) {
+                    rs_3 = 0;
+                } else {
+                    rs_3 = x + y;
+                }
+
+                rs_4 = rs_1 + rs_2 - rs_3;
+
+                $("#rs_1").text("$"+nft.format(rs_1));
+                $("#rs_2").text("$"+nft.format(rs_2));
+                $("#rs_3").text("$"+nft.format(rs_3));
+                $("#rs_4").text("$"+nft.format(rs_4));
+
+            } else {
+                $(".rs-vl").text("-");
+            }
+        }
+
+        function removeSign(vl){
+            return Number(vl.replace(/\$|,/g, ''));
+        }
+    });
+</script>
+<!----------- copy ends ---------------->
+</body>
+</html>

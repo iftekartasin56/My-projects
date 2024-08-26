@@ -1,0 +1,39 @@
+Economic Freedom Analysis - Web Calculator for your Website
+
+Welcome to our <b>Economic Freedom Analysis</b>, The Accounts Receivable Turnover Calculator helps businesses assess how efficiently they collect their receivables.
+<br>
+<br>
+<u><b>User inputs:</b></u>
+<ul>
+    <li>Personal Investment Account(s)</li>
+    <li>Personal Investment Contributions</li>
+    <li>Retirement Plan Account(s)</li>
+    <li>Retirement savings contributions per year</li>
+    <li>Annual Expenses</li>
+    <li>Inflation Rate</li>
+    <li>Personal Investment Account Growth Rate</li>
+    <li>Retirement Plan Growth Rate</li>
+    <li>Current Age</li>
+    <li>Saving To Age</li>
+    <li>Retirement Age</li>
+</ul>
+<br>
+<u><b>Outputs:</b></u>
+<ul>
+    <li>Personal</li>
+    <li>Retirement Plan</li>
+</ul>
+<br>
+<u><b>Features of the Economic Freedom Analysis:</b></u>
+<ul>
+    <li>- Calculates the future worth of personal investment and retirement accounts using input growth rates.</li>
+    <li>- Displays the calculated turnover value.</li>
+    <li>- Instant result without page reload</li>
+    <li>- JS and CSS loads when shortcode called on page</li>
+    <li>- 100% Responsive design</li>
+    <li>- Unique Design</li>
+    <li>- Well Documented (proper help instructions for setup)</li>
+    <li>- Dedicated Support</li>
+</ul>
+<br>
+The calculator is built using HTML, CSS, and JavaScript, and it also utilizes the popular JavaScript library jQuery. A premium quality <b>Economic Freedom Analysis</b> which you can easily embed into any website (well documented).

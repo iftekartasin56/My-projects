@@ -1,0 +1,146 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- Bootstrap CSS -->
+    <title>Retirement Date Calculator</title> 
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+    </style> 
+    
+    <!-- CSS Stylesheet Link -->
+    <link rel="stylesheet" href="css/Calc-style.css">
+</head>
+<body>
+
+<!-----------Please copy and paste following code into any HTML element ---------------->
+
+<!----------- copy starts ---------------->
+
+<div class="ms-cl" id="ms_cl">
+    <div class="container cl-wrapper">
+        <h3 class="text-center top-title">Retirement Date Calculator</h3>
+        <div class="row content-sec">
+            <div class="col-md-6 cl-left-div">
+                <h3 style="color:#ffffff;">Your Numbers</h3>
+                <hr style="border-color: #fff;">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="cl_in_1">Current NW</label>
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control cl-required sp-pd-left" value="200,000" name="cl_in_1" id="cl_in_1">
+                                <span class="prepend-text curr-sign"></span>
+                            </div>
+                            <small id="r_msg" style="display:none;color:red;">You Can Retire!!</small>
+                        </div>                        
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="cl_in_2">Current YearLy Income</label>
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control cl-required sp-pd-left" value="75,000" name="cl_in_2" id="cl_in_2">
+                                <span class="prepend-text curr-sign"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="cl_in_3">Passive Income During Retirement (Yearly)</label>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control cl-required sp-pd-left" value="0" name="cl_in_3" id="cl_in_3">
+                        <span class="prepend-text curr-sign"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="cl_in_4">Current Yearly Savings</label>
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control cl-required sp-pd-left" value="35,000" name="cl_in_4" id="cl_in_4">
+                                <span class="prepend-text curr-sign"></span>
+                            </div>
+                        </div>                   
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="cl_in_5">Expected Investment Returns</label>
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control cl-required" value="7" name="cl_in_5" id="cl_in_5">
+                                <span class="append-text">%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="cl_in_6">Historical Inflation Rate</label>
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control cl-required" value="3" name="cl_in_6" id="cl_in_6">
+                                <span class="append-text">%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="cl_in_7">Safe Withdraw Rate</label>
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control cl-required" value="4" name="cl_in_7" id="cl_in_7">
+                                <span class="append-text">%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 cl-right-div">
+                <h3 style="color:#ffffff;">Results</h3>
+                <hr style="border-color: #fff;">
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <td class="f600">
+                                *Current Yearly Spend<br>
+                                <small>(Estimated spending in retirement in todays $$)</small>
+                            </td>
+                            <td class="rs-vl" id="rs_1">-</td>
+                        </tr>
+                        <tr>
+                            <td class="f600">Savings Rate</td>
+                            <td class="rs-vl" id="rs_2">-</td>
+                        </tr>
+                        <tr>
+                            <td class="f600">Todays FI#</td>
+                            <td class="rs-vl" id="rs_3">-</td>
+                        </tr>
+                        <tr>
+                            <td class="f600">*Years to FIRE</td>
+                            <td class="rs-vl" id="rs_4">-</td>
+                        </tr>
+                        <tr>
+                            <td class="f600">*Early Retirement Date</td>
+                            <td class="rs-vl" id="rs_5">-</td>
+                        </tr>
+                        <tr>
+                            <td class="f600">Future Fire Number</td>
+                            <td class="rs-vl" id="rs_6">-</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/jquery.js"></script>
+<script src="js/autonumeric.js"></script>
+<script src="js/Calc-script.js"></script>
+<!----------- copy ends ---------------->
+</body>
+</html>

@@ -1,0 +1,535 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- Bootstrap CSS -->
+    <title>Estimated Rep Max Calculator</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: "Poppins", sans-serif;
+        }
+    </style>
+</head>
+<body>
+
+<!-----------Please copy and paste following code into any HTML element ---------------->
+
+<!----------- copy starts ---------------->
+<style>
+#mc4 *, ::after, ::before {
+    box-sizing: border-box;
+}
+#mc4 {
+    line-height: 1.5;
+    font-family: inherit;
+}
+#mc4 .container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #4f4f4f;
+    text-align: left;
+}
+#mc4 label {
+    display: inline-block;
+    margin-bottom: .5rem;
+    font-size: 16px;
+    font-weight: 500;
+}
+#mc4 .h3, #mc4 h3 {
+    margin: 0;
+    font-size: 1.75rem;
+    margin-bottom: .5rem;
+    font-weight: 500;
+    line-height: 1.2;
+}
+#mc4 hr {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top: 1px solid rgba(0,0,0,.1);
+}
+#mc4 .table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 0rem;
+    background-color: transparent;
+    border-collapse: collapse;
+}
+#mc4 .table td, #mc4 .table th {
+    padding: .65rem 0;
+    vertical-align: middle;
+    border-right: none !important;
+    border-left: none !important;
+    border-top: none !important;
+    border-bottom: 1px solid #5d5d5d;
+    font-size: 18px;
+    font-weight: 700;
+}
+#mc4 .row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+#mc4 .col-md-1, #mc4 .col-md-10, #mc4 .col-md-11, #mc4 .col-md-12, #mc4 .col-md-2, #mc4 .col-md-3, #mc4 .col-md-4, #mc4 .col-md-5, #mc4 .col-md-6, #mc4 .col-md-7, #mc4 .col-md-8, #mc4 .col-md-9 {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+#mc4 .form-group {
+    margin-bottom: 1.5rem;
+}
+#mc4 .form-control {
+    display: block;
+    width: 100%;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .175rem 0 0rem 0;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #efefef;
+    background-color: transparent;
+    background-clip: padding-box;
+    border: 2px solid #6a6e75;
+    border-radius: 5px;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+#mc4 .form-control:focus {
+    outline: none;
+}
+#mc4 .text-center {
+    text-align: center!important;
+}
+/* Custom css */
+#mc4 .cl-wrapper {
+    position: relative;
+    border: 1px solid #e1e1e1;
+    border-radius: 0;
+    background: #212121;
+}
+#mc4 .cl-left-div {
+    color: #fafafa;
+    padding: 3rem !important;
+    background: #212121;
+}
+#mc4 .cl-right-div {
+    padding: 3rem !important;
+    color: #d1d1d1;
+    background: #404040;
+    border-radius: 0;
+}
+#mc4 .rs-vl {
+    font-size: 30px;
+    color: #fff;
+    font-weight: 700;
+}
+#mc4 .rs-vl-1 {
+    font-size: 24px;
+    color: #fff;
+    font-weight: 500;
+}
+#mc4 .top-title {
+    color: #ffffff !important;
+    padding: 12px 0;
+}
+#mc4 select option {
+    background: #6a6e75;
+    color: #fff;
+}
+/* responsive */
+
+@media (max-width: 768px){
+    #mc4 .cl-divider {
+        display: none;
+    }
+    #mc4 .cl-left-div {
+        padding: 2rem !important;
+    }
+    #mc4 .cl-right-div {
+        padding: 1rem 1rem 2rem 1rem !important;
+        border-radius: 0 0 8px 8px;
+    }
+    #mc4 .form-control {
+        padding: .175rem .75rem;
+    }
+    #mc4 label {
+        font-size: 14px;
+    }
+}
+@media (min-width: 576px){
+    #mc4 .container, #mc4 .container-sm {
+        max-width: 540px;
+    }
+}
+@media (min-width: 768px){
+    #mc4 .container {
+        max-width: 100%;
+    }
+    #mc4 .col-md-12 {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    #mc4 .col-md-8 {
+        -ms-flex: 0 0 66.666667%;
+        flex: 0 0 66.666667%;
+        max-width: 66.666667%;
+    }
+    #mc4 .col-md-6 {
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    #mc4 .col-md-4 {
+        -ms-flex: 0 0 33.333333%;
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+    }
+    #mc4 .col-md-3 {
+        -ms-flex: 0 0 25%;
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+}
+@media (min-width: 992px){
+    #mc4 .container {
+        max-width: 960px;
+    }
+}
+@media (min-width: 1200px) {
+    #mc4 .container {
+        max-width: 1140px;
+    }
+}
+#mc4 .btn {
+    display: block;
+    font-weight: 500;
+    color: #212529;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: 0.275rem 2.2rem;
+    line-height: 1.3;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    text-align: center;
+}
+#mc4 .btn-primary {
+    display: block;
+    width: 100%;
+    border: 1px solid #fff;
+    color: #fff;
+    border-radius: 5px;
+    padding: 8px;
+    font-size: 16px;
+    font-weight: 700;
+}
+#mc4 .btn-primary:hover {
+    border: 1px solid #fff;
+    background-color: #fff;
+    color: #212121;
+}
+#mc4 .input-btn-sec, #mc4 .input-box-sec {
+    display: flex;
+}
+#mc4 .input-btn-sec, #mc4 .input-box-sec {
+    display: flex;
+}
+#mc4 .input-btn-sec .prepend-btn:nth-child(1) {
+    border: 2px solid #6a6e75;
+    border-radius: 5px 0 0 5px;
+    border-right: none;
+}
+#mc4 .prepend-btn {
+    border: 2px solid #6a6e75;
+    width: 45px;
+    text-align: center;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    background-color: transparent;
+    cursor: pointer;
+}
+#mc4 .prepend-btn.is-active {
+    color: #6a6e75;
+    background-color: #fff;
+    border-color: #fff;
+}
+#mc4 .input-box-sec input {
+    display: flex;
+    border-radius: 0 5px 5px 0;
+    border-left: none !important;
+}
+#mc4 .sp-pd-left {
+    padding-left: 5px;
+}
+#mc4 #err_msg {
+    display: none;
+    color: red;
+    margin: 0;
+    margin-top: 10px;
+    text-align: center;
+    font-size: 14px;
+}
+#mc4 .option-sec {
+    display: flex;
+    border: 1px solid #fff;
+    border-radius: 5px;
+}
+#mc4 .option-sec span {
+    width: 100%;
+    padding: 5px;
+    text-align: center;
+    border-right: 1px solid #fff;
+    cursor: pointer;
+}
+#mc4 .option-sec span.is-active {
+    background: #fff;
+    color: #000;
+}
+</style>
+<div class="ms-cl" id="mc4">
+    <div class="container cl-wrapper">
+        <h3 class="text-center top-title">Estimated Rep Max Calculator</h3>
+        <div class="row" style="border-top: 1px solid #404040;">
+            <div class="col-md-6 cl-left-div">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="mc3_in_1">Weight</label>
+                            <div class="input-box-sec">
+                                <div class="input-btn-sec">
+                                    <span class="prepend-btn weight-type is-active" data-value="LBS">LBS</span>
+                                    <span class="prepend-btn weight-type" data-value="KG">KG</span>
+                                </div>
+                                <input type="text" class="form-control cl-required sp-pd-left input-box" id="mc3_in_1">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="mc3_in_3">Rounding?</label>
+                            <div class="option-sec">
+                                <span class="option-round" data-value="Yes">Yes</span>
+                                <span class="option-round is-active" data-value="No">No</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-8 con-1">
+                        <div class="form-group">
+                            <label for="mc3_in_4">Round Direction</label>
+                            <div class="option-sec">
+                                <span class="option-direction" data-value="Nearest">Nearest</span>
+                                <span class="option-direction" data-value="Up">Up</span>
+                                <span class="option-direction is-active" data-value="Down">Down</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 con-2">
+                        <div class="form-group">
+                            <label for="mc3_in_5">To Nearest</label>
+                            <select name="mc3_in_5" class="form-control cl-required input-box" id="mc3_in_5">
+                                <option value="1">1</option>
+                                <option value="1.25">1.25</option>
+                                <option value="2.5">2.5</option>
+                                <option value="5" selected>5</option>
+                                <option value="10">10</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn btn-primary" id="cal_btn">Calculate</button>
+                <p id="err_msg">Please input all the values!</p> 
+            </div>
+            <div class="col-md-6 cl-right-div">
+                <h3 style="color:#ffffff;">Results</h3>
+                <hr style="border-color: #fff;">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <td>REPS</td>
+                            <td>Weight</td>
+                            <td>Unit</td>
+                        </tr>
+                    </thead>
+                    <tbody id="rs_table">
+                        <tr>
+                            <td colspan="3">-</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    let weight_type = "LBS";
+    let rounding = "No";
+    let r_dir = "Down";
+    let nearest = 5;
+
+    let percnt_arr = [97,94,92,89,86,83,81,78,75,73,71,70,68,67,65,64,63,61,60,59,58,57,56,55,54,53,52,51,50];
+
+    const mc3_nft = new Intl.NumberFormat("en-US", {
+        minimumFractionDigits: 0,
+        maximumFractionDigits: 0
+    });
+    const mc3_nftd = new Intl.NumberFormat("en-US", {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+    });
+
+    document.querySelectorAll('.input-box').forEach(function(inputBox) {
+        inputBox.addEventListener('input', function() {
+            document.getElementById('err_msg').style.display = 'none';
+            document.getElementById('rs_table').innerHTML = `
+                <tr>
+                    <td colspan="3">-</td>
+                </tr>
+                `;
+        });
+    });
+
+    document.querySelectorAll('.weight-type').forEach(function(weightType) {
+        weightType.addEventListener('click', function() {
+            document.querySelectorAll('.weight-type').forEach(function(el) {
+                el.classList.remove('is-active');
+            });
+            this.classList.add('is-active');
+
+            weight_type = this.dataset.value;
+
+            document.getElementById('rs_table').innerHTML = `
+                <tr>
+                    <td colspan="3">-</td>
+                </tr>
+                `;
+            document.getElementById('err_msg').style.display = 'none';
+        });
+    });
+
+    document.querySelectorAll('.option-round').forEach(function(optionRound) {
+        optionRound.addEventListener('click', function() {
+            document.querySelectorAll('.option-round').forEach(function(el) {
+                el.classList.remove('is-active');
+            });
+            this.classList.add('is-active');
+
+            rounding = this.dataset.value;
+
+            document.getElementById('rs_table').innerHTML = `
+                <tr>
+                    <td colspan="3">-</td>
+                </tr>
+                `;
+            document.getElementById('err_msg').style.display = 'none';
+        });
+    });
+
+    document.querySelectorAll('.option-direction').forEach(function(optionDirection) {
+        optionDirection.addEventListener('click', function() {
+            document.querySelectorAll('.option-direction').forEach(function(el) {
+                el.classList.remove('is-active');
+            });
+            this.classList.add('is-active');
+
+            r_dir = this.dataset.value;
+
+            document.getElementById('rs_table').innerHTML = `
+                <tr>
+                    <td colspan="3">-</td>
+                </tr>
+                `;
+            document.getElementById('err_msg').style.display = 'none';
+        });
+    });
+
+    document.getElementById('cal_btn').addEventListener('click', function() {
+        mc3_calc();
+    });
+
+    function mc3_calc() {
+        const mc3_in_1 = Number(document.getElementById('mc3_in_1').value);
+        const mc3_in_5 = Number(document.getElementById('mc3_in_5').value);
+
+        let roundUpNum = mc3_in_5;
+
+        if (mc3_in_1) {
+            let total_weight = 0;
+
+            let table_html = "";
+            let i = 0;
+            percnt_arr.forEach( function(item, i){
+                total_weight = mc3_in_1 * item / 100;
+                if (rounding === 'Yes') {
+                    total_weight = roundToNearestNum(r_dir, total_weight, roundUpNum);
+                }
+
+                table_html = table_html + `
+                <tr>
+                    <td>${i+2}</td>
+                    <td>${mc3_nftd.format(total_weight)}</td>
+                    <td>${weight_type}</td>
+                </tr>
+                ` ;
+            });
+
+        
+            document.getElementById('rs_table').innerHTML = table_html;
+            document.getElementById('err_msg').style.display = 'none';
+        } else {
+            document.getElementById('err_msg').style.display = 'block';
+            
+            document.getElementById('rs_table').innerHTML = `
+                <tr>
+                    <td colspan="3">-</td>
+                </tr>
+                `;
+        }
+    }
+
+    function roundToNearestNum(type, number, roundNum) {
+        const remainder = number % roundNum;
+
+        if (remainder > 0) {
+            if (type === 'Up') {
+                return number + (roundNum - remainder);
+            } else if(type == "down") {
+                return number - remainder;
+            } else {
+                return Math.round(number / roundNum) * roundNum;
+            }
+        }
+
+        return number;
+    }
+});
+
+</script>
+<!----------- copy ends ---------------->
+</body>
+</html>

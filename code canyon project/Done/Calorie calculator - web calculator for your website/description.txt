@@ -1,0 +1,42 @@
+Calorie  calculator - Web Calculator for your Website
+
+Welcome to our <b>Calorie calculator</b>, This Calculator to help you achieve your health and fitness goals with precision and ease. Whether you're looking to lose fat, maintain your current weight, or gain muscle mass, our calculator is designed to give you the right nutrition you need.
+<br>
+<br>
+<u><b>User inputs:</b></u>
+<ul>
+    <li>Gender</li>
+    <li>Age</li>
+    <u><b>Metric Unit(kg):</b></u>
+    <li>Length (cm)</li>
+    <li>Weight (kg)</li>
+    <u><b>US Unit(lbs):</b></u>
+    <li>Length (feet)</li>
+    <li>Length (inches)</li>
+    <li>Weight (lbs)</li>
+    <br>
+    <li>Activity level</li>
+    <li>Goal</li>
+</ul>
+<br>
+<u><b>Outputs:</b></u>
+<ul>
+    <li>Percentage</li>
+    <li>Protein</li>
+    <li>Fats</li>
+    <li>Carbohydrates</li>
+</ul>
+<br>
+<u><b>Features of the Calorie Calculator:</b></u>
+<ul>
+    <li>- Instantly calculate your daily calorie needs based on your unique profile, including gender, age, height, weight and activity level.</li>
+    <li>- Select your fitness goal and let the calculator adjust calorie intake accordingly.</li>
+    <li>- Instant result without page reload</li>
+    <li>- JS and CSS loads when shortcode called on page</li>
+    <li>- 100% Responsive design</li>
+    <li>- Unique Design</li>
+    <li>- Well Documented (proper help instructions for setup)</li>
+    <li>- Dedicated Support</li>
+</ul>
+<br>
+The calculator is built using HTML, CSS, and JavaScript, and it also utilizes the popular JavaScript library jQuery. A premium quality <b>Calorie calculator</b> which you can easily embed into any website (well documented).

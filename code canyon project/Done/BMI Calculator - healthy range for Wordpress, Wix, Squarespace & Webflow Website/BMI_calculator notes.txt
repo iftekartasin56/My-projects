@@ -1,0 +1,31 @@
+HTML Description--
+
+BMI Calculator a powerful and versatile tool designed to help users quickly and accurately calculate their Body Mass Index. It provides a simple and efficient way to calculate Healthy Range.
+
+User inputs:
+Us Units
+-Height(ft,in),
+-Weight(lbs),
+-Metric Units,
+-Height(cm),
+-Weight(kg),
+
+Outputs:
+-OBESE,
+-OVERWEIGHT,
+-HEALTHY,
+-UNDERWEIGHT
+
+Features of the BMI calculator:
+-Supports both US and Metric units, allowing users to choose between feet/inches or centimeters for height and pounds or kilograms for weight.,
+-Provides instant BMI calculation as users input their data, offering quick and efficient results.,
+-Clearly presents BMI ranges, helping users understand where they fall in the underweight, normal weight, overweight, or obese categories.,
+-Offers additional information on BMI categories and their implications for health.,
+-The BMI Calculator features a clean and intuitive interface, making it easy for users to input their height and weight data.,
+-100% Responsive design.,
+-Unique Design.,
+-Well Documented ( proper help instructions for setup).,
+-Dedicated Support.
+
+The calculator is built using HTML, CSS, and JavaScript. A premium quality BMI web calculator which you can easily embed into any website (well documented).
+

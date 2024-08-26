@@ -1,0 +1,5 @@
+Taxable income = $45,500
+Output: Tax return = ( ( (45,500 – 45000) * 0.325) + 5092 ) + ( 45,500 * .02 )
+
+Taxable income = $127,500
+Output: Tax return = ( ( (127,500 – 120,000) * 0.37 ) + 29,467 ) + ( 127,500 * .02 )

@@ -1,0 +1,1597 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <title>Financial Independence Calculator</title>
+    
+</head>
+<body>
+<!--------Please let's copy and paste the following code into an HTML element ---------->
+<!--------copy starts ---------->
+<style>
+.ms-cl *, ::after, ::before {
+    box-sizing: border-box;
+}
+.ms-cl .row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+.ms-cl h3, p {
+    margin: 0;
+}
+.ms-cl .col-md-12, .ms-cl .col-md-6, .ms-cl .col-md-10, .ms-cl .col-md-9, .ms-cl .col-md-8, .ms-cl .col-md-7, .ms-cl .col-md-5, .ms-cl .col-md-4, .ms-cl .col-md-3, .ms-cl .col-md-2 {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.ms-cl .container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #000000;
+    text-align: left;
+}
+.ms-cl .wrapper {
+    border-left: 1px solid #17639d;
+    border-right: 1px solid #17639d;
+}
+.ms-cl .table {
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #000000;
+    border-collapse: collapse;
+}
+.ms-cl .table td, .ms-cl .table th {
+    padding: .75rem;
+    vertical-align: middle;
+    border-bottom: 1px solid #f5f5f5;
+}
+.ms-cl .table-sm td, .ms-cl .table-sm th {
+    padding: .06rem;
+    font-size: 14px;
+}
+.ms-cl .table-bordered {
+    border: 1px solid #d1d1d1;
+}
+.ms-cl .form-control {
+    display: block;
+    width: 100%;
+    height: auto;
+    padding: 0.175rem 0.25rem 0.175rem 1.25rem;
+    text-align: right;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #000000;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.ms-cl select {
+    padding: 4px 7px !important;
+}
+.ms-cl .form-control:focus {
+    outline: none;
+}
+.ms-cl .btn-group, .btn-group-vertical {
+    position: relative;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    vertical-align: middle;
+}
+.ms-cl [type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled) {
+    cursor: pointer;
+}
+.ms-cl .input-group {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+    width: 100%;
+}
+.ms-cl .input-group-prepend {
+    position: absolute;
+    left: 7px;
+    bottom: 3px;
+}
+.ms-cl .input-group-append {
+    position: absolute;
+    right: 7px;
+    bottom: 3px;
+}
+@media (min-width: 576px){
+    .ms-cl .container, .ms-cl .container-sm {
+        max-width: 540px;
+    }
+}
+@media (min-width: 768px){
+    .ms-cl .container, .ms-cl .container-md, .ms-cl .container-sm {
+        max-width: 720px;
+    }
+    .ms-cl .col-md-12 {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .ms-cl .col-md-8 {
+        -ms-flex: 0 0 66.66667%;
+        flex: 0 0 66.66667%;
+        max-width: 66.66667%;
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+    .ms-cl .col-md-6 {
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 50%;
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+    .ms-cl .col-md-4 {
+        -ms-flex: 0 0 33.33333%;
+        flex: 0 0 33.33333%;
+        max-width: 33.33333%;
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+}
+@media (min-width: 992px){
+    .ms-cl .container, .ms-cl .container-lg, .ms-cl .container-md, .ms-cl .container-sm {
+        max-width: 600px;
+    }
+}
+@media (min-width: 1200px) {
+    .ms-cl .container, .ms-cl .container-lg, .ms-cl .container-md, .ms-cl .container-sm, .ms-cl .container-xl {
+        max-width: 600px;
+    }
+}
+.ms-cl .sec-title-row {
+    background: #dacd01;
+    color: #000;
+}
+.ms-cl .bg-1 {
+    background: #17639d;
+    color: #fff;
+}
+.ms-cl .bg-2 {
+    background: #F4CA3F;
+}
+.ms-cl .br-none {
+    border: none !important;
+}
+.ms-cl .td-width {
+    width: 115px;
+}
+.ms-cl .in-cl-br  {
+    border-radius: 5px;
+}
+.ms-cl .in-cl-left  {
+    border-radius: 5px 0 0 5px;
+}
+.ms-cl .in-cl-right  {
+    border-radius: 0 5px 5px 0;
+}
+.ms-cl .text-center {
+    text-align: center;
+}
+.ms-cl .text-right {
+    text-align: right;
+}
+.ms-cl .rs-value {
+    font-size: 20px;
+    color: #060b56;
+}
+.ms-cl .sp-value {
+    color: red;
+    font-weight: bold;
+    font-size: 24px;
+}
+.ms-cl .rs-title {
+    font-size: 18px;
+    text-align: center;
+    border-bottom: 1px solid #17639d;
+    margin: 0;
+}
+.ms-cl .title-inputs {
+    border: none;
+    border-bottom: 1px solid #ccc;
+}
+.ms-cl .title-points {
+    background-color: #ffffff !important;
+}
+.ms-cl .mail-title {
+    line-height: 20px !important;
+    font-size: 20px !important;
+    padding: 6px 0 !important;
+}
+.ms-cl .sub-title {
+    margin: 5px 0;
+    font-size: 12px;
+    font-style: italic;
+    font-weight: normal;
+}
+.ms-cl .text-right {
+    text-align: right;
+}
+.ms-cl .rs-vl {
+    color: #17639d;
+}
+.ms-cl .btn {
+    display: inline-block;
+    font-weight: 400;
+    color: #212529;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.ms-cl .btn-save {
+    color: #fff;
+    background-color: #17639d;
+    border-color: #17639d;
+    border-radius: 0 0 0 22px;
+    padding: 5px 30px;
+    font-size: 14px;
+}
+.ms-cl .btn-clear {
+    color: #fff;
+    background-color: #4b4c4e;
+    border-color: #4b4c4e;
+    border-radius: 0;
+    padding: 5px 30px;
+    font-size: 14px;
+}
+.ms-cl .b-text {
+    font-weight: bold !important;
+}
+.ms-cl .right-border {
+    border-right: 1px solid #17639d;
+}
+.ms-cl .total-td {
+    background: #f5f5f5;
+    font-weight: bold;
+    font-size: 16px !important;
+}
+
+.ms-cl input[type=range] {
+    -webkit-appearance: none;
+    margin: 4px 0px 10px 0px;
+    width: 100%;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 8px;
+}
+.ms-cl input[type=range]:focus {
+    outline: none;
+}
+.ms-cl input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 8px;
+    cursor: pointer;
+    animate: 0.2s;
+    background: #1e3d58;
+    border-radius: 25px;
+    box-shadow: inset 0 0 3px #ccc;
+}
+.ms-cl input[type=range]::-moz-range-track {
+    width: 100%;
+    height: 8px;
+    cursor: pointer;
+    animate: 0.2s;
+    background: #1e3d58;
+    border-radius: 25px;
+    box-shadow: inset 0 0 3px #ccc;
+}
+.ms-cl input[type=range]::-webkit-slider-thumb {
+    height: 20px;
+    width: 20px;
+    background-color: #1e3d58;
+    background-repeat: none;
+    background-size:cover;
+    cursor: pointer;
+    border-radius: 25px;
+    border: 5px solid #ffffff;
+    box-shadow: 0 0 3px #555555;
+    -webkit-appearance: none;
+    margin-top: -6.5px;
+}
+.ms-cl input[type=range]::-moz-range-thumb {
+    height: 20px;
+    width: 20px;
+    background-color: #1e3d58;
+    background-repeat: none;
+    background-size:cover;
+    cursor: pointer;
+    border-radius: 25px;
+    border: 5px solid #ffffff;
+    box-shadow: 0 0 3px #555555;
+    -webkit-appearance: none;
+    margin-top: -6.5px;
+}
+@media (max-width: 768px) {
+    .ms-cl .right-border {
+        border-right: none;
+    } 
+}
+@media print
+{    
+    .btn_sec
+    {
+        display: none !important;
+    }
+    .ms-cl .mail-title {
+        color: #000;
+    }
+}
+.ms-cl .impotant_note{
+    display: none;
+}
+</style>
+<div class="ms-cl">
+    <div class="container wrapper">
+        <div class="row">
+            <div class="col-md-12">
+                <table class="table table-sm">
+                    <thead>
+                        <tr>
+                            <th class="in-cl-br bg-1 br-none text-center mail-title">
+                                Financial Independence Calculator<br>
+                                <span class="sub-title">(CURRENT OR FUTURE PROJECTIONS)</span>
+                            </th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <div class="col-md-12" style="overflow-x: auto;">
+                <h3 class="text-center">EXPENSES</h3>
+                <table class="table table-sm">
+                    <tbody>
+                        <tr class="cr_rows">
+                            <td>Mortgage/Rent</td>
+                            <td class="td-width">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                    <span class="input-group-text">$</span>
+                                    </div>
+                                    <input type="text" id="housing-mortgagerent" class="form-control cl-in cl-housing" value="">
+                                </div>
+                            </td>
+                            <td class="td-width">
+                                <div class="input-group">
+                                    <select class="form-control cl-year">
+                                        <option value="1">Yearly</option>
+                                        <option value="12">Monthly</option>
+                                    </select>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="cr_rows">
+                            <td>Property Taxes</td>
+                            <td class="td-width">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                    <span class="input-group-text">$</span>
+                                    </div>
+                                    <input type="text" id="housing-property-taxes" class="form-control cl-in cl-housing" value="">
+                                </div>
+                            </td>
+                            <td class="td-width">
+                                <div class="input-group">
+                                    <select class="form-control cl-year">
+                                        <option value="1">Yearly</option>
+                                        <option value="12">Monthly</option>
+                                    </select>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="cr_rows">
+                            <td>Maintenance & Cleaning</td>
+                            <td class="td-width">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                    <span class="input-group-text">$</span>
+                                    </div>
+                                    <input type="text" id="housing-maintenance-cleaning" class="form-control cl-in cl-housing" value="">
+                                </div>
+                            </td>
+                            <td class="td-width">
+                                <div class="input-group">
+                                    <select class="form-control cl-year">
+                                        <option value="1">Yearly</option>
+                                        <option value="12">Monthly</option>
+                                    </select>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="cr_rows">
+                            <td>Home/Renter’s Insurance</td>
+                            <td class="td-width">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                    <span class="input-group-text">$</span>
+                                    </div>
+                                    <input type="text" id="housing-homerenters-insurance" class="form-control cl-in cl-housing" value="">
+                                </div>
+                            </td>
+                            <td class="td-width">
+                                <div class="input-group">
+                                    <select class="form-control cl-year">
+                                        <option value="1">Yearly</option>
+                                        <option value="12">Monthly</option>
+                                    </select>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="cr_rows">
+                            <td>Electricity</td>
+                            <td class="td-width">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                    <span class="input-group-text">$</span>
+                                    </div>
+                                    <input type="text" id="housing-electricity" class="form-control cl-in cl-housing" value="">
+                                </div>
+                            </td>
+                            <td class="td-width">
+                                <div class="input-group">
+                                    <select class="form-control cl-year">
+                                        <option value="1">Yearly</option>
+                                        <option value="12">Monthly</option>
+                                    </select>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="cr_rows">
+                            <td>Oil/Gas</td>
+                            <td class="td-width">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                    <span class="input-group-text">$</span>
+                                    </div>
+                                    <input type="text" id="housing-oilgas" class="form-control cl-in cl-housing" value="">
+                                </div>
+                            </td>
+                            <td class="td-width">
+                                <div class="input-group">
+                                    <select class="form-control cl-year">
+                                        <option value="1">Yearly</option>
+                                        <option value="12">Monthly</option>
+                                    </select>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="cr_rows">
+                            <td>Water/Garbage/Sewer</td>
+                            <td class="td-width">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                    <span class="input-group-text">$</span>
+                                    </div>
+                                    <input type="text" id="housing-watergarbagesewer" class="form-control cl-in cl-housing" value="">
+                                </div>
+                            </td>
+                            <td class="td-width">
+                                <div class="input-group">
+                                    <select class="form-control cl-year">
+                                        <option value="1">Yearly</option>
+                                        <option value="12">Monthly</option>
+                                    </select>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="cr_rows">
+                            <td>Phone</td>
+                            <td class="td-width">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                    <span class="input-group-text">$</span>
+                                    </div>
+                                    <input type="text" id="housing-phone" class="form-control cl-in cl-housing" value="">
+                                </div>
+                            </td>
+                            <td class="td-width">
+                                <div class="input-group">
+                                    <select class="form-control cl-year">
+                                        <option value="1">Yearly</option>
+                                        <option value="12">Monthly</option>
+                                    </select>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="cr_rows">
+                            <td>Cable/Internet</td>
+                            <td class="td-width">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                    <span class="input-group-text">$</span>
+                                    </div>
+                                    <input type="text" id="housing-cableinternet" class="form-control cl-in cl-housing" value="">
+                                </div>
+                            </td>
+                            <td class="td-width">
+                                <div class="input-group">
+                                    <select class="form-control cl-year">
+                                        <option value="1">Yearly</option>
+                                        <option value="12">Monthly</option>
+                                    </select>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="cr_rows">
+                            <td>Other (including vacation and hotels)</td>
+                            <td class="td-width">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                    <span class="input-group-text">$</span>
+                                    </div>
+                                    <input type="text" id="housing-other-including-vacation-and-hotels" class="form-control cl-in cl-housing" value="">
+                                </div>
+                            </td>
+                            <td class="td-width">
+                                <div class="input-group">
+                                    <select class="form-control cl-year">
+                                        <option value="1">Yearly</option>
+                                        <option value="12">Monthly</option>
+                                    </select>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="cr_rows">
+                            <td class="total-td"><b>Total Housing</b></td>
+                            <td class="total-td text-right rs-vl b-text" id="total_housing">-</td>
+                            <td class="total-td"></td>
+                        </tr>
+                        <tr class="cr_rows">
+                            <td colspan="3"><br></td>
+                        </tr>
+                        <tr class="cr_rows">
+                            <td>Car Payment</td>
+                            <td class="td-width">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                    <span class="input-group-text">$</span>
+                                    </div>
+                                    <input type="text" id="transportation-car-payment" class="form-control cl-in cl-car-payment" value="">
+                                </div>
+                            </td>
+                            <td class="td-width">
+                                <div class="input-group">
+                                    <select class="form-control cl-year">
+                                        <option value="1">Yearly</option>
+                                        <option value="12">Monthly</option>
+                                    </select>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="cr_rows">
+                            <td>Maintenance/Repairs</td>
+                            <td class="td-width">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                    <span class="input-group-text">$</span>
+                                    </div>
+                                    <input type="text" id="transportation-maintenancerepairs" class="form-control cl-in cl-car-payment" value="">
+                                </div>
+                            </td>
+                            <td class="td-width">
+                                <div class="input-group">
+                                    <select class="form-control cl-year">
+                                        <option value="1">Yearly</option>
+                                        <option value="12">Monthly</option>
+                                    </select>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="cr_rows">
+                            <td>Gas/Oil</td>
+                            <td class="td-width">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                    <span class="input-group-text">$</span>
+                                    </div>
+                                    <input type="text" id="transportation-gasoil" class="form-control cl-in cl-car-payment" value="">
+                                </div>
+                            </td>
+                            <td class="td-width">
+                                <div class="input-group">
+                                    <select class="form-control cl-year">
+                                        <option value="1">Yearly</option>
+                                        <option value="12">Monthly</option>
+                                    </select>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="cr_rows">
+                            <td>License/Registration</td>
+                            <td class="td-width">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                    <span class="input-group-text">$</span>
+                                    </div>
+                                    <input type="text" id="transportation-licenseregistration" class="form-control cl-in cl-car-payment" value="">
+                                </div>
+                            </td>
+                            <td class="td-width">
+                                <div class="input-group">
+                                    <select class="form-control cl-year">
+                                        <option value="1">Yearly</option>
+                                        <option value="12">Monthly</option>
+                                    </select>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="cr_rows">
+                            <td>Insurance</td>
+                            <td class="td-width">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                    <span class="input-group-text">$</span>
+                                    </div>
+                                    <input type="text" id="transportation-insurance" class="form-control cl-in cl-car-payment" value="">
+                                </div>
+                            </td>
+                            <td class="td-width">
+                                <div class="input-group">
+                                    <select class="form-control cl-year">
+                                        <option value="1">Yearly</option>
+                                        <option value="12">Monthly</option>
+                                    </select>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="cr_rows">
+                            <td>Bus/Train Fare</td>
+                            <td class="td-width">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                    <span class="input-group-text">$</span>
+                                    </div>
+                                    <input type="text" id="transportation-bustrain-fare" class="form-control cl-in cl-car-payment" value="">
+                                </div>
+                            </td>
+                            <td class="td-width">
+                                <div class="input-group">
+                                    <select class="form-control cl-year">
+                                        <option value="1">Yearly</option>
+                                        <option value="12">Monthly</option>
+                                    </select>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="cr_rows">
+                            <td>Flights (including vacation)</td>
+                            <td class="td-width">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                    <span class="input-group-text">$</span>
+                                    </div>
+                                    <input type="text" id="transportation-flights-including-vacation" class="form-control cl-in cl-car-payment" value="">
+                                </div>
+                            </td>
+                            <td class="td-width">
+                                <div class="input-group">
+                                    <select class="form-control cl-year">
+                                        <option value="1">Yearly</option>
+                                        <option value="12">Monthly</option>
+                                    </select>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="cr_rows">
+                            <td>Taxis/Ridesharing</td>
+                            <td class="td-width">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                    <span class="input-group-text">$</span>
+                                    </div>
+                                    <input type="text" id="transportation-taxisridesharing" class="form-control cl-in cl-car-payment" value="">
+                                </div>
+                            </td>
+                            <td class="td-width">
+                                <div class="input-group">
+                                    <select class="form-control cl-year">
+                                        <option value="1">Yearly</option>
+                                        <option value="12">Monthly</option>
+                                    </select>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="cr_rows">
+                            <td class="total-td"><b>Total Transportation</b></td>
+                            <td class="total-td text-right rs-vl b-text" id="total_payment">-</td>
+                            <td class="total-td"></td>
+                        </tr>
+                        <tr class="cr_rows">
+                            <td colspan="3"><br></td>
+                        </tr>
+                        <tr class="cr_rows">
+                            <td>Groceries/Eat at home</td>
+                            <td class="td-width">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                    <span class="input-group-text">$</span>
+                                    </div>
+                                    <input type="text" id="food-grocerieseat-at-home" class="form-control cl-in cl-food" value="">
+                                </div>
+                            </td>
+                            <td class="td-width">
+                                <div class="input-group">
+                                    <select class="form-control cl-year">
+                                        <option value="1">Yearly</option>
+                                        <option value="12">Monthly</option>
+                                    </select>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="cr_rows">
+                            <td>Eating Out</td>
+                            <td class="td-width">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                    <span class="input-group-text">$</span>
+                                    </div>
+                                    <input type="text" id="food-eating-out" class="form-control cl-in cl-food" value="">
+                                </div>
+                            </td>
+                            <td class="td-width">
+                                <div class="input-group">
+                                    <select class="form-control cl-year">
+                                        <option value="1">Yearly</option>
+                                        <option value="12">Monthly</option>
+                                    </select>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="cr_rows">
+                            <td class="total-td"><b>Total Food</b></td>
+                            <td class="total-td text-right rs-vl b-text" id="total_food">-</td>
+                            <td class="total-td"></td>
+                        </tr>
+                        <tr class="cr_rows">
+                            <td colspan="3"><br></td>
+                        </tr>
+                        <tr class="cr_rows">
+                            <td>Clothing & Shoes</td>
+                            <td class="td-width">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                    <span class="input-group-text">$</span>
+                                    </div>
+                                    <input type="text" id="apparel-services-clothing-shoes" class="form-control cl-in cl-apparel" value="">
+                                </div>
+                            </td>
+                            <td class="td-width">
+                                <div class="input-group">
+                                    <select class="form-control cl-year">
+                                        <option value="1">Yearly</option>
+                                        <option value="12">Monthly</option>
+                                    </select>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="cr_rows">
+                            <td>Jewelry</td>
+                            <td class="td-width">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                    <span class="input-group-text">$</span>
+                                    </div>
+                                    <input type="text" id="apparel-services-jewelry" class="form-control cl-in cl-apparel" value="">
+                                </div>
+                            </td>
+                            <td class="td-width">
+                                <div class="input-group">
+                                    <select class="form-control cl-year">
+                                        <option value="1">Yearly</option>
+                                        <option value="12">Monthly</option>
+                                    </select>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="cr_rows">
+                            <td>Dry Cleaning/Laundry</td>
+                            <td class="td-width">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                    <span class="input-group-text">$</span>
+                                    </div>
+                                    <input type="text" id="apparel-services-dry-cleaninglaundry" class="form-control cl-in cl-apparel" value="">
+                                </div>
+                            </td>
+                            <td class="td-width">
+                                <div class="input-group">
+                                    <select class="form-control cl-year">
+                                        <option value="1">Yearly</option>
+                                        <option value="12">Monthly</option>
+                                    </select>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="cr_rows">
+                            <td class="total-td"><b>Total Apparel & Services</b></td>
+                            <td class="total-td text-right rs-vl b-text" id="total_apparel">-</td>
+                            <td class="total-td"></td>
+                        </tr>
+                        <tr class="cr_rows">
+                            <td colspan="3"><br></td>
+                        </tr>
+                        <tr class="cr_rows">
+                            <td>Donations</td>
+                            <td class="td-width">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                    <span class="input-group-text">$</span>
+                                    </div>
+                                    <input type="text" id="cash-contributions-donations" class="form-control cl-in cl-cash" value="">
+                                </div>
+                            </td>
+                            <td class="td-width">
+                                <div class="input-group">
+                                    <select class="form-control cl-year">
+                                        <option value="1">Yearly</option>
+                                        <option value="12">Monthly</option>
+                                    </select>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="cr_rows">
+                            <td>Other</td>
+                            <td class="td-width">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                    <span class="input-group-text">$</span>
+                                    </div>
+                                    <input type="text" id="cash-contributions-other" class="form-control cl-in cl-cash" value="">
+                                </div>
+                            </td>
+                            <td class="td-width">
+                                <div class="input-group">
+                                    <select class="form-control cl-year">
+                                        <option value="1">Yearly</option>
+                                        <option value="12">Monthly</option>
+                                    </select>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="cr_rows">
+                            <td class="total-td"><b>Total Cash Contributions</b></td>
+                            <td class="total-td text-right rs-vl b-text" id="total_cash">-</td>
+                            <td class="total-td"></td>
+                        </tr>
+                        <tr class="cr_rows">
+                            <td colspan="3"><br></td>
+                        </tr>
+                        <tr class="cr_rows">
+                            <td>Health Insurance</td>
+                            <td class="td-width">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                    <span class="input-group-text">$</span>
+                                    </div>
+                                    <input type="text" id="healthcare-health-insurance" class="form-control cl-in cl-health" value="">
+                                </div>
+                            </td>
+                            <td class="td-width">
+                                <div class="input-group">
+                                    <select class="form-control cl-year">
+                                        <option value="1">Yearly</option>
+                                        <option value="12">Monthly</option>
+                                    </select>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="cr_rows">
+                            <td>Long-Term Care Insurance</td>
+                            <td class="td-width">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                    <span class="input-group-text">$</span>
+                                    </div>
+                                    <input type="text" id="healthcare-long-term-care-insurance" class="form-control cl-in cl-health" value="">
+                                </div>
+                            </td>
+                            <td class="td-width">
+                                <div class="input-group">
+                                    <select class="form-control cl-year">
+                                        <option value="1">Yearly</option>
+                                        <option value="12">Monthly</option>
+                                    </select>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="cr_rows">
+                            <td>Disability Insurance</td>
+                            <td class="td-width">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                    <span class="input-group-text">$</span>
+                                    </div>
+                                    <input type="text" id="healthcare-disability-insurance" class="form-control cl-in cl-health" value="">
+                                </div>
+                            </td>
+                            <td class="td-width">
+                                <div class="input-group">
+                                    <select class="form-control cl-year">
+                                        <option value="1">Yearly</option>
+                                        <option value="12">Monthly</option>
+                                    </select>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="cr_rows">
+                            <td>Medical Expenses</td>
+                            <td class="td-width">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                    <span class="input-group-text">$</span>
+                                    </div>
+                                    <input type="text" id="healthcare-medical-expenses" class="form-control cl-in cl-health" value="">
+                                </div>
+                            </td>
+                            <td class="td-width">
+                                <div class="input-group">
+                                    <select class="form-control cl-year">
+                                        <option value="1">Yearly</option>
+                                        <option value="12">Monthly</option>
+                                    </select>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="cr_rows">
+                            <td>Dental Expenses</td>
+                            <td class="td-width">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                    <span class="input-group-text">$</span>
+                                    </div>
+                                    <input type="text" id="healthcare-dental-expenses" class="form-control cl-in cl-health" value="">
+                                </div>
+                            </td>
+                            <td class="td-width">
+                                <div class="input-group">
+                                    <select class="form-control cl-year">
+                                        <option value="1">Yearly</option>
+                                        <option value="12">Monthly</option>
+                                    </select>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="cr_rows">
+                            <td>Other</td>
+                            <td class="td-width">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                    <span class="input-group-text">$</span>
+                                    </div>
+                                    <input type="text" id="healthcare-other" class="form-control cl-in cl-health" value="">
+                                </div>
+                            </td>
+                            <td class="td-width">
+                                <div class="input-group">
+                                    <select class="form-control cl-year">
+                                        <option value="1">Yearly</option>
+                                        <option value="12">Monthly</option>
+                                    </select>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="cr_rows">
+                            <td class="total-td"><b>Total Healthcare</b></td>
+                            <td class="total-td text-right rs-vl b-text" id="total_health">-</td>
+                            <td class="total-td"></td>
+                        </tr>
+                        <tr class="cr_rows">
+                            <td colspan="3"><br></td>
+                        </tr>
+                        <tr class="cr_rows">
+                            <td>Life and Personal Insurance</td>
+                            <td class="td-width">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                    <span class="input-group-text">$</span>
+                                    </div>
+                                    <input type="text" id="insurance-pensions-life-and-personal-insurance" class="form-control cl-in cl-insurance" value="">
+                                </div>
+                            </td>
+                            <td class="td-width">
+                                <div class="input-group">
+                                    <select class="form-control cl-year">
+                                        <option value="1">Yearly</option>
+                                        <option value="12">Monthly</option>
+                                    </select>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="cr_rows">
+                            <td>Pension & Social Security</td>
+                            <td class="td-width">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                    <span class="input-group-text">$</span>
+                                    </div>
+                                    <input type="text" id="insurance-pensions-pension-social-security" class="form-control cl-in cl-insurance" value="">
+                                </div>
+                            </td>
+                            <td class="td-width">
+                                <div class="input-group">
+                                    <select class="form-control cl-year">
+                                        <option value="1">Yearly</option>
+                                        <option value="12">Monthly</option>
+                                    </select>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="cr_rows">
+                            <td class="total-td"><b>Total Insurance & Pensions</b></td>
+                            <td class="total-td text-right rs-vl b-text" id="total_insurance">-</td>
+                            <td class="total-td"></td>
+                        </tr>
+                        <tr class="cr_rows">
+                            <td colspan="3"><br></td>
+                        </tr>
+                        <tr class="cr_rows">
+                            <td>Events</td>
+                            <td class="td-width">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                    <span class="input-group-text">$</span>
+                                    </div>
+                                    <input type="text" id="entertainment-events" class="form-control cl-in cl-enter" value="">
+                                </div>
+                            </td>
+                            <td class="td-width">
+                                <div class="input-group">
+                                    <select class="form-control cl-year">
+                                        <option value="1">Yearly</option>
+                                        <option value="12">Monthly</option>
+                                    </select>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="cr_rows">
+                            <td>Memberships</td>
+                            <td class="td-width">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                    <span class="input-group-text">$</span>
+                                    </div>
+                                    <input type="text" id="entertainment-memberships" class="form-control cl-in cl-enter" value="">
+                                </div>
+                            </td>
+                            <td class="td-width">
+                                <div class="input-group">
+                                    <select class="form-control cl-year">
+                                        <option value="1">Yearly</option>
+                                        <option value="12">Monthly</option>
+                                    </select>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="cr_rows">
+                            <td>Lessons/Hobbies</td>
+                            <td class="td-width">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                    <span class="input-group-text">$</span>
+                                    </div>
+                                    <input type="text" id="entertainment-lessonshobbies" class="form-control cl-in cl-enter" value="">
+                                </div>
+                            </td>
+                            <td class="td-width">
+                                <div class="input-group">
+                                    <select class="form-control cl-year">
+                                        <option value="1">Yearly</option>
+                                        <option value="12">Monthly</option>
+                                    </select>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="cr_rows">
+                            <td>Pets</td>
+                            <td class="td-width">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                    <span class="input-group-text">$</span>
+                                    </div>
+                                    <input type="text" id="entertainment-pets" class="form-control cl-in cl-enter" value="">
+                                </div>
+                            </td>
+                            <td class="td-width">
+                                <div class="input-group">
+                                    <select class="form-control cl-year">
+                                        <option value="1">Yearly</option>
+                                        <option value="12">Monthly</option>
+                                    </select>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="cr_rows">
+                            <td class="total-td"><b>Total Entertainment</b></td>
+                            <td class="total-td text-right rs-vl b-text" id="total_enter">-</td>
+                            <td class="total-td"></td>
+                        </tr>
+                        <tr class="cr_rows">
+                            <td colspan="3"><br></td>
+                        </tr>
+                        <tr class="cr_rows">
+                            <td>Tuition</td>
+                            <td class="td-width">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                    <span class="input-group-text">$</span>
+                                    </div>
+                                    <input type="text" id="all-other-expenditures-tuition" class="form-control cl-in cl-all-other" value="">
+                                </div>
+                            </td>
+                            <td class="td-width">
+                                <div class="input-group">
+                                    <select class="form-control cl-year">
+                                        <option value="1">Yearly</option>
+                                        <option value="12">Monthly</option>
+                                    </select>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="cr_rows">
+                            <td>Books/Newspapers</td>
+                            <td class="td-width">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                    <span class="input-group-text">$</span>
+                                    </div>
+                                    <input type="text" id="all-other-expenditures-booksnewspapers" class="form-control cl-in cl-all-other" value="">
+                                </div>
+                            </td>
+                            <td class="td-width">
+                                <div class="input-group">
+                                    <select class="form-control cl-year">
+                                        <option value="1">Yearly</option>
+                                        <option value="12">Monthly</option>
+                                    </select>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="cr_rows">
+                            <td>Personal Care</td>
+                            <td class="td-width">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                    <span class="input-group-text">$</span>
+                                    </div>
+                                    <input type="text" id="all-other-expenditures-personal-care" class="form-control cl-in cl-all-other" value="">
+                                </div>
+                            </td>
+                            <td class="td-width">
+                                <div class="input-group">
+                                    <select class="form-control cl-year">
+                                        <option value="1">Yearly</option>
+                                        <option value="12">Monthly</option>
+                                    </select>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="cr_rows">
+                            <td>Legal/Accounting Fees</td>
+                            <td class="td-width">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                    <span class="input-group-text">$</span>
+                                    </div>
+                                    <input type="text" id="all-other-expenditures-legalaccounting-fees" class="form-control cl-in cl-all-other" value="">
+                                </div>
+                            </td>
+                            <td class="td-width">
+                                <div class="input-group">
+                                    <select class="form-control cl-year">
+                                        <option value="1">Yearly</option>
+                                        <option value="12">Monthly</option>
+                                    </select>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="cr_rows">
+                            <td class="total-td"><b>Total All Other Expenditures</b></td>
+                            <td class="total-td text-right rs-vl b-text" id="total_all_other">-</td>
+                            <td class="total-td"></td>
+                        </tr>
+                        <tr class="cr_rows">
+                            <td colspan="3"><br></td>
+                        </tr>
+                        <tr class="cr_rows">
+                            <td>Federal</td>
+                            <td class="td-width">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                    <span class="input-group-text">$</span>
+                                    </div>
+                                    <input type="text" id="taxes-federal" class="form-control cl-in cl-tax" value="">
+                                </div>
+                            </td>
+                            <td class="td-width">
+                                <div class="input-group">
+                                    <select class="form-control cl-year">
+                                        <option value="1">Yearly</option>
+                                        <option value="12">Monthly</option>
+                                    </select>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="cr_rows">
+                            <td>State</td>
+                            <td class="td-width">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                    <span class="input-group-text">$</span>
+                                    </div>
+                                    <input type="text" id="taxes-state" class="form-control cl-in cl-tax" value="">
+                                </div>
+                            </td>
+                            <td class="td-width">
+                                <div class="input-group">
+                                    <select class="form-control cl-year">
+                                        <option value="1">Yearly</option>
+                                        <option value="12">Monthly</option>
+                                    </select>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="cr_rows">
+                            <td>Local</td>
+                            <td class="td-width">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                    <span class="input-group-text">$</span>
+                                    </div>
+                                    <input type="text" id="taxes-local" class="form-control cl-in cl-tax" value="">
+                                </div>
+                            </td>
+                            <td class="td-width">
+                                <div class="input-group">
+                                    <select class="form-control cl-year">
+                                        <option value="1">Yearly</option>
+                                        <option value="12">Monthly</option>
+                                    </select>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="cr_rows">
+                            <td class="total-td"><b>Total Taxes</b></td>
+                            <td class="total-td text-right rs-vl b-text" id="total_tax">-</td>
+                            <td class="total-td"></td>
+                        </tr>
+                        <tr class="cr_rows">
+                            <td colspan="3"><br></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-12">
+                <h3 class="rs-title">ANNUAL EXPENSES</h3>
+            </div>
+            <div class="col-md-12" style="overflow-x: auto;">
+                <table class="table table-sm">
+                    <thead>
+                        <tr>
+                            <th class="text-center" style="border-radius: 0px;border-left: 1px solid #ccc; border-bottom: 1px solid #ccc;background: #f5f5f5;font-size: 14px;">
+                                Category
+                            </th>
+                            <th class="text-center" style="border-radius: 0px;border-left: 1px solid #ccc; border-bottom: 1px solid #ccc;background: #f5f5f5;font-size: 14px;">
+                                You
+                            </th>
+                            <th class="text-center" style="border-radius: 0px;border-left: 1px solid #ccc; border-bottom: 1px solid #ccc;background: #f5f5f5;font-size: 14px;">
+                                US Household (2016)
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="cr_rows">
+                            <td>Housing</td>
+                            <td class="text-right rs-vl" id="rs_11">-</td>
+                            <td class="text-right rs-vl" id="rs_12">-</td>
+                        </tr>
+                        <tr class="cr_rows">
+                            <td>Transportation</td>
+                            <td class="text-right rs-vl" id="rs_21">-</td>
+                            <td class="text-right rs-vl" id="rs_22">-</td>
+                        </tr>
+                        <tr class="cr_rows">
+                            <td>Food</td>
+                            <td class="text-right rs-vl" id="rs_31">-</td>
+                            <td class="text-right rs-vl" id="rs_32">-</td>
+                        </tr>
+                        <tr class="cr_rows">
+                            <td>Apparel/Services</td>
+                            <td class="text-right rs-vl" id="rs_41">-</td>
+                            <td class="text-right rs-vl" id="rs_42">-</td>
+                        </tr>
+                        <tr class="cr_rows">
+                            <td>Cash Contributions</td>
+                            <td class="text-right rs-vl" id="rs_51">-</td>
+                            <td class="text-right rs-vl" id="rs_52">-</td>
+                        </tr>
+                        <tr class="cr_rows">
+                            <td>Healthcare</td>
+                            <td class="text-right rs-vl" id="rs_61">-</td>
+                            <td class="text-right rs-vl" id="rs_62">-</td>
+                        </tr>
+                        <tr class="cr_rows">
+                            <td>Insurance/Pensions</td>
+                            <td class="text-right rs-vl" id="rs_71">-</td>
+                            <td class="text-right rs-vl" id="rs_72">-</td>
+                        </tr>
+                        <tr class="cr_rows">
+                            <td>Entertainment</td>
+                            <td class="text-right rs-vl" id="rs_81">-</td>
+                            <td class="text-right rs-vl" id="rs_82">-</td>
+                        </tr>
+                        <tr class="cr_rows">
+                            <td>All Other</td>
+                            <td class="text-right rs-vl" id="rs_91">-</td>
+                            <td class="text-right rs-vl" id="rs_92">-</td>
+                        </tr>
+                        <tr class="cr_rows">
+                            <td>Taxes</td>
+                            <td class="text-right rs-vl" id="rs_101">-</td>
+                            <td class="text-right rs-vl" id="rs_102">-</td>
+                        </tr>
+                        <tr class="cr_rows">
+                            <td class="total-td"><b>Total</b></td>
+                            <td class="total-td text-right rs-vl b-text" id="total_you">-</td>
+                            <td class="total-td text-right rs-vl b-text" id="total_us">-</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-6">
+                <label>Current Annual Expenses</label>
+            </div>
+            <div class="col-md-6" style="margin-bottom: 12px;">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                    <span class="input-group-text">$</span>
+                    </div>
+                    <input type="text" id="annual_expenses" class="form-control sp-in" value="" readonly>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <label>Target withdrawal rate (<span style="font-weight: 600;" id="withdrawal_rate_vl">1.00%</span>)</label>
+            </div>
+            <div class="col-md-6">
+                <div class="range-wrap">
+                    <input id="withdrawal_rate" type="range" class="range-slider" min="1" max="7" value="1" step="0.1">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <label>Expected investment annual return (<span style="font-weight: 600;" id="annual_return_vl">1.00%</span>)</label>
+            </div>
+            <div class="col-md-6">
+                <div class="range-wrap">
+                    <input id="annual_return" type="range" class="range-slider" min="1" max="15" value="1" step="0.1">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <label>Monthly Recurring Income (from rentals, side hustles, etc.)</label>
+            </div>
+            <div class="col-md-6">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                    <span class="input-group-text">$</span>
+                    </div>
+                    <input type="text" id="recurring_income" class="form-control cl-in" value="">
+                </div>
+            </div>
+            <div class="col-md-12">
+                <br>
+                <h3 class="rs-title">RESULTS</h3>
+                <table class="table table-sm">
+                    <thead>
+                        <tr>
+                            <th class="in-cl-br bg-1 br-none text-center mail-title">
+                                Your Financial Independence Number: 
+                                <span id="final_number">$0</span>
+                            </th>
+                        </tr>
+                    </thead>
+                </table>
+                <p class="impotant_note text-center" id="impotant_note">Your recurring income is enough to cover your expenses!</p>
+            </div>
+            <div class="col-md-12 text-right btn_sec">
+                <hr style="border:none;border-bottom:1px solid #17639d;margin-bottom: 0;"/>
+                <button type="button" class="btn btn-save" id="btnClear">Clear All</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    jQuery(document).ready(function($){
+        let total_housing, total_payment, total_food, total_apparel, total_cash, total_health, total_insurance, total_enter, total_all_other, total_tax;
+        let withdrawal_rate, annual_return, annual_expenses, recurring_income;
+
+        const nft = Intl.NumberFormat("en-US", {
+            minimumFractionDigits: 0,
+            maximumFractionDigits: 0
+        });
+        const nftd = Intl.NumberFormat("en-US", {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        });
+
+        $(".cl-in, .cl-year").on("input", function(){
+            totalCalcAll();
+        });
+        $('#withdrawal_rate').on('input', function(e){
+            var min = e.target.min,
+                max = e.target.max,
+                val = e.target.value;
+                withdrawal_rate = val;
+                
+                let bg_size = (val - min) * 100 / (max - min);
+                let x = 4;
+
+                $(e.target).css({
+                    'backgroundSize': bg_size + '% 100%'
+                });
+                $("#withdrawal_rate_vl").text(nftd.format(val)+"%");
+                totalCalcAll();
+        }).trigger('input');
+        $('#annual_return').on('input', function(e){
+            var min = e.target.min,
+                max = e.target.max,
+                val = e.target.value;
+                annual_return = val;
+                
+                let bg_size = (val - min) * 100 / (max - min);
+                let x = 4;
+
+                $(e.target).css({
+                    'backgroundSize': bg_size + '% 100%'
+                });
+                $("#annual_return_vl").text(nftd.format(val)+"%");
+                totalCalcAll();
+        }).trigger('input');
+        
+        $("#btnClear").on("click",function(){
+            $(".cl-in, .sp-in").val("");
+            $(".rs-vl, #final_number").text("-");
+        });
+
+        function totalCalcAll(){
+            total_housing = totalCalc($(".cl-housing"));
+            total_payment = totalCalc($(".cl-car-payment"));
+            total_food = totalCalc($(".cl-food"));
+            total_apparel = totalCalc($(".cl-apparel"));
+            total_cash = totalCalc($(".cl-cash"));
+            total_health = totalCalc($(".cl-health"));
+            total_insurance = totalCalc($(".cl-insurance"));
+            total_enter = totalCalc($(".cl-enter"));
+            total_all_other = totalCalc($(".cl-all-other"));
+            total_tax = totalCalc($(".cl-tax"));
+
+            $("#total_housing").text("$"+nft.format(total_housing))
+            $("#total_payment").text("$"+nft.format(total_payment))
+            $("#total_food").text("$"+nft.format(total_food))
+            $("#total_apparel").text("$"+nft.format(total_apparel))
+            $("#total_cash").text("$"+nft.format(total_cash))
+            $("#total_health").text("$"+nft.format(total_health))
+            $("#total_insurance").text("$"+nft.format(total_insurance))
+            $("#total_enter").text("$"+nft.format(total_enter))
+            $("#total_all_other").text("$"+nft.format(total_all_other))
+            $("#total_tax").text("$"+nft.format(total_tax))
+
+            rs_11 = total_housing
+            rs_21 = total_payment
+            rs_31 = total_food
+            rs_41 = total_apparel
+            rs_51 = total_cash
+            rs_61 = total_health
+            rs_71 = total_insurance
+            rs_81 = total_enter
+            rs_91 = total_all_other
+            rs_101 = total_tax
+            
+            total_you = rs_11 + rs_21 + rs_31 + rs_41 + rs_51 + rs_61 + rs_71 + rs_81 + rs_91 + rs_101;
+
+            rs_12 = 18886;
+            rs_22 = 9049;
+            rs_32 = 7203;
+            rs_42 = 1803;
+            rs_52 = 2081;
+            rs_62 = 4612;
+            rs_72 = 6831;
+            rs_82 = 2913;
+            rs_92 = 3933;
+            rs_102 = 'Varies';
+
+            total_us = rs_12+rs_22+rs_32+rs_42+rs_52+rs_62+rs_72+rs_82+rs_92;
+
+            $("#rs_11").text("$"+nft.format(rs_11));
+            $("#rs_21").text("$"+nft.format(rs_21));
+            $("#rs_31").text("$"+nft.format(rs_31));
+            $("#rs_41").text("$"+nft.format(rs_41));
+            $("#rs_51").text("$"+nft.format(rs_51));
+            $("#rs_61").text("$"+nft.format(rs_61));
+            $("#rs_71").text("$"+nft.format(rs_71));
+            $("#rs_81").text("$"+nft.format(rs_81));
+            $("#rs_91").text("$"+nft.format(rs_91));
+            $("#rs_101").text("$"+nft.format(rs_101));
+            $("#total_you").text("$"+nft.format(total_you));
+            $("#rs_12").text("$"+nft.format(rs_12));
+            $("#rs_22").text("$"+nft.format(rs_22));
+            $("#rs_32").text("$"+nft.format(rs_32));
+            $("#rs_42").text("$"+nft.format(rs_42));
+            $("#rs_52").text("$"+nft.format(rs_52));
+            $("#rs_62").text("$"+nft.format(rs_62));
+            $("#rs_72").text("$"+nft.format(rs_72));
+            $("#rs_82").text("$"+nft.format(rs_82));
+            $("#rs_92").text("$"+nft.format(rs_92));
+            $("#rs_102").text(rs_102);
+            $("#total_us").text("$"+nft.format(total_us));
+
+            $("#annual_expenses").val(total_you);
+
+            annual_expenses = removeSign($("#annual_expenses").val());
+            recurring_income = removeSign($("#recurring_income").val());
+
+            final_number = (total_you - 12 * recurring_income) / (withdrawal_rate/100);
+
+            if(final_number < 0){
+                $("#impotant_note").show();
+                $("#final_number").text("$"+nft.format(0));
+            } else {
+                $("#impotant_note").hide();
+                $("#final_number").text("$"+nft.format(final_number));
+            }
+        }
+
+        function totalCalc(elm){
+            let total = 0;
+
+            elm.each(function(i, e){
+                let cr = $(e).closest("tr");
+                let term = Number(cr.find(".cl-year").val());
+                total = total + (removeSign($(this).val())*term);
+            });
+
+            return total;
+        }
+
+        function removeSign(vl){
+            return Number(vl.replace(/,/g,''));
+        }
+    });
+</script>
+<!--------copy ends ---------->
+</body>
+</html>

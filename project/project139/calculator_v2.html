@@ -1,0 +1,705 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Islamic Inheritance Calculator</title>
+</head>
+<body>
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap");
+
+#islamic_inh_calc {
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    margin: 0px 0px 0px 0px;
+    font-weight: 400;
+    color: #333;
+}
+
+#islamic_inh_calc a.Menu {
+    text-decoration: none;
+    font-weight: bold;
+    color: #1c5e55;
+    padding-left: 15px;
+}
+
+#islamic_inh_calc a.Menu:hover {
+    text-decoration: underline;
+}
+
+#islamic_inh_calc .Title {
+    font-size: 25px;
+    color: red;
+    /*#E3EAEB;*/
+}
+
+#islamic_inh_calc .tableFields {
+    border: thin solid #cfcfcf;
+    border-collapse: collapse;
+}
+
+#islamic_inh_calc table.tableFields td {
+    border: thin solid #cfcfcf !important;
+    border-collapse: collapse;
+    padding: 2px 10px;
+    font-size: 14px;
+}
+
+#islamic_inh_calc .trFields1 {
+    background-color: #f9f9f9 !important;
+}
+
+#islamic_inh_calc .tbCounts {
+    background: none repeat scroll 0 0 #fbfbfb !important;
+    border-radius: 0px !important;
+    box-shadow: none !important;
+    border: 1px solid #232323 !important;
+    color: #000 !important;
+    font-size: 15px;
+    text-align: center;
+    width: 40px;
+    height: 30px;
+}
+
+#islamic_inh_calc #btnCalculate {
+    background: transparent;
+    border-radius: 0px !important;
+    box-shadow: none !important;
+    border: 2px solid #000000 !important;
+    padding: 12px 15px !important;
+    color: #000;
+    font-weight: 500 !important;
+    font-size: 14px;
+    cursor: pointer;
+    margin: 17px 0 17px 0px;
+    text-transform: uppercase;
+
+    webkit-transition: background-color 0.4s ease-in-out, border-color 0.4s ease-in-out, color 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
+    transition: background-color 0.4s ease-in-out, border-color 0.4s ease-in-out, color 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
+    transition: transform 0.4s ease-in-out, background-color 0.4s ease-in-out, border-color 0.4s ease-in-out, color 0.4s ease-in-out;
+    transition: transform 0.4s ease-in-out, background-color 0.4s ease-in-out, border-color 0.4s ease-in-out, color 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
+}
+
+#islamic_inh_calc #btnCalculate:hover {
+    background: #000000 !important;
+    color: #fff !important;
+}
+
+#islamic_inh_calc .Errors {
+    color: Red;
+}
+
+#islamic_inh_calc .result-table {
+    padding: 0px 20px;
+}
+
+#islamic_inh_calc .result-table td {
+    padding: 4px 10px;
+    font-size: 14px;
+    line-height: 18px !important;
+}
+
+#islamic_inh_calc .shares-category tr:nth-child(even) {
+    background-color: #f9f9f9 !important;
+}
+
+#islamic_inh_calc .shares-individual tr:nth-child(even) {
+    background-color: #f9f9f9 !important;
+}
+
+#islamic_inh_calc .shares-category table td {
+    padding: 8px 10px;
+}
+
+#islamic_inh_calc .shares-individual table td {
+    padding: 8px 10px;
+}
+
+#islamic_inh_calc .back-cal-btn {
+    background: transparent;
+    border-radius: 0px !important;
+    box-shadow: none !important;
+    border: 2px solid #000000 !important;
+    padding: 12px 15px !important;
+    color: #000 !important;
+    font-weight: 500 !important;
+    font-size: 14px;
+    cursor: pointer;
+    margin: 40px 0 20px 0 !important;
+    text-transform: uppercase;
+    font-family: "Roboto";
+    display: block;
+    text-align: center;
+    max-width: 300px;
+    text-decoration: none !important;
+}
+
+#islamic_inh_calc .back-cal-btn:hover {
+    background: #000000 !important;
+    color: #fff !important;
+}
+
+#islamic_inh_calc .post-content form {
+    margin: 0;
+    padding: 0;
+    border-style: none;
+    background-color: #fff !important;
+    padding: 0 !important;
+    border-radius: 14px;
+    margin: 0 0 24px 0;
+}
+
+#islamic_inh_calc .shares-individual {
+    width: 430px;
+}
+
+#islamic_inh_calc input[type="number"] {
+    width: 50px;
+    padding: 2px !important;
+    height: 25px;
+    text-align: center !important;
+    background: #c09c44 !important;
+}
+
+/*Mobile ONLY*/
+@media screen and (max-width: 768px) {
+    #islamic_inh_calc .shares-category {
+        width: 100%;
+        display: block;
+        float: left !important;
+    }
+
+    #islamic_inh_calc .shares-individual {
+        width: 100% !important;
+        display: block;
+        float: left !important;
+    }
+}
+</style>
+<div id="islamic_inh_calc">
+    <form name="form1" method="post" action="#" id="form1">
+        <table cellpadding="0" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td style="padding-top: 5px;">
+                        <h3>Enter Surviving Relatives</h3>
+
+                        <div id="pnlErrors" style="color: red;"></div>
+
+                        <table cellpadding="4" class="tableFields" cellspacing="0" width="100%">
+                            <tbody>
+                                <tr style="background-color: #000000; color: White; font-weight: 600; font-size: 16px;">
+                                    <td style="border: thin solid #cfcfcf; border-collapse: collapse; width: 200px; height: 30px; font-size: 16px;">
+                                        Relative Name
+                                    </td>
+                                    <td style="font-size: 16px;">
+                                        Count
+                                    </td>
+                                    <td style="font-size: 16px;">
+                                        Qualification
+                                    </td>
+                                </tr>
+                                <tr class="trFields1">
+                                    <td>
+                                        1) Husband
+                                    </td>
+                                    <td>
+                                        <input name="tb1" type="number" class="tbCounts" id="tb1" />
+                                    </td>
+                                    <td>
+                                        Must be legally married. Secret or undocumented marriages are not eligible.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        2) Wives
+                                    </td>
+                                    <td>
+                                        <input name="tb2" type="number" id="tb2" class="tbCounts" />
+                                    </td>
+                                    <td>
+                                        Multiple wives are eligible. Secret or undocumented marriages are not eligible. A divorced wife is eligible if iddah period has not yet completed.
+                                    </td>
+                                </tr>
+                                <tr class="trFields1">
+                                    <td>
+                                        3) Sons
+                                    </td>
+                                    <td>
+                                        <input name="tb3" type="number" id="tb3" class="tbCounts" />
+                                    </td>
+                                    <td>
+                                        Adopted son, step-son, or illegitimate son is not eligible.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        4) Daughters
+                                    </td>
+                                    <td>
+                                        <input name="tb4" type="number" id="tb4" class="tbCounts" />
+                                    </td>
+                                    <td>
+                                        Adopted daughter, step-daughter, or illegitimate daughter is not eligible.
+                                    </td>
+                                </tr>
+                                <tr class="trFields1">
+                                    <td>
+                                        5) Grandsons
+                                    </td>
+                                    <td>
+                                        <input name="tb5" type="number" id="tb5" class="tbCounts" />
+                                    </td>
+                                    <td>
+                                        Only son's sons are eligible. Daughter's sons are not eligible.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        6) Granddaughters
+                                    </td>
+                                    <td>
+                                        <input name="tb6" type="number" id="tb6" class="tbCounts" />
+                                    </td>
+                                    <td>
+                                        Only son's daughters are eligible. Daughter's daughters are not eligible.
+                                    </td>
+                                </tr>
+                                <tr class="trFields1">
+                                    <td>
+                                        7) Father
+                                    </td>
+                                    <td>
+                                        <input name="tb7" type="number" id="tb7" class="tbCounts" />
+                                    </td>
+                                    <td>
+                                        Illegitimate father, or step-father is not eligible.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        8) Mother
+                                    </td>
+                                    <td>
+                                        <input name="tb8" type="number" id="tb8" class="tbCounts" />
+                                    </td>
+                                    <td>
+                                        Illegitimate mother, or step-mother is not eligible.
+                                    </td>
+                                </tr>
+                                <tr class="trFields1">
+                                    <td>
+                                        9) Grandfather
+                                    </td>
+                                    <td>
+                                        <input name="tb9" type="number" id="tb9" class="tbCounts" />
+                                    </td>
+                                    <td>
+                                        Only father's father is eligible. Mother's father is not eligible.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        10) Paternal Grandmother
+                                    </td>
+                                    <td>
+                                        <input name="tb10" type="number" id="tb10" class="tbCounts" />
+                                    </td>
+                                    <td>
+                                        Father's mother is eligible.
+                                    </td>
+                                </tr>
+                                <tr class="trFields1">
+                                    <td>
+                                        11) Maternal Grandmother
+                                    </td>
+                                    <td>
+                                        <input name="tb11" type="number" id="tb11" class="tbCounts" />
+                                    </td>
+                                    <td>
+                                        Mother's mother is eligible.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        12) Full Brothers
+                                    </td>
+                                    <td>
+                                        <input name="tb12" type="number" id="tb12" class="tbCounts" />
+                                    </td>
+                                    <td>
+                                        Brothers who share the same father and the mother with the deceased.
+                                    </td>
+                                </tr>
+                                <tr class="trFields1">
+                                    <td>
+                                        13) Full Sisters
+                                    </td>
+                                    <td>
+                                        <input name="tb13" type="number" id="tb13" class="tbCounts" />
+                                    </td>
+                                    <td>
+                                        Sisters who share the same father and the mother with the deceased.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        14) Paternal Brothers
+                                    </td>
+                                    <td>
+                                        <input name="tb14" type="number" id="tb14" class="tbCounts" />
+                                    </td>
+                                    <td>
+                                        Brothers who share the same father, but a different mother.
+                                    </td>
+                                </tr>
+                                <tr class="trFields1">
+                                    <td>
+                                        15) Paternal Sisters
+                                    </td>
+                                    <td>
+                                        <input name="tb15" type="number" id="tb15" class="tbCounts" />
+                                    </td>
+                                    <td>
+                                        Sisters who share the same father, but a different mother.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        16) Maternal Sibling
+                                    </td>
+                                    <td>
+                                        <input name="tb16" type="number" id="tb16" class="tbCounts" />
+                                    </td>
+                                    <td>
+                                        Brothers who share the same mother, but a different father.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        17) Full Nephews
+                                    </td>
+                                    <td>
+                                        <input name="tb17" type="number" id="tb17" class="tbCounts" />
+                                    </td>
+                                    <td>
+                                        Only brother's son is eligible. Sister's son is not eligible.
+                                    </td>
+                                </tr>
+                                <tr class="trFields1">
+                                    <td>
+                                        18) Paternal Nephews
+                                    </td>
+                                    <td>
+                                        <input name="tb18" type="number" id="tb18" class="tbCounts" />
+                                    </td>
+                                    <td>
+                                        Only paternal brother's son is eligible. Paternal brother's daughter is not eligible.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        19) Full Paternal Uncles
+                                    </td>
+                                    <td>
+                                        <input name="tb19" type="number" id="tb19" class="tbCounts" />
+                                    </td>
+                                    <td>
+                                        Father's full brother.
+                                    </td>
+                                </tr>
+                                <tr class="trFields1">
+                                    <td>
+                                        20) Paternal Paternal Uncles
+                                    </td>
+                                    <td>
+                                        <input name="tb20" type="number" id="tb20" class="tbCounts" />
+                                    </td>
+                                    <td>
+                                        Father's paternal brother.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        21) Full Cousins
+                                    </td>
+                                    <td>
+                                        <input name="tb21" type="number" id="tb21" class="tbCounts" />
+                                    </td>
+                                    <td>
+                                        Father's full brother's son.
+                                    </td>
+                                </tr>
+                                <tr class="trFields1">
+                                    <td>
+                                        22) Paternal Cousins
+                                    </td>
+                                    <td>
+                                        <input name="tb22" type="number" id="tb22" class="tbCounts" />
+                                    </td>
+                                    <td>
+                                        Father's paternal brother's son.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3" align="center">
+                                        <input type="button" name="btnCalculate" value="Calculate Inheritance" id="btnCalculate" style="font-weight: bold;" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3">
+                                        Please note:
+                                        <ul>
+                                            <li>Non-Muslim relatives are not eligible for inheritance. They might, however, receive the bequeathal.</li>
+                                            <li>If the wife is expecting a child delivery, then the baby will receive the share.</li>
+                                            <li>Relatives not in the above list are not among the standard heirs. They are not eligible for inheritance.</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+
+    <form name="form2" method="post" action="#" id="form2" style="display: none;">
+        <table cellpadding="0" cellspacing="0" class="result-table">
+            <tbody>
+                <tr>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>
+                        <table cellpadding="0" cellspacing="0">
+                            <tbody>
+                                <tr>
+                                    <td valign="top" class="shares-category">
+                                        <h3>Shares by Category</h3>
+                                        <table width="100%" border="1" cellpadding="4" cellspacing="0" rules="all" id="dgSharesCtg" style="color: #333333; border: 1px solid #cfcfcf;">
+                                            <tr style="background-color: #000000 !important; color: White; font-weight: 600; font-size: 16px;">
+                                                <td style="font-size: 16px;">Relative Category</td>
+                                                <td style="font-size: 16px;">Share Fraction</td>
+                                                <td style="font-size: 16px;">Share Percentage</td>
+                                            </tr>
+                                            <tr>
+                                                <td><div>Wife</div></td>
+                                                <td style="width: 50px;"><div>1/8</div></td>
+                                                <td style="width: 50px;"><div>12.50%</div></td>
+                                            </tr>
+                                            <tr>
+                                                <td><div>Son</div></td>
+                                                <td style="width: 50px;"><div>7/8</div></td>
+                                                <td style="width: 50px;"><div>87.50%</div></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+
+                                    <td class="shares-individual">
+                                        <h3>Shares by Individual</h3>
+                                        <table width="100%" border="1" cellpadding="4" cellspacing="0" rules="all" id="dgSharesIndiv" style="color: #333333; border: 1px solid #cfcfcf;">
+                                            <tr style="background-color: #000000 !important; color: White; font-weight: 600; font-size: 16px;">
+                                                <td style="font-size: 16px;">Relative</td>
+                                                <td style="font-size: 16px;">Share Fraction</td>
+                                                <td style="font-size: 16px;">Share Percentage</td>
+                                            </tr>
+                                            <tr>
+                                                <td><div>Wife</div></td>
+                                                <td style="width: 50px;"><div>1/8</div></td>
+                                                <td style="width: 50px;"><div>12.50%</div></td>
+                                            </tr>
+                                            <tr>
+                                                <td><div>Son</div></td>
+                                                <td style="width: 50px;"><div>7/8</div></td>
+                                                <td style="width: 50px;"><div>87.50%</div></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                <tr style="display: none;">
+                    <td style="padding-left: 15px;">
+                        <br />
+                        <br />
+                        <b>Calculation Steps:</b>
+                        <ul>
+                            <span id="lblMessages">
+                                <li>Wife gets the prescribed share of 1/8 (Rule 2b).</li>
+                                <li>Mother gets the prescribed share of 1/6 (Rule 6b).</li>
+                                <li>Distribute the remaining shares according to relative priority (Rule 14)</li>
+                                <li>Son is the only heir remaining receiving share of 17/24 (Rule 14).</li>
+                            </span>
+                        </ul>
+                        <div class="backbtn"><a href="javascript:void(0)" onclick="hideResult()" class="back-cal-btn">Back to Inheritance Calculator </a></div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+
+    <script src="https://islamicaid.org/wp-content/themes/Avada-Child-Theme/bundle.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script>
+        jQuery(document).ready(function () {
+            jQuery(".tbCounts").on("blur", function () {
+                if (this.value <= 0) {
+                    this.value = "";
+                }
+            });
+
+            hideResult();
+
+            jQuery("#btnCalculate").click(function () {
+                let result = [];
+                try {
+                    jQuery("#pnlErrors").html("");
+
+                    result = calculator.calculate({
+                        husband: $("#tb1").val(),
+                        wife: $("#tb2").val(),
+                        son: $("#tb3").val(),
+                        daughter: $("#tb4").val(),
+                        paternal_grand_son: $("#tb5").val(),
+                        paternal_grand_daughter: $("#tb6").val(),
+                        father: $("#tb7").val(),
+                        mother: $("#tb8").val(),
+                        paternal_grand_father: $("#tb9").val(),
+                        paternal_grand_mother: $("#tb10").val(),
+                        maternal_grand_mother: $("#tb11").val(),
+                        full_brother: $("#tb12").val(),
+                        full_sister: $("#tb13").val(),
+                        paternal_brother: $("#tb14").val(),
+                        paternal_sister: $("#tb15").val(),
+                        maternal_sibling: $("#tb16").val(),
+                        full_nephew: $("#tb17").val(),
+                        paternal_nephew: $("#tb18").val(),
+                        full_paternal_uncle: $("#tb19").val(),
+                        paternal_paternal_uncle: $("#tb20").val(),
+                        full_cousin: $("#tb21").val(),
+                        paternal_cousin: $("#tb22").val(),
+                    });
+
+                    console.log(result);
+
+                    if (result.length <= 0) {
+                        throw Error("No result found.");
+                    }
+                } catch (error) {
+                    jQuery("#pnlErrors").html("<span>Following errors were encountered:</span><ul><li>" + error.message + "</li></ul>");
+
+                    jQuery("html, body").animate({ scrollTop: 0 }, "slow");
+
+                    return;
+                }
+
+                //show data
+                printResult(result);
+
+                jQuery(window).scrollTop(800);
+            });
+        });
+
+        //----------------------------------------------------//
+        //--------------------- FUNCTIONS ---------------------//
+        //----------------------------------------------------//
+
+        function printResult(result) {
+            showResult();
+
+            jQuery.each(result, function (row, data) {
+                let name = data.name;
+                let fraction = data.share.n + "/" + data.share.d;
+                let percent = (data.share.n / data.share.d) * 100;
+
+                jQuery("#dgSharesCtg").append(getRows(name, fraction, percent));
+
+                if (data.count > 1) {
+                    fraction = decimalToFraction(data.share.n / data.share.d / data.count);
+                    percent = ((data.share.n / data.share.d) * 100) / data.count;
+
+                    for (let i = 1; i <= parseInt(data.count); i++) {
+                        jQuery("#dgSharesIndiv").append(getRows(name + " " + i, fraction, percent));
+                    }
+                } else {
+                    jQuery("#dgSharesIndiv").append(getRows(name, fraction, percent));
+                }
+            });
+        }
+
+        function showResult() {
+            let tempCat =
+                '<tr style="background-color: #000000 !important; color: White; font-weight: 600; font-size: 16px;">' +
+                '<td style="font-size: 16px;">Relative Category</td><td style="font-size: 16px;">Share Fraction</td><td style="font-size: 16px;">Share Percentage</td>' +
+                "</tr>";
+
+            let tempInd =
+                '<tr style="background-color: #000000 !important; color: White; font-weight: 600; font-size: 16px;">' +
+                '<td style="font-size: 16px;">Relative</td><td style="font-size: 16px;">Share Fraction</td><td style="font-size: 16px;">Share Percentage</td>' +
+                "</tr>";
+
+            jQuery("#dgSharesCtg").html(tempCat);
+            jQuery("#dgSharesIndiv").html(tempInd);
+
+            jQuery("#form2").fadeIn();
+            jQuery("#form1").hide();
+        }
+
+        function hideResult() {
+            jQuery("#form2").hide();
+            jQuery(".tbCounts").val("");
+            jQuery("#form1").fadeIn();
+        }
+
+        function decimalToFraction(x) {
+            var tolerance = 1.0e-6;
+            var h1 = 1,
+                h2 = 0,
+                k1 = 0,
+                k2 = 1;
+            var b = x;
+            do {
+                var a = Math.floor(b);
+                var aux = h1;
+                h1 = a * h1 + h2;
+                h2 = aux;
+                aux = k1;
+                k1 = a * k1 + k2;
+                k2 = aux;
+                b = 1 / (b - a);
+            } while (Math.abs(x - h1 / k1) > x * tolerance);
+
+            return h1 + "/" + k1;
+        }
+
+        function getRows(name, fraction, percent) {
+            const capitalize = (s) => {
+                if (s.indexOf("_") >= 0) {
+                    const words = s.split("_");
+                    return words
+                        .map((word) => {
+                            return word[0].toUpperCase() + word.substring(1);
+                        })
+                        .join("");
+                }
+                if (typeof s === "string") {
+                    return s.charAt(0).toUpperCase() + s.slice(1);
+                }
+                return s;
+            };
+
+            let template = "<tr>" + "<td><div>{name}</div></td>" + '<td style="width:50px;"><div>{fraction}</div></td>' + '<td style="width:50px;"><div>{percent}%</div></td>' + "</tr>";
+
+            return template.replace("{name}", capitalize(name)).replace("{fraction}", fraction).replace("{percent}", percent.toFixed(2));
+        }
+    </script>
+</div>
+    
+</body>
+</html>

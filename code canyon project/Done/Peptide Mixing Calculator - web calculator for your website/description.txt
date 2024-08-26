@@ -1,0 +1,30 @@
+Peptide Mixing calculator - Web Calculator for your Website
+
+Welcome to our <b>Peptide Mixing calculator</b>, This Calculator to help you evaluate the return on investment (ROI) from your SEO campaign. By inputting key data points, you can gain valuable insight into the financial impact of your SEO efforts.
+<br>
+<br>
+<u><b>User inputs:</b></u>
+<ul>
+    <li>Total volume of syringe</li>
+    <li>Amount of peptide in vial</li>
+    <li>How much water are you adding?</li>
+    <li>Desired peptide dose (mcg)</li>
+</ul>
+<br>
+<u><b>Outputs:</b></u>
+<ul>
+    <li>For a - mcg dose, draw up to tick mark -</li>
+</ul>
+<br>
+<u><b>Features of the Peptide Mixing Calculator:</b></u>
+<ul>
+    <li>- Calculates the correct volume to draw from the syringe to achieve the desired dose.</li>
+    <li>- Instant result without page reload</li>
+    <li>- JS and CSS loads when shortcode called on page</li>
+    <li>- 100% Responsive design</li>
+    <li>- Unique Design</li>
+    <li>- Well Documented (proper help instructions for setup)</li>
+    <li>- Dedicated Support</li>
+</ul>
+<br>
+The calculator is built using HTML, CSS, and JavaScript, and it also utilizes the popular JavaScript library jQuery. A premium quality <b>Peptide Mixing calculator</b> which you can easily embed into any website (well documented).

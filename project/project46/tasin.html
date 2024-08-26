@@ -1,0 +1,908 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+    <title>Quiz Form</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+<style>
+#mx_cl *,
+::after,
+::before {
+    box-sizing: border-box;
+}
+
+#mx_cl {
+    line-height: 1.5;
+    font-family: inherit;
+}
+
+#mx_cl .container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #4a4a4a;
+    text-align: left;
+}
+
+#mx_cl label {
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+#mx_cl .row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+#mx_cl .col-md-1,
+#mx_cl .col-md-10,
+#mx_cl .col-md-11,
+#mx_cl .col-md-12,
+#mx_cl .col-md-2,
+#mx_cl .col-md-3,
+#mx_cl .col-md-4,
+#mx_cl .col-md-5,
+#mx_cl .col-md-6,
+#mx_cl .col-md-7,
+#mx_cl .col-md-8,
+#mx_cl .col-md-9 {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+#mx_cl .form-group {
+    margin-bottom: 1rem;
+}
+
+#mx_cl .form-control {
+    display: block;
+    width: 706px;
+    height: 46px;
+    padding: 0.275rem 0.75rem;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #4a4a4a;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #dddddd;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+#mx_cl .form-control:focus {
+    outline: none;
+}
+
+#mx_cl .btn {
+    display: inline-block;
+    font-weight: 400;
+    color: #212529;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+#mx_cl .btn-primary {
+    color: #fff;
+    background-color: #D24C37;
+    border-color: #D24C37;
+    padding-left: 100px;
+    padding-right: 100px;
+    border-radius: 0px;
+}
+
+#mx_cl .btn-reset {
+    color: #fff;
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+#mx_cl table {
+    border-collapse: collapse;
+}
+
+#mx_cl .table {
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #212529;
+}
+
+#mx_cl .table td,
+#mx_cl .table th {
+    padding: .75rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+}
+
+#mx_cl .text-center {
+    text-align: center;
+}
+
+@media (min-width: 576px) {
+    #mx_cl .container {
+        max-width: 100%;
+    }
+}
+
+@media (min-width: 768px) {
+    #mx_cl .container {
+        max-width: 100%;
+    }
+
+    #mx_cl .col-md-12 {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    #mx_cl .col-md-9 {
+        -ms-flex: 0 0 75%;
+        flex: 0 0 75%;
+        max-width: 75%;
+    }
+
+    #mx_cl .col-md-8 {
+        -ms-flex: 0 0 66.666667%;
+        flex: 0 0 66.666667%;
+        max-width: 66.666667%;
+    }
+
+    #mx_cl .col-md-7 {
+        -ms-flex: 0 0 58.33333%;
+        flex: 0 0 58.33333%;
+        max-width: 58.33333%;
+    }
+
+    #mx_cl .col-md-6 {
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+    #mx_cl .col-md-5 {
+        -ms-flex: 0 0 41.666667%;
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+    }
+
+    #mx_cl .col-md-4 {
+        -ms-flex: 0 0 33.333333%;
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+    }
+
+    #mx_cl .col-md-3 {
+        -ms-flex: 0 0 25%;
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+}
+
+@media (min-width: 992px) {
+    #mx_cl .container {
+        max-width: 900px;
+    }
+}
+
+@media (min-width: 1200px) {
+    #mx_cl .container {
+        max-width: 900px;
+    }
+}
+
+#mx_cl .text-right {
+    text-align: right;
+}
+
+#mx_cl .form-group,
+#mx_cl .input-group {
+    position: relative;
+    margin-bottom: 15px;
+}
+@media (max-width: 768px) {
+    #mx_cl .slide-element{
+        padding: 10px;
+    }
+}
+#mx_cl .top-title {
+    font-size: 25px;
+}
+#mx_cl .btn-primary {
+    color: #fff;
+    background-color: #D24C37;
+    border-color: #D24C37;
+    border-radius: 0px;
+    padding-left: 110px;
+    padding-right: 110px;
+    font-size: 24px;
+    font-weight: 400;
+    margin-top: 20px;
+}
+#mx_cl .slide-element {
+    text-align: center;
+    padding: 60px 60px;
+    border: 1px solid #BFBFBF;
+    border-radius: 8px;
+    min-width: 400px;
+    margin-top: 15px;
+
+}
+#mx_cl .second-slide-element {
+    text-align: center;
+}
+#mx_cl .form-control {
+    display: inline-block;
+    width: 75%;
+    height: calc(1em + 0.75rem + 2px);
+    padding: 0.275rem 0.75rem;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #4a4a4a;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #dddddd;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 400;
+}
+#mx_cl .form-control {
+    display: inline-block;
+    width: 100%;
+    height: calc(1em + 0.75rem + 2px);
+    padding: 0.275rem 0.75rem;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #4a4a4a;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #dddddd;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 400;
+    border: none;
+    border-bottom: 3px solid #646464;
+}
+#mx_cl .first-slide-element {
+    margin-top: 70px;
+    margin-bottom: 70px;
+    background-color: #ffffff;
+}
+#mx_cl .mid-head {
+    margin-bottom: 30px;
+    margin-top: 0px;
+}
+#mx_cl .small {
+    display: flex;
+    justify-content: right;
+    margin-bottom: 60px;
+}
+#mx_cl .mid-p {
+    margin-top: 0px;
+    font-size: 12px;
+    font-weight: 400;
+    text-align: right;
+}
+#mx_cl .btn-second {
+    color: #D24C37;
+    background-color: #ffffff;
+    border-color: #D24C37;
+    border-radius: 0px;
+    padding-left: 100px;
+    padding-right: 100px;
+    font-size: 24px;
+    font-weight: 400;
+}
+#mx_cl .btn-second:hover {
+    color: #ffffff;
+    background-color: #D24C37;
+    border-color: #D24C37;
+    border-radius: 0px;
+    padding-left: 100px;
+    padding-right: 100px;
+    font-size: 24px;
+    font-weight: 400;
+}
+#mx_cl .btn-action {
+    color: #D24C37;
+    background-color: #ffffff;
+    border-color: #D24C37;
+    border-radius: 0px;
+    padding-left: 40px;
+    padding-right: 40px;
+    font-size: 18px;
+    font-weight: 400;
+    text-align: center;
+}
+#mx_cl .btn-action:hover {
+    color: #ffffff;
+    background-color: #D24C37;
+    border-color: #D24C37;
+}
+#mx_cl .score-title {
+    font-size: 24px;
+    font-weight: 500;
+
+}
+#mx_cl .score-vl {
+    font-size: 36px;
+    font-weight: 700;
+}
+#mx_cl .sub-head-p {
+    font-size: 16px;
+    color: #AAAAAA;
+    margin-top: 0px;
+}
+#mx_cl .bottom-sub-head p {
+    margin-bottom: 0px;
+}
+#mx_cl .mid-mid-box {
+    color: #8C8C8C;
+    margin-top: 0px;
+
+}
+#mx_cl .button-sec {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+#mx_cl .last-last-div {
+    text-align: left;
+    padding: 60px 60px;
+    min-width: 400px;
+    margin-top: 15px;
+}
+
+#mx_cl .last {
+    color: #FF0000;
+}
+
+#mx_cl .last-last {
+    color: #00c716;
+}
+
+#mx_cl .mid-head-second {
+    text-align: left;
+    color: #FF0000;
+}
+
+#mx_cl .bottom-sub-head {
+    text-align: left;
+}
+
+#mx_cl .checkbox-one,
+#mx_cl .checkbox-two {
+    text-align: left;
+}
+
+#mx_cl .mid-mid-box {
+    padding-left: 20px;
+}
+
+#mx_cl .bottom-sub-head {
+    margin-bottom: 20px;
+}
+
+#mx_cl .progressbar {
+    position: relative;
+    width: 100%;
+    height: 20px;
+    background-color: #E6E6E6;
+    border-radius: 5px;
+}
+
+#mx_cl .progressbar-track {
+    position: relative;
+    width: 56%;
+    height: 20px;
+    background-color: #FF0000;
+    border-radius: 5px;
+}
+
+#mx_cl .progressbar-thumb {
+    position: absolute;
+    border-radius: 25px;
+    right: 5px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+#mx_cl .form-group {
+    width: 75%;
+    margin: 0 auto;
+}
+#mx_cl a {
+    text-decoration: none;
+}
+#mx_cl .ds-none {
+    display: none;
+}
+</style>
+<div class="ms-cl" id="mx_cl">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 slide-elm" id="slide_1">
+                <div class="slide-element">
+                    <div class="first-slide-element">
+                        <h3>HENRY QUIZ</h3>
+                        <button type="button" class="btn btn-primary btn-next" data-slide="slide_2">Start</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 slide-elm ds-none" id="slide_2">
+                <div class="slide-element">
+                    <div class="second-slide-element">
+                        <h3 class="mid-head">HEY THERE, WHAT DO WE CALL YOU?</h3>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="name_input" placeholder="Enter First Name">
+                            <p class="mid-p">Please Enter </p>
+                        </div>
+                        <br><br><br>
+                        <button type="button" class="btn btn-second btn-next" data-slide="slide_10">LET'S GO</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 slide-elm ds-none" id="slide_10">
+                <div class="slide-element">
+                    <div class="progressbar">
+                        <div class="progressbar-track" style="width: 24%;">
+                            <div class="progressbar-thumb">24%</div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="bottom-sub-head">
+                        <p>What percentage of your monthly income do you save or invest?</p>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="checkbox-one">
+                                <input type="radio" id="op30" name="ques_8" value="0">
+                                <label for="op30">Over 20%</label><br>
+                                <input type="radio" id="op30" name="ques_8" value="1">
+                                <label for="op30">Between 0-20%</label><br>
+                                <input type="radio" id="op31" name="ques_8" value="2">
+                                <label for="op31">0%</label><br>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="button-sec">
+                        <button class="btn btn-action btn-prev" type="button" data-slide="slide_2">BACK</button>
+                        <button class="btn btn-action btn-next ds-none" type="button" data-slide="slide_11">NEXT</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 slide-elm ds-none" id="slide_11">
+                <div class="slide-element">
+                    <div class="progressbar">
+                        <div class="progressbar-track" style="width: 32%;">
+                            <div class="progressbar-thumb">32%</div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="bottom-sub-head">
+                        <p>Have you set financial goals for yourself in the short-term (1-3 years) and long-term (5-10 years)? If so, how confident are you that you're on track to meet them?</p>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="checkbox-one">
+                                <input type="radio" id="op32" name="ques_9" value="0">
+                                <label for="op32">No</label><br>
+                                <input type="radio" id="op33" name="ques_9" value="1">
+                                <label for="op33">Yes but not confident</label><br>
+                                <input type="radio" id="op34" name="ques_9" value="2">
+                                <label for="op34">Yes and very confident</label><br>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="button-sec">
+                        <button class="btn btn-action btn-prev" type="button" data-slide="slide_10">BACK</button>
+                        <button class="btn btn-action btn-next ds-none" type="button" data-slide="slide_12">NEXT</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 slide-elm ds-none" id="slide_12">
+                <div class="slide-element">
+                    <div class="progressbar">
+                        <div class="progressbar-track" style="width: 40%;">
+                            <div class="progressbar-thumb">40%</div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="bottom-sub-head">
+                        <p>Do you have an emergency fund? If yes, how many months’ worth of expenses does it cover?</p>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="checkbox-one">
+                                <input type="radio" id="op35" name="ques_10" value="0">
+                                <label for="op35">No</label><br>
+                                <input type="radio" id="op36" name="ques_10" value="1">
+                                <label for="op36">3-6 months</label><br>
+                                <input type="radio" id="op37" name="ques_10" value="2">
+                                <label for="op37">6+ months</label><br>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="button-sec">
+                        <button class="btn btn-action btn-prev" type="button" data-slide="slide_11">BACK</button>
+                        <button class="btn btn-action btn-next ds-none" type="button" data-slide="slide_13">NEXT</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 slide-elm ds-none" id="slide_13">
+                <div class="slide-element">
+                    <div class="progressbar">
+                        <div class="progressbar-track" style="width: 48%;">
+                            <div class="progressbar-thumb">48%</div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="mid-head-second">
+                        <h3>Good job so far! You’re half done.</h3>
+                    </div>
+                    <div class="bottom-sub-head">
+                        <p>How do you organize your monthly saving? Do you prioritize 401k, individual brokerage, debt, Roth contributions (etc)? Why?</p>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="checkbox-one">
+                                <input type="radio" id="op38" name="ques_11" value="0">
+                                <label for="op38">No.</label><br>
+                                <input type="radio" id="op39" name="ques_11" value="1">
+                                <label for="op39">Yes but idk if I'm doing it correctly</label><br>
+                                <input type="radio" id="op40" name="ques_11" value="2">
+                                <label for="op40">Yes and I'm positive I'm doing it perfectly</label><br>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="button-sec">
+                        <button class="btn btn-action btn-prev" type="button" data-slide="slide_12">BACK</button>
+                        <button class="btn btn-action btn-next ds-none" type="button" data-slide="slide_14">NEXT</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 slide-elm ds-none" id="slide_14">
+                <div class="slide-element">
+                    <div class="progressbar">
+                        <div class="progressbar-track" style="width: 56%;">
+                            <div class="progressbar-thumb">56%</div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="bottom-sub-head">
+                        <p>Do you have any outstanding debt? If yes, how confident are you that your strategy to pay it off is optimal?</p>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="checkbox-one">
+                                <input type="radio" id="op41" name="ques_12" value="0">
+                                <label for="op41">Yes - no idea.</label><br>
+                                <input type="radio" id="op42" name="ques_12" value="1">
+                                <label for="op42">Yes but I feel confident.</label><br>
+                                <input type="radio" id="op43" name="ques_12" value="2">
+                                <label for="op43">No</label><br>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="button-sec">
+                        <button class="btn btn-action btn-prev" type="button" data-slide="slide_13">BACK</button>
+                        <button class="btn btn-action btn-next ds-none" type="button" data-slide="slide_15">NEXT</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 slide-elm ds-none" id="slide_15">
+                <div class="slide-element">
+                    <div class="progressbar">
+                        <div class="progressbar-track" style="width: 64%;">
+                            <div class="progressbar-thumb">64%</div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="bottom-sub-head">
+                        <p>Have you created a budget for your monthly expenses? If yes, how closely do you follow it?</p>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="checkbox-one">
+                                <input type="radio" id="op44" name="ques_13" value="0">
+                                <label for="op44">No</label><br>
+                                <input type="radio" id="op45" name="ques_13" value="1">
+                                <label for="op45">Yes but not at all</label><br>
+                                <input type="radio" id="op46" name="ques_13" value="2">
+                                <label for="op46">Yes, very closely</label><br>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="button-sec">
+                        <button class="btn btn-action btn-prev" type="button" data-slide="slide_14">BACK</button>
+                        <button class="btn btn-action btn-next ds-none" type="button" data-slide="slide_16">NEXT</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 slide-elm ds-none" id="slide_16">
+                <div class="slide-element">
+                    <div class="progressbar">
+                        <div class="progressbar-track" style="width: 72%;">
+                            <div class="progressbar-thumb">72%</div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="bottom-sub-head">
+                        <p>Do you have a retirement savings plan? If yes, what percentage of your income do you contribute to it?</p>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="checkbox-one">
+                                <input type="radio" id="op47" name="ques_14" value="0">
+                                <label for="op47">No</label><br>
+                                <input type="radio" id="op48" name="ques_14" value="1">
+                                <label for="op48">Yes, 0-20%</label><br>
+                                <input type="radio" id="op49" name="ques_14" value="2">
+                                <label for="op49">20% +</label><br>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="button-sec">
+                        <button class="btn btn-action btn-prev" type="button" data-slide="slide_15">BACK</button>
+                        <button class="btn btn-action btn-next ds-none" type="button" data-slide="slide_17">NEXT</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 slide-elm ds-none" id="slide_17">
+                <div class="slide-element">
+                    <div class="progressbar">
+                        <div class="progressbar-track" style="width: 80%;">
+                            <div class="progressbar-thumb">80%</div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="bottom-sub-head">
+                        <p>Have you diversified your investment portfolio? Are you confidently you're investing in the way that is expected grow them as fast as prudently possible?</p>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="checkbox-one">
+                                <input type="radio" id="op50" name="ques_15" value="0">
+                                <label for="op50">I have no clue</label><br>
+                                <input type="radio" id="op51" name="ques_15" value="1">
+                                <label for="op51">Yes but I don't know if I did it well</label><br>
+                                <input type="radio" id="op52" name="ques_15" value="2">
+                                <label for="op52">Yes.</label><br>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="button-sec">
+                        <button class="btn btn-action btn-prev" type="button" data-slide="slide_16">BACK</button>
+                        <button class="btn btn-action btn-next ds-none" type="button" data-slide="slide_18">NEXT</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 slide-elm ds-none" id="slide_18">
+                <div class="slide-element">
+                    <div class="progressbar">
+                        <div class="progressbar-track" style="width: 88%;">
+                            <div class="progressbar-thumb">88%</div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="bottom-sub-head">
+                        <p>Do you have a financial advisor or accountant to help you manage your finances? If yes, how often do you meet with them?</p>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="checkbox-one">
+                                <input type="radio" id="op53" name="ques_16" value="0">
+                                <label for="op53">No</label><br>
+                                <input type="radio" id="op54" name="ques_16" value="1">
+                                <label for="op54">Yes but they don't really help me.</label><br>
+                                <input type="radio" id="op55" name="ques_16" value="2">
+                                <label for="op55">Yes, at least twice a year</label><br>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="button-sec">
+                        <button class="btn btn-action btn-prev" type="button" data-slide="slide_17">BACK</button>
+                        <button class="btn btn-action btn-next ds-none" type="button" data-slide="slide_19">NEXT</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 slide-elm ds-none" id="slide_19">
+                <div class="slide-element">
+                    <div class="progressbar">
+                        <div class="progressbar-track" style="width: 96%;">
+                            <div class="progressbar-thumb">96%</div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="bottom-sub-head">
+                        <p>Are you happy with your current financial situation? How confident are you that you're taking the necessary steps to improve it?</p>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="checkbox-one">
+                                <input type="radio" id="op56" name="ques_17" value="0">
+                                <label for="op56">No and I have no idea</label><br>
+                                <input type="radio" id="op57" name="ques_17" value="1">
+                                <label for="op57">Yes but I have no plan</label><br>
+                                <input type="radio" id="op58" name="ques_17" value="2">
+                                <label for="op58">Yes</label><br>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="button-sec">
+                        <button class="btn btn-action btn-prev" type="button" data-slide="slide_18">BACK</button>
+                        <button class="btn btn-action btn-next ds-none" type="button" data-slide="slide_23">NEXT</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 slide-elm ds-none" id="slide_23">
+                <div class="slide-element">
+                    <div class="last-slide-element">
+                        <div class="progressbar-last">
+                            <div class="progressbar">
+                                <div class="progressbar-track" style="width: 100%;">
+                                    <div class="progressbar-thumb">100%</div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="second-slide-element" id="submit_form">
+                            <br><br>
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="email_input" placeholder="Enter Email address">
+                                <p class="mid-p">Please Enter </p>
+                            </div>
+                            <br><br><br>
+                            <button type="button" class="btn btn-primary" id="form_submit">SUBMIT</button>
+                            <br><br><br>
+                        </div>
+                        <div class="last-last-div ds-none" id="score_form">
+                            <div class="score-title">Score:</div>
+                            <div id="score_vl" class="score-vl">0%</div>
+                        </div>
+                    </div>
+                    <div class="button-sec">
+                        <button class="btn btn-action btn-prev" type="button" data-slide="slide_19">BACK</button>
+                        <button class="btn btn-action btn-next" type="button" data-slide="slide_2">START OVER</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+jQuery(($) => {
+    let name = "", sp_slide = false;
+
+    $("#name_input").on("keyup", function(e){
+        let txt = $(this).val().trim();
+        name = txt;
+
+        $(".u-name").text(name);
+
+        if(e.which == 13 && txt){
+            let pr = $(this).closest(".slide-elm");
+            pr.find(".btn-next").click();
+        }
+    });
+
+    $("input[type='radio']").on("click", function() {
+        setTimeout(() => {
+            let pr = $(this).closest(".slide-elm");
+            pr.find(".btn-next").click();
+        }, 200);
+    });
+
+    $(".btn-prev").on("click", function(){
+        let slide_no = $(this).data("slide");
+
+        if(slide_no == "slide_7"){
+            if(sp_slide){
+                slide_no = "slide_6";
+                sp_slide = false;
+                $('input[name="ques_5"]').prop("checked", false);
+            }
+        }
+        $(".slide-elm").addClass("ds-none");
+        $("#"+slide_no).removeClass("ds-none");
+    });
+
+    $(".btn-next").on("click", function(){
+        let slide_no = $(this).data("slide");
+
+    
+        $(".slide-elm").addClass("ds-none");
+        $("#"+slide_no).removeClass("ds-none");
+
+        $("#"+slide_no+" input[type='radio']").prop("checked", false);
+        $("#"+slide_no+" input[type='checkbox']").prop("checked", false);
+
+        if(slide_no == "slide_23"){
+            finalStep();
+        }
+    });
+
+    
+    $('#form_submit').on('click', function(){
+        let emailForm = $('#email_input').val();
+        if(validateEmail(emailForm)){
+            $('#submit_form').hide();
+            $('#score_form').show();
+        } else{
+            $('#submit_form').show();
+            $('#score_form').hide();
+        }
+        
+    });
+
+
+    let totalScore = 0;
+    function finalStep(){
+        $("input[type='radio']:checked").each(function(i, elm){
+            let vl = Number($(elm).val());
+            totalScore = totalScore + vl;
+        });
+        let prcnt = (totalScore /20)*100;
+        $('#score_vl').text(prcnt.toFixed(0)+ "%");
+        console.log(totalScore);
+    }
+    function validateEmail(email){
+        return email.match(
+            /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+        );
+    }
+});
+</script>
+</body>
+
+</html>

@@ -1,0 +1,641 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
+    <!-- Date Picker stylesheets -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/datepicker/1.0.9/datepicker.min.css">
+
+    <!-- Bootstrap CSS -->
+    <title>Time To $1 Million Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+</head>
+<body>
+<br>
+<br>
+<style>
+#mx_cl *, ::after, ::before {
+    box-sizing: border-box;
+}
+#mx_cl {
+    line-height: 1.5;
+    font-family: inherit;
+}
+#mx_cl .container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #000000;
+    text-align: left;
+}
+#mx_cl label {
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+#mx_cl .row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+#mx_cl .col-md-1, #mx_cl .col-md-10, #mx_cl .col-md-11, #mx_cl .col-md-12, #mx_cl .col-md-2, #mx_cl .col-md-3, #mx_cl .col-md-4, #mx_cl .col-md-5, #mx_cl .col-md-6, #mx_cl .col-md-7, #mx_cl .col-md-8, #mx_cl .col-md-9 {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+#mx_cl .form-group {
+    margin-bottom: 1rem;
+}
+#mx_cl .form-control {
+    display: block;
+    width: 100%;
+    height: 54px;
+    padding: 0.275rem 0.75rem;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #191C17;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #EFEFEF;
+    border-radius: 5px;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+#mx_cl .form-control:focus {
+    outline: none;
+}
+#mx_cl .btn {
+    display: block;
+    font-weight: 500;
+    color: #212529;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: .275rem 2.2rem;
+    line-height: 1.3;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    text-align: center;
+}
+
+#mx_cl .btn-primary {
+    display: block;
+    width: 100%;
+    background-color: #0B1A2D;
+    color: #fff;
+    border-radius: 10px;
+    margin-top: 30px;
+    padding-top: 15px;
+    font-size: 18px;
+    padding-bottom: 15px;
+    text-decoration: none;
+    box-shadow: 0px 5px 25px 0px rgba(255, 127, 0, 0.20);
+}
+#mx_cl .text-center {
+    text-align: center!important;
+}
+@media (min-width: 576px){
+    #mx_cl .container {
+        max-width: 540px;
+    }
+}
+@media (min-width: 768px){
+    #mx_cl .container {
+        max-width: 100%;
+    }
+    #mx_cl .col-md-12 {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    #mx_cl .col-md-8 {
+        -ms-flex: 0 0 66.666667%;
+        flex: 0 0 66.666667%;
+        max-width: 66.666667%;
+    }
+    #mx_cl .col-md-7 {
+        -ms-flex: 0 0 58.333%;
+        flex: 0 0 58.333%;
+        max-width: 58.333%;
+    }
+    #mx_cl .col-md-6 {
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    #mx_cl .col-md-5 {
+        -ms-flex: 0 0 41.6667%;
+        flex: 0 0 41.6667%;
+        max-width: 41.6667%;
+    }
+    #mx_cl .col-md-4 {
+        -ms-flex: 0 0 33.333333%;
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+    }
+    #mx_cl .col-md-3 {
+        -ms-flex: 0 0 25%;
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+}
+@media (min-width: 992px){
+    #mx_cl .container {
+        max-width: 800px;
+    }
+}
+@media (min-width: 1200px) {
+    #mx_cl .container {
+        max-width: 1150px;
+    }
+}
+#mx_cl .rs-title {
+    font-size: 16px;
+    color: #fff;
+    font-weight: 400;
+    text-align: center;
+}
+#mx_cl .rs-vl {
+    font-size: 24px;
+    font-weight: 700;
+    color: #fff;
+    margin-top: 10px;
+    text-align: center;
+}
+#mx_cl .pd-0 {
+    padding: 0;
+}
+#mx_cl .text-right {
+    text-align: right !important;
+}
+#mx_cl .prepend-text {
+    font-size: 16px;
+    font-weight: 400;
+    position: absolute;
+    bottom: 14px;
+    left: 4px;
+    padding: 1px 5px;
+    border-radius: 5px;
+    color: #191C17;
+}
+#mx_cl .append-text {
+    font-size: 16px;
+    position: absolute;
+    bottom: 15px;
+    right: 6px;
+    padding: 1px 5px;
+    border-radius: 5px;
+    color: #191C17;
+}
+#mx_cl .form-group, #mx_cl .input-group {
+    position: relative;
+    margin-bottom: 15px;
+}
+#mx_cl .top-title {
+    font-size: 30px;
+    margin: 0;
+    color: #000;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #D9D9D9;
+    text-align: center;
+}
+.highcharts-credits {
+    display: none;
+}
+#mx_cl .sp-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#mx_cl .sp-rs-div {
+    margin-bottom: 0;
+}
+#mx_cl  .cl-wrapper {
+    background: #FFFFFF;
+    /* box-shadow: 0px 0px 103px 0px rgba(0, 0, 0, 0.04); */
+    box-shadow: 0 0 10px #e7e7e7;
+    border-radius: 8px;
+    padding: 30px 40px;
+}
+#mx_cl .ms-sm-left {
+    display: inline-block;
+    font-size: 12px;
+    float: left;
+    color: #414141;
+}
+#mx_cl .ms-sm-right {
+    display: inline-block;
+    font-size: 12px;
+    float: right;
+    color: #414141;
+}
+#mx_cl .sp-pd-right {
+    padding-left: 25px;
+}
+#mx_cl .rs-sec {
+    border-radius: 10px;
+    background-color: #0B1A2D;
+    padding: 15px 0 15px 0;
+    height: 100%;
+}
+#mx_cl .right-div-sec {
+    padding: 5px 25px 25px 25px;
+}
+#mx_cl .chart-sec {
+    margin-top: 30px;
+}
+#mx_cl .sp-pd-left {
+    padding-left: 25px;
+}
+
+@media (max-width: 768px){
+    #mx_cl .input-sec {
+        padding: 1rem;
+        border-radius: 8px;
+        margin-bottom: 10px;
+    }
+    #mx_cl .output-sec {
+        padding: 1rem;
+        margin-left: 0;
+    }
+    #mx_cl .form-control {
+        height: auto;
+        padding: .175rem .75rem;
+    }
+    #mx_cl label {
+        font-size: 16px;
+    }
+    #mx_cl .form-group, #mx_cl .input-group {
+        position: relative;
+        margin-bottom: 20px;
+    }
+    #mx_cl .prepend-text {
+        bottom: 4px;
+    }
+    #mx_cl .append-text {
+        bottom: 4px;
+    }
+    #mx_cl .sp-rs-div {
+        margin-bottom: 1rem;
+    }
+    #mx_cl .cl-wrapper {
+        padding: 6px 24px;
+    }
+    #mx_cl .rs-title {
+        font-size: 18px;
+        line-height: 25.5px;
+    }
+    #mx_cl .rs-vl {
+        font-size: 25px;
+    }
+    #mx_cl .rs-sec {
+        margin-top: 18px;
+        height: unset;
+    }
+    #mx_cl .top-title {
+        font-size: 22px;
+    }
+    #mx_cl .right-div-sec {
+        padding: 0;
+    }
+}
+</style>
+<div class="ms-cl" id="mx_cl">
+    <div class="container">
+        <div class="cl-wrapper">
+            <div class="top-title">How Long Will It Take? </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="left-div-sec">
+                        <br>
+                        <div class="form-group">
+                            <!------------------------Input 1 label------------------>
+                            <label for="">Goal Amount</label>
+                            <input type="text" class="form-control sp-pd-left cl-in cl-curr" id="in_1" value="100000">
+                            <span class="prepend-text">$</span>
+                        </div>
+                        <div class="form-group">
+                            <!------------------------Input 2 label------------------>
+                            <label for="">Starting Amount</label>
+                            <input type="text" class="form-control sp-pd-left cl-in cl-curr" id="in_2" value="0">
+                            <span class="prepend-text">$</span>
+                        </div>
+                        <div class="form-group">
+                            <!------------------------Input 3 label------------------>
+                            <label for="">Yearly Return</label>
+                            <input type="text" class="form-control sp-pd-right cl-in cl-pr" id="in_3" value="8">
+                            <span class="append-text">%</span>
+                        </div>
+                        <div class="form-group">
+                            <!------------------------Input 4 label------------------>
+                            <label for="">Monthly Contributions/ Investment</label>
+                            <input type="text" class="form-control sp-pd-left cl-in cl-curr" id="in_4" value="500">
+                            <span class="prepend-text">$</span>
+                        </div>
+                        <button class="btn btn-primary" id="cal_btn">Calculate</button>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="right-div-sec">
+                        <!------------------------This #model_chart div is to generate the graphs here------------------>
+                        
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="rs-sec">
+                                    <!------------------------1st box title------------------>
+                                    <div class="rs-title">
+                                        Durration (Months)
+                                    </div>
+                                    <div class="rs-vl" id="rs_1">
+                                       -
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="rs-sec">
+                                    <!------------------------2nd box title------------------>
+                                    <div class="rs-title">
+                                        Duration (Years)
+                                    </div>
+                                    <div class="rs-vl" id="rs_2">
+                                        -
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="rs-sec">
+                                    <!------------------------3rd box title------------------>
+                                    <div class="rs-title">
+                                        Date Goal Is Reached
+                                    </div>
+                                    <div class="rs-vl" style="font-size: 18px;" id="rs_3">
+                                        -
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chart-sec" id="model_chart"></div>
+                    </div>
+                </div>
+            </div>
+        </div>  
+    </div>            
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/datepicker/1.0.9/datepicker.min.js"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/autonumeric@4.5.4"></script>
+<script>
+   jQuery(document).ready(function($){
+        var months= ["January","February","March","April","May","June","July",
+            "August","September","October","November","December"];
+
+        let arr_one = [];
+        const numOptionCurrency = {
+            digitGroupSeparator        : ',',
+            decimalCharacter           : '.',
+            decimalCharacterAlternative: '.',
+            currencySymbol             : '',
+            currencySymbolPlacement    : AutoNumeric.options.currencySymbolPlacement.prefix,
+            modifyValueOnWheel         : false,
+            decimalPlaces              : 0,
+            minimumValue	           : 0
+        };
+
+        const numOptionPercent = {
+            digitGroupSeparator        : ',',
+            decimalCharacter           : '.',
+            decimalCharacterAlternative: '.',
+            currencySymbol             : '',
+            currencySymbolPlacement    : AutoNumeric.options.currencySymbolPlacement.suffix,
+            modifyValueOnWheel         : false,
+            decimalPlaces              : 2,
+            minimumValue	           : 0,
+            maximumValue	           : 100
+        };
+
+        new AutoNumeric("#in_3", numOptionPercent);
+        const anElement1 = AutoNumeric.multiple(".cl-curr", numOptionCurrency);
+        
+        // var monthsFullName = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+
+        const nft = Intl.NumberFormat("en-US",{
+            minimumFractionDigits: 0,
+            maximumFractionDigits: 0
+        });
+        
+        const nftd = Intl.NumberFormat("en-US",{
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        });
+        const nftd1 = Intl.NumberFormat("en-US",{
+            minimumFractionDigits: 1,
+            maximumFractionDigits: 1
+        });
+
+        $("#cal_btn").on("click", function(){
+            Calc();
+        })
+
+        Calc();
+
+        function Calc(){
+            arr_one = [];
+
+            in_1 = removeComma($("#in_1").val());
+            in_2 = removeComma($("#in_2").val());
+            in_3 = removeComma($("#in_3").val()) / 100;
+            in_4 = removeComma($("#in_4").val());
+
+            let dur_months = NPER(in_3/12, -in_4, -in_2, in_1, 0);
+            let dur_yr = dur_months / 12;
+
+            let toDate = new Date();
+                toDate.setDate(toDate.getDate() + +(365.25*dur_yr));
+            
+            let goal_reached = months[toDate.getMonth()]+", "+toDate.getDate()+", "+toDate.getFullYear();
+
+            $("#rs_1").text(nftd.format(onlyNum(dur_months)));
+            $("#rs_2").text(nftd.format(onlyNum(dur_yr)));
+            $("#rs_3").text(goal_reached);
+
+            for(let i = 0; i < 31; i++) {
+                let vl = i;
+
+                let months = 0;
+                let years = 0;
+                let portfolio_vl = 0;
+
+                if(i == 0){
+                    months = (dur_months/30) * vl;
+                    years = months/12;
+                    portfolio_vl = (in_2 * Math.pow(1 + (in_3 / 12),months)) + (in_4 * ((Math.pow(1 + (in_3 / 12),months)) -1 ) / (in_3 / 12));
+                } else {
+                    months = (dur_months/30) * vl;
+                    years = months/12;
+                    portfolio_vl = (in_2 * Math.pow(1 + (in_3 / 12),months)) + (in_4 * ((Math.pow(1 + (in_3 / 12),months)) - 1) / (in_3 / 12));
+                }
+                // console.log([months],[years],[portfolio_vl]);
+                arr_one.push(portfolio_vl)
+            }
+
+            console.log(arr_one);
+
+            // Graph starts
+            Highcharts.setOptions({
+                lang: {
+                    thousandsSep: ','
+                }
+            });
+            
+            Highcharts.chart('model_chart', {
+                chart: {
+                    type: 'line'
+                },
+                title: {
+                    text: 'Portfolio Value Over Time'
+                },
+                subtitle: {
+                    text: '',
+                    style: {
+                        display: 'none'
+                    }
+                },
+                xAxis: {
+                    // x axis years
+                    categories: ['1', '3', '5', '7', '9', '11', '13', '15', '17', '19', '21', '23', '25', '27', '29', '31'],
+                    title: {
+                        // x axis Title
+                        text: 'Years',
+                        style: {
+                            color: '#000',
+                            fontSize: '14px'
+                        }
+                    },
+                    labels: {
+                        style: {
+                            color: '#B7B7B7'
+                        }
+                    },
+                    lineColor: '#E7E7E7',
+                },
+                yAxis: {
+                    title: {
+                        // y axis Title
+                        text: 'Portfolio Value',
+                        style: {
+                            color: '#000',
+                            fontSize: '14px'
+                        }
+                    },
+                    labels: {
+                        style: {
+                            color: '#B7B7B7'
+                        },
+                        formatter: function() {
+                            return '$'+this.value;
+                        }
+                    }
+                },
+                tooltip: {
+                    crosshairs: true,
+                    valuePrefix: "$",
+                    valueDecimals: 0,
+                    style: {
+                        fontSize: 11
+                    },
+                    shared: true
+                },
+                plotOptions: {
+                    series: {
+                        groupPadding: 0.3,
+                        marker: {
+                            enabled: false,
+                            states: {
+                                hover: {
+                                    enabled: false
+                                }
+                            }
+                        }
+                    },
+                },
+                credits: {
+                    enabled: false
+                },
+                legend: {
+                    enabled: true,
+                    verticalAlign: 'bottom',
+                    itemStyle: {
+                        fontWeight: '400',
+                        fontSize: '14px',
+                        color: '#191C17'
+                    }
+                },
+                
+                // Portfolio Value series
+                series: [
+                    {
+                        name: 'Portfolio Value',
+                        color: '#EE9A00',
+                        data: arr_one
+                    }
+                ]
+            });
+    }
+
+        // Method to remove comma from numbers
+        function removeComma(num){
+            return Number(num.replace(/,/g,""));
+        }
+
+        // Method to check NAN or infinite values
+        function onlyNum(num){
+            return isFinite(num) ? num : 0;
+        }
+
+        function NPER(rate, payment, present, future, type) {
+            // Initialize type
+            var type = (typeof type === 'undefined') ? 0 : type;
+
+            // Initialize future value
+            var future = (typeof future === 'undefined') ? 0 : future;
+
+            // Evaluate rate and periods (TODO: replace with secure expression evaluator)
+            rate = eval(rate);
+
+            // Return number of periods
+            var num = payment * (1 + rate * type) - future * rate;
+            var den = (present * rate + payment * (1 + rate * type));
+            return Math.log(num / den) / Math.log(1 + rate);
+        }
+    }); 
+</script>
+<!----------- JS script  ends ---------------->
+</body>
+</html>

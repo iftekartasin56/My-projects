@@ -1,0 +1,1187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap CSS -->
+    <title>Tire Comparison Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+</head>
+<body>
+
+<!-----------Please copy and paste following code into any HTML element ---------------->
+
+<!----------- copy starts ---------------->
+<style>
+    #mx_cl *, ::after, ::before {
+        box-sizing: border-box;
+    }
+    #mx_cl {
+        line-height: 1.5;
+        font-family: inherit;
+    }
+    #mx_cl .container {
+        width: 100%;
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-right: auto;
+        margin-left: auto;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #000000;
+        text-align: left;
+    }
+    #mx_cl label {
+        display: inline-block;
+        font-size: 16px;
+        font-weight: 500;
+        margin-bottom: 0.5rem;
+    }
+    #mx_cl .table-input {
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 0rem;
+        background-color: transparent;
+        border-collapse: collapse;
+    }
+    #mx_cl .table-input td, #mx_cl .table-input th {
+        padding: 0.25rem 0.25rem;
+        vertical-align: middle;
+        border: none !important;
+        font-size: 16px;
+        background: transparent;
+        box-shadow: none;
+        color: #000000;
+        text-align: center;
+    }
+    #mx_cl .table th {
+        font-weight: 500;
+    }
+    #mx_cl .table-rs {
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 0rem;
+        background-color: transparent;
+        border-collapse: collapse;
+    }
+    #mx_cl .table-rs td, #mx_cl .table-rs th {
+        padding: 0.25rem 0.25rem;
+        vertical-align: middle;
+        border-right: none !important;
+        border-left: none !important;
+        border-top: none !important;
+        border-bottom: 1px solid #2d35a7;
+        font-size: 16px;
+        background: transparent;
+        box-shadow: none;
+        color: #ffffff;
+        text-align: left;
+    }
+    #mx_cl .table-rs th {
+        font-weight: 500;
+    }
+    #mx_cl .row {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        margin-right: -15px;
+        margin-left: -15px;
+    }
+    #mx_cl .col-md-1, #mx_cl .col-md-10, #mx_cl .col-md-11, #mx_cl .col-md-12, #mx_cl .col-md-2, #mx_cl .col-md-3, #mx_cl .col-md-4, #mx_cl .col-md-5, #mx_cl .col-md-6, #mx_cl .col-md-7, #mx_cl .col-md-8, #mx_cl .col-md-9 {
+        position: relative;
+        width: 100%;
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+    #mx_cl .form-group {
+        margin-bottom: 1rem;
+    }
+    #mx_cl .form-control {
+        display: block;
+        width: 100%;
+        height: auto;
+        padding: 0.275rem 0.75rem;
+        font-size: 28px !important;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #000000;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 2px solid #06acc1;
+        border-radius: 10px;
+        transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+        text-align: center;
+        font-size: 30px;
+    }
+    #mx_cl .form-control:focus {
+        outline: none;
+    }
+    #mx_cl .text-center {
+        text-align: center!important;
+    }
+    #mx_cl .btn {
+        display: inline-block;
+        font-weight: 400;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        cursor: pointer;
+        border: 1px solid transparent;
+        padding: 0.275rem 0.75rem;
+        font-size: 14px;
+        line-height: 1.5;
+        border-radius: 25px;
+        transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    }
+    #mx_cl .btn-primary {
+        color: #fff;
+        background-color: #3F48CC;
+        border-color: #3F48CC;
+        margin: 0;
+        font-size: 26px;
+    }
+    #mx_cl .btn-primary:hover {
+        color: #fff;
+        background-color: #3F48CC;
+        border-color: #3F48CC;
+    }
+    @media (min-width: 576px){
+        #mx_cl .container {
+            max-width: 540px;
+        }
+    }
+    @media (min-width: 768px){
+        #mx_cl .container {
+            max-width: 100%;
+        }
+        #mx_cl .col-md-12 {
+            -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+        #mx_cl .col-md-8 {
+            -ms-flex: 0 0 66.666667%;
+            flex: 0 0 66.666667%;
+            max-width: 66.666667%;
+        }
+        #mx_cl .col-md-7 {
+            -ms-flex: 0 0 58.3333%;
+            flex: 0 0 58.3333%;
+            max-width: 58.3333%;
+        }
+        #mx_cl .col-md-6 {
+            -ms-flex: 0 0 50%;
+            flex: 0 0 50%;
+            max-width: 50%;
+        }
+        #mx_cl .col-md-4 {
+            -ms-flex: 0 0 33.333333%;
+            flex: 0 0 33.333333%;
+            max-width: 33.333333%;
+        }
+        #mx_cl .col-md-3 {
+            -ms-flex: 0 0 25%;
+            flex: 0 0 25%;
+            max-width: 25%;
+        }
+        
+    }
+    @media (min-width: 992px){
+        #mx_cl .container {
+            max-width: 700px;
+        }
+    }
+    @media (min-width: 1200px) {
+        #mx_cl .container {
+            max-width: 700px;
+        }
+    }
+    #mx_cl .hide-td {
+        display: none;
+    }
+    #mx_cl .input-sec {
+        width: 100%;
+        display: block;
+        background: #fff;
+        padding: 2rem;
+    }
+    #mx_cl .output-sec {
+        width: 100%;
+        display: block;
+        background: #3F48CC;
+        padding: 2rem;
+        border: 1px solid #3F48CC;
+        border-radius: 8px;
+        color: #ffffff;
+        margin-left: -2px;
+        box-shadow: 0 0 10px #8d8d8d;
+    }
+    #mx_cl .sum-sec {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 2rem;
+    }
+    #mx_cl .sum-title {
+        background: #00a4b9;
+        color: #fff;
+        padding: 5px 15px;
+        margin-bottom: 8px;
+        font-size: 18px;
+    }
+    #mx_cl #sum_vl {
+        font-size: 25px;
+    }
+    #mx_cl .sum_suffix {
+        font-size: 12px;
+    }
+    #mx_cl .pd-0 {
+        padding: 0;
+    }
+    #mx_cl .sp-pd-top {
+        padding-top: 28px;
+    }
+    #mx_cl .sum-tb-head {
+        background: #151c81;
+    }
+    #mx_cl .text-right {
+        text-align: right !important;
+    }
+    @media (max-width: 768px){
+        #mx_cl .input-sec {
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+        #mx_cl .output-sec {
+            padding: 1rem;
+            margin-left: 0;
+        }
+        #mx_cl .form-control {
+            height: auto;
+            padding: .175rem .75rem;
+            font-size: 16px !important;
+        }
+        #mx_cl label {
+            font-size: 14px;
+        }
+        #mx_cl .table-rs td, #mx_cl .table-rs th {
+            font-size: 14px;
+        }
+        
+    }
+    #mx_cl #t_foot {
+        display: none;
+    }
+    #mx_cl .btn-sec {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #CalcWrap {
+        background-color: transparent;
+        width: 100%;
+        margin-top: -5px;
+        border-radius: 0px;
+        min-height: 0px;
+        float: none;
+        border: none;
+    }
+    #CalcWrap {
+        position: relative; /* width:798px; */
+        min-height: 282px;
+        margin-top: 25px;
+        overflow: hidden;
+        border-radius: 2px;
+        text-align: center;
+        z-index: 1;
+    }
+    #CompVisualizer {
+        width: 100%;
+        text-align: center;
+        font-size: 12px;
+        display: none;
+    }
+    #CompVisualizer {
+        width: 100%;
+        font-size: 12px;
+        float: none;
+    }
+    .compvis {
+        display: block !important;
+    }
+    #Viewer {
+        padding-top: 30px;
+        clear: both;
+    }
+    #Viewer {
+        width: 100%;
+    }
+    #viswheel1 {
+        padding: 0px 5px 0px 5px;
+        background-color: #fff;
+        width: 48px;
+        margin: -22px auto 0px auto;
+    }
+    #visheight2 {
+        padding: 5px 0px 8px 3px;
+        background-color: #fff; /* height:10px */
+        display: inline-block;
+        margin: 80px -12px 0px 0px;
+        -webkit-transition: margin 1s;
+        transition: margin 1s;
+    }
+    #viswidth2 {
+        margin-top: 0px;
+        padding: 0px 5px 0px 5px;
+        background-color: #fff;
+        display: inline-block;
+    }
+    #comp2 {
+        display: inline-block;
+        vertical-align: top;
+        position: relative;
+        margin-bottom: 50px;
+        padding: 0px 35px 0px 35px;
+    }
+    .tirewrap {
+        position: relative;
+        display: inline-block;
+    }
+    #tc1 {
+        width: 84px;
+        height: 200px;
+        position: relative;
+        display: inline-block;
+        -webkit-transition: width 1s, height 1s;
+        transition: width 1s, height 1s;
+    }
+    #tc1 img {
+        width: 100%;
+        height: 100%;
+    }
+    #ttwidth1 {
+        border: 1px solid #1347bf;
+        border-top: none;
+        position: absolute;
+        bottom: -15px;
+        height: 12px;
+        width: 98%;
+        text-align: center;
+        -webkit-transition: width 1s, height 1s;
+        transition: width 1s, height 1s;
+    }
+    #viswidth1 {
+        margin-top: 0px;
+        padding: 0px 5px 0px 5px;
+        background-color: #fff;
+        display: inline-block;
+    }
+    #ttheight1 {
+        border: 1px solid #1347bf;
+        border-right: none;
+        position: absolute;
+        left: -20px;
+        top: 0px;
+        height: 97%;
+        width: 15px;
+        text-align: center;
+        -webkit-transition: width 1s, height 1s;
+        transition: width 1s, height 1s;
+    }
+    #visheight1 {
+        padding: 5px 0px 8px 0px;
+        background-color: #fff; /* height:10px; */
+        display: inline-block;
+        margin: 80px 0px 0px -12px;
+        -webkit-transition: margin 1s;
+        transition: margin 1s;
+    }
+    #tc2 {
+        width: 84px;
+        height: 200px;
+        overflow: hidden;
+        position: relative;
+        display: inline-block;
+        -webkit-transition: width 1s, height 1s;
+        transition: width 1s, height 1s;
+    }
+    #visside1 {
+        padding: 2px 0px 5px 3px;
+        background-color: #fff; /* height:10px; */
+        display: inline-block;
+        margin: 25px -12px 0px 0px;
+        -webkit-transition: margin 1s;
+        transition: margin 1s;
+    }
+    #tc2 img {
+        width: 100%;
+        height: 100%;
+    }
+    #ttwidth2 {
+        border: 1px solid #1347bf;
+        border-top: none;
+        position: absolute;
+        bottom: -15px;
+        height: 12px;
+        width: 98%;
+        text-align: center;
+        -webkit-transition: width 1s, height 1s;
+        transition: width 1s, height 1s;
+    }
+    #ttheight2 {
+        border: 1px solid #1347bf;
+        border-left: none;
+        position: absolute;
+        right: -20px;
+        top: 0px;
+        height: 98%;
+        width: 15px;
+        text-align: center;
+        -webkit-transition: width 1s, height 1s;
+        transition: width 1s, height 1s;
+    }
+    #comp1 {
+        display: inline-block;
+        vertical-align: top;
+        position: relative;
+        margin-bottom: 0;
+        margin-top: 10px;
+    }
+    #calccomp1 {
+        display: inline-block;
+        vertical-align: top;
+        position: relative;
+        margin-bottom: 50px;
+    }
+    .tire1 {
+        display: inline-block;
+        width: 50px;
+        height: 20px;
+        margin-right: 3px !important;
+        background-color: #c0c0c0;
+        border-radius: 2px;
+        vertical-align: top;
+        opacity: 0.9;
+    }
+    #c1 {
+        width: 200px;
+        height: 200px;
+        overflow: hidden;
+        position: relative;
+        display: inline-block;
+        -webkit-transition: width 1s, height 1s;
+        transition: width 1s, height 1s;
+    }
+    #c1 img {
+        width: 100%;
+        height: 100%;
+    }
+    #tc1 {
+        width: 84px;
+        height: 200px;
+        position: relative;
+        display: inline-block;
+        -webkit-transition: width 1s, height 1s;
+        transition: width 1s, height 1s;
+    }
+    #tc1 img {
+        width: 100%;
+        height: 100%;
+    }
+    #t1 {
+        width: 200px;
+        height: 200px;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        z-index: 1;
+        -webkit-transition: width 1s, height 1s;
+        transition: width 1s, height 1s;
+        border-radius: 93px;
+        overflow: hidden;
+    }
+    #w1 {
+        width: 200px;
+        height: 200px;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        -webkit-transition: width 1s, height 1s, top 1s, left 1s;
+        transition: width 1s, height 1s, top 1s, left 1s;
+    }
+    #a1 {
+        width: 200px;
+        height: 200px;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        -webkit-transition: width 1s, height 1s;
+        transition: width 1s, height 1s;
+        z-index: 2;
+        border-radius: 100%;
+    }
+    #visarrow1 {
+        position: absolute;
+        left: 0px;
+        bottom: 5px;
+        -webkit-transform: rotate(43deg);
+        transform: rotate(43deg);
+    }
+    #twheel1 {
+        border: 1px solid #1347bf;
+        border-bottom: none;
+        position: absolute;
+        right: 23px;
+        top: -15px;
+        height: 100px;
+        width: 155px;
+        text-align: center;
+        z-index: 2;
+        -webkit-transition: width 1s, height 1s;
+        transition: width 1s, height 1s, right 1s;
+    }
+    #tside1 {
+        border: 1px solid #1347bf;
+        border-left: none;
+        position: absolute;
+        right: 20px;
+        bottom: 2px;
+        height: 40px;
+        width: 40px;
+        text-align: right;
+        z-index: 2;
+        -webkit-transition: width 1s, height 1s;
+        transition: width 1s, height 1s;
+    }
+    #visrevs1 {
+        position: absolute;
+        bottom: -20px;
+        width: 100%;
+        text-align: center;
+    }
+    #c2 {
+        width: 200px;
+        height: 200px;
+        overflow: hidden;
+        display: inline-block;
+        position: relative;
+        -webkit-transition: width 1s, height 1s;
+        transition: width 1s, height 1s;
+    }
+    #c2 img {
+        width: 100%;
+        height: 100%;
+    }
+    #t2 {
+        width: 200px;
+        height: 200px;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        z-index: 1;
+        -webkit-transition: width 1s, height 1s;
+        transition: width 1s, height 1s;
+        border-radius: 93px;
+        overflow: hidden;
+    }
+    #w2 {
+        width: 200px;
+        height: 200px;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        -webkit-transition: width 1s, height 1s, top 1s, left 1s;
+        transition: width 1s, height 1s, top 1s, left 1s;
+    }
+    #a2 {
+        width: 200px;
+        height: 200px;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        -webkit-transition: width 1s, height 1s;
+        transition: width 1s, height 1s;
+        z-index: 2;
+        border-radius: 100%;
+    }
+    #visarrow2 {
+        position: absolute;
+        right: 0px;
+        bottom: 5px;
+        -webkit-transform: rotate(-43deg);
+        transform: rotate(-43deg);
+    }
+    #twheel2 {
+        border: 1px solid #1347bf;
+        border-bottom: none;
+        position: absolute;
+        right: 23px;
+        top: -15px;
+        height: 100px;
+        width: 155px;
+        text-align: center;
+        z-index: 2;
+        -webkit-transition: width 1s, height 1s;
+        transition: width 1s, height 1s;
+    }
+    #viswheel2 {
+        padding: 0px 5px 0px 5px;
+        background-color: #fff;
+        width: 48px;
+        margin: -22px auto 0px auto;
+    }
+    #tside2 {
+        border: 1px solid #1347bf;
+        border-right: none;
+        position: absolute;
+        left: 20px;
+        bottom: 2px;
+        height: 40px;
+        width: 40px;
+        text-align: left;
+        z-index: 2;
+        -webkit-transition: width 1s, height 1s;
+        transition: width 1s, height 1s;
+    }
+    #visside2 {
+        padding: 2px 3px 5px 0px;
+        background-color: #fff; /* height:10px; */
+        display: inline-block;
+        margin: 25px 0px 0px -8px;
+        -webkit-transition: margin 1s;
+        transition: margin 1s;
+    }
+    #visrevs2 {
+        position: absolute;
+        bottom: -20px;
+        width: 100%;
+        text-align: center;
+    }
+    #trywheelcalc {
+        padding: 10px;
+        font-size: 14px;
+        color: #2083d4;
+        text-align: center;
+    }
+    #trywheelcalc a {
+        display: inline-block;
+        padding: 5px 30px;
+    }
+    #trywheelcalc a {
+        display: block;
+    }
+    .wp-block-table td,
+    .wp-block-table th {
+        padding: 0.5em 0 0 0.5em !important;
+    }
+    @media (max-width: 768px) {
+        .separate-containers .inside-article {
+            padding: 0 !important;
+        }
+    }
+    @media (max-width: 404px) {
+        #input_compare > input {
+            max-width: 57px;
+        }
+    }
+    #comp2 {
+        margin-bottom: 30px;
+    }
+
+    #input_compare > input {
+        max-width: 80px;
+        padding: 3px 5px;
+        border: 1px solid #055097;
+    }
+
+    #input_compare > button {
+        padding: 3px 12px;
+    }
+
+    #input_compare {
+        border: 1px solid #bfbfb9;
+        background-color: #eee;
+        padding: 7px;
+    }
+
+    #boder_input {
+        max-width: fit-content;
+        margin: auto;
+        text-align: center;
+    }
+    @media (max-width: 768px) {
+        #CalcWrap {
+            min-height: 421px;
+        }
+        #comp2 {
+            margin-bottom: 42px;
+        }
+        .tirewrap {
+            margin-bottom: 60px;
+        }
+        #output_sec{
+            order: 2;
+        }
+        #calwrap_sec{
+            order: 1;
+        }
+        #article_sec{
+            order: 3;
+        }
+        #Viewer {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+    }
+</style>
+</style>
+<div class="ms-cl" id="mx_cl">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12" style="display: none;">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="input-sec">
+                            <strong><p class="text-center" style="margin: 0; color: #018fa1; padding:2px 0;">Tire Size One</p></strong>
+                            <table class="table-input">
+                                <tr>
+                                    <td>
+                                        <select name="in_1" class="form-control cl-required" id="in_1">
+                                            <option value="135">135</option>
+                                            <option value="145">145</option>
+                                            <option value="155">155</option>
+                                            <option value="165">165</option>
+                                            <option value="175">175</option>
+                                            <option value="185">185</option>
+                                            <option value="195">195</option>
+                                            <option value="205">205</option>
+                                            <option value="215">215</option>
+                                            <option value="225">225</option>
+                                            <option value="235" selected>235</option>
+                                            <option value="245">245</option>
+                                            <option value="255">255</option>
+                                            <option value="265">265</option>
+                                            <option value="275">275</option>
+                                            <option value="285">285</option>
+                                            <option value="295">295</option>
+                                            <option value="305">305</option>
+                                            <option value="315">315</option>
+                                            <option value="325">325</option>
+                                            <option value="335">335</option>
+                                            <option value="345">345</option>
+                                            <option value="355">355</option>
+                                            <option value="365">365</option>
+                                            <option value="375">375</option>
+                                            <option value="385">385</option>
+                                            <option value="395">395</option>
+                                        </select>
+                                    </td>
+                                    <td>/</td>
+                                    <td>
+                                        <select name="in_2" class="form-control cl-required" id="in_2">
+                                            <option value="25">25</option>
+                                            <option value="30">30</option>
+                                            <option value="35" selected>35</option>
+                                            <option value="40">40</option>
+                                            <option value="45">45</option>
+                                            <option value="50">50</option>
+                                            <option value="55">55</option>
+                                            <option value="60">60</option>
+                                            <option value="65">65</option>
+                                            <option value="70">70</option>
+                                            <option value="75">75</option>
+                                            <option value="80">80</option>
+                                            <option value="85">85</option>
+                                            <option value="90">90</option>
+                                            <option value="95">95</option>
+                                            <option value="100">100</option>
+                                        </select>
+                                    </td>
+                                    <td>R</td>
+                                    <td>
+                                        <select name="in_3" class="form-control cl-required" id="in_3">
+                                            <option value="12">12</option>
+                                            <option value="13">13</option>
+                                            <option value="14">14</option>
+                                            <option value="15">15</option>
+                                            <option value="16">16</option>
+                                            <option value="17">17</option>
+                                            <option value="18" selected>18</option>
+                                            <option value="19">19</option>
+                                            <option value="20">20</option>
+                                            <option value="21">21</option>
+                                            <option value="22">22</option>
+                                            <option value="22.5">22.5</option>
+                                            <option value="23">23</option>
+                                            <option value="24">24</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="middle-div text-center">
+                                <img src="https://i.postimg.cc/mD4fdc3g/tyre-size-manual.png" />
+                            </div>
+                            <table class="table-input">
+                                <tr>
+                                    <td>
+                                        <select name="in_4" class="form-control cl-required" id="in_4">
+                                            <option value="135">135</option>
+                                            <option value="145">145</option>
+                                            <option value="155">155</option>
+                                            <option value="165">165</option>
+                                            <option value="175">175</option>
+                                            <option value="185">185</option>
+                                            <option value="195">195</option>
+                                            <option value="205" selected>205</option>
+                                            <option value="215">215</option>
+                                            <option value="225">225</option>
+                                            <option value="235">235</option>
+                                            <option value="245">245</option>
+                                            <option value="255">255</option>
+                                            <option value="265">265</option>
+                                            <option value="275">275</option>
+                                            <option value="285">285</option>
+                                            <option value="295">295</option>
+                                            <option value="305">305</option>
+                                            <option value="315">315</option>
+                                            <option value="325">325</option>
+                                            <option value="335">335</option>
+                                            <option value="345">345</option>
+                                            <option value="355">355</option>
+                                            <option value="365">365</option>
+                                            <option value="375">375</option>
+                                            <option value="385">385</option>
+                                            <option value="395">395</option>
+                                        </select>
+                                    </td>
+                                    <td>/</td>
+                                    <td>
+                                        <select name="in_5" class="form-control cl-required" id="in_5">
+                                            <option value="25">25</option>
+                                            <option value="30">30</option>
+                                            <option value="35">35</option>
+                                            <option value="40" selected>40</option>
+                                            <option value="45">45</option>
+                                            <option value="50">50</option>
+                                            <option value="55">55</option>
+                                            <option value="60">60</option>
+                                            <option value="65">65</option>
+                                            <option value="70">70</option>
+                                            <option value="75">75</option>
+                                            <option value="80">80</option>
+                                            <option value="85">85</option>
+                                            <option value="90">90</option>
+                                            <option value="95">95</option>
+                                            <option value="100">100</option>
+                                        </select>
+                                    </td>
+                                    <td>R</td>
+                                    <td>
+                                        <select name="in_6" class="form-control cl-required" id="in_6">
+                                            <option value="12">12</option>
+                                            <option value="13">13</option>
+                                            <option value="14">14</option>
+                                            <option value="15">15</option>
+                                            <option value="16">16</option>
+                                            <option value="17">17</option>
+                                            <option value="18" selected>18</option>
+                                            <option value="19">19</option>
+                                            <option value="20">20</option>
+                                            <option value="21">21</option>
+                                            <option value="22">22</option>
+                                            <option value="22.5">22.5</option>
+                                            <option value="23">23</option>
+                                            <option value="24">24</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                            </table>
+                            <strong><p class="text-center" style="margin: 0; color: #018fa1; padding:2px 0;">Tire Size Two</p></strong>
+                        </div>   
+                    </div>
+                    <div class="col-md-4 btn-sec">
+                        <button type="button" class="btn btn-primary" style="width: 100%;" id="mx_btn_calc">Calculate</button>  
+                    </div>
+                </div>         
+            </div>
+            <div class="col-md-12 pd-0" id="output_sec">
+                <div class="output-sec" style="overflow: auto;">
+                    <table class="table-rs" id="mx_rs_data">
+                        <thead>
+                            <tr class="sum-tb-head">
+                                <th class="text-center">Parameter</th>
+                                <th class="text-center">Tire 1</th>
+                                <th class="text-center">Tire 2</th>
+                                <th class="text-center">Difference</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="text-center">Overall diameter:</td>
+                                <td class="text-center" id="rs_11"></td>
+                                <td class="text-center" id="rs_12"></td>
+                                <td class="text-center" id="rs_13"></td>
+                            </tr>
+                            <tr>
+                                <td class="text-center">Section width:</td>
+                                <td class="text-center" id="rs_21"></td>
+                                <td class="text-center" id="rs_22"></td>
+                                <td class="text-center" id="rs_23"></td>
+                            </tr>
+                            <tr>
+                                <td class="text-center">Circumference:</td>
+                                <td class="text-center" id="rs_31"></td>
+                                <td class="text-center" id="rs_32"></td>
+                                <td class="text-center" id="rs_33"></td>
+                            </tr>
+                            <tr>
+                                <td class="text-center">Sidewall height:</td>
+                                <td class="text-center" id="rs_41"></td>
+                                <td class="text-center" id="rs_42"></td>
+                                <td class="text-center" id="rs_43"></td>
+                            </tr>
+                            <tr>
+                                <td class="text-center">Revs per mile:</td>
+                                <td class="text-center" id="rs_51"></td>
+                                <td class="text-center" id="rs_52"></td>
+                                <td class="text-center" id="rs_53"></td>
+                            </tr>
+                            <tr>
+                                <td class="text-center">Rim size:</td>
+                                <td class="text-center" id="rs_61"></td>
+                                <td class="text-center" id="rs_62"></td>
+                                <td class="text-center" id="rs_63"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="sum-sec">
+                        <div class="sum-value" style="font-size: 18px;text-align: center;padding: 2px 5px;" id="rs_text"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 pd-0" id="clacwrap_sec">
+                <div id="CalcWrap" style="margin-top: 25px;">
+                    <div id="CompVisualizer" class="compvis">
+                        <div id="Viewer">
+                            <div id="comp2">
+                                <div class="tirewrap" id="ttire1">
+                                    <div id="tc1"><img decoding="async" src="https://i.postimg.cc/6qHk5Yk8/tire-11.png" alt="Tire 1 Front View" /></div>
+                                    <div id="ttwidth1"><div id="viswidth1">Width</div></div>
+                                    <div id="ttheight1"><div id="visheight1">Dia.</div></div>
+                                </div>
+                                <div class="tirewrap" id="ttire2">
+                                    <div id="tc2"><img decoding="async" src="https://i.postimg.cc/c1XymLvd/tire-12.png" alt="Tire 2 Front View" /></div>
+                                    <div id="ttwidth2"><div id="viswidth2">Width</div></div>
+                                    <div id="ttheight2"><div id="visheight2">Dia.</div></div>
+                                </div>
+                            </div>
+                            <div id="comp1">
+                                <div class="tirewrap" id="tire1">
+                                    <div id="c1">
+                                        <div id="t1">
+                                            <img decoding="async" src="https://i.postimg.cc/DyM99pQD/Tire-2.png" alt="Tire 1 Side View" />
+                                            <div id="w1"><img decoding="async" src="https://i.postimg.cc/DyM99pQD/Tire-2.png" alt="Tire 1 Wheel" /></div>
+                                        </div>
+                                        <div id="a1">
+                                            <img decoding="async" src="https://i.postimg.cc/W37Rx2S6/circarrow1.png" alt="circumference 1" />
+                                            <div id="visarrow1">Circ.</div>
+                                        </div>
+                                    </div>
+                                    <div id="twheel1"><div id="viswheel1">Rim</div></div>
+                                    <div id="tside1"><div id="visside1">Wall</div></div>
+                                    <div id="visrevs1">Revs/Mile</div>
+                                </div>
+                                <div class="tirewrap" id="tire2">
+                                    <div id="c2">
+                                        <div id="t2">
+                                            <img decoding="async" src="https://i.postimg.cc/DyM99pQD/Tire-2.png" alt="Tire 2 Side View" />
+                                            <div id="w2"><img decoding="async" src="https://i.postimg.cc/DyM99pQD/Tire-2.png" alt="Tire 2 Wheel" /></div>
+                                        </div>
+                                        <div id="a2">
+                                            <img decoding="async" src="https://i.postimg.cc/x8Tr2W4r/circarrow2.png" alt="" />
+                                            <div id="visarrow2">Circ.</div>
+                                        </div>
+                                    </div>
+                                    <div id="twheel2"><div id="viswheel2">Rim</div></div>
+                                    <div id="tside2"><div id="visside2">Wall</div></div>
+                                    <div id="visrevs2">Revs/Mile</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- close viewer -->
+                </div>
+            </div>
+            <div class="col-md-12 pd-0" id="article_sec">
+                <div class="article-sec">
+                    <p><br>
+                        <h3> <b>Tire Size <span class="tire_1">205/50 R15</span> vs <span class="tire_2">215/50 R15</span></b><br></h3>
+                        Both have their own benefits and drawbacks, so it can be hard to decide which one is right for you. We will compare the two sizes and help you decide which one is best for your needs!
+                        <br>
+                        <br>
+                        <b>Overall Diameter</b><br>
+                        The overall diameter helps you understand the tire's height, which is vital for things like speed bumps and potholes. The tire diameter of the <strong><span class="tire_1">205/50 R15</span></strong> tire size is <strong><span id="diameter1">0</span></strong> inches and the <strong><span class="tire_2">215/50 R15</span></strong> tire size is <strong><span id="diameter2">0</span></strong> inches.
+                        <br>
+                        <br>
+                        <b>Section Width</b><br>
+                        Section width is another important number to consider when choosing a tire size. It is the width of the tire from sidewall to sidewall. The section width of <strong><span class="tire_1">205/50 R15</span></strong> tires is <strong><span id="section_width1">0</span></strong> inches and the section width of <strong><span class="tire_2">215/50 R15</span></strong> tires is <strong><span id="section_width2">0</span></strong> inches.
+                        <br>
+                        <br>
+                        <b>Circumference</b><br>
+                    The circumference of the tire is the distance around the tire. It is essential because it can affect the speedometer readings in your car. The circumference of <strong><span class="tire_1">205/50 R15</span></strong> tires is <strong><span id="circumference1">0</span></strong> inches and the <strong><span class="tire_2">215/50 R15</span></strong> circumference of tires is <strong><span id="circumference2">0</span></strong> inches.
+                        <br>
+                        <br>
+                        <b>Sidewall Height</b><br>
+                        Sidewall Height The sidewall height of a tire is the distance from the edge of the wheel to the top of the tread. The sidewall height of <strong><span class="tire_1">205/50 R15</span></strong> tires is <strong><span id="sidewall1">0</span></strong> inches and the sidewall height <strong><span class="tire_2">215/50 R15</span></strong> tires is <strong><span id="sidewall2">0</span></strong> inches.
+                        <br>
+                        <br>
+                        <b>Revolutions Per Mile</b><br>
+                        The Revs per mile of the <strong><span class="tire_1">205/50 R15</span></strong> tire size is <strong><span id="revs_per_mile1"></span></strong> per mile, whereas the <strong><span class="tire_2">215/50 R15</span></strong> tire has a diameter of <strong><span id="revs_per_mile2"></span></strong> per mile.
+                        <br>
+                        <br>
+                        <b>Wheel Size</b><br>
+                        Rim diameter is the final number to consider when choosing a tire size. This is the diameter of the wheel that the tire will be mounted on. The wheel size of <strong><span class="tire_1">205/50 R15</span></strong> tires is <strong><span id="rim_size1">0</span></strong> inches and the wheel size of <strong><span class="tire_2">215/50 R15</span></strong> tires is also <strong><span id="rim_size2">0</span></strong> inches.
+                        <br>
+                        <br>
+                        <b>Construction Type</b><br>
+                        The last thing to consider is the construction type. The construction type of a tire is the way the layers of the tire are put together. The construction type of <strong><span class="tire_1">205/50 R15</span></strong> tires is <strong>radial</strong> and the construction type of <strong><span class="tire_2">215/50 R15</span></strong> tires is also <strong>radial</strong> tire construction type.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+<script>
+    jQuery(document).ready(function($){
+        let mx_in_1, mx_in_2, isAddedToUrl = false;
+        
+        const mx_nft = Intl.NumberFormat("en-US", {
+            minimumFractionDigits:0,
+            maximumFractionDigits:0
+        });
+        const mx_nftd = Intl.NumberFormat("en-US", {
+            minimumFractionDigits:2,
+            maximumFractionDigits:2
+        });
+
+        let url_string = window.location.href;
+        let url = new URL(url_string);
+        let tire_vl = url.searchParams.get("t");
+        let vl_arr = [];
+
+        mx_calc();
+
+        $("#mx_btn_calc").on("click", function(){
+            mx_calc(true);
+        });
+
+        function mx_calc(isSubmitted = false){
+            in_1 = Number($("#in_1").val());
+            in_2 = Number($("#in_2").val());
+            in_3 = Number($("#in_3").val());
+
+            in_4 = Number($("#in_4").val());
+            in_5 = Number($("#in_5").val());
+            in_6 = Number($("#in_6").val());
+
+            let section_width1 = in_1/25.4;
+            let section_width2 = in_4/25.4;
+
+            let sidewall1 = (section_width1 * (in_2/100));
+            let sidewall2 = (section_width2 * (in_5/100));
+
+            
+            let diameter1 = (2 * sidewall1) + in_3;
+            let diameter2 = (2 * sidewall2) + in_6;
+
+            let circumference1 = diameter1 * Math.PI;
+            let circumference2 = diameter2 * Math.PI;
+
+            let revs_per_mile1 = 63360 / circumference1;
+            let revs_per_mile2 = 63360 / circumference2;
+
+            let dif1 = diameter2 - diameter1;
+            let dif2 = section_width2 - section_width1;
+            let dif3 = circumference2 - circumference1;
+            let dif4 = sidewall2 - sidewall1;
+            let dif5 = revs_per_mile2 - revs_per_mile1;
+            let dif6 = in_6 - in_3;
+
+            let dif_prcnt1 = ((100/diameter1)*diameter2) - 100;
+            let dif_prcnt2 = ((100/section_width1)*section_width2) - 100;
+            let dif_prcnt3 = ((100/circumference1)*circumference2) - 100;
+            let dif_prcnt4 = ((100/sidewall1)*sidewall2) - 100;
+            let dif_prcnt5 = ((100/revs_per_mile1)*revs_per_mile2) - 100;
+            let dif_prcnt6 = ((100/in_3)*in_6) - 100;
+            
+            $("#rs_11, #visheight1").text(Number(diameter1.toFixed(1))+"\"");
+            $("#rs_12, #visheight2").text(Number(diameter2.toFixed(1))+"\"");
+            $("#rs_13").text(`${(dif1 > 0 ? "+" : "")}${Number(dif1.toFixed(1))}" (${(dif_prcnt1 > 0 ? "+" : "")}${Number(dif_prcnt1.toFixed(1))}%)`);
+            
+            $("#rs_21, #viswidth1").text(Number(section_width1.toFixed(1))+"\"");
+            $("#rs_22, #viswidth2").text(Number(section_width2.toFixed(1))+"\"");
+            $("#rs_23").text(`${(dif2 > 0 ? "+" : "")}${Number(dif2.toFixed(1))}" (${(dif_prcnt2 > 0 ? "+" : "")}${Number(dif_prcnt2.toFixed(1))}%)`);
+            
+            $("#rs_31, #visarrow1").text(Number(circumference1.toFixed(1))+"\"");
+            $("#rs_32, #visarrow2").text(Number(circumference2.toFixed(1))+"\"");
+            $("#rs_33").text(`${(dif3 > 0 ? "+" : "")}${Number(dif3.toFixed(1))}" (${(dif_prcnt3 > 0 ? "+" : "")}${Number(dif_prcnt3.toFixed(1))}%)`);
+            
+            $("#rs_41, #visside1").text(Number(sidewall1.toFixed(1))+"\"");
+            $("#rs_42, #visside2").text(Number(sidewall2.toFixed(1))+"\"");
+            $("#rs_43").text(`${(dif4 > 0 ? "+" : "")}${Number(dif4.toFixed(1))}" (${(dif_prcnt4 > 0 ? "+" : "")}${Number(dif_prcnt4.toFixed(1))}%)`);
+            
+            $("#rs_51").text(Number(revs_per_mile1.toFixed(1)));
+            $("#rs_52").text(Number(revs_per_mile2.toFixed(1)));
+            $("#visrevs1").text(Number(revs_per_mile1.toFixed(1))+" Revs/Mile");
+            $("#visrevs2").text(Number(revs_per_mile2.toFixed(1))+" Revs/Mile");
+            $("#rs_53").text(`${(dif5 > 0 ? "+" : "")}${Number(dif5.toFixed(1))} (${(dif_prcnt5 > 0 ? "+" : "")}${Number(dif_prcnt5.toFixed(1))}%)`);
+
+            $("#rs_61, #viswheel1").text(in_3+"\"");
+            $("#rs_62, #viswheel2").text(in_6+"\"");
+            $("#rs_63").text(`${(dif6 > 0 ? "+" : "")}${Number(dif6.toFixed(1))}" (${(dif_prcnt6 > 0 ? "+" : "")}${Number(dif_prcnt6.toFixed(1))}%)`);
+            
+            if(Math.abs(dif_prcnt1) > 3){
+                $("#rs_text").text("Diameter differs by more than 3%. Is it dangerous!!!").css({"background-color":"#FF7F27"});
+            } else {
+                $("#rs_text").text("The difference of diameter does not exceed 3%").css({"background-color":"transparent"});
+            }
+            
+            $(".tire_1").text(`${in_1}/${in_2}R${in_3}`);
+            $(".tire_2").text(`${in_4}/${in_5}R${in_6}`);
+            $("#diameter1").text(Number(diameter1.toFixed(1)));
+            $("#diameter2").text(Number(diameter2.toFixed(1)));
+            $("#section_width1").text(Number(section_width1.toFixed(1)));
+            $("#section_width2").text(Number(section_width2.toFixed(1)));
+            $("#circumference1").text(Number(circumference1.toFixed(1)));
+            $("#circumference2").text(Number(circumference2.toFixed(1)));
+            $("#sidewall1").text(Number(sidewall1.toFixed(1)));
+            $("#sidewall2").text(Number(sidewall2.toFixed(1)));
+            $("#revs_per_mile1").text(Number(revs_per_mile1.toFixed(1)));
+            $("#revs_per_mile2").text(Number(revs_per_mile2.toFixed(1)));
+            $("#rim_size1").text(Number(in_3.toFixed(1)));
+            $("#rim_size2").text(Number(in_6.toFixed(1)));
+        }
+    });
+</script>
+<!----------- copy ends ---------------->
+</body>
+</html>

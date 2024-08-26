@@ -1,0 +1,39 @@
+Net Worth Calculator - Web Calculator for your Website
+
+Welcome to our <b>Net Worth Calculator</b>, The Net Worth Calculator is a financial tool designed to help individuals assess their overall financial health by determining their net worth. Net worth is calculated by subtracting total liabilities (debts) from total assets (owned possessions and investments).
+<br>
+<br>
+<u><b>User inputs:</b></u>
+<ul>
+    <li>Real Estate</li>
+    <li>Checking Accounts</li>
+    <li>Savings Accounts</li>
+    <li>Retirement Accounts</li>
+    <li>Autos</li>
+    <li>Other</li>
+    <li>Mortgages</li>
+    <li>Consumer Debt</li>
+    <li>Personal Loans</li>
+    <li>Student Loans</li>
+    <li>Auto Loans</li>
+    <li>Other Debt</li>
+</ul>
+<br>
+<u><b>Outputs:</b></u>
+<ul>
+    <li>Your Net Worth</li>
+</ul>
+<br>
+<u><b>Features of the Savings Rate Calculator:</b></u>
+<ul>
+    <li>- The calculator automatically calculates the total value of assets and liabilities and then subtracts the total liabilities from the total assets to provide the net worth.</li>
+    <li>-As users input their asset and liability values, the net worth value is dynamically updated without the need to refresh the page.</li>
+    <li>- Instant result without page reload</li>
+    <li>- JS and CSS loads when shortcode called on page</li>
+    <li>- 100% Responsive design</li>
+    <li>- Unique Design</li>
+    <li>- Well Documented (proper help instructions for setup)</li>
+    <li>- Dedicated Support</li>
+</ul>
+<br>
+The calculator is built using HTML, CSS, and JavaScript, and it also utilizes the popular JavaScript library jQuery. A premium quality <b>Net Worth Calculator</b> which you can easily embed into any website (well documented).

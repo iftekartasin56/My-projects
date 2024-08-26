@@ -1,0 +1,50 @@
+Australian Visa Points Calculator - A Tool to Assess Your Eligibility for Skilled Migration.
+
+Welcome to our <b style="font-size: 20px;">Australian visa point test calculator</b>. This tool will help you assess your chances of obtaining a permanent residency (PR) visa in Australia. You can use it to calculate your points score based on various factors such as age, education, work experience, language proficiency, and more.
+<br>
+<br>
+<u><b>User inputs:</b></u>
+<ul>
+    <li>Which visa Subclass are you applying for?</li>
+    <li>Your age at the time of invitation to apply for the visa.</li>
+    <li>What are your English Language qualifications at the time of invitation to apply for the visa?</li>
+    <li>In the last 10 years, how long have you worked in your nominated skilled occupation or closely related occupation outside Australia?</li>
+    <li>In the last 10 years, how long have you worked in your nominated skilled occupation or closely related occupation in Australia?</li>
+    <li>What is your highest qualification?</li>
+    <li>Degree, diploma, advanced diploma or trade qualification from an Australian educational institution which took at least 2 years of full-time study and was taught in English.</li>
+    <li>A Masters degree by research or a Doctorate degree from an Australian educational institution that included at least two academic years in a relevant field (Natural and Physical Sciences, Information Technology or Engineering and Related Technologies).</li>
+    <li>Do you hold any one of the following?</li>
+    <li>Do you have a partner (spouse or de facto partner) who meets the following criteria?</li>
+    <li>Did you complete a professional year program in Australia in your nominated skilled occupation for at least 12 months in the 48 months immediately before the time of invitation to apply for the visa?</li>
+    
+</ul>
+<br>
+<u><b>Outputs:</b></u>
+<ul>
+    <li>Total Score</li>
+    <li>Visa Subclass</li>
+    <li>Age</li>
+    <li>English Language</li>
+    <li>Overseas Work Experience</li>
+    <li>Australian Work Experience</li>
+    <li>Educational Qualifications</li>
+    <li>Australian Educational Qualification</li>
+    <li>Specialist Educational Qualification</li>
+    <li>Accredited Community Language</li>
+    <li>Partner Qualifications</li>
+    <li>Professional Year in Australia</li>
+</ul>
+<br>
+<u><b>Features of the Credit Card Calculator:</b></u>
+<ul>
+    <li>- They calculate your points score based on the information you provide and the current visa rules and regulations of the country you are applying to.</li>
+    <li>- They display your points score and tell you if you meet the minimum threshold for the visa subclass you are interested in.</li>
+    <li>- Instant result without page reload</li>
+    <li>- JS and CSS loads when shortcode called on page</li>
+    <li>- 100% Responsive design</li>
+    <li>- Unique Design</li>
+    <li>- Well Documented (proper help instructions for setup)</li>
+    <li>- Dedicated Support</li>
+</ul>
+<br>
+The calculator is built using HTML, CSS, and JavaScript, and it also utilizes the popular JavaScript library jQuery. A premium quality <b>Australian Visa Point Test web calculator</b> which you can easily embed into any website (well documented).

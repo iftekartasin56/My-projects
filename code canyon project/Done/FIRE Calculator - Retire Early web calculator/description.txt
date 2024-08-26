@@ -1,0 +1,29 @@
+FIRE Calculator -Retire Early web calculator.
+
+Welcome to our <b> "FIRE (Financial Independence, Retire Early) Calculator" </b> is designed to help you estimate how much money you need to retire early and how soon you can get there.
+<br>
+<br>
+<u><b>User inputs:</b></u>
+<ul>
+    <li>Spending Rate (Yearly)</li>
+    <li>Safe Withdraw Rate</li>
+</ul>
+<br>
+<u><b>Outputs:</b></u>
+<ul>
+    <li>Amount Needed To Retire</li>
+</ul>
+<br>
+<u><b>Features of the Mortgage Calculator:</b></u>
+<ul>
+    <li>- Structure and Layout</li>
+    <li>- Validation Message</li>
+    <li>- Instant result without page reload</li>
+    <li>- JS and CSS loads when shortcode called on page</li>
+    <li>- 100% Responsive design</li>
+    <li>- Unique Design</li>
+    <li>- Well Documented (proper help instructions for setup)</li>
+    <li>- Dedicated Support</li>
+</ul>
+<br>
+The calculator is built using HTML, CSS, and JavaScript, and it also utilizes the popular JavaScript library jQuery. A premium quality <b>FIRE web calculator</b> which you can easily embed into any website (well documented).

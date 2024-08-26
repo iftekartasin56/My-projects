@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+    <title>Retirement Planning Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet" />
+    <style>
+        body {
+            font-family: "Roboto", sans-serif;
+        }
+    </style>
+
+    <!-- CSS stylesheet link -->
+    <link rel="stylesheet" href="css/Calc-style.css">
+</head>
+<body>
+<div class="ms-cl" id="mx_cl">
+    <div class="container cl-wrapper">
+        <h1 class="top-title">Retirement Planning Calculator</h1>
+        <div class="row">
+            <div class="col-md-6 bottom-space">
+                <div class="input-slider_1">
+                    <label>Current Age</label>
+                    <input type="text" class="form-control text-center" readonly id="in_1_vl" value="0" />
+                </div>
+                <div class="slidecontainer">
+                    <input type="range" min="1" max="100" value="20" step="1" class="rg-slider cl-in" id="in_1" />
+                </div>
+            </div>
+            <div class="col-md-6 bottom-space">
+                <div class="input-slider_1">
+                    <label>Retirement Age</label>
+                    <input type="text" class="form-control text-center" readonly id="in_2_vl" value="0" />
+                </div>
+                <div class="slidecontainer">
+                    <input type="range" min="1" max="100" value="65" step="1" class="rg-slider cl-in" id="in_2" />
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div id="middle-section">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Current Retirement Savings</label>
+                                <input type="text" class="form-control left-sp custom-in" id="in_3" value="10000" autocomplete="off" />
+                                <span class="prepend-text curr-sign"></span>
+                            </div>
+                            <div class="form-group">
+                                <label>Annual Savings</label>
+                                <input type="text" class="form-control left-sp custom-in" id="in_4" value="8000" autocomplete="off" />
+                                <span class="prepend-text curr-sign"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Current Annual Spending</label>
+                                <input type="text" class="form-control left-sp custom-in" id="in_5" value="90000" autocomplete="off" />
+                                <span class="prepend-text curr-sign"></span>
+                            </div>
+                            <div class="form-group">
+                                <label>Most Recent Social Security Statement Estimate</label>
+                                <input type="text" class="form-control left-sp custom-in" id="in_6" value="25000" autocomplete="off" />
+                                <span class="prepend-text curr-sign"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <label>Expected Rate of Return Before Retirement</label>
+                <div class="sp-range-sec">
+                    <div class="slidecontainer">
+                        <input type="range" min="1" max="20" value="7" step="1" class="rg-slider cl-in" id="in_7" />
+                    </div>
+                    <input type="text" class="form-control custom-in-sm text-center" readonly value="0%" id="in_7_vl" />
+                </div>
+                <p class="note-p" id="prcnt_1">It's important to plan conservatively for retirement. Are you sure you can sustainably plan for this high of a return?</p>
+                <p class="note-p" id="prcnt_2">It's great you're being conservative. How confident are you that you can't get better?</p>
+            </div>
+            <div class="col-md-6 mb-top-space">
+                <label>Expected Rate of Return After Retirement</label>
+                <div class="sp-range-sec">
+                    <div class="slidecontainer">
+                        <input type="range" min="1" max="20" value="5" step="1" class="rg-slider cl-in" id="in_8" />
+                    </div>
+                    <input type="text" class="form-control custom-in-sm text-center" readonly value="0%" id="in_8_vl" />
+                </div>
+                <p class="note-p" id="prcnt_3">It's important to plan conservatively for retirement. Are you sure you can sustainably plan for this high of a return?</p>
+                <p class="note-p" id="prcnt_4">It's great you're being conservative. How confident are you that you can't get better?</p>
+            </div>
+            <div class="col-md-12"><br></div>
+            <div class="col-md-6">
+                <div class="output-sec">
+                    <h3 class="output-title">Amount Saved By Retirement Age</h3>
+                    <h3 class="output-value" id="output_1"></h3>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="output-sec">
+                    <h3 class="output-title">Years Your Retirement Will Last</h3>
+                    <h3 class="output-value" id="output_2">22</h3>
+                </div>
+            </div>
+            <div class="col-md-12" id="con_1">
+                <br>
+                <p style="margin:0; margin-top: 10px;">You don't want to risk outliving your money. This isn't good enough. Click talk to an advisor for a free consultation.</p>
+                <p style="margin:0; margin-top: 10px;">Download our Retirement Planning Guide By <a href="#" target="_blank">Clicking here</a>.</p>
+            </div>
+            <div class="col-md-12" id="con_2">
+                <br>
+                <p style="margin:0; margin-top: 10px;">This may look good but your inputs could be wrong. Get a free consultation by clicking talk to an advisor.</p>
+                <p style="margin:0; margin-top: 10px;">Great job at saving and managing your expenses! <a href="#" target="_blank">Click here</a> for our free guide on how to make your future even brighter.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/jquery.js"></script>
+<script src="js/autonumeric.js"></script>
+<script src="js/Calc-script.js"></script>
+</body>
+</html>

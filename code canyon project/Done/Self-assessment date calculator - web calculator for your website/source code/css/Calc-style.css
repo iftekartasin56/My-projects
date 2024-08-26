@@ -1,0 +1,391 @@
+:root{
+    --Calc-primary-color: #F97566;
+}
+.ms-cl *,
+::after,
+::before {
+    box-sizing: border-box;
+}
+
+.ms-cl .container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+}
+.ms-cl .cl-wrapper {
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    padding: 30px 34px;
+}
+.ms-cl .top-title {
+    margin: 0 !important;
+}
+
+.ms-cl .row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+.ms-cl .col-md-1,
+.ms-cl .col-md-10,
+.ms-cl .col-md-11,
+.ms-cl .col-md-12,
+.ms-cl .col-md-2,
+.ms-cl .col-md-3,
+.ms-cl .col-md-4,
+.ms-cl .col-md-5,
+.ms-cl .col-md-6,
+.ms-cl .col-md-7,
+.ms-cl .col-md-8,
+.ms-cl .col-md-9,
+.ms-cl .col-md-auto {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.ms-cl .form-group {
+    margin-bottom: 1rem;
+}
+
+.ms-cl .form-control {
+    display: block;
+    width: 100%;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 25px;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+.ms-cl .form-control:focus {
+    outline: none;
+}
+
+.ms-cl table {
+    border-collapse: collapse;
+    margin: 0;
+    padding: 0;
+}
+
+.ms-cl tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+
+.ms-cl tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+
+.ms-cl .table {
+    width: 100%;
+    border: none;
+    margin: 0;
+}
+
+.ms-cl .table td,
+.ms-cl .table th {
+    padding: 0;
+    vertical-align: middle;
+    border: none;
+}
+
+/* responsive */
+
+@media (min-width: 576px) {
+
+    .ms-cl .container,
+    .ms-cl .container-sm {
+        max-width: 540px;
+    }
+}
+
+@media (min-width: 768px) {
+
+    .ms-cl .container,
+    .ms-cl .container-md,
+    .ms-cl .container-sm {
+        max-width: 720px;
+    }
+
+    .ms-cl .col-md-12 {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .ms-cl .col-md-8 {
+        -ms-flex: 0 0 66.666667%;
+        flex: 0 0 66.666667%;
+        max-width: 66.666667%;
+    }
+
+    .ms-cl .col-md-6 {
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+    .ms-cl .col-md-4 {
+        -ms-flex: 0 0 33.333333%;
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+    }
+}
+
+@media (min-width: 992px) {
+
+    .ms-cl .container,
+    .ms-cl .container-lg,
+    .ms-cl .container-md,
+    .ms-cl .container-sm {
+        max-width: 1000px;
+    }
+}
+
+@media (min-width: 1200px) {
+
+    .ms-cl .container,
+    .ms-cl .container-lg,
+    .ms-cl .container-md,
+    .ms-cl .container-sm,
+    .ms-cl .container-xl {
+        max-width: 1000px;
+    }
+}
+
+.ms-cl .labels {
+    margin-bottom: 15px;
+    font-size: 18px;
+    display: block;
+}
+
+.ms-cl .switch-sec {
+    display: block;
+    width: 304px;
+    text-align: center;
+    float: right;
+}
+
+.ms-cl .switch {
+    background: transparent;
+    float: right;
+    color: #fff;
+    font-size: 22px;
+    display: flex;
+    flex-direction: row;
+    border-radius: 46px;
+}
+
+.ms-cl .switch .options {
+    border-radius: 46px;
+    padding: 8px 42px;
+    cursor: pointer;
+}
+
+.ms-cl .switch .options.active {
+    background: #8f9652;
+}
+
+.ms-cl .sl-value {
+    font-weight: 600;
+}
+
+.ms-cl .section-m {
+    width: 100%;
+    background: #fff;
+    border-radius: 30px;
+    color: #000;
+    padding-left: 30px;
+    font-size: 18px;
+    margin-top: 22px;
+    border: 1px solid #ccc;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
+.ms-cl .cl-values,
+.cl-values-sp {
+    display: block;
+    width: 100%;
+    float: right;
+    border-radius: 46px;
+    padding: 7px 15px;
+    cursor: pointer;
+    background: transparent;
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+    color: #fff;
+}
+
+.ms-cl .input-vl {
+    border: none !important;
+    background: #fff;
+    width: 78px !important;
+    text-align: center;
+    font-size: 18px !important;
+    display: inline-block !important;
+    padding: 5px !important;
+}
+
+.ms-cl .bg-sp1 {
+    background-color: var(--Calc-primary-color);
+}
+
+.ms-cl .rs-title {
+    text-align: right;
+    padding-right: 20px;
+    padding-top: 12px !important;
+}
+.ms-cl .vl-td {
+    width: 25%;
+}
+.ms-cl .left-elm {
+    display: flex;
+    align-items: center;
+}
+.ms-cl .right-elm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 7px 23px;
+}
+.ms-cl .btn {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: .375rem 1rem;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    cursor: pointer;
+    border-radius: 16px;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.ms-cl .btn-remove {
+    color: var(--Calc-primary-color);
+    background-color: #ffffff;
+    border-color: var(--Calc-primary-color);
+}
+.ms-cl .btn-remove:hover {
+    color: #fff;
+    background-color: var(--Calc-primary-color);
+    border-color: var(--Calc-primary-color);
+}
+.ms-cl .btm-btn-sec {
+    display: block;
+    margin-top: 20px;
+    width: 100%;
+    padding: 8px;
+    text-align: center;
+}
+.ms-cl .text-center {
+    text-align: center!important;
+}
+.ms-cl #cl_alert {
+    display: none;
+    color: var(--Calc-primary-color);
+}
+.ms-cl #cl_error_2 {
+    display: none;
+    color: red;
+}
+.ms-cl .tips, .ms-cl .disclaimer {
+    padding: 0px 15px;
+}
+#pdf_data_sec {
+    width: 1200px;
+    display: none;
+}
+#pdf_sec table {
+    width:100%;
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+    margin-bottom: 8px;
+    font-family: inherit;
+}
+#pdf_sec table th {
+    text-align: left;
+}
+#pdf_sec .text-center {
+    text-align: center!important;
+}
+#pdf_sec .text-right {
+    text-align: right !important;
+}
+#pdf_sec table td, #pdf_sec table th {
+    border-left: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    padding: 1px 15px;
+    font-size: 15px;
+    color: #000;
+}
+#pdf_sec table td, #pdf_sec table th {
+    border: none;
+}
+#pdf_sec table td, #pdf_sec table td {
+    border: none;
+    padding: 10px;
+    font-size: 15px;
+    border-top: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+}
+@media screen and (max-width:768px) {
+    .ms-cl .section-m {
+        font-size: 16px;
+        padding-left: 0;
+    }
+
+    .ms-cl .switch-sec {
+        width: auto;
+    }
+
+    .ms-cl .switch {
+        font-size: 22px;
+    }
+
+    .ms-cl .switch .options {
+        padding: 6px 32px;
+    }
+
+    .ms-cl .input-vl {
+        width: 60px !important;
+    }
+
+    .ms-cl .vl-td {
+        width: auto;
+    }
+    .ms-cl .left-elm {
+        padding: 15px;
+        justify-content: center;
+        text-align: center;
+    }
+}

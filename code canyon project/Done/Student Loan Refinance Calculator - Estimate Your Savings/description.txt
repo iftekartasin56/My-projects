@@ -1,0 +1,40 @@
+Student Loan Refinance Calculator - Estimate Your Savings.
+
+Welcome to our <b>Student Loan Refinance Calculator</b>.A student loan refinancing calculator is a tool that helps you compare your current loan with a potential new loan. You can enter your current loan balance, interest rate, and remaining term, as well as the interest rate and term for a new loan. The calculator will show you how much you can save or spend by refinancing your student loan.
+<br>
+<br>
+<u><b>User inputs:</b></u>
+<ul>
+  <li>Student loan balance</li>
+  <li>Average interest rate</li>
+  <li>Remaining loan term (yr)</li>
+  <li>New interest rate</li>
+  <li>New loan term (years)</li>
+</ul>
+<br>
+<u><b>Outputs:</b></u>
+<ul>
+	<li>Added Interest</li>
+    <li>New Monthly Payment</li>
+    <li>ORIGINAL LOAN</li>
+    <li>NEW LOAN</li>
+    <li>SAVINGS</li>
+    <li>Total Interest</li>
+    <li>Monthly Payment</li>
+    <li>Interest Rate</li>
+    <li>Term in Years</li>
+</ul>
+<br>
+<u><b>Features of the Student Loan Refinance Calculator:</b></u>
+<ul>
+	<li>- It allows you to enter your current loan balance, interest rate, and remaining term, as well as the interest rate and term for a new loan.</li>
+    <li>-  It shows you how much you can save or spend by refinancing your student loan, in terms of added interest, new monthly payment, and overall savings or additional costs.</li>
+    <li>- Instant result without page reload</li>
+    <li>- JS and CSS loads when shortcode called on page</li>
+    <li>- 100% Responsive design</li>
+    <li>- Unique Design</li>
+    <li>- Well Documented (proper help instructions for setup)</li>
+    <li>- Dedicated Support</li>
+</ul> 
+<br>
+The calculator is built using HTML, CSS, and JavaScript, and it also utilizes the popular JavaScript library jQuery. A premium quality <b>Student Loan Refinance Calculator</b> which you can easily embed into any website (well documented).

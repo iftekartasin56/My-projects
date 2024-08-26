@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
+    <title>Web Form</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <style>
+        #mx_cl *,
+        ::after,
+        ::before {
+            box-sizing: border-box;
+        }
+
+        #mx_cl {
+            line-height: 1.5;
+            font-family: inherit;
+        }
+
+        #mx_cl .container {
+            width: 100%;
+            padding: 25px;
+            margin-right: auto;
+            margin-left: auto;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #4a4a4a;
+            text-align: left;
+            background-color: #f2f2f2;
+
+        }
+
+        #mx_cl label {
+            display: inline-block;
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        #mx_cl .row {
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            margin-right: -15px;
+            margin-left: -15px;
+        }
+
+        #mx_cl .col-md-1,
+        #mx_cl .col-md-10,
+        #mx_cl .col-md-11,
+        #mx_cl .col-md-12,
+        #mx_cl .col-md-2,
+        #mx_cl .col-md-3,
+        #mx_cl .col-md-4,
+        #mx_cl .col-md-5,
+        #mx_cl .col-md-6,
+        #mx_cl .col-md-7,
+        #mx_cl .col-md-8,
+        #mx_cl .col-md-9 {
+            position: relative;
+            width: 100%;
+            padding-right: 15px;
+            padding-left: 15px;
+        }
+
+        #mx_cl .form-group {
+            margin-bottom: 1rem;
+        }
+
+        #mx_cl .form-control {
+            display: block;
+            width: 100%;
+            height: calc(1em + 0.75rem + 2px);
+            padding: 0.275rem 0rem;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #4a4a4a;
+            background-color: #fff;
+            transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+            border: none;
+        }
+
+        #mx_cl .form-control:focus {
+            outline: none;
+        }
+
+        #mx_cl .btn {
+            display: inline-block;
+            font-weight: 400;
+            color: #212529;
+            text-align: center;
+            vertical-align: middle;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            background-color: transparent;
+            border: 1px solid transparent;
+            padding: .375rem .75rem;
+            font-size: 1rem;
+            line-height: 1.5;
+            border-radius: .25rem;
+            transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+        }
+
+        #mx_cl .btn-primary {
+            color: #fff;
+            background-color: #28a745;
+            border-color: #28a745;
+        }
+
+        #mx_cl .btn-reset {
+            color: #fff;
+            background-color: #28a745;
+            border-color: #28a745;
+        }
+
+        #mx_cl table {
+            border-collapse: collapse;
+        }
+
+        #mx_cl .table {
+            width: 100%;
+            margin-bottom: 1rem;
+            color: #212529;
+        }
+
+        #mx_cl .table td,
+        #mx_cl .table th {
+            padding: .75rem;
+            vertical-align: top;
+            border-top: 1px solid #dee2e6;
+        }
+
+        #mx_cl .text-center {
+            text-align: center;
+        }
+
+        @media (min-width: 576px) {
+            #mx_cl .container {
+                max-width: 100%;
+            }
+        }
+
+        @media (min-width: 768px) {
+            #mx_cl .container {
+                max-width: 100%;
+            }
+
+            #mx_cl .col-md-12 {
+                -ms-flex: 0 0 100%;
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+
+            #mx_cl .col-md-9 {
+                -ms-flex: 0 0 75%;
+                flex: 0 0 75%;
+                max-width: 75%;
+            }
+
+            #mx_cl .col-md-8 {
+                -ms-flex: 0 0 66.666667%;
+                flex: 0 0 66.666667%;
+                max-width: 66.666667%;
+            }
+
+            #mx_cl .col-md-7 {
+                -ms-flex: 0 0 58.33333%;
+                flex: 0 0 58.33333%;
+                max-width: 58.33333%;
+            }
+
+            #mx_cl .col-md-6 {
+                -ms-flex: 0 0 50%;
+                flex: 0 0 50%;
+                max-width: 50%;
+            }
+
+            #mx_cl .col-md-5 {
+                -ms-flex: 0 0 41.666667%;
+                flex: 0 0 41.666667%;
+                max-width: 41.666667%;
+            }
+
+            #mx_cl .col-md-4 {
+                -ms-flex: 0 0 33.333333%;
+                flex: 0 0 33.333333%;
+                max-width: 33.333333%;
+            }
+
+            #mx_cl .col-md-3 {
+                -ms-flex: 0 0 25%;
+                flex: 0 0 25%;
+                max-width: 25%;
+            }
+        }
+
+        @media (min-width: 992px) {
+            #mx_cl .container {
+                max-width: 960px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            #mx_cl .container {
+                max-width: 650px;
+            }
+
+            #mx_cl .step-progress {
+                max-width: 650px;
+                text-align: center;
+            }
+        }
+
+        #mx_cl .text-right {
+            text-align: right;
+        }
+
+        #mx_cl .form-group,
+        #mx_cl .input-group {
+            position: relative;
+            margin-bottom: 15px;
+        }
+
+
+
+        #mx_cl .top-title {
+            font-size: 25px;
+            text-align: center;
+            color: #000;
+        }
+
+        #mx_cl .content-box {
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+
+        #mx_cl .head-box {
+            background-color: #ffffff;
+            padding: 5px 20px;
+            margin: 10px 0px;
+            border-radius: 5px;
+        }
+
+        #mx_cl .box-top-text {
+            font-size: 14px;
+            color: #909090;
+        }
+
+        #mx_cl .box-mid-text {
+            font-size: 16px;
+            font-weight: 600;
+            color: #000;
+        }
+
+        #mx_cl .gender-option {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+
+        #mx_cl .circle {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background-color: white;
+            margin-right: 10px;
+            margin-top: -10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #mx_cl .gender-option.selected .circle {
+            background-color: rgb(254, 41, 141);
+            border-color: rgb(254, 41, 141);
+        }
+
+        #mx_cl .tick {
+            color: white;
+            font-size: 20px;
+        }
+
+        #mx_cl .circle.selected .tick {
+            display: block;
+        }
+
+        #mx_cl .option-select {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        #mx_cl .button {
+            padding: 10px 30px;
+            background-color: rgb(254, 41, 141);
+            border: none;
+            color: #fff;
+            font-weight: 600;
+            cursor: pointer;
+            border: 2.5px solid #fff;
+            box-shadow: 5px 5px 8px #a8a8a8;
+        }
+
+        #mx_cl .button-sec {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        #mx_cl .step-progress {
+            background-color: #000;
+            padding: 10px;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        #mx_cl .progress-container {
+            display: flex;
+            margin: 0 10px;
+            padding: 5px 30px;
+        }
+
+        #mx_cl .sstep {
+            text-align: center;
+            cursor: pointer;
+        }
+
+        #mx_cl .ccircle {
+            width: 40px;
+            height: 40px;
+            border: 2px solid white;
+            border-radius: 50%;
+            background-color: transparent;
+            margin: 0 10px !important;
+            line-height: 40px;
+            color: white;
+        }
+
+        #mx_cl .sstep-text {
+            font-size: 14px;
+            color: #ffffff;
+        }
+
+        #mx_cl .active .ccircle {
+            background-color: rgb(254, 41, 141);
+            border-color: rgb(254, 41, 141);
+            color: white;
+            border: 2px solid #fff;
+        }
+
+        #mx_cl .line {
+            width: 300px;
+            height: 2px;
+            background-color: white;
+            margin-top: 20px;
+        }
+
+        #mx_cl .s-mid-box {
+            padding: 20px;
+            border: 1px solid #000;
+            background-color: #fff;
+
+        }
+
+        #mx_cl .normal-p {
+            color: #000;
+            text-align: center;
+            margin: 0px;
+            font-weight: 600;
+        }
+
+        #mx_cl .statut {
+            color: #000;
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        #mx_cl .s-mid-circle {
+            width: 100px;
+            height: 100px;
+            border-radius: 100px;
+            background-color: #000;
+            text-align: center;
+            color: #ffffff;
+            margin: 20px auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid #ffffff;
+            font-size: 24px;
+            flex-direction: column;
+        }
+
+        #mx_cl .s-normal-p {
+            text-align: left;
+            font-weight: 600;
+        }
+
+        #mx_cl .output {
+            margin-top: 10px;
+        }
+
+        #mx_cl .img-sec {
+            text-align: center;
+        }
+
+        #mx_cl .poids {
+            padding: 5px 15px;
+            background-color: #ffffff;
+            border: 1px solid #000;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        #mx_cl .poids-output {
+            color: rgb(254, 41, 141);
+            font-size: 30px;
+            font-weight: 600;
+        }
+
+        #mx_cl .poids-circle-p {
+            font-size: 14px;
+        }
+
+        #mx_cl .last-sec-p {
+            color: rgb(254, 41, 141);
+            text-align: center;
+        }
+
+        #mx_cl .toggle-container {
+            display: inline-block;
+            position: relative;
+            width: 60px;
+            height: 30px;
+            background-color: #ccc;
+            border-radius: 15px;
+            cursor: pointer;
+        }
+
+
+        #mx_cl .toggle-switch {
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: 26px;
+            height: 26px;
+            background-color: #fff;
+            border-radius: 50%;
+            transition: 0.3s;
+        }
+        #mx_cl .toggle-container.on {
+            background-color: #fe298d;
+        }
+
+        #mx_cl .toggle-container.on .toggle-switch {
+            left: 32px;
+        }
+
+
+        #mx_cl .toggle-container.off .toggle-switch {
+            left: 2px;
+        }
+
+
+        #mx_cl .toggle-checkbox {
+            display: none;
+        }
+
+        #mx_cl .on-off {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            justify-content: end;
+        }
+
+        #mx_cl .ccircle-mid {
+            margin-left: 16px !important;
+        }
+
+        @media (max-width: 768px) {
+            #mx_cl img {
+                width: 100%;
+            }
+
+            #mx_cl .ccircle {
+                width: 20px;
+                height: 20px;
+
+            }
+
+            #mx_cl .ccircle-mid {
+                margin-left: 20px !important;
+            }
+
+            #mx_cl .line {
+                margin-top: 10px;
+            }
+
+            #mx_cl .sstep-text {
+                font-size: 12px;
+            }
+        }
+        
+        #mx_cl .slide-2, #mx_cl .slide-3 {
+            display: none;
+        }
+    </style>
+
+    <div class="ms-cl" id="mx_cl">
+        <div class="container slide-1">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 class="top-title">Calculette du poids idéal par la formule de Lorentz</h3>
+                </div>
+                <div class="col-md-6"></div>
+                <div class="col-md-6">
+                    <div class="on-off">
+                        <div class="on">Metric units</div>
+                        <label class="toggle-container">
+                            <input type="checkbox" class="toggle-checkbox">
+                            <div class="toggle-switch"></div>
+                        </label>
+                        <div class="off">Imperial units</div>
+                    </div>
+
+                </div>
+                <div class="col-md-12">
+                    <div class="head-box">
+
+                        <div class="box-mid-text">Vous êtes</div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="option-select">
+                        <div class="gender-option" data-value="2">
+                            <div class="circle hommey-femmy" id="femme-circle">
+                                <div class="tick">&#10003;</div>
+                            </div>
+                            <label for="homme-circle">Une femme </label>
+                        </div>
+                        <div class="gender-option" data-value="1">
+                            <div class="circle hommey-femmy" id="homme-circle">
+                                <div class="tick">&#10003;</div>
+                            </div>
+                            <label for="femme-circle">Un homme</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="head-box">
+                        <div class="box-top-text">Votre âge</div>
+                        <input type="text" class="form-control box-mid-text cl-in" id="in_1">
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="head-box">
+                        <div class="box-top-text">Votre taille (<span class="l_unit">cm</span>)</div>
+                        <input type="text" class="form-control box-mid-text cl-in" id="in_2">
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="head-box">
+                        <div class="box-top-text">Votre poids (<span class="w_unit">kg</span>)</div>
+                        <input type="text" class="form-control box-mid-text cl-in" id="in_3">
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="button-sec">
+                        <button class="button" id="butt-1">CALCULATOR</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="step-progress slide-1" id="slide_1">
+            <div class="progress-container">
+                <div class="sstep active" data-step="1">
+                    <div class="ccircle"></div>
+                    <div class="sstep-text ">1.IMC</div>
+                </div>
+                <div class="line"></div>
+                <div class="sstep" data-step="2">
+                    <div class="ccircle ccircle-mid"></div>
+                    <div class="sstep-text">2.ANALYSE</div>
+                </div>
+                <div class="line"></div>
+                <div class="sstep" data-step="3">
+                    <div class="ccircle"></div>
+                    <div class="sstep-text">3.SOLUTIONS</div>
+                </div>
+            </div>
+        </div>
+        <div class="container slide-2">
+            <div class="s-mid-box">
+                <p class="normal-p">Votre poids idéal </p>
+                <div class="statut">par la formule de<span id="out-1"></span></div>
+            </div>
+
+            <div class="s-mid-circle">
+                <span class="s-mid-output" id="out-2">00</span>
+                <div class="poids-circle-p w_unit">Kg</div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <p class="s-normal-p">Analysez le résultat de votre IMC et découvrez votre poids idéal !</p>
+                    <div class="head-box">
+
+                        <div class="box-top-text">Quel est votre objectif de poids (en  <span class="w_unit">KG</span> ) ?</div>
+                        <input type="text" class="form-control box-mid-text cl-in" id="in_4">
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="button-sec">
+                        <button class="button" id="butt-2">ANALYSER</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="step-progress slide-2" id="slide_2">
+            <div class="progress-container">
+                <div class="sstep" data-step="1">
+                    <div class="ccircle"></div>
+                    <div class="sstep-text">1.IMC</div>
+                </div>
+                <div class="line"></div>
+                <div class="sstep active" data-step="2">
+                    <div class="ccircle ccircle-mid"></div>
+                    <div class="sstep-text">2.ANALYSE</div>
+                </div>
+                <div class="line"></div>
+                <div class="sstep" data-step="3">
+                    <div class="ccircle"></div>
+                    <div class="sstep-text">3.SOLUTIONS</div>
+                </div>
+            </div>
+        </div>
+        <div class="container slide-3">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="normal-p">Votre Indice de Masse Corporelle</div>
+                    <div class="output text-center">IMC = <span id="out-3">00</span></div>
+                    <div class="statut">Statut= <span id="out-4">00</span></div>
+                    <div class="img-sec">
+                        <img src=" " alt="" srcset="" id="img_sec">
+                    </div>
+                    <div class="normal-p">Vos indicateurs de poids</div>
+                    <div class="output text-center">Votre poids actuel =<span id="out-5">00</span></div>
+                    <div class="output text-center">Poids idéal (formule de Lorentz) =<span id="out-6">00</span>
+                    </div>
+                    <div class="output text-center">Objectif personnel = <span id="out-7">00</span></div>
+                </div>
+                <div class="col-md-6">
+                    <div class="poids">Poids moyen à atteindre</div>
+
+                    <div class="s-mid-circle">
+                        <span class="poids-output" id="out-8">00</span>
+                        <div class="poids-circle-p w_unit">Kg</div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="poids" id="poids_txt">Poids moyen à perdre</div>
+                    <div class="s-mid-circle">
+                        <span class="poids-output" id="out-9">00</span>
+                        <div class="poids-circle-p w_unit">Kg</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="step-progress slide-3" id="slide_3">
+            <div class="progress-container">
+                <div class="sstep" data-step="1">
+                    <div class="ccircle"></div>
+                    <div class="sstep-text">1.IMC</div>
+                </div>
+                <div class="line"></div>
+                <div class="sstep" data-step="2">
+                    <div class="ccircle ccircle-mid"></div>
+                    <div class="sstep-text">2.ANALYSE</div>
+                </div>
+                <div class="line"></div>
+                <div class="sstep active" data-step="3">
+                    <div class="ccircle"></div>
+                    <div class="sstep-text">3.SOLUTIONS</div>
+                </div>
+            </div>
+        </div>
+        <div class="container slide-3">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="last-sec-p">Quel objectif et comment le concrétiser?</div>
+                    <div id="footer_txt"></div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="button-sec">
+                    <a href="" class="button" id="butt-3">VOIR MON PROGRAMME</a>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <img src="p-img2.png" alt="" srcset="">
+            </div>
+        </div>
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/autonumeric@4.5.4"></script>
+
+    <script>
+        $(document).ready(function () {
+
+            let unit = 1;
+            let w_unit = "kg";
+            let l_unit = "cm";
+            let hommeyFemmyValue = "2";
+
+            const numOptionNum = {
+                digitGroupSeparator: ',',
+                decimalCharacter: '.',
+                decimalCharacterAlternative: '.',
+                currencySymbol: '',
+                currencySymbolPlacement: AutoNumeric.options.currencySymbolPlacement.prefix,
+                decimalPlaces: 0,
+                minimumValue: 0
+            };
+            const numOptionCurrency = {
+                digitGroupSeparator: ',',
+                decimalCharacter: '.',
+                decimalCharacterAlternative: '.',
+                currencySymbol: '$',
+                currencySymbolPlacement: AutoNumeric.options.currencySymbolPlacement.prefix,
+                decimalPlaces: 0,
+                minimumValue: 0
+            };
+            const numOptionPercent = {
+                digitGroupSeparator: ',',
+                decimalCharacter: '.',
+                decimalCharacterAlternative: '.',
+                currencySymbol: '%',
+                currencySymbolPlacement: AutoNumeric.options.currencySymbolPlacement.suffix,
+                decimalPlaces: 0,
+                minimumValue: 0,
+                maximumValue: 100
+            };
+
+            const anElement1 = AutoNumeric.multiple('.cl-in', numOptionNum);
+
+            function removeComma(num) {
+                return Number(num.replace(/,/g, ""));
+            }
+
+            const nftd = Intl.NumberFormat("en-US", {
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2
+            });
+
+            
+            $(".gender-option").click(function () {
+                $(".gender-option").removeClass("selected");
+                $(this).addClass("selected");
+                
+                hommeyFemmyValue = $(".gender-option.selected").data("value");
+            });
+
+            $('.toggle-container').click(function () {
+                var checkbox = $(this).find('.toggle-checkbox');
+                var isOn = checkbox.prop('checked');
+
+                if (isOn) {
+                    unit = 1;
+                    w_unit = "kg";
+                    l_unit = "cm";
+                    checkbox.prop('checked', false);
+                    $(this).removeClass('on').addClass('off');
+                } else {
+                    unit = 2;
+                    w_unit = "lbs";
+                    l_unit = "inch";
+                    checkbox.prop('checked', true);
+                    $(this).removeClass('off').addClass('on');
+                }
+                $(".w_unit").html(w_unit);
+                $(".l_unit").html(l_unit);
+
+                let age = removeComma($("#in_1").val());
+                let taille = removeComma($("#in_2").val());
+                let poids = removeComma($("#in_3").val());
+
+                if(age && taille && poids){
+                    Calc_butt_1();
+                }
+            });
+
+            $('#butt-1').click(function (){
+                let age = removeComma($("#in_1").val());
+                let taille = removeComma($("#in_2").val());
+                let poids = removeComma($("#in_3").val());
+
+                if(age && taille && poids){
+                    Calc_butt_1();
+                    $('.slide-2').show();
+
+                    var target = $('#slide_1');
+                    
+                    if (target.length)
+                    {
+                        
+                        var top = target.offset().top;
+                        $('html,body').animate({scrollTop: top}, 500);
+                        return false;
+                    }
+                }
+
+            });
+
+            $('#butt-2').click(function (){
+                let age = removeComma($("#in_1").val());
+                let taille = removeComma($("#in_2").val());
+                let poids = removeComma($("#in_3").val());
+                let obj = removeComma($("#in_4").val());
+
+                if(age && taille && poids && obj){
+                    Calc_butt_1();
+                    $('.slide-3').show();
+
+                    var target = $('#slide_2');
+                    
+                    if (target.length)
+                    {
+                        
+                        var top = target.offset().top;
+                        $('html,body').animate({scrollTop: top}, 500);
+                        return false;
+                    }
+                }
+            });
+
+
+            function Calc_butt_1(){
+                let age = removeComma($("#in_1").val());
+                let taille = removeComma($("#in_2").val());
+                let poids = removeComma($("#in_3").val());
+
+                if(age && taille && poids){
+                    if(w_unit == "lbs"){
+                        poids = poids / 2.205;
+                    }
+
+                    if(l_unit == "inch"){
+                        taille = taille * 2.54;
+                    }
+
+                    let PIDF=0;
+                    if (hommeyFemmyValue == "2") {
+                        PIDF=(taille-100-((taille-150)/2.5));
+                    } else if (hommeyFemmyValue == "1") {
+                        PIDF=(taille-100-((taille-150)/4));
+                    }
+                
+
+                    let obj = removeComma($("#in_4").val());
+                    
+                    let IMC = (poids / ((taille / 100) * (taille / 100)));
+
+                    let STATUT;
+                    let message;
+                    let IMAGE;
+
+                    if (IMC < 18.5) {
+                        message = "maigreur";
+                        IMAGE="imc-statut-maigreur.png";
+                    } else if (IMC < 25) {
+                        message = "corpulence normale";
+                        IMAGE="imc-statut-normal.png";
+                    } else if (IMC < 30) {
+                        message = "surpoids";
+                        IMAGE="imc-statut-suroids.png";
+                    } else {
+                        message = "obésité";
+                        IMAGE="imc-statut-obesite.png";
+                    }
+
+                    let PIL = 0;
+                    if (hommeyFemmyValue == "2") {
+                        PIL = taille - 100 - ((taille - 150) / 2.5);
+                    } else {
+                        PIL = taille - 100 - ((taille - 150) / 4);
+                    }
+
+
+                    let pmaa = ((obj+PIL)/2);
+                    let kap = (poids - pmaa );
+                    let vakap = Math.abs(kap);
+
+                    let textp = "";
+                    if (kap>0) {textp="Poids moyen à perdre";}
+                    else if (kap<0) {textp="Poids moyen à gagner";}
+                    else {textp="Vous êtes à l'équilibre";} 
+
+                    let text = "";
+                    let link = "";
+
+                    if (kap < 0.1) {
+                        text = "Vous n'avez pas de poids à perdre. Félicitations.";
+                        link = '/categorie-produit/coffret-minceur-box-de-regime';
+                    } else if (kap < 1) {
+                        text = "Vous êtes presque à votre poids d'équilibre. Vous pouvez perdre ce léger superflus en découvrant notre programme.";
+                        link = '/regivia-regime-proteine/programme-de-regime-proteine-regivia/programme-de-regime-s-a-3-kg-14-jours';
+                    } else if (kap < 3) {
+                        text = `En étant raisonnable vous pouvez vous fixer un objectif de <span class="last-sec-p">${kap} kg</span> et l\'atteindre au bout de <span class="last-sec-p">2  semaines!</span>`;
+                        link = '/regivia-regime-proteine/programme-de-regime-proteine-regivia/programme-de-regime-s-a-3-kg-14-jours';
+                    } else if (kap < 6) {
+                        text = `En étant raisonnable vous pouvez vous fixer un objectif de <span class="last-sec-p">${kap} kg</span> et l\'atteindre au bout de <span class="last-sec-p">4  semaines!</span>`;
+                        link = '/regivia-regime-proteine/programme-de-regime-proteine-regivia/programme-de-regime-m-3-a-6-kg-28-jours';
+                    } else if (kap < 9) {
+                        text = `En étant raisonnable vous pouvez vous fixer un objectif de <span class="last-sec-p">${kap} kg</span> et l\'atteindre au bout de <span class="last-sec-p">6  semaines!</span>`;
+                        link = '/regivia-regime-proteine/programme-de-regime-proteine-regivia/programme-de-regime-l-6-a-9-kg-42-jours';
+                    } else if (kap < 12) {
+                        text = `En étant raisonnable vous pouvez vous fixer un objectif de <span class="last-sec-p">${kap} kg</span> et l\'atteindre au bout de <span class="last-sec-p">10  semaines!</span>`;
+                        link = '/regivia-regime-proteine/programme-de-regime-proteine-regivia/programme-de-regime-xl-9-a-12-kg-56-jours';
+                    } else if (kap < 15) {
+                        text = `En étant raisonnable vous pouvez vous fixer un objectif de <span class="last-sec-p">${kap} kg</span> et l\'atteindre au bout de <span class="last-sec-p">10  semaines!</span>`;
+                        link = '/regivia-regime-proteine/programme-de-regime-proteine-regivia/programme-de-regime-xxl-12-a-15-kg-70-jours';
+                    } else {
+                        text = 'En étant raisonnable vous pouvez vous fixer un objectif d\'environ <span class="last-sec-p">15 kg</span> et l\'atteindre au bout de <span class="last-sec-p">10 semaines!</span>';
+                        link = '/regivia-regime-proteine/programme-de-regime-proteine-regivia/programme-de-regime-xxl-12-a-15-kg-70-jours';
+                    }
+
+                    $("#out-1").text(message);
+                    $("#out-2").text(Math.round(PIDF));
+                    $("#out-3").text(Number(IMC.toFixed(1)));
+                    $("#out-4").text(message);
+                    $("#out-5").text(poids + " "+w_unit);
+                    $("#out-6").text(Math.round(PIL) + " "+w_unit);
+                    $("#out-7").text(obj + " "+w_unit);
+                    $("#out-8").text(Number(pmaa.toFixed(1)));
+                    $("#out-9").text(Number(vakap.toFixed(1)));
+                    $("#poids_txt").html(textp);
+                    $("#footer_txt").html(text);
+                    $("#butt-3").attr("href" , link);
+                    $("#img_sec").attr("src" ,"https://www.regivia.com/wp-content/uploads/" + IMAGE);
+                }
+            };
+        });
+    </script>
+</body>
+
+</html>

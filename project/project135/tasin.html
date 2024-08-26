@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.min.js"
+      integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+      crossorigin="anonymous"
+    ></script>
+
+    <title>Personal Debt inventory tracker</title>
+  </head>
+
+  <body>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@600&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <style>
+        #hm_cl1 *,
+        ::after,
+        ::before {
+            box-sizing: border-box;
+        }
+
+        #hm_cl1 {
+            line-height: 1.5;
+            font-family: "Nunito Sans", sans-serif;
+        }
+
+        #hm_cl1 .footer-section,
+        #hm_cl1 .border-th {
+            color: #373A3B;
+        }
+
+        #hm_cl1 .container {
+            width: 100%;
+            margin-right: auto;
+            margin-left: auto;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #373A3B;
+            text-align: left;
+        }
+        #hm_cl1 .row {
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            margin-right: -15px;
+            margin-left: -15px;
+        }
+        #hm_cl1 .col-md-1, #hm_cl1 .col-md-10, #hm_cl1 .col-md-11, #hm_cl1 .col-md-12, #hm_cl1 .col-md-2, #hm_cl1 .col-md-3, #hm_cl1 .col-md-4, #hm_cl1 .col-md-5, #hm_cl1 .col-md-6, #hm_cl1 .col-md-7, #hm_cl1 .col-md-8, #hm_cl1 .col-md-9 {
+            position: relative;
+            width: 100%;
+            padding-right: 15px;
+            padding-left: 15px;
+        }
+
+        #hm_cl1 table {
+            border-collapse: collapse;
+        }
+
+        #hm_cl1 .text-center {
+            text-align: center;
+        }
+
+
+        #hm_cl1 .text-rotate {
+          writing-mode: vertical-rl;
+        }
+
+        @media (min-width: 576px) {
+          #hm_cl1 .container {
+                max-width: 100%;
+            }
+        }
+
+        @media (min-width: 768px) {
+            #hm_cl1 .container {
+                max-width: 100%;
+            }
+            #hm_cl1 .col-md-12 {
+                -ms-flex: 0 0 100%;
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+            #hm_cl1 .col-md-9 {
+                -ms-flex: 0 0 75%;
+                flex: 0 0 75%;
+                max-width: 75%;
+            }
+            #hm_cl1 .col-md-8 {
+                -ms-flex: 0 0 66.666667%;
+                flex: 0 0 66.666667%;
+                max-width: 66.666667%;
+            }
+            #hm_cl1 .col-md-7 {
+                -ms-flex: 0 0 58.33333%;
+                flex: 0 0 58.33333%;
+                max-width: 58.33333%;
+            }
+            #hm_cl1 .col-md-6 {
+                -ms-flex: 0 0 50%;
+                flex: 0 0 50%;
+                max-width: 50%;
+            }
+            #hm_cl1 .col-md-5 {
+                -ms-flex: 0 0 41.666667%;
+                flex: 0 0 33.333333%;
+                max-width: 33.333333%;
+            }
+            #hm_cl1 .col-md-4 {
+                -ms-flex: 0 0 33.333333%;
+                flex: 0 0 33.333333%;
+                max-width: 33.333333%;
+            }
+            #hm_cl1 .col-md-3 {
+                -ms-flex: 0 0 25%;
+                flex: 0 0 25%;
+                max-width: 25%;
+            }
+        }
+
+        @media (min-width: 992px) {
+          #hm_cl1 .container {
+                max-width: 930px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+          #hm_cl1 .container {
+                max-width: 1050px;
+            }
+        }
+
+        #hm_cl1 .text-right {
+            text-align: right;
+        }
+
+        #hm_cl1 .main-sec {
+            width: 100%;
+            padding-right: 35px;
+            padding-left: 35px;
+            border: 1px solid #D9D9D9;
+            border-radius: 0 0 8px 8px;
+            background: #FFF;
+            box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.25);
+        }
+
+        #hm_cl1 table th,
+        #hm_cl1 table td {
+            text-align: center;
+            padding: 6px 0px;
+            font-size: 16px;
+        }
+        #hm_cl1 .sp-fnt-size {
+            font-size: 16px;
+            font-weight: 700 !important;
+            text-align: right;
+        }
+        #hm_cl1 .sp-txt-align {
+            text-align: center;
+        }
+        #hm_cl1 table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+        }
+
+        #hm_cl1 .border-th {
+            border-style: solid;
+            border-width: 1px 0px;
+            border-color: #373A3B;
+            background-color: #222933;
+            color: #fff;
+        }
+
+        #hm_cl1 .color1 {
+            background-color: #F6F6F6;
+        }
+
+        #hm_cl1 .color2 {
+            background-color: #D0CFCB;
+        }
+
+        #hm_cl1 .color3 {
+            background-color: #D3C8BF;
+        }
+
+        #hm_cl1 .footer-section {
+            background-color: #D3C8BF;
+            padding: 10px;
+            text-align: center;
+            padding-bottom: 20px !important;
+        }
+
+        #hm_cl1 .footer-heading {
+            padding-top: 5px;
+            margin: 0;
+            margin-bottom: 15px;
+            font-weight: 400;
+        }
+
+        #hm_cl1 .footer-p {
+            font-size: 40px;
+            font-weight: 600;
+            margin: 0px;
+        }
+
+        #hm_cl1 .input-class:focus {
+            outline: none;
+        }
+
+        #hm_cl1 .input-class {
+            text-align: center;
+            font-size: 16px;
+            background: transparent;
+            border: none;
+            width: 100%;
+        }
+
+        #hm_cl1 .border-tb {
+            border-top: 1px solid #373A3B;
+            border-bottom: 1px solid #373A3B;
+        }
+
+        #hm_cl1 .font_1 {
+            font-family: 'EB Garamond', serif;
+            color: #373A3B;
+        }
+
+        #hm_cl1 .rs-sec {
+            display: flex;
+            justify-content: space-evenly;
+            gap: 20px;
+        }
+        #hm_cl1 .fixed-40{
+            width: 40px;
+        }
+        #hm_cl1 .fixed-188{
+            width: 188px;
+        }
+        #hm_cl1 .fixed-144{
+            width: 144px;
+        }
+        #hm_cl1 .fixed-95{
+            width: 95px;
+        }
+        #hm_cl1 .fixed-123{
+            width: 123px;
+        }
+        #hm_cl1 .fixed-135{
+            width: 135px;
+        }
+        #hm_cl1 .dk-border-bt{
+            border-bottom: 1px solid #fff;
+            border-right: 1px solid #fff;
+        }
+        #hm_cl1 .spacer-td {
+            border-bottom: 1px solid #373A3B;
+        }
+        #hm_cl1 .spacer {
+            height: 5px;
+        }
+        #hm_cl1 .br-spacer {
+            border-bottom: 10px solid #ffffff;
+        }
+        #hm_cl1 .mb-border-bt-rs {
+            border-bottom: 5px solid #d3c8bf;
+        }
+        #hm_cl1 .text-left {
+            text-align: left !important;
+        }
+        #hm_cl1 .text-right {
+            text-align: right !important;
+        }
+        #hm_cl1 .f600 {
+            font-size: 14px !important;
+            font-weight: 600 !important;
+        }
+        @media (max-width: 768px) {
+
+            #hm_cl1 .table {
+                min-width: 800px;
+            }
+            #hm_cl1 .logo-sec{
+                display: block;
+                text-align: center;
+                margin-bottom: 15px;
+            }
+            #hm_cl1 .main-sec-title{
+                text-align: center;
+            }
+            #hm_cl1 .bottom-para{
+                text-align: center;
+            }
+            #hm_cl1 .mb-table {
+                display: table;
+            }
+
+            #hm_cl1 th,
+            #hm_cl1 td {
+                padding: 5px 3px;
+                font-size: 14px;
+            }
+
+            #hm_cl1 .input-class {
+                font-size: 14px;
+            }
+
+            #hm_cl1 .footer-section,
+            #hm_cl1 .border-th {
+                font-family: 'EB Garamond', serif;
+                color: #fff;
+                padding-top: 20px !important;
+            }
+            #hm_cl1 .mb-db-border {
+                border-bottom: 5px solid #fff;
+                text-align: left;
+            }
+            #hm_cl1 .mb-border-bt {
+                border-bottom: 5px solid #fff;
+                text-align: left;
+
+            }
+            #hm_cl1 .sp-txt-right {
+                text-align: right;
+
+            }
+            #hm_cl1 .container {
+                padding-left: 0;
+                padding-right: 0;
+            }
+            #hm_cl1 .table-padding {
+                margin-right: 0px;
+                margin-left: 0px;
+            }
+            #hm_cl1 table th, #hm_cl1 table td {
+                padding: 5px 6px;
+            }
+        }
+        #hm_cl1 .top-header {
+            width: 100%;
+            display: block;
+            background: #222933;
+            padding: 35px;
+            border: 1px solid #222933;
+            border-radius: 8px 8px 0 0;
+            color: #ffffff;
+        }
+        #hm_cl1 .header-title-sec {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #hm_cl1 .header-title {
+            font-size: 28px;
+            font-weight: 600;
+            text-align: center;
+        }
+        #hm_cl1 .main-sec-title {
+            color: #838383;
+            font-size: 16px;
+            font-weight: 400;
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+        #hm_cl1 . .sp-border-top {
+            border-top: 1px solid #000 !important;
+        }
+        #hm_cl1 .total-rs-vl {
+            color: #222933;
+            text-align: left;
+            font-size: 18px;
+            font-weight: 600 !important;
+        }
+        #hm_cl1 .bottom-para {
+            color: #585858;
+            font-size: 14px;
+            font-style: italic;
+            font-weight: 400;
+            margin-top: 20px;
+            margin-bottom: 30px;
+        }
+        #hm_cl1 .sp-border-bt {
+            border-bottom: 1px solid #b1b1b1;
+        }
+        
+    </style>
+    <div class="ms-cl" id="hm_cl1">
+      <div class="container">
+        <div class="row">
+            <div class="col-md-12 pd-0">
+                <div class="top-header">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="logo-sec">
+                                <img src="logo.png" alt="">
+                            </div>
+                        </div>
+                        <div class="col-md-8" style="display: flex; align-items: center; justify-content: center;">
+                            <div class="header-title">Personal Debt Inventory Tracker</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main-sec">
+            <div class="main-sec-title">Make a quick Debt Inventory! List any and all debts including credit cards, auto loans, personal loans and or student loans.</div>
+            <div class="extra-padding">
+                <div  style="overflow-x: auto;">
+                    <table class="table">
+                        <thead class="border-th">
+                            <tr>
+                                <th nowrap class="fixed-40 dk-border-bt sp-fnt-size sp-txt-align">SL</th>
+                                <th nowrap class="fixed-188 dk-border-bt sp-fnt-size sp-txt-align">Name of Creditor</th>
+                                <th nowrap class="fixed-144 dk-border-bt sp-fnt-size sp-txt-align">Balance</th>
+                                <th nowrap class="fixed-95 dk-border-bt sp-fnt-size sp-txt-align">Interest Rate</th>
+                                <th nowrap class="fixed_123 dk-border-bt sp-fnt-size sp-txt-align">Payment Due Date</th>
+                                <th nowrap class="fixed_135 dk-border-bt sp-fnt-size sp-txt-align">Minimum Payment</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class=" fixed_40 dk-border-bt">01</td>
+                                <td class=" fixed_188 dk-border-bt"><input type="text" class="input-class text-left" /></td>
+                                <td class=" fixed_144 dk-border-bt"><input type="text" class="input-class format-currency  in-amount" id="bl_in_1" /></td>
+                                <td class=" fixed-95  dk-border-bt"><input type="text" class="input-class format-percent" /></td>
+                                <td class=" fixed_123 dk-border-bt"><input type="text" class="input-class" id="pdd_in_1"/ placeholder="dd/mm/yy"></td>
+                                <td class=" fixed_135 dk-border-bt"><input type="text" class="input-class format-currency in-amount" id="mp_in_1"/></td>
+                            </tr>
+                            <tr>
+                                <td class="color1 fixed_40 dk-border-bt">02</td>
+                                <td class="color1 fixed_188 dk-border-bt"><input type="text" class="input-class text-left" /></td>
+                                <td class="color1 fixed_144 dk-border-bt"><input type="text" class="input-class format-currency in-amount" id="bl_in_2"/></td>
+                                <td class="color1 fixed-95  dk-border-bt"><input type="text" class="input-class format-percent" /></td>
+                                <td class="color1 fixed_123 dk-border-bt"><input type="text" class="input-class"  id="pdd_in_2"/ placeholder="dd/mm/yy"></td>
+                                <td class="color1 fixed_135 dk-border-bt"><input type="text" class="input-class format-currency in-amount" id="mp_in_2"/></td>
+                            </tr>
+                            <tr>
+                                <td class=" fixed_40 dk-border-bt">03</td>
+                                <td class=" fixed_188 dk-border-bt"><input type="text" class="input-class text-left" /></td>
+                                <td class=" fixed_144 dk-border-bt"><input type="text" class="input-class format-currency in-amount" id="bl_in_3"/></td>
+                                <td class=" fixed-95  dk-border-bt"><input type="text" class="input-class format-percent" /></td>
+                                <td class=" fixed_123 dk-border-bt"><input type="text" class="input-class"  id="pdd_in_3"/ placeholder="dd/mm/yy"></td>
+                                <td class=" fixed_135 dk-border-bt"><input type="text" class="input-class format-currency in-amount" id="mp_in_3"/></td>
+                            </tr>
+                            <tr>
+                                <td class="color1 fixed_40 dk-border-bt">04</td>
+                                <td class="color1 fixed_188 dk-border-bt"><input type="text" class="input-class text-left" /></td>
+                                <td class="color1 fixed_144 dk-border-bt"><input type="text" class="input-class format-currency in-amount" id="bl_in_4"/></td>
+                                <td class="color1 fixed-95  dk-border-bt"><input type="text" class="input-class format-percent" /></td>
+                                <td class="color1 fixed_123 dk-border-bt"><input type="text" class="input-class"  id="pdd_in_4"/ placeholder="dd/mm/yy"></td>
+                                <td class="color1 fixed_135 dk-border-bt"><input type="text" class="input-class format-currency in-amount" id="mp_in_4"/></td>
+                            </tr>
+                            <tr>
+                                <td class=" fixed_40 dk-border-bt">05</td>
+                                <td class=" fixed_188 dk-border-bt"><input type="text" class="input-class text-left" /></td>
+                                <td class=" fixed_144 dk-border-bt"><input type="text" class="input-class format-currency in-amount" id="bl_in_5"/></td>
+                                <td class=" fixed-95  dk-border-bt"><input type="text" class="input-class format-percent" /></td>
+                                <td class=" fixed_123 dk-border-bt"><input type="text" class="input-class"  id="pdd_in_5"/ placeholder="dd/mm/yy"></td>
+                                <td class=" fixed_135 dk-border-bt"><input type="text" class="input-class format-currency in-amount" id="mp_in_5"/></td>
+                            </tr>
+                            <tr>
+                                <td class="color1 fixed_40 dk-border-bt">06</td>
+                                <td class="color1 fixed_188 dk-border-bt"><input type="text" class="input-class text-left" /></td>
+                                <td class="color1 fixed_144 dk-border-bt"><input type="text" class="input-class format-currency in-amount" id="bl_in_6"/></td>
+                                <td class="color1 fixed-95  dk-border-bt"><input type="text" class="input-class format-percent" /></td>
+                                <td class="color1 fixed_123 dk-border-bt"><input type="text" class="input-class"  id="pdd_in_6"/ placeholder="dd/mm/yy"></td>
+                                <td class="color1 fixed_135 dk-border-bt"><input type="text" class="input-class format-currency in-amount" id="mp_in_6"/></td>
+                            </tr>
+                            <tr>
+                                <td class=" fixed_40 dk-border-bt">07</td>
+                                <td class=" fixed_188 dk-border-bt"><input type="text" class="input-class text-left" /></td>
+                                <td class=" fixed_144 dk-border-bt"><input type="text" class="input-class format-currency in-amount" id="bl_in_7"/></td>
+                                <td class=" fixed-95  dk-border-bt"><input type="text" class="input-class format-percent" /></td>
+                                <td class=" fixed_123 dk-border-bt"><input type="text" class="input-class"  id="pdd_in_7"/ placeholder="dd/mm/yy"></td>
+                                <td class=" fixed_135 dk-border-bt"><input type="text" class="input-class format-currency in-amount" id="mp_in_7"/></td>
+                            </tr>
+                            <tr>
+                                <td class="color1 fixed_40 dk-border-bt">08</td>
+                                <td class="color1 fixed_188 dk-border-bt"><input type="text" class="input-class text-left" /></td>
+                                <td class="color1 fixed_144 dk-border-bt"><input type="text" class="input-class format-currency in-amount" id="bl_in_8"/></td>
+                                <td class="color1 fixed-95  dk-border-bt"><input type="text" class="input-class format-percent" /></td>
+                                <td class="color1 fixed_123 dk-border-bt"><input type="text" class="input-class"  id="pdd_in_8"/ placeholder="dd/mm/yy"></td>
+                                <td class="color1 fixed_135 dk-border-bt"><input type="text" class="input-class format-currency in-amount" id="mp_in_8"/></td>
+                            </tr>
+                            <tr>
+                                <td class=" fixed_40 dk-border-bt">09</td>
+                                <td class=" fixed_188 dk-border-bt"><input type="text" class="input-class text-left" /></td>
+                                <td class=" fixed_144 dk-border-bt"><input type="text" class="input-class format-currency in-amount" id="bl_in_9"/></td>
+                                <td class=" fixed-95  dk-border-bt"><input type="text" class="input-class format-percent" /></td>
+                                <td class=" fixed_123 dk-border-bt"><input type="text" class="input-class"  id="pdd_in_9"/ placeholder="dd/mm/yy"></td>
+                                <td class=" fixed_135 dk-border-bt"><input type="text" class="input-class format-currency in-amount" id="mp_in_9"/></td>
+                            </tr>
+                            <tr>
+                                <td class="color1 fixed_40 dk-border-bt">10</td>
+                                <td class="color1 fixed_188 dk-border-bt"><input type="text" class="input-class text-left" /></td>
+                                <td class="color1 fixed_144 dk-border-bt"><input type="text" class="input-class format-currency in-amount" id="bl_in_10"/></td>
+                                <td class="color1 fixed-95  dk-border-bt"><input type="text" class="input-class format-percent" /></td>
+                                <td class="color1 fixed_123 dk-border-bt"><input type="text" class="input-class"  id="pdd_in_10" placeholder="dd/mm/yy"/></td>
+                                <td class="color1 fixed_135 dk-border-bt"><input type="text" class="input-class format-currency in-amount" id="mp_in_10"/></td>
+                            </tr>
+                            <tr>
+                                <td class="fixed_40 dk-border-bt">11</td>
+                                <td class="fixed_188 dk-border-bt"><input type="text" class="input-class text-left" /></td>
+                                <td class="fixed_144 dk-border-bt"><input type="text" class="input-class format-currency in-amount" id="bl_in_11"/></td>
+                                <td class="fixed-95  dk-border-bt"><input type="text" class="input-class format-percent" /></td>
+                                <td class="fixed_123 dk-border-bt"><input type="text" class="input-class"  id="pdd_in_11" placeholder="dd/mm/yy"/></td>
+                                <td class="fixed_135 dk-border-bt"><input type="text" class="input-class format-currency in-amount" id="mp_in_11"/></td>
+                            </tr>
+                            <tr>
+                                <td class="color1 fixed_40 dk-border-bt">12</td>
+                                <td class="color1 fixed_188 dk-border-bt"><input type="text" class="input-class text-left" /></td>
+                                <td class="color1 fixed_144 dk-border-bt"><input type="text" class="input-class format-currency in-amount" id="bl_in_12"/></td>
+                                <td class="color1 fixed-95  dk-border-bt"><input type="text" class="input-class format-percent" /></td>
+                                <td class="color1 fixed_123 dk-border-bt"><input type="text" class="input-class"  id="pdd_in_12" placeholder="dd/mm/yy"/></td>
+                                <td class="color1 fixed_135 dk-border-bt"><input type="text" class="input-class format-currency in-amount" id="mp_in_12"/></td>
+                            </tr>
+                            <tr>
+                                <td class="fixed_40 dk-border-bt">13</td>
+                                <td class="fixed_188 dk-border-bt"><input type="text" class="input-class text-left" /></td>
+                                <td class="fixed_144 dk-border-bt"><input type="text" class="input-class format-currency in-amount" id="bl_in_13"/></td>
+                                <td class="fixed-95  dk-border-bt"><input type="text" class="input-class format-percent" /></td>
+                                <td class="fixed_123 dk-border-bt"><input type="text" class="input-class"  id="pdd_in_13" placeholder="dd/mm/yy"/></td>
+                                <td class="fixed_135 dk-border-bt"><input type="text" class="input-class format-currency in-amount" id="mp_in_13"/></td>
+                            </tr>
+                            <tr>
+                                <td class="color1 fixed_40 dk-border-bt">14</td>
+                                <td class="color1 fixed_188 dk-border-bt"><input type="text" class="input-class text-left" /></td>
+                                <td class="color1 fixed_144 dk-border-bt"><input type="text" class="input-class format-currency in-amount" id="bl_in_14"/></td>
+                                <td class="color1 fixed-95  dk-border-bt"><input type="text" class="input-class format-percent" /></td>
+                                <td class="color1 fixed_123 dk-border-bt"><input type="text" class="input-class"  id="pdd_in_14" placeholder="dd/mm/yy"/></td>
+                                <td class="color1 fixed_135 dk-border-bt"><input type="text" class="input-class format-currency in-amount" id="mp_in_14"/></td>
+                            </tr>
+                            <tr>
+                                <td class="fixed_40 dk-border-bt sp-border-bt">15</td>
+                                <td class="fixed_188 dk-border-bt sp-border-bt"><input type="text" class="input-class text-left" /></td>
+                                <td class="fixed_144 dk-border-bt sp-border-bt"><input type="text" class="input-class format-currency in-amount" id="bl_in_15"/></td>
+                                <td class="fixed-95  dk-border-bt sp-border-bt"><input type="text" class="input-class format-percent" /></td>
+                                <td class="fixed_123 dk-border-bt sp-border-bt"><input type="text" class="input-class"  id="pdd_in_15" placeholder="dd/mm/yy"/></td>
+                                <td class="fixed_135 dk-border-bt sp-border-bt"><input type="text" class="input-class format-currency in-amount" id="mp_in_15"/></td>
+                            </tr>
+                            
+                        </tbody>
+                        <tfoot class="sp-border-top">
+                            <tr>
+                                <th class="fixed_40"></th>
+                                <th class="fixed_188 total-rs-vl" style="text-align: right; padding-right: 20px;">Total</th>
+                                <th class="fixed_144">
+                                    <div class="total-rs-vl" id="rs_1">$0.00</div>
+                                </th>
+                                <th class="fixed-95"></th>
+                                <th class="fixed-123"></th>
+                                <th class="fixed-135">
+                                    <div class="total-rs-vl" id="rs_2">$0.00</div>
+                                </th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+            <div class="bottom-para">
+                <span>Try to always pay the minimum payment or more!</span>
+            </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/autonumeric@4.5.4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script>
+      jQuery(document).ready(function ($) {
+        const numOptionCurrency = {
+          digitGroupSeparator: ",",
+          decimalCharacter: ".",
+          decimalCharacterAlternative: ".",
+          currencySymbol: "$",
+          currencySymbolPlacement: AutoNumeric.options.currencySymbolPlacement.prefix,
+          decimalPlaces: 2,
+          minimumValue: 0,
+        };
+        const numOptionPercent = {
+          digitGroupSeparator: ",",
+          decimalCharacter: ".",
+          decimalCharacterAlternative: ".",
+          currencySymbol: "%",
+          currencySymbolPlacement: AutoNumeric.options.currencySymbolPlacement.suffix,
+          decimalPlaces: 2,
+          minimumValue: 0,
+          maximumValue: 100
+        };
+  
+        AutoNumeric.multiple(".format-percent", numOptionPercent);
+        AutoNumeric.multiple(".format-currency", numOptionCurrency);
+  
+        const nftd = Intl.NumberFormat("en-US", {
+          minimumFractionDigits: 2,
+          maximumFractionDigits: 2,
+        });
+
+        $('#pdd_in_1, #pdd_in_2, #pdd_in_3, #pdd_in_4, #pdd_in_5, #pdd_in_6, #pdd_in_7, #pdd_in_8, #pdd_in_9, #pdd_in_10,  #pdd_in_11, #pdd_in_12, #pdd_in_13, #pdd_in_14, #pdd_in_15').flatpickr({
+            dateFormat: "d/m/y",
+            minDate: "31/12/21",
+            maxDate: "31/12/24"
+        });
+
+        $(".in-amount").on("input", function(){
+            Calc();
+        })
+
+        function Calc(){
+            bl_in_1 = removeSign($("#bl_in_1").val());
+            bl_in_2 = removeSign($("#bl_in_2").val());
+            bl_in_3 = removeSign($("#bl_in_3").val());
+            bl_in_4 = removeSign($("#bl_in_4").val());
+            bl_in_5 = removeSign($("#bl_in_5").val());
+            bl_in_6 = removeSign($("#bl_in_6").val());
+            bl_in_7 = removeSign($("#bl_in_7").val());
+            bl_in_8 = removeSign($("#bl_in_8").val());
+            bl_in_9 = removeSign($("#bl_in_9").val());
+            bl_in_10 = removeSign($("#bl_in_10").val());
+            bl_in_11 = removeSign($("#bl_in_11").val());
+            bl_in_12 = removeSign($("#bl_in_12").val());
+            bl_in_13 = removeSign($("#bl_in_13").val());
+            bl_in_14 = removeSign($("#bl_in_14").val());
+            bl_in_15 = removeSign($("#bl_in_15").val());
+            mp_in_1 = removeSign($("#mp_in_1").val());
+            mp_in_2 = removeSign($("#mp_in_2").val());
+            mp_in_3 = removeSign($("#mp_in_3").val());
+            mp_in_4 = removeSign($("#mp_in_4").val());
+            mp_in_5 = removeSign($("#mp_in_5").val());
+            mp_in_6 = removeSign($("#mp_in_6").val());
+            mp_in_7 = removeSign($("#mp_in_7").val());
+            mp_in_8 = removeSign($("#mp_in_8").val());
+            mp_in_9 = removeSign($("#mp_in_9").val());
+            mp_in_10 = removeSign($("#mp_in_10").val());
+            mp_in_11 = removeSign($("#mp_in_11").val());
+            mp_in_12 = removeSign($("#mp_in_12").val());
+            mp_in_13 = removeSign($("#mp_in_13").val());
+            mp_in_14 = removeSign($("#mp_in_14").val());
+            mp_in_15 = removeSign($("#mp_in_15").val());
+
+            let total_balance = bl_in_1 + bl_in_2 + bl_in_3 + bl_in_4 + bl_in_5 + bl_in_6 + bl_in_7 + bl_in_8 + bl_in_9 + bl_in_10 + bl_in_11 + bl_in_12 + bl_in_13 + bl_in_14 + bl_in_15;
+            let total_payment = mp_in_1 + mp_in_2 + mp_in_3 + mp_in_4 + mp_in_5 + mp_in_6 + mp_in_7 + mp_in_8 + mp_in_9 + mp_in_10 + mp_in_11 + mp_in_12 + mp_in_13 + mp_in_14 + mp_in_15;
+            $("#rs_1").text("$" + nftd.format(total_balance));
+            $("#rs_2").text("$" + nftd.format(total_payment));
+        }
+
+        function removeSign(vl){
+            return Number(vl.replace(/\$|,|%/g, ''));
+        }
+      });
+    </script>
+  </body>
+</html>

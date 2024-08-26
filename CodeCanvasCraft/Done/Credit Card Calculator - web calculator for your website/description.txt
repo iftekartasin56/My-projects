@@ -1,0 +1,36 @@
+Credit Card Calculator - Web Calculator for your website.
+
+Welcome to our <b>Credit Card Calculator</b>. This tool will help you understand your credit card payments and how they affect your financial situation. You can use it to plan your debt repayment strategy and achieve your financial goals.
+<br>
+<br>
+<u><b>User inputs:</b></u>
+<ul>
+    <li>What is Your Credit Card Balance?</li>
+    <li>What is The Interest Rate on Your Credit Card?</li>
+    <li>How is Your Minimum Payment Calculated?</li>
+    <li>Select a Payment Schedule Based on: Minimum payment, Fixed payment</li>
+    <li>What Fixed Payment Could You Make Monthly?</li>
+</ul>
+<br>
+<u><b>Outputs:</b></u>
+<ul>
+    <li>With a Minimum Payment:</li>
+    <li>In that time, you will pay:</li>
+    <li>With a Fixed Payment:</li>
+    <li>In that time, you will pay:</li>
+</ul>
+<br>
+<u><b>Features of the Credit Card Calculator:</b></u>
+<ul>
+    <li>- It allows you to enter your current credit card balance, interest rate, and minimum payment method.</li>
+    <li>- It lets you choose between paying the minimum amount or a fixed amount per month.</li>
+    <li>- It shows you how long it will take to pay off your balance and how much interest you will pay in total.</li>
+    <li>- Instant result without page reload</li>
+    <li>- JS and CSS loads when shortcode called on page</li>
+    <li>- 100% Responsive design</li>
+    <li>- Unique Design</li>
+    <li>- Well Documented (proper help instructions for setup)</li>
+    <li>- Dedicated Support</li>
+</ul>
+<br>
+The calculator is built using HTML, CSS, and JavaScript, and it also utilizes the popular JavaScript library jQuery. A premium quality <b>Credit Card web calculator</b> which you can easily embed into any website (well documented).

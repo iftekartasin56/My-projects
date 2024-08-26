@@ -1,0 +1,13 @@
+*{
+    font-family: "Poppins", sans-serif;
+}
+
+
+
+
+
+@media (min-width: 1536px) {
+    .container {
+        max-width: 100% !important;
+    }
+}

@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- Bootstrap CSS -->
+    <title>Accounts Receivable Aging</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+    <!-- CSS Stylesheet Link -->
+    <link rel="stylesheet" href="css/Calc-style.css">
+</head>
+<body>
+
+<!-----------Please copy and paste following code into any HTML element ---------------->
+
+<!----------- copy staras ---------------->
+
+<div class="ms-cl" id="ara">
+    <div class="container cl-wrapper">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="top-title-sec">
+                    <h3 class="top-title">Accounts Receivable Aging</h3>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="agingunder30">Under 30 Days</label>
+                            <input type="text" class="form-control sp-left cl-in cl-curr" autocomplete="off" id="agingunder30" />
+                            <span class="prepend-text curr-sign"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="aging30to60">30-60 Days</label>
+                            <input type="text" class="form-control sp-left cl-in" autocomplete="off" id="aging30to60" />
+                            <span class="prepend-text curr-sign"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="aging60to90">60-90 Days</label>
+                            <input type="text" class="form-control sp-left cl-in" autocomplete="off" id="aging60to90" />
+                            <span class="prepend-text curr-sign"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="aging90to120">90-120 Days</label>
+                            <input type="text" class="form-control sp-left cl-in" autocomplete="off" id="aging90to120" />
+                            <span class="prepend-text curr-sign"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="agingover120">Over 120 Days</label>
+                            <input type="text" class="form-control sp-left cl-in" autocomplete="off" id="agingover120" />
+                            <span class="prepend-text curr-sign"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-3"></div>
+                    <div class="col-md-6">
+                        <button type="button" class="btn btn-primary" id="calc_btn_ara">Calculate</button>    
+                    </div>
+                    <div class="col-md-3"></div>
+                </div>
+            </div>
+            <div class="col-md-12 sp-pd-top">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="rs-sec">
+                            <div class="rs-title">Total Accounts Receivable</div>
+                            <div class="rs-value" id="agingresults">-</div>
+                        </div>
+                        <div class="rs-sec">
+                            <div class="rs-title">Under 30 Days</div>
+                            <div class="rs-value" id="agingresultsunder30">-</div>
+                        </div>
+                        <div class="rs-sec">
+                            <div class="rs-title">30-60 Days</div>
+                            <div class="rs-value" id="agingresults30to60">-</div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="rs-sec">
+                            <div class="rs-title">60-90 Days</div>
+                            <div class="rs-value" id="agingresults60to90">-</div>
+                        </div>
+                        <div class="rs-sec">
+                            <div class="rs-title">90-120 Days</div>
+                            <div class="rs-value" id="agingresults90to120">-</div>
+                        </div>
+                        <div class="rs-sec">
+                            <div class="rs-title">Over 120 Days</div>
+                            <div class="rs-value" id="agingresultsover120">-</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/jquery.js"></script>
+<script src="js/autonumeric.js"></script>
+<script src="js/Calc-script.js"></script>
+<!----------- copy ends ---------------->
+</body>
+</html>

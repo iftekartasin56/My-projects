@@ -1,0 +1,29 @@
+Pre and Post Money Valuation calculator - Web Calculator for your Website
+
+Welcome to our <b>Pre and Post Money Valuation calculator</b>, Pre and Post Money Valuation Calculator helps entrepreneurs, investors and financial analysts assess the value of a company before and after receiving an investment.
+<br>
+<br>
+<u><b>User inputs:</b></u>
+<ul>
+    <li>Investment</li>
+    <li>Investor's equity</li>
+</ul>
+<br>
+<u><b>Outputs:</b></u>
+<ul>
+    <li>Pre-money valuation</li>
+    <li>Post-money valuation</li>
+</ul>
+<br>
+<u><b>Features of the Pre and Post Money Valuation Calculator:</b></u>
+<ul>
+    <li>- Calculates the company's pre-money valuation based on the investment and equity percentage paid.</li>
+    <li>- Instant result without page reload</li>
+    <li>- JS and CSS loads when shortcode called on page</li>
+    <li>- 100% Responsive design</li>
+    <li>- Unique Design</li>
+    <li>- Well Documented (proper help instructions for setup)</li>
+    <li>- Dedicated Support</li>
+</ul>
+<br>
+The calculator is built using HTML, CSS, and JavaScript, and it also utilizes the popular JavaScript library jQuery. A premium quality <b>Pre and Post Money Valuation calculator</b> which you can easily embed into any website (well documented).

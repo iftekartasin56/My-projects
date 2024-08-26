@@ -1,0 +1,995 @@
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>Estimate Calculator</title>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+</head>
+<body>
+<!--------- Please copy and paste the following code into an HTML block of any webpage -------->
+
+<!--------- copy starts -------->
+<style>
+.ms-cl * {
+    box-sizing: border-box;
+}
+.ms-cl {
+    margin: 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: inherit;
+}
+.ms-cl .container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+}
+.ms-cl .row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+.ms-cl .form-control {
+    display: block;
+    width: 100%;
+    height: 30px;
+    padding: .175rem 0 0rem 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #000000;
+    background-color: #f9f9f9;
+    background-clip: padding-box;
+    border: 1px solid #b7b7b7;
+    border-radius: 0;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.ms-cl .form-control:focus {
+    outline: none;
+}
+.ms-cl .col-md-1, .ms-cl .col-md-10, .ms-cl .col-md-11, .ms-cl .col-md-12, .ms-cl .col-md-2, .ms-cl .col-md-3, .ms-cl .col-md-4, .ms-cl .col-md-5, .ms-cl .col-md-6, .ms-cl .col-md-7, .ms-cl .col-md-8, .ms-cl .col-md-9 {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.ms-cl .text-center {
+    text-align: center!important;
+}
+
+.ms-cl table {
+    border-collapse: collapse;
+}
+.ms-cl .btn {
+    display: block;
+    font-weight: 500;
+    color: #212529;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: 8px;
+    line-height: 1.3;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    text-align: center;
+}
+
+.ms-cl .btn-primary {
+    display: block;
+    width: 100%;
+    background-color: #fa1e08;
+    color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 5px 25px 0px rgba(255, 127, 0, 0.20);
+    margin-top: 30px;
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+.ms-cl a.btn-primary {
+    color: #fff;
+    text-decoration: none;
+}
+.ms-cl .table {
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #212529;
+    background: #fff;
+    border: none;
+}
+.ms-cl .table td, .ms-cl .table th {
+    padding: 5px 0;
+    vertical-align: top;
+    font-size: 14px;
+    border-top: none;
+}
+.ms-cl .table-sm td, .ms-cl .table-sm th {
+    padding: .3rem;
+}
+.ms-cl .table-bordered {
+    border: 1px solid #f7f7f7;
+}
+.ms-cl .table tr td.area-row {
+    font-weight: 600;
+    background-color: #F8F9FD;
+    border-bottom: 1px solid #fb2002;
+}
+@media (min-width: 576px){
+    .ms-cl .container, .ms-cl .container-sm {
+        max-width: 540px;
+    }
+}
+@media (min-width: 768px){
+    .ms-cl .container, .ms-cl .container-md, .ms-cl .container-sm {
+        max-width: 720px;
+    }
+    .ms-cl .col-md-12 {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .ms-cl .col-md-8 {
+        -ms-flex: 0 0 66.666667%;
+        flex: 0 0 66.666667%;
+        max-width: 66.666667%;
+    }
+    .ms-cl .col-md-6 {
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    .ms-cl .col-md-4 {
+        -ms-flex: 0 0 33.333333%;
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+    }
+    .ms-cl .col-md-3 {
+        -ms-flex: 0 0 25%;
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+    .ms-cl .col-md-2 {
+        -ms-flex: 0 0 16.66667%;
+        flex: 0 0 16.66667%;
+        max-width: 16.66667%;
+    }
+}
+@media (min-width: 992px){
+    .ms-cl .container {
+        max-width: 900px;
+    }
+}
+@media (min-width: 1200px) {
+    .ms-cl .container {
+        max-width: 900px;
+    }
+}
+.ms-cl .sp-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.ms-cl .sp-text {
+    font-weight: 600;
+    font-size: 22px;
+}
+.ms-cl .no-bdr-bt {
+    border-bottom: none !important;
+}
+.ms-cl .tick-mark {
+    background-color: #ffffff;
+    padding: 0px;
+    border-radius: 50%;
+    color: #ffffff;
+    width: 16px;
+    height: 16px;
+    font-size: 11px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2px auto 0 auto;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+.ms-cl .tick-mark.is-active {
+    background-color: #fb2002;
+    border-color: #fb2002;
+}
+.ms-cl .cross-mark {
+    background-color: transparent;
+    padding: 6px;
+    border-radius: 50%;
+    color: #f00000;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+.ms-cl .tick-box-td {
+    width: 28px;
+}
+.ms-cl .option-sec {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.ms-cl .option-item {
+    width: 48%;
+    text-align: center;
+    background: #fff;
+    padding: 15px;
+    border: 2px solid #81809A;
+    box-shadow: 0 0 15px #8b8b8b;
+    color: #81809A;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: all 0.2s;
+}
+.ms-cl .option-item:hover {
+    background: #81809A;
+    color: #ffffff;
+}
+.ms-cl .option-item.is-active {
+    background: #fb2002;
+    border-color: #fff;
+    color: #fff;
+}
+.ms-cl .text-right {
+    text-align: right !important;
+}
+.ms-cl .service-title {
+    cursor: default;
+}
+.ms-cl .summary-sec {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 15px;
+}
+.ms-cl .rs-title {
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+}
+.ms-cl .ds-none {
+    display: none !important
+}
+@media (max-width: 1200px) {
+    .ms-cl .option-item {
+        font-size: 12px;
+        padding: 10px;
+    }
+    .ms-cl .summary-sec {
+        flex-direction: column;
+    }
+    .ms-cl .rs-sec {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+}
+.ms-cl .zone-text {
+    text-align: left;
+}
+.ms-cl .top-title {
+    color: #31485F;
+    text-align: center;
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+.ms-cl .details-btn {
+    display: inline-block;
+    font-size: 10px;
+    border: none;
+    border-bottom: 0.5px solid #000;
+    border-radius: 0;
+    padding: 0px 2px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+.ms-cl .details-btn .fa {
+    font-size: 10px;
+    margin-left: 10px;
+}
+.ms-cl .tb-head {
+    background-color: #31485F;
+    color: #fff;
+    padding: 4px 8px !important;
+    font-size: 16px !important;
+}
+.ms-cl .color1 {
+    background-color: #F6F6F6;
+}
+.ms-cl .text-right {
+    text-align: right !important;
+}
+.ms-cl .bottom-para {
+    color: #585858;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+}
+.ms-cl .rs-sec {
+    background-color: #31485F;
+    color: #fff;
+    padding: 15px 35px;
+    margin-bottom: 30px;
+}
+.ms-cl .rs-title {
+    font-size: 22px;
+    font-weight: 700;
+    border-bottom: 1px solid #fff;
+    text-align: center;
+}
+.ms-cl .rs-vl {
+    font-size: 26px;
+    font-weight: 700;
+    text-align: center;
+}
+.ms-cl .logo-img {
+    width: 200px;
+}
+.ms-cl .details-sec {
+    display: none;
+}
+.ms-cl .details-sec ul li {
+    font-size: 14px;
+}
+.ms-cl .details-sec ul {
+    margin: 0;
+    margin-top: 5px;
+    padding-left: 18px;
+}
+.ms-cl .details-sec p {
+    font-size: 14px;
+    margin: 5px 0;
+}
+@media (max-width: 768px) {
+    .ms-cl .table td, .ms-cl .table th {
+        font-size: 12px !important;
+    }
+    .ms-cl .rs-sec {
+        background-color: #31485F;
+        color: #fff;
+        padding: 6px 16px;
+        margin-bottom: 24px;
+    }
+    .ms-cl .bottom-para {
+        font-size: 16px;
+    }
+    .ms-cl .top-title {
+        font-size: 24px;
+    }
+    .ms-cl .logo-img {
+        width: 125px;
+    }
+    .ms-cl .form-control {
+        height: 25px;
+    }
+    .ms-cl .details-btn{
+        display: block;
+    }
+    .ms-cl .width-70{
+        width: 50px !important;
+    }
+}
+.ms-cl .sp-pd-left {
+    padding-left: 10px;
+}
+.ms-cl .width-70 {
+    width: 70px;
+}
+.ms-cl .pad-5 {
+    padding-left: 5px !important;
+}
+</style>
+<div class="ms-cl">
+    <div class="container main">
+        <div class="text-center">
+            <img class="logo-img" src="https://i.postimg.cc/bJ4tNcrz/logo.png" alt="" srcset="">
+        </div>
+        <div class="top-title">Price Estimate Calculator</div>
+        <p>Price will vary by project. Contractor grade material quality. This is the same list I use when I walk an investment property. Including
+            labor, material, and general contractor</p>
+        <div class="row">
+            <div class="col-md-12" style="overflow-x: auto;">
+                <table class="table" id="service_list">
+                    <thead>
+                        <tr>
+                            <th colspan="2" class="sp-text tb-head">Service</th>
+                            <th class="sp-text tb-head width-70">Quantity</th>
+                            <th class="sp-text zone-text tb-head">Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="text-center tick-box-td"><span class="tick-mark" data-price="5000">✓</span></td>
+                            <td>
+                                <span class="service-title">Demolition </span>
+                                <span class="details-btn"><span class="btn-text">Show Details</span><i class="fa fa-caret-down"></i></span>
+                                <div class="details-sec">
+                                    <ul>
+                                        <li>Demolition and dumpster rental</li>
+                                    </ul>
+                                </div>
+                            </td>
+                            <td>
+                                <input type="text" class="form-control sp-pd-left in-quantity cl-in qty-in">
+                            </td>
+                            <td nowrap  class="pad-5">$5,000</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center tick-box-td color1"><span class="tick-mark" data-price="5500">✓</span></td>
+                            <td class="color1">
+                                <span class="service-title">Bathroom </span>
+                                <span class="details-btn"><span class="btn-text">Show Details</span><i class="fa fa-caret-down"></i></span>
+                                <div class="details-sec">
+                                    <ul>
+                                        <li>New bathtub or shower base</li>
+                                        <li>New tiles above bathtub with design</li>
+                                        <li>New floor tiles</li>
+                                        <li>New bathroom vanity, vanity fixture, bathroom hardware</li>
+                                        <li>New toilet</li>
+                                    </ul>
+                                </div>
+                            </td>
+                            <td class="color1">
+                                <input type="text" class="form-control sp-pd-left in-quantity cl-in qty-in">
+                               
+                            </td>
+                            <td nowrap  class="color1 pad-5">$5,500/ea </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center tick-box-td"><span class="tick-mark" data-price="10500">✓</span></td>
+                            <td>
+                                <span class="service-title">Kitchen </span>
+                                <span class="details-btn"><span class="btn-text">Show Details</span><i class="fa fa-caret-down"></i></span>
+                                <div class="details-sec">
+                                    <ul>
+                                        <li>New 42" shaker style kitchen cabinets</li>
+                                        <li>New kitchen sink and faucet</li>
+                                        <li>New granite or quartz countertops</li>
+                                        <li>New stainless-steel appliances </li>
+                                    </ul>
+                                </div>
+                            </td>
+                            <td>
+                                <input type="text" class="form-control sp-pd-left in-quantity cl-in qty-in">
+                                
+                            </td>
+                            <td nowrap  class="pad-5">$10,500</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center tick-box-td color1"><span class="tick-mark" data-price="2500">✓</span></td>
+                            <td class="color1">
+                                <span class="service-title">Carpet </span>
+                                <span class="details-btn"><span class="btn-text">Show Details</span><i class="fa fa-caret-down"></i></span>
+                                <div class="details-sec">
+                                    <p>(3 Bedroom house, stairs leading to second floor, stairs leading to basement)</p>
+                                    <ul>
+                                        <li>New Carpet</li>
+                                        <li>New carpet tact strips</li>
+                                        <li>New carpet padding </li>
+                                    </ul>
+                                </div>
+                            </td>
+                            <td class="color1">
+                                <input type="text" class="form-control sp-pd-left in-quantity cl-in qty-in">
+                                
+                            </td>
+                            <td nowrap  class="color1 pad-5">$2,500</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center tick-box-td"><span class="tick-mark" data-price="6500">✓</span></td>
+                            <td>
+                                <span class="service-title">Vinyl Plank Flooring </span>
+                                <span class="details-btn"><span class="btn-text">Show Details</span><i class="fa fa-caret-down"></i></span>
+                                <div class="details-sec">
+                                    <p>(3 bedrooms. Living room, dining room, kitchen) (1 Floor)</p>
+                                    <ul>
+                                        <li>New vinyl plank flooring</li>
+                                    </ul>
+                                </div>
+                            </td>
+                            <td>
+                                <input type="text" class="form-control sp-pd-left in-quantity cl-in qty-in">
+                              
+                            </td>
+                            <td nowrap  class="pad-5">$6,500</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center tick-box-td color1"><span class="tick-mark" data-price="2500">✓</span></td>
+                            <td class="color1">
+                                <span class="service-title">Hardwood Refinish </span>
+                                <span class="details-btn"><span class="btn-text">Show Details</span><i class="fa fa-caret-down"></i></span>
+                                <div class="details-sec">
+                                    <p>(3 bedrooms, living room, dining room) (1 Floor)</p>
+                                    <ul>
+                                        <li>Sand floors</li>
+                                        <li>Repair small portions</li>
+                                        <li>Stain and poly</li>
+                                    </ul>
+                                </div>
+                            </td>
+                            <td class="color1">
+                                <input type="text" class="form-control sp-pd-left in-quantity cl-in qty-in">
+                               
+                            </td>
+                            <td nowrap  class="color1 pad-5">$2,500</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center tick-box-td"><span class="tick-mark" data-price="7500">✓</span></td>
+                            <td>
+                                <span class="service-title">Paint </span>
+                                <span class="details-btn"><span class="btn-text">Show Details</span><i class="fa fa-caret-down"></i></span>
+                                <div class="details-sec">
+                                    <ul>
+                                        <li>Prime walls</li>
+                                        <li>Paint ceilings</li>
+                                        <li>Paint trim/doors</li>
+                                        <li>Paint walls 1 color</li>
+                                        <li>Minor drywall repairs- Patching </li>
+
+                                    </ul>
+                                </div>
+                            </td>
+                            <td>
+                                <input type="text" class="form-control sp-pd-left in-quantity cl-in qty-in">
+                               
+                            </td>
+                            <td nowrap class="pad-5">$7,500</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center tick-box-td color1"><span class="tick-mark" data-price="5000">✓</span></td>
+                            <td class="color1">
+                                <span class="service-title">Trim/Doors </span>
+                                <span class="details-btn"><span class="btn-text">Show Details</span><i class="fa fa-caret-down"></i></span>
+                                <div class="details-sec">
+                                    <ul>
+                                        <li>New baseboards</li>
+                                        <li>New base shoe</li>
+                                        <li>New interior door panels</li>
+                                        <li>New window/door casings </li>
+                                    </ul>
+                                </div>
+                            </td>
+                            <td class="color1">
+                                <input type="text" class="form-control sp-pd-left in-quantity cl-in qty-in">
+                                
+                            </td>
+                            <td nowrap  class="color1 pad-5">$5,000</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center tick-box-td"><span class="tick-mark" data-price="350">✓</span></td>
+                            <td>
+                                <span class="service-title">Bedroom Finishes </span>
+                                <span class="details-btn"><span class="btn-text">Show Details</span><i class="fa fa-caret-down"></i></span>
+                                <div class="details-sec">
+                                    <ul>
+                                        <li>New wire shelving</li>
+                                        <li>Doorstoppers</li>
+                                        <li>Locksets </li>
+                                    </ul>
+                                </div>
+                            </td>
+                            <td>
+                                <input type="text" class="form-control sp-pd-left in-quantity cl-in qty-in">
+                                
+                            </td>
+                            <td nowrap class="pad-5">$350/ea</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center tick-box-td color1"><span class="tick-mark" data-price="450">✓</span></td>
+                            <td class="color1">
+                                <span class="service-title">Windows </span>
+                                <span class="details-btn"><span class="btn-text">Show Details</span><i class="fa fa-caret-down"></i></span>
+                                <div class="details-sec">
+                                    <ul>
+                                        <li>New white vinyl double hung window</li>
+                                        <li>Removal and haul away old window</li>
+                                        <li>Exterior aluminum capping</li>
+                                    </ul>
+                                </div>
+                            </td>
+                            <td class="color1">
+                                <input type="text" class="form-control sp-pd-left in-quantity cl-in qty-in">
+                               
+                            </td>
+                            <td nowrap  class="color1 pad-5">$450/ea</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center tick-box-td"><span class="tick-mark" data-price="6500">✓</span></td>
+                            <td>
+                                <span class="service-title">Furnace/AC </span>
+                                <span class="details-btn"><span class="btn-text">Show Details</span><i class="fa fa-caret-down"></i></span>
+                                <div class="details-sec">
+                                    <ul>
+                                        <li>Gas furnace</li>
+                                        <li>A/C condenser</li>
+                                        <li>A/C Coil</li>
+                                        <li>Thermostat </li>
+                                    </ul>
+                                </div>
+                            </td>
+                            <td>
+                                <input type="text" class="form-control sp-pd-left in-quantity cl-in qty-in">
+                               
+                            </td>
+                            <td nowrap class="pad-5">$6,500</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center tick-box-td color1"><span class="tick-mark" data-price="9500">✓</span></td>
+                            <td class="color1">
+                                <span class="service-title">HVAC Ductwork </span>
+                                <span class="details-btn"><span class="btn-text">Show Details</span><i class="fa fa-caret-down"></i></span>
+                                <div class="details-sec">
+                                    <ul>
+                                        <li>New supply ducting</li>
+                                        <li>New return ducting</li>
+                                        <li>New thermostat line</li>
+                                    </ul>
+                                </div>
+                            </td>
+                            <td class="color1">
+                                <input type="text" class="form-control sp-pd-left in-quantity cl-in qty-in">
+                                
+                            </td>
+                            <td nowrap  class="color1 pad-5">$9,500/floor</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center tick-box-td"><span class="tick-mark" data-price="13500">✓</span></td>
+                            <td>
+                                <span class="service-title">New Electrical </span>
+                                <span class="details-btn"><span class="btn-text">Show Details</span><i class="fa fa-caret-down"></i></span>
+                                <div class="details-sec">
+                                    <p>(2 story home)</p>
+                                    <ul>
+                                        <li>200 Amp service panel</li>
+                                        <li>New meter socket</li>
+                                        <li>Ground rod</li>
+                                        <li>New electrical throughout</li>
+                                        <li>New outlet/switches</li>
+                                        <li>New smoke/combo</li>
+                                        <li>New light fixtures</li>
+                                    </ul>
+                                </div>
+                            </td>
+                            <td>
+                                <input type="text" class="form-control sp-pd-left in-quantity cl-in qty-in">
+                                
+                            </td>
+                            <td nowrap class="pad-5">$13,500</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center tick-box-td color1"><span class="tick-mark" data-price="7000">✓</span></td>
+                            <td class="color1">
+                                <span class="service-title">New Electrical for Basement </span>
+                                <span class="details-btn"><span class="btn-text">Show Details</span><i class="fa fa-caret-down"></i></span>
+                                <div class="details-sec">
+                                    <ul>
+                                        <li>New Electrical for basement</li>
+                                        <li>200 Amp service panel</li>
+                                        <li>Ground rod</li>
+                                        <li>New electrical throughout</li>
+                                        <li>New outlet/switches</li>
+                                        <li>New smoke/combo</li>
+                                        <li>New light fixtures </li>
+                                    </ul>
+                                </div>
+                            </td>
+                            <td class="color1">
+                                <input type="text" class="form-control sp-pd-left in-quantity cl-in qty-in">
+                                
+                            </td>
+                            <td nowrap  class="color1 pad-5">$7,000</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center tick-box-td"><span class="tick-mark" data-price="9500">✓</span></td>
+                            <td>
+                                <span class="service-title">New Plumbing </span>
+                                <span class="details-btn"><span class="btn-text">Show Details</span><i class="fa fa-caret-down"></i></span>
+                                <div class="details-sec">
+                                    <p>(Kitchen, bathroom) (Ranch home)</p>
+                                    <ul>
+                                        <li>New PVC waste/vent</li>
+                                        <li>New copper water lines</li>
+                                        <li>New water heater</li>
+                                        <li>New utility sink and faucet </li>
+                                    </ul>
+                                </div>
+                            </td>
+                            <td>
+                                <input type="text" class="form-control sp-pd-left in-quantity cl-in qty-in">
+                                
+                            </td>
+                            <td nowrap class="pad-5">$9,500</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center tick-box-td color1"><span class="tick-mark" data-price="9500">✓</span></td>
+                            <td class="color1">
+                                <span class="service-title">Plumbing Basement + Add Bathroom </span>
+                                <span class="details-btn"><span class="btn-text">Show Details</span><i class="fa fa-caret-down"></i></span>
+                                <div class="details-sec">
+                                    <ul>
+                                        <li>Underground plumbing rough</li>
+                                        <li>New water lines</li>
+                                        <li>New PVC waste/vent for bathtub or shower</li>
+                                        <li>New PVC waste/vent for toilet and vanity</li>
+                                        <li>Bathtub/shower faucet</li>
+                                        <li>Bathtub/shower tile surround with design</li>
+                                        <li>Floor tiles</li>
+                                        <li>Bathroom vanity, vanity fixture, and bathroom hardware</li>
+                                        <li>New toilet</li>
+                                        <li>New bathroom exhaust fan</li>
+                                    </ul>
+                                </div>
+                            </td>
+                            <td class="color1">
+                                <input type="text" class="form-control sp-pd-left in-quantity cl-in qty-in">
+                                
+                            </td>
+                            <td nowrap  class="color1 pad-5">$9,500</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center tick-box-td"><span class="tick-mark" data-price="27500">✓</span></td>
+                            <td>
+                                <span class="service-title">Basement Finish </span>
+                                <span class="details-btn"><span class="btn-text">Show Details</span><i class="fa fa-caret-down"></i></span>
+                                <div class="details-sec">
+                                    <ul>
+                                        <li>Framing for 2 bedrooms, 1 bathroom, utility room</li>
+                                        <li>New electrical at basement (recessed lighting)</li>
+                                        <li>New plumbing for basement bathroom</li>
+                                        <li>New insulation</li>
+                                        <li>New drywall</li>
+                                        <li>New vinyl plank flooring</li>
+                                        <li>Paint</li>
+                                        <li>New trim-baseboards, base shoe, window/door casings</li>
+                                        <li>New interior doors </li>
+                                    </ul>
+                                </div>
+                            </td>
+                            <td>
+                                <input type="text" class="form-control sp-pd-left in-quantity cl-in qty-in">
+                               
+                            </td>
+                            <td nowrap class="pad-5">$27,500</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center tick-box-td color1"><span class="tick-mark" data-price="17500">✓</span></td>
+                            <td class="color1">
+                                <span class="service-title">Attic Conversion </span>
+                                <span class="details-btn"><span class="btn-text">Show Details</span><i class="fa fa-caret-down"></i></span>
+                                <div class="details-sec">
+                                    <ul>
+                                        <li>Framing for 2 bedrooms with closets</li>
+                                        <li>New stairs leading to second floor</li>
+                                        <li>New electrical at attic</li>
+                                        <li>New insulation</li>
+                                        <li>New drywall</li>
+                                        <li>New carpet (tact strips and padding included)</li>
+                                        <li>Paint</li>
+                                        <li>New trim-baseboards, base shoe, window/door casings</li>
+                                        <li>New interior doors </li>
+                                    </ul>
+                                </div>
+                            </td>
+                            <td class="color1">
+                                <input type="text" class="form-control sp-pd-left in-quantity cl-in qty-in">
+                                
+                            </td>
+                            <td nowrap class="pad-5" class="color1">$17,500</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center tick-box-td"><span class="tick-mark" data-price="8500">✓</span></td>
+                            <td>
+                                <span class="service-title">Roof </span>
+                                <span class="details-btn"><span class="btn-text">Show Details</span><i class="fa fa-caret-down"></i></span>
+                                <div class="details-sec">
+                                    <p>(Ranch or 2 story home with garage)</p>
+                                    <ul>
+                                        <li>Tear off</li>
+                                        <li>35-year architectural shingles</li>
+                                    </ul>
+                                </div>
+                            </td>
+                            <td>
+                                <input type="text" class="form-control sp-pd-left in-quantity cl-in qty-in">
+                                
+                            </td>
+                            <td nowrap class="pad-5">$8,500</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center tick-box-td color1"><span class="tick-mark" data-price="4500">✓</span></td>
+                            <td class="color1">
+                                <span class="service-title">Re-shingle Roof - Add Layer </span>
+                                <span class="details-btn"><span class="btn-text">Show Details</span><i class="fa fa-caret-down"></i></span>
+                                <div class="details-sec">
+                                    <p>(House Only)</p>
+                                    <ul>
+                                        <li>Add layer on top - 35-year architectural shingles</li>
+                                    </ul>
+                                </div>
+                            </td>
+                            <td class="color1">
+                                <input type="text" class="form-control sp-pd-left in-quantity cl-in qty-in">
+                                
+                            </td>
+                            <td nowrap  class="color1 pad-5">$4,500</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center tick-box-td"><span class="tick-mark" data-price="16500">✓</span></td>
+                            <td>
+                                <span class="service-title">New Garage </span>
+                                <span class="details-btn"><span class="btn-text">Show Details</span><i class="fa fa-caret-down"></i></span>
+                                <div class="details-sec">
+                                    <ul>
+                                        <li>22x22 Framed garage</li>
+                                        <li>New 35 Year asphalt shingles</li>
+                                        <li>Vinyl Siding</li>
+                                        <li>Garage service door</li>
+                                        <li>Steel un-insulated garage door</li>
+                                        <li>Garage opener with 2 remotes</li>
+                                        <li>1 White vinyl window </li>
+                                    </ul>
+                                </div>
+                            </td>
+                            <td>
+                                <input type="text" class="form-control sp-pd-left in-quantity cl-in qty-in">
+                                
+                            </td>
+                            <td nowrap class="pad-5">$16,500</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center tick-box-td color1"><span class="tick-mark" data-price="5500">✓</span></td>
+                            <td class="color1">
+                                <span class="service-title">Garage Concrete Slab </span>
+                                <span class="details-btn"><span class="btn-text">Show Details</span><i class="fa fa-caret-down"></i></span>
+                                <div class="details-sec">
+                                    <ul>
+                                        <li>22x22 concrete slab</li>
+                                    </ul>
+                                </div>
+                            </td>
+                            <td class="color1">
+                                <input type="text" class="form-control sp-pd-left in-quantity cl-in qty-in">
+                               
+                            </td>
+                            <td nowrap  class="color1 pad-5">$5,500</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-12">
+                <div class="rs-sec">
+                    <div class="rs-title">Total Price</div>
+                    <div class="rs-vl" id="total_cost">$0.00</div>
+                </div>
+            </div>
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <div class="bottom-para">
+                    I always add a 10% contingency of the total amount of the estimate or $5,000. It's better to have it and not need it rather than need it and not have it.
+                </div>
+            </div>
+            <div class="col-md-2"></div>
+
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <a href="mailto:info@nosalenterprise.com" class="btn btn-primary">Contact Me</a>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/autonumeric@4.5.4"></script>
+<script>
+jQuery(($) => {
+    const numOptionCurrency = {
+        digitGroupSeparator        : '',
+        decimalCharacter           : '.',
+        decimalCharacterAlternative: '.',
+        currencySymbol             : '',
+        currencySymbolPlacement    : AutoNumeric.options.currencySymbolPlacement.prefix,
+        decimalPlaces              : 0
+    };
+    const anElement1 = AutoNumeric.multiple('.cl-in', numOptionCurrency);
+    const nft = Intl.NumberFormat("en-US", {
+        minimumFractionDigits: 0,
+        maximumFractionDigits: 0
+    });
+
+    const nftd = Intl.NumberFormat("en-US", {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+    });
+
+    function removeComma(num){
+        return Number(num.replace(/,/g,""));
+    }
+
+    $(".details-btn").on("click", function(){
+        let parent = $(this).closest("tr");
+
+        if(parent.find(".details-sec").hasClass("is-active")){
+            parent.find(".details-sec").removeClass("is-active");
+            parent.find(".details-sec").hide();
+            $(this).find(".btn-text").text("Show Details");
+        } else {
+            parent.find(".details-sec").addClass("is-active");
+            parent.find(".details-sec").slideDown();
+            $(this).find(".btn-text").text("Hide Details");
+        }
+    });
+
+    $("#service_list .tick-mark, #service_list .service-title").on("click", function(){
+        let parent = $(this).closest("tr");
+
+        if(parent.find(".tick-mark").hasClass("is-active")){
+            parent.find(".tick-mark").removeClass("is-active");
+        } else {
+            parent.find(".tick-mark").addClass("is-active");
+        }
+        main_calc();
+    });
+
+    $(".in-quantity").on("input", function(){
+        main_calc();
+    })
+
+
+    function main_calc(){
+        let total_cost = 0;
+
+        $(".tick-mark.is-active").each(function(i, elm){
+            let vl = $(elm).data("price");
+
+            let parent = $(this).closest("tr");
+            let quantity_val = Number(parent.find(".qty-in").val());
+            console.log(quantity_val);
+
+            total_cost = total_cost + (vl * quantity_val);
+        });
+
+        $("#total_cost").text("$"+nft.format(total_cost));
+    }
+});
+</script>
+<!--------- copy ends -------->
+</body>
+</html>

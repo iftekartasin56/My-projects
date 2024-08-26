@@ -1,0 +1,917 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap CSS -->
+    <title>Mortgage/Loan calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #F9FAFF;
+        }
+    </style>
+</head>
+<body>
+
+<!-----------Please copy and paste following code into any HTML element ---------------->
+
+<!----------- copy starts ---------------->
+<style>
+#hm2_cl *, ::after, ::before {
+    box-sizing: border-box;
+}
+#hm2_cl {
+    line-height: 1.5;
+    font-family: 'Roboto', sans-serif;
+}
+#hm2_cl .container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #080337;
+    text-align: left;
+}
+#hm2_cl label {
+    display: inline-block;
+    margin-bottom: .5rem;
+    font-size: 16px;
+    font-weight: 500;
+}
+#hm2_cl .table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 0rem;
+    background-color: transparent;
+    border-collapse: collapse;
+}
+#hm2_cl .table td, #hm2_cl .table th {
+    padding: 3px 5px;
+    vertical-align: middle;
+    border: 1px solid #D9D9D9;
+    font-size: 16px;
+    background: transparent;
+    box-shadow: none;
+    color:#000000;
+    text-align: center;
+}
+#hm2_cl .sp-table {
+    width: 100%;
+    max-width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+#hm2_cl .sp-table td{
+    padding: .65rem .75rem;
+    vertical-align: middle;
+    border-right: none !important;
+    border-left: none !important;
+    border-top: none !important;
+    border-bottom: 1px solid #8B8B8B;
+    font-size: 16px;
+    font-weight: 600;
+    box-shadow: none;
+    background: #324354;
+    color:#fff;
+}
+#hm2_cl .sp-table th{
+    padding: .65rem .75rem;
+    vertical-align: middle;
+    border-right: none !important;
+    border-left: none !important;
+    border-top: none !important;
+    font-size: 14px;
+    background: #435466;
+    box-shadow: none;
+    color:#fff !important;
+}
+
+#hm2_cl .table th {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+    background-color: #324354;
+    color: #fff;
+    padding: 3px 5px;
+    border: 1px solid #324354;
+}
+#hm2_cl h3, h4, p {
+    margin: 10px 0;
+}
+#hm2_cl .row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+#hm2_cl .col-md-1, #hm2_cl .col-md-10, #hm2_cl .col-md-11, #hm2_cl .col-md-12, #hm2_cl .col-md-2, #hm2_cl .col-md-3, #hm2_cl .col-md-4, #hm2_cl .col-md-5, #hm2_cl .col-md-6, #hm2_cl .col-md-7, #hm2_cl .col-md-8, #hm2_cl .col-md-9 {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+#hm2_cl .form-group {
+    position: relative;
+    margin-bottom: 10px;
+}
+#hm2_cl .prepend-text {
+    position: absolute;
+    bottom: 4px;
+    left: 0;
+    color: #222831;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 32px;
+}
+#hm2_cl .form-control {
+    display: block;
+    width: 100%;
+    height: 40px;
+    padding: .375rem .75rem;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #080337;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+#hm2_cl .tb-form-control {
+    display: block;
+    width: 100%;
+    height: 40px;
+    /* padding: .375rem .75rem; */
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #080337;
+    background-color: transparent;
+    background-clip: padding-box;
+    border: none;
+    border-bottom: 1px solid #D9D9D9;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+#hm2_cl select.tb-form-control {
+    visibility: visible !important;
+    -webkit-appearance: auto !important;
+}
+#hm2_cl .form-control:focus {
+    outline: none;
+}
+#hm2_cl .tb-form-control:focus {
+    outline: none;
+}
+#hm2_cl .input-group {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+#hm2_cl .input-group>.custom-select:not(:last-child), #hm2_cl .input-group>.form-control:not(:last-child) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+#hm2_cl .input-group>.custom-file, #hm2_cl .input-group>.custom-select, #hm2_cl .input-group>.form-control, #hm2_cl .input-group>.form-control-plaintext {
+    position: relative;
+    -ms-flex: 1 1 0%;
+    flex: 1 1 0%;
+    min-width: 0;
+    margin-bottom: 0;
+}#hm2_cl .input-group>.custom-select:not(:first-child), #hm2_cl .input-group>.form-control:not(:first-child) {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+#hm2_cl .input-group>.custom-select:not(:last-child), #hm2_cl .input-group>.form-control:not(:last-child) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+#hm2_cl .input-group>.custom-file+.custom-file, #hm2_cl .input-group>.custom-file+.custom-select, #hm2_cl .input-group>.custom-file+.form-control, #hm2_cl .input-group>.custom-select+.custom-file, #hm2_cl .input-group>.custom-select+.custom-select, #hm2_cl .input-group>.custom-select+.form-control, #hm2_cl .input-group>.form-control+.custom-file, #hm2_cl .input-group>.form-control+.custom-select, #hm2_cl .input-group>.form-control+.form-control, #hm2_cl .input-group>.form-control-plaintext+.custom-file, #hm2_cl .input-group>.form-control-plaintext+.custom-select, #hm2_cl .input-group>.form-control-plaintext+.form-control {
+    margin-left: -1px;
+}
+#hm2_cl .input-group>.custom-file, #hm2_cl .input-group>.custom-select, #hm2_cl .input-group>.form-control, #hm2_cl .input-group>.form-control-plaintext {
+    position: relative;
+    -ms-flex: 1 1 0%;
+    flex: 1 1 0%;
+    min-width: 0;
+    margin-bottom: 0;
+}
+#hm2_cl .custom-control-label::before, #hm2_cl .custom-file-label, #hm2_cl .custom-select {
+    transition: background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+#hm2_cl .input-group-append {
+    margin-left: -1px;
+}
+#hm2_cl .input-group-append, #hm2_cl .input-group-prepend {
+    display: -ms-flexbox;
+    display: flex;
+}
+#hm2_cl .input-group>.input-group-append:last-child>.btn:not(:last-child):not(.dropdown-toggle), #hm2_cl .input-group>.input-group-append:last-child>.input-group-text:not(:last-child), #hm2_cl .input-group>.input-group-append:not(:last-child)>.btn, #hm2_cl .input-group>.input-group-append:not(:last-child)>.input-group-text, #hm2_cl .input-group>.input-group-prepend>.btn, #hm2_cl .input-group>.input-group-prepend>.input-group-text {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+#hm2_cl .input-group>.input-group-append>.btn, #hm2_cl .input-group>.input-group-append>.input-group-text, #hm2_cl .input-group>.input-group-prepend:first-child>.btn:not(:first-child), #hm2_cl .input-group>.input-group-prepend:first-child>.input-group-text:not(:first-child), #hm2_cl .input-group>.input-group-prepend:not(:first-child)>.btn, #hm2_cl .input-group>.input-group-prepend:not(:first-child)>.input-group-text {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+#hm2_cl .input-group-append .btn, #hm2_cl .input-group-prepend .btn {
+    position: relative;
+    z-index: 2;
+}
+#hm2_cl .input-group-text {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 0.355rem 0.75rem;
+    margin-bottom: 0;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #080337;
+    text-align: center;
+    white-space: nowrap;
+    background-color: #ffffff;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+}
+#hm2_cl .input-group-append .btn+.btn, #hm2_cl .input-group-append .btn+.input-group-text, #hm2_cl .input-group-append .input-group-text+.btn, #hm2_cl .input-group-append .input-group-text+.input-group-text, #hm2_cl .input-group-prepend .btn+.btn, #hm2_cl .input-group-prepend .btn+.input-group-text, #hm2_cl .input-group-prepend .input-group-text+.btn, #hm2_cl .input-group-prepend .input-group-text+.input-group-text {
+    margin-left: -1px;
+}
+#hm2_cl .input-group-prepend .btn, #hm2_cl .input-group-append .btn {
+    position: relative;
+    z-index: 2;
+}
+#hm2_cl .text-center {
+    text-align: center!important;
+}
+/* Custom css */
+#hm2_cl .cl-wrapper {
+    position: relative;
+    background: #F8F8F8;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+}
+#hm2_cl .cl-left-div {
+    padding: 35px;
+    background: #ffffff;
+    border-radius: 10px;
+}
+#hm2_cl .cl-right-div {
+    padding: 2rem 3rem !important;
+    border-radius: 0 0 8px 8px;
+    background: #ffffff;
+    color: #080337;
+}
+#hm2_cl .rs-sec {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0.5rem;
+    margin: 6px 0;
+    background-color: #20354A;
+    color: #fff;
+    border-radius: 0 0 5px 5px;
+}
+#hm2_cl .final-rs-title {
+    font-size: 18px;
+    font-weight: 600;
+}
+#hm2_cl .final-rs-vl {
+    font-size: 24px;
+    font-weight: 600;
+}
+#hm2_cl .rs-sub-title-sp {
+    font-size: 16px;
+    margin: 2px;
+    border-bottom: 1px solid #6BC14B;
+}
+#hm2_cl .rs-sp-value {
+    font-size: 22px;
+    margin: 8px 2px;
+    color: #6BC14B;
+}
+#hm2_cl .sp-rs {
+    color: #6BC14B;
+}
+#hm2_cl .btn {
+    display: inline-block;
+    font-weight: 400;
+    color: #212529;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: transparent;
+    border: 2px solid transparent;
+    padding: 5px 60px;
+    font-size: 18px;
+    line-height: 32px;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+#hm2_cl .btn-primary {
+    color: #fff;
+    background-color: #324354;
+    border-color: #324354;
+    text-decoration: none;
+    padding: 3px 60px;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+#hm2_cl .btn-primary:hover {
+    color: #fff;
+    background-color: #324354;
+    border-color: #324354;
+}
+/* responsive */
+
+@media (max-width: 768px){
+    #hm2_cl .cl-left-div {
+        padding: 1rem 2rem !important;
+    }
+    #hm2_cl .cl-right-div {
+        padding: 2rem 1rem !important;
+        border-radius: 0 0 8px 8px;
+    }
+    #hm2_cl .form-control {
+        height: auto;
+        padding: .175rem .75rem;
+    }
+    #hm2_cl label {
+        font-size: 14px;
+    }
+    #hm2_cl .rs-sec {
+        flex-direction: column;
+    }
+    #hm2_cl .btn-warning {
+        padding: 1.1375rem 2rem;
+        font-size: 1rem;
+    }
+}
+@media (min-width: 576px){
+    #hm2_cl .container, #hm2_cl .container-sm {
+        max-width: 540px;
+    }
+}
+@media (min-width: 768px){
+    #hm2_cl .container, #hm2_cl .container-md, #hm2_cl .container-sm {
+        max-width: 100%;
+    }
+    #hm2_cl .col-md-12 {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    #hm2_cl .col-md-9 {
+        -ms-flex: 0 0 75%;
+        flex: 0 0 75%;
+        max-width: 75%;
+    }
+    #hm2_cl .col-md-8 {
+        -ms-flex: 0 0 66.666667%;
+        flex: 0 0 66.666667%;
+        max-width: 66.666667%;
+    }
+    #hm2_cl .col-md-6 {
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    #hm2_cl .col-md-4 {
+        -ms-flex: 0 0 33.333333%;
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+    }
+    #hm2_cl .col-md-3 {
+        -ms-flex: 0 0 25%;
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+    #hm2_cl .col-md-2 {
+        -ms-flex: 0 0 16.66667%;
+        flex: 0 0 16.66667%;
+        max-width: 16.66667%;
+    }
+}
+@media (min-width: 992px){
+    #hm2_cl .container, #hm2_cl .container-lg, #hm2_cl .container-md, #hm2_cl .container-sm {
+        max-width: 900px;
+    }
+}
+@media (min-width: 1200px) {
+    #hm2_cl .container, #hm2_cl .container-lg, #hm2_cl .container-md, #hm2_cl .container-sm, #hm2_cl .container-xl {
+        max-width: 1150px;
+    }
+}
+#hm2_cl hr {
+    border: none;
+    border-bottom: 1px solid #ccc;
+}
+#hm2_cl .optios-sec {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+#hm2_cl .radio-option {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background: #ffffff;
+    padding: 6px 10px;
+    width: 50%;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    text-align: center;
+    cursor: pointer;
+    color: #080337;
+    transition: all 0.2s;
+    font-size: 16px;
+    user-select: none;
+}
+#hm2_cl .radio-option:hover {
+    background: #dddddd;
+    border: 1px solid #dddddd;
+}
+#hm2_cl .radio-option.active {
+    background: #34D9E5;
+    border: 1px solid #34D9E5;
+    color:#ffffff;
+}
+#hm2_cl .circle-radio {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #ffffff;
+    border: 1px solid #b5b5b5;
+    margin-right: 6px;
+}
+#hm2_cl .mr-right {
+    margin-right: 5px;
+}
+#hm2_cl .ds-none {
+    display: none;
+}
+#hm2_cl .rs-sec-title {
+    font-size: 22px;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 8px;
+    color: #26459E;
+}
+#hm2_cl .grow-logo {
+    width: 70px;
+    display: inline-block;
+}
+#hm2_cl .text-center {
+    text-align: center;
+}
+#hm2_cl .top-title {
+    font-size: 26px;
+    text-align: center;
+    margin: 10px 0 30px 0;
+    color: #6bc14b;
+}
+#hm2_cl .top-logo {
+    width: 200px;
+}
+#hm2_cl .sec-top-title {
+   font-size: 18px;
+   font-weight: 400;
+   color: #000000;
+   border-bottom: 1px solid #6BC14B;
+}
+#hm2_cl .sec-title {
+    border-radius: 5px 5px 0px 0px;
+    border-bottom: 1px solid #324354;
+    color: #324354;
+    width: 100%;
+    padding: 4px 0;
+    text-align: left;
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+#hm2_cl .sp-txt-cl {
+    color: #26459E !important;
+    font-weight: 600;
+}
+#hm2_cl .rs-saving-sec{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px 20px;
+    box-shadow: 0 10px 30px 1px rgb(0 0 0 / 10%);
+    border-radius: 10px;
+    margin: 0;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+#hm2_cl .rs-saving-title{
+    font-size: 20px;
+    color: #26459E;
+    font-weight: 600;
+}
+#hm2_cl .rs-saving-vl{
+    font-size: 20px;
+    color: #6BC14B;
+    font-weight: 600;
+    text-align: right;
+}
+#hm2_cl .debts-paid-sec-title {
+   font-size: 18px;
+   font-weight: 400;
+   color: #000000;
+   border-bottom: 1px solid #6BC14B;
+}
+#hm2_cl .middle-txt {
+   font-size: 18px;
+   font-weight: 400;
+   color: #000000;
+   text-align: center;
+}
+#hm2_cl .foorter-rs-sec {
+   margin-bottom: 15px;
+}
+@media (max-width: 768px) {
+    #hm2_cl .sp-table td {
+        padding: 3px;
+        font-size: 13px;
+    }
+    #hm2_cl .sec-title{
+        width: 100%;
+    }
+    #hm2_cl .info-sec {
+        flex-direction: column;
+        justify-content: flex-start !important;
+        align-items: flex-start !important;
+        margin-bottom: 10px;
+    }
+    #pdf_data .pdf_info-sec {
+        flex-direction: column;
+        justify-content: flex-start !important;
+        align-items: flex-start !important;
+        margin-bottom: 10px;
+    }
+}
+#hm2_cl .width-100{
+    width: 100px;
+}
+#hm2_cl .width-140{
+    width: 140px;
+}
+#hm2_cl .width-160{
+    width: 160px;
+}
+#hm2_cl .width-360{
+    width: 360px;
+}
+#hm2_cl .width-180{
+    width: 180px;
+}
+#hm2_cl .bg-f3{
+    background-color: #f3f3f3;
+}
+#hm2_cl .bg-32{
+    background-color: #324354;
+}
+#hm2_cl .color-wh{
+    color: #fff !important;
+}
+#hm2_cl .rs-title{
+    font-size: 18px !important;
+    border: none !important;
+}
+#hm2_cl .rs-vl{
+    font-size: 24px !important;
+    font-weight: 600;
+    border: none !important;
+}
+#hm2_cl .sp-pd-left{
+    padding-left: 15px;
+}
+#hm2_cl .footer {
+  overflow: hidden;
+  background-color: #435466;
+  padding: 20px 10px;
+  margin-top: 15px;
+}
+#hm2_cl .info-sec {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+    color: #fff;
+    margin-top: 10px;
+}
+#hm2_cl .info-sec a{
+    color: #fff;
+    text-decoration: none;
+}
+#hm2_cl .text-right{
+    text-align: right;
+}
+#hm2_cl .sp-bg-cl{
+    background-color: #E7E7E7;
+}
+</style>
+<div id="hm2_cl">
+    <div class="container cl-wrapper">
+        <div class="row">
+            <div class="col-md-12 cl-left-div">
+                <div class="row">
+                    <div class="col-md-4">
+                        <label for="in_principal">Principal</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">$</span>
+                            </div>
+                            <input type="text" class="form-control hm2_cl-curr hm2_cl-input" id="in_principal" value="100000">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="in_int_rate">Annual Interest Rate</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control hm2_cl-pr hm2_cl-input" id="in_int_rate" value="4">
+                            <div class="input-group-append">
+                                <span class="input-group-text">%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="in_pm_yr">Payment Schedule</label>
+                        <div class="input-group">
+                            <select name="" class="form-control" id="in_pay_schedule">
+                                <option value="1">Annually</option>
+                                <option value="2">Semi Annually</option>
+                                <option value="4">Querterly</option>
+                                <option value="6">Bi Monthly</option>
+                                <option value="12" selected>Monthly</option>
+                                <option value="24">Semi Monthly</option>
+                                <option value="26">Bi Weekly</option>
+                                <option value="52">Weekly</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="in_num_pm">Loan Term (years)</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control hm2_cl-curr hm2_cl-input" id="in_loan_yr" value="30">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="in_bl_pm">Balloon Payment</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">$</span>
+                            </div>
+                            <input type="text" class="form-control hm2_cl-curr hm2_cl-input" id="in_bl_pm" value="0">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                    </div>
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4">
+                        <br>
+                        <button type="button" id="calc_btn" style="width: 100%;" class="btn btn-primary">Calculate</button>
+                    </div>
+                    <div class="col-md-4"></div>
+                    <div class="col-md-12 Summary-sec result-sec ds-none">
+                        <div class="sec-title">Summary</div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div style="overflow-x: auto;">
+                                    <table class="sp-table" id="current_pro_tb1">
+                                        <tbody id="debts_paid_sec">
+                                            <tr>
+                                                <td>Principal borrowed</td>
+                                                <td class="text-right" id="rs_1">$0</td>
+                                            </tr>
+                                            <!-- <tr>
+                                                <td>Regular Payment amount</td>
+                                                <td class="text-right" id="rs_2">0</td>
+                                            </tr> -->
+                                            <tr>
+                                                <td>Principal and Interest Amount</td>
+                                                <td class="text-right" id="rs_3">$0</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Interest-only payment</td>
+                                                <td class="text-right" id="rs_4">0</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Total Repaid</td>
+                                                <td class="text-right" id="rs_5">0</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Total Interest Paid</td>
+                                                <td class="text-right" id="rs_6">0</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div style="overflow-x: auto;">
+                                    <table class="sp-table" id="current_pro_tb2">
+                                        </thead>
+                                        <tbody id="debts_paid_sec">
+                                            <tr>
+                                                <td>Annual Payments</td>
+                                                <td class="text-right" id="rs_12">0</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Total Payments</td>
+                                                <td class="text-right" id="rs_13">0 <span id="rs_13_yr">(0 Years)</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Annual interest rate</td>
+                                                <td class="text-right" id="rs_14">0%</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Periodic interest rate</td>
+                                                <td class="text-right" id="rs_15">0%</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Total interest paid as a percentage of Principal</td>
+                                                <td class="text-right" id="rs_16">0</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <span style="font-size: 12px; text-align: left; display: block; margin-top: 10px;">*These results are estimates which do not account for accumulated error of payments being rounded to the nearest cent. See the amortization schedule for more accurate values</span>
+                    </div>
+                    <div class="col-md-12 amortization-sec result-sec ds-none">
+                        <div class="sec-title">Amortization Schedule</div>
+                        <div style="overflow-x: auto;">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Pmt</th>
+                                        <th>Principal</th>
+                                        <th>Interest</th>
+                                        <th>Cum Prin</th>
+                                        <th>Cum Int</th>
+                                        <th>Prin Bal</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="stabilized_pro_tb1">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/autonumeric@4.5.4"></script>
+<script>
+    jQuery(($) => {
+        let data_arr = [];
+        const numOptionCurrency = {
+            digitGroupSeparator        : ',',
+            decimalCharacter           : '.',
+            decimalCharacterAlternative: '.',
+            currencySymbol             : '',
+            currencySymbolPlacement    : AutoNumeric.options.currencySymbolPlacement.prefix,
+            decimalPlaces              : 0
+        };
+        const numOptionPercent = {
+            digitGroupSeparator        : ',',
+            decimalCharacter           : '.',
+            decimalCharacterAlternative: '.',
+            currencySymbol             : '',
+            currencySymbolPlacement    : AutoNumeric.options.currencySymbolPlacement.suffix,
+            decimalPlaces              : 2,
+            minimumValue	           : 0,
+            maximumValue	           : 100
+        };
+        const anElement1 = AutoNumeric.multiple('.hm2_cl-curr', numOptionCurrency);
+        new AutoNumeric('#in_int_rate', numOptionPercent);
+
+        const nftd = Intl.NumberFormat("en-US",{
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        });
+
+        $("#calc_btn").on("click", function() {
+            $('.result-sec').removeClass("ds-none");
+
+            calcFunc();
+        });
+
+        calcFunc();
+
+        function calcFunc(){
+            in_principal = removeSign($("#in_principal").val());
+            in_int_rate = removeSign($("#in_int_rate").val())/100;
+            in_pay_schedule = Number($("#in_pay_schedule").val());
+            in_loan_yr = removeSign($("#in_loan_yr").val());
+            in_bl_pm = removeSign($("#in_bl_pm").val());
+
+            let num_reg_pay = in_pay_schedule * in_loan_yr;
+            let periodic_interest_rate = (in_int_rate ) / in_pay_schedule; 
+            let A = Math.pow(periodic_interest_rate + 1, num_reg_pay);
+
+            let principle_intr_amnt = periodic_interest_rate * (in_principal * A / (A - 1) + in_bl_pm / (( 1 + periodic_interest_rate) * (1 - A)))
+
+            principle_intr_amnt = Number(principle_intr_amnt.toFixed(2));
+
+            let int_part = 0;
+            let prin_part = 0;
+            let balance = 0;
+            let cum_prin = 0;
+            let cum_intr = 0;
+            let rows = "";
+
+            for(let i = 0; i < num_reg_pay; i++){
+                let pmt = i+1;
+
+                if(i == 0){
+                    int_part = in_principal * periodic_interest_rate;
+                    int_part = Number(int_part.toFixed(2));
+                    prin_part = principle_intr_amnt - int_part;
+                    balance = in_principal - prin_part;
+                    cum_prin = prin_part;
+                    cum_intr = int_part;
+                    
+                    $("#rs_4").text("$" + nftd.format(int_part));
+                } else{
+                    int_part = balance * periodic_interest_rate;
+                    int_part = Number(int_part.toFixed(2));
+                    prin_part = principle_intr_amnt - int_part;
+                    balance = balance - prin_part;
+                    cum_prin = cum_prin +  prin_part;
+                    cum_intr = cum_intr + int_part;
+                }
+
+                balance = balance < 0 ? 0 : balance;
+
+                rows = rows + `
+                    <tr>
+                        <td class="text-center">${pmt}</td>
+                        <td class="text-center">$${nftd.format(prin_part)}</td>
+                        <td class="text-center">$${nftd.format(int_part)}</td>
+                        <td class="text-center">$${nftd.format(cum_prin)}</td>
+                        <td class="text-center">$${nftd.format(cum_intr)}</td>
+                        <td class="text-center">$${nftd.format(balance)}</td>
+                    </tr>
+                `;
+            }
+            $("#stabilized_pro_tb1").html(rows);
+
+            let total_repaid = cum_prin + cum_intr;
+            // let total_interest_paid = total_repaid - in_principal;
+
+
+            
+            $("#rs_1").text("$" + nftd.format(in_principal));
+            $("#rs_3").text("$" + nftd.format(principle_intr_amnt));
+            $("#rs_5").text("$" + nftd.format(total_repaid));
+            $("#rs_6").text("$" + nftd.format(cum_intr));
+            $("#rs_12").text(in_pay_schedule);
+            $("#rs_13, #rs_13_yr").text(num_reg_pay, in_loan_yr + "years");
+            // $("#rs_13_yr").text(in_loan_yr + "years");
+            $("#rs_14").text(nftd.format(in_int_rate * 100) + "%");
+            $("#rs_15").text(nftd.format(periodic_interest_rate * 100) + "%");
+        }
+
+        function onlyNum(num){
+            return isFinite(num) ? num : 0;
+        }
+
+        function removeSign(vl){
+            return Number(vl.replace(/\$|\%|,/g, ''));
+        }
+    });
+</script>
+<!----------- copy ends ---------------->
+</body>
+</html>

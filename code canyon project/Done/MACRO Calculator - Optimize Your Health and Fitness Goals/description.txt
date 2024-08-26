@@ -1,0 +1,50 @@
+MACRO Calculator - Optimize Your Health and Fitness Goals.
+
+Welcome to our <b>MACRO Calculator</b>. A macro calculator is a tool that helps you determine the optimal ratio of macronutrients (protein, carbs, and fats) for your body type, activity level, and goal. Whether you want to maintain your current weight, lose weight, or gain weight, a macro calculator can help you customize your nutrition plan and track your progress.
+<br>
+<br>
+<u><b>User inputs:</b></u>
+<ul>
+	<li>Age</li>
+    <hr>
+    <div><u>Gender</u></div>
+      <li>Male</li>
+      <li>Female</li>
+      <hr>
+	<div><u>Height(ft)</u></div>
+    <li>ft</li>
+    <li>in</li>
+    <hr>
+    <div><u>Height(m)</u></div>
+    <li>m</li>
+    <li>cm</li>
+    <hr>
+    <div><u>Weight</u></div>
+    <li>lbs</li>
+    <li>kg</li>
+    <hr>
+    <li>Goal</li>
+    <li>Activity Level</li>
+</ul>
+<br>
+<u><b>Outputs:</b></u>
+<ul>
+    <li>Protein</li>
+    <li>Carbs</li>
+    <li>Fats</li>
+    <li>Total Calories</li>
+</ul>
+<br>
+<u><b>Features of the MACRO Calculator:</b></u>
+<ul>
+    <li>- It allows you to input your personal information, such as age, gender, height, weight, goal, and activity level, and calculates your daily calorie.</li>
+    <li>- It provides visual representations of protein, carbs, and fats with icons and a box displaying total calories.</li>
+    <li>- Instant result without page reload</li>
+    <li>- JS and CSS loads when shortcode called on page</li>
+    <li>- 100% Responsive design</li>
+    <li>- Unique Design</li>
+    <li>- Well Documented (proper help instructions for setup)</li>
+    <li>- Dedicated Support</li>
+</ul>
+<br>
+The calculator is built using HTML, CSS, and JavaScript, and it also utilizes the popular JavaScript library jQuery. A premium quality <b>MACRO calculator</b> which you can easily embed into any website (well documented).

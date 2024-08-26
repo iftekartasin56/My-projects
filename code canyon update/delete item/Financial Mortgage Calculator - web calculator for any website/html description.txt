@@ -1,0 +1,38 @@
+Financial Mortgage Calculator - web calculator for WordPress, Squarespace, Wix, Webflow Website
+
+Welcome to our <b>Mortgage Calculator!</b> Our calculator is designed to help you estimate your monthly mortgage payments based on various loan amounts, terms, and interest rates. With our calculator, you can easily compare different mortgage options and choose the one that best suits your needs.
+<br>
+<br>
+<u><b>User inputs:</b></u>
+<ul>
+    <li>Home price</li>
+    <li>Down Payment</li>
+    <li>Loan Term</li>
+    <li>Interest Rate</li>
+    <li>Annual Property Taxes</li>
+    <li>Annual Homeowners Insurance</li>
+    <li>Monthly Maintenance Fee</li>
+</ul>
+<br>
+<u><b>Outputs:</b></u>
+<ul>
+    <li>Principal & Interest</li>
+    <li>Taxes</li>
+    <li>Insurance</li>
+    <li>Maintenance</li>
+    <li>Total payment</li>
+</ul>
+<br>
+<u><b>Features of the Mortgage Calculator:</b></u>
+<ul>
+    <li>- Calculate Total Payment</li>
+    <li>- Principal and interest</li>
+    <li>- Instant result without page reload</li>
+    <li>- JS and CSS loads when shortcode called on page</li>
+    <li>- 100% Responsive design</li>
+    <li>- Unique Design</li>
+    <li>- Well Documented (proper help instructions for setup)</li>
+    <li>- Dedicated Support</li>
+</ul>
+<br>
+The calculator is built using HTML, CSS, and JavaScript, and it also utilizes the popular JavaScript library jQuery and chart. A premium quality mortgage web calculator which you can easily embed into any website (well documented).

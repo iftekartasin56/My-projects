@@ -1,0 +1,838 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
+    <title>Web Form</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <style>
+        #mx_cl *,
+        ::after,
+        ::before {
+            box-sizing: border-box;
+        }
+
+        #mx_cl {
+            line-height: 1.5;
+            font-family: inherit;
+        }
+
+        #mx_cl .container {
+            width: 100%;
+            padding-right: 15px;
+            padding-left: 15px;
+            margin-right: auto;
+            margin-left: auto;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #000000;
+            text-align: left;
+        }
+
+        #mx_cl label {
+            display: inline-block;
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        #mx_cl .row {
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            margin-right: -15px;
+            margin-left: -15px;
+        }
+
+        #mx_cl .col-md-1,
+        #mx_cl .col-md-10,
+        #mx_cl .col-md-11,
+        #mx_cl .col-md-12,
+        #mx_cl .col-md-2,
+        #mx_cl .col-md-3,
+        #mx_cl .col-md-4,
+        #mx_cl .col-md-5,
+        #mx_cl .col-md-6,
+        #mx_cl .col-md-6-cus,
+        #mx_cl .col-md-7,
+        #mx_cl .col-md-8,
+        #mx_cl .col-md-9 {
+            position: relative;
+            width: 100%;
+            padding-right: 15px;
+            padding-left: 15px;
+        }
+
+        #mx_cl .form-group {
+            margin-bottom: 1rem;
+        }
+
+        #mx_cl .form-control {
+            display: block;
+            width: 100%;
+            height: 35px;
+            padding: 0.275rem 0.75rem;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #4a4a4a;
+            background-color: #fff;
+            background-clip: padding-box;
+            border: 1px solid #dddddd;
+            transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+            margin-bottom: 10px;
+        }
+
+        #mx_cl .form-control:focus {
+            outline: none;
+        }
+
+        #mx_cl .btn {
+            display: inline-block;
+            font-weight: 400;
+            color: #212529;
+            text-align: center;
+            vertical-align: middle;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            background-color: transparent;
+            border: 1px solid transparent;
+            padding: .375rem 1.95rem;
+            font-size: 1rem;
+            line-height: 1.5;
+            border-radius: .25rem;
+            transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+        }
+
+        #mx_cl .btn-primary {
+            color: #fff;
+            background-color: #E1B755;
+            border-color: #E1B755;
+        }
+
+        #mx_cl .btn-reset {
+            color: #fff;
+            background-color: #E1B755;
+            border-color: #E1B755;
+        }
+
+        #mx_cl table {
+            border-collapse: collapse;
+        }
+
+        #mx_cl .table {
+            width: 100%;
+            margin-bottom: 1rem;
+            color: #212529;
+        }
+
+        #mx_cl .table td,
+        #mx_cl .table th {
+            padding: .75rem;
+            vertical-align: top;
+            border-top: 1px solid #dee2e6;
+        }
+
+        #mx_cl .text-center {
+            text-align: center;
+        }
+
+        #mx_cl .col-md-6-cus {
+            -ms-flex: 0 0 50%;
+            flex: 0 0 50%;
+            max-width: 50%;
+        }
+        #mx_cl .err-input {
+            border-color: red;
+        }
+
+        @media (min-width: 576px) {
+            #mx_cl .container {
+                max-width: 100%;
+            }
+        }
+
+        @media (min-width: 768px) {
+            #mx_cl .container {
+                max-width: 100%;
+            }
+
+            #mx_cl .col-md-12 {
+                -ms-flex: 0 0 100%;
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+
+            #mx_cl .col-md-9 {
+                -ms-flex: 0 0 75%;
+                flex: 0 0 75%;
+                max-width: 75%;
+            }
+
+            #mx_cl .col-md-8 {
+                -ms-flex: 0 0 66.666667%;
+                flex: 0 0 66.666667%;
+                max-width: 66.666667%;
+            }
+
+            #mx_cl .col-md-7 {
+                -ms-flex: 0 0 58.33333%;
+                flex: 0 0 58.33333%;
+                max-width: 58.33333%;
+            }
+
+            #mx_cl .col-md-6 {
+                -ms-flex: 0 0 50%;
+                flex: 0 0 50%;
+                max-width: 50%;
+            }
+
+            #mx_cl .col-md-5 {
+                -ms-flex: 0 0 41.666667%;
+                flex: 0 0 41.666667%;
+                max-width: 41.666667%;
+            }
+
+            #mx_cl .col-md-4 {
+                -ms-flex: 0 0 33.333333%;
+                flex: 0 0 33.333333%;
+                max-width: 33.333333%;
+            }
+
+            #mx_cl .col-md-3 {
+                -ms-flex: 0 0 25%;
+                flex: 0 0 25%;
+                max-width: 25%;
+            }
+        }
+
+        @media (min-width: 992px) {
+            #mx_cl .container {
+                max-width: 960px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            #mx_cl .container {
+                max-width: 950px;
+            }
+        }
+
+        #mx_cl .form-group,
+        #mx_cl .input-group {
+            position: relative;
+            margin-bottom: 15px;
+        }
+
+        #mx_cl .top-title {
+            font-size: 35px;
+            border-bottom: 1px solid #E1B755;
+            color: #000000;
+            text-align: center;
+        }
+
+        #mx_cl .content-box {
+            padding: 30px;
+            box-shadow: 0px 0px 5px #cccccc;
+        }
+
+        #mx_cl .emp-info {
+            border-bottom: 1px solid #DDDDDD;
+        }
+
+        #mx_cl .form-two {
+            padding-left: 15px;
+            border-left: 3px solid #E1B755;
+            position: relative;
+            margin-top: 16px;
+        }
+        #mx_cl .cross-btn {
+            position: absolute;
+            display: flex;
+            width: 25px;
+            height: 25px;
+            border: 1px solid #E1B755;
+            border-radius: 25px;
+            justify-content: center;
+            left: -14px;
+            background-color: #fff;
+            color: #FF0000;
+            cursor: pointer;
+        }
+
+        #mx_cl .parent-form-box {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        #mx_cl .form-margin {
+            margin-top: 15px;
+        }
+
+        #mx_cl .input-group-text-right {
+            margin-bottom: 0;
+            position: absolute;
+            right: 10px;
+            font-size: 1rem;
+        }
+
+        #mx_cl .input-group-text {
+            margin-bottom: 0;
+            position: absolute;
+            top: 5px;
+            right: 25px;
+            font-size: 1rem;
+        }
+
+        #mx_cl .input-group-curr {
+            position: absolute;
+            top: 7px;
+            left: 22px;
+        }
+
+        #mx_cl .curr-input {
+            padding-left: 20px;
+        }
+
+        #mx_cl .right-output {
+            padding: 20px;
+            border: 1px solid #E1B755;
+            border-radius: 5px;
+            margin-top: 15px;
+        }
+
+        #mx_cl .right-output-p {
+            border-bottom: 1px solid #E7E7E7;
+            padding-bottom: 8px;
+            display: block;
+        }
+
+        #mx_cl .right-output-final {
+            font-size: 30px;
+            font-weight: 600;
+            color: #E1B755;
+            margin-top: 5px;
+            margin-bottom: 0px;
+        }
+
+        #mx_cl .button-box {
+            text-align: center;
+            margin-top: -48px;
+            cursor: pointer;
+            width: 100%;
+            padding: 0px;
+        }
+
+        #mx_cl .button-box-two {
+            text-align: center;
+            cursor: pointer;
+            margin-top: 30px;
+            width: 100%;
+        }
+
+        #mx_cl .total-payroll {
+            padding: 15px;
+            text-align: center;
+            border: 1px solid #E1B755;
+            border-radius: 5px;
+            margin-top: 25px;
+        }
+
+        #mx_cl .footer-head {
+            border-bottom: 1px solid #E7E7E7;
+            padding-bottom: 5px;
+            display: block;
+        }
+
+        #mx_cl .footer-output {
+            font-size: 30px;
+            font-weight: 600;
+            color: #E1B755;
+        }
+
+        @media (max-width: 768px) {
+            #mx_cl .form-box.form-two {
+                padding-left: 15px;
+            }
+
+            #mx_cl .button-box {
+                margin-top: 10px;
+                cursor: pointer;
+                text-align: center;
+            }
+
+            #mx_cl .button-box-two {
+                margin-top: 10px;
+                cursor: pointer;
+                text-align: center;
+            }
+
+            #mx_cl .top-title {
+                font-size: 25px;
+                border-bottom: 1px solid #E1B755;
+                color: #000000;
+                text-align: center;
+            }
+        }
+    </style>
+    <div class="ms-cl main-form" id="mx_cl">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="top-title">PAYROLL HOURS</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="content-box">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    <label for="bname">BUSINESS NAME</label>
+                                    <input type="text" class="form-control in-rq bs-name" id="bname">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="cemail">Contact Email</label>
+                                    <input type="email" class="form-control in-rq email-in" id="cemail">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-box">
+                            <div class="parent-form-box" id="extra_emp_sec"> 
+                                <div class="emp-sec">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="emp-info">Employee Information</div>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="row form-margin">
+                                                <div class="col-md-6">
+                                                    <label for="ename" class="common-p elm-name">Employee name</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <input type="text" class="form-control in-rq cl-input emp-name-vl">
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label for="hworks" class="common-p elm-hours">Hours worked</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <span class="input-group-text input-group-text-right">hours</span>
+                                                    <input type="text" class="form-control in-rq cl-input cl-in in-hours in-num emp-hours-vl">
+        
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label for="comission" class="common-p elm-commission">Commission</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <span class="input-group-curr">$</span>
+                                                    <input type="text" class="form-control in-rq cl-input cl-in curr-input in-commission in-num emp-commission-vl">
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label for="new-rate" class="common-p elm-rate">New Rate</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <span class="input-group-curr">$</span>
+                                                    <input type="text" class="form-control in-rq cl-input cl-in curr-input in-new-rate in-num emp-rate-vl">
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label for="hhours" class="common-p elm-holiday">Holiday hours</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <span class="input-group-text input-group-text-right">hours</span>
+                                                    <input type="text" class="form-control in-rq cl-input cl-in in-h-hours in-num emp-holiday-vl">
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label for="phnreimbursement" class="common-p elm-phone">Phone Reimbursement</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <span class="input-group-curr">$</span>
+                                                    <input type="text" class="form-control in-rq cl-input cl-in curr-input in-phn-reimbursement in-num emp-phn-reimbursement-vl">
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="form-group">
+                                                        <label for="ainfo" class="common-p elm-additional">Additional Information</label>
+                                                        <textarea class="form-control in-rq emp-additional-info-vl" rows="3" style="height: 55px;"></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="right-output">
+                                                <span class="right-output-p elm-total-emp-gross">Total employee gross pay</span>
+                                                <p class="right-output-final rs-gross-pay emp-total-vl">$0.00</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-8"></div>
+                            <div class="col-md-4">
+                                <button type="button" id="add_emp_btn" style="width: 100%" class="btn btn-primary">+ Add more employee</button>
+                            </div>
+                        </div>
+                        <div class="total-payroll">
+                            <span class="footer-head" style="font-size: 28px;">Total Payroll</span>
+                            <div class="footer-output" id="total_payroll_amount" style="font-size: 35px;">$0.00</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-8">
+
+                            </div>
+                            <div class="col-md-4">
+                                <div class="button-box-two">
+                                    <button type="button" style="width: 100%;" class="btn btn-primary" id="send_btn">Send me Results</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="add_employee_form" style="display: none;">
+        <div class="form-box form-two emp-sec">
+            <span class="cross-btn">X</span>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="emp-info">Employee Information</div>
+                </div>
+                <div class="col-md-8">
+                    <div class="row form-margin">
+                        <div class="col-md-6">
+                            <label for="ename" class="common-p">Employee name</label>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control in-rq cl-input emp-name-vl">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="hworks" class="common-p">Hours worked</label>
+                        </div>
+                        <div class="col-md-6">
+                            <span class="input-group-text input-group-text-right">hours</span>
+                            <input type="text" class="form-control in-rq cl-input cl-in in-hours in-num emp-hours-vl">
+
+                        </div>
+                        <div class="col-md-6">
+                            <label for="comission" class="common-p">Commission</label>
+                        </div>
+                        <div class="col-md-6">
+                            <span class="input-group-curr">$</span>
+                            <input type="text"
+                                class="form-control in-rq cl-input cl-in curr-input in-commission in-num emp-commission-vl">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="new-rate" class="common-p">New Rate</label>
+                        </div>
+                        <div class="col-md-6">
+                            <span class="input-group-curr">$</span>
+                            <input type="text"
+                                class="form-control in-rq cl-input cl-in curr-input in-new-rate in-num emp-rate-vl">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="hhours" class="common-p">Holiday hours</label>
+                        </div>
+                        <div class="col-md-6">
+                            <span class="input-group-text input-group-text-right">hours</span>
+                            <input type="text" class="form-control in-rq cl-input cl-in in-h-hours in-num emp-holiday-vl">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="phnreimbursement" class="common-p elm-phone">Phone Reimbursement</label>
+                        </div>
+                        <div class="col-md-6">
+                            <span class="input-group-curr">$</span>
+                            <input type="text" class="form-control in-rq cl-input cl-in curr-input in-phn-reimbursement in-num emp-phn-reimbursement-vl">
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="additional_info"  class="common-p elm-add-info">Additional Information</label>
+                                <textarea class="form-control in-rq emp-additional-info-vl" rows="3" style="height: 55px;"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="right-output">
+                        <span class="right-output-p">Total employee gross pay</span>
+                        <p class="right-output-final rs-gross-pay emp-total-vl">$0.00</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/autonumeric@4.5.4"></script>
+    <script>
+        jQuery(($) => {
+            let in_serial = 0;
+            const numOptionCurrency = {
+                digitGroupSeparator        : ',',
+                decimalCharacter           : '.',
+                decimalCharacterAlternative: '.',
+                currencySymbol             : '',
+                currencySymbolPlacement    : AutoNumeric.options.currencySymbolPlacement.prefix,
+                decimalPlaces              : 0,
+                minimumValue: 0
+            };
+            AutoNumeric.multiple('.cl-in', numOptionCurrency);
+
+            
+            const nftd = Intl.NumberFormat("en-US", {
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2
+            });
+
+            
+            function removeComma(num){
+                    return Number(num.replace(/,/g,""));
+                }
+            
+
+            $("#add_emp_btn").on("click", function() {
+                let employee_form = emp_form(in_serial);
+
+                $("#extra_emp_sec").append(employee_form);
+
+                adjustEmpSecTitle();
+
+                new AutoNumeric(`#in_w_hour_${in_serial}`, numOptionCurrency);
+                new AutoNumeric(`#in_com_${in_serial}`, numOptionCurrency);
+                new AutoNumeric(`#in_rate_${in_serial}`, numOptionCurrency);
+                new AutoNumeric(`#in_h_hours_${in_serial}`, numOptionCurrency);
+                new AutoNumeric(`#in_phn_reimbursement_${in_serial}`, numOptionCurrency);
+
+                in_serial++;
+            });
+            
+
+            $(document).on("click", ".cross-btn", function(){
+                $(this).closest(".form-box").remove();
+                adjustEmpSecTitle();
+                totalPayrollCalc();
+            });
+
+
+            $(document).on("input", ".main-form .cl-in", function(){
+                let parent = $(this).closest(".emp-sec");
+
+                let worked_hours = removeComma(parent.find(".in-hours").val());
+                let commission = removeComma(parent.find(".in-commission").val());
+                let new_rate = removeComma(parent.find(".in-new-rate").val());
+                let h_hours = removeComma(parent.find(".in-h-hours").val());
+                let phn_reimbursement = removeComma(parent.find(".in-phn-reimbursement").val());
+
+                let gross_pay = (worked_hours * new_rate) + commission + phn_reimbursement;
+
+                if(gross_pay > 0){
+                    parent.find(".rs-gross-pay").text("$"+nftd.format(gross_pay));
+                } else {
+                    parent.find(".rs-gross-pay").text("$"+nftd.format(0));
+                }
+
+                totalPayrollCalc();
+            });
+
+            function totalPayrollCalc(){
+                let total_payroll = 0;
+                $(".main-form .rs-gross-pay").each(function(i, elm){
+                    total_payroll = total_payroll + removeSign($(elm).text());
+                });
+
+                $("#total_payroll_amount").text("$"+nftd.format(total_payroll));
+            }
+
+            function adjustEmpSecTitle(){
+                $(".main-form .emp-info").each(function(i, elm){
+                    $(elm).text("Employee Information "+(i+1));
+                });
+            }
+
+            $(document).on("input", "#mx_cl .in-rq", function(){
+                $(this).removeClass("err-input");
+                
+            });
+            
+
+            $("#send_btn").on("click", function(){
+
+                let total_rq = $("#mx_cl .in-rq").length;
+                let x = 0;
+
+                $("#mx_cl .in-rq").each(function(i, elm){                
+                    let vl = $(elm).val().trim();
+                    let type = $(elm).attr("type");
+
+                    if(type == "email"){
+                        vl = validateEmailAdd(vl);
+                    }
+                    if(vl){
+                        $(elm).removeClass("err-input");
+                        x++;
+                    } else {
+                        $(elm).addClass("err-input");
+                    }
+                });
+                
+
+                if(total_rq == x){
+                    let txt_msg = "";
+                    let contact_mail =$("#cemail").val();
+
+                    txt_msg =`
+                        Business Name : ${$(".bs-name").val()}
+                        Contact Email : ${$(".email-in").val()}
+
+                    `
+                    $("#extra_emp_sec .emp-sec").each(function(i, elm){
+                        let title = $(elm).find(".emp-info").text().trim();
+                        let emp_name = $(elm).find(".emp-name-vl").val();
+                        let emp_hours = $(elm).find(".emp-hours-vl").val();
+                        let emp_commission = $(elm).find(".emp-commission-vl").val();
+                        let emp_rate = $(elm).find(".emp-rate-vl").val();
+                        let emp_holiday = $(elm).find(".emp-holiday-vl").val();
+                        let emp_total_gross = $(elm).find(".emp-total-vl").text().trim();
+                        let emp_phn_reimbursement = $(elm).find(".emp-phn-reimbursement-vl").val();
+                        let emp_additional_info = $(elm).find(".emp-additional-info-vl").val();
+
+                        txt_msg = txt_msg + `
+                        Employee Information: ${title} 
+                        Employee Name: ${emp_name}
+                        Hours worked: ${emp_hours}
+                        Commission: ${emp_commission}
+                        New Rate: ${emp_rate}
+                        Holiday hours: ${emp_holiday}
+                        Phone Reimbursement: ${emp_phn_reimbursement}
+                        Additional Information : ${emp_additional_info}
+                        Total employee gross pay: ${emp_total_gross}
+
+                        `;
+                    })
+                    txt_msg = txt_msg + `
+                        Total Payroll : ${$("#total_payroll_amount").text()}
+
+                    `
+
+                    console.log(txt_msg);
+                    
+                    $("#wpforms-759-field_1").val(contact_mail);
+                    $("#wpforms-759-field_2").val(txt_msg);
+                    $("#wpforms-submit-759").click();
+                }
+
+            });
+
+           
+
+            function emp_form(num){
+                    let employee_form = `
+                    <div class="form-box form-two emp-sec">
+                            <span class="cross-btn">X</span>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="emp-info">Employee Information</div>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="row form-margin">
+                                        <div class="col-md-6">
+                                            <label for="ename" class="common-p">Employee name</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input type="text" class="form-control in-rq cl-input emp-name-vl">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="hworks" class="common-p">Hours worked</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <span class="input-group-text input-group-text-right">hours</span>
+                                            <input type="text" class="form-control in-rq cl-input cl-in in-hours in-num emp-hours-vl" id="in_w_hour_${num}">
+
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="comission" class="common-p">Commission</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <span class="input-group-curr">$</span>
+                                            <input type="text"
+                                                class="form-control in-rq cl-input cl-in curr-input in-commission in-num emp-commission-vl" id="in_com_${num}">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="new-rate" class="common-p">New Rate</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <span class="input-group-curr">$</span>
+                                            <input type="text"
+                                                class="form-control in-rq cl-input cl-in curr-input in-new-rate in-num emp-rate-vl" id="in_rate_${num}">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="hhours" class="common-p">Holiday hours</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <span class="input-group-text input-group-text-right">hours</span>
+                                            <input type="text" class="form-control in-rq cl-input cl-in in-h-hours in-num emp-holiday-vl" id="in_h_hours_${num}">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="phnreimbursement" class="common-p">Phone Reimbursement</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <span class="input-group-curr">$</span>
+                                            <input type="text" class="form-control in-rq cl-input cl-in curr-input in-phn-reimbursement in-num emp-phn-reimbursement-vl" id="in_phn_reimbursement_${num}">
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="additional_info" class="common-p">Additional Information</label>
+                                                <textarea class="form-control in-rq emp-additional-info-vl" rows="3" style="height: 55px;"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="right-output">
+                                        <span class="right-output-p">Total employee gross pay</span>
+                                        <p class="right-output-final rs-gross-pay emp-total-vl">$0.00</p>
+                                    </div>
+                                </div>
+                            </div>
+                `;	
+
+                    return employee_form;
+                }
+
+            function removeSign(vl){
+                return Number(vl.replace(/\$|,/g, ''));
+            }
+            
+            // Validate email input field
+            function validateEmailAdd(email) {
+                const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                return re.test(email);
+            }
+        });
+    </script>
+</body>
+
+</html>

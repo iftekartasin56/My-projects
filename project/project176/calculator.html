@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
+    <title>Pansion Tax Relief Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+<script>
+    // Let's adjust the default values from here.
+
+    let annual_exempt_amount = 6000; //Annual Exempt Amount
+    let basic_rate = 50270; //Basic Rate Band Remaining
+    let gain_tax_prcent1 = 10/100; //Gain Taxed at 10%
+    let gain_tax_prcent2 = 20/100; //Gain Taxed at 10%
+</script>
+<style>
+#mx_cl *,
+::after,
+::before {
+    box-sizing: border-box;
+}
+
+#mx_cl {
+    line-height: 1.5;
+    font-family: inherit;
+}
+
+#mx_cl .container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #000000;
+    text-align: left;
+}
+#mx_cl .cl-wrapper {
+    box-shadow: 0 0 3px #ccc;
+    background-color: #fff;
+}
+#mx_cl label {
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+#mx_cl .row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+#mx_cl .col-md-1,
+#mx_cl .col-md-10,
+#mx_cl .col-md-11,
+#mx_cl .col-md-12,
+#mx_cl .col-md-2,
+#mx_cl .col-md-3,
+#mx_cl .col-md-4,
+#mx_cl .col-md-5,
+#mx_cl .col-md-6,
+#mx_cl .col-md-7,
+#mx_cl .col-md-8,
+#mx_cl .col-md-9 {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+#mx_cl .form-group {
+    margin-bottom: 1rem;
+}
+
+#mx_cl .form-control {
+    display: block;
+    width: 100%;
+    height: 35px;
+    padding: 0.275rem 0.75rem;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #000000;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #adadad;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+#mx_cl .form-control:focus {
+    outline: none;
+}
+#mx_cl .form-control:hover{
+    border: 1px solid #AC9D4C;
+}
+
+#mx_cl .btn {
+    display: block;
+    font-weight: 400;
+    color: #212529;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: .275rem 2.2rem;
+    line-height: 1.3;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    text-align: center;
+}
+
+#mx_cl .btn-primary {
+    display: block;
+    width: 100%;
+    background-color: #E60405;
+    color: #fff;
+    border-radius: 5px;
+}
+#mx_cl .btn-primary:hover {
+    background-color: #fff;
+    border-color: #E60405;
+    color: #E60405;
+}
+
+#mx_cl .text-center {
+    text-align: center;
+}
+#mx_cl .col-sp-sm-6 {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+#mx_cl .col-sp-sm-4 {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    -ms-flex: 0 0 33.333333%;
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+}
+
+@media (min-width: 576px) {
+    #mx_cl .container {
+        max-width: 100%;
+    }
+}
+
+@media (min-width: 768px) {
+    #mx_cl .container {
+        max-width: 100%;
+    }
+
+    #mx_cl .col-md-12 {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    #mx_cl .col-md-9 {
+        -ms-flex: 0 0 75%;
+        flex: 0 0 75%;
+        max-width: 75%;
+    }
+
+    #mx_cl .col-md-8 {
+        -ms-flex: 0 0 66.666667%;
+        flex: 0 0 66.666667%;
+        max-width: 66.666667%;
+    }
+
+    #mx_cl .col-md-7 {
+        -ms-flex: 0 0 58.33333%;
+        flex: 0 0 58.33333%;
+        max-width: 58.33333%;
+    }
+
+    #mx_cl .col-md-6 {
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+    #mx_cl .col-md-5 {
+        -ms-flex: 0 0 41.666667%;
+        flex: 0 0 41.666667%;
+        max-width: 41.666667%;
+    }
+
+    #mx_cl .col-md-4 {
+        -ms-flex: 0 0 33.333333%;
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+    }
+
+    #mx_cl .col-md-3 {
+        -ms-flex: 0 0 25%;
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+}
+
+@media (min-width: 992px) {
+    #mx_cl .container {
+        max-width: 960px;
+    }
+}
+
+@media (min-width: 1200px) {
+    #mx_cl .container {
+        max-width: 950px;
+    }
+}
+
+#mx_cl .text-right {
+    text-align: right;
+}
+
+#mx_cl .form-group {
+    position: relative;
+    margin-bottom: 19px;
+}
+
+#mx_cl .top-title {
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+}
+#mx_cl .left-top-svg {
+    display: block;
+    height: 76px;
+    width: auto;
+    margin: 0px auto;
+    margin-top: -79px;
+}
+#mx_cl .top-sec {
+    margin-bottom: 22px;
+    margin-top: 4px;
+    display: flex;
+    border-bottom: 1px solid #AC9D4C;
+    align-items: center;
+    gap: 15px;
+}
+#mx_cl .top-sec .sec-title {
+    margin: 0;
+}
+#mx_cl .top-sec .sec-step {
+    width: 52px;
+    height: 40px;
+    background: #AC9D4C;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+#mx_cl .custom-input-sec {
+    display: flex;
+    align-items: center;
+}
+
+#mx_cl .input-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #0D2131;
+    display: block;
+    padding-bottom: 5px;
+}
+
+#mx_cl .right-heading {
+    color: #E60405;
+    font-size: 16px;
+    border-bottom: 1px solid #E6E6E6;
+}
+
+#mx_cl .right-input-section {
+    margin-top: 10px;
+}
+
+#mx_cl .err-msg {
+    font-style: italic;
+    color: #E60405;
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+#mx_cl .btn-one {
+    text-align: center;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    width: 50%;
+    border: 1px solid #E60405;
+    cursor: pointer;
+}
+
+#mx_cl .btn-two {
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    width: 50%;
+    border: 1px solid #E60405;
+    text-align: center;
+    cursor: pointer;
+}
+
+#mx_cl .output-head {
+    display: block !important;
+    color: #E60405;
+    font-size: 25px;
+    font-weight: 600;
+    border-bottom: 1px solid #FFCFCF;
+    margin: 0px;
+    margin-bottom: 5px;
+}
+
+#mx_cl .output-section {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 39px;
+}
+
+#mx_cl .final-output {
+    padding: 30px;
+    border: 1px solid #E60405;
+    border-radius: 5px;
+    margin-top: 43px;
+}
+
+#mx_cl .final-output-p {
+    display: block !important;
+    font-size: 25px;
+    color: #E60405;
+    font-weight: 600;
+    border-bottom: 1px solid #FFCFCF;
+
+}
+#mx_cl .final-output-result{
+    font-size: 25px;
+    font-weight: 600;
+}
+#mx_cl .option-sec {
+    display: flex;
+    gap: 30px;
+    justify-content: start;
+}
+#mx_cl .input-sec {
+    display: flex;
+    flex: 3;
+    gap: 5px;
+    height: 26px;
+    align-items: flex-end;
+}
+#mx_cl .input-elm {
+    position: relative;
+}
+#mx_cl .append-text {
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    font-size: 16px;
+}
+#mx_cl .append-text-2 {
+    position: absolute;
+    right: 9px;
+    bottom: 1px;
+    font-size: 16px;
+}
+#mx_cl .check-box {
+    display: flex;
+    margin-bottom: 6px;
+    cursor: pointer;
+}
+
+#mx_cl .tck-mark {
+    display: inline-block;
+    margin-top: 1px;
+}
+
+#mx_cl .tick-mark {
+    background-color: #ffffff;
+    padding: 2px;
+    color: #fff;
+    width: 20px;
+    height: 20px;
+    font-size: 14px;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    border: 1px solid #0D2131;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    margin-right: 10px;
+}
+
+#mx_cl .check-box.is-active .tick-mark {
+    background-color: #0D2131;
+    border: 1px solid #0D2131;
+}
+#mx_cl .check-box:hover:not(.is-active) .tick-mark {
+    background-color: #dddddd;
+}
+
+#mx_cl .rs-sec {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+#mx_cl .rs-title {
+    font-size: 16px;
+    font-weight: 600;
+    border-bottom: 1px solid #B8AD9D;
+    margin: 0;
+    margin-bottom: 10px;
+}
+#mx_cl .rs-vl {
+    font-size: 36px;
+    font-weight: 600;
+    margin: 0;
+    margin-bottom: 10px;
+}
+#mx_cl .small-check {
+    font-size: 12px;
+    color: #7c7c7c;
+}
+#mx_cl .right-div-sec {
+    width: 100%;
+    padding: 22px 34px 22px 11px;
+}
+#mx_cl .left-div-sec {
+    width: 100%;
+    padding: 22px 11px 22px 34px;
+}
+#mx_cl .range-vl {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 400;
+    color: #000;
+    border: 1px solid #0d2131;
+    padding: 2px 15px;
+    border-radius: 5px;
+}
+#mx_cl .range-wrap {
+    display: block;
+    position: relative;
+    padding: 0;
+    margin: 0 0 35px 0;
+}
+
+#mx_cl input[type=range] {
+    margin: 0 0 0 0;
+    outline: none;
+    padding: 0;
+    width: 100%;
+    height: 7px;
+    background-color: #ccc;
+    background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #0D2131), color-stop(100%, #0D2131));
+    border: 1px solid #ccc;
+    background-size: 0% 100%;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    cursor: pointer;
+    -webkit-appearance: none;
+}
+
+#mx_cl input[type=range]::-webkit-slider-runnable-track {
+    box-shadow: none;
+    border: none;
+    background: transparent;
+    -webkit-appearance: none;
+}
+#mx_cl input[type=range]::-webkit-slider-thumb {
+    height: 20px;
+    width: 20px;
+    margin-top: -3px;
+    background: #0D2131;
+    border: 5px solid #0D2131;
+    border-radius: 25px;
+    box-shadow: 0 2px 2px 0px #646464;
+    -webkit-appearance: none;
+}
+#mx_cl .money-btn-sec {
+    display: flex;
+    align-items: center;
+}
+#mx_cl .money-btn {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    border-radius: 25px;
+    height: 25px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    min-width: 100px;
+}
+#mx_cl .money-box {
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    font-size: 14px;
+    border: 5px solid #ffffff;
+    border-radius: 25px;
+    text-align: center;
+    position: relative;
+    background-color: #ffffff;
+    color: #fff;
+    box-shadow: 0 0 2px #000;
+}
+#mx_cl .money-btn.is-active .money-box {
+    border-color: #AC9D4C;
+}
+#mx_cl .btn-text {
+    font-size: 16px;
+    font-weight: 400;
+    color: #062B4E;
+}
+#mx_cl .help-tip {
+    position: absolute;
+    top: 6px;
+    right: -8px;
+    text-align: center;
+    background-color: #fff;
+    border: 1px solid #000;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    font-size: 12px;
+    line-height: 26px;
+    cursor: default;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#mx_cl .help-tip:before {
+    content: '?';
+    font-weight: 600;
+    color: #000;
+}
+#mx_cl .help-tip p {
+    display: none;
+    text-align: left;
+    background-color: #000;
+    color: #fff;
+    padding: 8px;
+    width: 212px;
+    position: absolute;
+    border-radius: 6px;
+    box-shadow: 0px 0px 10px rgb(0 0 0 / 20%);
+    right: -6px;
+    font-size: 12px;
+    line-height: 1.4;
+    top: 10px;
+    z-index: 100;
+}
+#mx_cl .help-tip:hover p {
+    display: block;
+    transform-origin: 100% 0%;
+    -webkit-animation: fadeIn 0.3s ease-in-out;
+    animation: fadeIn 0.3s ease-in-out;
+}
+#mx_cl .sp-help-tip {
+    position: absolute;
+    top: 6px;
+    right: 55px;
+    text-align: center;
+    background-color: #fff;
+    border: 1px solid #000;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    font-size: 12px;
+    line-height: 26px;
+    cursor: default;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#mx_cl .sp-help-tip:before {
+    content: '?';
+    font-weight: 600;
+    color: #000;
+}
+#mx_cl .sp-help-tip p {
+    display: none;
+    text-align: left;
+    background-color: #000;
+    color: #fff;
+    padding: 8px;
+    width: 212px;
+    position: absolute;
+    border-radius: 6px;
+    box-shadow: 0px 0px 10px rgb(0 0 0 / 20%);
+    right: -12px;
+    font-size: 12px;
+    line-height: 1.4;
+    top: 9px;
+    z-index: 100;
+}
+#mx_cl .sp-help-tip:hover p {
+    display: block;
+    transform-origin: 100% 0%;
+    -webkit-animation: fadeIn 0.3s ease-in-out;
+    animation: fadeIn 0.3s ease-in-out;
+}
+#mx_cl .profit-sec {
+    line-height: 1.5;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    margin: 0px;
+    padding: 0px 0px 0px 42px;
+}
+#mx_cl .profit-sec:not(:last-child) {
+    padding-bottom: 24px;
+}
+#mx_cl .profit-sec:not(:last-child)::before {
+    content: "";
+    position: absolute;
+    left: 14px;
+    bottom: -4px;
+    height: 100%;
+    width: 2px;
+    background: #dfdfdf;
+}
+#mx_cl .profit-title {
+    font-weight: 500;
+    margin-right: 12px;
+}
+#mx_cl .profit-rs-vl {
+    font-size: 18px;
+    font-weight: 600;
+}
+#mx_cl .profit-middle-sec {
+    flex: 0 0 100%;
+}
+#mx_cl .profit-middle-sec-title {
+    font-size: 14px;
+    line-height: 1.5;
+    position: relative;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    margin-top: 18px;
+}
+#mx_cl .profit-middle-sec-title::after {
+    content: "";
+    position: absolute;
+    left: -33px;
+    top: 50%;
+    display: flex;
+    height: 12px;
+    width: 12px;
+    background: rgb(255, 255, 255);
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    transform: translate(0px, -50%);
+}
+#mx_cl .profit-sec::after {
+    content: "+";
+    font-size: 28px;
+    text-align: center;
+    line-height: 28px;
+    position: absolute;
+    left: 0px;
+    top: -2px;
+    display: block;
+    height: 30px;
+    width: 30px;
+    background: rgb(255, 255, 255);
+    border: 1px solid #ccc;
+    border-radius: 50%;
+}
+#mx_cl .gain-sec {
+    line-height: 1.5;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    margin: 0px;
+    padding: 0px 0px 0px 42px;
+}
+#mx_cl .gain-sec:not(:last-child) {
+    padding-bottom: 24px;
+}
+#mx_cl .gain-sec:not(:last-child)::before {
+    content: "";
+    position: absolute;
+    left: 14px;
+    bottom: -4px;
+    height: 100%;
+    width: 2px;
+    background: #dfdfdf;
+}
+#mx_cl .gain-title {
+    font-weight: 500;
+    margin-right: 12px;
+}
+#mx_cl .gain-rs {
+    font-size: 18px;
+    font-weight: 600;
+}
+#mx_cl .gain-sec::after {
+    content: "+";
+    font-size: 28px;
+    text-align: center;
+    line-height: 28px;
+    position: absolute;
+    left: 0px;
+    top: -2px;
+    display: block;
+    height: 30px;
+    width: 30px;
+    background: rgb(255, 255, 255);
+    border: 1px solid #ccc;
+    border-radius: 50%;
+}
+#mx_cl .tax-sec {
+    line-height: 1.5;
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    margin: 0px;
+    padding: 0px 0px 0px 42px;
+}
+#mx_cl .tax-title {
+    margin-right: 12px;
+    font-weight: 600;
+}
+#mx_cl .tax-rs-sec {
+    font-weight: 600;
+    position: relative;
+    font-size: 20px;
+}
+#mx_cl .tax-rs-vl {
+    position: relative;
+}
+#mx_cl .tax-sec::after {
+    content: "=";
+    font-size: 28px;
+    text-align: center;
+    line-height: 28px;
+    position: absolute;
+    left: 0px;
+    top: -2px;
+    display: block;
+    height: 30px;
+    width: 30px;
+    background: rgb(255, 255, 255);
+    border: 1px solid #ccc;
+    border-radius: 50%;
+}
+@media (max-width: 786px){
+    #mx_cl .right-heading {
+        margin-top: 25px;
+    }
+    #mx_cl .top-title {
+        font-size: 20px;
+    }
+    #mx_cl .money-btn-sec{
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+    #mx_cl .help-tip{
+        top: 4px;
+        right: 14px;
+    }
+    #mx_cl .right-div-sec{
+        position: relative;
+    }
+    #mx_cl .profit-middle-sec-title {
+        font-size: 12px;
+    }
+    #mx_cl .left-div-sec {
+        padding: 22px 22px 11px 22px;
+    }
+    #mx_cl .right-div-sec {
+        padding: 11px 22px 22px 22px;
+    }
+}
+#mx_cl .main-color {
+    color: #AC9D4C !important;
+}
+#mx_cl .submit-text {
+    font-size: 16px;
+    background: #AC9D4C;
+    color: #fff;
+    border-radius: 4px;
+    padding: 9px 15px;
+    text-align: center;
+    margin-top: 15px;
+    margin-left: 5px;
+}
+#mx_cl .text-sec-para {
+    font-size: 14px;
+    line-height: 1.5;
+    padding: 0px 6px;
+}
+#mx_cl .text-sec-para div:not(:last-child){
+    margin-bottom: 12px;
+}
+</style>
+<div class="ms-cl" id="mx_cl">
+<div class="container">
+    <div class="cl-wrapper">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="left-div-sec">
+                    <div class="top-sec">
+                        <div class="sec-step">1</div>
+                        <h3 class="sec-title">Your situation</h3>
+                    </div>
+                    <div class="form-group">
+                        <label for="">What pension scheme is your employer using?</label>
+                        <div class="help-tip">
+                            <p>Check with your employer if you’re not sure which one they’re using</p>
+                        </div>
+                        <div class="money-btn-sec">
+                            <div class="money-btn" data-value="1">
+                                <span class="money-box"></span>
+                                <span class="btn-text">Net pay</span>
+                            </div>
+                            <div class="money-btn is-active" data-value="2">
+                                <span class="money-box"></span>
+                                <span class="btn-text">Relief at source</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="in_sec">
+                        <div class="row">
+                            <div class="col-md-7">
+                                <label for="">Your Annual Income</label>
+                            </div>
+                            <div class="col-md-5">
+                                <div class="form-group">
+                                    <input type="text" class="form-control cl-input" id="in_1" value="20000">
+                                    <span class="append-text">£</span>
+                                </div>
+                            </div>
+                            <div class="col-md-7">
+                                <label for="">Pension Contributions</label>
+                            </div>
+                            <div class="col-md-5">
+                                <div class="form-group">
+                                    <input type="text" class="form-control cl-input" id="in_2" value="5000">
+                                    <span class="append-text">£</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="right-div-sec">
+                    <div class="top-sec">
+                        <div class="sec-step">2</div>
+                        <h3 class="sec-title">Results</h3>
+                    </div>
+                    <div>
+                        <div class="text-sec" id="text_sec">
+                            <div class="text-sec-para">If your employer is using a net pay or salary sacrifice scheme, then you don’t need to worry about needing to do a tax return in order to claim your relief.</div>
+                            <div class="text-sec-para">Your contributions are already made before any tax is calculated, so your overall taxable income is reduced as a result.</div>
+                            <div class="text-sec-para">You don’t need to do anything.</div>
+                        </div>
+                        <ul class="rs-sec" id="rs_sec">
+                            <li class="profit-sec">
+                                <div class="profit-title">
+                                    Pension Contribution Paid by you
+                                </div>
+                                <div class="profit-rs-vl main-color" id="pension_rs">£0</div>
+                                
+                            </li>
+                            <li class="gain-sec">
+                                <div class="gain-title">Automatic Tax Relief</div>
+                                <div class="gain-rs main-color" id="relief_rs">£0</div>
+                            </li>
+                            <li class="tax-sec">
+                                <div class="tax-title">
+                                    Additional extra tax relief you can claim
+                                    <div class="sp-help-tip">
+                                        <p>Simply claim this via self-assessment</p>
+                                    </div>
+                                </div>
+                                <div class="tax-rs-sec">
+                                    <div class="tax-rs-vl main-color" id="tax_relief_rs">
+                                        £0
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/autonumeric@4.5.4"></script>
+<script>
+jQuery(document).ready(function ($){
+    const numOptionCurrency = {
+        digitGroupSeparator        : ',',
+        decimalCharacter           : '.',
+        decimalCharacterAlternative: '.',
+        currencySymbol             : '',
+        currencySymbolPlacement    : AutoNumeric.options.currencySymbolPlacement.prefix,
+        decimalPlaces              : 2
+    };
+    const anElement1 = AutoNumeric.multiple('.cl-input', numOptionCurrency);
+
+    function removeComma(num){
+        return Number(num.replace(/,/g,""));
+    }
+
+    const nft = Intl.NumberFormat("en-US",{
+        minimumFractionDigits: 0,
+        maximumFractionDigits: 0
+    });
+    const nftd = Intl.NumberFormat("en-US",{
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+    });
+
+
+    $('.money-btn').on('click', function () {
+        $('.money-btn').removeClass('is-active');
+        $(this).addClass('is-active');
+        Calc();
+    });
+
+    $(".cl-input").on("input", function(){
+        Calc();
+    })
+
+    Calc(); 
+
+    function Calc(){
+        in_1 = removeComma($("#in_1").val());
+        in_2 = removeComma($("#in_2").val());  
+        let money_vl = $('.money-btn.is-active').data('value');
+
+        if(in_1){
+            if(money_vl == 1){
+                $("#text_sec").show();
+                $("#rs_sec").hide();
+                $("#in_sec").hide();
+            } else if(money_vl == 2){
+                $("#text_sec").hide();
+                $("#rs_sec").show();
+                $("#in_sec").show();
+            }
+
+
+            let marginal_tax_rate = 0;
+
+            if(in_1 <= 12570){
+                marginal_tax_rate = 0;
+            } else if(in_1 <= 50270){
+                marginal_tax_rate = 0.2;
+            }else if(in_1 <= 150000){
+                marginal_tax_rate = 0.4;
+            }else{
+                marginal_tax_rate = 0.45;
+            }
+
+            
+
+
+            let pension_contribute = in_2;
+            let automatic_tax_relief = pension_contribute * 0.25;
+
+            let additional_tax_relief = 0;
+            if(marginal_tax_rate == 0.4){
+                additional_tax_relief = ((pension_contribute * 0.5)-automatic_tax_relief);
+            }
+
+            $("#pension_rs").text("£" + nftd.format(pension_contribute));
+            $("#relief_rs").text("£" + nftd.format(automatic_tax_relief));
+            $("#tax_relief_rs").text("£" + nftd.format(additional_tax_relief));
+        } else{
+            $("#pension_rs").text("£" + nftd.format(0));
+            $("#relief_rs").text("£" + nftd.format(0));
+            $("#tax_relief_rs").text("£" + nftd.format(0));
+        }
+
+       
+    }
+});
+</script>
+</body>
+</html>

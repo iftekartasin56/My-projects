@@ -1,0 +1,629 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+    integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
+  <!-- Bootstrap CSS -->
+  <title>Retirement Calculator</title>
+  <style>
+    body {
+      font-family: 'EB Garamond', serif;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-----------Please copy and paste following code into any HTML element ---------------->
+
+  <!----------- copy starts ---------------->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    #hm_cl6 *,
+    ::after,
+    ::before {
+      box-sizing: border-box;
+    }
+
+    #hm_cl6 .color1 {
+      color: #A57162;
+    }
+
+    #hm_cl6 .color2 {
+      color: #373A3B;
+    }
+
+    #hm_cl6 .border1 {
+      border: 1px solid #373A3B;
+    }
+
+    #hm_cl6 .font1 {
+      font: normal normal normal 22px/30px Nunito Sans;
+    }
+    
+    #hm_cl6 .font2 {
+      font: normal normal normal 18px/23px EB Garamond;
+      letter-spacing: 0px;
+      color: #373A3B;
+    }
+    #hm_cl6 .font3 {
+      font: normal normal 600 14px/19px Nunito Sans;
+      letter-spacing: 1.4px;
+    }
+    #hm_cl6 .font4 {
+      font: normal normal normal 30px/39px EB Garamond;
+      letter-spacing: 0px;
+      color: #373A3B;
+    }
+
+    #hm_cl6 .heading_font {
+      font-size: 40px;
+      color: #373A3B;
+      margin-bottom: 26px;
+    }
+
+    #hm_cl6 .margin-bottom {
+      position: relative;
+      margin-bottom: 22px;
+    }
+
+    #hm_cl6 {
+      line-height: 1.5;
+    }
+
+    #hm_cl6 .border_all{
+      border-top: 1px solid #373A3B;
+      height: 1px;
+      width: 100%;
+    }
+    #hm_cl6 .border_all_sp {
+      margin-bottom: 26px;
+    }
+
+    #hm_cl6 .container {
+      width: 100%;
+      margin-right: auto;
+      margin-left: auto;
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: 1.5;
+      color: #373A3B;
+      text-align: left;
+      border: 1px solid #373A3B;
+    }
+
+
+    #hm_cl6 label {
+      display: inline-block;
+      margin-bottom: .5rem;
+      font-size: 15px;
+      font-weight: 500;
+    }
+
+    #hm_cl6 h3,
+    #hm_cl6 h4,
+    #hm_cl6 p {
+      margin: 5px 0;
+    }
+
+    #hm_cl6 .row {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      margin-right: -15px;
+      margin-left: -15px;
+    }
+
+    #hm_cl6 .input-row {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      margin-right: -15px;
+      margin-left: -15px;
+      align-items:start;
+      margin-bottom: 25px;
+    }
+    #hm_cl6 .last-input-row {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      margin-right: -15px;
+      margin-left: -15px;
+      align-items:center;
+      margin-bottom: 25px;
+    }
+
+    #hm_cl6 .col-md-1,
+    #hm_cl6 .col-md-10,
+    #hm_cl6 .col-md-11,
+    #hm_cl6 .col-md-12,
+    #hm_cl6 .col-md-2,
+    #hm_cl6 .col-md-3,
+    #hm_cl6 .col-md-4,
+    #hm_cl6 .col-md-5,
+    #hm_cl6 .col-md-6,
+    #hm_cl6 .col-md-7,
+    #hm_cl6 .col-md-8,
+    #hm_cl6 .col-md-9 {
+      position: relative;
+      width: 100%;
+      padding-right: 15px;
+      padding-left: 15px;
+    }
+
+    #hm_cl6 .form-group {
+      margin-bottom: 0;
+      position: relative;
+    }
+
+    #hm_cl6 .form-control {
+      display: block;
+      width: 100%;
+      height: 50px;
+      font: normal normal 600 16px/22px Nunito Sans;
+      line-height: 1.5;
+      color: #373A3B;
+      background-color: #fff;
+      background-clip: padding-box;
+      border: 1px solid #373A3B;
+      transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    }
+
+    #hm_cl6 .table-padding {
+      padding: 5px 0px;
+      background: #E0A899;
+    }
+
+    #hm_cl6 .form-control:focus {
+      outline: none;
+    }
+
+    #hm_cl6 .text-center {
+      text-align: center !important;
+    }
+
+    #hm_cl6 .col-md-4 .form-control {
+      text-align: center;
+    }
+
+    #hm_cl6 .prepend-text {
+            display: flex;
+            align-items: center;
+            position: absolute;
+            bottom: 1px;
+            height: 48px;
+            left: 1px;
+            padding: 10.5px 12px;
+            color: #373A3B;
+            font: normal normal 600 16px/22px Nunito Sans;
+            background: #efefef;
+        }
+
+    #hm_cl6 .total_amount_Bg {
+      background-color: #E9E3DF;
+      padding: 3rem 4rem 2.5rem 4rem;
+    }
+    #hm_cl6 .total_amount_Bg_2 {
+      padding: 1.5rem;
+    }
+
+
+    #hm_cl6 .main-container {
+      padding: 2rem 4rem 2rem 4rem;
+    }
+
+    #hm_cl6 .total_value {
+      text-align: right;
+    }
+
+    #hm_cl6 .rs-vl1, #hm_cl6 .rs-vl2 {
+      text-align: right;
+      font: normal normal normal 36px/47px EB Garamond;
+      letter-spacing: 0px;
+      color: #373A3B;
+    }
+    #hm_cl6 #total_expense {
+      margin-top: -7px;
+    }
+    #hm_cl6 .rs-sec-bottom {
+        display: flex;
+        flex-direction: column;
+    }
+    #hm_cl6 .rs-sec-bottom {
+        display: flex;
+        flex-direction: column;
+    }
+    #hm_cl6 .rs-sec-bottom span:nth-child(1) {
+      font: normal normal normal 16px/21px EB Garamond;
+      letter-spacing: 0px;
+      color: #373A3B;
+    }
+    #hm_cl6 .rs-sec-bottom span:nth-child(2) {
+      font: normal normal normal 14px/19px Nunito Sans;
+      letter-spacing: 0px;
+      color: #373A3B;
+    }
+    #hm_cl6 .err-input {
+      border-color: red;
+    }
+    #hm_cl6 .hm_cl6_extra_growth{
+        border-bottom: 1px solid;
+        padding-bottom: 0px;
+    }
+    @media (max-width: 768px) {
+      #hm_cl6 .margin-bottom {
+        margin-bottom: 0px;
+      }
+      #hm_cl6 #total_expense {
+        margin-top: -18px;
+      }
+      #hm_cl6 .main-container {
+        padding: 2rem;
+      }
+      #hm_cl6 .total_amount_Bg {
+        padding: 2rem;
+      }
+      #hm_cl6 .total_amount_Bg_2 {
+        padding: 1rem 1.5rem;
+      }
+      #hm_cl6 .font1 {
+        font: normal normal normal 20px/28px Nunito Sans;
+      }
+      #hm_cl6 .font2 {
+        font: normal normal normal 16px/20px EB Garamond;
+      }
+      #hm_cl6 .font4 {
+        font: normal normal normal 24px/30px EB Garamond;
+      }
+      #hm_cl6 .input-label {
+          margin-bottom: 6px;
+      }
+      #hm_cl6 .mn-center-text {
+          text-align: center !important;
+      }
+      #hm_cl6 .input-row {
+          margin-bottom: 22px;
+      }
+    }
+    @media (min-width: 576px) {
+      #hm_cl6 .container {
+        max-width: 540px;
+      }
+    }
+
+    @media (min-width: 768px) {
+
+      #hm_cl6 .container {
+        max-width: 100%;
+      }
+
+      #hm_cl6 .col-md-12 {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+
+      #hm_cl6 .col-md-9 {
+        -ms-flex: 0 0 75%;
+        flex: 0 0 75%;
+        max-width: 75%;
+      }
+
+      #hm_cl6 .col-md-8 {
+        -ms-flex: 0 0 66.666667%;
+        flex: 0 0 66.666667%;
+        max-width: 66.666667%;
+      }
+
+      #hm_cl6 .col-md-6 {
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 50%;
+      }
+
+      #hm_cl6 .col-md-4 {
+        -ms-flex: 0 0 33.333333%;
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+      }
+
+      #hm_cl6 .col-md-3 {
+        -ms-flex: 0 0 25%;
+        flex: 0 0 25%;
+        max-width: 25%;
+      }
+
+      #hm_cl6 .left-side-in {
+        width: 95%;
+      }
+    }
+
+    @media (min-width: 992px) {
+      #hm_cl6 .container {
+        max-width: 850px;
+      }
+    }
+
+    @media (min-width: 1200px) {
+      #hm_cl6 .container {
+        max-width: 900px;
+      }
+    }
+  </style>
+  <div class="ms-cl" id="hm_cl6">
+    <div class="container">
+        <div class="table-padding" style="margin-bottom: 5px;"></div>
+        <div class="table-padding" style="margin-bottom: 5px;"></div>
+        <div class="main-container">
+            <div class="row">
+              <div class="col-md-12">
+                  <p class="heading_font mb-3">Your Information</p>
+              </div>
+            </div>
+            <div class="input-row">
+              <div class="col-md-8">
+                  <p class="color1 font1">Current Age</p>
+              </div>
+              <div class="col-md-4">
+                  <div class="form-group text-center">
+                      <input type="text" class="form-control cl_input in_num" placeholder="0" id="hm_cl6_in_1" />
+                  </div>
+              </div>
+            </div>
+            <div class="input-row">
+              <div class="col-md-8">
+                  <p class="color1 font1">Age you plan to retire</p>
+                  <p class="color1 font2">The traditional retirement age is around 65.</p>
+              </div>
+              <div class="col-md-4">
+                  <div class="form-group text-center">
+                      <input type="text" class="form-control cl_input in_num" placeholder="0" id="hm_cl6_in_2" />
+                  </div>
+              </div>
+            </div>
+            <div class="input-row">
+              <div class="col-md-8">
+                  <p class="color1 font1">How much money do you currently have in retirement investments?</p>
+                  <p class="color1 font2">This should be total of all your retirement investment accounts, including RSPs, TFSAs, 401(k), etc.</p>
+              </div>
+              <div class="col-md-4">
+                  <div class="form-group text-center">
+                      <span class="prepend-text">$</span>
+                      <input type="text" class="form-control cl_input in_cr" placeholder="0" id="hm_cl6_in_3" />
+                  </div>
+              </div>
+            </div>
+            <div class="input-row">
+              <div class="col-md-8">
+                  <p class="color1 font1">How much will you contribute monthly?</p>
+                  <p class="color1 font2">This is the amount you regularly invest each month.</p>
+              </div>
+              <div class="col-md-4">
+                  <div class="form-group text-center">
+                      <span class="prepend-text">$</span>
+                      <input type="text" class="form-control cl_input in_cr" placeholder="0" id="hm_cl6_in_4" />
+                  </div>
+              </div>
+            </div>
+            <div class="input-row">
+              <div class="col-md-8">
+                  <p class="color1 font1">What do you think you annual return will be?</p>
+                  <p class="color1 font2">The average annual return ranges from 6% to 8%. It’s worth noting that these estimates are based on historical averages, and it’s important to remember that past performance does not guarantee future results.</p>
+              </div>
+              <div class="col-md-4">
+                  <div class="form-group text-center">
+                      <span class="prepend-text" style="padding: 10.5px 9px;">%</span>
+                      <input type="text" class="form-control cl_input " placeholder="0" id="hm_cl6_in_5" />
+                  </div>
+              </div>
+            </div>
+        </div>
+        <div class="total_amount_Bg">
+            <div class="row">
+                <div class="col-md-12">
+                    <p class="color2 font3 mn-center-text">ESTIMATED RETIREMENT SAVINGS</p>
+                </div>
+              </div>
+              <div class="input-row last-input-row">
+                <div class="col-md-8">
+                    <p class="color2 mn-center-text" style="font: normal normal normal 22px/30px Nunito Sans;">
+                        In
+                        <span id="hm_cl6_total_years"><u><b>0</b></u> year</span>, your investment could be worth:
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <div>
+                        <p class="color2 rs-vl1 mn-center-text" id="hm_cl6_total_blnc_1">
+                            $0
+                        </p>
+                    </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                    <div class="border_all"></div>
+                </div>
+                <div class="text-center total_amount_Bg_2 rs-vl col-md-4">
+                    <span class="rs-vl2" id="hm_cl6_initial_blnc">$0</span>
+                    <p class="rs-sec-bottom">
+                        <span>Initial Balance</span>
+                        <span>
+                            <b><u id="hm_cl6_initial_blnc_prcnt">X%</u></b> of Total
+                        </span>
+                    </p>
+                </div>
+                <div class="text-center total_amount_Bg_2 rs-vl col-md-4">
+                    <span class="rs-vl2" id="hm_cl6_total_contri">$0</span>
+                    <p class="rs-sec-bottom">
+                        <span>Contributions</span>
+                        <span>
+                            <b><u id="hm_cl6_total_contri_prcnt">X%</u></b> of Total
+                        </span>
+                    </p>
+                </div>
+                <div class="text-center total_amount_Bg_2 rs-vl col-md-4">
+                    <span class="rs-vl2" id="hm_cl6_total_growth">$0</span>
+                    <p class="rs-sec-bottom">
+                        <span>Growth</span>
+                        <span>
+                            <b><u id="hm_cl6_total_growth_prcnt">X%</u></b> of Total
+                        </span>
+                    </p>
+                </div>
+                <div class="col-md-12">
+                    <div class="border_all border_all_sp"></div>
+                </div>
+                <p class="col-md-12 font4">If you saved an extra $100 a month you could create an extra <b id="hm_cl6_extra_growth" class="hm_cl6_extra_growth">$0</b> in additional growth!</p>
+            </div>
+        </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/autonumeric@4.5.4"></script>
+  <script>
+    jQuery(document).ready(function ($) {
+      const hm_cl6_numOptionCurrency = {
+        digitGroupSeparator        : ',',
+        decimalCharacter           : '.',
+        decimalCharacterAlternative: '.',
+        currencySymbol             : '',
+        currencySymbolPlacement    : AutoNumeric.options.currencySymbolPlacement.prefix,
+        decimalPlaces              : 0,
+        minimumValue: 0
+      };
+
+      const hm_cl6_numOptionPercent = {
+          digitGroupSeparator        : ',',
+          decimalCharacter           : '.',
+          decimalCharacterAlternative: '.',
+          currencySymbol             : '',
+          currencySymbolPlacement    : AutoNumeric.options.currencySymbolPlacement.suffix,
+          decimalPlaces              : 2,
+          minimumValue	       : 0,
+          maximumValue	       : 100
+      };
+
+      const hm_cl6_nft = Intl.NumberFormat("en-US", {
+          minimumFractionDigits: 0,
+          maximumFractionDigits: 0
+      });
+
+      new AutoNumeric('#hm_cl6_in_1', hm_cl6_numOptionCurrency);
+      new AutoNumeric('#hm_cl6_in_2', hm_cl6_numOptionCurrency);
+      new AutoNumeric('#hm_cl6_in_3', hm_cl6_numOptionCurrency);
+      new AutoNumeric('#hm_cl6_in_4', hm_cl6_numOptionCurrency);
+      new AutoNumeric('#hm_cl6_in_5', hm_cl6_numOptionPercent);
+
+      $("#hm_cl6 #hm_cl6_in_2").on("input", function () {
+        $(this).removeClass("err-input");
+      });
+      $("#hm_cl6 #hm_cl6_in_2").on("change", function () {
+        let current_age = hm_cl6_removeSign($("#hm_cl6_in_1").val());
+        let retire_age = hm_cl6_removeSign($("#hm_cl6_in_2").val());
+        
+        if(retire_age <= current_age){
+          $(this).addClass("err-input");
+        } else {
+          $(this).removeClass("err-input");
+        }
+      });
+      
+      $("#hm_cl6 .cl_input").on("input", function () {
+          hm_cl6_calcFunc();
+      });
+      
+      function hm_cl6_calcFunc(){
+        let current_age = hm_cl6_removeSign($("#hm_cl6_in_1").val());
+        let retire_age = hm_cl6_removeSign($("#hm_cl6_in_2").val());
+        let investment_amount = hm_cl6_removeSign($("#hm_cl6_in_3").val());
+        let monthly_contri = hm_cl6_removeSign($("#hm_cl6_in_4").val());
+        let annual_return = hm_cl6_removeSign($("#hm_cl6_in_5").val())/100;
+        let monthly_return = annual_return/12;
+        let monthly_contri_100 = monthly_contri + 100;
+
+        let total_years = (retire_age - current_age); // output
+        let total_months = total_years * 12;
+
+        if(current_age && retire_age && retire_age > current_age && monthly_contri){
+          
+          let i = 0;
+
+          let total_blnc_1 = 0, total_blnc_2 = 0, total_contri_1 = 0, total_contri_2 = 0;
+
+          for(i = 0; i < total_months; i++) {
+            let return_am_1 = 0;
+            let return_am_2 = 0;
+
+            if(i == 0){
+              return_am_1 = investment_amount * monthly_return;
+              total_blnc_1 = investment_amount + monthly_contri + return_am_1;
+              
+              return_am_2 = investment_amount * monthly_return;
+              total_blnc_2 = investment_amount + monthly_contri_100 + return_am_2;
+            } else {
+              return_am_1 = total_blnc_1 * monthly_return;
+              total_blnc_1 = total_blnc_1 + monthly_contri + return_am_1;
+
+              return_am_2 = total_blnc_2 * monthly_return;
+              total_blnc_2 = total_blnc_2 + monthly_contri_100 + return_am_2;
+            }
+
+            total_contri_1 = total_contri_1 + monthly_contri;
+            total_contri_2 = total_contri_2 + monthly_contri_100;
+          }
+
+          let solid_total_1 = investment_amount + total_contri_1;
+          let solid_total_2 = investment_amount + total_contri_2;
+
+          let total_growth_1 = total_blnc_1 - solid_total_1;
+          let total_growth_2 = total_blnc_2 - solid_total_2;
+          let extra_growth =  total_growth_2 - total_growth_1;
+
+          let initial_blnc_prcnt = (100/total_blnc_1)*investment_amount;
+          let total_contri_prcnt = (100/total_blnc_1)*total_contri_1;
+          let total_growth_prcnt = (100/total_blnc_1)*total_growth_1;
+
+          $("#hm_cl6_total_years").html(`<u><b>${total_years}</b></u> ${total_years > 1 ? "years" : "year"}`);
+          $("#hm_cl6_total_blnc_1").text("$"+hm_cl6_nft.format(total_blnc_1));
+          $("#hm_cl6_initial_blnc").text("$"+hm_cl6_nft.format(investment_amount));
+          $("#hm_cl6_total_contri").text("$"+hm_cl6_nft.format(total_contri_1));
+          $("#hm_cl6_total_growth").text("$"+hm_cl6_nft.format(total_growth_1));
+          $("#hm_cl6_extra_growth").text("$"+hm_cl6_nft.format(extra_growth));
+          $("#hm_cl6_initial_blnc_prcnt").text(hm_cl6_nft.format(initial_blnc_prcnt)+"%");
+          $("#hm_cl6_total_contri_prcnt").text(hm_cl6_nft.format(total_contri_prcnt)+"%");
+          $("#hm_cl6_total_growth_prcnt").text(hm_cl6_nft.format(total_growth_prcnt)+"%");
+        } else {
+          $("#hm_cl6_total_years").html(`<u><b>${0}</b></u> year`);
+          $("#hm_cl6_total_blnc_1").text("$"+hm_cl6_nft.format(0));
+          $("#hm_cl6_initial_blnc").text("$"+hm_cl6_nft.format(0));
+          $("#hm_cl6_total_contri").text("$"+hm_cl6_nft.format(0));
+          $("#hm_cl6_total_growth").text("$"+hm_cl6_nft.format(0));
+          $("#hm_cl6_extra_growth").text("$"+hm_cl6_nft.format(0));
+          $("#hm_cl6_initial_blnc_prcnt").text(hm_cl6_nft.format(0)+"%");
+          $("#hm_cl6_total_contri_prcnt").text(hm_cl6_nft.format(0)+"%");
+          $("#hm_cl6_total_growth_prcnt").text(hm_cl6_nft.format(0)+"%");
+        }
+      }
+
+      function hm_cl6_removeSign(num) {
+        return Number(num.replace(/[$,%]/g, ""));
+      }
+    });
+  </script>
+      <!----------- copy ends ---------------->
+</body>
+
+</html>

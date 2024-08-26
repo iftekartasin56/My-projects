@@ -1,0 +1,1498 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap CSS -->
+    <title>Loan Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #F9FAFF;
+        }
+    </style>
+</head>
+<body>
+
+<!-----------Please copy and paste following code into any HTML element ---------------->
+
+<!----------- copy starts ---------------->
+<style>
+#hm2_cl *, ::after, ::before {
+    box-sizing: border-box;
+}
+#hm2_cl {
+    line-height: 1.5;
+    font-family: 'Roboto', sans-serif;
+}
+#hm2_cl .container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #080337;
+    text-align: left;
+}
+#hm2_cl label {
+    display: block;
+    margin-bottom: .5rem;
+    font-size: 14px;
+    font-weight: 500;
+}
+#hm2_cl .table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 0rem;
+    background-color: transparent;
+    border-collapse: collapse;
+}
+#hm2_cl .sp-table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 0rem;
+    background-color: transparent;
+    border-collapse: collapse;
+}
+#hm2_cl .table td, #hm2_cl .table th {
+    padding: 0 3px;
+    vertical-align: middle;
+    border-right: none !important;
+    border-left: none !important;
+    border-top: none !important;
+    font-size: 16px;
+    background: transparent;
+    box-shadow: none;
+    color:#000000;
+}
+#hm2_cl .sp-table td{
+    padding: .65rem .75rem;
+    vertical-align: middle;
+    border-right: none !important;
+    border-left: none !important;
+    border-top: none !important;
+    border-bottom: none;
+    font-size: 16px;
+    background: transparent;
+    box-shadow: none;
+    color:#000000;
+}
+#hm2_cl .sp-table th{
+    padding: .65rem .75rem;
+    vertical-align: middle;
+    border-right: none !important;
+    border-left: none !important;
+    border-top: none !important;
+    border-bottom: 1px solid #6BC14B;
+    font-size: 16px;
+    background: transparent;
+    box-shadow: none;
+    color:#000000;
+}
+
+#hm2_cl .table th {
+    text-align: left;
+    font-weight: 500;
+    border-bottom: 1px solid #6BC14B;
+}
+#hm2_cl h3, h4, p {
+    margin: 10px 0;
+}
+#hm2_cl .row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+#hm2_cl .col-md-1, #hm2_cl .col-md-10, #hm2_cl .col-md-11, #hm2_cl .col-md-12, #hm2_cl .col-md-2, #hm2_cl .col-md-3, #hm2_cl .col-md-4, #hm2_cl .col-md-5, #hm2_cl .col-md-6, #hm2_cl .col-md-7, #hm2_cl .col-md-8, #hm2_cl .col-md-9 {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+#hm2_cl .form-group {
+    margin-bottom: 1rem;
+}
+#hm2_cl .form-control {
+    display: block;
+    width: 100%;
+    height: 40px;
+    padding: .375rem .75rem;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #080337;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+#hm2_cl .tb-form-control {
+    display: block;
+    width: 100%;
+    height: 40px;
+    padding: .375rem .75rem;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #080337;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: none;
+    border-bottom: 1px solid #D9D9D9;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+#hm2_cl select.tb-form-control {
+    visibility: visible !important;
+    -webkit-appearance: auto !important;
+}
+#hm2_cl .form-control:focus {
+    outline: none;
+}
+#hm2_cl .tb-form-control:focus {
+    outline: none;
+}
+#hm2_cl .input-group {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+#hm2_cl .input-group>.custom-select:not(:last-child), #hm2_cl .input-group>.form-control:not(:last-child) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+#hm2_cl .input-group>.custom-file, #hm2_cl .input-group>.custom-select, #hm2_cl .input-group>.form-control, #hm2_cl .input-group>.form-control-plaintext {
+    position: relative;
+    -ms-flex: 1 1 0%;
+    flex: 1 1 0%;
+    min-width: 0;
+    margin-bottom: 0;
+}#hm2_cl .input-group>.custom-select:not(:first-child), #hm2_cl .input-group>.form-control:not(:first-child) {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+#hm2_cl .input-group>.custom-select:not(:last-child), #hm2_cl .input-group>.form-control:not(:last-child) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+#hm2_cl .input-group>.custom-file+.custom-file, #hm2_cl .input-group>.custom-file+.custom-select, #hm2_cl .input-group>.custom-file+.form-control, #hm2_cl .input-group>.custom-select+.custom-file, #hm2_cl .input-group>.custom-select+.custom-select, #hm2_cl .input-group>.custom-select+.form-control, #hm2_cl .input-group>.form-control+.custom-file, #hm2_cl .input-group>.form-control+.custom-select, #hm2_cl .input-group>.form-control+.form-control, #hm2_cl .input-group>.form-control-plaintext+.custom-file, #hm2_cl .input-group>.form-control-plaintext+.custom-select, #hm2_cl .input-group>.form-control-plaintext+.form-control {
+    margin-left: -1px;
+}
+#hm2_cl .input-group>.custom-file, #hm2_cl .input-group>.custom-select, #hm2_cl .input-group>.form-control, #hm2_cl .input-group>.form-control-plaintext {
+    position: relative;
+    -ms-flex: 1 1 0%;
+    flex: 1 1 0%;
+    min-width: 0;
+    margin-bottom: 0;
+}
+#hm2_cl .custom-control-label::before, #hm2_cl .custom-file-label, #hm2_cl .custom-select {
+    transition: background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+#hm2_cl .input-group-append {
+    margin-left: -1px;
+}
+#hm2_cl .input-group-append, #hm2_cl .input-group-prepend {
+    display: -ms-flexbox;
+    display: flex;
+}
+#hm2_cl .input-group>.input-group-append:last-child>.btn:not(:last-child):not(.dropdown-toggle), #hm2_cl .input-group>.input-group-append:last-child>.input-group-text:not(:last-child), #hm2_cl .input-group>.input-group-append:not(:last-child)>.btn, #hm2_cl .input-group>.input-group-append:not(:last-child)>.input-group-text, #hm2_cl .input-group>.input-group-prepend>.btn, #hm2_cl .input-group>.input-group-prepend>.input-group-text {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+#hm2_cl .input-group>.input-group-append>.btn, #hm2_cl .input-group>.input-group-append>.input-group-text, #hm2_cl .input-group>.input-group-prepend:first-child>.btn:not(:first-child), #hm2_cl .input-group>.input-group-prepend:first-child>.input-group-text:not(:first-child), #hm2_cl .input-group>.input-group-prepend:not(:first-child)>.btn, #hm2_cl .input-group>.input-group-prepend:not(:first-child)>.input-group-text {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+#hm2_cl .input-group-append .btn, #hm2_cl .input-group-prepend .btn {
+    position: relative;
+    z-index: 2;
+}
+#hm2_cl .input-group-text {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 0.355rem 0.75rem;
+    margin-bottom: 0;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #080337;
+    text-align: center;
+    white-space: nowrap;
+    background-color: #ffffff;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+}
+#hm2_cl .input-group-append .btn+.btn, #hm2_cl .input-group-append .btn+.input-group-text, #hm2_cl .input-group-append .input-group-text+.btn, #hm2_cl .input-group-append .input-group-text+.input-group-text, #hm2_cl .input-group-prepend .btn+.btn, #hm2_cl .input-group-prepend .btn+.input-group-text, #hm2_cl .input-group-prepend .input-group-text+.btn, #hm2_cl .input-group-prepend .input-group-text+.input-group-text {
+    margin-left: -1px;
+}
+#hm2_cl .input-group-prepend .btn, #hm2_cl .input-group-append .btn {
+    position: relative;
+    z-index: 2;
+}
+#hm2_cl .text-center {
+    text-align: center!important;
+}
+/* Custom css */
+#hm2_cl .cl-wrapper {
+    position: relative;
+    border-radius: 10px;
+    background: #ffffff;
+    box-shadow: 0 10px 30px 1px rgb(0 0 0 / 10%);
+}
+#hm2_cl .cl-left-div {
+    padding: 3rem 3rem 2rem 3rem!important;
+    background: #ffffff;
+    border-radius: 10px;
+}
+#hm2_cl .cl-right-div {
+    padding: 2rem 3rem !important;
+    border-radius: 0 0 8px 8px;
+    background: #ffffff;
+    color: #080337;
+}
+#hm2_cl .rs-sec {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 10px;
+    padding: 1rem 0.5rem;
+    margin: 6px 0;
+    box-shadow: 0 10px 30px 1px rgb(0 0 0 / 10%);
+}
+#hm2_cl .rs-vl {
+    text-align: right;
+    font-weight: 500;
+}
+#hm2_cl .rs-sub-title-sp {
+    font-size: 16px;
+    margin: 2px;
+    border-bottom: 1px solid #6BC14B;
+}
+#hm2_cl .rs-sp-value {
+    font-size: 22px;
+    margin: 8px 2px;
+    color: #6BC14B;
+}
+#hm2_cl .sp-rs {
+    color: #6BC14B;
+}
+#hm2_cl .btn {
+    display: inline-block;
+    font-weight: 400;
+    color: #212529;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: transparent;
+    border: 2px solid transparent;
+    padding: 5px 60px;
+    font-size: 18px;
+    line-height: 32px;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+#hm2_cl .btn-primary {
+    color: #fff;
+    background-color: #6BC14B;
+    border-color: #6BC14B;
+    text-decoration: none;
+    padding: 3px 60px;
+    font-size: 18px;
+}
+#hm2_cl .btn-primary:hover {
+    color: #fff;
+    background-color: #6BC14B;
+    border-color: #6BC14B;
+}
+/* responsive */
+
+@media (max-width: 768px){
+    #hm2_cl .cl-left-div {
+        padding: 1rem 2rem !important;
+    }
+    #hm2_cl .cl-right-div {
+        padding: 2rem 1rem !important;
+        border-radius: 0 0 8px 8px;
+    }
+    #hm2_cl .form-control {
+        height: auto;
+        padding: .175rem .75rem;
+    }
+    #hm2_cl label {
+        font-size: 14px;
+    }
+    #hm2_cl .rs-sec {
+        flex-direction: column;
+    }
+    #hm2_cl .btn-warning {
+        padding: 1.1375rem 2rem;
+        font-size: 1rem;
+    }
+}
+@media (min-width: 576px){
+    #hm2_cl .container, #hm2_cl .container-sm {
+        max-width: 540px;
+    }
+}
+@media (min-width: 768px){
+    #hm2_cl .container, #hm2_cl .container-md, #hm2_cl .container-sm {
+        max-width: 100%;
+    }
+    #hm2_cl .col-md-12 {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    #hm2_cl .col-md-9 {
+        -ms-flex: 0 0 75%;
+        flex: 0 0 75%;
+        max-width: 75%;
+    }
+    #hm2_cl .col-md-8 {
+        -ms-flex: 0 0 66.666667%;
+        flex: 0 0 66.666667%;
+        max-width: 66.666667%;
+    }
+    #hm2_cl .col-md-6 {
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    #hm2_cl .col-md-4 {
+        -ms-flex: 0 0 33.333333%;
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+    }
+    #hm2_cl .col-md-3 {
+        -ms-flex: 0 0 25%;
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+    #hm2_cl .col-md-2 {
+        -ms-flex: 0 0 16.66667%;
+        flex: 0 0 16.66667%;
+        max-width: 16.66667%;
+    }
+}
+@media (min-width: 992px){
+    #hm2_cl .container, #hm2_cl .container-lg, #hm2_cl .container-md, #hm2_cl .container-sm {
+        max-width: 900px;
+    }
+}
+@media (min-width: 1200px) {
+    #hm2_cl .container, #hm2_cl .container-lg, #hm2_cl .container-md, #hm2_cl .container-sm, #hm2_cl .container-xl {
+        max-width: 900px;
+    }
+}
+#hm2_cl hr {
+    border: none;
+    border-bottom: 1px solid #ccc;
+}
+#hm2_cl .optios-sec {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+#hm2_cl .radio-option {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background: #ffffff;
+    padding: 6px 10px;
+    width: 50%;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    text-align: center;
+    cursor: pointer;
+    color: #080337;
+    transition: all 0.2s;
+    font-size: 16px;
+    user-select: none;
+}
+#hm2_cl .radio-option:hover {
+    background: #dddddd;
+    border: 1px solid #dddddd;
+}
+#hm2_cl .radio-option.active {
+    background: #34D9E5;
+    border: 1px solid #34D9E5;
+    color:#ffffff;
+}
+#hm2_cl .circle-radio {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #ffffff;
+    border: 1px solid #b5b5b5;
+    margin-right: 6px;
+}
+#hm2_cl .mr-right {
+    margin-right: 5px;
+}
+#hm2_cl .ds-none {
+    display: none;
+}
+#hm2_cl .rs-sec-title {
+    font-size: 22px;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 8px;
+    color: #26459E;
+}
+#hm2_cl .grow-logo {
+    width: 70px;
+    display: inline-block;
+}
+#hm2_cl .text-center {
+    text-align: center;
+}
+#hm2_cl .top-title {
+    font-size: 26px;
+    text-align: center;
+    margin: 10px 0 30px 0;
+    color: #6bc14b;
+}
+#hm2_cl .top-logo {
+    width: 200px;
+    margin-top: -32px;
+}
+#hm2_cl .sec-top-title {
+   font-size: 18px;
+   font-weight: 400;
+   color: #000000;
+   border-bottom: 1px solid #6BC14B;
+}
+#hm2_cl .all-debts-sec-title {
+   font-size: 18px;
+   font-weight: 400;
+   color: #000000;
+   border-bottom: 1px solid #6BC14B;
+}
+#hm2_cl .new-loan-sec-title {
+   font-size: 18px;
+   font-weight: 400;
+   color: #000000;
+   border-bottom: 1px solid #6BC14B;
+}
+#hm2_cl .sp-txt-cl {
+    color: #26459E !important;
+    font-weight: 600;
+}
+#hm2_cl .rs-saving-sec{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px 20px;
+    box-shadow: 0 10px 30px 1px rgb(0 0 0 / 10%);
+    border-radius: 10px;
+    margin: 0;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+#hm2_cl .rs-saving-title{
+    font-size: 20px;
+    color: #26459E;
+    font-weight: 600;
+}
+#hm2_cl .rs-saving-vl{
+    font-size: 20px;
+    color: #6BC14B;
+    font-weight: 600;
+    text-align: right;
+}
+#hm2_cl .debts-paid-sec-title {
+   font-size: 18px;
+   font-weight: 400;
+   color: #000000;
+   border-bottom: 1px solid #6BC14B;
+}
+#hm2_cl .middle-txt {
+   font-size: 18px;
+   font-weight: 400;
+   color: #000000;
+   text-align: center;
+}
+#hm2_cl .foorter-rs-sec {
+   margin-bottom: 15px;
+}
+@media (max-width: 768px) {
+    #hm2_cl .sp-table td {
+        padding: 3px;
+        font-size: 13px;
+    }
+}
+#pdf_data {
+    position: relative;
+    height: 100%;
+}
+#pdf_data .table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 0rem;
+    background-color: transparent !important;
+    border-collapse: collapse !important;
+}
+#pdf_data .table td, #pdf_data .table th {
+    padding: 2px 4px;
+    vertical-align: middle;
+    border-right: none !important;
+    border-left: none !important;
+    border-top: none !important;
+    border-bottom: none !important;
+    font-weight: 400;
+    text-align: left;
+    font-size: 12px !important;
+    line-height: 20px;
+    color: #000;
+    background: transparent !important;
+}
+#pdf_data .table th {
+    font-size: 14px !important;
+    font-weight: 500;
+    border-bottom: 1px solid #6BC14B !important;
+}
+#pdf_data #pdf_graph {
+    height: 400px;
+}
+#pdf_section {
+   display: none;
+}
+#pdf_data .top-row {
+    background: #f6f6f6 !important;
+}
+#pdf_data .ds-none {
+    display: none !important;
+}
+#pdf_data .text-right {
+    text-align: right !important;
+}
+#pdf_data .text-center {
+    text-align: center !important;
+}
+#pdf_data .text-left {
+    text-align: left !important;
+}
+#pdf_data .f600 {
+    font-weight: 600 !important;
+}
+#pdf_data .pdf-sv-title {
+    font-size: 24px !important;
+}
+#pdf_data .pdf-sv-vl {
+    font-size: 24px !important;
+    color: #6BC14B;
+    font-weight: 600 !important;
+    text-align: right !important;
+}
+#pdf_data .pdf-rs-title {
+    font-size: 18px !important;
+    color: #26459E;
+    text-align: center !important;
+}
+#pdf_data .pdf-rs-vl {
+    font-size: 18px !important;
+    color: #6BC14B !important;
+    font-weight: 600 !important;
+    text-align: center !important;
+}
+#pdf_data #loan_sec {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+#pdf_data #value_sec {
+    margin-bottom: 10px;
+}
+#pdf_data #new_loan_sec {
+    margin-bottom: 10px;
+}
+#pdf_data #savings_sec {
+    padding: 8px 10px;
+    box-shadow: 0 10px 30px 1px rgb(0 0 0 / 10%);
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+#pdf_data #debts_paid_sec {
+    margin-bottom: 10px;
+}
+#pdf_data #pdf_txt_sec {
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+#pdf_data #footer_rs_sec {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+#pdf_data #bottom_footer_sec {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+#pdf_data .pdf-loan-vl {
+    text-align: right !important;
+}
+#pdf_data .top-logo {
+    width: 180px;
+}
+</style>
+<div id="hm2_cl">
+    <div class="container cl-wrapper">
+        <div class="row">
+            <div class="col-md-12 cl-left-div">
+                <p class="text-center">
+                    <img class="top-logo" src="https://i.postimg.cc/RZDRnQv3/artwork-Mr-vector-01-20.png" alt="" srcset="">
+                </p>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h3 class="sec-top-title">Original Loan</h3>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label for="hm2_in_1">Original loan amount</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">$</span>
+                                    </div>
+                                    <input type="text" class="form-control hm2_cl-curr hm2_cl-input" id="hm2_in_1" value="275000">
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <label for="hm2_in_1">Original Term (years)</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control hm2_cl-curr hm2_cl-input" id="hm2_in_2" value="30">
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <label for="hm2_in_1">Current Rate</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control hm2_cl-pr hm2_cl-input" id="hm2_in_3" value="3.75">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text">%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <h3 class="sec-top-title">New Loan</h3>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label for="hm2_in_1">New loan amount</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">$</span>
+                                    </div>
+                                    <input type="text" class="form-control hm2_cl-curr hm2_cl-input" id="hm2_in_4" value="350000">
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <label for="hm2_in_1">New Term (years)</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control hm2_cl-curr hm2_cl-input" id="hm2_in_5" value="27">
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <label for="hm2_in_1">New Rate</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control hm2_cl-pr hm2_cl-input" id="hm2_in_6" value="7.875">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text">%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <label for="hm2_in_1">Value of home</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">$</span>
+                                    </div>
+                                    <input type="text" class="form-control hm2_cl-curr hm2_cl-input" id="hm2_in_7" value="600000">
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <label for="hm2_in_1">Taxes</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">$</span>
+                                    </div>
+                                    <input type="text" class="form-control hm2_cl-curr hm2_cl-input" id="hm2_in_8" value="375">
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <label for="hm2_in_1">Insurance</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">$</span>
+                                    </div>
+                                    <input type="text" class="form-control hm2_cl-curr hm2_cl-input" id="hm2_in_9" value="120">
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <label for="hm2_in_1">PMI</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">$</span>
+                                    </div>
+                                    <input type="text" class="form-control hm2_cl-curr hm2_cl-input" id="hm2_in_10" value="80">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 all-debts-sec">
+                        <h3 class="all-debts-sec-title">All Debts</h3>
+                        <div style="overflow-x: auto;">
+                            <table class="table" style="min-width: 430px;">
+                                <thead>
+                                    <tr>
+                                        <th>Lender</th>
+                                        <th>Payment</th>
+                                        <th>Balance</th>
+                                        <th style="min-width: 85px;">Paid at close?</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="all_debts_sec">
+                                    <tr class="debts-row">
+                                        <td>
+                                            <input type="text" class="tb-form-control debts-in hm2_cl-input" value="Regions">
+                                        </td>
+                                        <td>
+                                            <input type="text" class="tb-form-control debts-in hm2_cl-input" value="1200">
+                                        </td>
+                                        <td>
+                                            <input type="text" class="tb-form-control debts-in hm2_cl-input" value="36000">
+                                        </td>
+                                        <td>
+                                            <select name="" class="tb-form-control debts-in hm2_cl-input">
+                                                <option data-value="">--Select--</option>
+                                                <option data-value="Yes" selected>Yes</option>
+                                                <option data-value="No">No</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr class="debts-row">
+                                        <td>
+                                            <input type="text" class="tb-form-control debts-in hm2_cl-input" value="CarMax">
+                                        </td>
+                                        <td>
+                                            <input type="text" class="tb-form-control debts-in hm2_cl-input" value="697">
+                                        </td>
+                                        <td>
+                                            <input type="text" class="tb-form-control debts-in hm2_cl-input" value="15000">
+                                        </td>
+                                        <td>
+                                            <select name="" class="tb-form-control debts-in hm2_cl-input" id="">
+                                                <option data-value="">--Select--</option>
+                                                <option data-value="Yes" selected>Yes</option>
+                                                <option data-value="No">No</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr class="debts-row">
+                                        <td>
+                                            <input type="text" class="tb-form-control debts-in hm2_cl-input" value="BofA">
+                                        </td>
+                                        <td>
+                                            <input type="text" class="tb-form-control debts-in hm2_cl-input" value="250">
+                                        </td>
+                                        <td>
+                                            <input type="text" class="tb-form-control debts-in hm2_cl-input" value="3300">
+                                        </td>
+                                        <td>
+                                            <select name="" class="tb-form-control debts-in hm2_cl-input" id="">
+                                                <option data-value="">--Select--</option>
+                                                <option data-value="Yes" selected>Yes</option>
+                                                <option data-value="No">No</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr class="debts-row">
+                                        <td>
+                                            <input type="text" class="tb-form-control debts-in hm2_cl-input" value="Cap1">
+                                        </td>
+                                        <td>
+                                            <input type="text" class="tb-form-control debts-in hm2_cl-input" value="40">
+                                        </td>
+                                        <td>
+                                            <input type="text" class="tb-form-control debts-in hm2_cl-input" value="40">
+                                        </td>
+                                        <td>
+                                            <select name="" class="tb-form-control debts-in hm2_cl-input" id="">
+                                                <option data-value="">--Select--</option>
+                                                <option data-value="Yes" selected>Yes</option>
+                                                <option data-value="No">No</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <button class="btn btn-primary" id="add_debts_btn" style="margin-top: 25px;">+ Add debt</button>
+                    </div>
+                    <div class="col-md-12 middle-rs-sec">
+                    <br>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="rs-sec">
+                                <div class="rs-sp-vl-sec text-center">
+                                    <h4 class="rs-sub-title-sp" style="color: #26459E;">Current Payment</h4>
+                                    <h2 class="rs-sp-value" id="hm2_rs_1">$0.00</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="rs-sec">
+                                <div class="rs-sp-vl-sec text-center">
+                                    <h4 class="rs-sub-title-sp" style="color: #26459E;">New Payment</h4>
+                                    <h2 class="rs-sp-value" id="hm2_rs_2">$0.00</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12"><br></div>
+                        <div class="col-md-6">
+                            <div class="rs-sec">
+                                <div class="rs-sp-vl-sec text-center">
+                                    <h4 class="rs-sub-title-sp" style="color: #26459E;">Total Current Outflow</h4>
+                                    <h2 class="rs-sp-value" id="hm2_rs_3">$0.00</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="rs-sec">
+                                <div class="rs-sp-vl-sec text-center">
+                                    <h4 class="rs-sub-title-sp" style="color: #26459E;">New Outflow</h4>
+                                    <h2 class="rs-sp-value" id="hm2_rs_4">$0.00</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="col-md-12 new-loan-sec">
+                        <h3 class="new-loan-sec-title">New Loan:</h3>
+                        <div style="overflow-x: auto;">
+                            <table class="sp-table" id="debts_loan_tb">
+                                <thead>
+                                    <tr>
+                                        <th class="sp-txt-cl">Total Debts</th>
+                                        <th class="sp-txt-cl">Current</th>
+                                        <th class="sp-txt-cl">Proposed</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Minimum Payments (without Mortgage)</td>
+                                        <td id="nl_rs_1">$0.00</td>
+                                        <td id="nl_rs_2">$0.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mortgage Balance</td>
+                                        <td id="nl_rs_3">$0.00</td>
+                                        <td id="nl_rs_4">$0.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Time Left on Current Loan</td>
+                                        <td id="nl_rs_5">$0.00</td>
+                                        <td id="nl_rs_6">$0.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Taxes</td>
+                                        <td id="nl_rs_7">$0.00</td>
+                                        <td id="nl_rs_8">$0.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Insurance</td>
+                                        <td id="nl_rs_9">$0.00</td>
+                                        <td id="nl_rs_10">$0.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>PMI</td>
+                                        <td id="nl_rs_11">$0.00</td>
+                                        <td id="nl_rs_12">$0.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="border-bottom: 1px solid #6BC14B;">Rate</td>
+                                        <td  id="nl_rs_13"style="border-bottom: 1px solid #6BC14B;">$0.00</td>
+                                        <td  id="nl_rs_14"style="border-bottom: 1px solid #6BC14B;">$0.00</td>
+                                    </tr>
+                                    <tfoot>
+                                        <tr>
+                                            <td class="sp-txt-cl">TOTAL Payments</td>
+                                            <td class="sp-txt-cl" id="nl_rs_15">$0.00</td>
+                                            <td class="sp-txt-cl" id="nl_rs_16">$0.00</td>
+                                        </tr>
+                                    </tfoot>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="rs-saving-sec">
+                            <div class="rs-saving-title">
+                                Savings:
+                            </div>
+                            <div class="rs-saving-vl" id="sv_rs_1">
+                                $0.00
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 debts-paid-sec">
+                        <h3 class="debts-paid-sec-title"> Debts to Be Paid</h3>
+                        <div style="overflow-x: auto;">
+                            <table class="sp-table" id="debts_paid_tb">
+                                <thead>
+                                    <tr>
+                                        <th class="sp-txt-cl">Account Name</th>
+                                        <th class="sp-txt-cl">Payment</th>
+                                        <th class="sp-txt-cl">Balance</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="debts_paid_sec"></tbody>
+                                <tfoot style="border-top: 1px solid #6BC14B;">
+                                    <tr>
+                                        <td class="sp-txt-cl">TOTAL</td>
+                                        <td class="sp-txt-cl" id="debts_paid_rs_1">$0.00</td>
+                                        <td class="sp-txt-cl" id="debts_paid_rs_2">$0.00</td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-md-12 middle-txt-sec">
+                        <p class="middle-txt">Savings are based on the difference between your current monthly payments and the proposed loan payment</p>
+                    </div>
+                    <div class="col-md-12 foorter-rs-sec">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="rs-sec">
+                                    <div class="rs-sp-vl-sec text-center">
+                                        <h4 class="rs-sub-title-sp" style="color: #26459E;">Monthly Savings</h4>
+                                        <h2 class="rs-sp-value" id="hm2_rs_5">$0.00</h2>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="rs-sec">
+                                    <div class="rs-sp-vl-sec text-center">
+                                        <h4 class="rs-sub-title-sp" style="color: #26459E;">Yearly Savings</h4>
+                                        <h2 class="rs-sp-value" id="hm2_rs_6">$0.00</h2>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="rs-sec">
+                                    <div class="rs-sp-vl-sec text-center">
+                                        <h4 class="rs-sub-title-sp" style="color: #26459E;">5 Year Savings</h4>
+                                        <h2 class="rs-sp-value" id="hm2_rs_7">$0.00</h2>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="rs-sec">
+                                    <div class="rs-sp-vl-sec text-center">
+                                        <h4 class="rs-sub-title-sp" style="color: #26459E;">Life of Loan Savings</h4>
+                                        <h2 class="rs-sp-value" id="hm2_rs_8">$0.00</h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 foorter-rs-sec-1">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="rs-sec">
+                                    <div class="rs-sp-vl-sec text-center">
+                                        <h4 class="rs-sub-title-sp" style="color: #26459E;">Years Removed with Current Payment</h4>
+                                        <h2 class="rs-sp-value" id="hm2_rs_9">$0.00</h2>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="rs-sec">
+                                    <div class="rs-sp-vl-sec text-center">
+                                        <h4 class="rs-sub-title-sp" style="color: #26459E;">Cash Back at Closing</h4>
+                                        <h2 class="rs-sp-value" id="hm2_rs_10">$0.00</h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12"><br/></div>
+                    <div class="col-md-6">
+                        <label for="">APR:</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control hm2_cl-pr hm2_cl-input" id="in_apr" value="">
+                            <div class="input-group-append">
+                                <span class="input-group-text">%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">&nbsp;</label>
+                            <button type="button" id="btn_download" class="btn btn-primary" style="width: 100%;">⇓ Download PDF</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="pdf_section">
+    <div id="pdf_data">
+        <p class="text-center">
+            <img class="top-logo" id="my_logo" src="https://i.postimg.cc/RZDRnQv3/artwork-Mr-vector-01-20.png" alt="" srcset="">
+        </p>
+        <p class="text-center" style="color: #000;font-size: 12px;">
+            NMLS# 2322797
+        </p>
+        <div id="loan_sec">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Original Loan</th>
+                        <th></th>
+                        <th></th>
+                        <th>New Loan</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Original loan amount</td>
+                        <td class="pdf-loan-vl" id="pdf_in_1">$0.00</td>
+                        <td></td>
+                        <td>New loan amount</td>
+                        <td class="pdf-loan-vl" id="pdf_in_4">$0.00</td>
+                    </tr>
+                    <tr>
+                        <td>Original Term (years)</td>
+                        <td class="pdf-loan-vl" id="pdf_in_2">0</td>
+                        <td></td>
+                        <td>New Term (years)</td>
+                        <td class="pdf-loan-vl" id="pdf_in_5">0</td>
+                    </tr>
+                    <tr>
+                        <td>Current Rate</td>
+                        <td class="pdf-loan-vl" id="pdf_in_3">0.000%</td>
+                        <td></td>
+                        <td>New Rate</td>
+                        <td class="pdf-loan-vl" id="pdf_in_6">0.000%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="value_sec">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th style="width: 20%;">Value of home</th>
+                        <th style="width: 20%;">Taxes</th>
+                        <th style="width: 20%;">Insurance</th>
+                        <th style="width: 15%;">PMI</th>
+                        <th style="width: 15%;">APR</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td id="pdf_in_7">$0.00</td>
+                        <td id="pdf_in_8">$0.00</td>
+                        <td id="pdf_in_9">$0.00</td>
+                        <td id="pdf_in_10">$0.00</td>
+                        <td id="pdf_in_apr">0.00%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="value_sec">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th class="pdf-rs-title">Current Payment</th>
+                        <th class="pdf-rs-title">New Payment</th>
+                        <th class="pdf-rs-title">Total Current Outflow</th>
+                        <th class="pdf-rs-title">New Outflow</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="pdf-rs-vl" id="pdf_rs_1">$0.00</td>
+                        <td class="pdf-rs-vl" id="pdf_rs_2">$0.00</td>
+                        <td class="pdf-rs-vl" id="pdf_rs_3">$0.00</td>
+                        <td class="pdf-rs-vl" id="pdf_rs_4">$0.00</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="new_loan_sec">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>New Loan</th>
+                    </tr>
+                </thead>
+            </table>
+            <table class="table" id="pdf_table_1">
+                
+            </table>
+        </div>
+        <table class="table" style="margin-bottom: 10px;">
+            <thead>
+                <tr>
+                    <th class="pdf-rs-title" style="text-align: left !important;">Savings</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="pdf-rs-vl" id="pdf_sv_rs_1" style="text-align: left !important;">$0.00</td>
+                </tr>
+            </tbody>
+        </table>
+        <div id="debts_paid_sec">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Debts to be paid</th>
+                    </tr>
+                </thead>
+            </table>
+            <table class="table" id="pdf_table_2">
+            </table>
+        </div>
+        <div id="pdf_txt_sec">
+            <p style="font-size: 13px;">Savings are based on the difference between your current monthly payments and the proposed loan payment</p>
+        </div>
+        <div id="footer_rs_sec">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th class="pdf-rs-title">Monthly Savings</th>
+                        <th class="pdf-rs-title">Yearly Savings</th>
+                        <th class="pdf-rs-title">5 Year Savings</th>
+                        <th class="pdf-rs-title">Life of Loan Savings</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="pdf-rs-vl" id="pdf_rs_5">$0.00</td>
+                        <td class="pdf-rs-vl" id="pdf_rs_6">$0.00</td>
+                        <td class="pdf-rs-vl" id="pdf_rs_7">$0.00</td>
+                        <td class="pdf-rs-vl" id="pdf_rs_8">$0.00</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="bottom_footer_sec">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th class="pdf-rs-title" style="width: 50%;">Years Removed with Current Payment</th>
+                        <th class="pdf-rs-title" style="width: 50%;">Cash Back at Closing</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="pdf-rs-vl" id="pdf_rs_9">$0.00</td>
+                        <td class="pdf-rs-vl" id="pdf_rs_10">$0.00</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/autonumeric@4.5.4"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.8.0/html2pdf.bundle.min.js"></script>
+<script>
+jQuery(document).ready(function($){
+    const hm2_nft = Intl.NumberFormat("en-US", {
+        minimumFractionDigits: 0,
+        maximumFractionDigits: 0
+    });
+    const hm2_nftd = Intl.NumberFormat("en-US", {
+        minimumFractionDigits: 0,
+        maximumFractionDigits: 2
+    });
+
+    const hm2_numOptionCurrency = {
+        digitGroupSeparator        : ',',
+        decimalCharacter           : '.',
+        decimalCharacterAlternative: '.',
+        currencySymbol             : '',
+        currencySymbolPlacement    : AutoNumeric.options.currencySymbolPlacement.prefix,
+        decimalPlaces              : 0
+    };
+    const hm2_numOptionPercent = {
+        digitGroupSeparator        : ',',
+        decimalCharacter           : '.',
+        decimalCharacterAlternative: '.',
+        currencySymbol             : '',
+        currencySymbolPlacement    : AutoNumeric.options.currencySymbolPlacement.suffix,
+        decimalPlaces              : 3,
+        minimumValue               : 0,
+        maximumValue               : 100
+    };
+    const anElement1 = AutoNumeric.multiple('.hm2_cl-curr', hm2_numOptionCurrency);
+    const anElement2 = AutoNumeric.multiple('.hm2_cl-pr', hm2_numOptionPercent);
+
+    $(".hm2_cl-input").on("input", function(){
+        hm2_calc();
+    });
+    $(document).on("input", ".debts-in", function(){
+        hm2_calc();
+    });
+
+    $("#add_debts_btn").on("click", function() {
+        let debts_form = `<tr class="debts-row">
+                                <td>
+                                    <input type="text" class="tb-form-control debts-in hm2_cl-input">
+                                </td>
+                                <td>
+                                    <input type="text" class="tb-form-control debts-in hm2_cl-input">
+                                </td>
+                                <td>
+                                    <input type="text" class="tb-form-control debts-in hm2_cl-input">
+                                </td>
+                                <td>
+                                    <select name="" class="tb-form-control debts-in hm2_cl-input">
+                                        <option data-value="">--Select--</option>
+                                        <option data-value="Yes" selected>Yes</option>
+                                        <option data-value="No">No</option>
+                                    </select>
+                                </td>
+                        </tr>`;
+
+        $("#all_debts_sec").append(debts_form);
+    });
+
+    hm2_calc();
+
+    $('#btn_download').on('click', function(){
+        $(this).prop('disabled', true);
+        $('#btn_download').text("Downloading....");
+        genPDF();
+        setTimeout(() => {
+            $('#btn_download').prop('disabled', false);
+            $('#btn_download').text("Download");
+        }, 500);
+    });
+
+    function genPDF(){
+        var d = new Date();
+        let date_time = d.getMonth() + 1+"_"+ d.getDate() + "_"+d.getFullYear()+"_"+d.getHours()+"_"+d.getMinutes()+"_"+d.getSeconds();
+        var element = document.getElementById('pdf_data');
+        html2pdf(element, {
+            margin:       10,
+            enableLinks:  true,
+            filename:     'Loan_Calculator_'+date_time+".pdf",
+            image:        { type: 'jpeg', quality: 1 },
+            html2canvas:  { scale: 2, logging: false },
+            jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
+        });
+    }
+
+    function hm2_calc(){
+        hm2_in_1 =  hm2_removeSign($("#hm2_in_1").val());
+        hm2_in_2 =  hm2_removeSign($("#hm2_in_2").val());
+        hm2_in_3 =  hm2_removeSign($("#hm2_in_3").val()) / 100;
+        hm2_in_4 =  hm2_removeSign($("#hm2_in_4").val());
+        hm2_in_5 =  hm2_removeSign($("#hm2_in_5").val());
+        hm2_in_6 =  hm2_removeSign($("#hm2_in_6").val()) / 100;
+        hm2_in_7 =  hm2_removeSign($("#hm2_in_7").val());
+        hm2_in_8 =  hm2_removeSign($("#hm2_in_8").val());
+        hm2_in_9 =  hm2_removeSign($("#hm2_in_9").val());
+        hm2_in_10 =  hm2_removeSign($("#hm2_in_10").val());
+
+        let debt_rows = "";
+        let debt_total = 0;
+        let debt_balance  = 0;
+        let all_balance_total = 0;
+        let no_total = 0;
+        $(document).find(".debts-row").each(function(i, elm){
+            let pr = $(elm);
+
+            let lender = pr.find("td:eq(0) .debts-in").val();
+            let payment = hm2_removeSign(pr.find("td:eq(1) .debts-in").val());
+            let balance = hm2_removeSign(pr.find("td:eq(2) .debts-in").val());
+            let paid = pr.find("td:eq(3) .debts-in").val();
+            all_balance_total = all_balance_total + payment;
+            if(paid == "Yes" && payment && balance){
+                debt_total = debt_total + payment;
+                debt_balance = debt_balance + balance;
+
+                debt_rows = debt_rows + `
+                    <tr>
+                        <td>${lender}</td>
+                        <td>$${hm2_nftd.format(payment)}</td>
+                        <td>$${hm2_nftd.format(balance)}</td>
+                    </tr>
+                `;
+            } else if(paid == "No"){
+                no_total = no_total + payment;
+            }
+        });
+        $("#debts_paid_sec").html(debt_rows);
+        $("#debts_paid_rs_1").text("$" + hm2_nftd.format(debt_total));
+        $("#debts_paid_rs_2").text("$" + hm2_nftd.format(debt_balance));
+
+
+        let current_pi = PMT(hm2_in_3 / 12, hm2_in_2 * 12, (-1 * hm2_in_1));
+        let propose_mortgage_bl = PMT(hm2_in_6 / 12, hm2_in_5 * 12, (-1 * hm2_in_4));
+
+        let current_paymenent = current_pi + hm2_in_8 + hm2_in_9 + hm2_in_10;
+        let proposed_pmi = 0;
+        let new_payment = propose_mortgage_bl + hm2_in_8 + hm2_in_9 + proposed_pmi;
+        
+
+        let total_current_outflow =  all_balance_total + current_paymenent;
+        let new_outflow = all_balance_total - debt_total + new_payment;
+        let current_total_payment = all_balance_total + current_paymenent;
+        let proposed_total_payment = no_total + new_payment;
+        let total_savings = current_total_payment - proposed_total_payment;
+        let yearly_savings = total_savings * 12;
+        let five_year_savings = yearly_savings * 5;
+        let life_loan_savings =  total_savings * (hm2_in_5 * 12);
+
+
+        let new_paymnt = new_payment + debt_total;
+        let total_new_payment = nper(hm2_in_3/12, (-1*new_paymnt), hm2_in_1);
+
+        let year_remove_curr_payment = total_new_payment / 12;
+
+        let cash_back_closing = (((hm2_in_4 - hm2_in_1) - debt_balance) - 5000);
+        
+        
+
+
+        $("#sv_rs_1, #pdf_sv_rs_1").text("$" + hm2_nftd.format(total_savings));
+        $("#hm2_rs_1, #pdf_rs_1").text("$" + hm2_nftd.format(current_paymenent));
+        $("#hm2_rs_2, #pdf_rs_2").text("$" + hm2_nft.format(new_payment));
+        $("#hm2_rs_3, #pdf_rs_3").text("$" + hm2_nftd.format(total_current_outflow));
+        $("#hm2_rs_4, #pdf_rs_4").text("$" + hm2_nftd.format(new_outflow));
+        $("#hm2_rs_5, #pdf_rs_5").text("$" + hm2_nftd.format(total_savings));
+        $("#hm2_rs_6, #pdf_rs_6").text("$" + hm2_nftd.format(yearly_savings));
+        $("#hm2_rs_7, #pdf_rs_7").text("$" + hm2_nftd.format(five_year_savings));
+        $("#hm2_rs_8, #pdf_rs_8").text("$" + hm2_nftd.format(life_loan_savings));
+        $("#hm2_rs_9, #pdf_rs_9").text(hm2_nft.format(year_remove_curr_payment));
+        $("#hm2_rs_10, #pdf_rs_10").text("$" + hm2_nftd.format(cash_back_closing));
+
+        $("#nl_rs_1").text("$" + hm2_nftd.format(all_balance_total));
+        $("#nl_rs_2").text("$" + hm2_nftd.format(no_total));
+        $("#nl_rs_3").text("$" + hm2_nftd.format(hm2_in_1));
+        $("#nl_rs_4").text("$" + hm2_nftd.format(hm2_in_4));
+        $("#nl_rs_5").text(hm2_nftd.format(hm2_in_2) + " Years");
+        $("#nl_rs_6").text(hm2_nftd.format(hm2_in_5) + " Years");
+        $("#nl_rs_7").text("$" + hm2_nftd.format(hm2_in_8));
+        $("#nl_rs_8").text("$" + hm2_nftd.format(hm2_in_8));
+        $("#nl_rs_9").text("$" + hm2_nftd.format(hm2_in_9));
+        $("#nl_rs_10").text("$" + hm2_nftd.format(hm2_in_9));
+        $("#nl_rs_11").text("$" + hm2_nftd.format(hm2_in_10));
+        $("#nl_rs_12").text("$" + hm2_nftd.format(proposed_pmi));
+        $("#nl_rs_13").text(hm2_nftd.format(hm2_in_3 * 100) + "%");
+        $("#nl_rs_14").text(hm2_nftd.format(hm2_in_6 * 100) + "%");
+        $("#nl_rs_15").text("$" + hm2_nftd.format(current_total_payment));
+        $("#nl_rs_16").text("$" + hm2_nftd.format(proposed_total_payment));
+
+        let table1 = $("#debts_loan_tb").html();
+        let table2 = $("#debts_paid_tb").html();
+        
+        let in_apr = $("#in_apr").val();
+
+        $("#pdf_table_1").html(table1);
+        $("#pdf_table_2").html(table2);
+
+        $("#pdf_in_1").text("$" + hm2_nftd.format(hm2_in_1));
+        $("#pdf_in_2").text(hm2_in_2);
+        $("#pdf_in_3").text(hm2_nftd.format(hm2_in_3*100) + "%");
+        $("#pdf_in_4").text("$" + hm2_nftd.format(hm2_in_4));
+        $("#pdf_in_5").text(hm2_in_5);
+        $("#pdf_in_6").text(hm2_nftd.format(hm2_in_6*100) + "%");
+        $("#pdf_in_7").text("$" + hm2_nftd.format(hm2_in_7));
+        $("#pdf_in_8").text("$" + hm2_nftd.format(hm2_in_8));
+        $("#pdf_in_9").text("$" + hm2_nftd.format(hm2_in_9));
+        $("#pdf_in_10").text("$" + hm2_nftd.format(hm2_in_10));
+        $("#pdf_in_apr").text(hm2_nftd.format(in_apr)+"%");
+    }
+
+    function hm2_removeSign(vl){
+        return Number(vl.replace(/,/g,''));
+    }
+
+    function PMT(rate, nperiod, pv, fv, type) {
+        if (!fv) fv = 0;
+        if (!type) type = 0;
+
+        if (rate == 0) return -(pv + fv)/nperiod;
+
+        var pvif = Math.pow(1 + rate, nperiod);
+        var pmt = rate / (pvif - 1) * -(pv * pvif + fv);
+
+        if (type == 1) {
+            pmt /= (1 + rate);
+        };
+
+        return pmt;
+    }
+
+    function nper(rate, payment, present, future, type) {
+        var type = (typeof type === 'undefined') ? 0 : type;
+
+        var future = (typeof future === 'undefined') ? 0 : future;
+
+        rate = eval(rate);
+
+        var num = payment * (1 + rate * type) - future * rate;
+        var den = (present * rate + payment * (1 + rate * type));
+        return Math.log(num / den) / Math.log(1 + rate);
+    }
+
+    function toDataUrl(url, callback) {
+        var xhr = new XMLHttpRequest();
+        xhr.onload = function() {
+            var reader = new FileReader();
+            reader.onloadend = function() {
+                callback(reader.result);
+            }
+            reader.readAsDataURL(xhr.response);
+        };
+        xhr.open('GET', url);
+        xhr.responseType = 'blob';
+        xhr.send();
+    }
+
+    let src = $("#my_logo").attr("src");
+
+    toDataUrl(src, function(myBase64) {
+        $("#my_logo").attr("src", myBase64);
+    });
+});
+</script>
+<!----------- copy ends ---------------->
+</body>
+</html>

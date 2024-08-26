@@ -1,0 +1,284 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap CSS -->
+    <title>Half Sit-up Test Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+</head>
+<body>
+
+<!-----------Please copy and paste following code into any HTML element ---------------->
+
+<!----------- copy starts ---------------->
+<style>
+#mx_cl *, ::after, ::before {
+    box-sizing: border-box;
+}
+#mx_cl {
+    line-height: 1.5;
+    font-family: inherit;
+}
+#mx_cl .container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #000000;
+    text-align: left;
+}
+#mx_cl label {
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 400;
+    color: #000000;
+    margin-bottom: 0.5rem;
+}
+#mx_cl .row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+#mx_cl .col-md-12, #mx_cl .col-md-6 {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+#mx_cl .form-group {
+    margin-bottom: 1rem;
+}
+#mx_cl .form-control {
+    display: block;
+    width: 100%;
+    height: calcHalf(1em + 0.75rem + 7px);
+    padding: 0.275rem 0.75rem;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #000000;
+    border: 1px solid #ccc;
+    background: #ffffff;
+    border-radius: 6px;
+    background-clip: padding-box;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+#mx_cl .form-control:focus {
+    outline: none;
+}
+#mx_cl .text-center {
+    text-align: center!important;
+}
+#mx_cl .cl-wrapper {
+    background-color: #ffffff;
+    padding: 2rem 2rem;
+    border-radius: 15px;
+    box-shadow: 0 0 20px #ccc;
+    margin-bottom: 1rem;
+}
+@media (min-width: 576px){
+    #mx_cl .container {
+        max-width: 540px;
+    }
+}
+@media (min-width: 768px){
+    #mx_cl .container {
+        max-width: 100%;
+    }
+    #mx_cl .col-md-12 {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    #mx_cl .col-md-6 {
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+@media (min-width: 992px){
+    #mx_cl .container {
+        max-width: 600px;
+    }
+}
+@media (min-width: 1200px) {
+    #mx_cl .container {
+        max-width: 600px;
+    }
+}
+#mx_cl .form-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+#mx_cl .sp-rs-sec {
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ccc;
+}
+#mx_cl .sp-rs-sec p {
+    margin: 0;
+    color: #000000;
+}
+#mx_cl .rs-sec {
+    padding: 12px 26px;
+}
+#mx_cl .form-group {
+    position: relative;
+}
+#mx_cl .sp-pd-top {
+    padding-top: 10px;
+}
+@media (max-width: 768px){
+    #mx_cl .cl-wrapper {
+        padding: 1.5rem 1.5rem;
+    }
+}
+</style>
+<div class="ms-cl" id="mx_cl">
+    <form name="half_sit_up" id="half_sit_up">
+        <div class="container cl-wrapper">
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="Age">Enter your Age:</label>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input type="number" name="Age" class="form-control" oninput="calcHalf(this.form)" autocomplete="off" id="Age" />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label for="Sex">Sex:</label>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="maleId"><input type="radio" name="Sex" value="Male" oninput="calcHalf(this.form)"  id="maleId" checked> Male</label>
+                        <label for="femaleId"><input type="radio" name="Sex" value="Female" oninput="calcHalf(this.form)"  id="femaleId"> Female</label>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label for="lev">Protocol:</label>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="acsmId"><input type="radio" name="Protocol" value="ACSM" oninput="calcHalf(this.form)" id="acsmId" checked> ACSM</label>
+                        <label for="ymcaId"><input type="radio" name="Protocol" value="YMCA" oninput="calcHalf(this.form)" id="ymcaId"> YMCA</label>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label for="Reps">Repetitions:</label>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input type="number" name="Reps" class="form-control" oninput="calcHalf(this.form)" autocomplete="off" id="Reps" />
+                    </div>
+                </div>
+                <div class="col-md-12 sp-pd-top">
+                    <div class="sp-rs-sec">
+                        <p>Population Average: <span id="PopAve" style="font-weight: 600;">-</span></p>
+                    </div>
+                    <div class="sp-rs-sec" style="margin-top: 15px;">
+                        <p>Score: <span id="Score" style="font-weight: 600;">-</span></p>
+                    </div>
+                    <div class="sp-rs-sec" style="margin-top: 15px;">
+                        <p>Rating: <span id="Rating" style="font-weight: 600;">-</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<script> 
+
+function calcHalf(form) {
+   var MAave, MYave, FAave, FYave, MArate, MYrate, FArate, FYrate, S, P, Age, Reps
+   S = document.querySelector('input[name="Sex"]:checked').value
+   P = document.querySelector('input[name="Protocol"]:checked').value
+   Age = form.Age.value
+   Reps = form.Reps.value
+   MAave = -0.00000000685522 * Math.pow(Age, 7) + 0.00000192204 * Math.pow(Age, 6) - 0.000219456 * Math.pow(Age, 5) + 0.0131656 * Math.pow(Age, 4) - 0.447678 * Math.pow(Age, 3) + 8.66596 * Math.pow(Age, 2) - 89.1858 * Age + 408.275
+   MYave = -0.0008611 * Math.pow(Age, 3) + 0.11464 * Math.pow(Age, 2) - 4.9317 * Age + 105.71
+   FAave = -0.000000394592 * Math.pow(Age, 6) + 0.000104856 * Math.pow(Age, 5) - 0.0112047 * Math.pow(Age, 4) + 0.614110 * Math.pow(Age, 3) - 18.1515 * Math.pow(Age, 2) + 273.437 * Age - 1610.8
+   FYave = -0.00037037 * Math.pow(Age, 3) + 0.054286 * Math.pow(Age, 2) - 2.8487 * Age + 81.762
+   if (Reps < -0.0000000114894 * Math.pow(Age, 7) + 0.00000299287 * Math.pow(Age, 6) - 0.00032753 * Math.pow(Age, 5) + 0.0195598 * Math.pow(Age, 4) - 0.690795 * Math.pow(Age, 3) + 14.4795 * Math.pow(Age, 2) - 167.349 * Age + 840.176) {
+      FYrate = 0
+   } else {
+      FYrate = (-138.1237 + 16.01726 * Age - 0.5517699 * Math.pow(Age, 2) + 0.007589161 * Math.pow(Age, 3) - 0.00003671538 * Math.pow(Age, 4)) +
+         (21.57651 - 2.273666 * Age + 0.06481450 * Math.pow(Age, 2) - 0.0006819637 * Math.pow(Age, 3) + 0.000002223358 * Math.pow(Age, 4)) * Reps +
+         (-1.376606 + 0.1383078 * Age - 0.003854119 * Math.pow(Age, 2) + 0.00004132195 * Math.pow(Age, 3) - 0.0000001406595 * Math.pow(Age, 4)) * Math.pow(Reps, 2) +
+         (0.02628711 - 0.002544991 * Age + 0.00007145753 * Math.pow(Age, 2) - 0.0000007917021 * Math.pow(Age, 3) + 0.000000002848817 * Math.pow(Age, 4)) * Math.pow(Reps, 3) +
+         (-0.0001527412 + 0.00001455963 * Age - 0.0000004156374 * Math.pow(Age, 2) + 0.000000004765185 * Math.pow(Age, 3) - 0.00000000001802911 * Math.pow(Age, 4)) * Math.pow(Reps, 4)
+   }
+   if (Age <= 30 && Reps < 15 || Age > 30 && Reps < 7) {
+      MYrate = 0
+   } else {
+      MYrate = (96.24981 - 4.007933 * Age + 0.04107910 * Math.pow(Age, 2) + 0.0003272065 * Math.pow(Age, 3) - 0.000004819090 * Math.pow(Age, 4)) + (1.570763 - 0.9232762 * Age + 0.04377822 * Math.pow(Age, 2) - 0.0007447309 * Math.pow(Age, 3) + 0.000004180380 * Math.pow(Age, 4)) * Reps + (-0.04654484 + 0.02663867 * Age - 0.0009242976 * Math.pow(Age, 2) + 0.00001074943 * Math.pow(Age, 3) - 0.00000002706244 * Math.pow(Age, 4)) * Math.pow(Reps, 2) + (-0.002554646 + 0.0001289401 * Age - 0.00001115954 * Math.pow(Age, 2) + 0.0000003116437 * Math.pow(Age, 3) - 0.000000002713411 * Math.pow(Age, 4)) * Math.pow(Reps, 3) + (0.00003793831 - 0.000004160192 * Age + 0.0000002120824 * Math.pow(Age, 2) - 0.000000004422016 * Math.pow(Age, 3) + 0.00000000003211184 * Math.pow(Age, 4)) * Math.pow(Reps, 4)
+   }
+   MArate = (-35.31139 * Reps + 1.353152 * Math.pow(Reps, 2) - 0.02000107 * Math.pow(Reps, 3) + 0.0001129822 * Math.pow(Reps, 4)) + (3.926462 * Reps - 0.1356288 * Math.pow(Reps, 2) + 0.001899693 * Math.pow(Reps, 3) - 0.00001052464 * Math.pow(Reps, 4)) * Age + (-0.1477482 * Reps + 0.005112073 * Math.pow(Reps, 2) - 0.00007290325 * Math.pow(Reps, 3) + 0.0000004134484 * Math.pow(Reps, 4)) * Math.pow(Age, 2) + (0.002284135 * Reps - 0.00007975967 * Math.pow(Reps, 2) + 0.000001162383 * Math.pow(Reps, 3) - 0.000000006733195 * Math.pow(Reps, 4)) * Math.pow(Age, 3) + (-0.00001221709 * Reps + 0.0000004286309 * Math.pow(Reps, 2) - 0.000000006343692 * Math.pow(Reps, 3) + 0.00000000003734054 * Math.pow(Reps, 4)) * Math.pow(Age, 4)
+   if (Age < 45) {
+      FArate = (61.06360 - 6.866672 * Age + 0.2398395 * Math.pow(Age, 2) - 0.002574495 * Math.pow(Age, 3)) + (10.55322 - 0.9233591 * Age + 0.03298342 * Math.pow(Age, 2) - 0.0003677999 * Math.pow(Age, 3)) * Reps + (-0.3112618 + 0.03350603 * Age - 0.001202393 * Math.pow(Age, 2) + 0.00001350928 * Math.pow(Age, 3)) * Math.pow(Reps, 2) + (0.002418299 - 0.0002724549 * Age + 0.000009815526 * Math.pow(Age, 2) - 0.0000001109795 * Math.pow(Age, 3)) * Math.pow(Reps, 3)
+   } else {
+      FArate = (-752.7656 + 38.91679 * Age - 0.6540060 * Math.pow(Age, 2) + 0.003610532 * Math.pow(Age, 3)) + (-115.3472 + 5.793254 * Age - 0.09282599 * Math.pow(Age, 2) + 0.0004927425 * Math.pow(Age, 3)) * Reps + (4.605130 - 0.2289485 * Age + 0.003700536 * Math.pow(Age, 2) - 0.00001978967 * Math.pow(Age, 3)) * Math.pow(Reps, 2) + (-0.03923805 + 0.001948929 * Age - 0.00003159341 * Math.pow(Age, 2) + 0.0000001693734 * Math.pow(Age, 3)) * Math.pow(Reps, 3)
+   }
+   
+   let PopAvevalue = 0, Scorevalue = 0, Ratingvalue;
+
+   if (S == "Male" && P == "ACSM") {
+      PopAvevalue = Math.round(MAave);
+      Scorevalue = Math.round(MArate);
+   }
+   if (S == "Male" && P == "YMCA") {
+      PopAvevalue = Math.round(MYave);
+      Scorevalue = Math.round(MYrate);
+   }
+   if (S == "Female" && P == "ACSM") {
+      PopAvevalue = Math.round(FAave);
+      Scorevalue = Math.round(FArate);
+   }
+   if (S == "Female" && P == "YMCA") {
+      PopAvevalue = Math.round(FYave);
+      Scorevalue = Math.round(FYrate);
+   }
+   if (Scorevalue > 84) {
+      Ratingvalue = "Excellent"
+   }
+   if (Scorevalue <= 84 && Scorevalue > 67) {
+      Ratingvalue = "Good"
+   }
+   if (Scorevalue <= 67 && Scorevalue >= 33) {
+      Ratingvalue = "Average"
+   }
+   if (Scorevalue < 33 && Scorevalue >= 16) {
+      Ratingvalue = "Fair"
+   }
+   if (Scorevalue < 16) {
+      Ratingvalue = "Poor"
+   }
+
+   document.getElementById("PopAve").innerText = Math.round(PopAvevalue);
+   document.getElementById("Score").innerText = Math.round(Scorevalue);
+   document.getElementById("Rating").innerText = Ratingvalue;
+}
+</script>
+<!----------- copy ends ---------------->
+</body>
+</html>

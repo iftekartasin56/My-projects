@@ -1,0 +1,1390 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
+    <title>Net Worth Calculator</title>
+    <style>
+        body {
+            font-family: "EB Garamond", serif;
+        }
+    </style>
+</head>
+
+<body>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        #hm_cl4 *,
+        ::after,
+        ::before {
+            box-sizing: border-box;
+        }
+
+        #hm_cl4 {
+            line-height: 1.5;
+            font-family: inherit;
+            font-family: "EB Garamond", serif;
+        }
+
+        #hm_cl4 .container {
+            width: 100%;
+            padding-right: 15px;
+            padding-left: 15px;
+            margin-right: auto;
+            margin-left: auto;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #373A3B;
+            text-align: left;
+        }
+
+        #hm_cl4 label {
+            display: inline-block;
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        #hm_cl4 h3,
+        #hm_cl4 h4,
+        #hm_cl4 p {
+            margin: 5px 0;
+        }
+
+        #hm_cl4 .font2 {
+            font: normal normal 600 14px/22px Nunito Sans;
+        }
+
+        #hm_cl4 .color2 {
+            color: #373A3B;
+        }
+
+        #hm_cl4 .rs-title {
+            font: normal normal normal 36px/52px EB Garamond;
+        }
+
+        #hm_cl4 .total_value {
+            text-align: right;
+        }
+
+        #hm_cl4 .button-sec {
+            border-top: 1px solid #565A5B;
+            margin-top: 20px;
+            padding-top: 20px;
+        }
+
+        #hm_cl4 .heading_font {
+            font: normal normal normal 36px/52px EB Garamond;
+            color: #373A3B;
+            margin-bottom: 30px;
+        }
+
+        #hm_cl4 .row {
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            margin-right: -15px;
+            margin-left: -15px;
+        }
+
+        #hm_cl4 .input-row {
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            margin-right: -15px;
+            margin-left: -15px;
+            align-items: start;
+            margin-bottom: 25px;
+        }
+
+        #hm_cl4 .col-md-1,
+        #hm_cl4 .col-md-10,
+        #hm_cl4 .col-md-11,
+        #hm_cl4 .col-md-12,
+        #hm_cl4 .col-md-2,
+        #hm_cl4 .col-md-3,
+        #hm_cl4 .col-md-4,
+        #hm_cl4 .col-md-5,
+        #hm_cl4 .col-md-6,
+        #hm_cl4 .col-md-7,
+        #hm_cl4 .col-md-8,
+        #hm_cl4 .col-md-9 {
+            position: relative;
+            width: 100%;
+            padding-right: 15px;
+            padding-left: 15px;
+        }
+
+        #hm_cl4 .form-group {
+            position: relative;
+            margin-bottom: 0 !important;
+        }
+
+        #hm_cl4 .form-control {
+            text-align: center;
+            display: block;
+            width: 100%;
+            height: 50px;
+            padding: 0.275rem 0.75rem;
+            font: normal normal 600 16px/22px Nunito Sans;
+            color: #373A3B;
+            background-color: #fff;
+            background-clip: padding-box;
+            border: 1px solid #373A3B;
+            transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        }
+
+        #hm_cl4 .form-control2 {
+            text-align: left;
+            display: block;
+            width: 100%;
+            height: 50px;
+            padding: 0.275rem 0.75rem;
+            font: normal normal normal 22px/30px Nunito Sans;
+            color: #A57162;
+            background-color: #fff;
+            background-clip: padding-box;
+            border: 1px solid #565A5B;
+            transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        }
+
+        #hm_cl4 .form-control:focus,
+        #hm_cl4 .form-control2:focus {
+            outline: none;
+        }
+
+        #hm_cl4 .btn {
+            display: inline-block;
+            font-weight: 400;
+            color: #212529;
+            text-align: center;
+            vertical-align: middle;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            background-color: transparent;
+            border: 1px solid transparent;
+            padding: 0.375rem 2.5rem;
+            font-size: 0.8rem;
+            line-height: 1.5;
+            transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+                border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        }
+
+        #hm_cl4 .btn-primary {
+            color: #fff;
+            background-color: #565a5b;
+            border-color: #565a5b;
+            text-align: center;
+            margin-top: 10px;
+            font: normal normal 600 12px/16px Nunito Sans;
+            letter-spacing: 1.2px;
+            height: 34px;
+        }
+
+        #hm_cl4 .text-center {
+            text-align: center;
+        }
+
+        @media (min-width: 576px) {
+            #hm_cl4 .container {
+                max-width: 100%;
+            }
+        }
+
+        @media (min-width: 768px) {
+            #hm_cl4 .container {
+                max-width: 100%;
+            }
+
+            #hm_cl4 .col-md-12 {
+                -ms-flex: 0 0 100%;
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+
+            #hm_cl4 .col-md-9 {
+                -ms-flex: 0 0 75%;
+                flex: 0 0 75%;
+                max-width: 75%;
+            }
+
+            #hm_cl4 .col-md-8 {
+                -ms-flex: 0 0 66.666667%;
+                flex: 0 0 66.666667%;
+                max-width: 66.666667%;
+            }
+
+            #hm_cl4 .col-md-7 {
+                -ms-flex: 0 0 58.33333%;
+                flex: 0 0 58.33333%;
+                max-width: 58.33333%;
+            }
+
+            #hm_cl4 .col-md-6 {
+                -ms-flex: 0 0 50%;
+                flex: 0 0 50%;
+                max-width: 50%;
+            }
+
+            #hm_cl4 .col-md-5 {
+                -ms-flex: 0 0 41.666667%;
+                flex: 0 0 41.666667%;
+                max-width: 41.666667%;
+            }
+
+            #hm_cl4 .col-md-4 {
+                -ms-flex: 0 0 33.333333%;
+                flex: 0 0 33.333333%;
+                max-width: 33.333333%;
+            }
+
+            #hm_cl4 .col-md-3 {
+                -ms-flex: 0 0 25%;
+                flex: 0 0 25%;
+                max-width: 25%;
+            }
+        }
+
+        @media (min-width: 992px) {
+            #hm_cl4 .container {
+                max-width: 850px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            #hm_cl4 .container {
+                max-width: 900px;
+            }
+        }
+
+        #hm_cl4 .text-right {
+            text-align: right;
+        }
+
+        #hm_cl4 .form-group,
+        #hm_cl4 .input-group {
+            position: relative;
+            margin-bottom: 0;
+        }
+
+        @media (max-width: 768px) {}
+
+        #hm_cl4 .top-title {
+            font-size: 25px;
+        }
+
+        #hm_cl4 .border-box {
+            border: 1px solid #565A5B;
+            background: #FFFFFF;
+        }
+
+        #hm_cl4 .head-border {
+            border: 5px solid #E0A899;
+        }
+
+        #hm_cl4 .mid-border {
+            border: 3px solid #ffffff;
+        }
+
+        #hm_cl4 .content-box {
+            padding: 2rem 3rem 3rem 3rem;
+        }
+
+        #hm_cl4 .add-line-section {
+            display: flex;
+            gap: 10px;
+            color: #A57162;
+            align-items: center;
+            width: 148px;
+            cursor: pointer;
+            margin-top: 12px;
+        }
+
+        #hm_cl4 .add-line-section img {
+            width: 25px;
+        }
+
+        #hm_cl4 .add-line-right {
+            cursor: pointer;
+            margin-top: 3px;
+            font: normal normal 500 16px/22px Nunito Sans;
+        }
+
+        #hm_cl4 .delete-line {
+            cursor: pointer;
+            position: absolute;
+            left: -30px;
+            bottom: 15px;
+            width: 20px;
+        }
+
+        #hm_cl4 .bold-p {
+            font: normal normal bold 18px/23px EB Garamond;
+        }
+
+        #hm_cl4 .mid-section {
+            padding-bottom: 40px;
+        }
+
+        #hm_cl4 .mid-section:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        #hm_cl4 .input-section {
+            position: relative;
+        }
+
+        #hm_cl4 .footer-box {
+            padding: 30px 50px;
+            background: #e9e3df;
+        }
+
+        #hm_cl4 .td-output {
+            text-align: right;
+        }
+
+        #hm_cl4 .final-output {
+            font-size: 36px;
+            font-weight: 600;
+            border-bottom: 1px solid #565A5B;
+            margin-top: 15px !important;
+        }
+
+        #hm_cl4 .button-sec {
+            text-align: center;
+        }
+
+        #hm_cl4 .last-head {
+            margin-top: 5px;
+            border-top: 1px solid #565A5B;
+            padding-top: 40px;
+        }
+
+        #hm_cl4 .mid-footer-p {
+            margin-top: 10px;
+            margin-bottom: 5px;
+            font: normal normal normal 18px/20px EB Garamond;
+        }
+
+        #hm_cl4 .head-footer {
+            font: normal normal normal 18px/23px EB Garamond;
+            margin-bottom: 16px;
+        }
+
+        #hm_cl4 .mid-left-head {
+            font: normal normal normal 22px/30px Nunito Sans;
+            color: #A57162;
+        }
+
+        #hm_cl4 .ns-font {
+            font: normal normal 600 14px/19px Nunito Sans;
+            letter-spacing: 1.4px;
+        }
+
+        #hm_cl4 .head-p {
+            font: normal normal 600 14px/19px Nunito Sans;
+            letter-spacing: 1.4px
+        }
+
+        #hm_cl4 .H-head {
+            font: normal normal normal 36px/52px EB Garamond;
+            margin: 0;
+            margin-bottom: 0px;
+        }
+
+        #hm_cl4 .help-text {
+            font: normal normal normal 18px/23px EB Garamond;
+            margin-top: 2px;
+        }
+
+        #hm_cl4 .result-t {
+            font: normal normal 600 14px/19px Nunito Sans;
+            margin-bottom: 16px;
+        }
+
+        #hm_cl4 .add-line-left {
+            margin-top: 15px;
+            cursor: pointer;
+        }
+
+        #hm_cl4 .margin-bottom {
+            position: relative;
+            margin-bottom: 22px;
+        }
+
+        #hm_cl4 .extra_input {
+            display: none;
+        }
+
+        #hm_cl4 .prepend-text {
+            display: flex;
+            align-items: center;
+            position: absolute;
+            bottom: 1px;
+            height: 48px;
+            left: 1px;
+            padding: 10.5px 12px;
+            color: #373A3B;
+            font: normal normal 600 16px/22px Nunito Sans;
+            background: #efefef;
+        }
+
+        #hm_cl4 .total_amount_Bg {
+            background-color: #E9E3DF;
+            padding: 2rem 3rem;
+            width: 100%;
+        }
+
+        #hm_cl4 .help-text {
+            font: normal normal normal 18px/23px EB Garamond;
+        }
+
+        #hm_cl4 .rs-sec {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 7px;
+        }
+
+        #hm_cl4 .rs-sec-big {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 8px;
+        }
+
+        #hm_cl4 .rs-font-sm {
+            font: normal normal normal 22px/30px Nunito Sans;
+        }
+
+        #hm_cl4 .rs-font-big {
+            font: normal normal normal 36px/47px EB Garamond;
+        }
+
+        #hm_cl4 .head-sec {
+            padding: 25px 40px;
+            background-color: #EFEFEF;
+        }
+
+        #hm_cl4 .head-p {
+            border-bottom: 1px solid;
+            padding-bottom: 10px;
+        }
+
+        #hm_cl4 .pad-right-zero {
+            padding-right: 0px;
+        }
+
+        #hm_cl4 .f-head-footer {
+            margin-bottom: 0px;
+        }
+        #hm_cl4 .sp-head{
+            padding-top: 20px;
+        }
+        #hm_cl4 .sp-span{
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            #hm_cl4 .form-group {
+                margin-top: 8px;
+            }
+
+            #hm_cl4 .head-sec {
+                padding: 10px 20px;
+            }
+            #hm_cl4 .sp-head{
+                padding-top: 10px;
+            }
+
+            #hm_cl4 .H-head {
+                font: normal normal normal 30px/34px EB Garamond;
+                margin-bottom: 10px;
+            }
+
+            #hm_cl4 .final-output {
+                font-size: 24px;
+            }
+
+            #hm_cl4 .content-box {
+                padding: 2rem;
+            }
+
+            #hm_cl4 .mid-left-head {
+                font: normal normal normal 18px/28px Nunito Sans;
+            }
+
+            #hm_cl4 .help-text {
+                font: normal normal normal 16px/20px EB Garamond;
+            }
+
+            #hm_cl4 .total_amount_Bg {
+                padding: 2rem;
+            }
+
+            #hm_cl4 .margin-bottom {
+                margin-bottom: 5px;
+                gap: 5px;
+            }
+
+            #hm_cl4 .rs-title {
+                font: normal normal normal 30px/22px EB Garamond;
+            }
+
+            #hm_cl4 .input-row {
+                margin-bottom: 22px;
+            }
+
+            #hm_cl4 .rs-sec-big {
+                flex-direction: column;
+            }
+
+            #hm_cl4 .rs-font-sm {
+                font: normal normal normal 18px/30px Nunito Sans;
+            }
+
+            #hm_cl4 .rs-font-big {
+                font: normal normal normal 30px/32px EB Garamond;
+            }
+
+            #hm_cl4 .delete-line {
+                left: -27px;
+            }
+
+            #hm_cl4 .f-head-footer {
+                padding-left: 0px;
+            }
+        }
+
+        #pdf_section {
+            display: none;
+            margin: auto;
+            box-sizing: border-box;
+            margin-top: 20px;
+            border: 1px solid #565A5B;
+            padding: 20px 30px;
+        }
+
+        #pdf_data *,
+        ::after,
+        ::before {
+            box-sizing: border-box;
+        }
+
+        #pdf_data p {
+            margin: 0;
+            margin-bottom: 0px;
+            color: #373A3B;
+            font-size: 16px;
+            padding-bottom: 0;
+            letter-spacing: 0.03em;
+            text-transform: none;
+            text-align: left;
+            margin-top: 15px;
+            font-family: "Nunito Sans", serif;
+        }
+
+        #pdf_data .table {
+            width: 100%;
+            margin-bottom: 0rem;
+            background-color: #fff;
+            border-collapse: collapse;
+        }
+
+        #pdf_data h3 {
+            font-family: "EB Garamond", serif;
+        }
+
+        #pdf_data h4 {
+            font-family: "Nunito Sans", serif;
+        }
+
+        #pdf_data tbody {
+            margin-bottom: 10px !important;
+        }
+
+        #pdf_data .table td {
+            padding: 0.3rem 0.3rem 0.3rem 1rem;
+            border-bottom: 2px solid #a6a6a6 !important;
+            vertical-align: middle;
+            font-size: 16px;
+            font-weight: 400;
+            text-align: left;
+            font-family: "Nunito Sans", serif;
+        }
+
+        #pdf_data .table th {
+            padding: 0.3rem;
+            border-bottom: 2px solid #565A5B !important;
+            vertical-align: middle;
+            font-size: 16px;
+            font-weight: 400;
+            text-align: left;
+            padding-top: 1.2rem;
+            font-family: "Nunito Sans", serif;
+        }
+
+        #pdf_data .top-row {
+            background: #f6f6f6 !important;
+        }
+
+        #pdf_data .ds-none {
+            display: none !important;
+        }
+
+        #pdf_data .text-right {
+            text-align: right !important;
+        }
+
+        #pdf_data .text-center {
+            text-align: center !important;
+        }
+
+        #pdf_data .text-left {
+            text-align: left !important;
+        }
+
+        #pdf_data .f600 {
+            font-weight: 600 !important;
+        }
+
+        #pdf_data .row {
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            padding: 0px 20px;
+        }
+
+        #pdf_data .col-md-12,
+        #pdf_data .col-md-6 {
+            position: relative;
+            width: 100%;
+            padding-right: 15px;
+            padding-left: 15px;
+        }
+
+        #pdf_data .col-md-6 {
+            -ms-flex: 0 0 50%;
+            flex: 0 0 50%;
+            max-width: 50%;
+        }
+
+        #pdf_data .pdf_top_title {
+            font-size: 32px;
+            margin: 0px 0 18px 0;
+            color: #A57162;
+        }
+
+        #pdf_data .left_left_th {
+            text-align: left !important;
+            font-weight: 600 !important;
+            color: #A57162;
+        }
+
+        #pdf_data .left_right_th {
+            text-align: right !important;
+            font-weight: 600 !important;
+            color: #A57162;
+        }
+
+        #pdf_data .left_left_td {
+            text-align: left !important;
+        }
+
+        #pdf_data .left_right_td {
+            text-align: right !important;
+        }
+
+        #pdf_data .right-head-pdf {
+            font-size: 18px;
+            font-weight: 600;
+            text-align: left;
+            display: block;
+        }
+    </style>
+    <div class="ms-cl" id="hm_cl4">
+        <div class="container">
+            <div class="border-box">
+                <div class="head-border"></div>
+                <div class="mid-border"></div>
+                <div class="head-border"></div>
+                <div class="head-sec">
+                    <div class="head-section">
+                        <div class="head-p">ASSETS: WHAT YOU OWN</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-7">
+                            <h1 class="H-head sp-head">Cash & Investments Assets</h1>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="head-footer f-head-footer sp-head">
+                                These assets can be easily converted to cash without incurring any extra fees or
+                                charges.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-box">
+                    <div class="mid-section">
+                        <div class="input-row">
+                            <div class="col-md-8">
+                                <div class="mid-left-head" id="cash_title_1">Cash</div>
+                                <div class="help-text">
+                                    ⓘ Account for all cash on hand excluding bank account balances.
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="input-section form-group">
+                                    <span class="prepend-text">$</span>
+                                    <input type="text" class="form-control cl-input cl-curr" placeholder="0"
+                                        id="cash_value_1" value="" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="input-row">
+                            <div class="col-md-8">
+                                <div class="mid-left-head" id="cash_title_2">
+                                    Chequing & Savings Account
+                                </div>
+                                <div class="help-text">
+                                    ⓘ Account for the total value across all chequing and savings accounts.
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="input-section form-group">
+                                    <span class="prepend-text">$</span>
+                                    <input type="text" class="form-control cl-input cl-curr" placeholder="0"
+                                        id="cash_value_2" value="" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div id="container-1" class="col-md-12 target-container">
+                                <!-- Appended sections will be placed here -->
+                            </div>
+                            <div class="col-md-12">
+                                <div class="mid-footer-p"><span class="bold-p">Have additional items to include?
+                                    </span>Consider these examples: High Interest Savings Accounts (HISA/HYSA), Tax-Free
+                                    Savings Accounts (TFSAs), Roth IRAs, Guaranteed Investment Certificates (GICs),
+                                    Certificates of Deposit (CDs), Non-Registered Accounts, and other readily
+                                    convertible investments.</div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="add-line-section" data-target="container-1" data-type="cash">
+                                    <img src="https://i.postimg.cc/VL2gTpSv/Add.png" alt="" />
+                                    <div class="add-line-right">
+                                        ADD A LINE
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="head-sec">
+                    <div class="head-section">
+                        <div class="row">
+                            <div class="col-md-7">
+                                <h1 class="H-head">Long Term Assets</h1>
+                            </div>
+                            <div class="col-md-5">
+                                <div class="head-footer f-head-footer">
+                                    These are assets that cannot be quickly liquidated for cash.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-box">
+                    <div class="input-row">
+                        <div class="col-md-8">
+                            <div class="mid-left-head" id="long_title_1">
+                                Registered Plans <span class="sp-span">(RRSP, 401(k), 403(b), RESP, 529 Plan, RIF, IRA)</span>
+                            </div>
+                            <div class="help-text">
+                                ⓘ Take note of the overall worth of your long-term registered plans, which include Retirement Savings Plans, Educational Savings Plans, and Retirement Income Funds.
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="input-section form-group">
+                                <span class="prepend-text">$</span>
+                                <input type="text" class="form-control cl-input cl-curr" placeholder="0"
+                                    id="long_value_1" value="" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-row">
+                        <div class="col-md-8">
+                            <div class="mid-left-head" id="long_title_2">
+                                Pension Plan
+                            </div>
+                            <div class="help-text">
+                                ⓘ Account for any pension plans provided by your employer.
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="input-section form-group">
+                                <span class="prepend-text">$</span>
+                                <input type="text" class="form-control cl-input cl-curr" placeholder="0"
+                                    id="long_value_2" value="" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div id="container-2" class="col-md-12 target-container">
+                            <!-- Appended sections will be placed here -->
+                        </div>
+                        <div class="col-md-12">
+                            <div class="mid-footer-p"><span class="bold-p">Have additional items to include? </span>Consider these examples: Business Assets, Life Insurance Cash Asset Value.</div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="add-line-section" data-target="container-2" data-type="long">
+                                <img src="https://i.postimg.cc/VL2gTpSv/Add.png" alt="" />
+                                <div class="add-line-right">
+                                    ADD A LINE
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="head-sec">
+                    <div class="head-section">
+                        <div class="row">
+                            <div class="col-md-7">
+                                <h1 class="H-head">Property Assets</h1>
+                            </div>
+                            <div class="col-md-5">
+                                <div class="head-footer f-head-footer">
+                                    These assets consist of various elements, housing, and personal property.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-box">
+                    <div class="input-row">
+                        <div class="col-md-8">
+                            <div class="mid-left-head" id="property_title_1">
+                                Real Estate
+                            </div>
+                            <div class="help-text">
+                                ⓘ Determine the current market price of your house (and any other real estate properties
+                                in your possession).
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="input-section form-group">
+                                <span class="prepend-text">$</span>
+                                <input type="text" class="form-control cl-input cl-curr" placeholder="0"
+                                    id="property_value_1" value="" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-row">
+                        <div class="col-md-8">
+                            <div class="mid-left-head" id="property_title_2">
+                                Automobile
+                            </div>
+                            <div class="help-text">
+                                ⓘ Calculate the present-day market value of your vehicles for potential resale.
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="input-section form-group">
+                                <span class="prepend-text">$</span>
+                                <input type="text" class="form-control cl-input cl-curr" placeholder="0"
+                                    id="property_value_2" value="" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div id="container-3" class="col-md-12 target-container">
+                            <!-- Appended sections will be placed here -->
+                        </div>
+                        <div class="col-md-12">
+                            <div class="mid-footer-p"><span class="bold-p">Have additional items to include?
+                                </span>Consider these examples: Antiques, Jewellery, Art, Collectibles, and other
+                                Property Assets.</div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="add-line-section" data-target="container-3" data-type="property">
+                                <img src="https://i.postimg.cc/VL2gTpSv/Add.png" alt="" />
+                                <div class="add-line-right">
+                                    ADD A LINE
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="head-border"></div>
+                <div class="mid-border"></div>
+                <div class="head-border"></div>
+                <div class="head-sec">
+                    <div class="head-section">
+                        <div class="head-p">LIABILITIES: WHAT YOU OWE</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-7">
+                            <h1 class="H-head sp-head">Loans & Debts</h1>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="head-footer f-head-footer sp-head">
+                                These liabilities are financial obligations that involve borrowing money typically from
+                                a lender and agreeing to repay it over time, usually with interest.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-box">
+                    <div class="input-row">
+                        <div class="col-md-8">
+                            <div class="mid-left-head" id="liability_title_1">
+                                Real Estate Loans
+                            </div>
+                            <div class="help-text">
+                                ⓘ Include the remaining loan balance on your home mortgage.
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="input-section form-group">
+                                <span class="prepend-text">$</span>
+                                <input type="text" class="form-control cl-input cl-curr" placeholder="0"
+                                    id="liability_value_1" value="" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-row">
+                        <div class="col-md-8">
+                            <div class="mid-left-head" id="liability_title_2">
+                                Credit Card Debt
+                            </div>
+                            <div class="help-text">
+                                ⓘ Include the total outstanding amount on your credit cards.
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="input-section form-group">
+                                <span class="prepend-text">$</span>
+                                <input type="text" class="form-control cl-input cl-curr" placeholder="0"
+                                    id="liability_value_2" value="" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-row">
+                        <div class="col-md-8">
+                            <div class="mid-left-head" id="liability_title_3">
+                                Personal Loans
+                            </div>
+                            <div class="help-text">
+                                ⓘ Include any outstanding balances on a personal line of credit, money owed to
+                                family/friends, and payday loans.
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="input-section form-group">
+                                <span class="prepend-text">$</span>
+                                <input type="text" class="form-control cl-input cl-curr" placeholder="0"
+                                    id="liability_value_3" value="" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-row">
+                        <div class="col-md-8">
+                            <div class="mid-left-head" id="liability_title_4">
+                                Student Loans
+                            </div>
+                            <div class="help-text">
+                                ⓘ Include the total balance owed on student loans, not monthly payments.
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="input-section form-group">
+                                <span class="prepend-text">$</span>
+                                <input type="text" class="form-control cl-input cl-curr" placeholder="0"
+                                    id="liability_value_4" value="" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div id="container-4" class="col-md-12 target-container">
+                            <!-- Appended sections will be placed here -->
+                        </div>
+                        <div class="col-md-12">
+                            <div class="mid-footer-p"><span class="bold-p">Have additional items to include?
+                                </span>Consider these examples: Medical Bills, Business loans, Afterpay/Klarna,
+                                Collections, Title Loans, Taxes</div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="add-line-section" data-target="container-4" data-type="liability">
+                                <img src="https://i.postimg.cc/VL2gTpSv/Add.png" alt="" />
+                                <div class="add-line-right">
+                                    ADD A LINE
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="total_amount_Bg">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p class="color2 font2"
+                                style="font: normal normal 600 14px/19px Nunito Sans; letter-spacing: 1.4px; margin-bottom: 15px;">
+                                RESULTS</p>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="rs-sec">
+                                <span class="color2 rs-font-sm">Total Assets</span>
+                                <span class="color2 rs-font-sm total_value" id="hm_cl4_total_assets">$0.00</span>
+                            </div>
+                            <div class="rs-sec">
+                                <span class="color2 rs-font-sm">Total Liabilities</span>
+                                <span class="color2 rs-font-sm total_value" id="hm_cl4_total_liability">$0.00</span>
+                            </div>
+                            <div class="rs-sec-big">
+                                <p class="color2 rs-font-big">Total Net Worth</p>
+                                <p class="color2 rs-font-big" style="margin-bottom: 0;" id="hm_cl4_net_worth">$0.00</p>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="button-sec">
+                                <button type="button" class="btn btn-primary" id="hm_cl4_print">
+                                    PRINT RESULTS
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="pdf_section">
+        <div id="pdf_data">
+            <p style="text-align: center;">
+                <img id="com_logo" src="https://i.postimg.cc/rsPb63mM/High-Res-Logo-Round-1.png" style="width: 150px;"
+                    alt="" />
+            </p>
+            <h3 style="text-align: center; margin-top: 15px;" class="pdf_top_title">
+                Your Net Worth Calculator Information
+            </h3>
+            <br />
+            <h4 style="margin: 0;">ASSETS: WHAT YOU OWN</h4>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th class="left_left_th">Cash & Investments Assets</th>
+                        <th class="left_right_th" id="cash_total">$0</th>
+                    </tr>
+                </thead>
+                <tbody id="cash_table"></tbody>
+                <thead>
+                    <tr>
+                        <th class="left_left_th">Long Term Assets</th>
+                        <th class="left_right_th" id="long_total">$0</th>
+                    </tr>
+                </thead>
+                <tbody id="long_table"></tbody>
+                <thead>
+                    <tr>
+                        <th class="left_left_th">Property Assets</th>
+                        <th class="left_right_th" id="property_total">$0</th>
+                    </tr>
+                </thead>
+                <tbody id="property_table"></tbody>
+            </table>
+            <h4 style="margin: 2rem 0 0 0;">
+                LIABILITIES: WHAT YOU OWE
+            </h4>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th class="left_left_th">Liabilities</th>
+                        <th class="left_right_th" id="liability_total">$0</th>
+                    </tr>
+                </thead>
+                <tbody id="liability_table"></tbody>
+                <tfoot>
+                    <tr style="color: #a57162;">
+                        <th class="left_left_th" style="border-bottom: none !important; font-size: 26px;">Your Net Worth
+                            is:</th>
+                        <th class="left_right_th" style="border-bottom: none !important; font-size: 26px;"
+                            id="total_net_worth">$0</th>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+        integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.8.0/html2pdf.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/autonumeric@4.5.4"></script>
+    <script>
+        jQuery(document).ready(function ($) {
+            const hm_cl4_numOptionCurrency = {
+                digitGroupSeparator: ",",
+                decimalCharacter: ".",
+                decimalCharacterAlternative: ".",
+                currencySymbol: "",
+                currencySymbolPlacement: AutoNumeric.options.currencySymbolPlacement.prefix,
+                decimalPlaces: 2,
+                minimumValue: 0
+            };
+
+            AutoNumeric.multiple(".cl-curr", hm_cl4_numOptionCurrency);
+
+            const hm_cl4_nftd = Intl.NumberFormat("en-US", {
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2,
+            });
+
+            function hm_cl4_removeComma(num) {
+                return Number(num.replace(/[$,%]/g, ""));
+            }
+
+            var maxClicks = 3; // Maximum number of allowed clicks
+
+            $("#hm_cl4 .add-line-section").click(function () {
+                var button = $(this);
+                var type = button.data("type");
+                var length = $(`[id^="${type}_value_"]`).length || 0;
+                var titleLength = $(`[id^="${type}_title_"]`).length || 0;
+                var clicks = button.data("clicks") || 0;
+                var targetContainerId = button.data("target");
+
+                if (clicks < maxClicks) {
+                    var html = `
+                <div class="input-row">
+                    <div class="col-md-8">
+                    <div class="input-section">
+                        <div class="mid-left-head extra_input" id="${type}_title_${titleLength + 1
+                        }"></div>
+                        <img src="https://i.postimg.cc/KYFwZJbF/x-icon.png" class="delete-line" alt=""/>
+                        <input type="text" class="form-control2" id="${type}_input_title_${titleLength + 1
+                        }" value=""/>
+                    </div>
+                    </div>
+                    <div class="col-md-4">
+                    <div class="input-section form-group">
+                        <span class="prepend-text">$</span>
+                        <input type="text" class="form-control cl-input cl-curr"
+                        placeholder="0" placeholder="0" id="${type}_value_${length + 1
+                        }" value=""/>
+                    </div>
+                    </div>
+                </div>
+            `;
+
+                    $("#" + targetContainerId).append(html);
+                    button.data("clicks", clicks + 1);
+                    new AutoNumeric(`#${type}_value_${length + 1}`, hm_cl4_numOptionCurrency);
+                }
+
+                hm_cl4_rerender();
+            });
+
+            function hm_cl4_calculateNetWorth() {
+                var cashLength = $('[id^="cash_value_"]').length;
+                var longLength = $('[id^="long_value_"]').length;
+                var propertyLength = $('[id^="property_value_"]').length;
+                var liabilityLength = $('[id^="liability_value_"]').length;
+
+                const cashValues = [];
+                for (let i = 1; i <= cashLength; i++) {
+                    cashValues.push(hm_cl4_removeComma($(`#cash_value_${i}`).val()));
+                }
+
+                const longValues = [];
+                for (let i = 1; i <= longLength; i++) {
+                    longValues.push(hm_cl4_removeComma($(`#long_value_${i}`).val()));
+                }
+
+                const propertyValues = [];
+                for (let i = 1; i <= propertyLength; i++) {
+                    propertyValues.push(hm_cl4_removeComma($(`#property_value_${i}`).val()));
+                }
+
+                const liabilityValues = [];
+                for (let i = 1; i <= liabilityLength; i++) {
+                    liabilityValues.push(hm_cl4_removeComma($(`#liability_value_${i}`).val()));
+                }
+
+                const totalCash = cashValues.reduce((acc, curr) => acc + curr, 0);
+                const totalLong = longValues.reduce((acc, curr) => acc + curr, 0);
+                const totalProperty = propertyValues.reduce(
+                    (acc, curr) => acc + curr,
+                    0
+                );
+                const totalLiability = liabilityValues.reduce(
+                    (acc, curr) => acc + curr,
+                    0
+                );
+
+                const totalAssets = totalCash + totalLong + totalProperty;
+                const netWorth = totalAssets - totalLiability;
+
+                $("#hm_cl4_total_assets").text("$" + hm_cl4_nftd.format(totalAssets));
+                $("#hm_cl4_total_liability").text("$" + hm_cl4_nftd.format(totalLiability));
+                $("#hm_cl4_net_worth").text("$" + hm_cl4_nftd.format(netWorth));
+            }
+
+            function hm_cl4_rerender() {
+                $(
+                    '[id^="cash_value_"], [id^="long_value_"], [id^="property_value_"], [id^="liability_value_"]'
+                ).each(function () {
+                    $(this).on("input", function () {
+                        hm_cl4_calculateNetWorth();
+                    });
+                });
+
+                $(
+                    '[id^="cash_input_title_"], [id^="long_input_title_"], [id^="property_input_title_"], [id^="liability_input_title_"]'
+                ).each(function () {
+                    $(this).on("input", function () {
+                        var inputValue = $(this).val();
+                        var elementId = $(this).attr("id");
+
+                        // Extract the necessary values from the input element's ID
+                        var idParts = elementId.split("_");
+                        var type = idParts[0];
+                        var titleLength = parseInt(idParts[3]);
+
+                        // // Construct the ID of the element where you want to set the value
+                        var targetElementId = `${type}_title_${titleLength}`;
+
+                        // // Set the value on the target element
+                        $("#" + targetElementId).text(inputValue);
+                    });
+                });
+            }
+
+            hm_cl4_rerender();
+
+            $(document).on("click", ".delete-line", function () {
+                console.log("test");
+                var button = $(this).closest(".mid-section").find(".add-line-section");
+                var clicks = button.data("clicks") || 0;
+                if (clicks > 0) {
+                    button.data("clicks", clicks - 1);
+                }
+                $(this).closest(".input-row").remove();
+                hm_cl4_rerender();
+                hm_cl4_calculateNetWorth();
+            });
+
+            $("#hm_cl4_print").on("click", function () {
+                var tableBodies = {
+                    cash: $("#cash_table"),
+                    long: $("#long_table"),
+                    property: $("#property_table"),
+                    liability: $("#liability_table"),
+                };
+
+                var categorySums = {
+                    cash: 0,
+                    long: 0,
+                    property: 0,
+                    liability: 0,
+                };
+
+                // Clear the table bodies before appending new rows
+                $.each(tableBodies, function (type, tableBody) {
+                    tableBody.empty();
+                });
+
+                $(
+                    '[id^="cash_title_"], [id^="long_title_"], [id^="property_title_"], [id^="liability_title_"]'
+                ).each(function () {
+                    var elementId = $(this).attr("id");
+                    var inputValue = $(`#${elementId.replace("title", "value")}`).val() || "0";
+                    var titleValue = $(this).text();
+                    var row = `<tr><td class="left_left_td">${titleValue}</td><td class="left_right_td">$${inputValue}</td></tr>`;
+
+                    // Extract the type from the element ID
+                    var type = elementId.split("_")[0];
+
+                    // Append the row to the respective tbody element based on the type
+                    tableBodies[type].append(row);
+
+                    // Calculate the sum for the corresponding category
+                    // var value = parseFloat(inputValue.replace(/[^0-9.-]+/g, ""));
+                    categorySums[type] += hm_cl4_removeComma(inputValue);
+                });
+
+                // Display the category sums
+                $("#cash_total").text("$" + hm_cl4_nftd.format(categorySums.cash));
+                $("#long_total").text("$" + hm_cl4_nftd.format(categorySums.long));
+                $("#property_total").text("$" + hm_cl4_nftd.format(categorySums.property));
+                $("#liability_total").text("$" + hm_cl4_nftd.format(categorySums.liability));
+
+                // Calculate the total assets and net worth
+                var totalAssets =
+                    categorySums.cash + categorySums.long + categorySums.property;
+                var netWorth = totalAssets - categorySums.liability;
+
+                // Display the total assets and net worth
+                $("#total_net_worth").text("$" + hm_cl4_nftd.format(netWorth));
+
+            });
+
+            $("#hm_cl4_print").on("click", function () {
+                $(this).prop("disabled", true);
+                $("#hm_cl4_print").text("Generating PDF....");
+
+                setTimeout(() => {
+                    genPDF();
+                    $("#hm_cl4_print").prop("disabled", false);
+                    $("#hm_cl4_print").text("PRINT RESULTS");
+                }, 500);
+            });
+
+            function genPDF() {
+                var d = new Date();
+                let date_time = d.getMonth() + 1 + "" + d.getDate() + "" + d.getFullYear() + "" + d.getHours() + "" + d.getMinutes() + "_" + d.getSeconds();
+                var element = document.getElementById("pdf_data");
+                html2pdf(element, {
+                    margin: 10,
+                    enableLinks: true,
+                    filename: "Net Worth " + date_time + ".pdf",
+                    image: { type: "jpeg", quality: 1 },
+                    html2canvas: { scale: 4, logging: false },
+                    jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
+                });
+            }
+
+            let src = $("#com_logo").attr("src");
+
+            toDataUrl(src, function (myBase64) {
+                $("#com_logo").attr("src", myBase64);
+            });
+
+            function toDataUrl(url, callback) {
+                var xhr = new XMLHttpRequest();
+                xhr.onload = function () {
+                    var reader = new FileReader();
+                    reader.onloadend = function () {
+                        callback(reader.result);
+                    }
+                    reader.readAsDataURL(xhr.response);
+                };
+                xhr.open('GET', url);
+                xhr.responseType = 'blob';
+                xhr.send();
+            }
+        });
+    </script>
+</body>
+
+</html>

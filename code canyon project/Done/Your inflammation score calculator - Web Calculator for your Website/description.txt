@@ -1,0 +1,32 @@
+Your inflammation score calculator - Web Calculator for your Website
+
+Welcome to our <b>Your inflammation score calculator</b>, The Inflammation Score Calculator is a helpful tool designed to determine your potential inflammation level based on common symptoms and health indicators.By answering a series of questions about your physical well-being and daily experiences, you can gain insight into how inflammation may affect your body.
+<br>
+<br>
+<u><b>User inputs:</b></u>
+<ul>
+    <li>Are you frequently tired and fatigued?</li>
+    <li>Are you unable to lose weight?</li>
+    <li>Do you have ongoing joint pain?</li>
+    <li>Do you often have muscle stiffness?</li>
+    <li>Do you experience frequent headaches?</li>
+    <li>Do you regularly have mouth sores?  etc.</li>
+</ul>
+<br>
+<u><b>Outputs:</b></u>
+<ul>
+    <li>Your inflammation score</li>
+</ul>
+<br>
+<u><b>Features of the Retirement Planning Calculator:</b></u>
+<ul>
+    <li>- Assesses a wide range of symptoms commonly associated with inflammation, including fatigue, weight problems, joint pain, muscle stiffness, headaches, and more.</li>
+    <li>- Instant result without page reload</li>
+    <li>- JS and CSS loads when shortcode called on page</li>
+    <li>- 100% Responsive design</li>
+    <li>- Unique Design</li>
+    <li>- Well Documented (proper help instructions for setup)</li>
+    <li>- Dedicated Support</li>
+</ul>
+<br>
+The calculator is built using HTML, CSS, and JavaScript, and it also utilizes the popular JavaScript library jQuery. A premium quality <b>Your inflammation score calculator</b> which you can easily embed into any website (well documented).

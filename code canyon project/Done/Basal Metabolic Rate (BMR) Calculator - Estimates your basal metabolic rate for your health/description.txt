@@ -1,0 +1,39 @@
+Basal Metabolic Rate (BMR) Calculator - Estimates your basal metabolic rate for your health.
+
+Welcome to our <b>Basal Metabolic Rate Calculator</b>. The basal metabolic rate (BMR) is the amount of energy needed while resting in a temperate environment when the digestive system is inactive. It is the equivalent of figuring out how much gas an idle car consumes while parked. In such a state, energy will be used only to maintain vital organs, which include the heart, brain, kidneys, nervous system, intestines, liver, lungs, sex organs, muscles, and skin.
+<br>
+<br>
+<u><b>User inputs:</b></u>
+<ul>
+	<div><u>Metric unit (kg)</u></div>
+    <li>Height (cm)</li>
+    <li>Weight (kg)</li>
+    <div><u>US unit (lbs)</u></div>
+    <li>Height (feet)</li>
+    <li>Height (inches)</li>
+    <li>Weight (lbs)</li>
+    <div><u>Gender</u></div>
+    <li>Male</li>
+    <li>Female</li>
+    <li>Activity Level</li>
+</ul>
+<br>
+<u><b>Outputs:</b></u>
+<ul>
+    <li>BMR at Rest</li>
+    <li>BMR at Motion</li>
+</ul>
+<br>
+<u><b>Features of the Credit Card Calculator:</b></u>
+<ul>
+    <li>- It allows you to choose between Metric and US units for your height and weight measurements.</li>
+    <li>- It requires you to enter your height, weight, gender, age, and activity level to calculate your BMR.</li>
+    <li>- Instant result without page reload</li>
+    <li>- JS and CSS loads when shortcode called on page</li>
+    <li>- 100% Responsive design</li>
+    <li>- Unique Design</li>
+    <li>- Well Documented (proper help instructions for setup)</li>
+    <li>- Dedicated Support</li>
+</ul>
+<br>
+The calculator is built using HTML, CSS, and JavaScript, and it also utilizes the popular JavaScript library jQuery. A premium quality <b>Basal Metabolic Rate calculator</b> which you can easily embed into any website (well documented).

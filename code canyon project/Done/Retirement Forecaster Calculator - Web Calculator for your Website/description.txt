@@ -1,0 +1,39 @@
+Retirement Forecaster Calculator - Web Calculator for your Website.
+
+Welcome to our <b>Retirement Forecaster Calculator</b>.The Retirement Forecaster Calculator is a sophisticated tool designed to help individuals plan for their retirement by providing a detailed forecast of their financial readiness.
+<br>
+<br>
+<u><b>User inputs:</b></u>
+<ul>
+    <li>Current Age</li>
+    <li>Retirement Age</li>
+    <li>Current Income</li>
+    <li>Replacement Ratio</li>
+    <li>Current Value of Capital Savings</li>
+    <li>Monthly Contributions Towards Retirement</li>
+    <li>Investment Return per annum (%)</li>
+    <li>Inflation And Thus Escalation Rate (%)</li>
+</ul>
+<br>
+<u><b>Outputs:</b></u>
+<ul>
+    <li>Value of Savings at Retirement</li>
+    <li>Salary at retirement</li>
+    <li>Age at which capital will run out</li>
+    <li>Thus, years after your capital runs out</li>
+</ul>
+<br>
+<u><b>Features of the Retirement Forecaster Calculator:</b></u>
+<ul>
+    <li>- Users can input their current age and the age at which they plan to retire.</li>
+    <li>- Users can input their current net after-tax monthly income.</li>
+    <li>- Users can specify what percentage of their current income they aim to have at retirement.</li>
+    <li>- Instant result without page reload</li>
+    <li>- JS and CSS loads when shortcode called on page</li>
+    <li>- 100% Responsive design</li>
+    <li>- Unique Design</li>
+    <li>- Well Documented (proper help instructions for setup)</li>
+    <li>- Dedicated Support</li>
+</ul>
+<br>
+The calculator is built using HTML, CSS, and JavaScript, and it also utilizes the popular JavaScript library jQuery. A premium quality <b>Retirement Forecaster Calculator</b> which you can easily embed into any website (well documented).

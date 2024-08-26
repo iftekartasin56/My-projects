@@ -1,0 +1,104 @@
+
+2
+formule de Broca
+https://www.regivia.com/comment-maigrir-conseils-solutions-trucs-et-astuces/outils/calcul-du-poids-ideal-formule-de-broca/
+[calculettepidf url="#" modele="7" ]
+3
+formule de Bornhardt
+https://www.regivia.com/comment-maigrir-conseils-solutions-trucs-et-astuces/outils/calcul-du-poids-ideal-formule-de-bornhardt/
+[calculettepidf url="#" modele="2" ]
+4
+Formule de Creff
+https://www.regivia.com/comment-maigrir-conseils-solutions-trucs-et-astuces/outils/calcul-du-poids-ideal-formule-de-creff/
+[calculettepidf url="#" modele="3" ]
+5
+formule de Devine
+https://www.regivia.com/comment-maigrir-conseils-solutions-trucs-et-astuces/outils/calcul-du-poids-ideal-formule-de-devine/
+[calculettepidf url="#" modele="4" ]
+7
+formule de Monnerot-Dumaine
+https://www.regivia.com/comment-maigrir-conseils-solutions-trucs-et-astuces/outils/calcul-du-poids-ideal-avec-le-tour-de-poignet-formule-de-monnerot-dumaine/
+[calculettepidf url="#" modele="6" ]
+
+8
+formule de Perrault
+https://www.regivia.com/comment-maigrir-conseils-solutions-trucs-et-astuces/outils/calcul-du-poids-ideal-formule-de-perrault/
+[calculettepidf url="#" modele="1" ]
+
+9
+IMG
+https://www.regivia.com/comment-maigrir-conseils-solutions-trucs-et-astuces/outils/calcul-de-l-img-indice-de-masse-grasse/
+[calculetteimga url=""]
+
+10
+métabolisme de base
+https://www.regivia.com/comment-maigrir-conseils-solutions-trucs-et-astuces/outils/calcul-besoin-journalier-en-calorie-et-depense-energetique-journaliere-et-au-repos-metabolisme-de-base/
+[calculettebpjca url="#ancrebpjc" modele="1"]
+
+11
+Combien de calories par jour pour maigrir
+https://www.regivia.com/comment-maigrir-conseils-solutions-trucs-et-astuces/outils/calcul-besoin-journalier-en-calorie-et-depense-energetique-journaliere-et-au-repos-metabolisme-de-base/combien-de-calories-par-jour-pour-maigrir-et-perdre-du-poids/
+[calculettebpjca url="#ancrebpjc" modele="2"]
+
+
+12
+Combien de calories par repas ?
+https://www.regivia.com/alimentation-et-nutrition/combien-de-calories-par-repas-de-la-journee/
+[calculettebpjrepas url="#ancrebpjc" repas="0"]
+
+petit-déjeuner
+https://www.regivia.com/alimentation-et-nutrition/combien-de-calories-par-repas-de-la-journee/repas-du-matin-petit-dejeuner/
+[calculettebpjrepas url="#ancrebpjc" repas="1"]
+
+déjeuner
+https://www.regivia.com/alimentation-et-nutrition/combien-de-calories-par-repas-de-la-journee/repas-de-12h-dejeuner-du-midi/
+[calculettebpjrepas url="#ancrebpjc" repas="2"]
+
+goûter
+https://www.regivia.com/alimentation-et-nutrition/combien-de-calories-par-repas-de-la-journee/collation-ou-gouter-de-16-17-h/
+[calculettebpjrepas url="#ancrebpjc" repas="3"]
+
+dîner
+https://www.regivia.com/alimentation-et-nutrition/combien-de-calories-par-repas-de-la-journee/repas-du-soir-diner-ou-souper/
+[calculettebpjrepas url="#ancrebpjc" repas="4"]
+
+
+13
+besoins par jour en macronutriments
+https://www.regivia.com/alimentation-et-nutrition/les-macronutriments/besoin-par-jour/
+[calculettebpjmacro url="#ancrebpjc" macro="0"]
+
+Lipides
+https://www.regivia.com/alimentation-et-nutrition/les-macronutriments/les-lipides/besoin-par-jour-carences-et-exces/
+[calculettebpjmacro url="#ancrebpjc" macro="1"]
+
+Protéines
+https://www.regivia.com/alimentation-et-nutrition/les-macronutriments/les-proteines/
+[calculettebpjmacro url="#ancrebpjc" macro="2"]
+
+Glucides
+https://www.regivia.com/alimentation-et-nutrition/les-macronutriments/les-glucides/besoin-par-jour-carences-et-exces/
+[calculettebpjmacro url="#ancrebpjc" macro="3"]
+
+Fibres
+https://www.regivia.com/alimentation-et-nutrition/les-macronutriments/les-fibres/besoin-par-jour-carences-et-exces/
+[calculettebpjmacro url="#ancrebpjc" macro="4"]
+
+
+20
+test morpho visage
+https://www.regivia.com/comment-relooker-son-visage/morphologie-et-forme-de-visage/
+[outilsvisagea url="#ancrevis"]
+
+21 
+test morpho lunettes
+https://www.regivia.com/comment-relooker-son-visage/morphologie-et-forme-de-visage/choisir-ses-lunettes/femme/lunettes-de-vue/
+[outilsfemmevue url=""]
+
+[outilsfemmesoleil url=""]
+
+[outilshommevue url=""]
+
+[outilshommesoleil url=""]
+
+

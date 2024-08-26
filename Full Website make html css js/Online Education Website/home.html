@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+
+    <!-- font awesome cdn link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+    <!-- custom css file link -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Header Section Start-->
+
+    <header class="header">
+        <section class="flex">
+            <a href="home.html" class="logo">Educa.</a>
+
+            <form action="" method="post" class="search-form">
+                <input type="text" name="search_box" placeholder="search courses..." required maxlength="100">
+
+                <button type="submit" class="fas fa-search" name="search_box"></button>
+            </form>
+
+            <div class="icons">
+                <div id="menu-btn" class="fas fa-bars"></div>
+                <div id="search-btn" class="fas fa-search"></div>
+                <div id="user-btn" class="fas fa-user"></div>
+                <div id="toggle-btn" class="fas fa-sun"></div>
+            </div>
+
+            <div class="profile">
+                <img src="images/pic-1.jpg" alt="">
+                <h3>Iftekar Tasin</h3>
+                <span>Student</span>
+                <a href="profile.html" class="btn">View Profile</a>
+                <div class="flex-btn">
+                    <a href="login.html" class="option-btn">Login</a>
+                    <a href="register.html" class="option-btn">Register</a>
+                </div>
+            </div>
+        </section>
+    </header>
+   <!-- Header Section Ends-->
+
+   <!-- Side bar section starts -->
+    <div class="side-bar">
+
+        <div class="close-side-bar">
+            <i class="fas fa-times"></i>
+        </div>
+
+        <div class="profile">
+            <img src="images/pic-1.jpg" alt="">
+            <h3>Iftekar Tasin</h3>
+            <span>Student</span>
+            <a href="profile.html" class="btn">View Profile</a>
+        </div>
+
+        <nav class="navbar">
+            <a href="home.html"><i class="fas fa-home"><span>Home</span></i></a>
+            <a href="about.html"><i class="fas fa-question"><span>About Us</span></i></a>
+            <a href="courses.html"><i class="fas fa-graduation-cap"><span>Courses</span></i></a>
+            <a href="teachers.html"><i class="fas fa-chalkboard-user"><span>Teachers</span></i></a>
+            <a href="contact.html"><i class="fas fa-headset"><span>Contact Us</span></i></a>
+        </nav>
+
+    </div>
+   <!-- Side bar section Ends -->
+
+   <!-- Quick Select Section Start -->
+
+   <section class="quick-select">
+
+        <h1 class="heading">quick option</h1>
+        
+        <div class="box-container">
+
+           <div class="box">
+            <h3 class="title">like and comments</h3>
+            <p>total likes : <span>14</span></p>
+            <a href="#" class="inline-btn">view likes</a>
+            <p>total comments : <span>5</span></p>
+            <a href="#" class="inline-btn">view comments</a>
+            <p>saved playlist : <span>3</span></p>
+            <a href="#" class="inline-btn">view playlist</a>
+           </div>
+           
+           <div class="box">
+            <h3 class="title">top categories</h3>
+            <div class="flex">
+                <a href="#"><i class="fas fa-code"><span>development</span></i></a>
+                <a href="#"><i class="fas fa-chart-simple"><span>business</span></i></a>
+                <a href="#"><i class="fas fa-pen"><span>design</span></i></a>
+                <a href="#"><i class="fas fa-chart-line"><span>marketing</span></i></a>
+                <a href="#"><i class="fas fa-music"><span>music</span></i></a>
+                <a href="#"><i class="fas fa-camera"><span>photography</span></i></a>
+                <a href="#"><i class="fas fa-cog"><span>software</span></i></a>
+                <a href="#"><i class="fas fa-vial"><span>science</span></i></a>
+            </div>
+           </div>
+           
+           <div class="box">
+            <h3 class="title">popular topics</h3>
+            <div class="flex">
+                <a href="#"><i class="fab fa-html5"><span>HTML</span></i></a>
+                <a href="#"><i class="fab fa-css3"><span>CSS</span></i></a>
+                <a href="#"><i class="fab fa-js"><span>javascript</span></i></a>
+                <a href="#"><i class="fab fa-react"><span>react</span></i></a>
+                <a href="#"><i class="fab fa-php"><span>PHP</span></i></a>
+                <a href="#"><i class="fab fa-bootstrap"><span>bootstrap</span></i></a>
+            </div>
+           </div>
+
+           <div class="box tutor">
+            <h3 class="title">become a tutor</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio hic modi facere. Error, voluptatem ratione!</p>
+            <a href="register.html" class="inline-btn">get started</a>
+           </div> 
+
+        </div>
+
+   </section>
+
+   <!-- Quick Select Section Ends -->
+
+   <!-- Course Section Starts -->
+
+   <section class="courses">
+    <h1 class="heading">our courses</h1>
+
+    <div class="box-container">
+        <div class="box">
+            <div class="tutor">
+                <img src="images/pic-2.jpg" alt="">
+                <div>
+                    <h3>john deo</h3>
+                    <span>21-25-2024</span>
+                </div>
+            </div>
+            <img src="images/thumb-1.png" class="thumb" alt="">
+            <h3 class="title">complete HTML tutorial</h3>
+            <a href="playlist.html" class="inline-btn">view playlist</a>
+        </div>
+        <div class="box">
+            <div class="tutor">
+                <img src="images/pic-3.jpg" alt="">
+                <div>
+                    <h3>john deo</h3>
+                    <span>21-25-2024</span>
+                </div>
+            </div>
+            <img src="images/thumb-2.png" class="thumb" alt="">
+            <h3 class="title">complete CSS tutorial</h3>
+            <a href="playlist.html" class="inline-btn">view playlist</a>
+        </div>
+
+        <div class="box">
+            <div class="tutor">
+                <img src="images/pic-4.jpg" alt="">
+                <div>
+                    <h3>john deo</h3>
+                    <span>21-25-2024</span>
+                </div>
+            </div>
+            <img src="images/thumb-3.png" class="thumb" alt="">
+            <h3 class="title">complete JS tutorial</h3>
+            <a href="playlist.html" class="inline-btn">view playlist</a>
+        </div>
+        
+        <div class="box">
+            <div class="tutor">
+                <img src="images/pic-5.jpg" alt="">
+                <div>
+                    <h3>john deo</h3>
+                    <span>21-25-2024</span>
+                </div>
+            </div>
+            <img src="images/thumb-4.png" class="thumb" alt="">
+            <h3 class="title">complete Boostrap tutorial</h3>
+            <a href="playlist.html" class="inline-btn">view playlist</a>
+        </div>
+
+        <div class="box">
+            <div class="tutor">
+                <img src="images/pic-6.jpg" alt="">
+                <div>
+                    <h3>john deo</h3>
+                    <span>21-25-2024</span>
+                </div>
+            </div>
+            <img src="images/thumb-5.png" class="thumb" alt="">
+            <h3 class="title">complete JQuery tutorial</h3>
+            <a href="playlist.html" class="inline-btn">view playlist</a>
+        </div>
+
+        <div class="box">
+            <div class="tutor">
+                <img src="images/pic-7.jpg" alt="">
+                <div>
+                    <h3>john deo</h3>
+                    <span>21-25-2024</span>
+                </div>
+            </div>
+            <img src="images/thumb-6.png" class="thumb" alt="">
+            <h3 class="title">complete SASS tutorial</h3>
+            <a href="playlist.html" class="inline-btn">view playlist</a>
+        </div>
+
+    </div>
+
+    <div class="more-btn">
+        <a href="courses.html" class="inline-option-btn">view more</a>
+    </div>
+   </section>
+
+   <!-- Course Section Ends -->
+
+
+   <!-- Footer Section Starts -->
+
+    <footer class="footer">
+        &copy; copyright @ 2024 by <span>Iftekar Tasin</span> | all rights reserved!
+        
+    </footer>
+
+
+   <!-- Footer Section Ends -->
+    
+
+<!-- Custom JS File Link -->
+<script src="js/script.js"></script>
+</body>
+</html>

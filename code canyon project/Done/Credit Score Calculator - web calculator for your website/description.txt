@@ -1,0 +1,42 @@
+Credit Score calculator - Web Calculator for your Website
+
+Welcome to our <b>Credit Score calculator</b>, Credit Score Calculator can help you estimate your credit score based on various factors that affect your creditworthiness.
+<br>
+<br>
+This calculator takes into account essential aspects like number of open accounts, age of your oldest credit account, type of credit accounts you hold, your credit application history, payment history and more.
+<br>
+<br>
+<u><b>User inputs:</b></u>
+<ul>
+    <li>How Many Open Accounts?</li>
+    <li>How Old Is Your First Credit Card or Loan?</li>
+    <li>Select Each Type of Account or Loan You Have On Your Credit Report.</li>
+    <li>How Many Times Have You Applied For Credit This Past Year?</li>
+    <li>Have You Missed Any Payments?</li>
+    <li>When Did You Last Miss A Payment On Your Accounts?</li>
+    <li>What's Your Total Credit Limit?</li>
+    <li>How Much Do You Owe On All Your Credit Cards?</li>
+    <li>Do You Have Any Accounts In Collections?</li>
+    <li>How Many Accounts Do You Have In Collections?</li>
+    <li>Have Your Ever Had A Negative Event on Your Credit Report? (Bankruptcy, Foreclosure, Repossession, Tax Lien)</li>
+    <li>How Long Ago Was This Negative Event?</li>
+</ul>
+<br>
+<u><b>Outputs:</b></u>
+<ul>
+    <li>Your Estimated Score</li>
+</ul>
+<br>
+<u><b>Features of the Credit Score Calculator:</b></u>
+<ul>
+    <li>- A progress bar at the top of each step visually indicates your progress through the calculator, confirming how much you've completed and what's left.</li>
+    <li>- The estimated credit score is clearly displayed with a graphical gauge that visually represents your score range.</li>
+    <li>- Instant result without page reload</li>
+    <li>- JS and CSS loads when shortcode called on page</li>
+    <li>- 100% Responsive design</li>
+    <li>- Unique Design</li>
+    <li>- Well Documented (proper help instructions for setup)</li>
+    <li>- Dedicated Support</li>
+</ul>
+<br>
+The calculator is built using HTML, CSS, and JavaScript, and it also utilizes the popular JavaScript library jQuery. A premium quality <b>Credit Score calculator</b> which you can easily embed into any website (well documented).

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/Calc-style.css">
+    <title>Life Energy Calculator</title>
+
+    <link rel="stylesheet" href="css/Calc-style.css">
+</head>
+<body>
+
+<!-----------Please copy and paste following code into any HTML element ---------------->
+
+<!----------- copy starts ---------------->
+<div class="ms-cl" id="mc3">
+    <div class="container cl-wrapper">
+        <h3 class="text-center top-title">Life Energy Calculator</h3>
+        <div class="row" style="border-top: 1px solid #DCDCDC;">
+            <div class="col-md-6 cl-left-div">
+                <h3 style="color:#0D1B2A;">Your Numbers</h3>
+                <hr style="border-color: #DCDCDC;">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="mc3_in_1">Item Cost</label>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text curr-sign"></span>
+                                </div>
+                                <input type="text" value="50,000" name="mc3_in_1" class="form-control cl-required" id="mc3_in_1">
+                            </div>
+                            <small id="r_msg" style="display:none;color:red;">You Can Retire!!</small>
+                        </div>                        
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="mc3_in_2">Frequency <small>(Times Per Year)</small></label>
+                            <div class="input-group mb-3">
+                                <select name="mc3_in_2" class="form-control cl-required" id="mc3_in_2">
+                                    <option value="1" selected>Once</option>
+                                    <option value="12">Monthly</option>
+                                    <option value="5">Weely</option>
+                                    <option value="365">Daily</option>
+                                    <option value="260">Work Days</option>
+                                    <option value="104">Weekends</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="mc3_in_3">Yearly Income</label>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text curr-sign"></span>
+                                </div>
+                                <input type="text" value="63,000" name="mc3_in_3" class="form-control cl-required" id="mc3_in_3">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 cl-right-div">
+                <h3 style="color:#0D1B2A;">Result</h3>
+                <hr style="border-color: #DCDCDC;">
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <td class="f600">Years</td>
+                            <td class="rs-vl" id="mc3_rs_1">-</td>
+                        </tr>
+                        <tr>
+                            <td class="f600">Months</td>
+                            <td class="rs-vl" id="mc3_rs_2">-</td>
+                        </tr>
+                        <tr>
+                            <td class="f600">Weeks</td>
+                            <td class="rs-vl" id="mc3_rs_3">-</td>
+                        </tr>
+                        <tr>
+                            <td class="f600">Days</td>
+                            <td class="rs-vl" id="mc3_rs_4">-</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="js/jquery.js"></script>
+<script src="js/autonumeric.js"></script>
+<script src="js/Calc-script.js"></script>
+<!----------- copy ends ---------------->
+</body>
+</html>

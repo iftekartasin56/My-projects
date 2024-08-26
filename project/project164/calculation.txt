@@ -1,0 +1,17 @@
+hello i want to build a calculator for my window cleaning business.
+we are struggling with standard pricing. and we think this may be the solution.
+
+starts at a minimum of 50 euro + 21% btw ( tax )
+
+if you want service every 4 weeks its 1 euro extra per window. ( outside ) +21%btw (tax)
+
+if you want service every 8 weeks its 1,5 euro extra per window. ( outside) +21%btw (tax)
+
+if you want service every 12 weeks its 2 euro extra per window. ( outside) +21%btw (tax)
+
+
+if you want service every 4 weeks its 2 euro extra per window. ( inside )+21%btw (tax)
+
+if you want service every 8 weeks its 3 euro extra per window. ( inside) +21%btw (tax)
+
+if you want service every 12 weeks its 4 euro extra per window. ( inside) +21%btw (tax)

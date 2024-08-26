@@ -1,0 +1,30 @@
+Used bicycle value Calculator - Web Calculator for your Website
+
+Welcome to our <b>used bicycle value Calculator</b>,This used bicycle value calculator helps you quickly and easily estimate the current market value of your used bicycle.
+<br>
+<br>
+<u><b>User inputs:</b></u>
+<ul>
+    <li>Purchase Price</li>
+    <li>Year Owned</li>
+    <li>Condition</li>
+</ul>
+<br>
+<u><b>Outputs:</b></u>
+<ul>
+    <li>Your Bicycle is Worth</li>
+</ul>
+<br>
+<u><b>Features of the used bicycle value Calculator:</b></u>
+<ul>
+	<li>- Enter the original purchase price of your bicycle. This helps establish a baseline value.</li>
+    <li>- Specify the number of years you have owned the bicycle for depreciation over time.</li> 
+    <li>- Instant result without page reload</li>
+    <li>- JS and CSS loads when shortcode called on page</li>
+    <li>- 100% Responsive design</li>
+    <li>- Unique Design</li>
+    <li>- Well Documented (proper help instructions for setup)</li>
+    <li>- Dedicated Support</li>
+</ul>
+<br>
+The calculator is built using HTML, CSS, and JavaScript, and it also utilizes the popular JavaScript library jQuery. A premium quality <b>used bicycle value Calculator</b> which you can easily embed into any website (well documented).

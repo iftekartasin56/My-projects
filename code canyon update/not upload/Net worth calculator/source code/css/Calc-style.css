@@ -1,0 +1,692 @@
+#hm_cl4 *,
+::after,
+::before {
+    box-sizing: border-box;
+}
+
+#hm_cl4 {
+    line-height: 1.5;
+    font-family: inherit;
+    font-family: "EB Garamond", serif;
+}
+
+#hm_cl4 .container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #373A3B !important;
+    text-align: left;
+}
+
+#hm_cl4 label {
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+#hm_cl4 h3,
+#hm_cl4 h4,
+#hm_cl4 p {
+    margin: 5px 0;
+}
+
+#hm_cl4 .font2 {
+    font-size: 14px;
+}
+
+#hm_cl4 .color2 {
+    color: #373A3B !important;
+}
+
+#hm_cl4 .rs-title {
+    font-size: 36px;
+}
+
+#hm_cl4 .total_value {
+    text-align: right;
+}
+
+#hm_cl4 .button-sec {
+    border-top: 1px solid #565A5B;
+    margin-top: 20px;
+    padding-top: 20px;
+}
+
+#hm_cl4 .heading_font {
+    font-size: 36px;
+    color: #373A3B !important;
+    margin-bottom: 30px;
+}
+
+#hm_cl4 .row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+#hm_cl4 .input-row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+    align-items: start;
+    margin-bottom: 25px;
+}
+
+#hm_cl4 .col-md-1,
+#hm_cl4 .col-md-10,
+#hm_cl4 .col-md-11,
+#hm_cl4 .col-md-12,
+#hm_cl4 .col-md-2,
+#hm_cl4 .col-md-3,
+#hm_cl4 .col-md-4,
+#hm_cl4 .col-md-5,
+#hm_cl4 .col-md-6,
+#hm_cl4 .col-md-7,
+#hm_cl4 .col-md-8,
+#hm_cl4 .col-md-9 {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+#hm_cl4 .form-group {
+    position: relative;
+    margin-bottom: 0 !important;
+}
+
+#hm_cl4 .form-control {
+    text-align: center;
+    display: block;
+    width: 100%;
+    height: 50px;
+    padding: 0.275rem 0.75rem;
+    font-size: 16px;
+    font-weight: 600;
+    color: #373A3B !important;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #373A3B;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+#hm_cl4 .form-control2 {
+    text-align: left;
+    display: block;
+    width: 100%;
+    height: 50px;
+    padding: 0.275rem 0.75rem;
+    font-size: 22px;
+    color: #A57162;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #565A5B;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+#hm_cl4 .form-control:focus,
+#hm_cl4 .form-control2:focus {
+    outline: none;
+}
+
+#hm_cl4 .btn {
+    display: inline-block;
+    font-weight: 400;
+    color: #212529;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: 0.375rem 2.5rem;
+    font-size: 0.8rem;
+    line-height: 1.5;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+        border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+#hm_cl4 .btn-primary {
+    color: #fff;
+    background-color: #565a5b;
+    border-color: #565a5b;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    height: 34px;
+}
+
+#hm_cl4 .text-center {
+    text-align: center;
+}
+
+@media (min-width: 576px) {
+    #hm_cl4 .container {
+        max-width: 100%;
+    }
+}
+
+@media (min-width: 768px) {
+    #hm_cl4 .container {
+        max-width: 100%;
+    }
+
+    #hm_cl4 .col-md-12 {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    #hm_cl4 .col-md-9 {
+        -ms-flex: 0 0 75%;
+        flex: 0 0 75%;
+        max-width: 75%;
+    }
+
+    #hm_cl4 .col-md-8 {
+        -ms-flex: 0 0 66.666667%;
+        flex: 0 0 66.666667%;
+        max-width: 66.666667%;
+    }
+
+    #hm_cl4 .col-md-7 {
+        -ms-flex: 0 0 58.33333%;
+        flex: 0 0 58.33333%;
+        max-width: 58.33333%;
+    }
+
+    #hm_cl4 .col-md-6 {
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+    #hm_cl4 .col-md-5 {
+        -ms-flex: 0 0 41.666667%;
+        flex: 0 0 41.666667%;
+        max-width: 41.666667%;
+    }
+
+    #hm_cl4 .col-md-4 {
+        -ms-flex: 0 0 33.333333%;
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+    }
+
+    #hm_cl4 .col-md-3 {
+        -ms-flex: 0 0 25%;
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+}
+
+@media (min-width: 992px) {
+    #hm_cl4 .container {
+        max-width: 850px;
+    }
+}
+
+@media (min-width: 1200px) {
+    #hm_cl4 .container {
+        max-width: 900px;
+    }
+}
+
+#hm_cl4 .text-right {
+    text-align: right;
+}
+
+#hm_cl4 .form-group,
+#hm_cl4 .input-group {
+    position: relative;
+    margin-bottom: 0;
+}
+
+@media (max-width: 768px) {}
+
+#hm_cl4 .top-title {
+    font-size: 25px;
+}
+
+#hm_cl4 .border-box {
+    border: 1px solid #565A5B;
+    background: #FFFFFF;
+}
+
+#hm_cl4 .head-border {
+    border: 5px solid #E0A899;
+}
+
+#hm_cl4 .mid-border {
+    border: 3px solid #ffffff;
+}
+
+#hm_cl4 .content-box {
+    padding: 2rem 3rem 3rem 3rem;
+}
+
+#hm_cl4 .add-line-section {
+    display: flex;
+    gap: 10px;
+    color: #A57162;
+    align-items: center;
+    width: 148px;
+    cursor: pointer;
+    margin-top: 12px;
+}
+
+#hm_cl4 .add-line-section img {
+    width: 25px;
+}
+
+#hm_cl4 .add-line-right {
+    cursor: pointer;
+    margin-top: 3px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+#hm_cl4 .delete-line {
+    cursor: pointer;
+    position: absolute;
+    left: -30px;
+    bottom: 15px;
+    width: 20px;
+}
+
+#hm_cl4 .bold-p {
+    font-size:  18px;
+    font-weight: 700;
+}
+
+#hm_cl4 .mid-section {
+    padding-bottom: 40px;
+}
+
+#hm_cl4 .mid-section:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+#hm_cl4 .input-section {
+    position: relative;
+}
+
+#hm_cl4 .footer-box {
+    padding: 30px 50px;
+    background: #e9e3df;
+}
+
+#hm_cl4 .td-output {
+    text-align: right;
+}
+
+#hm_cl4 .final-output {
+    font-size: 36px;
+    font-weight: 600;
+    border-bottom: 1px solid #565A5B;
+    margin-top: 15px !important;
+}
+
+#hm_cl4 .button-sec {
+    text-align: center;
+}
+
+#hm_cl4 .last-head {
+    margin-top: 5px;
+    border-top: 1px solid #565A5B;
+    padding-top: 40px;
+}
+
+#hm_cl4 .mid-footer-p {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-size: 18px/20px;
+}
+
+#hm_cl4 .head-footer {
+    font-size: 18px;
+    margin-bottom: 16px;
+}
+
+#hm_cl4 .mid-left-head {
+    font-size: 22px;
+    color: #A57162;
+}
+
+#hm_cl4 .ns-font {
+    font-size: 14px;
+    letter-spacing: 1.4px;
+}
+
+#hm_cl4 .head-p {
+    font-size: 14px;
+    letter-spacing: 1.4px
+}
+
+#hm_cl4 .H-head {
+    font-size: 36px;
+    margin: 0;
+    margin-bottom: 0px;
+}
+
+#hm_cl4 .help-text {
+    font-size: 18px;
+    margin-top: 2px;
+}
+
+#hm_cl4 .result-t {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+#hm_cl4 .add-line-left {
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+#hm_cl4 .margin-bottom {
+    position: relative;
+    margin-bottom: 22px;
+}
+
+#hm_cl4 .extra_input {
+    display: none;
+}
+
+#hm_cl4 .prepend-text {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 1px;
+    height: 48px;
+    left: 1px;
+    padding: 10.5px 12px;
+    color: #373A3B !important;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+#hm_cl4 .total_amount_Bg {
+    background-color: #E9E3DF;
+    padding: 2rem 3rem;
+    width: 100%;
+}
+
+#hm_cl4 .help-text {
+    font-size: 18px;
+}
+
+#hm_cl4 .rs-sec {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 7px;
+}
+
+#hm_cl4 .rs-sec-big {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 8px;
+}
+
+#hm_cl4 .rs-font-sm {
+    font-size: 22px;
+}
+
+#hm_cl4 .rs-font-big {
+    font-size: 36px;
+}
+
+#hm_cl4 .head-sec {
+    padding: 25px 40px;
+    background-color: #EFEFEF;
+}
+
+#hm_cl4 .head-p {
+    border-bottom: 1px solid;
+    padding-bottom: 10px;
+}
+
+#hm_cl4 .pad-right-zero {
+    padding-right: 0px;
+}
+
+#hm_cl4 .f-head-footer {
+    margin-bottom: 0px;
+}
+#hm_cl4 .sp-head{
+    padding-top: 20px;
+}
+#hm_cl4 .sp-span{
+    font-size: 14px;
+}
+
+@media (max-width: 768px) {
+    #hm_cl4 .form-group {
+        margin-top: 8px;
+    }
+
+    #hm_cl4 .H-head {
+        font-size: 30px;
+        margin-bottom: 12px;
+    }
+
+    #hm_cl4 .final-output {
+        font-size: 24px;
+    }
+
+    #hm_cl4 .content-box {
+        padding: 2rem;
+    }
+
+    #hm_cl4 .mid-left-head {
+        font-size: 18px;
+    }
+
+    #hm_cl4 .help-text {
+        font-size: 16px;
+    }
+
+    #hm_cl4 .total_amount_Bg {
+        padding: 2rem;
+    }
+
+    #hm_cl4 .margin-bottom {
+        margin-bottom: 5px;
+        gap: 5px;
+    }
+
+    #hm_cl4 .rs-title {
+        font-size: 30px;
+    }
+
+    #hm_cl4 .input-row {
+        margin-bottom: 22px;
+    }
+
+    #hm_cl4 .rs-sec-big {
+        flex-direction: column;
+    }
+
+    #hm_cl4 .rs-font-sm {
+        font-size: 18px;
+    }
+
+    #hm_cl4 .rs-font-big {
+        font-size: 30px;
+    }
+
+    #hm_cl4 .delete-line {
+        left: -27px;
+    }
+
+    #hm_cl4 .f-head-footer {
+        padding-left: 0px;
+    }
+}
+
+#pdf_section {
+    display: none;
+    margin: auto;
+    box-sizing: border-box;
+    margin-top: 20px;
+    border: 1px solid #565A5B;
+    padding: 20px 30px;
+}
+
+#pdf_data *,
+::after,
+::before {
+    box-sizing: border-box;
+}
+
+#pdf_data p {
+    margin: 0;
+    margin-bottom: 0px;
+    color: #373A3B !important;
+    font-size: 16px;
+    padding-bottom: 0;
+    letter-spacing: 0.03em;
+    text-transform: none;
+    text-align: left;
+    margin-top: 15px;
+    font-family: "Nunito Sans", serif;
+}
+
+#pdf_data .table {
+    width: 100%;
+    margin-bottom: 0rem;
+    background-color: #fff;
+    border-collapse: collapse;
+}
+
+#pdf_data h3 {
+    font-family: "EB Garamond", serif;
+}
+
+#pdf_data h4 {
+    font-family: "Nunito Sans", serif;
+}
+
+#pdf_data tbody {
+    margin-bottom: 10px !important;
+}
+
+#pdf_data .table td {
+    padding: 0.3rem 0.3rem 0.3rem 1rem;
+    border-bottom: 2px solid #a6a6a6 !important;
+    vertical-align: middle;
+    font-size: 16px;
+    font-weight: 400;
+    text-align: left;
+    font-family: "Nunito Sans", serif;
+}
+
+#pdf_data .table th {
+    padding: 0.3rem;
+    border-bottom: 2px solid #565A5B !important;
+    vertical-align: middle;
+    font-size: 16px;
+    font-weight: 400;
+    text-align: left;
+    padding-top: 1.2rem;
+    font-family: "Nunito Sans", serif;
+}
+
+#pdf_data .top-row {
+    background: #f6f6f6 !important;
+}
+
+#pdf_data .ds-none {
+    display: none !important;
+}
+
+#pdf_data .text-right {
+    text-align: right !important;
+}
+
+#pdf_data .text-center {
+    text-align: center !important;
+}
+
+#pdf_data .text-left {
+    text-align: left !important;
+}
+
+#pdf_data .f600 {
+    font-weight: 600 !important;
+}
+
+#pdf_data .row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding: 0px 20px;
+}
+
+#pdf_data .col-md-12,
+#pdf_data .col-md-6 {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+#pdf_data .col-md-6 {
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+
+#pdf_data .pdf_top_title {
+    font-size: 32px;
+    margin: 0px 0 18px 0;
+    color: #A57162;
+}
+
+#pdf_data .left_left_th {
+    text-align: left !important;
+    font-weight: 600 !important;
+    color: #A57162;
+}
+
+#pdf_data .left_right_th {
+    text-align: right !important;
+    font-weight: 600 !important;
+    color: #A57162;
+}
+
+#pdf_data .left_left_td {
+    text-align: left !important;
+}
+
+#pdf_data .left_right_td {
+    text-align: right !important;
+}
+
+#pdf_data .right-head-pdf {
+    font-size: 18px;
+    font-weight: 600;
+    text-align: left;
+    display: block;
+}

@@ -1,0 +1,40 @@
+/* Google font Link */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+ 
+/* Variable declaration */
+:root{
+    --black: #050505;
+    --white: #FFFFFF;
+    --primary: #25EFD2;
+}
+
+
+/* Commom CSS */
+
+*{
+    margin: 0;
+    padding: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p{
+    margin: 0;
+    padding: 0;
+}
+
+
+
+/* Custom CSS */
+
+header{
+    width: 100%;
+    background-color: var(--black);
+    height: 100px;
+}
+.header-sec{
+
+}

@@ -1,0 +1,612 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>Estimate Calculator</title>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+</head>
+<body>
+<!--------- Please copy and paste the following code into an HTML block of any webpage -------->
+
+<!--------- copy starts -------->
+<style>
+.ms-cl * {
+    box-sizing: border-box;
+}
+.ms-cl {
+    margin: 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: inherit;
+}
+.ms-cl .container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+}
+.ms-cl .row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+.ms-cl .col-md-1, .ms-cl .col-md-10, .ms-cl .col-md-11, .ms-cl .col-md-12, .ms-cl .col-md-2, .ms-cl .col-md-3, .ms-cl .col-md-4, .ms-cl .col-md-5, .ms-cl .col-md-6, .ms-cl .col-md-7, .ms-cl .col-md-8, .ms-cl .col-md-9 {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.ms-cl .text-center {
+    text-align: center!important;
+}
+
+.ms-cl table {
+    border-collapse: collapse;
+}
+.ms-cl .btn {
+    display: block;
+    font-weight: 500;
+    color: #212529;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: .275rem 2.2rem;
+    line-height: 1.3;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    text-align: center;
+}
+
+.ms-cl .btn-primary {
+    display: block;
+    width: 100%;
+    background-color: #DB6116;
+    color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 5px 25px 0px rgba(255, 127, 0, 0.20);
+    margin-top: 30px;
+    padding-top: 15px;
+    font-size: 18px;
+    padding-bottom: 15px;
+}
+.ms-cl .btn-primary a{
+    color: #fff;
+    text-decoration: none;
+}
+.ms-cl .table {
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #212529;
+    background: #fff;
+    border: none;
+}
+.ms-cl .table td, .ms-cl .table th {
+    padding: 8px 0;
+    vertical-align: middle;
+    font-size: 14px;
+    border-top: none;
+}
+.ms-cl .table-sm td, .ms-cl .table-sm th {
+    padding: .3rem;
+}
+.ms-cl .table-bordered {
+    border: 1px solid #f7f7f7;
+}
+.ms-cl .table tr td.area-row {
+    font-weight: 600;
+    background-color: #F8F9FD;
+    border-bottom: 1px solid #ea516d;
+}
+@media (min-width: 576px){
+    .ms-cl .container, .ms-cl .container-sm {
+        max-width: 540px;
+    }
+}
+@media (min-width: 768px){
+    .ms-cl .container, .ms-cl .container-md, .ms-cl .container-sm {
+        max-width: 720px;
+    }
+    .ms-cl .col-md-12 {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .ms-cl .col-md-8 {
+        -ms-flex: 0 0 66.666667%;
+        flex: 0 0 66.666667%;
+        max-width: 66.666667%;
+    }
+    .ms-cl .col-md-6 {
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    .ms-cl .col-md-4 {
+        -ms-flex: 0 0 33.333333%;
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+    }
+    .ms-cl .col-md-3 {
+        -ms-flex: 0 0 25%;
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+    .ms-cl .col-md-2 {
+        -ms-flex: 0 0 16.66667%;
+        flex: 0 0 16.66667%;
+        max-width: 16.66667%;
+    }
+}
+@media (min-width: 992px){
+    .ms-cl .container {
+        max-width: 700px;
+    }
+}
+@media (min-width: 1200px) {
+    .ms-cl .container {
+        max-width: 700px;
+    }
+}
+.ms-cl .sp-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.ms-cl .sp-text {
+    font-weight: 600;
+    font-size: 22px;
+}
+.ms-cl .no-bdr-bt {
+    border-bottom: none !important;
+}
+.ms-cl .tick-mark {
+    background-color: #ffffff;
+    padding: 0px;
+    border-radius: 50%;
+    color: #ffffff;
+    width: 16px;
+    height: 16px;
+    font-size: 11px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+.ms-cl .tick-mark.is-active {
+    background-color: #EA516D;
+    border-color: #EA516D;
+}
+.ms-cl .cross-mark {
+    background-color: transparent;
+    padding: 6px;
+    border-radius: 50%;
+    color: #f00000;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+.ms-cl .tick-box-td {
+    width: 28px;
+}
+.ms-cl .option-sec {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.ms-cl .option-item {
+    width: 48%;
+    text-align: center;
+    background: #fff;
+    padding: 15px;
+    border: 2px solid #81809A;
+    box-shadow: 0 0 15px #8b8b8b;
+    color: #81809A;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: all 0.2s;
+}
+.ms-cl .option-item:hover {
+    background: #81809A;
+    color: #ffffff;
+}
+.ms-cl .option-item.is-active {
+    background: #EA516D;
+    border-color: #fff;
+    color: #fff;
+}
+.ms-cl .text-right {
+    text-align: right !important;
+}
+.ms-cl .service-title {
+    cursor: default;
+}
+.ms-cl .summary-sec {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 15px;
+}
+.ms-cl .rs-title {
+    font-size: 18px;
+    font-weight: 600;
+}
+.ms-cl .rs-value {
+    font-size: 26px;
+    font-weight: 600;
+    color: #ea516d;
+}
+.ms-cl .ds-none {
+    display: none !important
+}
+@media (max-width: 1200px) {
+    .ms-cl .option-item {
+        font-size: 12px;
+        padding: 10px;
+    }
+    .ms-cl .summary-sec {
+        flex-direction: column;
+    }
+    .ms-cl .rs-sec {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+}
+@media (max-width: 768px) {
+    .ms-cl .table td, .ms-cl .table th {
+        font-size: 12px;
+    }
+}
+.ms-cl .zone-text {
+    text-align: left;
+}
+.ms-cl .top-title {
+    color: #31485F;
+    text-align: center;
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+.ms-cl .details-btn {
+    font-size: 10px;
+    border: 0.5px solid #000;
+    border-radius: 3px;
+    padding: 3px 4px 3px 4px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+.ms-cl .details-btn .fa {
+    font-size: 10px;
+    margin-left: 10px;
+}
+.ms-cl .tb-head {
+    background-color: #31485F;
+    color: #fff;
+    text-align: center;
+    padding: 15px 0 !important;
+    font-size: 20px !important;
+}
+.ms-cl .color1 {
+    background-color: #F6F6F6;
+}
+.ms-cl .bottom-para {
+    color: #585858;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+}
+.ms-cl .rs-sec {
+    background-color: #31485F;
+    color: #fff;
+    padding: 15px 35px;
+    margin-bottom: 30px;
+}
+.ms-cl .rs-title {
+    font-size: 22px;
+    font-weight: 700;
+    border-bottom: 1px solid #fff;
+}
+.ms-cl .rs-vl {
+    font-size: 26px;
+    font-weight: 700;
+}
+</style>
+<div class="ms-cl">
+    <div class="container main">
+        <div class="top-title">Estimate Calculator</div>
+        <div class="row">
+            <div class="col-md-12" style="overflow-x: auto;">
+                <table class="table" id="service_list">
+                    <thead>
+                        <tr>
+                            <th colspan="2" class="sp-text tb-head">Service</th>
+                            <th class="sp-text zone-text tb-head">Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="text-center tick-box-td"><span class="tick-mark">&#10004;</span></td>
+                            <td class="service-title">Demolition <span class="details-btn">Show Details<i class="fa fa-caret-down"></i></span></td>
+                            <td nowrap>$0</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center tick-box-td color1"><span class="tick-mark">&#10004;</span></td>
+                            <td class="service-title color1">Bathroom <span class="details-btn">Show Details<i class="fa fa-caret-down"></i></span></td>
+                            <td nowrap class="color1">$0</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center tick-box-td"><span class="tick-mark">&#10004;</span></td>
+                            <td class="service-title">Kitchen <span class="details-btn">Show Details<i class="fa fa-caret-down"></i></span></td>
+                            <td nowrap>$0</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center tick-box-td color1"><span class="tick-mark">&#10004;</span></td>
+                            <td class="service-title color1">Carpet <span class="details-btn">Show Details<i class="fa fa-caret-down"></i></span></td>
+                            <td nowrap class="color1">$0</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center tick-box-td"><span class="tick-mark">&#10004;</span></td>
+                            <td class="service-title">Vinyl Plank Flooring <span class="details-btn">Show Details<i class="fa fa-caret-down"></i></span></td>
+                            <td nowrap>$0</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center tick-box-td color1"><span class="tick-mark">&#10004;</span></td>
+                            <td class="service-title color1">Hardwood Refinish <span class="details-btn">Show Details<i class="fa fa-caret-down"></i></span></td>
+                            <td nowrap class="color1">$0</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center tick-box-td"><span class="tick-mark">&#10004;</span></td>
+                            <td class="service-title">Paint <span class="details-btn">Show Details<i class="fa fa-caret-down"></i></span></td>
+                            <td nowrap>$0</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center tick-box-td color1"><span class="tick-mark">&#10004;</span></td>
+                            <td class="service-title color1">Trim/Doors <span class="details-btn">Show Details<i class="fa fa-caret-down"></i></span></td>
+                            <td nowrap class="color1">$0</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center tick-box-td"><span class="tick-mark">&#10004;</span></td>
+                            <td class="service-title">Bedroom Finishes <span class="details-btn">Show Details<i class="fa fa-caret-down"></i></span></td>
+                            <td nowrap>$0</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center tick-box-td color1"><span class="tick-mark">&#10004;</span></td>
+                            <td class="service-title color1">Windows <span class="details-btn">Show Details<i class="fa fa-caret-down"></i></span></td>
+                            <td nowrap class="color1">$0</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center tick-box-td"><span class="tick-mark">&#10004;</span></td>
+                            <td class="service-title">Furnace/AC <span class="details-btn">Show Details<i class="fa fa-caret-down"></i></span></td>
+                            <td nowrap>$0</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center tick-box-td color1"><span class="tick-mark">&#10004;</span></td>
+                            <td class="service-title color1">HVAC Ductwork <span class="details-btn">Show Details<i class="fa fa-caret-down"></i></span></td>
+                            <td nowrap class="color1">$0</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center tick-box-td"><span class="tick-mark">&#10004;</span></td>
+                            <td class="service-title">New Electrical <span class="details-btn">Show Details<i class="fa fa-caret-down"></i></span></td>
+                            <td nowrap>$0</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center tick-box-td color1"><span class="tick-mark">&#10004;</span></td>
+                            <td class="service-title color1">New Electrical for Basement <span class="details-btn">Show Details<i class="fa fa-caret-down"></i></span></td>
+                            <td nowrap class="color1">$0</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center tick-box-td"><span class="tick-mark">&#10004;</span></td>
+                            <td class="service-title">New Plumbing <span class="details-btn">Show Details<i class="fa fa-caret-down"></i></span></td>
+                            <td nowrap>$0</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center tick-box-td color1"><span class="tick-mark">&#10004;</span></td>
+                            <td class="service-title color1">Plumbing Basement + Add Bathroom <span class="details-btn">Show Details<i class="fa fa-caret-down"></i></span></td>
+                            <td nowrap class="color1">$0</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center tick-box-td"><span class="tick-mark">&#10004;</span></td>
+                            <td class="service-title">Basement Finish <span class="details-btn">Show Details<i class="fa fa-caret-down"></i></span></td>
+                            <td nowrap>$0</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center tick-box-td color1"><span class="tick-mark">&#10004;</span></td>
+                            <td class="service-title color1">Attic Conversion <span class="details-btn">Show Details<i class="fa fa-caret-down"></i></span></td>
+                            <td nowrap class="color1">$0</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center tick-box-td"><span class="tick-mark">&#10004;</span></td>
+                            <td class="service-title">Roof <span class="details-btn">Show Details<i class="fa fa-caret-down"></i></span></td>
+                            <td nowrap>$0</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center tick-box-td color1"><span class="tick-mark">&#10004;</span></td>
+                            <td class="service-title color1">Re-shingle Roof - Add Layer <span class="details-btn">Show Details<i class="fa fa-caret-down"></i></span></td>
+                            <td nowrap class="color1">$0</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center tick-box-td"><span class="tick-mark">&#10004;</span></td>
+                            <td class="service-title">New Garage <span class="details-btn">Show Details<i class="fa fa-caret-down"></i></span></td>
+                            <td nowrap>$0</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center tick-box-td color1"><span class="tick-mark">&#10004;</span></td>
+                            <td class="service-title color1">Garage Concrete Slab <span class="details-btn">Show Details<i class="fa fa-caret-down"></i></span></td>
+                            <td nowrap class="color1">$0</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-12">
+                <div class="rs-sec">
+                    <div class="rs-title">Total Price</div>
+                    <div class="rs-vl">$0.00</div>
+                </div>
+            </div>
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <div class="bottom-para">
+                    I always add a 10% contingency of the total amount of the estimate or $5,000. It’s better to have it and not need it rather than need it and not have it.
+                </div>
+            </div>
+            <div class="col-md-2"></div>
+
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <button class="btn btn-primary"><a href="#">Contact Me</a></button>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+    </div>
+</div>
+<script>
+jQuery(($) => {
+    const nft = Intl.NumberFormat("en-US", {
+        minimumFractionDigits: 0,
+        maximumFractionDigits: 0
+    });
+
+    const nftd = Intl.NumberFormat("en-US", {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+    });
+
+    $("#women_price_list .price").each(function(i, elm){
+        let price = $(elm).data("price");
+        $(elm).text(nftd.format(price)+" €");
+    });
+
+    $("#men_price_list .price").each(function(i, elm){
+        let price = $(elm).data("price");
+        $(elm).text(nftd.format(price)+" €");
+    });
+
+    $("#service_list .tick-mark, #service_list .service-title").on("click", function(){
+        let parent = $(this).closest("tr");
+
+        if(parent.find(".tick-mark").hasClass("is-active")){
+            parent.find(".tick-mark").removeClass("is-active");
+        } else {
+            parent.find(".tick-mark").addClass("is-active");
+        }
+
+        main_calc("women");
+    });
+
+    $("#men_price_list .tick-mark, #men_price_list .service-title").on("click", function(){
+        let parent = $(this).closest("tr");
+
+        if(parent.find(".tick-mark").hasClass("is-active")){
+            parent.find(".tick-mark").removeClass("is-active");
+        } else {
+            parent.find(".tick-mark").addClass("is-active");
+        }
+
+        main_calc("men");
+    });
+
+    $(".option-item").on("click", function(){
+        $(".option-item").removeClass("is-active");
+        $(this).addClass("is-active");
+
+        let ctg = $(this).data("ctg");
+        
+        if(ctg == "women"){
+            $("#women_price_list, #women_sum").removeClass("ds-none");
+            $("#men_price_list, #men_sum").addClass("ds-none");
+        } else {
+            $("#men_price_list, #men_sum").removeClass("ds-none");
+            $("#women_price_list, #women_sum").addClass("ds-none");
+        }
+    });
+
+    function main_calc(ctg){
+        let total_price = 0;
+        let discout_amount = 0;
+        let disount_prcnt = 0;
+
+        let active_items = "";
+        
+        if(ctg == "women"){
+            active_items = $("#women_price_list .is-active");
+        } else {
+            active_items = $("#men_price_list .is-active");
+        }
+
+        let total_selected = active_items.length;
+
+        active_items.each(function(i, elm){
+            let parent = $(elm).closest("tr");
+
+            let price = parent.find(".price").data("price");
+            
+            total_price = total_price + price;
+        });
+
+        if(total_selected == 2){
+            disount_prcnt = 15;
+        } else if(total_selected == 3){
+            disount_prcnt = 20;
+        } else if(total_selected == 4){
+            disount_prcnt = 25;
+        } else if(total_selected >= 5){
+            disount_prcnt = 30;
+        }
+
+        discout_amount = total_price * (disount_prcnt/100);
+        total_price = total_price - discout_amount;
+
+        if(ctg == "women"){
+            $("#wn_rs_1").text(nftd.format(total_price)+" €");
+            $("#wn_rs_2").text(nftd.format(disount_prcnt)+"%");
+            $("#wn_rs_3").text(nftd.format(discout_amount)+" €");
+        } else {
+            $("#mn_rs_1").text(nftd.format(total_price)+" €");
+            $("#mn_rs_2").text(nftd.format(disount_prcnt)+"%");
+            $("#mn_rs_3").text(nftd.format(discout_amount)+" €");
+        }
+    }
+
+    function removeSign(vl){
+        return Number(vl.replace(/\$|,/g, ''));
+    }
+});
+</script>
+<!--------- copy ends -------->
+</body>
+</html>

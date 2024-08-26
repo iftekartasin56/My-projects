@@ -1,0 +1,41 @@
+Mortgage Calculator - web calculator for your website.
+
+Welcome to our <b>Mortgage Calculator</b>.The "Mortgage Calculator" is a powerful and user-friendly web tool designed to help users estimate their mortgage payments for a home loan. It provides a simple and efficient way to calculate monthly payments based on various factors, such as home price, down payment, interest rate, loan term, annual property taxes, and annual home insurance.
+<br>
+<br>
+<u><b>User inputs:</b></u>
+<ul>
+  <li>Home Price </li>
+  <li>Down Payment</li>
+  <li>Interest Rate</li>
+  <li>Loan Term</li>
+  <li>Annual Property Taxes</li>
+  <li>Annual Home Insurance</li>
+</ul>
+<br>
+<u><b>Outputs:</b></u>
+<ul>
+    <li>Principal & Interest</li>
+    <li>Property Taxes</li>
+    <li>Home Insurance</li>
+    <li>PMI</li>
+    <li>Total Payment</li>
+    <li>Remaining Balance</li>
+    <li>Principal Paid</li>
+    <li>Interest Paid</li>
+</ul>
+<br>
+<u><b>Features of the Mortgage Calculator:</b></u>
+<ul>
+    <li>- Users can input essential information like home price, down payment, interest rate, and loan term to calculate their estimated monthly mortgage payment.</li>
+    <li>- Users can view the detailed breakdown of interest and principal payments over the loan term.</li>
+    <li>- Show Amortization Table</li>
+    <li>- Instant result without page reload</li>
+    <li>- JS and CSS loads when shortcode called on page</li>
+    <li>- 100% Responsive design</li>
+    <li>- Unique Design</li>
+    <li>- Well Documented (proper help instructions for setup)</li>
+    <li>- Dedicated Support</li>
+</ul> 
+<br>
+The calculator is built using HTML, CSS, and JavaScript, and it also utilizes the popular JavaScript library jQuery. A premium quality <b>Mortgage Calculator</b> which you can easily embed into any website (well documented).

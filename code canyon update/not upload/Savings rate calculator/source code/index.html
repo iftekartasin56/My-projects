@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/Calc-style.css">
+    <title>Savings Rate Calculator</title>
+
+    <link rel="stylesheet" href="css/Calc-style.css">
+</head>
+<body>
+
+<!-----------Please copy and paste following code into any HTML element ---------------->
+
+<!----------- copy starts ---------------->
+
+<div class="ms-cl" id="mc1">
+    <div class="container cl-wrapper">
+        <h3 class="text-center top-title">Savings Rate Calculator</h3>
+        <div class="row" style="border-top: 1px solid #0D1B2A;">
+            <div class="col-md-6 cl-left-div">
+                <h3 style="color:#0D1B2A;">Your Numbers</h3>
+                <hr style="border-color: #0D1B2A;">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="mc1_in_1">Yearly Income (After Tax)</label>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text">$</span>
+                                </div>
+                                <input type="text" value="63,000" name="mc1_in_1" class="form-control cl-required" id="mc1_in_1">
+                            </div>
+                            <small id="r_msg" style="display:none;color:red;">You Can Retire!!</small>
+                        </div>                        
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="mc1_in_2">Yearly Savings</label>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text">$</span>
+                                </div>
+                                <input type="text" value="20,000" name="mc1_in_2" class="form-control cl-required" id="mc1_in_2">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 cl-right-div">
+                <h3 style="color:#0D1B2A;">Result</h3>
+                <hr style="border-color: #0D1B2A;">
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <td class="f600">Savings Rate</td>
+                            <td class="rs-vl" id="mc1_rs_1">-</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="js/jquery.js"></script>
+<script src="js/Calc-script.js"></script>
+<!----------- copy ends ---------------->
+</body>
+</html>

@@ -1,0 +1,271 @@
+#ms123 *, ::after, ::before {
+    box-sizing: border-box;
+}
+#ms123 {
+    line-height: 1.5;
+    font-family: inherit;
+}
+#ms123 .container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #ffffff;
+    text-align: left;
+    font-family: 'Montserrat', sans-serif;
+}
+#ms123 label {
+    display: inline-block;
+    margin-bottom: .5rem;
+    font-size: 16px;
+    font-weight: 500;
+}
+#ms123 .row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+#ms123 .col-md-1, #ms123 .col-md-10, #ms123 .col-md-11, #ms123 .col-md-12, #ms123 .col-md-2, #ms123 .col-md-3, #ms123 .col-md-4, #ms123 .col-md-5, #ms123 .col-md-6, #ms123 .col-md-7, #ms123 .col-md-8, #ms123 .col-md-9 {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+#ms123 .form-group {
+    margin-bottom: 1rem;
+}
+#ms123 .form-control {
+    display: block;
+    width: 100%;
+    height: calc(1.5em + 0.75rem + 2px);
+    padding: 0.375rem 0.75rem;
+    font-size: 16px;
+    font-weight: 400;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.5;
+    color: #ffffff;
+    background-color: #00a79d;
+    background-clip: padding-box;
+    border: 1px solid #ffffff;
+    border-radius: 0.25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+#ms123 .form-control:focus {
+    outline: none;
+}
+#ms123 .text-center {
+    text-align: center!important;
+}
+/* Custom css */
+#ms123 .cl-wrapper {
+    position: relative;
+    border: 1px solid #e1e1e1;
+    border-radius: 10px;
+    background: #ffffff;
+    box-shadow: rgba(0,0,0,.25) 0 3px 11px 0!important;
+    padding-top: 10px !important;
+}
+#ms123 .cl-left-div {
+    padding: 2rem 4rem 2rem 4rem !important;
+    background: #00A79D;
+    border: none;
+    border-top: 3px solid #055E61;
+    border-bottom: 3px solid #055E61;
+}
+#ms123 .cl-right-div {
+    padding: 2rem 4rem !important;
+    color: #000;
+    background: transparent;
+}
+/* responsive */
+
+@media (max-width: 768px){
+    #ms123 .cl-left-div {
+        padding: 1rem 2rem !important;
+    }
+    #ms123 .cl-right-div {
+        padding: 2rem !important;
+    }
+    #ms123 .form-control {
+        height: auto;
+        padding: .175rem .75rem;
+    }
+    #ms123 label {
+        font-size: 14px;
+    }
+}
+@media (min-width: 576px){
+    #ms123 .container {
+        max-width: 540px;
+    }
+}
+@media (min-width: 768px){
+    #ms123 .container {
+        max-width: 100%;
+    }
+    #ms123 .col-md-12 {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    #ms123 .col-md-9 {
+        -ms-flex: 0 0 75%;
+        flex: 0 0 75%;
+        max-width: 75%;
+    }
+    #ms123 .col-md-8 {
+        -ms-flex: 0 0 66.666667%;
+        flex: 0 0 66.666667%;
+        max-width: 66.666667%;
+    }
+    #ms123 .col-md-6 {
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    #ms123 .col-md-4 {
+        -ms-flex: 0 0 33.333333%;
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+    }
+    #ms123 .col-md-3 {
+        -ms-flex: 0 0 25%;
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+}
+@media (min-width: 992px){
+    #ms123 .container {
+        max-width: 768px;
+    }
+}
+@media (min-width: 1200px) {
+    #ms123 .container {
+        max-width: 768px;
+    }
+}
+#ms123 .mr-right {
+    margin-right: 5px;
+}
+#ms123 .rs-vl {
+    color: #EA4724;
+    font-size: 25px;
+    margin: 0;
+    margin-top: 10px;
+    font-family: 'Montserrat', sans-serif;
+}
+#ms123 .rs-title {
+    margin: 0;
+    border-bottom: 1px solid #055E61;
+    color: #000;
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+#ms123 .gr-logo {
+    height: 64px;
+}
+#ms123 .main-title-sec {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    padding: 8px;
+}
+#ms123 .main-title {
+    color: #055E61;
+    margin: 10px 0;
+    font-size: 28px;
+    padding: 0 10px;
+    font-family: 'Montserrat', sans-serif;
+}
+#ms123 ::placeholder {
+  color: #ffffff;
+  opacity: 1;
+}
+
+#ms123 :-ms-input-placeholder {
+  color: #ffffff;
+}
+
+#ms123 ::-ms-input-placeholder {
+  color: #ffffff;
+}
+#ms123 .sp-title {
+    margin: 0;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #00a79d;
+    font-weight: 600;
+}
+#ms123 .btn {
+    display: inline-block;
+    font-weight: 400;
+    color: #212529;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+#ms123 .btn-find-more {
+    color: #fff;
+    background-color: #efb088;
+    border-color: #efb088;
+    text-decoration: none;
+}
+#ms123 .btn-position {
+    text-align: right;
+}
+#ms123 .sp-note {
+    margin: 0;
+    padding: 0;
+    margin-top: 10px;
+    display: inline-block;
+    font-size: 13px;
+}
+#ms123 .prepend-text {
+    font-size: 16px;
+    position: absolute;
+    bottom: 21px;
+    left: 23px;
+    padding: 1px 5px;
+    border-radius: 5px;
+}
+#ms123 .sp-pd-left {
+    padding-left: 25px;
+}
+@media (max-width: 768px){
+    #ms123 .main-title-sec {
+        flex-direction: column;
+    }
+    #ms123 .main-title {
+        color: #055E61;
+        margin: 10px 0;
+        font-size: 18px;
+    }
+    #ms123 .gr-logo {
+        height: 58px;
+    }
+    #ms123 .btn-position {
+        text-align: left;
+        margin-top: 10px;
+    }
+}
